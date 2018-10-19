@@ -124,8 +124,62 @@ namespace FunctionalTests.Features.Customer
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
 #line 20
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
-  testRunner.And("the error message should be \"Given Name is a required field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Missing FamilyName")]
+        public virtual void PostMissingFamilyName()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Missing FamilyName", null, ((string[])(null)));
+#line 24
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table2.AddRow(new string[] {
+                        "DateOfRegistration",
+                        "2018-07-27T16:11:00Z"});
+            table2.AddRow(new string[] {
+                        "Title",
+                        "13"});
+            table2.AddRow(new string[] {
+                        "GivenName",
+                        "Customer"});
+            table2.AddRow(new string[] {
+                        "DateofBirth",
+                        "2005-07-26T13:45:00Z"});
+            table2.AddRow(new string[] {
+                        "Gender",
+                        "1"});
+            table2.AddRow(new string[] {
+                        "UniqueLearnerNumber",
+                        "9876543210"});
+            table2.AddRow(new string[] {
+                        "OptInUserResearch",
+                        "true"});
+            table2.AddRow(new string[] {
+                        "OptInMarketResearch",
+                        "false"});
+            table2.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-27T14:45:00Z"});
+            table2.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "1"});
+            table2.AddRow(new string[] {
+                        "IntroducedBy",
+                        "1"});
+            table2.AddRow(new string[] {
+                        "IntroducedByAdditionalInfo",
+                        "additional info"});
+#line 25
+  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table2, "Given ");
+#line 39
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
