@@ -1,6 +1,6 @@
 ﻿Feature: Post
 
-
+		@postCustomer
 		Scenario: Post Missing GivenName
 		Given I post a Customer with the following details:
 		| field						 | value                |
