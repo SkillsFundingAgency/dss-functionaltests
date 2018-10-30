@@ -78,19 +78,157 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\ActionPlan\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ActionPlan\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Action\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Address\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Address\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Adviser\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Contact\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Customer\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Customer\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Diversity\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Goal\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Interaction\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Outcome\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Session\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\WebChat\Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\RestHelper.cs" />
+    <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\ActionPlan.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Adviser.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Diversity.cs" />
+    <Compile Include="Models\Goal.cs" />
+    <Compile Include="Models\Interaction.cs" />
+    <Compile Include="Models\Outcome.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\WebChat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefs\PostSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\ActionPlan\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ActionPlan\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Action\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Address\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Address\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Adviser\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Contact\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Customer\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Customer\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Diversity\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Goal\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Interaction\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Outcome\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Session\Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\WebChat\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>

@@ -13,8 +13,8 @@
         public string UniqueLearnerNumber { get; set; }
         public string OptInUserResearch { get; set; }
         public string OptInMarketResearch { get; set; }
-        public string DateOfAccountClosure { get; set; }
-        public string ReasonForClosure { get; set; }
+        public string DateOfTermination { get; set; }
+        public string ReasonForTermination { get; set; }
         public string IntroducedBy { get; set; }
         public string IntroducedByAdditionalInfo { get; set; }
         public string LastModifiedDate { get; set; }
