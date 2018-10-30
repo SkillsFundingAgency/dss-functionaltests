@@ -88,6 +88,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Action\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Action\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,6 +184,10 @@
     <None Include="Features\ActionPlan\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Action\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Action\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
