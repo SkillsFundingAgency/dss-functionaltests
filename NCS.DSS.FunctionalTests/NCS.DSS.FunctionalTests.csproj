@@ -78,6 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\ActionPlan\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\ActionPlan\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +92,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Action\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Action\Patch.feature.cs">
       <AutoGen>True</AutoGen>
@@ -98,6 +108,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Address\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Address\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,10 +123,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Adviser\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Adviser\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Contact\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Contact\Patch.feature.cs">
       <AutoGen>True</AutoGen>
@@ -122,6 +147,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Customer\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Customer\Patch.feature.cs">
       <AutoGen>True</AutoGen>
@@ -138,10 +168,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Goal\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Goal\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Interaction\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Interaction\Patch.feature.cs">
       <AutoGen>True</AutoGen>
@@ -153,6 +193,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Outcome\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Outcome\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,6 +208,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Session\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Session\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,6 +222,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\WebChat\Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Get.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\WebChat\Patch.feature.cs">
       <AutoGen>True</AutoGen>
@@ -202,6 +257,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\ActionPlan\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\ActionPlan\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
@@ -209,6 +268,10 @@
     <None Include="Features\ActionPlan\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Action\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Action\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -218,6 +281,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Address\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Address\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
@@ -226,9 +293,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Adviser\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Adviser\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Contact\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Contact\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -237,6 +312,10 @@
     <None Include="Features\Contact\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Customer\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Customer\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -250,9 +329,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Goal\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Goal\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Interaction\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Interaction\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -262,6 +349,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Outcome\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Outcome\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
@@ -270,6 +361,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Session\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Session\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
@@ -277,6 +372,10 @@
     <None Include="Features\Session\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\WebChat\Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\WebChat\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

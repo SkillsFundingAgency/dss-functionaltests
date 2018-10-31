@@ -55,8 +55,8 @@
 		| UniqueLearnerNumber        | 9876543210           |
 		| OptInUserResearch          | true                 |
 		| OptInMarketResearch        | false                |
-		#| DateOfTermination          | 2018-07-27T14:45:00Z |
-		#| ReasonForTermination       | 1                    |
+		| DateOfTermination          | 2018-07-27T14:45:00Z |
+		| ReasonForTermination       | 1                    |
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
@@ -72,8 +72,8 @@
 		| UniqueLearnerNumber        | 9876543210           |
 		| OptInUserResearch          | true                 |
 		| OptInMarketResearch        | false                |
-		#| DateOfTermination          | 2018-07-27T14:45:00Z |
-		#| ReasonForTermination       | 1                    |
+		| DateOfTermination          | 2018-07-27T14:45:00Z |
+		| ReasonForTermination       | 1                    |
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |

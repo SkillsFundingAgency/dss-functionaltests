@@ -2,9 +2,6 @@
 
 
 
-Feature: Post
-
-
 	Background: Create Adviser
 	Given I post an adviser with the following details:
 		| Field						 | Value				|

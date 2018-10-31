@@ -18,20 +18,20 @@ namespace NCS.DSS.FunctionalTests.Features.Session
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Post")]
-    public partial class PostFeature
+    [NUnit.Framework.DescriptionAttribute("Get")]
+    public partial class GetFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Post.feature"
+#line 1 "Get.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +71,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         public virtual void FeatureBackground()
         {
-#line 5
+#line 4
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +82,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 6
+#line 5
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -94,7 +94,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table2.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 10
+#line 9
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -112,21 +112,8 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table3.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 14
+#line 13
  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table3, "And ");
-#line hidden
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with all valid Values")]
-        public virtual void CreateASessionForExistingCustomerWithAllValidValues()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with all valid Values", null, ((string[])(null)));
-#line 26
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 5
- this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -137,10 +124,25 @@ this.ScenarioInitialize(scenarioInfo);
             table4.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
+#line 19
+ testRunner.And("I post a session with the following details:", ((string)(null)), table4, "And ");
+#line hidden
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Get Session by ID")]
+        public virtual void GetSessionByID()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Session by ID", null, ((string[])(null)));
+#line 25
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+ this.FeatureBackground();
+#line 26
+ testRunner.When("I get a Session by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.Given("I post a session with the following details:", ((string)(null)), table4, "Given ");
-#line 31
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -151,72 +153,8 @@ this.ScenarioInitialize(scenarioInfo);
             table5.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-            table5.AddRow(new string[] {
-                        "SessionAttended",
-                        "null"});
-            table5.AddRow(new string[] {
-                        "ReasonForNonAttendance",
-                        "99"});
-#line 32
-  testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with incorrect format for date and time of" +
-            " session")]
-        public virtual void CreateASessionForExistingCustomerWithIncorrectFormatForDateAndTimeOfSession()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
-                    " session", null, ((string[])(null)));
-#line 41
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 5
- this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table6.AddRow(new string[] {
-                        "DateandTimeOfSession",
-                        "21-065-2012"});
-            table6.AddRow(new string[] {
-                        "VenuePostCode",
-                        "NN1 2NN"});
-#line 42
- testRunner.Given("I post a session with the following details:", ((string)(null)), table6, "Given ");
-#line 46
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with incorrect format for venue post code")]
-        public virtual void CreateASessionForExistingCustomerWithIncorrectFormatForVenuePostCode()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, ((string[])(null)));
-#line 48
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 5
- this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table7.AddRow(new string[] {
-                        "DateandTimeOfSession",
-                        "21-06-2018"});
-            table7.AddRow(new string[] {
-                        "VenuePostCode",
-                        "NN1"});
-#line 49
- testRunner.Given("I post a session with the following details:", ((string)(null)), table7, "Given ");
-#line 53
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+ testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

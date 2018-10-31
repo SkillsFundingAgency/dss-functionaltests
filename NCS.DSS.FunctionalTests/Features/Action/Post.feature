@@ -18,7 +18,7 @@
 		| InteractionType          | 2                      |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 	And I post an ActionPlan with the following details:
-		| field                          | value                |
+		| Field                          | Value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
 		| CustomerCharterShownToCustomer | true                 |
 		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
@@ -33,7 +33,7 @@
 
 	Scenario: Post Valid Action
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| ActionSummary                 | A Summary            |
@@ -44,7 +44,7 @@
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 201 response
 		And the response body should contain:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| ActionSummary                 | A Summary            |
@@ -55,9 +55,9 @@
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
 
-	Scenario: Post Valid Action with only mandatory fields
+	Scenario: Post Valid Action with only mandatory Fields
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| ActionSummary                 | A Summary            |
@@ -66,7 +66,7 @@
 		| PersonResponsible             | 1                    |
 		Then there should be a 201 response
 		And the response body should contain:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| ActionSummary                 | A Summary            |
@@ -77,7 +77,7 @@
 
 	Scenario: Post Action with missing DateActionAgreed
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
 		| ActionSummary                 | A Summary            |
@@ -87,12 +87,11 @@
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
-		And the error message should be "The DateActionAgreed field is required."
 
 
 	Scenario: Post Action with missing DateActionAimsToBeCompletedBy
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
 		| ActionSummary                 | A Summary            |
@@ -102,12 +101,11 @@
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
-		And the error message should be "The DateActionAimsToBeCompletedBy field is required."
 
 
 	Scenario: Post Action with missing DateActionActuallyCompleted
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| ActionSummary                 | A Summary            |
@@ -118,7 +116,7 @@
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 201 response
 		And the response body should contain:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| DateActionActuallyCompleted   | null				   |
@@ -131,7 +129,7 @@
 
 	Scenario: Post Action with missing ActionSummary
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
@@ -141,12 +139,11 @@
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
-		And the error message should be "The ActionSummary field is required."
 
 
 	Scenario: Post Action with missing ActionType
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
@@ -156,12 +153,11 @@
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
-		And the error message should be "The ActionType field is required."
 
 
 	Scenario: Post Action with missing PersonResponsible
 		Given I post an Action with the following details:
-		| field                         | value                |
+		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
 		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
 		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
@@ -171,4 +167,3 @@
 		| ActionStatus                  | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
-		And the error message should be "The PersonResponsible field is required."

@@ -23,14 +23,14 @@
 
 
 
-Scenario: Create a Session for existing customer with all valid values
+Scenario: Create a Session for existing customer with all valid Values
 	Given I post a session with the following details:
-	    | field                    | value                          |
+	    | Field                    | Value                          |
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z           |
 		| VenuePostCode            |NN1 2NN                         |
 		Then there should be a 201 response
 		And the response body should contain:
-	    | field                    | value                          |
+	    | Field                    | Value                          |
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z           |
 		| VenuePostCode            |NN1 2NN                         |
 		| SessionAttended         |null                            |
@@ -40,14 +40,14 @@ Scenario: Create a Session for existing customer with all valid values
 
 Scenario: Create a Session for existing customer with incorrect format for date and time of session
 	Given I post a session with the following details:
-	    | field                | value       |
+	    | Field                | Value       |
 	    | DateandTimeOfSession | 21-065-2012 |
 	    | VenuePostCode        | NN1 2NN     |
 		Then there should be a 422 response
 
 Scenario: Create a Session for existing customer with incorrect format for venue post code
 	Given I post a session with the following details:
-	    | field                    | value                          |
+	    | Field                    | Value                          |
 		| DateandTimeOfSession     | 21-06-2018                     |
 		| VenuePostCode            |NN1                             |
 		Then there should be a 422 response

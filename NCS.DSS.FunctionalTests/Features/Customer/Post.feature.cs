@@ -228,6 +228,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                         "OptInMarketResearch",
                         "false"});
             table3.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-27T14:45:00Z"});
+            table3.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "1"});
+            table3.AddRow(new string[] {
                         "IntroducedBy",
                         "1"});
             table3.AddRow(new string[] {
@@ -271,6 +277,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table4.AddRow(new string[] {
                         "OptInMarketResearch",
                         "false"});
+            table4.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-27T14:45:00Z"});
+            table4.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "1"});
             table4.AddRow(new string[] {
                         "IntroducedBy",
                         "1"});

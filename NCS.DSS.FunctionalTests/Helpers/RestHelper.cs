@@ -76,7 +76,21 @@ namespace FunctionalTests.Helpers
             catch (Exception e) { throw e; }
         }
 
-
+        internal static IRestResponse Get(string url)
+        {
+            try
+            {
+                var client = new RestClient(url);
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("Postman-Token", "02abe184-9e77-4428-9092-b2320031027e");
+                request.AddHeader("cache-control", "no-cache");
+                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+                IRestResponse response = client.Execute(request);
+                return response;
+            }
+            catch (Exception e) { throw e; }
+        }
 
 
     }

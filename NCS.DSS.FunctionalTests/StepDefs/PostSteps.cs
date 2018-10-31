@@ -30,8 +30,10 @@ namespace FunctionalTests.StepDefs
         private string actionId;
         private string sessionId;
         private string goalId;
+        private string outcomeId;
+        private string webChatId;
 
-         
+
 
         [Given(@"I post a Customer with the following details:")]
         public void GivenIPostACustomerWithTheFollowingDetails(Table table)
@@ -188,7 +190,7 @@ namespace FunctionalTests.StepDefs
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                goalId = dict["WebChatId"];
+                webChatId = dict["WebChatId"];
             }
         }
 
@@ -202,7 +204,7 @@ namespace FunctionalTests.StepDefs
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                goalId = dict["OutcomeId"];
+                outcomeId = dict["OutcomeId"];
             }
         }
 
@@ -253,6 +255,85 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(x);
             response = RestHelper.Patch(url, json2, actionPlanId);
         }
+
+
+        [When(@"I get a Customer by ID")]
+        public void WhenIGetACustomerByID()
+        {
+            url = baseUrl + "customers/api/customers/" + customerId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get an Action by ID")]
+        public void WhenIGetAnActionByID()
+        {
+            url = baseUrl + "actions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/actions/" + actionId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get an ActionPlan by ID")]
+        public void WhenIGetAnActionPlanByID()
+        {
+            url = baseUrl + "actionplans/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get an Address by ID")]
+        public void WhenIGetAnAddressByID()
+        {
+            url = baseUrl + "addresses/api/Customers/" + customerId + "/Addresses/" + addressId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get an Adviser by ID")]
+        public void WhenIGetAnAdviserByID()
+        {
+            url = baseUrl + "adviserdetails/api/AdviserDetails/" + adviserDetailId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get a Contact by ID")]
+        public void WhenIGetAContactByID()
+        {
+            url = baseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/" + contactId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get a Goal by ID")]
+        public void WhenIGetAGoalByID()
+        {
+            url = baseUrl + "goals/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/goals/" + goalId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get an Interaction by ID")]
+        public void WhenIGetAnInteractionByID()
+        {
+            url = baseUrl + "interactions/api/Customers/" + customerId + "/Interactions/" + interactionId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get an Outcome by ID")]
+        public void WhenIGetAnOutcomeByID()
+        {
+            url = baseUrl + "outcomes/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/outcomes/" + outcomeId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get a Session by ID")]
+        public void WhenIGetASessionByID()
+        {
+            url = baseUrl + "sessions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/sessions/" + sessionId;
+            response = RestHelper.Get(url);
+        }
+
+        [When(@"I get a WebChat by ID")]
+        public void WhenIGetAWebChatByID()
+        {
+            url = baseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/" + webChatId;
+            response = RestHelper.Get(url);
+        }
+
 
         [Then(@"there should be a (.*) response")]
         public void ThenThereShouldBeAResponse(int expectedResponseCode)
