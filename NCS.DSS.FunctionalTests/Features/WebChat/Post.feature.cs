@@ -174,6 +174,52 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a webchat with only mandatory values")]
+        public virtual void CreateAWebchatWithOnlyMandatoryValues()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with only mandatory values", null, ((string[])(null)));
+#line 41
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table5.AddRow(new string[] {
+                        "WebChatStartDateandTime",
+                        "2018-07-20T13:20:00Z"});
+            table5.AddRow(new string[] {
+                        "WebChatEndDateandTime",
+                        "2018-07-20T13:45:00Z"});
+            table5.AddRow(new string[] {
+                        "WebChatNarrative",
+                        "some text here"});
+#line 42
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table5, "Given ");
+#line 47
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table6.AddRow(new string[] {
+                        "WebChatStartDateandTime",
+                        "2018-07-20T13:20:00Z"});
+            table6.AddRow(new string[] {
+                        "WebChatEndDateandTime",
+                        "2018-07-20T13:45:00Z"});
+            table6.AddRow(new string[] {
+                        "WebChatNarrative",
+                        "some text here"});
+#line 48
+  testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

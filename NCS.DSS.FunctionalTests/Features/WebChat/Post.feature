@@ -37,3 +37,16 @@ Background: Prepare test
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+
+	Scenario: Create a webchat with only mandatory values
+	Given I post a webchat with the following details:
+	    | Field                      | Value                |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatNarrative           | some text here       |
+		Then there should be a 201 response
+		And the response body should contain:
+	    | Field                      | Value                |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatNarrative           | some text here       |

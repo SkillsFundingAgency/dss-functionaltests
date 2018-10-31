@@ -113,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Contact\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Contact\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,20 +143,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Interaction\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Interaction\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Outcome\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Outcome\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Session\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Session\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\WebChat\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\WebChat\Post.feature.cs">
       <AutoGen>True</AutoGen>
@@ -205,6 +230,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Contact\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Contact\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
@@ -225,17 +254,33 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Interaction\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Interaction\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Outcome\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Outcome\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Session\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Session\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\WebChat\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\WebChat\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
