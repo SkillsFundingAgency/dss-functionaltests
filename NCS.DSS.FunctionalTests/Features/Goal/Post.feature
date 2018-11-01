@@ -48,3 +48,60 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalSummary                 | some goal text       |
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
+
+
+	Scenario: Create a Goal with missing DateGoalCaptured
+	Given I post a goal with the following details:
+	    | Field                       | Value                |
+	    | DateGoalShouldBeCompletedBy | 2018-06-21T14:45:00Z |
+	    | GoalSummary                 | some goal text       |
+	    | GoalType                    | 1                    |
+	    | GoalStatus                  | 1                    |
+		Then there should be a 422 response
+
+	Scenario: Create a Goal with missing DateGoalShouldBeCompletedBy
+	Given I post a goal with the following details:
+	    | Field                       | Value                |
+	    | DateGoalCaptured            | 2018-06-21T14:45:00Z |
+	    | GoalSummary                 | some goal text       |
+	    | GoalType                    | 1                    |
+	    | GoalStatus                  | 1                    |
+		Then there should be a 422 response
+
+	Scenario: Create a Goal with missing GoalSummary
+	Given I post a goal with the following details:
+	    | Field                       | Value                |
+	    | DateGoalCaptured            | 2018-06-21T14:45:00Z |
+	    | DateGoalShouldBeCompletedBy | 2018-06-21T14:45:00Z |
+	    | GoalType                    | 1                    |
+	    | GoalStatus                  | 1                    |
+		Then there should be a 422 response
+
+	Scenario: Create a Goal with missing GoalType
+	Given I post a goal with the following details:
+	    | Field                       | Value                |
+	    | DateGoalCaptured            | 2018-06-21T14:45:00Z |
+	    | DateGoalShouldBeCompletedBy | 2018-06-21T14:45:00Z |
+	    | GoalSummary                 | some goal text       |
+	    | GoalStatus                  | 1                    |
+		Then there should be a 422 response
+
+	Scenario: Create a Goal with invalid GoalType
+	Given I post a goal with the following details:
+	    | Field                       | Value                |
+	    | DateGoalCaptured            | 2018-06-21T14:45:00Z |
+	    | DateGoalShouldBeCompletedBy | 2018-06-21T14:45:00Z |
+	    | GoalSummary                 | some goal text       |
+	    | GoalType                    | 11                   |
+	    | GoalStatus                  | 1                    |
+		Then there should be a 422 response
+
+	Scenario: Create a Goal with invalid GoalStatus
+	Given I post a goal with the following details:
+	    | Field                       | Value                |
+	    | DateGoalCaptured            | 2018-06-21T14:45:00Z |
+	    | DateGoalShouldBeCompletedBy | 2018-06-21T14:45:00Z |
+	    | GoalSummary                 | some goal text       |
+	    | GoalType                    | 1                    |
+	    | GoalStatus                  | 11                    |
+		Then there should be a 422 response

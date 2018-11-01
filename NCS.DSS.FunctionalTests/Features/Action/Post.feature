@@ -1,4 +1,4 @@
-﻿Feature: Post
+﻿Feature: Post Action
 
 
 
@@ -73,6 +73,21 @@
 		| SignpostedTo                  | Some Details         |
 		| ActionType                    | 1                    |
 		| PersonResponsible             | 1                    |
+
+
+
+	Scenario: Post Action with invalid interactionId
+		Given I post an Action with the following details:
+		| Field                         | Value                |
+		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
+		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
+		| ActionSummary                 | A Summary            |
+		| SignpostedTo                  | Some Details         |
+		| ActionType                    | 1                    |
+		| ActionStatus                  | 1                    |
+		| PersonResponsible             | 1                    |
+		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+		Then there should be a 422 response
 
 
 	Scenario: Post Action with missing DateActionAgreed

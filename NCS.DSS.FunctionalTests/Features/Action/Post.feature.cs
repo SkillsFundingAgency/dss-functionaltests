@@ -18,8 +18,8 @@ namespace NCS.DSS.FunctionalTests.Features.Action
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Post")]
-    public partial class PostFeature
+    [NUnit.Framework.DescriptionAttribute("Post Action")]
+    public partial class PostActionFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post Action", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -288,11 +288,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAgreed")]
-        public virtual void PostActionWithMissingDateActionAgreed()
+        [NUnit.Framework.DescriptionAttribute("Post Action with invalid interactionId")]
+        public virtual void PostActionWithInvalidInteractionId()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAgreed", null, ((string[])(null)));
-#line 78
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with invalid interactionId", null, ((string[])(null)));
+#line 79
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -325,20 +325,20 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table9.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 79
+#line 80
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table9, "Given ");
-#line 89
+#line 90
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAimsToBeCompletedBy")]
-        public virtual void PostActionWithMissingDateActionAimsToBeCompletedBy()
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAgreed")]
+        public virtual void PostActionWithMissingDateActionAgreed()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAimsToBeCompletedBy", null, ((string[])(null)));
-#line 92
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAgreed", null, ((string[])(null)));
+#line 93
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -348,8 +348,8 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "Field",
                         "Value"});
             table10.AddRow(new string[] {
-                        "DateActionAgreed",
-                        "2018-07-30T09:00:00Z"});
+                        "DateActionAimsToBeCompletedBy",
+                        "2018-08-08T09:00:00Z"});
             table10.AddRow(new string[] {
                         "DateActionActuallyCompleted",
                         "2018-08-06T09:00:00Z"});
@@ -371,20 +371,20 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table10.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 93
+#line 94
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table10, "Given ");
-#line 103
+#line 104
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionActuallyCompleted")]
-        public virtual void PostActionWithMissingDateActionActuallyCompleted()
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAimsToBeCompletedBy")]
+        public virtual void PostActionWithMissingDateActionAimsToBeCompletedBy()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionActuallyCompleted", null, ((string[])(null)));
-#line 106
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAimsToBeCompletedBy", null, ((string[])(null)));
+#line 107
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -397,8 +397,8 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "DateActionAgreed",
                         "2018-07-30T09:00:00Z"});
             table11.AddRow(new string[] {
-                        "DateActionAimsToBeCompletedBy",
-                        "2018-08-08T09:00:00Z"});
+                        "DateActionActuallyCompleted",
+                        "2018-08-06T09:00:00Z"});
             table11.AddRow(new string[] {
                         "ActionSummary",
                         "A Summary"});
@@ -417,10 +417,24 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table11.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 107
+#line 108
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table11, "Given ");
-#line 117
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 118
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionActuallyCompleted")]
+        public virtual void PostActionWithMissingDateActionActuallyCompleted()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionActuallyCompleted", null, ((string[])(null)));
+#line 121
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -432,9 +446,6 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "DateActionAimsToBeCompletedBy",
                         "2018-08-08T09:00:00Z"});
             table12.AddRow(new string[] {
-                        "DateActionActuallyCompleted",
-                        "null"});
-            table12.AddRow(new string[] {
                         "ActionSummary",
                         "A Summary"});
             table12.AddRow(new string[] {
@@ -452,22 +463,10 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table12.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 118
-  testRunner.And("the response body should contain:", ((string)(null)), table12, "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionSummary")]
-        public virtual void PostActionWithMissingActionSummary()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionSummary", null, ((string[])(null)));
-#line 130
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 5
- this.FeatureBackground();
+#line 122
+  testRunner.Given("I post an Action with the following details:", ((string)(null)), table12, "Given ");
+#line 132
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -480,7 +479,10 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "2018-08-08T09:00:00Z"});
             table13.AddRow(new string[] {
                         "DateActionActuallyCompleted",
-                        "2018-08-06T09:00:00Z"});
+                        "null"});
+            table13.AddRow(new string[] {
+                        "ActionSummary",
+                        "A Summary"});
             table13.AddRow(new string[] {
                         "SignpostedTo",
                         "Some Details"});
@@ -496,20 +498,18 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table13.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 131
-  testRunner.Given("I post an Action with the following details:", ((string)(null)), table13, "Given ");
-#line 141
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 133
+  testRunner.And("the response body should contain:", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionType")]
-        public virtual void PostActionWithMissingActionType()
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionSummary")]
+        public virtual void PostActionWithMissingActionSummary()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionType", null, ((string[])(null)));
-#line 144
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionSummary", null, ((string[])(null)));
+#line 145
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -528,11 +528,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "DateActionActuallyCompleted",
                         "2018-08-06T09:00:00Z"});
             table14.AddRow(new string[] {
-                        "ActionSummary",
-                        "A Summary"});
-            table14.AddRow(new string[] {
                         "SignpostedTo",
                         "Some Details"});
+            table14.AddRow(new string[] {
+                        "ActionType",
+                        "1"});
             table14.AddRow(new string[] {
                         "ActionStatus",
                         "1"});
@@ -542,20 +542,20 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table14.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 145
+#line 146
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table14, "Given ");
-#line 155
+#line 156
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing PersonResponsible")]
-        public virtual void PostActionWithMissingPersonResponsible()
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionType")]
+        public virtual void PostActionWithMissingActionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing PersonResponsible", null, ((string[])(null)));
-#line 158
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionType", null, ((string[])(null)));
+#line 159
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -580,17 +580,63 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "SignpostedTo",
                         "Some Details"});
             table15.AddRow(new string[] {
-                        "ActionType",
+                        "ActionStatus",
                         "1"});
             table15.AddRow(new string[] {
-                        "ActionStatus",
+                        "PersonResponsible",
                         "1"});
             table15.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 159
+#line 160
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table15, "Given ");
-#line 169
+#line 170
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing PersonResponsible")]
+        public virtual void PostActionWithMissingPersonResponsible()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing PersonResponsible", null, ((string[])(null)));
+#line 173
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table16.AddRow(new string[] {
+                        "DateActionAgreed",
+                        "2018-07-30T09:00:00Z"});
+            table16.AddRow(new string[] {
+                        "DateActionAimsToBeCompletedBy",
+                        "2018-08-08T09:00:00Z"});
+            table16.AddRow(new string[] {
+                        "DateActionActuallyCompleted",
+                        "2018-08-06T09:00:00Z"});
+            table16.AddRow(new string[] {
+                        "ActionSummary",
+                        "A Summary"});
+            table16.AddRow(new string[] {
+                        "SignpostedTo",
+                        "Some Details"});
+            table16.AddRow(new string[] {
+                        "ActionType",
+                        "1"});
+            table16.AddRow(new string[] {
+                        "ActionStatus",
+                        "1"});
+            table16.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-07-30T09:00:00Z"});
+#line 174
+  testRunner.Given("I post an Action with the following details:", ((string)(null)), table16, "Given ");
+#line 184
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
