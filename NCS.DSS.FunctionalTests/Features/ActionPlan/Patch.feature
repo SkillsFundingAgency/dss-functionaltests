@@ -132,3 +132,68 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | updated text here    |
+
+
+		Scenario: Patch with invalid DateActionPlanCreated
+		Given I post an ActionPlan with the following details:
+		| Field                          | Value                |
+		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
+		| CustomerCharterShownToCustomer | true                 |
+		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
+		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
+		| ActionPlanDeliveryMethod       | 1                    |
+		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
+		| PriorityCustomer               | 1                    |
+		| CurrentSituation               | looking for work     |
+		When I patch the ActionPlan:
+		| Field                          | Value                |
+		| DateActionPlanCreated          | 20166-07-30T09:00:00Z |
+		Then there should be a 422 response
+
+		Scenario: Patch with invalid CustomerCharterShownToCustomer
+		Given I post an ActionPlan with the following details:
+		| Field                          | Value                |
+		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
+		| CustomerCharterShownToCustomer | true                 |
+		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
+		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
+		| ActionPlanDeliveryMethod       | 1                    |
+		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
+		| PriorityCustomer               | 1                    |
+		| CurrentSituation               | looking for work     |
+		When I patch the ActionPlan:
+		| Field                          | Value                |
+		| DateActionPlanCreated          | 1					 |
+		Then there should be a 422 response
+
+		Scenario: Patch with invalid DateAndTimeCharterShown
+		Given I post an ActionPlan with the following details:
+		| Field                          | Value                |
+		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
+		| CustomerCharterShownToCustomer | true                 |
+		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
+		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
+		| ActionPlanDeliveryMethod       | 1                    |
+		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
+		| PriorityCustomer               | 1                    |
+		| CurrentSituation               | looking for work     |
+		When I patch the ActionPlan:
+		| Field                          | Value                |
+		| DateAndTimeCharterShown        | 20181-07-30T09:00:00Z |
+		Then there should be a 422 response
+
+		Scenario: Patch with invalid DateActionPlanSentToCustomer
+		Given I post an ActionPlan with the following details:
+		| Field                          | Value                |
+		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
+		| CustomerCharterShownToCustomer | true                 |
+		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
+		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
+		| ActionPlanDeliveryMethod       | 1                    |
+		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
+		| PriorityCustomer               | 1                    |
+		| CurrentSituation               | looking for work     |
+		When I patch the ActionPlan:
+		| Field                          | Value                |
+		| DateActionPlanSentToCustomer   | 20181-07-30T09:00:00Z |
+		Then there should be a 422 response

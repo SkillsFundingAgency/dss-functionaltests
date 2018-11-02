@@ -103,5 +103,5 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | DateGoalShouldBeCompletedBy | 2018-06-21T14:45:00Z |
 	    | GoalSummary                 | some goal text       |
 	    | GoalType                    | 1                    |
-	    | GoalStatus                  | 11                    |
+	    | GoalStatus                  | 11                   |
 		Then there should be a 422 response

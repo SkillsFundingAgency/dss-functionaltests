@@ -177,3 +177,49 @@
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 2                    |
+
+
+		Scenario: Patch with invalid ActionType
+		Given I post an Action with the following details:
+		| Field                         | Value                |
+		| DateActionAgreed              | 2018-07-30T09:00:00Z |
+		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
+		| ActionSummary                 | A Summary            |
+		| SignpostedTo                  | Some Details         |
+		| ActionType                    | 1                    |
+		| ActionStatus                  | 1                    |
+		| PersonResponsible             | 1                    |
+		When I patch the following:
+		| Field                         | Value                |
+		| ActionType                    | 33                   |
+		Then there should be a 422 response
+
+		Scenario: Patch with invalid ActionStatus
+		Given I post an Action with the following details:
+		| Field                         | Value                |
+		| DateActionAgreed              | 2018-07-30T09:00:00Z |
+		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
+		| ActionSummary                 | A Summary            |
+		| SignpostedTo                  | Some Details         |
+		| ActionType                    | 1                    |
+		| ActionStatus                  | 1                    |
+		| PersonResponsible             | 1                    |
+		When I patch the following:
+		| Field                         | Value                |
+		| ActionStatus                  | 33                   |
+		Then there should be a 422 response
+
+		Scenario: Patch with invalid PersonResponsible
+		Given I post an Action with the following details:
+		| Field                         | Value                |
+		| DateActionAgreed              | 2018-07-30T09:00:00Z |
+		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
+		| ActionSummary                 | A Summary            |
+		| SignpostedTo                  | Some Details         |
+		| ActionType                    | 1                    |
+		| ActionStatus                  | 1                    |
+		| PersonResponsible             | 1                    |
+		When I patch the following:
+		| Field                         | Value                |
+		| PersonResponsible             | 33                   |
+		Then there should be a 422 response

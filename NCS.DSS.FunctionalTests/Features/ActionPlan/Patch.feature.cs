@@ -456,6 +456,226 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch with invalid DateActionPlanCreated")]
+        public virtual void PatchWithInvalidDateActionPlanCreated()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid DateActionPlanCreated", null, ((string[])(null)));
+#line 137
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table16.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table16.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table16.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table16.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table16.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table16.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table16.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table16.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 138
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table16, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table17.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "20166-07-30T09:00:00Z"});
+#line 148
+  testRunner.When("I patch the ActionPlan:", ((string)(null)), table17, "When ");
+#line 151
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch with invalid CustomerCharterShownToCustomer")]
+        public virtual void PatchWithInvalidCustomerCharterShownToCustomer()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid CustomerCharterShownToCustomer", null, ((string[])(null)));
+#line 153
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table18.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table18.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table18.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table18.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table18.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table18.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table18.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table18.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 154
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table18, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table19.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "1"});
+#line 164
+  testRunner.When("I patch the ActionPlan:", ((string)(null)), table19, "When ");
+#line 167
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch with invalid DateAndTimeCharterShown")]
+        public virtual void PatchWithInvalidDateAndTimeCharterShown()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid DateAndTimeCharterShown", null, ((string[])(null)));
+#line 169
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table20.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table20.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table20.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table20.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table20.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table20.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table20.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table20.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 170
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table20, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table21.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "20181-07-30T09:00:00Z"});
+#line 180
+  testRunner.When("I patch the ActionPlan:", ((string)(null)), table21, "When ");
+#line 183
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch with invalid DateActionPlanSentToCustomer")]
+        public virtual void PatchWithInvalidDateActionPlanSentToCustomer()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid DateActionPlanSentToCustomer", null, ((string[])(null)));
+#line 185
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table22.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table22.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table22.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table22.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 186
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table22, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table23.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "20181-07-30T09:00:00Z"});
+#line 196
+  testRunner.When("I patch the ActionPlan:", ((string)(null)), table23, "When ");
+#line 199
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

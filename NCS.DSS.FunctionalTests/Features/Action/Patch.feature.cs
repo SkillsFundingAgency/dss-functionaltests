@@ -620,6 +620,162 @@ namespace NCS.DSS.FunctionalTests.Features.Action
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch with invalid ActionType")]
+        public virtual void PatchWithInvalidActionType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionType", null, ((string[])(null)));
+#line 182
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table23.AddRow(new string[] {
+                        "DateActionAgreed",
+                        "2018-07-30T09:00:00Z"});
+            table23.AddRow(new string[] {
+                        "DateActionAimsToBeCompletedBy",
+                        "2018-08-08T09:00:00Z"});
+            table23.AddRow(new string[] {
+                        "ActionSummary",
+                        "A Summary"});
+            table23.AddRow(new string[] {
+                        "SignpostedTo",
+                        "Some Details"});
+            table23.AddRow(new string[] {
+                        "ActionType",
+                        "1"});
+            table23.AddRow(new string[] {
+                        "ActionStatus",
+                        "1"});
+            table23.AddRow(new string[] {
+                        "PersonResponsible",
+                        "1"});
+#line 183
+  testRunner.Given("I post an Action with the following details:", ((string)(null)), table23, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table24.AddRow(new string[] {
+                        "ActionType",
+                        "33"});
+#line 192
+  testRunner.When("I patch the following:", ((string)(null)), table24, "When ");
+#line 195
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch with invalid ActionStatus")]
+        public virtual void PatchWithInvalidActionStatus()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionStatus", null, ((string[])(null)));
+#line 197
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table25.AddRow(new string[] {
+                        "DateActionAgreed",
+                        "2018-07-30T09:00:00Z"});
+            table25.AddRow(new string[] {
+                        "DateActionAimsToBeCompletedBy",
+                        "2018-08-08T09:00:00Z"});
+            table25.AddRow(new string[] {
+                        "ActionSummary",
+                        "A Summary"});
+            table25.AddRow(new string[] {
+                        "SignpostedTo",
+                        "Some Details"});
+            table25.AddRow(new string[] {
+                        "ActionType",
+                        "1"});
+            table25.AddRow(new string[] {
+                        "ActionStatus",
+                        "1"});
+            table25.AddRow(new string[] {
+                        "PersonResponsible",
+                        "1"});
+#line 198
+  testRunner.Given("I post an Action with the following details:", ((string)(null)), table25, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table26.AddRow(new string[] {
+                        "ActionStatus",
+                        "33"});
+#line 207
+  testRunner.When("I patch the following:", ((string)(null)), table26, "When ");
+#line 210
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch with invalid PersonResponsible")]
+        public virtual void PatchWithInvalidPersonResponsible()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid PersonResponsible", null, ((string[])(null)));
+#line 212
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table27.AddRow(new string[] {
+                        "DateActionAgreed",
+                        "2018-07-30T09:00:00Z"});
+            table27.AddRow(new string[] {
+                        "DateActionAimsToBeCompletedBy",
+                        "2018-08-08T09:00:00Z"});
+            table27.AddRow(new string[] {
+                        "ActionSummary",
+                        "A Summary"});
+            table27.AddRow(new string[] {
+                        "SignpostedTo",
+                        "Some Details"});
+            table27.AddRow(new string[] {
+                        "ActionType",
+                        "1"});
+            table27.AddRow(new string[] {
+                        "ActionStatus",
+                        "1"});
+            table27.AddRow(new string[] {
+                        "PersonResponsible",
+                        "1"});
+#line 213
+  testRunner.Given("I post an Action with the following details:", ((string)(null)), table27, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table28.AddRow(new string[] {
+                        "PersonResponsible",
+                        "33"});
+#line 222
+  testRunner.When("I patch the following:", ((string)(null)), table28, "When ");
+#line 225
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
