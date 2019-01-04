@@ -8,9 +8,7 @@ namespace FunctionalTests.Helpers
     {
 
         public RestClient endpoint = null;
-        public static string subscriptionKey = "33fa2bbd6ddd4990bc276b442071d755";
-
-
+       
         public RestClient SetEndpoint(string endpointUrl)
         {
             endpoint = new RestClient(endpointUrl);
@@ -40,7 +38,7 @@ namespace FunctionalTests.Helpers
         }
 
 
-        internal static IRestResponse Post(string url,string json)
+        internal static IRestResponse Post(string url,string json, string touchPointId, string subscriptionKey)
         {
             try
             {
@@ -49,7 +47,7 @@ namespace FunctionalTests.Helpers
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("Postman-Token", "02abe184-9e77-4428-9092-b2320031027e");
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("TouchpointId", touchPointId);
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
@@ -59,7 +57,7 @@ namespace FunctionalTests.Helpers
         }
 
 
-        internal static IRestResponse Patch(string url, string json,string id)
+        internal static IRestResponse Patch(string url, string json, string touchPointId, string subscriptionKey,string id)
         {
             try
             {
@@ -67,7 +65,7 @@ namespace FunctionalTests.Helpers
                 var request = new RestRequest(Method.PATCH);
                 request.AddHeader("Postman-Token", "1135482c-17c8-49ec-8793-49de564a3e4e");
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("TouchpointId", touchPointId);
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
@@ -76,7 +74,7 @@ namespace FunctionalTests.Helpers
             catch (Exception e) { throw e; }
         }
 
-        internal static IRestResponse Get(string url)
+        internal static IRestResponse Get(string url, string touchPointId, string subscriptionKey)
         {
             try
             {
@@ -84,7 +82,7 @@ namespace FunctionalTests.Helpers
                 var request = new RestRequest(Method.GET);
                 request.AddHeader("Postman-Token", "02abe184-9e77-4428-9092-b2320031027e");
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("TouchpointId", touchPointId);
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 IRestResponse response = client.Execute(request);
                 return response;
