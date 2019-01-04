@@ -33,8 +33,12 @@ namespace FunctionalTests
             }
             else
             {
+                var homePath = (Environment.OSVersion.Platform == PlatformID.Unix ||
+                                Environment.OSVersion.Platform == PlatformID.MacOSX)
+                                ? Environment.GetEnvironmentVariable("HOME") : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+
                 var customAppSettingsPath =
-                    Environment.ExpandEnvironmentVariables($@"%HOMEDRIVE%%HOMEPATH%\ncsapi\appsettings.local.json");
+                    Environment.ExpandEnvironmentVariables(homePath + $@"\ncsapi\appsettings.local.json");
                 Console.WriteLine("Loading local app settings: " + customAppSettingsPath);
 
                 configurationBuilder
