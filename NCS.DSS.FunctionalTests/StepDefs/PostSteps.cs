@@ -34,8 +34,6 @@ namespace FunctionalTests.StepDefs
         private string outcomeId;
         private string webChatId;
 
-
-
         [Given(@"I post a Customer with the following details:")]
         public void GivenIPostACustomerWithTheFollowingDetails(Table table)
         {
@@ -235,7 +233,9 @@ namespace FunctionalTests.StepDefs
             customerId = customer.FirstOrDefault().Value;   
             var x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
             json2 = JsonConvert.SerializeObject(x);
-            response = RestHelper.Patch(url,json2,customerId, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            // add the id of the last item to the url for the patch
+            //url = url + "/" + lastId;
+            response = RestHelper.Patch(url,json2, envSettings.TouchPointId, envSettings.SubscriptionKey, customerId);
 
         }
 
@@ -246,7 +246,7 @@ namespace FunctionalTests.StepDefs
             addressId = address.FirstOrDefault().Value;
             var x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
             json2 = JsonConvert.SerializeObject(x);
-            response = RestHelper.Patch(url, json2, addressId, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Patch(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey, addressId);
         }
 
         [When(@"I patch the ActionPlan:")]
@@ -256,7 +256,7 @@ namespace FunctionalTests.StepDefs
             actionPlanId = dict.FirstOrDefault().Value;
             var x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
             json2 = JsonConvert.SerializeObject(x);
-            response = RestHelper.Patch(url, json2, actionPlanId, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Patch(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey, actionPlanId);
         }
 
 
