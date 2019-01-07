@@ -9,22 +9,9 @@ namespace FunctionalTests.Helpers
     public static class RestHelper
     {
 
-        public static RestClient endpoint = null;
-
-        //AT
-        public static string atSubscriptionKey = "c51073f9040a4174bbd88334a388deb0";//at
-        public static string atTouchpointId = "0000000101";
-
-        //TEST
-        public static string testSubscriptionKey = "d87530f670724eca800a3a14d660ed6f";//test
-        public static string testTouchpointId = "0000000101";
-
-        //PP
-        public static string ppSubscriptionKey = "33fa2bbd6ddd4990bc276b442071d755";//pp
-        public static string ppTouchpointId = "9000000000";
-
-
-        public static RestClient SetEndpoint(string endpointUrl)
+        public RestClient endpoint = null;
+       
+        public RestClient SetEndpoint(string endpointUrl)
         {
             endpoint = new RestClient(endpointUrl);
             return endpoint;
@@ -60,7 +47,7 @@ namespace FunctionalTests.Helpers
 
 
 
-        internal static IRestResponse Post(string url,string json)
+        internal static IRestResponse Post(string url,string json, string touchPointId, string subscriptionKey)
         {
             try
             {
@@ -68,17 +55,14 @@ namespace FunctionalTests.Helpers
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", testTouchpointId);
-                request.AddHeader("Ocp-Apim-Subscription-Key", testSubscriptionKey);
+                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
                 return response;
             }
             catch (Exception e) { throw e; }
         }
-
-
-
 
 
         internal static IRestResponse Patch(string url, string json,string id)
@@ -88,8 +72,8 @@ namespace FunctionalTests.Helpers
                 var client = new RestClient(url + id);
                 var request = new RestRequest(Method.PATCH);
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", testTouchpointId);
-                request.AddHeader("Ocp-Apim-Subscription-Key", testSubscriptionKey);
+                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
                 return response;
@@ -97,15 +81,15 @@ namespace FunctionalTests.Helpers
             catch (Exception e) { throw e; }
         }
 
-        internal static IRestResponse Get(string url)
+        internal static IRestResponse Get(string url, string touchPointId, string subscriptionKey)
         {
             try
             {
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.GET);
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", testTouchpointId);
-                request.AddHeader("Ocp-Apim-Subscription-Key", testSubscriptionKey);
+                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 IRestResponse response = client.Execute(request);
                 return response;
             }
