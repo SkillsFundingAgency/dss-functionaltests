@@ -9,21 +9,24 @@ using System.Linq;
 using System.Net;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using System.Configuration; 
+using Newtonsoft.Json.Linq;
+
+
 
 namespace FunctionalTests.StepDefs
 {
     [Binding]
-    public class PostSteps
+    public class Steps
     {
 
-        private readonly RestHelper Rest = new RestHelper();
         private IRestResponse response;
-        private string baseUrl = "https://pp.api.nationalcareersservice.org.uk/";
+        private string baseUrl = "https://test.api.nationalcareersservice.org.uk/";
         private string url;
         private string json2;
         private string customerId;
         private string adviserDetailId;
-        private string addressId;
+        private string addressId;   
         private string contactId;
         private string interactionId;
         private string actionPlanId;
@@ -48,6 +51,9 @@ namespace FunctionalTests.StepDefs
                 customerId = actualVals["CustomerId"];
             }
         }
+
+
+
 
         [Given(@"I post an adviser with the following details:")]
         public void GivenIPostAnAdviserWithTheFollowingDetails(Table table)
@@ -229,33 +235,21 @@ namespace FunctionalTests.StepDefs
         public void WhenIPatchTheFollowing(Table table)
         {
             Dictionary<string, string> customer = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            customerId = customer.FirstOrDefault().Value;   
-            var x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
+            customerId = customer.FirstOrDefault().Value;
+            Dictionary<string, string> x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
             json2 = JsonConvert.SerializeObject(x);
             response = RestHelper.Patch(url,json2,customerId);
 
         }
 
-        [When(@"I patch the address:")]
-        public void WhenIPatchTheAddress(Table table)
-        {
-            Dictionary<string, string> address = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            addressId = address.FirstOrDefault().Value;
-            var x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
-            json2 = JsonConvert.SerializeObject(x);
-            response = RestHelper.Patch(url, json2, addressId);
-        }
 
-        [When(@"I patch the ActionPlan:")]
-        public void WhenIPatchTheActionPlan(Table table)
-        {
-            Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            actionPlanId = dict.FirstOrDefault().Value;
-            var x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
-            json2 = JsonConvert.SerializeObject(x);
-            response = RestHelper.Patch(url, json2, actionPlanId);
-        }
 
+        //[When(@"I get a Customer by ID")]
+        //public async void WhenIGetACustomerByID()
+        //{
+        //    url = baseUrl + "customers/api/customers/" + customerId;
+        //    response = await RestHelper.GetAsync(url);
+        //}
 
         [When(@"I get a Customer by ID")]
         public void WhenIGetACustomerByID()
@@ -264,12 +258,32 @@ namespace FunctionalTests.StepDefs
             response = RestHelper.Get(url);
         }
 
+        [When(@"I search for:")]
+        public void WhenISearchFor(Table table)
+        {
+            Dictionary<string, string> dict = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
+            
+            url = baseUrl + "customers/api/CustomerSearch/?" + dict["parameter1"] + "=" + CheckForSpaces(dict["parameter2"]);
+            if (!string.IsNullOrEmpty(GetKey(dict, "parameter3")))
+            {
+                url = url + "&" + dict["parameter3"] + "=" + CheckForSpaces(dict["parameter4"]);
+            }
+                if (!string.IsNullOrEmpty(GetKey(dict, "parameter5")))
+                {
+                    url = url + "&" + dict["parameter5"] + "=" + CheckForSpaces(dict["parameter6"]);
+                }
+
+            response = RestHelper.Get(url);
+        }
+
+
         [When(@"I get an Action by ID")]
         public void WhenIGetAnActionByID()
         {
             url = baseUrl + "actions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/actions/" + actionId;
             response = RestHelper.Get(url);
         }
+
 
         [When(@"I get an ActionPlan by ID")]
         public void WhenIGetAnActionPlanByID()
@@ -347,8 +361,9 @@ namespace FunctionalTests.StepDefs
         [Then(@"the response body should contain:")]
         public void ThenMyBindingShouldHaveTheFollowingObjects(Table table)
         {
-            Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
             var expectedVals = new Dictionary<string, string>();
+            var actualVals = new Dictionary<string, string>();  
+            actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
             foreach (var row in table.Rows)
             {
                 expectedVals.Add(row[0], row[1]);
@@ -356,7 +371,35 @@ namespace FunctionalTests.StepDefs
             checkResults(expectedVals,actualVals).Should().Be(true);
         }
 
-  
+
+        [Then(@"all returned Customers should contain:")]
+        public void ThenAllReturnedCustomersShouldContain(Table table)
+        {
+            var dictionary = ToDictionary(table);
+
+            var fName = GetKey(dictionary, "FamilyName");
+            var gName = GetKey(dictionary, "GivenName");
+            var uln = GetKey(dictionary, "UniqueLearnerNumber");
+            var dob = GetKey(dictionary, "DateOfBirth");
+
+            List<Customer> customers = JsonConvert.DeserializeObject<List<Customer>>(response.Content);
+
+            foreach(Customer c in customers)
+            {
+                if (!string.IsNullOrEmpty(gName))  { c.GivenName.ToLower().Contains(gName.ToLower()).Should().BeTrue(); }
+                if (!string.IsNullOrEmpty(fName)) { c.FamilyName.ToLower().Contains(fName.ToLower()).Should().BeTrue(); }
+                if (!string.IsNullOrEmpty(uln)) { c.UniqueLearnerNumber.ToLower().Contains(uln.ToLower()).Should().BeTrue(); }
+                if (!string.IsNullOrEmpty(dob)) { c.DateofBirth.ToLower().Contains(dob.ToLower()).Should().BeTrue(); }
+
+            }
+        }
+
+        public bool CheckFamilyName(string name)
+        {
+            return true;
+        }
+
+
 
         [Then(@"the error message should be ""(.*)""")]
         public void ThenTheErrorMessageShouldBe(string expectedMessage)
@@ -364,6 +407,23 @@ namespace FunctionalTests.StepDefs
             response.Content.Should().Contain(expectedMessage);
         }
 
+        [When(@"I post a Customer with '(.*)' and  '(.*)' and '(.*)' and '(.*)'")]
+        public void WhenIPostACustomerWithAndAndAnd(string GivenName, string FamilyName, string DateofBirth, string UniqueLearnerNumber)
+        {
+            url = baseUrl + "customers/api/customers/";
+            var customer = new Customer();
+            customer.GivenName = GivenName;
+            customer.FamilyName = FamilyName;
+            customer.DateofBirth = DateofBirth;
+            customer.UniqueLearnerNumber = UniqueLearnerNumber;
+            json2 = JsonConvert.SerializeObject(customer);
+            response = RestHelper.Post(url, json2);
+            if (response.IsSuccessful)
+            {
+                Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+                customerId = actualVals["CustomerId"];
+            }
+        }
 
 
         private bool checkResults(Dictionary<string, string> expectedVals, Dictionary<string, string> actualVals)
@@ -382,5 +442,26 @@ namespace FunctionalTests.StepDefs
             return true;
         }
 
+        public static Dictionary<string, string> ToDictionary(Table table)
+
+        {
+            var dictionary = new Dictionary<string, string>();
+            foreach (var row in table.Rows)
+            {
+                dictionary.Add(row[0], row[1]);
+            }
+            return dictionary;
+        }
+
+        public static string CheckForSpaces(string s)
+        {
+            string[] words = s.Split('+');
+            return words[0];
+        }
+
+        private static string GetKey(IReadOnlyDictionary<string, string> dictValues, string keyValue)
+        {
+            return dictValues.ContainsKey(keyValue) ? dictValues[keyValue] : "";
+        }
     }
 }
