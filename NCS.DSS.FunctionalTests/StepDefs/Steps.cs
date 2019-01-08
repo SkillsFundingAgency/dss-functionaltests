@@ -20,7 +20,6 @@ namespace FunctionalTests.StepDefs
     public class Steps
     {
         private EnvironmentSettings envSettings = new EnvironmentSettings();
-        private readonly RestHelper Rest = new RestHelper();
         private IRestResponse response;
         private string url;
         private string json2;

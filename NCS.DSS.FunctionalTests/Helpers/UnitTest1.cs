@@ -14,256 +14,217 @@ namespace NCS.DSS.FunctionalTests.Helpers
     [TestClass]
     public class UnitTest1
     {
-        private EnvironmentSettings envSettings = new EnvironmentSettings();
+        //[TestMethod]
+        //public void TestCreateRandomUsers()
+        //{
+        //    string firstName;
+        //    using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customerData.txt"))
 
-        [TestMethod]
-        public void TestCreateRandomUsers()
-        {
-            string firstName;
-            if (envSettings.IsRunningInTfsPipeline)
-            {
-                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsers");
-                return;
-            }
+        //        for (int i = 0; i < 5000; i++)
+        //        {
+        //            string part1 = RandomNumber(10000, 99999).ToString();
+        //            string part2 = RandomNumber(00001, 99999).ToString();
+        //            string uniqueLearnerNum = part1 + part2;
 
-            return;
+        //            if (i % 2 == 0)
+        //            {
+        //                firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Male);
+        //            }
+        //            else
+        //            {
+        //                firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Female);
+        //            }
 
-            using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customerData.txt"))
+        //            string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
 
-                for (int i = 0; i < 5000; i++)
-                {
-                    string part1 = RandomNumber(10000, 99999).ToString();
-                    string part2 = RandomNumber(00001, 99999).ToString();
-                    string uniqueLearnerNum = part1 + part2;
+        //            Random r = new Random();
+        //            DateTime rDate = new DateTime(r.Next(1960, 2004), r.Next(1, 12), r.Next(1, 28));
+        //            String dateOfBirth = rDate.ToString().Replace("/", "-");
 
-                    if (i % 2 == 0)
-                    {
-                        firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Male);
-                    }
-                    else
-                    {
-                        firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Female);
-                    }
+        //            string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
 
-                    string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
+        //            Customer customer = new Customer();
+        //            customer.GivenName = firstName;
+        //            customer.FamilyName = lastName;
+        //            customer.DateofBirth = dateOfBirth;
+        //            customer.UniqueLearnerNumber = uniqueLearnerNum;
 
-                    Random r = new Random();
-                    DateTime rDate = new DateTime(r.Next(1960, 2004), r.Next(1, 12), r.Next(1, 28));
-                    String dateOfBirth = rDate.ToString().Replace("/", "-");
+        //            string json = JsonConvert.SerializeObject(customer);
+        //            IRestResponse response = RestHelper.Post(url, json);
+        //            if (response.IsSuccessful)
+        //            {
+        //                writetext.WriteLine(firstName + "," + lastName + "," + dateOfBirth + "" + uniqueLearnerNum);
 
-                    string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
+        //            }
+        //        }
+        //}
 
-                    Customer customer = new Customer();
-                    customer.GivenName = firstName;
-                    customer.FamilyName = lastName;
-                    customer.DateofBirth = dateOfBirth;
-                    customer.UniqueLearnerNumber = uniqueLearnerNum;
+        //[TestMethod]
+        //public void TestCreateRandomUsersSameFirstName()
+        //{
+        //    string firstName;
+        //    using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersGivenName.txt"))
 
-                    string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json,envSettings.TouchPointId, envSettings.SubscriptionKey);
-                    if (response.IsSuccessful)
-                    {
-                        writetext.WriteLine(firstName + "," + lastName + "," + dateOfBirth + "" + uniqueLearnerNum);
+        //        for (int i = 0; i < 50; i++)
+        //        {
 
-                    }
-                }
-        }
+        //            string part1 = RandomNumber(10000, 99999).ToString();
+        //            string part2 = RandomNumber(00001, 99999).ToString();
+        //            string uniqueLearnerNum = part1 + part2;             
+        //            firstName = "Bagpuss";//Zippo
+        //            string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
 
-        [TestMethod]
-        public void TestCreateRandomUsersSameFirstName()
-        {
-            string firstName;
-            if (envSettings.IsRunningInTfsPipeline)
-            {
-                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsersSameFirstName");
-                return;
-            }
+        //            Random r = new Random();
+        //            DateTime rDate = new DateTime(r.Next(1960, 2004), r.Next(1, 12), r.Next(1, 28));
+        //            String dateOfBirth = rDate.ToString().Replace("/", "-");
 
-            return;
-            using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersGivenName.txt"))
+        //            string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
 
-                for (int i = 0; i < 50; i++)
-                {
+        //            Customer customer = new Customer();
+        //            customer.GivenName = firstName;
+        //            customer.FamilyName = lastName;
+        //            customer.DateofBirth = dateOfBirth;
+        //            customer.UniqueLearnerNumber = uniqueLearnerNum;
 
-                    string part1 = RandomNumber(10000, 99999).ToString();
-                    string part2 = RandomNumber(00001, 99999).ToString();
-                    string uniqueLearnerNum = part1 + part2;             
-                    firstName = "Bagpuss";//Zippo
-                    string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
+        //            string json = JsonConvert.SerializeObject(customer);
+        //            IRestResponse response = RestHelper.Post(url, json);
+        //            if (response.IsSuccessful)
+        //            {
+        //                writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
+        //            }
+        //        }
+        //}
 
-                    Random r = new Random();
-                    DateTime rDate = new DateTime(r.Next(1960, 2004), r.Next(1, 12), r.Next(1, 28));
-                    String dateOfBirth = rDate.ToString().Replace("/", "-");
+        //[TestMethod]
+        //public void TestCreateRandomUsersSameLastName()
+        //{
+        //    string firstName;
+        //    using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersFamilyName.txt"))
 
-                    string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
+        //        for (int i = 0; i < 50; i++)
+        //        {
 
-                    Customer customer = new Customer();
-                    customer.GivenName = firstName;
-                    customer.FamilyName = lastName;
-                    customer.DateofBirth = dateOfBirth;
-                    customer.UniqueLearnerNumber = uniqueLearnerNum;
+        //            string part1 = RandomNumber(10000, 99999).ToString();
+        //            string part2 = RandomNumber(00001, 99999).ToString();
+        //            string uniqueLearnerNum = part1 + part2;
 
-                    string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json, envSettings.TouchPointId, envSettings.SubscriptionKey);
-                    if (response.IsSuccessful)
-                    {
-                        writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
-                    }
-                }
-        }
+        //            if (i % 2 == 0)
+        //            {
+        //                firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Male);
+        //            }
+        //            else
+        //            {
+        //                firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Female);
+        //            }
 
-        [TestMethod]
-        public void TestCreateRandomUsersSameLastName()
-        {
-            string firstName;
-            if (envSettings.IsRunningInTfsPipeline)
-            {
-                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsersSameLastName");
-                return;
-            }
+        //            string lastName = "Zebedee";
 
-            return;
+        //            Random r = new Random();
+        //            DateTime rDate = new DateTime(r.Next(1960, 2004), r.Next(1, 12), r.Next(1, 28));
+        //            String dateOfBirth = rDate.ToString().Replace("/", "-");
 
-            using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersFamilyName.txt"))
+        //            string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
 
-                for (int i = 0; i < 50; i++)
-                {
+        //            Customer customer = new Customer();
+        //            customer.GivenName = firstName;
+        //            customer.FamilyName = lastName;
+        //            customer.DateofBirth = dateOfBirth;
+        //            customer.UniqueLearnerNumber = uniqueLearnerNum;
 
-                    string part1 = RandomNumber(10000, 99999).ToString();
-                    string part2 = RandomNumber(00001, 99999).ToString();
-                    string uniqueLearnerNum = part1 + part2;
-
-                    if (i % 2 == 0)
-                    {
-                        firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Male);
-                    }
-                    else
-                    {
-                        firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Female);
-                    }
-
-                    string lastName = "Zebedee";
-
-                    Random r = new Random();
-                    DateTime rDate = new DateTime(r.Next(1960, 2004), r.Next(1, 12), r.Next(1, 28));
-                    String dateOfBirth = rDate.ToString().Replace("/", "-");
-
-                    string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
-
-                    Customer customer = new Customer();
-                    customer.GivenName = firstName;
-                    customer.FamilyName = lastName;
-                    customer.DateofBirth = dateOfBirth;
-                    customer.UniqueLearnerNumber = uniqueLearnerNum;
-
-                    string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json, envSettings.TouchPointId, envSettings.SubscriptionKey);
-                    if (response.IsSuccessful)
-                    {
-                        writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
-                    }
-                }
-        }
+        //            string json = JsonConvert.SerializeObject(customer);
+        //            IRestResponse response = RestHelper.Post(url, json);
+        //            if (response.IsSuccessful)
+        //            {
+        //                writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
+        //            }
+        //        }
+        //}
 
 
-        [TestMethod]
-        public void TestCreateRandomUsersSameDoB()
-        {
-            string firstName;
-            if (envSettings.IsRunningInTfsPipeline)
-            {
-                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsersSameDoB");
-                return;
-            }
+        //[TestMethod]
+        //public void TestCreateRandomUsersSameDoB()
+        //{
+        //    string firstName;
+        //    using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersDateOfBirth.txt"))
 
-            return;
+        //        for (int i = 0; i < 40; i++)
+        //        {
 
-            using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersDateOfBirth.txt"))
+        //            string part1 = RandomNumber(10000, 99999).ToString();
+        //            string part2 = RandomNumber(00001, 99999).ToString();
+        //            string uniqueLearnerNum = part1 + part2;
 
-                for (int i = 0; i < 40; i++)
-                {
+        //            if (i % 2 == 0)
+        //            {
+        //                firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Male);
+        //            }
+        //            else
+        //            {
+        //                firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Female);
+        //            }
 
-                    string part1 = RandomNumber(10000, 99999).ToString();
-                    string part2 = RandomNumber(00001, 99999).ToString();
-                    string uniqueLearnerNum = part1 + part2;
-
-                    if (i % 2 == 0)
-                    {
-                        firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Male);
-                    }
-                    else
-                    {
-                        firstName = RandomNameGenerator.NameGenerator.GenerateFirstName(Gender.Female);
-                    }
-
-                    string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
+        //            string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
 
                     
-                    String dateOfBirth = "2005-11-01";
+        //            String dateOfBirth = "2005-11-01";
 
-                    string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
+        //            string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
 
-                    Customer customer = new Customer();
-                    customer.GivenName = firstName;
-                    customer.FamilyName = lastName;
-                    customer.DateofBirth = dateOfBirth;
-                    customer.UniqueLearnerNumber = uniqueLearnerNum;
+        //            Customer customer = new Customer();
+        //            customer.GivenName = firstName;
+        //            customer.FamilyName = lastName;
+        //            customer.DateofBirth = dateOfBirth;
+        //            customer.UniqueLearnerNumber = uniqueLearnerNum;
 
-                    string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json, envSettings.TouchPointId, envSettings.SubscriptionKey);
-                    if (response.IsSuccessful)
-                    {
-                        writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
-                    }
-                }
-        }
+        //            string json = JsonConvert.SerializeObject(customer);
+        //            IRestResponse response = RestHelper.Post(url, json);
+        //            if (response.IsSuccessful)
+        //            {
+        //                writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
+        //            }
+        //        }
+        //}
 
-        [TestMethod]
-        public void TestDBConnection()
-        {
-            if (envSettings.IsRunningInTfsPipeline)
-            {
-                Console.WriteLine("Pipeline run detected - exiting test: TestDBConnection");
-                return;
-            }
+        //[TestMethod]
+        //public void TestDBConnection()
+        //{
 
-            return;
-            try
-            {
-                DataHelper p = new DataHelper();
-                p.GetStartedDemo().Wait();
-            }
-            catch (DocumentClientException de)
-            {
-                Exception baseException = de.GetBaseException();
-                Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
-            }
-            catch (Exception e)
-            {
-                Exception baseException = e.GetBaseException();
-                Console.WriteLine("Error: {0}, Message: {1}", e.Message, baseException.Message);
-            }
-            finally
-            {
-                Console.WriteLine("End of demo, press any key to exit.");
-                Console.ReadKey();
-            }
+        //    try
+        //    {
+        //        DataHelper p = new DataHelper();
+        //        p.GetStartedDemo().Wait();
+        //    }
+        //    catch (DocumentClientException de)
+        //    {
+        //        Exception baseException = de.GetBaseException();
+        //        Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Exception baseException = e.GetBaseException();
+        //        Console.WriteLine("Error: {0}, Message: {1}", e.Message, baseException.Message);
+        //    }
+        //    finally
+        //    {
+        //        Console.WriteLine("End of demo, press any key to exit.");
+        //        Console.ReadKey();
+        //    }
 
 
 
 
 
 
-        }
+        //}
 
 
 
 
-        public int RandomNumber(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
+        //public int RandomNumber(int min, int max)
+        //{
+        //    Random random = new Random();
+        //    return random.Next(min, max);
+        //}
     
     }
 }

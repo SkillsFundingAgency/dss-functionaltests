@@ -6,3 +6,4 @@
 /NCS.DSS.FunctionalTests/Features/Customer/CreateData.feature
 /NCS.DSS.FunctionalTests/Features/Customer/CreateData.feature.cs
 /FunctionalTests.playlist
+/NCS.DSS.FunctionalTests/appsettings.local.json

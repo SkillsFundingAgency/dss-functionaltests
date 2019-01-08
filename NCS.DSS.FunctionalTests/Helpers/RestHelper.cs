@@ -17,46 +17,17 @@ namespace FunctionalTests.Helpers
             return endpoint;
         }
 
-        //public static async System.Threading.Tasks.Task<string> GetQueryAsync(string query)
-        //{
 
-        //    var request = new RestRequest(query, Method.GET);
-        //    var cancellationTokenSource = new CancellationTokenSource();
-
-        //    IRestResponse response = await endpoint.ExecuteTaskAsync(request, cancellationTokenSource.Token);
-
-        //    var content = response.Content; // raw content as string
-        //    return content;
-          
-        //}
-
-        //public void Update(string query, string price)
-        //{
-        //    var request = new RestRequest(query, Method.POST) { RequestFormat = DataFormat.Json };
-        //    var body = ("");
-        //    request.AddParameter("application/json", body, ParameterType.RequestBody);
-        //    endpoint.Execute(request);
-        //}
-
-        //public void Delete(string query)
-        //{
-        //    var request = new RestRequest(query, Method.DELETE);
-        //    endpoint.Execute(request);
-        //}
-
-
-
-
-        internal static IRestResponse Post(string url,string json, string touchPointId, string subscriptionKey)
+        internal static IRestResponse Post(string url, string json, string touchPointId, string subscriptionKey)
         {
             Console.WriteLine("Attempt to POST: " + url);
             try
             {
-                var cancellationTokenSource = new CancellationTokenSource();
+
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("TouchpointId", touchPointId);
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
@@ -74,7 +45,7 @@ namespace FunctionalTests.Helpers
                 var client = new RestClient(url + id);
                 var request = new RestRequest(Method.PATCH);
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("TouchpointId", touchPointId);
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
@@ -91,7 +62,7 @@ namespace FunctionalTests.Helpers
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.GET);
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", "9000000000");
+                request.AddHeader("TouchpointId", touchPointId);
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 IRestResponse response = client.Execute(request);
                 return response;
@@ -119,17 +90,17 @@ namespace FunctionalTests.Helpers
             return tcs.Task;
         }
 
-/*        internal static async Task<IRestResponse> GetAsync(string url)
-        {
-            var client = new RestClient(url);
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("cache-control", "no-cache");
-            request.AddHeader("TouchpointId", testTouchpointId);
-            request.AddHeader("Ocp-Apim-Subscription-Key", testSubscriptionKey);
-            IRestResponse response = await client.ExecuteTaskAsync(request);
-            return response;
-        }
-*/
+        //internal static async Task<IRestResponse> GetAsync(string url)
+        //{
+        //    var client = new RestClient(url);
+        //    var request = new RestRequest(Method.GET);
+        //    request.AddHeader("cache-control", "no-cache");
+        //    request.AddHeader("TouchpointId", testTouchpointId);
+        //    request.AddHeader("Ocp-Apim-Subscription-Key", testSubscriptionKey);
+        //    IRestResponse response = await client.ExecuteTaskAsync(request);
+        //    return response;
+        //}
+
     }
 
  
