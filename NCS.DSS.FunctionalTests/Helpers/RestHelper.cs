@@ -65,7 +65,7 @@ namespace FunctionalTests.Helpers
         }
 
 
-        internal static IRestResponse Patch(string url, string json,string id)
+        internal static IRestResponse Patch(string url, string json, string touchPointId, string subscriptionKey, string id)
         {
             try
             {
@@ -116,7 +116,7 @@ namespace FunctionalTests.Helpers
             return tcs.Task;
         }
 
-        internal static async Task<IRestResponse> GetAsync(string url)
+/*        internal static async Task<IRestResponse> GetAsync(string url)
         {
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
@@ -126,7 +126,7 @@ namespace FunctionalTests.Helpers
             IRestResponse response = await client.ExecuteTaskAsync(request);
             return response;
         }
-
+*/
     }
 
  

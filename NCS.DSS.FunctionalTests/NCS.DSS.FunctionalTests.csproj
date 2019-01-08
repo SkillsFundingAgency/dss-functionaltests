@@ -228,11 +228,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Customer\CreateData.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CreateData.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Customer\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -411,10 +406,6 @@
     <None Include="Features\Contact\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Customer\CreateData.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateData.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Customer\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
