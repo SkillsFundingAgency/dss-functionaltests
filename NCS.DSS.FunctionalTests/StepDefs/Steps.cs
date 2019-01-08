@@ -19,9 +19,8 @@ namespace FunctionalTests.StepDefs
     [Binding]
     public class Steps
     {
-
+        private EnvironmentSettings envSettings = new EnvironmentSettings();
         private IRestResponse response;
-        private string baseUrl = "https://test.api.nationalcareersservice.org.uk/";
         private string url;
         private string json2;
         private string customerId;
@@ -41,10 +40,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post a Customer with the following details:")]
         public void GivenIPostACustomerWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "customers/api/customers/";
+            url = envSettings.BaseUrl + "customers/api/customers/";
             var customer = table.CreateInstance<Customer>();
             json2 = JsonConvert.SerializeObject(customer);
-            response = RestHelper.Post(url,json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -58,10 +57,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an adviser with the following details:")]
         public void GivenIPostAnAdviserWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "adviserdetails/api/AdviserDetails";
+            url = envSettings.BaseUrl + "adviserdetails/api/AdviserDetails";
             var adviser = table.CreateInstance<Adviser>();
             json2 = JsonConvert.SerializeObject(adviser);
-            response = RestHelper.Post(url,json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -72,10 +71,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an Interaction with the following details:")]
         public void GivenIPostAnInteractionWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "interactions/api/Customers/" + customerId +  "/Interactions/";
+            url = envSettings.BaseUrl + "interactions/api/Customers/" + customerId + "/Interactions/";
             var interaction = table.CreateInstance<Interaction>();
             json2 = JsonConvert.SerializeObject(interaction);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> interactionDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -86,10 +85,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an Address with the following details:")]
         public void GivenIPostAnAddressWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "addresses/api/Customers/" + customerId + "/Addresses/";
+            url = envSettings.BaseUrl + "addresses/api/Customers/" + customerId + "/Addresses/";
             var address = table.CreateInstance<Address>();
             json2 = JsonConvert.SerializeObject(address);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> addressDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -100,10 +99,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post a Contact with the following details:")]
         public void GivenIPostAContactWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/";
+            url = envSettings.BaseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/";
             var contact = table.CreateInstance<Contact>();
             json2 = JsonConvert.SerializeObject(contact);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> contactDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -115,10 +114,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an ActionPlan with the following details:")]
         public void GivenIPostAnActionPlanWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "actionplans/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/";
+            url = envSettings.BaseUrl + "actionplans/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/";
             var actionPlan = table.CreateInstance<ActionPlan>();
             json2 = JsonConvert.SerializeObject(actionPlan);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -129,10 +128,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an Action with the following details:")]
         public void GivenIPostAnActionWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "actions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/actions/";
+            url = envSettings.BaseUrl + "actions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/actions/";
             var action = table.CreateInstance<NCS.DSS.FunctionalTests.Models.Action>();
             json2 = JsonConvert.SerializeObject(action);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -144,10 +143,10 @@ namespace FunctionalTests.StepDefs
         [When(@"I post a DiversityDetail with the following details:")]
         public void WhenIPostADiversityDetailWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
+            url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
             var diversity = table.CreateInstance<Diversity>();
             json2 = JsonConvert.SerializeObject(diversity);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -159,10 +158,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post a session with the following details:")]
         public void GivenIPostASessionWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "sessions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/sessions/";
+            url = envSettings.BaseUrl + "sessions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/sessions/";
             var session = table.CreateInstance<Session>();
             json2 = JsonConvert.SerializeObject(session);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -174,10 +173,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post a goal with the following details:")]
         public void GivenIPostAGoalWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "goals/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/goals/";
+            url = envSettings.BaseUrl + "goals/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/goals/";
             var goal = table.CreateInstance<Goal>();
             json2 = JsonConvert.SerializeObject(goal);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -189,10 +188,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post a webchat with the following details:")]
         public void GivenIPostAWebchatWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/";
+            url = envSettings.BaseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/";
             var webchat = table.CreateInstance<WebChat>();
             json2 = JsonConvert.SerializeObject(webchat);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -203,10 +202,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an outcome with the following details:")]
         public void GivenIPostAnOutcomeWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "outcomes/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/outcomes/";
+            url = envSettings.BaseUrl + "outcomes/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/outcomes/";
             var outcome = table.CreateInstance<Outcome>();
             json2 = JsonConvert.SerializeObject(outcome);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -217,10 +216,10 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an subscription with the following details:")]
         public void GivenIPostASubscriptionWithTheFollowingDetails(Table table)
         {
-            url = baseUrl + "subscriptions/api/Customers/" + customerId + "/subscriptions/";
+            url = envSettings.BaseUrl + "subscriptions/api/Customers/" + customerId + "/subscriptions/";
             var subscription = table.CreateInstance<Subscription>();
             json2 = JsonConvert.SerializeObject(subscription);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -238,7 +237,7 @@ namespace FunctionalTests.StepDefs
             customerId = customer.FirstOrDefault().Value;
             Dictionary<string, string> x = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
             json2 = JsonConvert.SerializeObject(x);
-            response = RestHelper.Patch(url,json2,customerId);
+            response = RestHelper.Patch(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey, customerId);
 
         }
 
@@ -254,98 +253,98 @@ namespace FunctionalTests.StepDefs
         [When(@"I get a Customer by ID")]
         public void WhenIGetACustomerByID()
         {
-            url = baseUrl + "customers/api/customers/" + customerId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "customers/api/customers/" + customerId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I search for:")]
         public void WhenISearchFor(Table table)
         {
             Dictionary<string, string> dict = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
-            
-            url = baseUrl + "customers/api/CustomerSearch/?" + dict["parameter1"] + "=" + CheckForSpaces(dict["parameter2"]);
+
+            url = envSettings.BaseUrl + "customers/api/CustomerSearch/?" + dict["parameter1"] + "=" + CheckForSpaces(dict["parameter2"]);
             if (!string.IsNullOrEmpty(GetKey(dict, "parameter3")))
             {
                 url = url + "&" + dict["parameter3"] + "=" + CheckForSpaces(dict["parameter4"]);
             }
-                if (!string.IsNullOrEmpty(GetKey(dict, "parameter5")))
-                {
-                    url = url + "&" + dict["parameter5"] + "=" + CheckForSpaces(dict["parameter6"]);
-                }
+            if (!string.IsNullOrEmpty(GetKey(dict, "parameter5")))
+            {
+                url = url + "&" + dict["parameter5"] + "=" + CheckForSpaces(dict["parameter6"]);
+            }
 
-            response = RestHelper.Get(url);
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
 
         [When(@"I get an Action by ID")]
         public void WhenIGetAnActionByID()
         {
-            url = baseUrl + "actions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/actions/" + actionId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "actions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/actions/" + actionId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
 
         [When(@"I get an ActionPlan by ID")]
         public void WhenIGetAnActionPlanByID()
         {
-            url = baseUrl + "actionplans/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "actionplans/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get an Address by ID")]
         public void WhenIGetAnAddressByID()
         {
-            url = baseUrl + "addresses/api/Customers/" + customerId + "/Addresses/" + addressId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "addresses/api/Customers/" + customerId + "/Addresses/" + addressId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get an Adviser by ID")]
         public void WhenIGetAnAdviserByID()
         {
-            url = baseUrl + "adviserdetails/api/AdviserDetails/" + adviserDetailId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "adviserdetails/api/AdviserDetails/" + adviserDetailId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get a Contact by ID")]
         public void WhenIGetAContactByID()
         {
-            url = baseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/" + contactId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/" + contactId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get a Goal by ID")]
         public void WhenIGetAGoalByID()
         {
-            url = baseUrl + "goals/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/goals/" + goalId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "goals/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/goals/" + goalId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get an Interaction by ID")]
         public void WhenIGetAnInteractionByID()
         {
-            url = baseUrl + "interactions/api/Customers/" + customerId + "/Interactions/" + interactionId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "interactions/api/Customers/" + customerId + "/Interactions/" + interactionId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get an Outcome by ID")]
         public void WhenIGetAnOutcomeByID()
         {
-            url = baseUrl + "outcomes/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/outcomes/" + outcomeId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "outcomes/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/outcomes/" + outcomeId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get a Session by ID")]
         public void WhenIGetASessionByID()
         {
-            url = baseUrl + "sessions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/sessions/" + sessionId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "sessions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/sessions/" + sessionId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
         [When(@"I get a WebChat by ID")]
         public void WhenIGetAWebChatByID()
         {
-            url = baseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/" + webChatId;
-            response = RestHelper.Get(url);
+            url = envSettings.BaseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/" + webChatId;
+            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
         }
 
 
@@ -362,13 +361,13 @@ namespace FunctionalTests.StepDefs
         public void ThenMyBindingShouldHaveTheFollowingObjects(Table table)
         {
             var expectedVals = new Dictionary<string, string>();
-            var actualVals = new Dictionary<string, string>();  
+            var actualVals = new Dictionary<string, string>();
             actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
             foreach (var row in table.Rows)
             {
                 expectedVals.Add(row[0], row[1]);
             }
-            checkResults(expectedVals,actualVals).Should().Be(true);
+            checkResults(expectedVals, actualVals).Should().Be(true);
         }
 
 
@@ -384,9 +383,9 @@ namespace FunctionalTests.StepDefs
 
             List<Customer> customers = JsonConvert.DeserializeObject<List<Customer>>(response.Content);
 
-            foreach(Customer c in customers)
+            foreach (Customer c in customers)
             {
-                if (!string.IsNullOrEmpty(gName))  { c.GivenName.ToLower().Contains(gName.ToLower()).Should().BeTrue(); }
+                if (!string.IsNullOrEmpty(gName)) { c.GivenName.ToLower().Contains(gName.ToLower()).Should().BeTrue(); }
                 if (!string.IsNullOrEmpty(fName)) { c.FamilyName.ToLower().Contains(fName.ToLower()).Should().BeTrue(); }
                 if (!string.IsNullOrEmpty(uln)) { c.UniqueLearnerNumber.ToLower().Contains(uln.ToLower()).Should().BeTrue(); }
                 if (!string.IsNullOrEmpty(dob)) { c.DateofBirth.ToLower().Contains(dob.ToLower()).Should().BeTrue(); }
@@ -410,14 +409,14 @@ namespace FunctionalTests.StepDefs
         [When(@"I post a Customer with '(.*)' and  '(.*)' and '(.*)' and '(.*)'")]
         public void WhenIPostACustomerWithAndAndAnd(string GivenName, string FamilyName, string DateofBirth, string UniqueLearnerNumber)
         {
-            url = baseUrl + "customers/api/customers/";
+            url = envSettings.BaseUrl + "customers/api/customers/";
             var customer = new Customer();
             customer.GivenName = GivenName;
             customer.FamilyName = FamilyName;
             customer.DateofBirth = DateofBirth;
             customer.UniqueLearnerNumber = UniqueLearnerNumber;
             json2 = JsonConvert.SerializeObject(customer);
-            response = RestHelper.Post(url, json2);
+            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
