@@ -20,12 +20,6 @@
 
 
 
-
-
-
-
-
-
 	Scenario: Patch CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -37,7 +31,7 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| CustomerCharterShownToCustomer | false                |
 		Then there should be a 200 response
@@ -64,14 +58,14 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| ActionPlanDeliveryMethod       | 2                    |
 		Then there should be a 200 response
 		And the response body should contain:
 		| Field                          | Value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
-		| CustomerCharterShownToCustomer | true                |
+		| CustomerCharterShownToCustomer | true                 |
 		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
 		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
 		| ActionPlanDeliveryMethod       | 2                    |
@@ -91,7 +85,7 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| PriorityCustomer               | 2                    |
 		Then there should be a 200 response
@@ -109,7 +103,7 @@
 
 	Scenario: Patch CurrentSituation
 		Given I post an ActionPlan with the following details:
-		| Field                          | Value                |
+		| Field                          | Value                |	
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
 		| CustomerCharterShownToCustomer | true                 |
 		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
@@ -118,7 +112,7 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| CurrentSituation               | updated text here    |
 		Then there should be a 200 response
@@ -134,6 +128,7 @@
 		| CurrentSituation               | updated text here    |
 
 
+
 		Scenario: Patch with invalid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -145,7 +140,7 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| DateActionPlanCreated          | 20166-07-30T09:00:00Z |
 		Then there should be a 422 response
@@ -161,7 +156,7 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| DateActionPlanCreated          | 1					 |
 		Then there should be a 422 response
@@ -177,7 +172,7 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| DateAndTimeCharterShown        | 20181-07-30T09:00:00Z |
 		Then there should be a 422 response
@@ -193,7 +188,7 @@
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the ActionPlan:
+		When I patch the following:
 		| Field                          | Value                |
 		| DateActionPlanSentToCustomer   | 20181-07-30T09:00:00Z |
 		Then there should be a 422 response

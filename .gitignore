@@ -1,8 +1,7 @@
-#local configuration file
-*/appsettings.local.json
-
 /.vs
 /FunctionalTests/.vs/FunctionalTests/v15
 */obj/
 /packages
 */bin/
+/NCS.DSS.FunctionalTests/Features/Customer/CreateData.feature
+/NCS.DSS.FunctionalTests/Features/Customer/CreateData.feature.cs
