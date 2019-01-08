@@ -1,3 +1,6 @@
+#local configuration file
+*/appsettings.local.json
+
 /.vs
 /FunctionalTests/.vs/FunctionalTests/v15
 */obj/
