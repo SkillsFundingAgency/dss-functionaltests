@@ -72,7 +72,7 @@ namespace FunctionalTests.Helpers
 
 
 
-   /*     public static Task<IRestResponse> ExecuteTaskAsync(this RestClient @this, RestRequest request)
+        /*public static Task<IRestResponse> ExecuteTaskAsync(this RestClient @this, RestRequest request)
         {
             if (@this == null)
                 throw new NullReferenceException();
@@ -88,7 +88,7 @@ namespace FunctionalTests.Helpers
             });
 
             return tcs.Task;
-        }
+        }*/
 
         //internal static async Task<IRestResponse> GetAsync(string url)
         //{
