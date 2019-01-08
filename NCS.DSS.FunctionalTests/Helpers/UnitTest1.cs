@@ -14,6 +14,16 @@ namespace NCS.DSS.FunctionalTests.Helpers
     [TestClass]
     public class UnitTest1
     {
+
+      //[TestMethod]
+      //  public void TestDatabaseConnection()
+      //  {
+      //      DataHelper dataHelper = new DataHelper();
+
+      //      dataHelper.GetStartedDemo();
+
+      //  }
+
         //[TestMethod]
         //public void TestCreateRandomUsers()
         //{
@@ -165,7 +175,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         //            string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
 
-                    
+
         //            String dateOfBirth = "2005-11-01";
 
         //            string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
@@ -225,6 +235,6 @@ namespace NCS.DSS.FunctionalTests.Helpers
         //    Random random = new Random();
         //    return random.Next(min, max);
         //}
-    
+
     }
 }
