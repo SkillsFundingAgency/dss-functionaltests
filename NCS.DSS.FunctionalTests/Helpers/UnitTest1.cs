@@ -1,4 +1,5 @@
-﻿using FunctionalTests.Helpers;
+﻿using FunctionalTests;
+using FunctionalTests.Helpers;
 using FunctionalTests.Models;
 using Microsoft.Azure.Documents;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,10 +14,20 @@ namespace NCS.DSS.FunctionalTests.Helpers
     [TestClass]
     public class UnitTest1
     {
+        private EnvironmentSettings envSettings = new EnvironmentSettings();
+
         [TestMethod]
         public void TestCreateRandomUsers()
         {
             string firstName;
+            if (envSettings.IsRunningInTfsPipeline)
+            {
+                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsers");
+                return;
+            }
+
+            return;
+
             using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customerData.txt"))
 
                 for (int i = 0; i < 5000; i++)
@@ -49,7 +60,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
                     customer.UniqueLearnerNumber = uniqueLearnerNum;
 
                     string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json);
+                    IRestResponse response = RestHelper.Post(url, json,envSettings.TouchPointId, envSettings.SubscriptionKey);
                     if (response.IsSuccessful)
                     {
                         writetext.WriteLine(firstName + "," + lastName + "," + dateOfBirth + "" + uniqueLearnerNum);
@@ -62,6 +73,13 @@ namespace NCS.DSS.FunctionalTests.Helpers
         public void TestCreateRandomUsersSameFirstName()
         {
             string firstName;
+            if (envSettings.IsRunningInTfsPipeline)
+            {
+                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsersSameFirstName");
+                return;
+            }
+
+            return;
             using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersGivenName.txt"))
 
                 for (int i = 0; i < 50; i++)
@@ -86,7 +104,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
                     customer.UniqueLearnerNumber = uniqueLearnerNum;
 
                     string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json);
+                    IRestResponse response = RestHelper.Post(url, json, envSettings.TouchPointId, envSettings.SubscriptionKey);
                     if (response.IsSuccessful)
                     {
                         writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
@@ -98,6 +116,14 @@ namespace NCS.DSS.FunctionalTests.Helpers
         public void TestCreateRandomUsersSameLastName()
         {
             string firstName;
+            if (envSettings.IsRunningInTfsPipeline)
+            {
+                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsersSameLastName");
+                return;
+            }
+
+            return;
+
             using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersFamilyName.txt"))
 
                 for (int i = 0; i < 50; i++)
@@ -131,7 +157,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
                     customer.UniqueLearnerNumber = uniqueLearnerNum;
 
                     string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json);
+                    IRestResponse response = RestHelper.Post(url, json, envSettings.TouchPointId, envSettings.SubscriptionKey);
                     if (response.IsSuccessful)
                     {
                         writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
@@ -144,6 +170,14 @@ namespace NCS.DSS.FunctionalTests.Helpers
         public void TestCreateRandomUsersSameDoB()
         {
             string firstName;
+            if (envSettings.IsRunningInTfsPipeline)
+            {
+                Console.WriteLine("Pipeline run detected - exiting test: TestCreateRandomUsersSameDoB");
+                return;
+            }
+
+            return;
+
             using (StreamWriter writetext = new StreamWriter("C:\\Temp\\customersDateOfBirth.txt"))
 
                 for (int i = 0; i < 40; i++)
@@ -176,7 +210,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
                     customer.UniqueLearnerNumber = uniqueLearnerNum;
 
                     string json = JsonConvert.SerializeObject(customer);
-                    IRestResponse response = RestHelper.Post(url, json);
+                    IRestResponse response = RestHelper.Post(url, json, envSettings.TouchPointId, envSettings.SubscriptionKey);
                     if (response.IsSuccessful)
                     {
                         writetext.WriteLine(firstName + " " + lastName + " " + dateOfBirth + " " + uniqueLearnerNum);
@@ -187,7 +221,13 @@ namespace NCS.DSS.FunctionalTests.Helpers
         [TestMethod]
         public void TestDBConnection()
         {
+            if (envSettings.IsRunningInTfsPipeline)
+            {
+                Console.WriteLine("Pipeline run detected - exiting test: TestDBConnection");
+                return;
+            }
 
+            return;
             try
             {
                 DataHelper p = new DataHelper();

@@ -6,7 +6,7 @@ using RestSharp;
 
 namespace FunctionalTests.Helpers
 {
-    public static class RestHelper
+    public class RestHelper
     {
 
         public RestClient endpoint = null;
@@ -49,6 +49,7 @@ namespace FunctionalTests.Helpers
 
         internal static IRestResponse Post(string url,string json, string touchPointId, string subscriptionKey)
         {
+            Console.WriteLine("Attempt to POST: " + url);
             try
             {
                 var cancellationTokenSource = new CancellationTokenSource();
@@ -67,6 +68,7 @@ namespace FunctionalTests.Helpers
 
         internal static IRestResponse Patch(string url, string json, string touchPointId, string subscriptionKey, string id)
         {
+            Console.WriteLine("Attempt to PATCH: " + url);
             try
             {
                 var client = new RestClient(url + id);
@@ -83,6 +85,7 @@ namespace FunctionalTests.Helpers
 
         internal static IRestResponse Get(string url, string touchPointId, string subscriptionKey)
         {
+            Console.WriteLine("Attempt to GET: " + url);
             try
             {
                 var client = new RestClient(url);
@@ -98,7 +101,7 @@ namespace FunctionalTests.Helpers
 
 
 
-        public static Task<IRestResponse> ExecuteTaskAsync(this RestClient @this, RestRequest request)
+   /*     public static Task<IRestResponse> ExecuteTaskAsync(this RestClient @this, RestRequest request)
         {
             if (@this == null)
                 throw new NullReferenceException();
