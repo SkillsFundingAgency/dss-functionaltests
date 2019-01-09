@@ -21,6 +21,8 @@ namespace FunctionalTests.Helpers
         internal static IRestResponse Post(string url, string json, string touchPointId, string subscriptionKey)
         {
             Console.WriteLine("Attempt to POST: " + url);
+            Console.WriteLine("Header value: touchPointId: " + touchPointId);
+            Console.WriteLine("JSON Document: " + json);
             try
             {
 
