@@ -350,7 +350,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="appsettings.json" />
-    <None Include="appsettings.local.json" />
     <None Include="Features\ActionPlan\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
