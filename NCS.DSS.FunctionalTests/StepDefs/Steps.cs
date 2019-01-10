@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using System.Configuration;
@@ -63,8 +64,6 @@ namespace FunctionalTests.StepDefs
             }
             return extractedValue;
         }
-
-
 
         [Given(@"I post a Customer with the following details:")]
         public void GivenIPostACustomerWithTheFollowingDetails(Table table)
@@ -321,7 +320,7 @@ namespace FunctionalTests.StepDefs
         public void WhenISearchFor(Table table)
         {
             Dictionary<string, string> dict = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
-
+ 
             url = envSettings.BaseUrl + "customers/api/CustomerSearch/?" + dict["parameter1"] + "=" + CheckForSpaces(dict["parameter2"]);
             if (!string.IsNullOrEmpty(GetKey(dict, "parameter3")))
             {
@@ -332,7 +331,19 @@ namespace FunctionalTests.StepDefs
                 url = url + "&" + dict["parameter5"] + "=" + CheckForSpaces(dict["parameter6"]);
             }
 
-            response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            var maxTries = 6;
+            var triesSoFar = 0;
+            while (triesSoFar < maxTries)
+            {
+                triesSoFar++;
+                response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    break;
+                }
+                Console.WriteLine("Try" + triesSoFar + " of " + maxTries + " returned response " + response.StatusCode.ToString());
+                Thread.Sleep(1000);
+            }
         }
 
 
