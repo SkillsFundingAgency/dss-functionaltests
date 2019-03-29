@@ -164,7 +164,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         //            string lastName = RandomNameGenerator.NameGenerator.GenerateLastName();
 
-                    
+
         //            String dateOfBirth = "2005-11-01";
 
         //            string url = "https://test.api.nationalcareersservice.org.uk/customers/api/customers/";
@@ -184,37 +184,37 @@ namespace NCS.DSS.FunctionalTests.Helpers
         //        }
         //}
 
-        //[TestMethod]
-        //public void TestDBConnection()
-        //{
+        [TestMethod]
+        public void TestDBConnection()
+        {
 
-        //    try
-        //    {
-        //        DataHelper p = new DataHelper();
-        //        p.GetStartedDemo().Wait();
-        //    }
-        //    catch (DocumentClientException de)
-        //    {
-        //        Exception baseException = de.GetBaseException();
-        //        Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Exception baseException = e.GetBaseException();
-        //        Console.WriteLine("Error: {0}, Message: {1}", e.Message, baseException.Message);
-        //    }
-        //    finally
-        //    {
-        //        Console.WriteLine("End of demo, press any key to exit.");
-        //        Console.ReadKey();
-        //    }
-
-
+            try
+            {
+                DataHelper p = new DataHelper();
+                p.GetStartedDemo().Wait();
+            }
+            catch (DocumentClientException de)
+            {
+                Exception baseException = de.GetBaseException();
+                Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
+            }
+            catch (Exception e)
+            {
+                Exception baseException = e.GetBaseException();
+                Console.WriteLine("Error: {0}, Message: {1}", e.Message, baseException.Message);
+            }
+            finally
+            {
+                Console.WriteLine("End of demo, press any key to exit.");
+                //Console.ReadKey();
+            }
 
 
 
 
-        //}
+
+
+        }
 
 
 
@@ -224,6 +224,6 @@ namespace NCS.DSS.FunctionalTests.Helpers
         //    Random random = new Random();
         //    return random.Next(min, max);
         //}
-    
+
     }
 }

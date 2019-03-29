@@ -1,8 +1,11 @@
-﻿Feature: Post
+﻿
+
+@postV2
+
+Feature: Post
 
 
 
-		@postCustomer
 		Scenario: Post Missing GivenName
 		Given I post a Customer with the following details:
 		| field						 | value                |
@@ -145,7 +148,7 @@
 
 
 
-		Scenario: Post Invalid DateOfRegistration						
+	Scenario: Post Invalid DateOfRegistration						
 		Given I post a Customer with the following details:
 		| field						 | value                |
 		| DateOfRegistration		 | 2048-07-27T16:11:00Z |
@@ -163,7 +166,3 @@
 		Then there should be a 422 response
 		And the error message should be "Family Name is a required field"		
 		
-
-
-
-

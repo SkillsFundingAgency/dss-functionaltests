@@ -1,4 +1,7 @@
-﻿Feature: Post
+﻿
+@postV1
+
+Feature: Post
 
 
 
@@ -11,6 +14,7 @@
 		| Field                      | Value                |
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
+
 
 	Scenario: Post Valid Interaction with all Fields
 		Given I post an Interaction with the following details:
@@ -28,9 +32,6 @@
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 
 
-
-
-
 	Scenario: Post Interaction with missing Channel
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -39,7 +40,6 @@
 		| InteractionType          | 2                                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
-		#And the error message should be "The Channel Field is required."
 
 
 	Scenario: Post Interaction with missing InteractionType
@@ -50,7 +50,6 @@
 		| Channel		           | 2                                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
-		#And the error message should be "The InteractionType Field is required."
 
 
 	Scenario: Post Interaction with invalid AdviserDetailsID
@@ -62,7 +61,6 @@
 		| InteractionType          | 2                                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
-		#And the error message should be "Could not cast or convert from System.String to System.Guid"
 
 
 	Scenario: Post Interaction with invalid DateandTimeOfInteraction
@@ -74,7 +72,6 @@
 		| InteractionType          | 2                                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
-		#And the error message should be "Date and Time Of Interaction must be less the current date/time"
 
 
 
@@ -87,7 +84,6 @@
 		| InteractionType          | 2                                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
-		#And the error message should be "Please supply a valid Channel"
 
 
 	Scenario: Post Interaction with invalid InteractionType
@@ -99,7 +95,6 @@
 		| InteractionType          | 55                                   |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
-		#And the error message should be "Please supply a valid Interaction Type"
 
 
 
@@ -112,7 +107,6 @@
 		| InteractionType          | 55                                   |
 		| LastModifiedDate         | 2033-06-22T16:52:10Z                 |
 		Then there should be a 422 response
-		#And the error message should be "Last Modified Date must be less the current date/time"
 
 
 

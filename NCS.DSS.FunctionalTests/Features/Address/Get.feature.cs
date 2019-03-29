@@ -19,6 +19,8 @@ namespace NCS.DSS.FunctionalTests.Features.Address
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Get")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("getV1")]
     public partial class GetFeature
     {
         
@@ -31,7 +33,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
+                        "getV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -69,10 +73,15 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Get Address by ID")]
+        public virtual void GetAddressByID()
         {
-#line 5
- #line hidden
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Address by ID", null, ((string[])(null)));
+#line 8
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
@@ -82,8 +91,8 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table1.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 6
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
+#line 9
+  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -124,25 +133,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 10
- testRunner.And("I post an Address with the following details:", ((string)(null)), table2, "And ");
-#line hidden
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get Address by ID")]
-        public virtual void GetAddressByID()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Address by ID", null, ((string[])(null)));
-#line 26
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 5
- this.FeatureBackground();
+#line 13
+  testRunner.And("I post an Address with the following details:", ((string)(null)), table2, "And ");
 #line 27
- testRunner.When("I get an Address by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("I get an Address by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -184,7 +180,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
 #line 29
- testRunner.And("the response body should contain:", ((string)(null)), table3, "And ");
+  testRunner.And("the response body should contain:", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

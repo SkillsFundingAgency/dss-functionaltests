@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading;
+﻿using RestSharp;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
-using RestSharp;
-
+using TechTalk.SpecFlow;
 
 namespace FunctionalTests.Helpers
 {
@@ -25,11 +25,31 @@ namespace FunctionalTests.Helpers
 
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.POST);
-                request.AddHeader("Postman-Token", "02abe184-9e77-4428-9092-b2320031027e");
                 request.AddHeader("cache-control", "no-cache");
                 request.AddHeader("TouchpointId", touchPointId);
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-                request.AddParameter("undefined", json, ParameterType.RequestBody);
+
+                if (ScenarioContext.Current["version"].Equals("v2"))
+                {
+                    request.AddHeader("version", "v2");
+
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("subcontractorId"))
+                    {
+                        if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
+                        {
+                            ScenarioContext.Current.Add("subcontractorId", "67576575");
+                        }
+                        request.AddHeader("SubcontractorId", "67576575");
+                    }
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("invalidSubcontractorId"))
+                    {
+                            //ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
+                            request.AddHeader("SubcontractorId", "123456789012345678901234567890123456789012345678901");
+                    }
+                }
+
+
+                    request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
                 return response;
             }
@@ -43,9 +63,26 @@ namespace FunctionalTests.Helpers
             {
                 var client = new RestClient(url + id);
                 var request = new RestRequest(Method.PATCH);
-                request.AddHeader("Postman-Token", "1135482c-17c8-49ec-8793-49de564a3e4e");
                 request.AddHeader("cache-control", "no-cache");
                 request.AddHeader("TouchpointId", touchPointId);
+
+                if (ScenarioContext.Current["version"].Equals("v2"))
+                {
+                    request.AddHeader("version", "v2");
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("subcontractorId"))
+                    {
+                        if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
+                        {
+                            ScenarioContext.Current.Add("subcontractorId", "67576575");
+                            request.AddHeader("SubcontractorId", "67576575");
+                        }
+                    }
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("InvalidSubcontractorId"))
+                    {
+                        ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
+                        request.AddHeader("SubcontractorId", "123456789012345678901234567890123456789012345678901");
+                    }
+                }
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
@@ -60,9 +97,31 @@ namespace FunctionalTests.Helpers
             {
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.GET);
-                request.AddHeader("Postman-Token", "02abe184-9e77-4428-9092-b2320031027e");
+ 
+                if (ScenarioContext.Current["version"].Equals("v2"))
+                {
+                    request.AddHeader("version", "v2");
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("SubcontractorId"))
+                    {
+                        if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
+                        {
+                            ScenarioContext.Current.Add("subcontractorId", "67576575");
+                            request.AddHeader("SubcontractorId", "67576575");
+                        }
+                    }
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("InvalidSubcontractorId"))
+                    {
+                        ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
+                        request.AddHeader("SubcontractorId", "123456789012345678901234567890123456789012345678901");
+                    }
+                }
                 request.AddHeader("cache-control", "no-cache");
                 request.AddHeader("TouchpointId", touchPointId);
+                if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("getV2") || ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("getV2"))
+                {
+                    request.AddHeader("version", "v2");
+                }
+ 
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 IRestResponse response = client.Execute(request);
                 return response;
@@ -90,16 +149,7 @@ namespace FunctionalTests.Helpers
             return tcs.Task;
         }
 
-        //internal static async Task<IRestResponse> GetAsync(string url)
-        //{
-        //    var client = new RestClient(url);
-        //    var request = new RestRequest(Method.GET);
-        //    request.AddHeader("cache-control", "no-cache");
-        //    request.AddHeader("TouchpointId", testTouchpointId);
-        //    request.AddHeader("Ocp-Apim-Subscription-Key", testSubscriptionKey);
-        //    IRestResponse response = await client.ExecuteTaskAsync(request);
-        //    return response;
-        //}
+ 
 
     }
 

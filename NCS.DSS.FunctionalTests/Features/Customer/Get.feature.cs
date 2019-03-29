@@ -19,7 +19,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Get")]
-    [NUnit.Framework.CategoryAttribute("customer")]
+    [NUnit.Framework.CategoryAttribute("getV1")]
     public partial class GetFeature
     {
         
@@ -33,7 +33,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, new string[] {
-                        "customer"});
+                        "getV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -179,195 +179,6 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                         "2018-06-21T14:45:00Z"});
 #line 25
  testRunner.And("the response body should contain:", ((string)(null)), table2, "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get Customer by FamilyName")]
-        public virtual void GetCustomerByFamilyName()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by FamilyName", null, ((string[])(null)));
-#line 43
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table3.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table3.AddRow(new string[] {
-                        "FamilyName",
-                        "Binks"});
-#line 44
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table3, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table4.AddRow(new string[] {
-                        "parameter1",
-                        "FamilyName"});
-            table4.AddRow(new string[] {
-                        "parameter2",
-                        "Binks"});
-#line 48
- testRunner.When("I search for:", ((string)(null)), table4, "When ");
-#line 52
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table5.AddRow(new string[] {
-                        "FamilyName",
-                        "Binks"});
-#line 53
- testRunner.And("all returned Customers should contain:", ((string)(null)), table5, "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get Customers by FamilyName")]
-        public virtual void GetCustomersByFamilyName()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customers by FamilyName", null, ((string[])(null)));
-#line 58
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table6.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table6.AddRow(new string[] {
-                        "FamilyName",
-                        "Bloggs"});
-#line 59
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table6, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table7.AddRow(new string[] {
-                        "GivenName",
-                        "Phil"});
-            table7.AddRow(new string[] {
-                        "FamilyName",
-                        "Banks"});
-#line 63
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table7, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table8.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table8.AddRow(new string[] {
-                        "FamilyName",
-                        "Bloggs"});
-#line 67
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table8, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table9.AddRow(new string[] {
-                        "parameter1",
-                        "FamilyName"});
-            table9.AddRow(new string[] {
-                        "parameter2",
-                        "Bloggs"});
-#line 71
- testRunner.When("I search for:", ((string)(null)), table9, "When ");
-#line 75
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table10.AddRow(new string[] {
-                        "FamilyName",
-                        "Bloggs"});
-#line 76
- testRunner.And("all returned Customers should contain:", ((string)(null)), table10, "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Get Customers by Partial FamilyName")]
-        public virtual void GetCustomersByPartialFamilyName()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customers by Partial FamilyName", null, ((string[])(null)));
-#line 81
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table11.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table11.AddRow(new string[] {
-                        "FamilyName",
-                        "Newton"});
-#line 82
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table11, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table12.AddRow(new string[] {
-                        "GivenName",
-                        "Phil"});
-            table12.AddRow(new string[] {
-                        "FamilyName",
-                        "Newten"});
-#line 86
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table12, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table13.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table13.AddRow(new string[] {
-                        "FamilyName",
-                        "Newtoo"});
-#line 90
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table13, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table14.AddRow(new string[] {
-                        "parameter1",
-                        "FamilyName"});
-            table14.AddRow(new string[] {
-                        "parameter2",
-                        "New"});
-#line 94
- testRunner.When("I search for:", ((string)(null)), table14, "When ");
-#line 98
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table15.AddRow(new string[] {
-                        "FamilyName",
-                        "New"});
-#line 99
- testRunner.And("all returned Customers should contain:", ((string)(null)), table15, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

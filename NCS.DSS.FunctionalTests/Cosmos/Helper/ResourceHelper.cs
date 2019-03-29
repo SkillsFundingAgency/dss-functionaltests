@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using NCS.DSS.FunctionalTests.Cosmos.Provider;
+using NCS.DSS.Action.Cosmos.Provider;
 
-namespace NCS.DSS.FunctionalTests.Cosmos.Helper
+namespace NCS.DSS.Action.Cosmos.Helper
 {
-    //public class ResourceHelper : IResourceHelper
-    //{
+    public class ResourceHelper : IResourceHelper
+    {
         //public async Task<bool> DoesCustomerExist(Guid customerId)
         //{
         //    var documentDbProvider = new DocumentDBProvider();
@@ -37,5 +37,5 @@ namespace NCS.DSS.FunctionalTests.Cosmos.Helper
 
         //    return doesActionPlanExistAndBelongToCustomer;
         //}
-    //}
+    }
 }

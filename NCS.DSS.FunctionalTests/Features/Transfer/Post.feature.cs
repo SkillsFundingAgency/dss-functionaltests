@@ -31,8 +31,7 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,24 +69,90 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add two numbers")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void AddTwoNumbers()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, new string[] {
-                        "mytag"});
-#line 7
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
+#line 3
+ #line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "GivenName",
+                        "Bob"});
+            table1.AddRow(new string[] {
+                        "FamilyName",
+                        "Customer"});
+#line 4
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table2.AddRow(new string[] {
+                        "DateandTimeOfInteraction",
+                        "2018-06-25T11:21:00Z"});
+            table2.AddRow(new string[] {
+                        "Channel",
+                        "2"});
+            table2.AddRow(new string[] {
+                        "InteractionType",
+                        "2"});
+            table2.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-06-22T16:52:10Z"});
 #line 8
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table2, "And ");
+#line hidden
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Transfer")]
+        public virtual void PostTransfer()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Transfer", null, ((string[])(null)));
+#line 15
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table3.AddRow(new string[] {
+                        "OriginatingTouchpointID",
+                        "TouchPoint1"});
+            table3.AddRow(new string[] {
+                        "TargetTouchpointID",
+                        "TouchPoint2"});
+            table3.AddRow(new string[] {
+                        "Context",
+                        "Some context text"});
+            table3.AddRow(new string[] {
+                        "DateandTimeOfTransfer",
+                        "2019-09-12T07:57"});
+            table3.AddRow(new string[] {
+                        "RequestedCallbackTime",
+                        "2019-09-22T07:57"});
+#line 16
+ testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table3, "Given ");
+#line 23
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table4.AddRow(new string[] {
+                        "OriginatingTouchpointID",
+                        "TouchPoint1"});
+            table4.AddRow(new string[] {
+                        "TargetTouchpointID",
+                        "TouchPoint2"});
+            table4.AddRow(new string[] {
+                        "Context",
+                        "Some context text"});
+#line 24
+ testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

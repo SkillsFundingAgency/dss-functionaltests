@@ -1,4 +1,7 @@
-﻿Feature: Post
+﻿
+@postV1
+
+Feature: Post
 
 
 
@@ -17,8 +20,10 @@
 		| Channel                  | 2                      |
 		| InteractionType          | 2                      |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
-
-
+	And I post a session with the following details:
+		| Field                    | Value                  |
+		| DateandTimeOfSession     | 2018-06-21T14:45:00Z   |
+		| VenuePostCode            | NN1 2NN                |
 
 
 	Scenario: Post Valid ActionPlan with all fields
@@ -45,6 +50,8 @@
 		| CurrentSituation               | looking for work     |
 
 
+
+
 	Scenario: Post Valid ActionPlan with only mandatory fields
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |
@@ -60,6 +67,9 @@
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | null			        |
 
+
+
+
 	Scenario: Post ActionPlan with missing DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |
@@ -71,7 +81,10 @@
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		Then there should be a 422 response
-		#And the error message should be "The DateActionPlanCreated field is required."
+
+
+
+
 
 	Scenario: Post ActionPlan with invalid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
@@ -85,4 +98,3 @@
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		Then there should be a 422 response
-		#And the error message should be "Date ActionPlan Created must be less the current date/time."

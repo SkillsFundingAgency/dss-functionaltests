@@ -21,6 +21,10 @@ namespace NCS.DSS.FunctionalTests.Helpers
         public async Task GetStartedDemo()
         {
             this.client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey);
+
+            //var response = await client.ReadDocumentAsync(UriFactory.CreateDocumentUri(databaseId, collectionId, "POCO1"));
+
+
         }
 
 

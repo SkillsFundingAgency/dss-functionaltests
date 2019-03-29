@@ -19,6 +19,8 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Get")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("patchV1")]
     public partial class GetFeature
     {
         
@@ -31,7 +33,9 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
+                        "patchV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +75,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         
         public virtual void FeatureBackground()
         {
-#line 5
+#line 8
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -85,7 +89,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 6
+#line 9
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
         }
@@ -95,14 +99,14 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         public virtual void GetAdviserByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Adviser by ID", null, ((string[])(null)));
-#line 13
+#line 16
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 5
+#line 8
  this.FeatureBackground();
-#line 14
+#line 17
  testRunner.When("I get an Adviser by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
+#line 18
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -117,7 +121,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table2.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 16
+#line 19
  testRunner.And("the response body should contain:", ((string)(null)), table2, "And ");
 #line hidden
             this.ScenarioCleanup();
