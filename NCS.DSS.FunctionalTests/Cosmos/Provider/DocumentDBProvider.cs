@@ -5,221 +5,176 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
-using NCS.DSS.Action.Cosmos.Client;
-using NCS.DSS.Action.Cosmos.Helper;
+//using NCS.DSS.FunctionalTest
+//using NCS.DSS.Customer.Cosmos.Client;
+//using NCS.DSS.Customer.Cosmos.Helper;
+//using NCS.DSS.Customer.Cosmos.Provider;
+//using NCS.DSS.Customer.Models;
 
-namespace NCS.DSS.Action.Cosmos.Provider
+namespace NCS.DSS.FunctionalTests.Cosmos.Provider
 {
-    public class DocumentDBProvider : IDocumentDBProvider
-    {
-        //public async Task<bool> DoesNotificationExist(Guid customerId)
-        //{
-        //    var documentUri = DocumentDBHelper.CreateNotificationDocumentUri(customerId);
+    //public class DocumentDBProvider : IDocumentDBProvider
+    //{
+    //    private readonly DocumentDBHelper _documentDbHelper;
+    //    private readonly DocumentDBClient _databaseClient;
 
-        //    var client = DocumentDBClient.CreateDocumentClient();
+    //    public DocumentDBProvider()
+    //    {
+    //        _documentDbHelper = new DocumentDBHelper();
+    //        _databaseClient = new DocumentDBClient();
+    //    }
 
-        //    if (client == null) 
-        //        return false;
-        //    try
-        //    {
-        //        var response = await client.ReadDocumentAsync(documentUri);
-        //        if (response.Resource != null)
-        //            return true;
-        //    }
-        //    catch (DocumentClientException)
-        //    {
-        //        return false;
-        //    }
+    //    public bool DoesCustomerResourceExist(Guid customerId)
+    //    {
+    //        try
+    //        {
+    //            var collectionUri = _documentDbHelper.CreateDocumentCollectionUri();
 
-        //    return false;
-        //}
+    //            var client = _databaseClient.CreateDocumentClient();
+
+    //            if (client == null)
+    //                return false;
+
+    //            var query = client.CreateDocumentQuery<Models.Customer>(collectionUri, new FeedOptions { MaxItemCount = 1 });
+    //            var customerExists = query.Where(x => x.CustomerId == customerId).AsEnumerable().Any();
+
+    //            return customerExists;
+    //        }
+    //        catch
+    //        {
+    //            return false;
+    //        }
+    //    }
+
+    //    public async Task<List<Models.Customer>> SearchAllCustomer(string givenName = null, string familyName = null, string dateofBirth = null,
+    //        string uniqueLearnerNumber = null)
+    //    {
+    //        var collectionUri = _documentDbHelper.CreateDocumentCollectionUri();
+
+    //        var client = _databaseClient.CreateDocumentClient();
+
+    //        if (client == null)
+    //            return null;
+
+    //        var queryForCustomers = "SELECT * FROM c WHERE ";
+
+    //        var addAndToQuery = false;
+
+    //        if (!string.IsNullOrWhiteSpace(givenName))
+    //        {
+    //            queryForCustomers += "CONTAINS (LOWER(c.GivenName), LOWER('" + givenName + "'))";
+    //            addAndToQuery = true;
+    //        }
+
+    //        if (!string.IsNullOrWhiteSpace(familyName))
+    //        {
+    //            if (addAndToQuery)
+    //                queryForCustomers += " AND ";
+
+    //            queryForCustomers += "CONTAINS (LOWER(c.FamilyName), LOWER('" + familyName + "'))";
+    //            addAndToQuery = true;
+    //        }
+
+    //        if (!string.IsNullOrWhiteSpace(dateofBirth))
+    //        {
+    //            if (addAndToQuery)
+    //                queryForCustomers += " AND ";
+
+    //            queryForCustomers += "CONTAINS (c.DateofBirth, '" + dateofBirth + "')";
+    //            addAndToQuery = true;
+    //        }
+
+    //        if (!string.IsNullOrWhiteSpace(uniqueLearnerNumber))
+    //        {
+    //            if (addAndToQuery)
+    //                queryForCustomers += " AND ";
+
+    //            queryForCustomers += "CONTAINS (LOWER(c.UniqueLearnerNumber), LOWER('" + uniqueLearnerNumber + "'))";
+    //        }
+
+    //        var queryCust = client.CreateDocumentQuery<Models.Customer>(collectionUri, queryForCustomers).AsDocumentQuery();
+
+    //        var customers = new List<Models.Customer>();
+
+    //        while (queryCust.HasMoreResults)
+    //        {
+    //            var response = await queryCust.ExecuteNextAsync<Models.Customer>();
+    //            customers.AddRange(response);
+    //        }
+
+    //        return customers.Any() ? customers : null;
+    //    }
+
+    //    public async Task<List<Models.Customer>> GetAllCustomer()
+    //    {
+    //        var collectionUri = _documentDbHelper.CreateDocumentCollectionUri();
+
+    //        var client = _databaseClient.CreateDocumentClient();
+
+    //        if (client == null)
+    //            return null;
+
+    //        var queryCust = client.CreateDocumentQuery<Models.Customer>(collectionUri).AsDocumentQuery();
+
+    //        var customers = new List<Models.Customer>();
+
+    //        while (queryCust.HasMoreResults)
+    //        {
+    //            var response = await queryCust.ExecuteNextAsync<Models.Customer>();
+    //            customers.AddRange(response);
+    //        }
+
+    //        return customers.Any() ? customers : null;
+    //    }
 
 
-        //public async Task<bool> DoesCustomerResourceExist(Guid customerId)
-        //{
-        //    var documentUri = DocumentDBHelper.CreateCustomerDocumentUri(customerId);
+    //    public async Task<Models.Customer> GetCustomerByIdAsync(Guid customerId)
+    //    {
+    //        var collectionUri = _documentDbHelper.CreateDocumentCollectionUri();
 
-        //    var client = DocumentDBClient.CreateDocumentClient();
+    //        var client = _databaseClient.CreateDocumentClient();
 
-        //    if (client == null)
-        //        return false;
-        //    try
-        //    {
-        //        var response = await client.ReadDocumentAsync(documentUri);
-        //        if (response.Resource != null)
-        //            return true;
-        //    }
-        //    catch (DocumentClientException)
-        //    {
-        //        return false;
-        //    }
+    //        var CustomerByIdQuery = client
+    //            ?.CreateDocumentQuery<Models.Customer>(collectionUri, new FeedOptions { MaxItemCount = 1 })
+    //            .Where(x => x.CustomerId == customerId)
+    //            .AsDocumentQuery();
 
-        //    return false;
-        //}
+    //        if (CustomerByIdQuery == null)
+    //            return null;
+
+    //        var Customer = await CustomerByIdQuery.ExecuteNextAsync<Models.Customer>();
+
+    //        return Customer?.FirstOrDefault();
+    //    }
 
 
+    //    public async Task<ResourceResponse<Document>> CreateCustomerAsync(Models.Customer customer)
+    //    {
+    //        var collectionUri = _documentDbHelper.CreateDocumentCollectionUri();
 
-        //public bool DoesInteractionResourceExistAndBelongToCustomer(Guid interactionId, Guid customerId)
-        //{
-        //    var collectionUri = DocumentDBHelper.CreateInteractionDocumentCollectionUri();
+    //        var client = _databaseClient.CreateDocumentClient();
 
-        //    var client = DocumentDBClient.CreateDocumentClient();
+    //        if (client == null)
+    //            return null;
 
-        //    if (client == null)
-        //        return false;
+    //        var response = await client.CreateDocumentAsync(collectionUri, customer);
 
-        //    try
-        //    {
-        //        var query = client.CreateDocumentQuery<long>(collectionUri, new SqlQuerySpec()
-        //        {
-        //            QueryText = "SELECT VALUE COUNT(1) FROM interactions i " +
-        //                        "WHERE i.id = @interactionId " +
-        //                        "AND i.CustomerId = @customerId",
+    //        return response;
 
-        //            Parameters = new SqlParameterCollection()
-        //            {
-        //                new SqlParameter("@interactionId", interactionId),
-        //                new SqlParameter("@customerId", customerId)
-        //            }
-        //        }).AsEnumerable().FirstOrDefault();
+    //    }
 
-        //        return Convert.ToBoolean(Convert.ToInt16(query));
-        //    }
-        //    catch (DocumentQueryException)
-        //    {
-        //        return false;
-        //    }
+    //    public async Task<ResourceResponse<Document>> UpdateCustomerAsync(Models.Customer customer)
+    //    {
+    //        var documentUri = _documentDbHelper.CreateDocumentUri(customer.CustomerId);
 
-        //}
+    //        var client = _databaseClient.CreateDocumentClient();
 
-        //public bool DoesActionPlanResourceExistAndBelongToCustomer(Guid actionPlanId, Guid interactionId, Guid customerId)
-        //{
-        //    var collectionUri = DocumentDBHelper.CreateActionPlanDocumentCollectionUri();
+    //        if (client == null)
+    //            return null;
 
-        //    var client = DocumentDBClient.CreateDocumentClient();
+    //        var response = await client.ReplaceDocumentAsync(documentUri, customer);
 
-        //    if (client == null)
-        //        return false;
-
-        //    try
-        //    {
-        //        var query = client.CreateDocumentQuery<long>(collectionUri, new SqlQuerySpec()
-        //        {
-        //            QueryText = "SELECT VALUE COUNT(1) FROM actionplans a " +
-        //                        "WHERE a.id = @actionPlanId " +
-        //                        "AND a.InteractionId = @interactionId " +
-        //                        "AND a.CustomerId = @customerId",
-
-        //            Parameters = new SqlParameterCollection()
-        //            {
-        //                new SqlParameter("@actionPlanId", actionPlanId),
-        //                new SqlParameter("@interactionId", interactionId),
-        //                new SqlParameter("@customerId", customerId)
-        //            }
-        //        }).AsEnumerable().FirstOrDefault();
-
-        //        return Convert.ToBoolean(Convert.ToInt16(query));
-        //    }
-        //    catch (DocumentQueryException)
-        //    {
-        //        return false;
-        //    }
-
-        //}
-
-        //public async Task<bool> DoesCustomerHaveATerminationDate(Guid customerId)
-        //{
-        //    var documentUri = DocumentDBHelper.CreateCustomerDocumentUri(customerId);
-
-        //    var client = DocumentDBClient.CreateDocumentClient();
-
-        //    if (client == null)
-        //        return false;
-
-        //    try
-        //    {
-        //        var response = await client.ReadDocumentAsync(documentUri);
-
-        //        var dateOfTermination = response.Resource?.GetPropertyValue<DateTime?>("DateOfTermination");
-
-        //        return dateOfTermination.HasValue;
-        //    }
-        //    catch (DocumentClientException)
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //public async Task<List<Models.Action>> GetActionsForCustomerAsync(Guid customerId)
-        //{
-        //    var collectionUri = DocumentDBHelper.CreateDocumentCollectionUri();
-
-        //    var client = DocumentDBClient.CreateDocumentClient();
-
-        //    if (client == null)
-        //        return null;
-
-        //    var actionsQuery = client.CreateDocumentQuery<Models.Action>(collectionUri)
-        //        .Where(so => so.CustomerId == customerId).AsDocumentQuery();
-
-        //    var actions = new List<Models.Action>();
-
-        //    while (actionsQuery.HasMoreResults)
-        //    {
-        //        var response = await actionsQuery.ExecuteNextAsync<Models.Action>();
-        //        actions.AddRange(response);
-        //    }
-
-        //    return actions.Any() ? actions : null;
-        //}
-
-        //public async Task<Models.Action> GetActionForCustomerAsync(Guid customerId, Guid actionId)
-        //{
-        //    var collectionUri = DocumentDBHelper.CreateDocumentCollectionUri();
-
-        //    var client = DocumentDBClient.CreateDocumentClient();
-
-        //    var actionForCustomerQuery = client
-        //        ?.CreateDocumentQuery<Models.Action>(collectionUri, new FeedOptions { MaxItemCount = 1 })
-        //        .Where(x => x.CustomerId == customerId && x.ActionId == actionId)
-        //        .AsDocumentQuery();
-
-        //    if (actionForCustomerQuery == null)
-        //        return null;
-
-        //    var actions = await actionForCustomerQuery.ExecuteNextAsync<Models.Action>();
-
-        //    return actions?.FirstOrDefault();
-        //}
-
-        //public async Task<ResourceResponse<Document>> CreateActionAsync(Models.Action action)
-        //{
-
-        //    var collectionUri = DocumentDBHelper.CreateDocumentCollectionUri();
-
-        //    var client = DocumentDBClient.CreateDocumentClient();
-
-        //    if (client == null)
-        //        return null;
-
-        //    var response = await client.CreateDocumentAsync(collectionUri, action);
-
-        //    return response;
-
-        //}
-
-        //public async Task<ResourceResponse<Document>> UpdateActionAsync(Models.Action action)
-        //{
-        //    var documentUri = DocumentDBHelper.CreateDocumentUri(action.ActionId.GetValueOrDefault());
-
-        //    var client = DocumentDBClient.CreateDocumentClient();
-
-        //    if (client == null)
-        //        return null;
-
-        //    var response = await client.ReplaceDocumentAsync(documentUri, action);
-
-        //    return response;
-        //}
-    }
+    //        return response;
+    //    }
+    //}
 }

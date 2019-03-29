@@ -2,7 +2,7 @@
 using System.Configuration;
 using Microsoft.Azure.Documents.Client;
 
-namespace NCS.DSS.Action.Cosmos.Client
+namespace NCS.DSS.FunctionalTests.Cosmos.Client
 {
     public static class DocumentDBClient
     {

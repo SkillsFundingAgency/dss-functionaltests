@@ -3,7 +3,7 @@ using System;
 using System.Configuration;
 using Microsoft.Azure.Documents.Client;
 
-namespace NCS.DSS.Action.Cosmos.Helper
+namespace NCS.DSS.FunctionalTests.Cosmos.Helper
 {
     public static class DocumentDBHelper
 
