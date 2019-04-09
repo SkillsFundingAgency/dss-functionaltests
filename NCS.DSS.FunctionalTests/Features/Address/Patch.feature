@@ -1,4 +1,8 @@
-﻿Feature: Patch
+﻿
+@patchV1
+@postV1
+
+Feature: Patch
 
 
 	Background: Post Customer

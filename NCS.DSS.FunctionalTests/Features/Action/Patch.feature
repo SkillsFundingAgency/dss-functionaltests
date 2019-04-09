@@ -1,4 +1,7 @@
-﻿Feature: Patch
+﻿
+@postV1 @patchV1
+
+Feature: Patch
 
 
 	Background: Setup

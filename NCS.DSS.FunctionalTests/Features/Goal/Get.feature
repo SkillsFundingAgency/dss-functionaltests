@@ -1,13 +1,12 @@
-﻿Feature: Get
+﻿
 
+@postV1 @getV1
+
+Feature: Get
 
 
 Background: Prepare test
-	Given I post an adviser with the following details:
-		| Field						 | Value				|
-		| AdviserName				 | BillyAdviser			|
-		| AdviserContactNumber		 | 98798678967967		|
-	And I post a Customer with the following details:
+	Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |

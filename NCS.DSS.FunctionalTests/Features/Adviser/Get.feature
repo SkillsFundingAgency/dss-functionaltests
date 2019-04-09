@@ -1,4 +1,7 @@
-﻿Feature: Get
+﻿
+@postV1 @patchV1
+
+Feature: Get
 
 
 

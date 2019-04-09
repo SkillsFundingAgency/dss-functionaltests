@@ -1,5 +1,6 @@
 ﻿
-@customer
+@postV1
+@getV1
 
 Feature: Get
 
@@ -38,75 +39,5 @@ Feature: Get
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-
-
-	Scenario: Get Customer by FamilyName
-		Given I post a Customer with the following details:
-		| Field                      | Value               |
-		| GivenName                  | Bob                 |
-		| FamilyName                 | Binks               |
-	When I search for:
-		| Field                      | Value               |
-		| parameter1                 | FamilyName          |
-		| parameter2                 | Binks               |
-		Then there should be a 200 response
-	And all returned Customers should contain:
-		| Field                      | Value               |
-		| FamilyName                 | Binks               |
-
-
-	Scenario: Get Customers by FamilyName
-	Given I post a Customer with the following details:
-		| Field                      | Value               |
-		| GivenName                  | Bob                 |
-		| FamilyName                 | Bloggs              |
-	And I post a Customer with the following details:
-		| Field                      | Value               |
-		| GivenName                  | Phil                |
-		| FamilyName                 | Banks               |
-	And I post a Customer with the following details:
-		| Field                      | Value               |
-		| GivenName                  | Bob                 |
-		| FamilyName                 | Bloggs              |
-	When I search for:
-		| Field                      | Value               |
-		| parameter1                 | FamilyName          |
-		| parameter2                 | Bloggs              |
-	Then there should be a 200 response
-	And all returned Customers should contain:
-		| Field                      | Value               |
-		| FamilyName                 | Bloggs              |
-
-
-	Scenario: Get Customers by Partial FamilyName
-	Given I post a Customer with the following details:
-		| Field                      | Value               |
-		| GivenName                  | Bob                 |
-		| FamilyName                 | Newton              |
-	And I post a Customer with the following details:
-		| Field                      | Value               |
-		| GivenName                  | Phil                |
-		| FamilyName                 | Newten              |
-	And I post a Customer with the following details:
-		| Field                      | Value               |
-		| GivenName                  | Bob                 |
-		| FamilyName                 | Newtoo              |
-	When I search for:
-		| Field                      | Value               |
-		| parameter1                 | FamilyName          |
-		| parameter2                 | New                 |
-	Then there should be a 200 response
-	And all returned Customers should contain:
-		| Field                      | Value               |
-		| FamilyName                 | New	               |
-
-
-
-
-
-
-
-	
-
 
 

@@ -1,4 +1,6 @@
-﻿Feature: Patch
+﻿@postV1
+@patchV1
+Feature: Patch
 
 Background: Prepare test
 	Given I post a Customer with the following details:

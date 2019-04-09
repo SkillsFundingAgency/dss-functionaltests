@@ -19,6 +19,7 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Post")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
     public partial class PostFeature
     {
         
@@ -31,7 +32,8 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +73,7 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         
         public virtual void FeatureBackground()
         {
-#line 4
+#line 5
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +84,7 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
             table1.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 5
+#line 6
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -100,7 +102,7 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
             table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 9
+#line 10
  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table2, "And ");
 #line hidden
         }
@@ -110,10 +112,10 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         public virtual void CreateAWebchatWithAllValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with all valid values", null, ((string[])(null)));
-#line 20
+#line 21
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -140,9 +142,9 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "DateandTimeSentToCustomers",
                         "2018-07-20T13:45:00Z"});
-#line 21
+#line 22
  testRunner.Given("I post a webchat with the following details:", ((string)(null)), table3, "Given ");
-#line 30
+#line 31
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -169,7 +171,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "DateandTimeSentToCustomers",
                         "2018-07-20T13:45:00Z"});
-#line 31
+#line 32
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -180,10 +182,10 @@ this.FeatureBackground();
         public virtual void CreateAWebchatWithOnlyMandatoryValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with only mandatory values", null, ((string[])(null)));
-#line 41
+#line 42
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -198,9 +200,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-#line 42
+#line 43
  testRunner.Given("I post a webchat with the following details:", ((string)(null)), table5, "Given ");
-#line 47
+#line 48
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -215,7 +217,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-#line 48
+#line 49
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -224,3 +226,4 @@ this.FeatureBackground();
 }
 #pragma warning restore
 #endregion
+
