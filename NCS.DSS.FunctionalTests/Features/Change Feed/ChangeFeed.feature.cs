@@ -94,7 +94,7 @@ namespace NCS.DSS.FunctionalTests.Features.ChangeFeed
 #line 13
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
-  testRunner.And("there should be a record in the adviserdetails ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the adviserDetails ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -262,7 +262,7 @@ namespace NCS.DSS.FunctionalTests.Features.ChangeFeed
 #line 67
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 68
-  testRunner.And("there should be a record in the acionplans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -700,3 +700,4 @@ namespace NCS.DSS.FunctionalTests.Features.ChangeFeed
 }
 #pragma warning restore
 #endregion
+

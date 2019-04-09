@@ -167,11 +167,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup")]
-        [NUnit.Framework.CategoryAttribute("session")]
+        [NUnit.Framework.CategoryAttribute("SessionId")]
         public virtual void ValidPatchOutcomeClaimedDateWithClaimedPriorityGroup()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup", null, new string[] {
-                        "session"});
+                        "SessionId"});
 #line 41
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -442,3 +442,4 @@ this.FeatureBackground();
 }
 #pragma warning restore
 #endregion
+

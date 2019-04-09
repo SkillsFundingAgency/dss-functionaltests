@@ -68,26 +68,52 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         public bool DoesResourceExist(string table, string recordId)
         {
+            bool returnValue = false;
             string sql = @"select* from[" + table + "] where id = '" + recordId + "'";
             if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
             {
                 using (SqlCommand cmd = new SqlCommand(sql, Connection))
                 {
-                    
-                    SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                    SqlDataReader reader = cmd.ExecuteReader();//(CommandBehavior.CloseConnection);
+
                     if (reader.HasRows)
                     {
-                        return true;  // data exists
+                        returnValue = true;  // data exists
                     }
-                    else
-                    {
-                        return false; //data does not exist
-                    }
+                    reader.Close();
                 }
             }
-            return false;
+            return returnValue;
         }
 
+        public DataSet GetRecord(string table, string recordId)
+        {
+            DataSet ds = new DataSet(table);
+            string sql = @"select* from[" + table + "] where id = '" + recordId + "'";
+            if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, Connection))
+                {
+
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    da.SelectCommand = cmd;
+                    da.Fill(ds);
+                }
+            }
+            return ds;
+        }
+
+        public List<Dictionary<string, string>> GetDataTableDictionaryList(DataSet dataSet, string primaryKey)
+        {
+            DataTable dataTable = dataSet.Tables[0];
+            DateTime dateValue;
+            return dataTable.AsEnumerable().Select(
+                row => dataTable.Columns.Cast<DataColumn>().ToDictionary(
+                    column => ( column.ColumnName=="id" ? primaryKey : column.ColumnName ),
+                    column => (DateTime.TryParse(row[column].ToString(), out dateValue) ? dateValue.ToString("yyyy-MM-ddTHH:mm:ss.ffffZ") : row[column].ToString())
+                )).ToList();
+        }
 
         public bool InsertRecordFromJson(string table, string json)
         {

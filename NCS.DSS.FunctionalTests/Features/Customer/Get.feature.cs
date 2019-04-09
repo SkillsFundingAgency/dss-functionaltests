@@ -19,6 +19,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Get")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
     [NUnit.Framework.CategoryAttribute("getV1")]
     public partial class GetFeature
     {
@@ -33,6 +34,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
                         "getV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -76,7 +78,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void GetCustomerByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by ID", null, ((string[])(null)));
-#line 6
+#line 7
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -125,11 +127,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table1.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-21T14:45:00Z"});
-#line 7
+#line 8
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
-#line 23
- testRunner.When("I get a Customer by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
+ testRunner.When("I get a Customer by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -177,7 +179,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-21T14:45:00Z"});
-#line 25
+#line 26
  testRunner.And("the response body should contain:", ((string)(null)), table2, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -186,3 +188,4 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
 }
 #pragma warning restore
 #endregion
+

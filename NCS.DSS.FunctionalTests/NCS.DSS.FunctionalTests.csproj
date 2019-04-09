@@ -102,6 +102,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.SqlClient, Version=4.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.6.0\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
@@ -154,6 +155,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="constants.cs" />
     <Compile Include="Cosmos\Client\DocumentDBClient.cs" />
     <Compile Include="Cosmos\Helper\DocumentDBHelper.cs" />
     <Compile Include="Cosmos\Helper\IResourceHelper.cs" />
@@ -331,11 +333,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Customer\CreateData.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CreateData.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Customer\Get.feature.cs">
       <AutoGen>True</AutoGen>
@@ -533,10 +530,9 @@
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CosmosHelper.cs" />
-    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\RestHelper.cs" />
     <Compile Include="Helpers\SQLServerHelper.cs" />
-    <Compile Include="Helpers\UnitTest1.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\ActionPlanV2.cs" />
     <Compile Include="Models\ActionPlan.cs" />
@@ -702,10 +698,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Customer\CreateData.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CreateData.feature.cs</LastGenOutput>
-    </None>
     <None Include="Features\Customer\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
@@ -868,6 +860,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="appsettings.readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Subscription\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

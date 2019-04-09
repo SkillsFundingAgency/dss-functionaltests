@@ -1,4 +1,5 @@
-﻿Feature: Post
+﻿@postV1
+Feature: Post
 
 	Background: Set up test
 	Given I post a Customer with the following details:
@@ -12,17 +13,18 @@
 		| InteractionType          | 2                      |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
+	@InteractionId
 	Scenario: Post Transfer
 	Given I post a Transfer with the following details:
 		| Field                   | Value             |
-		| OriginatingTouchpointID | TouchPoint1       |
-		| TargetTouchpointID      | TouchPoint2       | 
+		| OriginatingTouchpointId | TouchPoint1       |
+		| TargetTouchpointId      | TouchPoint2       | 
 		| Context                 | Some context text |
-		| DateandTimeOfTransfer   | 2019-09-12T07:57  |
-		| RequestedCallbackTime   | 2019-09-22T07:57  |
+		| DateandTimeOfTransfer   | 2018-03-12T07:57  |
+		| RequestedCallbackTime   | 2018-03-22T07:57  |
 	Then there should be a 201 response
 	And the response body should contain:
 		| Field                   | Value             |
-		| OriginatingTouchpointID | TouchPoint1       |
-		| TargetTouchpointID      | TouchPoint2       |
+		| OriginatingTouchpointId | 9000000001         |
+		| TargetTouchpointId      | 9111111111        |
 		| Context                 | Some context text |

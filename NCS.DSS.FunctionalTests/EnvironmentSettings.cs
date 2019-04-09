@@ -14,5 +14,6 @@ namespace FunctionalTests
         public string TestEndpoint02 => Configuration["RestService:TestEndpoint02"];
         public string TestEndpoint03 => Configuration["RestService:TestEndpoint03"];
         public string SubscriptionKey => Configuration["RestService:SubscriptionKey"];
+        public string sqlConnectionString => Configuration["SQLDataStore:ConnectionString"];
     }
 }

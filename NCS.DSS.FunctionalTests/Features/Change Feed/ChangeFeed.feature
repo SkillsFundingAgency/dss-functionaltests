@@ -11,7 +11,7 @@ Feature: ChangeFeed
 			| AdviserName			| BillyAdviser	|
 			| AdviserEmailAddress	| billy@bill.com|
 		Then there should be a 201 response
-		And there should be a record in the adviserdetails ChangeFeed table
+		And there should be a record in the adviserDetails ChangeFeed table
 
 	Scenario: Post Customer
 		Given I post a Customer with the following details:
@@ -65,7 +65,7 @@ Feature: ChangeFeed
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		Then there should be a 201 response
-		And there should be a record in the acionplans ChangeFeed table
+		And there should be a record in the actionPlans ChangeFeed table
 
 
 	Scenario: Post Valid Action with all fields

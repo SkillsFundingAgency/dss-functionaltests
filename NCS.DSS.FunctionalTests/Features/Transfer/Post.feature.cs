@@ -19,6 +19,7 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Post")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
     public partial class PostFeature
     {
         
@@ -31,7 +32,8 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +73,7 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
         
         public virtual void FeatureBackground()
         {
-#line 3
+#line 4
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +84,7 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
             table1.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 4
+#line 5
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -100,58 +102,60 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
             table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 8
+#line 9
  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table2, "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Transfer")]
+        [NUnit.Framework.CategoryAttribute("InteractionId")]
         public virtual void PostTransfer()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Transfer", null, ((string[])(null)));
-#line 15
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Transfer", null, new string[] {
+                        "InteractionId"});
+#line 17
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 3
+#line 4
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table3.AddRow(new string[] {
-                        "OriginatingTouchpointID",
+                        "OriginatingTouchpointId",
                         "TouchPoint1"});
             table3.AddRow(new string[] {
-                        "TargetTouchpointID",
+                        "TargetTouchpointId",
                         "TouchPoint2"});
             table3.AddRow(new string[] {
                         "Context",
                         "Some context text"});
             table3.AddRow(new string[] {
                         "DateandTimeOfTransfer",
-                        "2019-09-12T07:57"});
+                        "2018-03-12T07:57"});
             table3.AddRow(new string[] {
                         "RequestedCallbackTime",
-                        "2019-09-22T07:57"});
-#line 16
+                        "2018-03-22T07:57"});
+#line 18
  testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table3, "Given ");
-#line 23
+#line 25
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table4.AddRow(new string[] {
-                        "OriginatingTouchpointID",
-                        "TouchPoint1"});
+                        "OriginatingTouchpointId",
+                        "9000000001"});
             table4.AddRow(new string[] {
-                        "TargetTouchpointID",
-                        "TouchPoint2"});
+                        "TargetTouchpointId",
+                        "9111111111"});
             table4.AddRow(new string[] {
                         "Context",
                         "Some context text"});
-#line 24
+#line 26
  testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -160,3 +164,4 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
 }
 #pragma warning restore
 #endregion
+

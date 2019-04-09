@@ -96,7 +96,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+	@V2
 	Scenario: Post Action with missing DateActionAgreed
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -110,7 +110,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+    @V2
 	Scenario: Post Action with missing DateActionAimsToBeCompletedBy
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -124,7 +124,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+    @V2
 	Scenario: Post Action with missing DateActionActuallyCompleted
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -149,6 +149,7 @@ Feature: PostV2
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
+	@V2
 	Scenario: Post Action with missing ActionSummary
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -162,7 +163,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+    @V2
 	Scenario: Post Action with missing ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -176,7 +177,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+    @V2
 	Scenario: Post Action with missing PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -190,8 +191,8 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
-			Scenario: Post Action with DateActionAgreed later than datetime.now
+	@V2
+	Scenario: Post Action with DateActionAgreed later than datetime.now
 		Given I post an Action with the following details:
 		| Field                         | Value                |
 		| DateActionAgreed              | 2028-07-30T09:00:00Z |
@@ -203,7 +204,8 @@ Feature: PostV2
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
-
+     
+	@V2
 	Scenario: Post Action with DateActionAimsToBeCompletedBy earlier than DateActionAgreed
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -216,7 +218,6 @@ Feature: PostV2
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
-
 
 	Scenario: Post Action with DateActionActuallyCompleted earlier than DateActionAgreed
 		Given I post an Action with the following details:
