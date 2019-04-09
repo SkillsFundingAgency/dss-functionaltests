@@ -144,3 +144,4 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
 }
 #pragma warning restore
 #endregion
+

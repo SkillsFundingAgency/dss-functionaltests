@@ -46,9 +46,6 @@
     <Reference Include="ImpromptuInterface, Version=6.2.2.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">
       <HintPath>..\packages\ImpromptuInterface.6.2.2\lib\net40\ImpromptuInterface.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Azure.Documents.Client, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Azure.DocumentDB.2.3.0\lib\net461\Microsoft.Azure.Documents.Client.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
@@ -156,12 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="constants.cs" />
-    <Compile Include="Cosmos\Client\DocumentDBClient.cs" />
-    <Compile Include="Cosmos\Helper\DocumentDBHelper.cs" />
-    <Compile Include="Cosmos\Helper\IResourceHelper.cs" />
-    <Compile Include="Cosmos\Helper\ResourceHelper.cs" />
-    <Compile Include="Cosmos\Provider\DocumentDBProvider.cs" />
-    <Compile Include="Cosmos\Provider\IDocumentDBProvider.cs" />
     <Compile Include="EnvironmentSettings.cs" />
     <Compile Include="EnvironmentSettingsConfigurationBuilder.cs" />
     <Compile Include="Features\ActionPlan\Get.feature.cs">
@@ -529,7 +520,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\CosmosHelper.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\RestHelper.cs" />
     <Compile Include="Helpers\SQLServerHelper.cs" />
@@ -875,10 +865,8 @@
     <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets'))" />
   </Target>
   <Import Project="..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets')" />
   <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
   <Import Project="..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets')" />
-  <Import Project="..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets')" />
 </Project>

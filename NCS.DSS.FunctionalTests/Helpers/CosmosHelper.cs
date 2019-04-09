@@ -1,13 +1,13 @@
 ﻿using System;
-using Microsoft.Azure.Documents;
-using Microsoft.Azure.Documents.Client;
+//using Microsoft.Azure.Documents;
+//using Microsoft.Azure.Documents.Client;
 using Newtonsoft.Json;
 
 namespace NCS.DSS.FunctionalTests.Helpers
 {
     class CosmosHelper
     {
-
+/*
         //Reusable instance of DocumentClient which represents the connection to a DocumentDB endpoint
         private static DocumentClient client;
         // public static string BaseUrl { get; set; }
@@ -90,7 +90,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
 
 
-
+    */
 
     }
 }
