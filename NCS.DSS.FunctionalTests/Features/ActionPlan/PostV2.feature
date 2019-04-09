@@ -155,7 +155,8 @@ Feature: PostV2
 		| CurrentSituation               | looking for work     |
 		Then there should be a 422 response
 
-	Scenario: Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated
+@ignore
+Scenario: Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |

@@ -48,7 +48,7 @@ Feature: Post
 		Given I post a Contact with the following details:
 		| Field                  | Value       |
 		| PreferredContactMethod | 2           |
-		| MobileNumber           | 0772 455294 |
+		| MobileNumber           | 0772455294  |
 		| HomeNumber             | 0125 455294 |
 		| AlternativeNumber      | 01254 57611 |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
@@ -56,7 +56,7 @@ Feature: Post
 		And the response body should contain:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |
-		| MobileNumber           | 0772 455294                  |
+		| MobileNumber           | 0772455294                   |
 		| HomeNumber             | 0125 455294                  |
 		| AlternativeNumber      | 01254 57611                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |

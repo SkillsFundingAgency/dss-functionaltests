@@ -218,7 +218,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "2"});
             table6.AddRow(new string[] {
                         "MobileNumber",
-                        "0772 455294"});
+                        "0772455294"});
             table6.AddRow(new string[] {
                         "HomeNumber",
                         "0125 455294"});
@@ -241,7 +241,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "2"});
             table7.AddRow(new string[] {
                         "MobileNumber",
-                        "0772 455294"});
+                        "0772455294"});
             table7.AddRow(new string[] {
                         "HomeNumber",
                         "0125 455294"});

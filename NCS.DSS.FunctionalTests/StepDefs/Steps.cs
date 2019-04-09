@@ -16,8 +16,7 @@ using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using System.Configuration;
 using Newtonsoft.Json.Linq;
-
-
+using System.Threading;
 
 namespace FunctionalTests.StepDefs
 {
@@ -29,6 +28,7 @@ namespace FunctionalTests.StepDefs
         private string baseUrl;
         private string url;
         private string json;
+        private string json2;
         private string id;
         private string customerId;
         private string adviserDetailId;
@@ -77,12 +77,31 @@ namespace FunctionalTests.StepDefs
         {
             SetVersion("post");
             var customer = new object();
+            url = envSettings.BaseUrl + "customers/api/customers/";
+            if (ScenarioContext.Current["version"].Equals("v2"))
+            {
+                customer = table.CreateInstance<CustomerV2>();
+            }
+            else
+            {
+                customer = table.CreateInstance<Customer>();
+            }
+
+            json = JsonConvert.SerializeObject(customer);
+            response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            customerId = AssertAndExtract("CustomerId", response);
+            /*if (response.IsSuccessful)
+            {
+                Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+                customerId = actualVals["CustomerId"];
+            }
 
             url = envSettings.BaseUrl + "customers/api/customers/";
             var customer = table.CreateInstance<Customer>();
             json2 = JsonConvert.SerializeObject(customer);
             response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            customerId = AssertAndExtract("CustomerId", response);
+            customerId = AssertAndExtract("CustomerId", response);*/
+
             //if (response.IsSuccessful)
             //{
             //    Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -100,23 +119,8 @@ namespace FunctionalTests.StepDefs
 
         }
 
-            if (ScenarioContext.Current["version"].Equals("v2"))
-            {
-                customer = table.CreateInstance<CustomerV2>();
-            }
-            else
-            {
-                customer = table.CreateInstance<Customer>();
-            }
-
-            json = JsonConvert.SerializeObject(customer);
-            response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
-            if (response.IsSuccessful)
-            {
-                Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                customerId = actualVals["CustomerId"];
-            }
-        }
+      
+      
 
         [Given(@"I post a customer with the given name '(.*)'")]
         public void GivenIPostACustomerWithTheGivenName(string givenName)
@@ -143,7 +147,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "adviserdetails/api/AdviserDetails/";
             var adviser = table.CreateInstance<Adviser>();
             json2 = JsonConvert.SerializeObject(adviser);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             adviserDetailId = AssertAndExtract("AdviserDetailId", response);
             //if (response.IsSuccessful)
             //{
@@ -166,7 +170,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "interactions/api/Customers/" + customerId + "/Interactions/";
             var interaction = table.CreateInstance<Interaction>();
             json2 = JsonConvert.SerializeObject(interaction);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             interactionId = AssertAndExtract("InteractionId", response);
             //if (response.IsSuccessful)
             //{
@@ -183,7 +187,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "addresses/api/Customers/" + customerId + "/Addresses/";
             var address = table.CreateInstance<Address>();
             json2 = JsonConvert.SerializeObject(address);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             addressId = AssertAndExtract("AddressId", response);
             //if (response.IsSuccessful)
             //{
@@ -199,7 +203,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/";
             var contact = table.CreateInstance<Contact>();
             json2 = JsonConvert.SerializeObject(contact);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             contactId = AssertAndExtract("ContactId", response);
             //if (response.IsSuccessful)
             //{
@@ -229,16 +233,17 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(actionPlan);
 
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
-            if (response.IsSuccessful)
+            actionPlanId = AssertAndExtract("ActionPlanId", response);
+            /*if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
                 actionPlanId = dict["ActionPlanId"];
             }
-        }
+
             var actionPlan = table.CreateInstance<ActionPlan>();
             json2 = JsonConvert.SerializeObject(actionPlan);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            actionPlanId = AssertAndExtract("ActionPlanId", response);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            actionPlanId = AssertAndExtract("ActionPlanId", response);*/
             //if (response.IsSuccessful)
             //{
             //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -249,7 +254,9 @@ namespace FunctionalTests.StepDefs
 
 
 
-    [Given(@"I post an Action with the following details:")]
+
+
+        [Given(@"I post an Action with the following details:")]
         public void GivenIPostAnActionWithTheFollowingDetails(Table table)
         {
             SetVersion("post");
@@ -266,16 +273,18 @@ namespace FunctionalTests.StepDefs
 
             json = JsonConvert.SerializeObject(action);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            actionId = AssertAndExtract("ActionId", response);
+            /*
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
                 actionId = dict["ActionId"];
             }
-        }
+
             var action = table.CreateInstance<NCS.DSS.FunctionalTests.Models.Action>();
             json2 = JsonConvert.SerializeObject(action);
             response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            actionId = AssertAndExtract("ActionId", response);
+            actionId = AssertAndExtract("ActionId", response);*/
             //if (response.IsSuccessful)
             //{
             //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -291,7 +300,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
             var diversity = table.CreateInstance<Diversity>();
             json2 = JsonConvert.SerializeObject(diversity);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             diversityId = AssertAndExtract("DiversityId", response);
             //if (response.IsSuccessful)
             //{
@@ -320,16 +329,18 @@ namespace FunctionalTests.StepDefs
 
             json = JsonConvert.SerializeObject(session);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            sessionId = AssertAndExtract("SessionId", response);
+            /*
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
                 sessionId = dict["SessionId"];
             }
-        }
+        
             var session = table.CreateInstance<Session>();
             json2 = JsonConvert.SerializeObject(session);
             response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            sessionId = AssertAndExtract("SessionId", response);
+            sessionId = AssertAndExtract("SessionId", response);*/
             //if (response.IsSuccessful)
             //{
             //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -358,6 +369,9 @@ namespace FunctionalTests.StepDefs
 
             json = JsonConvert.SerializeObject(goal);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            goalId = AssertAndExtract("GoalId", response);
+
+            /*
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -366,7 +380,7 @@ namespace FunctionalTests.StepDefs
             var goal = table.CreateInstance<Goal>();
             json2 = JsonConvert.SerializeObject(goal);
             response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            goalId = AssertAndExtract("GoalId", response);
+            goalId = AssertAndExtract("GoalId", response);*/
             //if (response.IsSuccessful)
             //{
             //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -381,7 +395,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/";
             var webchat = table.CreateInstance<WebChat>();
             json2 = JsonConvert.SerializeObject(webchat);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             webChatId = AssertAndExtract("WebChatId", response);
             //if (response.IsSuccessful)
             //{
@@ -409,6 +423,8 @@ namespace FunctionalTests.StepDefs
 
             json = JsonConvert.SerializeObject(outcome);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            outcomeId = AssertAndExtract("OutcomeId", response);
+            /*
             if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -417,7 +433,7 @@ namespace FunctionalTests.StepDefs
             var outcome = table.CreateInstance<Outcome>();
             json2 = JsonConvert.SerializeObject(outcome);
             response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            outcomeId = AssertAndExtract("OutcomeId", response);
+            outcomeId = AssertAndExtract("OutcomeId", response);*/
             //if (response.IsSuccessful)
             //{
             //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -463,7 +479,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "subscriptions/api/Customers/" + customerId + "/subscriptions/";
             var subscription = table.CreateInstance<Subscription>();
             json2 = JsonConvert.SerializeObject(subscription);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             subscriptionId = AssertAndExtract("SubscriptionId", response);
             //if (response.IsSuccessful)
             //{
@@ -521,7 +537,7 @@ namespace FunctionalTests.StepDefs
             while (triesSoFar < maxTries)
             {
                 triesSoFar++;
-                response = RestHelper.Get(url, envSettings.TouchPointId, envSettings.SubscriptionKey);
+                response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     break;

@@ -542,11 +542,13 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void PostActionPlanWithDateAndTimeCharterShownEarlierThanDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated", null, ((string[])(null)));
-#line 158
- this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated", null, new string[] {
+                        "ignore"});
+#line 159
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  this.FeatureBackground();
@@ -578,9 +580,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table16.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 159
+#line 160
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table16, "Given ");
-#line 169
+#line 170
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -593,7 +595,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanSentToCustomer earlier than DateActionPlanCrea" +
                     "ted", null, ((string[])(null)));
-#line 172
+#line 173
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -626,9 +628,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table17.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 173
+#line 174
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table17, "Given ");
-#line 183
+#line 184
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -641,7 +643,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanAcknowledged earlier than DateActionPlanCreate" +
                     "d", null, ((string[])(null)));
-#line 186
+#line 187
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -674,9 +676,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table18.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 187
+#line 188
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table18, "Given ");
-#line 197
+#line 198
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -687,7 +689,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         public virtual void PostActionPlanWithMissingCustomerCharterShownToCustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing CustomerCharterShownToCustomer", null, ((string[])(null)));
-#line 200
+#line 201
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -717,9 +719,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table19.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 201
+#line 202
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table19, "Given ");
-#line 210
+#line 211
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -730,7 +732,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         public virtual void PostActionPlanWithInvalidCustomerCharterShownToCustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid CustomerCharterShownToCustomer", null, ((string[])(null)));
-#line 213
+#line 214
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -763,9 +765,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table20.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 214
+#line 215
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table20, "Given ");
-#line 224
+#line 225
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -774,3 +776,4 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 }
 #pragma warning restore
 #endregion
+

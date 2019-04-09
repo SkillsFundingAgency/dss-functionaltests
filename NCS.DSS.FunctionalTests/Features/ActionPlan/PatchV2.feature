@@ -287,7 +287,6 @@ Feature: PatchV2
 		| DateActionPlanCreated          | 2018-07-31T09:00:00Z |
 		Then there should be a 422 response
 
-
 	Scenario: Patch invalid CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
