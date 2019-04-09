@@ -1,8 +1,6 @@
-﻿Feature: Get
-
-
-
-
+﻿@postV1
+@getV1
+Feature: Get
 
 Background: Prepare test
 	Given I post a Customer with the following details:

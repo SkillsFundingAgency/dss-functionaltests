@@ -19,6 +19,8 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Patch")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("patchV1")]
     public partial class PatchFeature
     {
         
@@ -31,7 +33,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Patch", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Patch", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
+                        "patchV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +75,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         public virtual void FeatureBackground()
         {
-#line 7
+#line 8
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +86,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 8
+#line 9
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -94,7 +98,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table2.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 12
+#line 13
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
 #line hidden
         }
@@ -104,10 +108,10 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         public virtual void PatchDate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Date", null, ((string[])(null)));
-#line 18
+#line 19
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
+#line 8
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -122,7 +126,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table3.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 19
+#line 20
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table3, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -131,9 +135,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table4.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-26T11:21:00Z"});
-#line 24
+#line 25
   testRunner.When("I patch the following:", ((string)(null)), table4, "When ");
-#line 27
+#line 28
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -148,7 +152,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table5.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 28
+#line 29
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -159,10 +163,10 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         public virtual void PatchChannel()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch channel", null, ((string[])(null)));
-#line 35
+#line 36
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
+#line 8
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -177,7 +181,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table6.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 36
+#line 37
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -186,9 +190,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table7.AddRow(new string[] {
                         "Channel",
                         "1"});
-#line 41
+#line 42
   testRunner.When("I patch the following:", ((string)(null)), table7, "When ");
-#line 44
+#line 45
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -203,7 +207,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table8.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 45
+#line 46
   testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -214,10 +218,10 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         public virtual void PatchInteractionType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch InteractionType", null, ((string[])(null)));
-#line 52
+#line 53
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
+#line 8
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -232,7 +236,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table9.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 53
+#line 54
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table9, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -241,9 +245,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table10.AddRow(new string[] {
                         "InteractionType",
                         "1"});
-#line 58
+#line 59
   testRunner.When("I patch the following:", ((string)(null)), table10, "When ");
-#line 61
+#line 62
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -258,7 +262,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table11.AddRow(new string[] {
                         "InteractionType",
                         "1"});
-#line 62
+#line 63
   testRunner.And("the response body should contain:", ((string)(null)), table11, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -267,3 +271,4 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
 }
 #pragma warning restore
 #endregion
+

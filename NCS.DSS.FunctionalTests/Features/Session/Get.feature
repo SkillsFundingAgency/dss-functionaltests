@@ -1,4 +1,7 @@
-﻿Feature: Get
+﻿
+@postV1 @getV1
+
+Feature: Get
 
 
 	Background: Setup

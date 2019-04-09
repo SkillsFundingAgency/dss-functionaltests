@@ -1,4 +1,8 @@
-﻿Feature: Post Action
+﻿
+
+@postV1
+
+Feature: Post Action
 
 
 
@@ -169,6 +173,19 @@
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
+	Scenario: Post Action with invalid ActionType
+		Given I post an Action with the following details:
+		| Field                         | Value                |
+		| DateActionAgreed              | 2018-07-30T09:00:00Z |
+		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
+		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
+		| ActionSummary                 | A Summary            |
+		| SignpostedTo                  | Some Details         |
+		| ActionType                    | 16                   |
+		| ActionStatus                  | 1                    |
+		| PersonResponsible             | 1                    |
+		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+		Then there should be a 422 response
 
 	Scenario: Post Action with missing PersonResponsible
 		Given I post an Action with the following details:
@@ -182,3 +199,34 @@
 		| ActionStatus                  | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
+
+	Scenario: Post Action with invalid PersonResponsible
+		Given I post an Action with the following details:
+		| Field                         | Value                |
+		| DateActionAgreed              | 2018-07-30T09:00:00Z |
+		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
+		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
+		| ActionSummary                 | A Summary            |
+		| SignpostedTo                  | Some Details         |
+		| ActionType                    | 1                    |
+		| ActionStatus                  | 1                    |
+		| PersonResponsible             | 3                    |
+		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+		Then there should be a 422 response
+		
+		
+	Scenario: Post Action with invalid ActionStatus
+		Given I post an Action with the following details:
+		| Field                         | Value                |
+		| DateActionAgreed              | 2018-07-30T09:00:00Z |
+		| DateActionAimsToBeCompletedBy | 2018-08-08T09:00:00Z |
+		| DateActionActuallyCompleted   | 2018-08-06T09:00:00Z |
+		| ActionSummary                 | A Summary            |
+		| SignpostedTo                  | Some Details         |
+		| ActionType                    | 1                    |
+		| ActionStatus                  | 4                    |
+		| PersonResponsible             | 1                    |
+		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+		Then there should be a 422 response
+
+

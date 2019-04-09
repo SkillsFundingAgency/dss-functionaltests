@@ -1,4 +1,5 @@
-﻿Feature: Post
+﻿@postV1
+Feature: Post
 
 	Background: Create Customer
 	Given I post a Customer with the following details:

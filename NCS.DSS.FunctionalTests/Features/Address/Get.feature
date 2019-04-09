@@ -1,13 +1,16 @@
-﻿Feature: Get
+﻿
+@postV1 @getV1
+
+Feature: Get
 
 
 
-	Background: Post Customer
-	Given I post a Customer with the following details:
+	Scenario: Get Address by ID
+		Given I post a Customer with the following details:
 		| Field                | Value                |
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
-	And I post an Address with the following details:
+		And I post an Address with the following details:
 		| Field                | Value                |
 		| Address1             | 1                    |
 		| Address2             | The Street           |
@@ -21,12 +24,9 @@
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
-
-
-	Scenario: Get Address by ID
-	When I get an Address by ID
-	Then there should be a 200 response
-	And the response body should contain:
+		When I get an Address by ID
+		Then there should be a 200 response
+		And the response body should contain:
 		| Field                | Value                |
 		| Address1             | 1                    |
 		| Address2             | The Street           |

@@ -19,6 +19,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Search")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("getV1")]
     public partial class SearchFeature
     {
         
@@ -31,7 +33,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Search", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Search", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
+                        "getV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,7 +78,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchWithoutSearchterm()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search without searchterm", null, ((string[])(null)));
-#line 5
+#line 8
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -87,7 +91,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table1.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 6
+#line 9
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -99,9 +103,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table2.AddRow(new string[] {
                         "parameter2",
                         ""});
-#line 10
+#line 13
   testRunner.When("I search for:", ((string)(null)), table2, "When ");
-#line 14
+#line 17
   testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -112,7 +116,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void GetCustomerByFamilyName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by FamilyName", null, ((string[])(null)));
-#line 17
+#line 20
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -125,7 +129,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table3.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 18
+#line 21
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table3, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -137,9 +141,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table4.AddRow(new string[] {
                         "parameter2",
                         "Binks"});
-#line 22
+#line 25
   testRunner.When("I search for:", ((string)(null)), table4, "When ");
-#line 26
+#line 29
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -148,7 +152,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table5.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 27
+#line 30
   testRunner.And("all returned Customers should contain:", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -159,7 +163,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void GetCustomerByGivenName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by GivenName", null, ((string[])(null)));
-#line 31
+#line 34
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -172,7 +176,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table6.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 32
+#line 35
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -184,9 +188,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table7.AddRow(new string[] {
                         "parameter2",
                         "Thomas"});
-#line 36
+#line 39
   testRunner.When("I search for:", ((string)(null)), table7, "When ");
-#line 40
+#line 43
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -195,7 +199,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table8.AddRow(new string[] {
                         "GivenName",
                         "Thomas"});
-#line 41
+#line 44
   testRunner.And("all returned Customers should contain:", ((string)(null)), table8, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -206,7 +210,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void GetCustomerByUln()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by uln", null, ((string[])(null)));
-#line 45
+#line 48
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -222,7 +226,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table9.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "7538571268"});
-#line 46
+#line 49
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table9, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -234,9 +238,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table10.AddRow(new string[] {
                         "parameter2",
                         "7538571268"});
-#line 51
+#line 54
   testRunner.When("I search for:", ((string)(null)), table10, "When ");
-#line 55
+#line 58
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -245,7 +249,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table11.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "7538571268"});
-#line 56
+#line 59
   testRunner.And("all returned Customers should contain:", ((string)(null)), table11, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -256,7 +260,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void GetCustomerByDob()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by dob", null, ((string[])(null)));
-#line 61
+#line 64
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -272,7 +276,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table12.AddRow(new string[] {
                         "DateofBirth",
                         "2005-07-26"});
-#line 62
+#line 65
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table12, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -284,9 +288,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table13.AddRow(new string[] {
                         "parameter2",
                         "2005-07-26"});
-#line 67
+#line 70
   testRunner.When("I search for:", ((string)(null)), table13, "When ");
-#line 71
+#line 74
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -295,7 +299,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table14.AddRow(new string[] {
                         "DateofBirth",
                         "2005-07-26T13:45:00Z"});
-#line 72
+#line 75
   testRunner.And("all returned Customers should contain:", ((string)(null)), table14, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -306,7 +310,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName", null, ((string[])(null)));
-#line 76
+#line 79
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -319,7 +323,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table15.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 77
+#line 80
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table15, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -331,9 +335,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table16.AddRow(new string[] {
                         "parameter2",
                         "Edw"});
-#line 81
+#line 84
   testRunner.When("I search for:", ((string)(null)), table16, "When ");
-#line 85
+#line 88
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -342,7 +346,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table17.AddRow(new string[] {
                         "GivenName",
                         "Edw"});
-#line 86
+#line 89
   testRunner.And("all returned Customers should contain:", ((string)(null)), table17, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -353,7 +357,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialFamilyName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial FamilyName", null, ((string[])(null)));
-#line 91
+#line 94
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -366,7 +370,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table18.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 92
+#line 95
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table18, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -378,9 +382,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table19.AddRow(new string[] {
                         "parameter2",
                         "Bin"});
-#line 96
+#line 99
   testRunner.When("I search for:", ((string)(null)), table19, "When ");
-#line 100
+#line 103
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -389,7 +393,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table20.AddRow(new string[] {
                         "FamilyName",
                         "Bin"});
-#line 101
+#line 104
   testRunner.And("all returned Customers should contain:", ((string)(null)), table20, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -400,7 +404,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenNameAndFullFamilyName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and Full FamilyName", null, ((string[])(null)));
-#line 106
+#line 109
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -413,7 +417,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table21.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 107
+#line 110
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table21, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -431,9 +435,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table22.AddRow(new string[] {
                         "parameter4",
                         "Binks"});
-#line 111
+#line 114
   testRunner.When("I search for:", ((string)(null)), table22, "When ");
-#line 117
+#line 120
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -445,7 +449,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table23.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 118
+#line 121
   testRunner.And("all returned Customers should contain:", ((string)(null)), table23, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -456,7 +460,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenNameAndPartialFamilyName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and Partial FamilyName", null, ((string[])(null)));
-#line 123
+#line 126
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -469,7 +473,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table24.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 124
+#line 127
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table24, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -487,9 +491,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table25.AddRow(new string[] {
                         "parameter4",
                         "Binks"});
-#line 128
+#line 131
   testRunner.When("I search for:", ((string)(null)), table25, "When ");
-#line 134
+#line 137
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -501,7 +505,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table26.AddRow(new string[] {
                         "FamilyName",
                         "Bin"});
-#line 135
+#line 138
   testRunner.And("all returned Customers should contain:", ((string)(null)), table26, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -512,7 +516,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForFullGivenNameAndFullFamilyName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for full GivenName and Full FamilyName", null, ((string[])(null)));
-#line 140
+#line 143
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -525,7 +529,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table27.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 141
+#line 144
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table27, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -543,9 +547,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table28.AddRow(new string[] {
                         "parameter4",
                         "Binks"});
-#line 145
+#line 148
   testRunner.When("I search for:", ((string)(null)), table28, "When ");
-#line 151
+#line 154
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -557,7 +561,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table29.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 152
+#line 155
   testRunner.And("all returned Customers should contain:", ((string)(null)), table29, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -568,7 +572,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForFullGivenNameAndPartialFamilyName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for full GivenName and Partial FamilyName", null, ((string[])(null)));
-#line 158
+#line 161
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -581,7 +585,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table30.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 159
+#line 162
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table30, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -599,9 +603,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table31.AddRow(new string[] {
                         "parameter4",
                         "Bin"});
-#line 163
+#line 166
   testRunner.When("I search for:", ((string)(null)), table31, "When ");
-#line 169
+#line 172
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -613,7 +617,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table32.AddRow(new string[] {
                         "FamilyName",
                         "Bin"});
-#line 170
+#line 173
   testRunner.And("all returned Customers should contain:", ((string)(null)), table32, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -624,7 +628,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenNameAndUln()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and uln", null, ((string[])(null)));
-#line 176
+#line 179
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -640,7 +644,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table33.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "9753113579"});
-#line 177
+#line 180
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table33, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -658,9 +662,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table34.AddRow(new string[] {
                         "parameter4",
                         "9753113579"});
-#line 182
+#line 185
   testRunner.When("I search for:", ((string)(null)), table34, "When ");
-#line 188
+#line 191
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
@@ -675,7 +679,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table35.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "9753113579"});
-#line 189
+#line 192
   testRunner.And("all returned Customers should contain:", ((string)(null)), table35, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -686,7 +690,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenNameAndDoB()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and DoB", null, ((string[])(null)));
-#line 195
+#line 198
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -702,7 +706,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table36.AddRow(new string[] {
                         "DateofBirth",
                         "2005-07-26"});
-#line 196
+#line 199
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table36, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
@@ -720,9 +724,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table37.AddRow(new string[] {
                         "parameter4",
                         "2005-07-26"});
-#line 201
+#line 204
   testRunner.When("I search for:", ((string)(null)), table37, "When ");
-#line 207
+#line 210
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
@@ -737,7 +741,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table38.AddRow(new string[] {
                         "DateofBirth",
                         "2005-07-26T13:45:00Z"});
-#line 208
+#line 211
   testRunner.And("all returned Customers should contain:", ((string)(null)), table38, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -748,7 +752,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void GetCustomerByUlnDoB()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by uln & DoB", null, ((string[])(null)));
-#line 218
+#line 221
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -767,7 +771,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table39.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "7538571268"});
-#line 219
+#line 222
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table39, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
@@ -785,9 +789,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table40.AddRow(new string[] {
                         "parameter4",
                         "2005-07-26"});
-#line 225
+#line 228
   testRunner.When("I search for:", ((string)(null)), table40, "When ");
-#line 231
+#line 234
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
@@ -799,7 +803,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table41.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "7538571268"});
-#line 232
+#line 235
   testRunner.And("all returned Customers should contain:", ((string)(null)), table41, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -810,7 +814,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void GetCustomerByFirstNameUlnDoB()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by firstName & uln & DoB", null, ((string[])(null)));
-#line 238
+#line 241
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -829,7 +833,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table42.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "7538571268"});
-#line 239
+#line 242
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table42, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
@@ -853,9 +857,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table43.AddRow(new string[] {
                         "parameter6",
                         "2005-07-26"});
-#line 245
+#line 248
   testRunner.When("I search for:", ((string)(null)), table43, "When ");
-#line 253
+#line 256
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
@@ -870,7 +874,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table44.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "7538571268"});
-#line 254
+#line 257
   testRunner.And("all returned Customers should contain:", ((string)(null)), table44, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -881,7 +885,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenNameAndPartialFamilyNameWithSpaceAfterGivenName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and Partial FamilyName with space after GivenName", null, ((string[])(null)));
-#line 262
+#line 265
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -894,7 +898,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table45.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 263
+#line 266
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table45, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
@@ -912,9 +916,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table46.AddRow(new string[] {
                         "parameter4",
                         "Binks"});
-#line 267
+#line 270
   testRunner.When("I search for:", ((string)(null)), table46, "When ");
-#line 273
+#line 276
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
@@ -926,7 +930,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table47.AddRow(new string[] {
                         "FamilyName",
                         "Bin"});
-#line 274
+#line 277
   testRunner.And("all returned Customers should contain:", ((string)(null)), table47, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -939,7 +943,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and Partial FamilyName with double space after Given" +
                     "Name", null, ((string[])(null)));
-#line 279
+#line 282
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -952,7 +956,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table48.AddRow(new string[] {
                         "FamilyName",
                         "Binks"});
-#line 280
+#line 283
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table48, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
@@ -970,9 +974,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table49.AddRow(new string[] {
                         "parameter4",
                         "Binks"});
-#line 284
+#line 287
   testRunner.When("I search for:", ((string)(null)), table49, "When ");
-#line 290
+#line 293
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
@@ -984,7 +988,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table50.AddRow(new string[] {
                         "FamilyName",
                         "Bin"});
-#line 291
+#line 294
   testRunner.And("all returned Customers should contain:", ((string)(null)), table50, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -995,7 +999,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenNameAndDateOfBirthWithSpaceAfterGivenName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and DateOfBirth with space after GivenName", null, ((string[])(null)));
-#line 296
+#line 299
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -1011,7 +1015,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table51.AddRow(new string[] {
                         "DateofBirth",
                         "1988-06-06T00:00:00Z"});
-#line 297
+#line 300
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table51, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1029,9 +1033,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table52.AddRow(new string[] {
                         "parameter4",
                         "1988-06-06"});
-#line 302
+#line 305
   testRunner.When("I search for:", ((string)(null)), table52, "When ");
-#line 308
+#line 311
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1046,7 +1050,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table53.AddRow(new string[] {
                         "DateofBirth",
                         "1988-06-06"});
-#line 309
+#line 312
   testRunner.And("all returned Customers should contain:", ((string)(null)), table53, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1057,7 +1061,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForDateofBirthAndGivenNameWithSpaceAfterDoB()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for DateofBirth and GivenName with space after DoB", null, ((string[])(null)));
-#line 316
+#line 319
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -1073,7 +1077,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table54.AddRow(new string[] {
                         "DateofBirth",
                         "1988-06-06T00:00:00Z"});
-#line 317
+#line 320
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table54, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1091,9 +1095,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table55.AddRow(new string[] {
                         "parameter4",
                         "Edward"});
-#line 322
+#line 325
   testRunner.When("I search for:", ((string)(null)), table55, "When ");
-#line 328
+#line 331
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1108,7 +1112,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table56.AddRow(new string[] {
                         "DateofBirth",
                         "1988-06-06"});
-#line 329
+#line 332
   testRunner.And("all returned Customers should contain:", ((string)(null)), table56, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1119,7 +1123,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForULNAndGivenNameWithSpaceAfterULN()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for ULN and GivenName with space after ULN", null, ((string[])(null)));
-#line 335
+#line 338
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -1135,7 +1139,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table57.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "9876543210"});
-#line 336
+#line 339
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table57, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1153,9 +1157,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table58.AddRow(new string[] {
                         "parameter4",
                         "Edward"});
-#line 341
+#line 344
   testRunner.When("I search for:", ((string)(null)), table58, "When ");
-#line 347
+#line 350
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1170,7 +1174,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table59.AddRow(new string[] {
                         "UniqueLearnerNumber",
                         "9876543210"});
-#line 348
+#line 351
   testRunner.And("all returned Customers should contain:", ((string)(null)), table59, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1181,7 +1185,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         public virtual void SearchForPartialGivenNameAndPartialFamilyNameAndDateOfBirthWithSpaces()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for partial GivenName and Partial FamilyName and DateOfBirth with spaces", null, ((string[])(null)));
-#line 354
+#line 357
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -1197,7 +1201,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table60.AddRow(new string[] {
                         "DateofBirth",
                         "1999-01-22"});
-#line 355
+#line 358
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table60, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1221,9 +1225,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table61.AddRow(new string[] {
                         "parameter6",
                         "1999-01-22"});
-#line 360
+#line 363
   testRunner.When("I search for:", ((string)(null)), table61, "When ");
-#line 368
+#line 371
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1238,7 +1242,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table62.AddRow(new string[] {
                         "DateofBirth",
                         "1999-01-22"});
-#line 369
+#line 372
   testRunner.And("all returned Customers should contain:", ((string)(null)), table62, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1247,3 +1251,4 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
 }
 #pragma warning restore
 #endregion
+

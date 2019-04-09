@@ -19,6 +19,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Post")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
     public partial class PostFeature
     {
         
@@ -31,7 +32,8 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +73,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         
         public virtual void FeatureBackground()
         {
-#line 4
+#line 5
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +84,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
             table1.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 5
+#line 6
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
         }
@@ -92,10 +94,10 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostValidContact()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post valid contact", null, ((string[])(null)));
-#line 12
+#line 13
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -119,9 +121,9 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
             table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 13
+#line 14
  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table2, "Given ");
-#line 21
+#line 22
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -145,7 +147,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
             table3.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 22
+#line 23
   testRunner.And("the response body should contain:", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -156,10 +158,10 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostValidContactDetailOneContactMethod()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ContactDetail one contact method", null, ((string[])(null)));
-#line 33
+#line 34
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -174,9 +176,9 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
             table4.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 34
+#line 35
   testRunner.Given("I post a Contact with the following details:", ((string)(null)), table4, "Given ");
-#line 39
+#line 40
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -191,8 +193,66 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
             table5.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 40
+#line 41
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Valid ContactDetail with ten digit phone numbers")]
+        public virtual void PostValidContactDetailWithTenDigitPhoneNumbers()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ContactDetail with ten digit phone numbers", null, ((string[])(null)));
+#line 47
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table6.AddRow(new string[] {
+                        "PreferredContactMethod",
+                        "2"});
+            table6.AddRow(new string[] {
+                        "MobileNumber",
+                        "0772455294"});
+            table6.AddRow(new string[] {
+                        "HomeNumber",
+                        "0125 455294"});
+            table6.AddRow(new string[] {
+                        "AlternativeNumber",
+                        "01254 57611"});
+            table6.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-08-20T11:46:02.4482612Z"});
+#line 48
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table6, "Given ");
+#line 55
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table7.AddRow(new string[] {
+                        "PreferredContactMethod",
+                        "2"});
+            table7.AddRow(new string[] {
+                        "MobileNumber",
+                        "0772455294"});
+            table7.AddRow(new string[] {
+                        "HomeNumber",
+                        "0125 455294"});
+            table7.AddRow(new string[] {
+                        "AlternativeNumber",
+                        "01254 57611"});
+            table7.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-08-20T11:46:02.4482612Z"});
+#line 56
+  testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -202,33 +262,33 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostContactDetailMandatoryPreferredContactMethodFieldMissing()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail Mandatory PreferredContactMethod Field missing", null, ((string[])(null)));
-#line 47
+#line 65
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "MobileNumber",
                         "07676 123456"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "HomeNumber",
                         "08654 123456"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "AlternativeNumber",
                         "07564656766"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 48
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table6, "Given ");
-#line 55
+#line 66
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table8, "Given ");
+#line 73
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -239,36 +299,36 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostContactDetailWithInvalidPreferredContactMethodValue()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with invalid PreferredContactMethod Value", null, ((string[])(null)));
-#line 59
+#line 77
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "PreferredContactMethod",
                         "12"});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "MobileNumber",
                         "07676 123456"});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "HomeNumber",
                         "08654 123456"});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "AlternativeNumber",
                         "07564656766"});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 60
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table7, "Given ");
-#line 68
+#line 78
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table9, "Given ");
+#line 86
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -279,90 +339,10 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostContactDetailWithInvalidMobileNumber()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid MobileNumber", null, ((string[])(null)));
-#line 72
+#line 90
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
- this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table8.AddRow(new string[] {
-                        "PreferredContactMethod",
-                        "1"});
-            table8.AddRow(new string[] {
-                        "MobileNumber",
-                        "012345678901234567890"});
-            table8.AddRow(new string[] {
-                        "HomeNumber",
-                        "08654 123456"});
-            table8.AddRow(new string[] {
-                        "AlternativeNumber",
-                        "07564656766"});
-            table8.AddRow(new string[] {
-                        "EmailAddress",
-                        "customer@customer.com"});
-            table8.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-08-20T11:46:02.4482612Z"});
-#line 73
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table8, "Given ");
-#line 81
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid HomeNumber")]
-        public virtual void PostContactDetailWithInvalidHomeNumber()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid HomeNumber", null, ((string[])(null)));
-#line 85
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
- this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table9.AddRow(new string[] {
-                        "PreferredContactMethod",
-                        "1"});
-            table9.AddRow(new string[] {
-                        "MobileNumber",
-                        "07676 123456"});
-            table9.AddRow(new string[] {
-                        "HomeNumber",
-                        "012345678901234567890"});
-            table9.AddRow(new string[] {
-                        "AlternativeNumber",
-                        "07564656766"});
-            table9.AddRow(new string[] {
-                        "EmailAddress",
-                        "customer@customer.com"});
-            table9.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-08-20T11:46:02.4482612Z"});
-#line 86
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table9, "Given ");
-#line 94
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid AlternativeNumber")]
-        public virtual void PostContactDetailWithInvalidAlternativeNumber()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid AlternativeNumber", null, ((string[])(null)));
-#line 98
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -373,36 +353,36 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "1"});
             table10.AddRow(new string[] {
                         "MobileNumber",
-                        "07676 123456"});
+                        "012345678901234567890"});
             table10.AddRow(new string[] {
                         "HomeNumber",
                         "08654 123456"});
             table10.AddRow(new string[] {
                         "AlternativeNumber",
-                        "012345678901234567890"});
+                        "07564656766"});
             table10.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
             table10.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 99
+#line 91
   testRunner.Given("I post a Contact with the following details:", ((string)(null)), table10, "Given ");
-#line 107
+#line 99
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid EmailAddress")]
-        public virtual void PostContactDetailWithInvalidEmailAddress()
+        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid HomeNumber")]
+        public virtual void PostContactDetailWithInvalidHomeNumber()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid EmailAddress", null, ((string[])(null)));
-#line 111
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid HomeNumber", null, ((string[])(null)));
+#line 103
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -416,33 +396,33 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "07676 123456"});
             table11.AddRow(new string[] {
                         "HomeNumber",
-                        "08654 123456"});
+                        "012345678901234567890"});
             table11.AddRow(new string[] {
                         "AlternativeNumber",
                         "07564656766"});
             table11.AddRow(new string[] {
                         "EmailAddress",
-                        "customercustomer.com"});
+                        "customer@customer.com"});
             table11.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 112
+#line 104
   testRunner.Given("I post a Contact with the following details:", ((string)(null)), table11, "Given ");
-#line 120
+#line 112
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid LastModifiedDate")]
-        public virtual void PostContactDetailWithInvalidLastModifiedDate()
+        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid AlternativeNumber")]
+        public virtual void PostContactDetailWithInvalidAlternativeNumber()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid LastModifiedDate", null, ((string[])(null)));
-#line 124
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid AlternativeNumber", null, ((string[])(null)));
+#line 116
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -459,30 +439,30 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "08654 123456"});
             table12.AddRow(new string[] {
                         "AlternativeNumber",
-                        "07564656766"});
+                        "012345678901234567890"});
             table12.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
             table12.AddRow(new string[] {
                         "LastModifiedDate",
-                        "2033-08-20T11:46:02.4482612Z"});
-#line 125
+                        "2018-08-20T11:46:02.4482612Z"});
+#line 117
   testRunner.Given("I post a Contact with the following details:", ((string)(null)), table12, "Given ");
-#line 133
+#line 125
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with missing PreferredContactMethod - email")]
-        public virtual void PostContactDetailWithMissingPreferredContactMethod_Email()
+        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid EmailAddress")]
+        public virtual void PostContactDetailWithInvalidEmailAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with missing PreferredContactMethod - email", null, ((string[])(null)));
-#line 137
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid EmailAddress", null, ((string[])(null)));
+#line 129
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -501,11 +481,91 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "AlternativeNumber",
                         "07564656766"});
             table13.AddRow(new string[] {
+                        "EmailAddress",
+                        "customercustomer.com"});
+            table13.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-08-20T11:46:02.4482612Z"});
+#line 130
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table13, "Given ");
+#line 138
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with Invalid LastModifiedDate")]
+        public virtual void PostContactDetailWithInvalidLastModifiedDate()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with Invalid LastModifiedDate", null, ((string[])(null)));
+#line 142
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table14.AddRow(new string[] {
+                        "PreferredContactMethod",
+                        "1"});
+            table14.AddRow(new string[] {
+                        "MobileNumber",
+                        "07676 123456"});
+            table14.AddRow(new string[] {
+                        "HomeNumber",
+                        "08654 123456"});
+            table14.AddRow(new string[] {
+                        "AlternativeNumber",
+                        "07564656766"});
+            table14.AddRow(new string[] {
+                        "EmailAddress",
+                        "customer@customer.com"});
+            table14.AddRow(new string[] {
                         "LastModifiedDate",
                         "2033-08-20T11:46:02.4482612Z"});
-#line 138
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table13, "Given ");
-#line 145
+#line 143
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table14, "Given ");
+#line 151
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with missing PreferredContactMethod - email")]
+        public virtual void PostContactDetailWithMissingPreferredContactMethod_Email()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with missing PreferredContactMethod - email", null, ((string[])(null)));
+#line 155
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table15.AddRow(new string[] {
+                        "PreferredContactMethod",
+                        "1"});
+            table15.AddRow(new string[] {
+                        "MobileNumber",
+                        "07676 123456"});
+            table15.AddRow(new string[] {
+                        "HomeNumber",
+                        "08654 123456"});
+            table15.AddRow(new string[] {
+                        "AlternativeNumber",
+                        "07564656766"});
+            table15.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2033-08-20T11:46:02.4482612Z"});
+#line 156
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table15, "Given ");
+#line 163
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -516,33 +576,33 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostContactDetailWithMissingPreferredContactMethod_Mobile()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with missing PreferredContactMethod - mobile", null, ((string[])(null)));
-#line 149
+#line 167
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table14.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "PreferredContactMethod",
                         "2"});
-            table14.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "HomeNumber",
                         "08654 123456"});
-            table14.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "AlternativeNumber",
                         "07564656766"});
-            table14.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
-            table14.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "LastModifiedDate",
                         "2033-08-20T11:46:02.4482612Z"});
-#line 150
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table14, "Given ");
-#line 157
+#line 168
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table16, "Given ");
+#line 175
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -553,30 +613,30 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostContactDetailWithMissingPreferredContactMethod_Phone()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with missing PreferredContactMethod - phone", null, ((string[])(null)));
-#line 161
+#line 179
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "PreferredContactMethod",
                         "3"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "MobileNumber",
                         "07676 123456"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
-            table15.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "LastModifiedDate",
                         "2033-08-20T11:46:02.4482612Z"});
-#line 162
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table15, "Given ");
-#line 168
+#line 180
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table17, "Given ");
+#line 186
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -587,33 +647,33 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostContactDetailWithMissingPreferredContactMethod_SMS()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with missing PreferredContactMethod - SMS", null, ((string[])(null)));
-#line 172
+#line 190
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table16.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "PreferredContactMethod",
                         "4"});
-            table16.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "HomeNumber",
                         "08654 123456"});
-            table16.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "AlternativeNumber",
                         "07564656766"});
-            table16.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
-            table16.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "LastModifiedDate",
                         "2033-08-20T11:46:02.4482612Z"});
-#line 173
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table16, "Given ");
-#line 180
+#line 191
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table18, "Given ");
+#line 198
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -624,36 +684,36 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         public virtual void PostContactDetailWhereOneAlreadyExists()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail where one already exists", null, ((string[])(null)));
-#line 185
+#line 203
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table17.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "PreferredContactMethod",
                         "1"});
-            table17.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "EmailAddress",
                         "customer@customer.com"});
-#line 186
-  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table17, "Given ");
+#line 204
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table19, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table18.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "PreferredContactMethod",
                         "2"});
-            table18.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "MobileNumber",
                         "07676 123456"});
-#line 190
-  testRunner.And("I post a Contact with the following details:", ((string)(null)), table18, "And ");
-#line 194
+#line 208
+  testRunner.And("I post a Contact with the following details:", ((string)(null)), table20, "And ");
+#line 212
   testRunner.Then("there should be a 409 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -662,3 +722,4 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
 }
 #pragma warning restore
 #endregion
+

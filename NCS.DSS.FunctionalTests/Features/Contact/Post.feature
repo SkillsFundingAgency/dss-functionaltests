@@ -1,4 +1,5 @@
-﻿Feature: Post
+﻿@postV1
+Feature: Post
 
 
 	Background: Post Customer
@@ -41,6 +42,23 @@
 		| Field                  | Value						|
 		| PreferredContactMethod | 2                            |
 		| MobileNumber           | 07676 123456                 |
+		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+
+	 Scenario: Post Valid ContactDetail with ten digit phone numbers
+		Given I post a Contact with the following details:
+		| Field                  | Value       |
+		| PreferredContactMethod | 2           |
+		| MobileNumber           | 0772455294  |
+		| HomeNumber             | 0125 455294 |
+		| AlternativeNumber      | 01254 57611 |
+		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+		Then there should be a 201 response
+		And the response body should contain:
+		| Field                  | Value                        |
+		| PreferredContactMethod | 2                            |
+		| MobileNumber           | 0772455294                   |
+		| HomeNumber             | 0125 455294                  |
+		| AlternativeNumber      | 01254 57611                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 
 

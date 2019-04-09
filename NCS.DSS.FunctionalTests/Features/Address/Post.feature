@@ -1,4 +1,7 @@
-﻿Feature: Post
+﻿
+@postV1
+
+Feature: Post
 
 	Background: Post Customer
 	Given I post a Customer with the following details:

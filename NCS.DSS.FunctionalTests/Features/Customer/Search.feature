@@ -1,4 +1,7 @@
-﻿Feature: Search
+﻿
+@postV1 @getV1
+
+Feature: Search
 
 
 

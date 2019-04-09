@@ -1,4 +1,5 @@
-﻿Feature: Post
+﻿@postV1
+Feature: Post
 
 
 Background: Prepare test

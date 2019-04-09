@@ -40,14 +40,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentAssertions, Version=5.4.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentAssertions.5.4.2\lib\net45\FluentAssertions.dll</HintPath>
+    <Reference Include="FluentAssertions, Version=5.6.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.5.6.0\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>
     <Reference Include="ImpromptuInterface, Version=6.2.2.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">
       <HintPath>..\packages\ImpromptuInterface.6.2.2\lib\net40\ImpromptuInterface.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Azure.Documents.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Azure.DocumentDB.2.2.0\lib\net461\Microsoft.Azure.Documents.Client.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
@@ -89,8 +86,8 @@
     <Reference Include="RandomNameGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RandomNameGenerator.1.0.4\lib\RandomNameGenerator.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=106.5.4.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.5.4\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=106.6.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.7\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="SpecFlow.Assist.Dynamic, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.Assist.Dynamic.1.3.1\lib\45\SpecFlow.Assist.Dynamic.dll</HintPath>
@@ -101,6 +98,11 @@
     </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SqlClient, Version=4.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.6.0\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
     </Reference>
@@ -150,12 +152,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cosmos\Client\DocumentDBClient.cs" />
-    <Compile Include="Cosmos\Helper\DocumentDBHelper.cs" />
-    <Compile Include="Cosmos\Helper\IResourceHelper.cs" />
-    <Compile Include="Cosmos\Helper\ResourceHelper.cs" />
-    <Compile Include="Cosmos\Provider\DocumentDBProvider.cs" />
-    <Compile Include="Cosmos\Provider\IDocumentDBProvider.cs" />
+    <Compile Include="constants.cs" />
     <Compile Include="EnvironmentSettings.cs" />
     <Compile Include="EnvironmentSettingsConfigurationBuilder.cs" />
     <Compile Include="Features\ActionPlan\Get.feature.cs">
@@ -163,55 +160,155 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ActionPlan\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\ActionPlan\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ActionPlan\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ActionPlan\PostV1PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV1PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ActionPlan\PostV2.feature.cs">
+      <DependentUpon>PostV2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Features\ActionPlan\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ActionPlan\PostV2PatchV1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2PatchV1.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Action\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Action\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Action\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Action\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Action\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Action\PostV1PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV1PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Action\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Action\PostV2PatchV1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2PatchV1.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Address\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Address\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Address\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Address\PatchV1fromV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV1fromV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Address\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Address\PatchV2fromV1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2fromV1.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Address\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Address\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Adviser\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Adviser\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Adviser\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Adviser\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Adviser\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Adviser\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Change Feed\ChangeFeed.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChangeFeed.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Contact\Get.feature.cs">
       <AutoGen>True</AutoGen>
@@ -233,15 +330,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Customer\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Customer\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Customer\PatchV1fromV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV1fromV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Customer\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Customer\PatchV2fromV1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2fromV1.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Customer\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Customer\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Customer\Search.feature.cs">
       <AutoGen>True</AutoGen>
@@ -258,10 +380,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Goal\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Goal\Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Goal\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Goal\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Goal\PostV1PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV1PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Goal\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Goal\PostV2PatchV1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2PatchV1.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Interaction\Get.feature.cs">
       <AutoGen>True</AutoGen>
@@ -288,20 +440,60 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Outcome\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Outcome\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Outcome\PostV1PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV1PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Outcome\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Outcome\PostV2withSessionDate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2withSessionDate.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Session\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Session\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Session\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Session\PostV1PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV1PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Session\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Session\PostV2PatchV1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2PatchV1.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Session\Post.feature.cs">
       <AutoGen>True</AutoGen>
@@ -328,21 +520,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\RestHelper.cs" />
-    <Compile Include="Helpers\UnitTest1.cs" />
+    <Compile Include="Helpers\SQLServerHelper.cs" />
     <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\ActionPlanV2.cs" />
     <Compile Include="Models\ActionPlan.cs" />
+    <Compile Include="Models\ActionV2.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressV2.cs" />
     <Compile Include="Models\Adviser.cs" />
+    <Compile Include="Models\AdviserV2.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerV2.cs" />
     <Compile Include="Models\Diversity.cs" />
     <Compile Include="Models\Goal.cs" />
+    <Compile Include="Models\GoalV2.cs" />
     <Compile Include="Models\Interaction.cs" />
+    <Compile Include="Models\OutcomeV2.cs" />
     <Compile Include="Models\Outcome.cs" />
     <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\SessionV2.cs" />
     <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\Transfer.cs" />
     <Compile Include="Models\WebChat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepDefs\Steps.cs" />
@@ -354,45 +555,125 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ActionPlan\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\ActionPlan\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ActionPlan\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ActionPlan\PostV1PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV1PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ActionPlan\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ActionPlan\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ActionPlan\PostV2PatchV1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2PatchV1.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Action\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Action\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Action\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Action\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Action\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Action\PostV1PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV1PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Action\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Action\PostV2PatchV1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2PatchV1.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Address\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Address\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Address\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Address\PatchV1fromV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV1fromV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Address\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Address\PatchV2fromV1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2fromV1.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Address\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Address\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Adviser\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Adviser\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Adviser\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Adviser\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Adviser\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Adviser\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Change Feed\ChangeFeed.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ChangeFeed.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Contact\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -410,13 +691,33 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Customer\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Customer\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Customer\PatchV1fromV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV1fromV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Customer\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Customer\PatchV2fromV1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2fromV1.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Customer\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Customer\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Customer\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -430,9 +731,33 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Goal\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Goal\Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Goal\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Goal\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Goal\PostV1PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV1PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Goal\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Goal\PostV2PatchV1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2PatchV1.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Interaction\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -454,17 +779,49 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Outcome\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Outcome\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Outcome\PostV1PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV1PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Outcome\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Outcome\PostV2withSessionDate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2withSessionDate.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Session\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Session\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Session\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Session\PostV1PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV1PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Session\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Session\PostV2PatchV1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2PatchV1.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Session\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -493,6 +850,9 @@
   <ItemGroup>
     <Content Include="appsettings.readme.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Subscription\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -504,9 +864,7 @@
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets'))" />
   </Target>
   <Import Project="..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets')" />
   <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
-  <Import Project="..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.2.2.0\build\Microsoft.Azure.DocumentDB.targets')" />
 </Project>

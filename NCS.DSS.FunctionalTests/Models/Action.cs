@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NCS.DSS.FunctionalTests.Models
+﻿namespace NCS.DSS.FunctionalTests.Models
 {
     class Action
     {
 
         public string ActionId { get; set; }
         public string CustomerId { get; set; }
+        public string InteractionId { get; set; }
         public string ActionPlanId { get; set; }
         public string DateActionAgreed { get; set; }
         public string DateActionAimsToBeCompletedBy { get; set; }
+        public string DateActionActuallyCompleted { get; set; }
         public string ActionSummary { get; set; }
         public string SignpostedTo { get; set; }
         public string ActionType { get; set; }

@@ -19,6 +19,8 @@ namespace NCS.DSS.FunctionalTests.Features.Action
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Get")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("getV1")]
     public partial class GetFeature
     {
         
@@ -31,7 +33,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
+                        "getV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +75,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         public virtual void FeatureBackground()
         {
-#line 5
+#line 8
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +86,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 6
+#line 9
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -94,7 +98,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table2.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 10
+#line 13
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -112,7 +116,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table3.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 14
+#line 17
  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table3, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -142,7 +146,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table4.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 20
+#line 23
  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table4, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -172,7 +176,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table5.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 30
+#line 33
  testRunner.And("I post an Action with the following details:", ((string)(null)), table5, "And ");
 #line hidden
         }
@@ -182,14 +186,14 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         public virtual void GetActionByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Action by ID", null, ((string[])(null)));
-#line 42
+#line 45
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 5
+#line 8
  this.FeatureBackground();
-#line 43
+#line 46
  testRunner.When("I get an Action by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
+#line 47
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -219,7 +223,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table6.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 45
+#line 48
  testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -228,3 +232,4 @@ namespace NCS.DSS.FunctionalTests.Features.Action
 }
 #pragma warning restore
 #endregion
+

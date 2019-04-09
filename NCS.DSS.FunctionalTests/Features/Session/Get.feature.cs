@@ -19,6 +19,8 @@ namespace NCS.DSS.FunctionalTests.Features.Session
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Get")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("getV1")]
     public partial class GetFeature
     {
         
@@ -31,7 +33,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Get", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
+                        "getV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +75,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         public virtual void FeatureBackground()
         {
-#line 4
+#line 7
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +86,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 5
+#line 8
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -94,7 +98,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table2.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 9
+#line 12
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -112,7 +116,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table3.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 13
+#line 16
  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table3, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -124,7 +128,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table4.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 19
+#line 22
  testRunner.And("I post a session with the following details:", ((string)(null)), table4, "And ");
 #line hidden
         }
@@ -134,14 +138,14 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         public virtual void GetSessionByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Session by ID", null, ((string[])(null)));
-#line 25
+#line 28
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 7
  this.FeatureBackground();
-#line 26
+#line 29
  testRunner.When("I get a Session by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
+#line 30
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -153,7 +157,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table5.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 28
+#line 31
  testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -162,3 +166,4 @@ namespace NCS.DSS.FunctionalTests.Features.Session
 }
 #pragma warning restore
 #endregion
+

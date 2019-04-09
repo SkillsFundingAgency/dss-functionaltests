@@ -1,4 +1,7 @@
-﻿Feature: Post an Outcome
+﻿
+@postV1
+
+Feature: Post an Outcome
 
 
 
@@ -43,3 +46,45 @@ Background: Prepare test
 	    | OutcomeType          | 3                    |
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+
+
+	Scenario: Create an outcome with missing OutcomeType
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		Then there should be a 422 response
+
+
+	Scenario: Create an outcome with invalid OutcomeType
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 8                    |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		Then there should be a 422 response
+
+
+
+	Scenario: Create an outcome with missing OutcomeClaimedDate
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 2                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		Then there should be a 201 response
+		And the response body should contain:
+	    | Field                | Value                |
+	    | OutcomeType          | 2                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+
+
+	Scenario: Create an outcome with missing OutcomeEffectiveDate
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 2                    |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+		Then there should be a 201 response
+		And the response body should contain:
+	    | Field                | Value                |
+	    | OutcomeType          | 2                    |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
