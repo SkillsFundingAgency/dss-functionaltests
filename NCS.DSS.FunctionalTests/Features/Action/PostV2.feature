@@ -37,7 +37,7 @@ Feature: PostV2
 
 
 
-	@V2
+@Action	@V2
 	Scenario: Post Valid Action
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -61,7 +61,7 @@ Feature: PostV2
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
-	@V2
+@Action @V2
 	Scenario: Post Valid Action with only mandatory Fields
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -82,7 +82,7 @@ Feature: PostV2
 		| PersonResponsible             | 1                    |
 
 
-	@V2
+@Action @V2
 	Scenario: Post Action with invalid interactionId
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -96,7 +96,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-	@V2
+@Action @V2
 	Scenario: Post Action with missing DateActionAgreed
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -110,7 +110,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-    @V2
+@Action @V2
 	Scenario: Post Action with missing DateActionAimsToBeCompletedBy
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -124,7 +124,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-    @V2
+@Action @V2
 	Scenario: Post Action with missing DateActionActuallyCompleted
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -149,7 +149,7 @@ Feature: PostV2
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
-	@V2
+@Action @V2
 	Scenario: Post Action with missing ActionSummary
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -163,7 +163,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-    @V2
+@Action @V2
 	Scenario: Post Action with missing ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -177,7 +177,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-    @V2
+@Action @V2
 	Scenario: Post Action with missing PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -191,7 +191,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-	@V2
+@Action @V2
 	Scenario: Post Action with DateActionAgreed later than datetime.now
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -205,7 +205,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
      
-	@V2
+@Action @V2
 	Scenario: Post Action with DateActionAimsToBeCompletedBy earlier than DateActionAgreed
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -219,6 +219,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
+@Action @V2
 	Scenario: Post Action with DateActionActuallyCompleted earlier than DateActionAgreed
 		Given I post an Action with the following details:
 		| Field                         | Value                |

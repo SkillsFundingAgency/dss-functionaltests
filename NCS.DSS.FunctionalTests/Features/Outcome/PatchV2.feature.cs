@@ -165,10 +165,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup")]
+        [NUnit.Framework.CategoryAttribute("Cat1")]
         public virtual void ValidPatchOutcomeClaimedDateWithClaimedPriorityGroup()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup", null, ((string[])(null)));
-#line 39
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup", null, new string[] {
+                        "Cat1"});
+#line 40
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -183,7 +185,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 40
+#line 41
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -195,20 +197,22 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 44
+#line 45
   testRunner.When("I patch the following:", ((string)(null)), table7, "When ");
-#line 48
+#line 49
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch OutcomeClaimedDate without ClaimedPriorityGroup")]
-        public virtual void PatchOutcomeClaimedDateWithoutClaimedPriorityGroup()
+        [NUnit.Framework.DescriptionAttribute("Valid Patch remove value for OutcomeClaimedDate")]
+        [NUnit.Framework.CategoryAttribute("Cat1")]
+        public virtual void ValidPatchRemoveValueForOutcomeClaimedDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeClaimedDate without ClaimedPriorityGroup", null, ((string[])(null)));
-#line 50
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch remove value for OutcomeClaimedDate", null, new string[] {
+                        "Cat1"});
+#line 52
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -222,8 +226,14 @@ this.FeatureBackground();
                         "3"});
             table8.AddRow(new string[] {
                         "OutcomeEffectiveDate",
-                        "2018-07-20T21:45:00Z"});
-#line 51
+                        "2018-08-20T21:45:00Z"});
+            table8.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-08-20T21:45:00Z"});
+            table8.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "5"});
+#line 53
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -231,96 +241,104 @@ this.FeatureBackground();
                         "Value"});
             table9.AddRow(new string[] {
                         "OutcomeClaimedDate",
-                        "2018-07-20T21:45:00Z"});
-#line 55
+                        ""});
+#line 59
   testRunner.When("I patch the following:", ((string)(null)), table9, "When ");
-#line 58
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch invalid OutcomeType")]
-        public virtual void PatchInvalidOutcomeType()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid OutcomeType", null, ((string[])(null)));
-#line 61
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 9
-this.FeatureBackground();
+#line 62
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table10.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-08-20T21:45:00Z"});
+            table10.AddRow(new string[] {
                         "OutcomeType",
                         "3"});
             table10.AddRow(new string[] {
-                        "OutcomeEffectiveDate",
-                        "2018-07-20T21:45:00Z"});
-#line 62
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table10, "Given ");
+                        "OutcomeClaimedDate",
+                        ""});
+            table10.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "5"});
+#line 63
+  testRunner.And("the response body should contain:", ((string)(null)), table10, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Valid Patch remove value for OutcomeClaimedDate and OutcomeEffectiveDate")]
+        public virtual void ValidPatchRemoveValueForOutcomeClaimedDateAndOutcomeEffectiveDate()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch remove value for OutcomeClaimedDate and OutcomeEffectiveDate", null, ((string[])(null)));
+#line 70
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table11.AddRow(new string[] {
                         "OutcomeType",
-                        "7"});
-#line 66
-  testRunner.When("I patch the following:", ((string)(null)), table11, "When ");
-#line 69
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Outcome effective date earlier than Session.DateandTimeOfSession")]
-        public virtual void PatchOutcomeEffectiveDateEarlierThanSession_DateandTimeOfSession()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date earlier than Session.DateandTimeOfSession", null, ((string[])(null)));
-#line 74
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 9
-this.FeatureBackground();
+                        "3"});
+            table11.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-08-20T21:45:00Z"});
+            table11.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-08-20T21:45:00Z"});
+            table11.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "5"});
+#line 71
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table11, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table12.AddRow(new string[] {
-                        "OutcomeType",
-                        "3"});
+                        "OutcomeClaimedDate",
+                        ""});
             table12.AddRow(new string[] {
                         "OutcomeEffectiveDate",
-                        "2018-07-20T21:45:00Z"});
-#line 75
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table12, "Given ");
+                        ""});
+#line 77
+  testRunner.When("I patch the following:", ((string)(null)), table12, "When ");
+#line 81
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table13.AddRow(new string[] {
                         "OutcomeEffectiveDate",
-                        "2017-07-20T21:45:00Z"});
-#line 79
-  testRunner.When("I patch the following:", ((string)(null)), table13, "When ");
+                        ""});
+            table13.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table13.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+            table13.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "5"});
 #line 82
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("the response body should contain:", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Outcome effective date less than Outcome claimed date")]
-        public virtual void PatchOutcomeEffectiveDateLessThanOutcomeClaimedDate()
+        [NUnit.Framework.DescriptionAttribute("Valid Patch add values for OutcomeClaimedDate and OutcomeEffectiveDate")]
+        public virtual void ValidPatchAddValuesForOutcomeClaimedDateAndOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date less than Outcome claimed date", null, ((string[])(null)));
-#line 85
- this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch add values for OutcomeClaimedDate and OutcomeEffectiveDate", null, ((string[])(null)));
+#line 90
+  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
@@ -332,23 +350,192 @@ this.FeatureBackground();
                         "OutcomeType",
                         "3"});
             table14.AddRow(new string[] {
-                        "OutcomeEffectiveDate",
-                        "2018-07-20T21:45:00Z"});
-#line 86
+                        "ClaimedPriorityGroup",
+                        "5"});
+#line 91
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table14, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table15.AddRow(new string[] {
-                        "OutcomeClaimedDate",
-                        "2018-07-19T21:45:00Z"});
+                        "OutcomeEffectiveDate",
+                        "2018-08-20T21:45:00Z"});
             table15.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-08-20T21:46:00Z"});
+#line 95
+  testRunner.When("I patch the following:", ((string)(null)), table15, "When ");
+#line 99
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table16.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-08-20T21:45:00Z"});
+            table16.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table16.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-08-20T21:46:00Z"});
+            table16.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 90
-  testRunner.When("I patch the following:", ((string)(null)), table15, "When ");
-#line 94
+#line 100
+  testRunner.And("the response body should contain:", ((string)(null)), table16, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch OutcomeClaimedDate without ClaimedPriorityGroup")]
+        public virtual void PatchOutcomeClaimedDateWithoutClaimedPriorityGroup()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeClaimedDate without ClaimedPriorityGroup", null, ((string[])(null)));
+#line 107
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table17.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table17.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+#line 108
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table17, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table18.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+#line 112
+  testRunner.When("I patch the following:", ((string)(null)), table18, "When ");
+#line 115
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch invalid OutcomeType")]
+        public virtual void PatchInvalidOutcomeType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid OutcomeType", null, ((string[])(null)));
+#line 118
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table19.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table19.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+#line 119
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table19, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table20.AddRow(new string[] {
+                        "OutcomeType",
+                        "7"});
+#line 123
+  testRunner.When("I patch the following:", ((string)(null)), table20, "When ");
+#line 126
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Outcome effective date earlier than Session.DateandTimeOfSession")]
+        public virtual void PatchOutcomeEffectiveDateEarlierThanSession_DateandTimeOfSession()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date earlier than Session.DateandTimeOfSession", null, ((string[])(null)));
+#line 131
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table21.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table21.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+#line 132
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table21, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table22.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2017-07-20T21:45:00Z"});
+#line 136
+  testRunner.When("I patch the following:", ((string)(null)), table22, "When ");
+#line 139
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Outcome effective date less than Outcome claimed date")]
+        public virtual void PatchOutcomeEffectiveDateLessThanOutcomeClaimedDate()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date less than Outcome claimed date", null, ((string[])(null)));
+#line 142
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table23.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table23.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+#line 143
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table23, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table24.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-19T21:45:00Z"});
+            table24.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "5"});
+#line 147
+  testRunner.When("I patch the following:", ((string)(null)), table24, "When ");
+#line 151
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -361,33 +548,33 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date greater than Session.DateandTimeOfSession + 12 month" +
                     "s", null, ((string[])(null)));
-#line 96
+#line 153
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table16.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "OutcomeType",
                         "1"});
-            table16.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 97
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table16, "Given ");
+#line 154
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table25, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table17.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2019-01-22T22:45:00Z"});
-#line 101
-  testRunner.When("I patch the following:", ((string)(null)), table17, "When ");
-#line 104
+#line 158
+  testRunner.When("I patch the following:", ((string)(null)), table26, "When ");
+#line 161
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -400,33 +587,33 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date greater than Session.DateandTimeOfSession + 13 month" +
                     "s", null, ((string[])(null)));
-#line 107
+#line 164
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table18.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "OutcomeType",
                         "3"});
-            table18.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 108
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table18, "Given ");
+#line 165
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table27, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table19.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2019-02-22T22:45:00Z"});
-#line 112
-  testRunner.When("I patch the following:", ((string)(null)), table19, "When ");
-#line 115
+#line 169
+  testRunner.When("I patch the following:", ((string)(null)), table28, "When ");
+#line 172
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

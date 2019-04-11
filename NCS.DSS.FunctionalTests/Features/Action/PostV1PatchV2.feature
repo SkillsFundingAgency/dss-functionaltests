@@ -31,7 +31,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-	@subcontractorId
+@Action	@subcontractorId
 	Scenario: Patch DateActionAimsToBeCompletedBy with SubcontractorId
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -57,7 +57,7 @@ Feature: PostV1PatchV2
 		| PersonResponsible             | 1                    |
 		And the response body should contain the SubContractorId
 
-
+@Action
 	Scenario: Patch ActionSummary
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -82,7 +82,7 @@ Feature: PostV1PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@Action
 	Scenario: Patch SignpostedTo
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -107,7 +107,7 @@ Feature: PostV1PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@Action
 	Scenario: Patch ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -132,7 +132,7 @@ Feature: PostV1PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@Action
 	Scenario: Patch ActionStatus
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -157,7 +157,7 @@ Feature: PostV1PatchV2
 		| ActionStatus                  | 2                    |
 		| PersonResponsible             | 1                    |
 
-
+@Action
 	Scenario: Patch PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -182,7 +182,7 @@ Feature: PostV1PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 2                    |
 
-
+@Action
 		Scenario: Patch with invalid ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -213,6 +213,7 @@ Feature: PostV1PatchV2
 		| ActionStatus                  | 33                   |
 		Then there should be a 422 response
 
+@Action
 		Scenario: Patch with invalid PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |

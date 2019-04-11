@@ -863,8 +863,13 @@ namespace FunctionalTests.StepDefs
             {
                 //is it in the table?
                 bool result = false;
-                if ((actualVals[entry.Key] == null && entry.Value == "null") ||
-                     (actualVals.ContainsKey(entry.Key) && actualVals[entry.Key].Equals(entry.Value))) { result = true; }
+                if ((actualVals[entry.Key] == null && entry.Value == "null"))
+                    { result = true; }
+                else if (actualVals.ContainsKey(entry.Key) && actualVals[entry.Key] == null && entry.Value == "" )
+                    { result = true; }
+                else if (actualVals.ContainsKey(entry.Key) && actualVals[entry.Key].Equals(entry.Value))
+                    { result = true; }
+
                 if (result == false)
                 {
                     return false;

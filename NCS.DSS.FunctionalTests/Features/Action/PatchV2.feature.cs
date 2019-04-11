@@ -165,9 +165,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateActionAimsToBeCompletedBy")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchDateActionAimsToBeCompletedBy()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateActionAimsToBeCompletedBy", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateActionAimsToBeCompletedBy", null, new string[] {
+                        "Action"});
 #line 39
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -244,9 +246,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionSummary")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchActionSummary()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionSummary", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionSummary", null, new string[] {
+                        "Action"});
 #line 65
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -323,9 +327,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch SignpostedTo")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchSignpostedTo()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SignpostedTo", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SignpostedTo", null, new string[] {
+                        "Action"});
 #line 90
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -402,9 +408,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionType")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchActionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionType", null, new string[] {
+                        "Action"});
 #line 115
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -481,9 +489,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionStatus")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchActionStatus()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionStatus", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionStatus", null, new string[] {
+                        "Action"});
 #line 140
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -560,9 +570,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch PersonResponsible")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchPersonResponsible()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PersonResponsible", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PersonResponsible", null, new string[] {
+                        "Action"});
 #line 165
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -639,11 +651,13 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid ActionType")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchWithInvalidActionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionType", null, new string[] {
+                        "Action"});
 #line 190
-  this.ScenarioInitialize(scenarioInfo);
+ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  this.FeatureBackground();
@@ -743,10 +757,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid PersonResponsible")]
+        [NUnit.Framework.CategoryAttribute("Action")]
         public virtual void PatchWithInvalidPersonResponsible()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid PersonResponsible", null, ((string[])(null)));
-#line 220
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid PersonResponsible", null, new string[] {
+                        "Action"});
+#line 221
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -776,7 +792,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table28.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 221
+#line 222
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table28, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -785,9 +801,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table29.AddRow(new string[] {
                         "PersonResponsible",
                         "33"});
-#line 230
+#line 231
   testRunner.When("I patch the following:", ((string)(null)), table29, "When ");
-#line 233
+#line 234
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -36,6 +36,7 @@ Background: Prepare test
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
+	@Cat1
 	Scenario: Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -46,6 +47,62 @@ Background: Prepare test
 		| OutcomeClaimedDate   | 2018-08-20T21:45:00Z |
 		| ClaimedPriorityGroup | 5                    |
 		Then there should be a 200 response
+
+	@Cat1
+	Scenario: Valid Patch remove value for OutcomeClaimedDate
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-08-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-08-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 5                    |
+		When I patch the following:
+		| Field                | Value                |
+		| OutcomeClaimedDate   |                      |
+		Then there should be a 200 response
+		And the response body should contain:
+         | Field                | Value                |
+         | OutcomeEffectiveDate | 2018-08-20T21:45:00Z |
+         | OutcomeType          | 3                    |
+         | OutcomeClaimedDate   |                      |
+         | ClaimedPriorityGroup | 5                    |
+
+		Scenario: Valid Patch remove value for OutcomeClaimedDate and OutcomeEffectiveDate 
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-08-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-08-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 5                    |
+		When I patch the following:
+		| Field                | Value |
+		| OutcomeClaimedDate   |       |
+		| OutcomeEffectiveDate |       |
+		Then there should be a 200 response
+		And the response body should contain:
+         | Field                | Value                |
+         | OutcomeEffectiveDate |                      |
+         | OutcomeType          | 3                    |
+         | OutcomeClaimedDate   |                      |
+         | ClaimedPriorityGroup | 5                    |
+
+
+		Scenario: Valid Patch add values for OutcomeClaimedDate and OutcomeEffectiveDate 
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | ClaimedPriorityGroup | 5                    |
+		When I patch the following:
+		| Field                | Value                |
+		| OutcomeEffectiveDate | 2018-08-20T21:45:00Z |
+		| OutcomeClaimedDate   | 2018-08-20T21:46:00Z |
+		Then there should be a 200 response
+		And the response body should contain:
+         | Field                | Value                |
+         | OutcomeEffectiveDate | 2018-08-20T21:45:00Z |
+         | OutcomeType          | 3                    |
+         | OutcomeClaimedDate   | 2018-08-20T21:46:00Z |
+         | ClaimedPriorityGroup | 5                    |
 
 	Scenario: Patch OutcomeClaimedDate without ClaimedPriorityGroup
 		Given I post an outcome with the following details:
