@@ -103,9 +103,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Interaction with all Fields")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostValidInteractionWithAllFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Interaction with all Fields", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Interaction with all Fields", null, new string[] {
+                        "interactions"});
 #line 19
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -155,9 +157,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Interaction with missing Channel")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostInteractionWithMissingChannel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing Channel", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing Channel", null, new string[] {
+                        "interactions"});
 #line 35
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -189,9 +193,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Interaction with missing InteractionType")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostInteractionWithMissingInteractionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing InteractionType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing InteractionType", null, new string[] {
+                        "interactions"});
 #line 45
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -223,9 +229,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid AdviserDetailsID")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostInteractionWithInvalidAdviserDetailsID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid AdviserDetailsID", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid AdviserDetailsID", null, new string[] {
+                        "interactions"});
 #line 55
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -260,9 +268,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid DateandTimeOfInteraction")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostInteractionWithInvalidDateandTimeOfInteraction()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid DateandTimeOfInteraction", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid DateandTimeOfInteraction", null, new string[] {
+                        "interactions"});
 #line 66
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -297,9 +307,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid Channel")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostInteractionWithInvalidChannel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid Channel", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid Channel", null, new string[] {
+                        "interactions"});
 #line 78
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -334,9 +346,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid InteractionType")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostInteractionWithInvalidInteractionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid InteractionType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid InteractionType", null, new string[] {
+                        "interactions"});
 #line 89
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -371,9 +385,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid LastModifiedDate")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PostInteractionWithInvalidLastModifiedDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid LastModifiedDate", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid LastModifiedDate", null, new string[] {
+                        "interactions"});
 #line 101
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

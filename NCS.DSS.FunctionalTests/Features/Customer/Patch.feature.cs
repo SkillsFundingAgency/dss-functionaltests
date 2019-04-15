@@ -75,9 +75,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateOfRegistration")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchDateOfRegistration()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfRegistration", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfRegistration", null, new string[] {
+                        "customers"});
 #line 8
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -179,9 +181,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Title")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchTitle()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Title", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Title", null, new string[] {
+                        "customers"});
 #line 43
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -283,9 +287,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch GivenName")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchGivenName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch GivenName", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch GivenName", null, new string[] {
+                        "customers"});
 #line 77
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -387,9 +393,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch FamilyName")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchFamilyName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch FamilyName", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch FamilyName", null, new string[] {
+                        "customers"});
 #line 111
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -491,9 +499,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateofBirth")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchDateofBirth()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateofBirth", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateofBirth", null, new string[] {
+                        "customers"});
 #line 145
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -595,9 +605,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Gender")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchGender()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Gender", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Gender", null, new string[] {
+                        "customers"});
 #line 179
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -699,9 +711,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch UniqueLearnerNumber")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchUniqueLearnerNumber()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch UniqueLearnerNumber", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch UniqueLearnerNumber", null, new string[] {
+                        "customers"});
 #line 213
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -803,9 +817,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OptInUserResearch")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchOptInUserResearch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInUserResearch", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInUserResearch", null, new string[] {
+                        "customers"});
 #line 247
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -907,9 +923,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OptInMarketResearch")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchOptInMarketResearch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInMarketResearch", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInMarketResearch", null, new string[] {
+                        "customers"});
 #line 281
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1011,9 +1029,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateOfTermination")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchDateOfTermination()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfTermination", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfTermination", null, new string[] {
+                        "customers"});
 #line 315
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1115,9 +1135,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ReasonForTermination")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchReasonForTermination()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ReasonForTermination", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ReasonForTermination", null, new string[] {
+                        "customers"});
 #line 349
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1219,9 +1241,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch IntroducedBy")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchIntroducedBy()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedBy", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedBy", null, new string[] {
+                        "customers"});
 #line 383
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1323,9 +1347,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch IntroducedByAdditionalInfo")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchIntroducedByAdditionalInfo()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedByAdditionalInfo", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedByAdditionalInfo", null, new string[] {
+                        "customers"});
 #line 417
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1427,10 +1453,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch With Existing DateOfTermination")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PatchWithExistingDateOfTermination()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch With Existing DateOfTermination", null, ((string[])(null)));
-#line 450
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch With Existing DateOfTermination", null, new string[] {
+                        "customers"});
+#line 452
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -1479,7 +1507,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table40.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-21T14:45:00Z"});
-#line 451
+#line 453
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table40, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1488,9 +1516,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table41.AddRow(new string[] {
                         "IntroducedByAdditionalInfo",
                         "updated info"});
-#line 467
+#line 469
   testRunner.When("I patch the following:", ((string)(null)), table41, "When ");
-#line 470
+#line 472
   testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

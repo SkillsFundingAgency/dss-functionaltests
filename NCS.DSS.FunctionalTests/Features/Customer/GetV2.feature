@@ -3,7 +3,7 @@
 
 Feature: GetV2
 
-	@subcontractorId
+@customers	@subcontractorId
 	Scenario: Get Customer by ID
 	Given I post a Customer with the following details:
 		| Field                      | Value                |

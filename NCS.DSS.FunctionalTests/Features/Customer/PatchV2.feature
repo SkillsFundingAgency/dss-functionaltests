@@ -4,7 +4,8 @@
 Feature: PatchV2
 
 
-	Scenario: Patch DateOfRegistration
+@customers
+      Scenario: Patch DateOfRegistration
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -39,6 +40,7 @@ Feature: PatchV2
 
 
 
+@customers
 	Scenario: Patch Title
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -73,7 +75,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-	Scenario: Patch GivenName
+@customers
+     Scenario: Patch GivenName
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -107,7 +110,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 			
-	Scenario: Patch FamilyName
+@customers
+    Scenario: Patch FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -141,7 +145,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-	Scenario: Patch DateofBirth
+@customers
+      Scenario: Patch DateofBirth
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -175,7 +180,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-	Scenario: Patch Gender
+@customers
+     Scenario: Patch Gender
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -209,7 +215,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 		
 		
-		Scenario: Patch UniqueLearnerNumber
+@customers
+    Scenario: Patch UniqueLearnerNumber
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -243,7 +250,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 		
 		
-		Scenario: Patch OptInUserResearch
+@customers
+     Scenario: Patch OptInUserResearch
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -277,7 +285,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-		Scenario: Patch OptInMarketResearch
+@customers
+     Scenario: Patch OptInMarketResearch
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -311,7 +320,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-	Scenario: Patch DateOfTermination
+@customers
+     Scenario: Patch DateOfTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -345,7 +355,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-	Scenario: Patch ReasonForTermination
+@customers
+     Scenario: Patch ReasonForTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -379,7 +390,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-	Scenario: Patch IntroducedBy
+@customers
+     Scenario: Patch IntroducedBy
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -413,7 +425,8 @@ Feature: PatchV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-	Scenario: Patch IntroducedByAdditionalInfo
+@customers
+     Scenario: Patch IntroducedByAdditionalInfo
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -446,7 +459,8 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | updated info	        |
 
-		Scenario: Patch With Existing DateOfTermination
+@customers
+    Scenario: Patch With Existing DateOfTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |

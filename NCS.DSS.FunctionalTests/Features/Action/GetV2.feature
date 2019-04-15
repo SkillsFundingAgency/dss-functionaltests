@@ -43,7 +43,7 @@ Feature: GetV2
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
-@Action
+@actions
 	Scenario: Get Action by ID
 	When I get an Action by ID
 	Then there should be a 200 response

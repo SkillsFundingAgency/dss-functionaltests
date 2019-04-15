@@ -153,9 +153,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void PatchOutcomeType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeType", null, new string[] {
+                        "outcomes"});
 #line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -208,9 +210,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OutcomeClaimedDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void PatchOutcomeClaimedDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeClaimedDate", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeClaimedDate", null, new string[] {
+                        "outcomes"});
 #line 54
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -263,9 +267,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void PatchOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeEffectiveDate", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
 #line 71
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

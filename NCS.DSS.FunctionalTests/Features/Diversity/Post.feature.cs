@@ -91,9 +91,11 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid DiversityDetails with all Fields")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostValidDiversityDetailsWithAllFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid DiversityDetails with all Fields", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid DiversityDetails with all Fields", null, new string[] {
+                        "diversitydetails"});
 #line 11
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -173,10 +175,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with only mandatory Fields")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithOnlyMandatoryFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with only mandatory Fields", null, ((string[])(null)));
-#line 36
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with only mandatory Fields", null, new string[] {
+                        "diversitydetails"});
+#line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -197,9 +201,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table4.AddRow(new string[] {
                         "Ethnicity",
                         "44"});
-#line 37
+#line 38
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table4, "When ");
-#line 43
+#line 44
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -217,7 +221,7 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table5.AddRow(new string[] {
                         "Ethnicity",
                         "44"});
-#line 44
+#line 45
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -225,10 +229,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with missing ConsentToCollectLLDDHealth Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithMissingConsentToCollectLLDDHealthValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with missing ConsentToCollectLLDDHealth Value", null, ((string[])(null)));
-#line 52
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with missing ConsentToCollectLLDDHealth Value", null, new string[] {
+                        "diversitydetails"});
+#line 53
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -261,9 +267,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table6.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 53
+#line 54
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table6, "When ");
-#line 63
+#line 64
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -271,10 +277,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid ConsentToCollectLLDDHealth Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidConsentToCollectLLDDHealthValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid ConsentToCollectLLDDHealth Value", null, ((string[])(null)));
-#line 66
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid ConsentToCollectLLDDHealth Value", null, new string[] {
+                        "diversitydetails"});
+#line 67
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -310,9 +318,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table7.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 67
+#line 68
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table7, "When ");
-#line 78
+#line 79
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -321,11 +329,13 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with missing LearningDifficultyOrDisabilityDeclaration Valu" +
             "e")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithMissingLearningDifficultyOrDisabilityDeclarationValue()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with missing LearningDifficultyOrDisabilityDeclaration Valu" +
-                    "e", null, ((string[])(null)));
-#line 81
+                    "e", null, new string[] {
+                        "diversitydetails"});
+#line 82
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -358,9 +368,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table8.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 82
+#line 83
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table8, "When ");
-#line 92
+#line 93
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -369,11 +379,13 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid LearningDifficultyOrDisabilityDeclaration Valu" +
             "e")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidLearningDifficultyOrDisabilityDeclarationValue()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid LearningDifficultyOrDisabilityDeclaration Valu" +
-                    "e", null, ((string[])(null)));
-#line 95
+                    "e", null, new string[] {
+                        "diversitydetails"});
+#line 96
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -409,9 +421,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table9.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 96
+#line 97
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table9, "When ");
-#line 107
+#line 108
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -419,10 +431,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid PrimaryLearningDifficultyOrDisability Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidPrimaryLearningDifficultyOrDisabilityValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid PrimaryLearningDifficultyOrDisability Value", null, ((string[])(null)));
-#line 110
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid PrimaryLearningDifficultyOrDisability Value", null, new string[] {
+                        "diversitydetails"});
+#line 111
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -458,9 +472,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table10.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 111
+#line 112
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table10, "When ");
-#line 122
+#line 123
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -468,10 +482,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid SecondaryLearningDifficultyOrDisability Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidSecondaryLearningDifficultyOrDisabilityValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid SecondaryLearningDifficultyOrDisability Value", null, ((string[])(null)));
-#line 125
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid SecondaryLearningDifficultyOrDisability Value", null, new string[] {
+                        "diversitydetails"});
+#line 126
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -507,9 +523,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table11.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 126
+#line 127
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table11, "When ");
-#line 137
+#line 138
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -517,10 +533,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid DateAndTimeLLDDHealthConsentCollected Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidDateAndTimeLLDDHealthConsentCollectedValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid DateAndTimeLLDDHealthConsentCollected Value", null, ((string[])(null)));
-#line 140
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid DateAndTimeLLDDHealthConsentCollected Value", null, new string[] {
+                        "diversitydetails"});
+#line 141
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -556,9 +574,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table12.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 141
+#line 142
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table12, "When ");
-#line 152
+#line 153
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -566,10 +584,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with missing ConsentToCollectEthnicity Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithMissingConsentToCollectEthnicityValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with missing ConsentToCollectEthnicity Value", null, ((string[])(null)));
-#line 154
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with missing ConsentToCollectEthnicity Value", null, new string[] {
+                        "diversitydetails"});
+#line 156
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -602,9 +622,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table13.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 155
+#line 157
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table13, "When ");
-#line 165
+#line 167
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -612,10 +632,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid ConsentToCollectEthnicity Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidConsentToCollectEthnicityValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid ConsentToCollectEthnicity Value", null, ((string[])(null)));
-#line 168
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid ConsentToCollectEthnicity Value", null, new string[] {
+                        "diversitydetails"});
+#line 170
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -651,9 +673,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table14.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 169
+#line 171
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table14, "When ");
-#line 180
+#line 182
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -661,10 +683,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid Ethnicity Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidEthnicityValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid Ethnicity Value", null, ((string[])(null)));
-#line 182
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid Ethnicity Value", null, new string[] {
+                        "diversitydetails"});
+#line 185
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -700,9 +724,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table15.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 183
+#line 186
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table15, "When ");
-#line 194
+#line 197
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -710,10 +734,12 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post DiversityDetails with invalid DateAndTimeEthnicityCollected Value")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
         public virtual void PostDiversityDetailsWithInvalidDateAndTimeEthnicityCollectedValue()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid DateAndTimeEthnicityCollected Value", null, ((string[])(null)));
-#line 197
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post DiversityDetails with invalid DateAndTimeEthnicityCollected Value", null, new string[] {
+                        "diversitydetails"});
+#line 200
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -749,9 +775,9 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
             table16.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 198
+#line 201
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table16, "When ");
-#line 209
+#line 212
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

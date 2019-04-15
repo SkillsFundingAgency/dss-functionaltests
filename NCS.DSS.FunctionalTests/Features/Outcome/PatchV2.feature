@@ -36,7 +36,7 @@ Background: Prepare test
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-	@Cat1
+@outcomes	@Cat1
 	Scenario: Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -48,7 +48,7 @@ Background: Prepare test
 		| ClaimedPriorityGroup | 5                    |
 		Then there should be a 200 response
 
-	@Cat1
+@outcomes	@Cat1
 	Scenario: Valid Patch remove value for OutcomeClaimedDate
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -67,6 +67,7 @@ Background: Prepare test
          | OutcomeClaimedDate   |                      |
          | ClaimedPriorityGroup | 5                    |
 
+@outcomes
 		Scenario: Valid Patch remove value for OutcomeClaimedDate and OutcomeEffectiveDate 
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -86,7 +87,7 @@ Background: Prepare test
          | OutcomeClaimedDate   |                      |
          | ClaimedPriorityGroup | 5                    |
 
-
+@outcomes
 		Scenario: Valid Patch add values for OutcomeClaimedDate and OutcomeEffectiveDate 
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -104,6 +105,7 @@ Background: Prepare test
          | OutcomeClaimedDate   | 2018-08-20T21:46:00Z |
          | ClaimedPriorityGroup | 5                    |
 
+@outcomes
 	Scenario: Patch OutcomeClaimedDate without ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -114,7 +116,7 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Patch invalid OutcomeType
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -127,7 +129,7 @@ Background: Prepare test
 
 
 
-
+@outcomes
 	Scenario:  Patch Outcome effective date earlier than Session.DateandTimeOfSession
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -138,7 +140,7 @@ Background: Prepare test
 		| OutcomeEffectiveDate | 2017-07-20T21:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario:  Patch Outcome effective date less than Outcome claimed date
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -150,6 +152,7 @@ Background: Prepare test
 		| ClaimedPriorityGroup | 5                    |
 		Then there should be a 422 response
 
+@outcomes
 	Scenario: Patch Outcome effective date greater than Session.DateandTimeOfSession + 12 months
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -160,7 +163,7 @@ Background: Prepare test
 	    | OutcomeEffectiveDate | 2019-01-22T22:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Patch Outcome effective date greater than Session.DateandTimeOfSession + 13 months
 		Given I post an outcome with the following details:
 	    | Field                | Value                |

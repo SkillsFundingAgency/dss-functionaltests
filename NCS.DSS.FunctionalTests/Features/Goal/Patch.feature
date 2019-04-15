@@ -34,7 +34,7 @@ Background: Prepare test
 
 
 
-
+@goals
 	Scenario: Patch DateGoalCaptured
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -55,7 +55,7 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 
-
+@goals
 	Scenario: Patch DateGoalShouldBeCompletedBy
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -76,7 +76,7 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 
-
+@goals
 	Scenario: Patch DateGoalAchieved
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -98,7 +98,7 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 
-
+@goals
 	Scenario: Patch with invalid GoalType
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -112,6 +112,7 @@ Background: Prepare test
 	    | GoalType                    | 4                    |
 		Then there should be a 422 response
 
+@goals
 	Scenario: Patch with invalid GoalStatus
 		Given I post a goal with the following details:
 	    | Field                       | Value                |

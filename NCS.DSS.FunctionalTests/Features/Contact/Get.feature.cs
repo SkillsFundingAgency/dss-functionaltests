@@ -117,9 +117,11 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Contact by ID")]
+        [NUnit.Framework.CategoryAttribute("contactdetails")]
         public virtual void GetContactByID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Contact by ID", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Contact by ID", null, new string[] {
+                        "contactdetails"});
 #line 21
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -153,12 +153,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateActionAimsToBeCompletedBy with SubcontractorId")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void PatchDateActionAimsToBeCompletedByWithSubcontractorId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateActionAimsToBeCompletedBy with SubcontractorId", null, new string[] {
-                        "Action",
+                        "actions",
                         "subcontractorId"});
 #line 35
  this.ScenarioInitialize(scenarioInfo);
@@ -238,11 +238,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionSummary")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchActionSummary()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionSummary", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 61
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -319,11 +319,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch SignpostedTo")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchSignpostedTo()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SignpostedTo", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 86
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -400,11 +400,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionType")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchActionType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionType", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 111
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -481,11 +481,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionStatus")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchActionStatus()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionStatus", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 136
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -562,11 +562,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch PersonResponsible")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchPersonResponsible()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PersonResponsible", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 161
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -643,11 +643,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid ActionType")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchWithInvalidActionType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionType", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 186
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -749,11 +749,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid PersonResponsible")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchWithInvalidPersonResponsible()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid PersonResponsible", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 217
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

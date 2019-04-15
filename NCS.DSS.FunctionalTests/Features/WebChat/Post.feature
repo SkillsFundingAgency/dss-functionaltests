@@ -15,9 +15,7 @@ Background: Prepare test
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
 
-
-
-
+@webchats
 	Scenario: Create a webchat with all valid values
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -39,6 +37,7 @@ Background: Prepare test
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
+@webchats
 	Scenario: Create a webchat with only mandatory values
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |

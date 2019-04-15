@@ -22,7 +22,7 @@ Feature: Patch
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
 
-
+@actionplans
 	Scenario: Patch CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -49,7 +49,7 @@ Feature: Patch
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch ActionPlanDeliveryMethod
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -76,7 +76,7 @@ Feature: Patch
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch PriorityCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -103,7 +103,7 @@ Feature: Patch
 		| PriorityCustomer               | 2                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch CurrentSituation
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |	
@@ -131,7 +131,7 @@ Feature: Patch
 		| CurrentSituation               | updated text here    |
 
 
-
+@actionplans
 		Scenario: Patch with invalid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -148,6 +148,7 @@ Feature: Patch
 		| DateActionPlanCreated          | 20166-07-30T09:00:00Z |
 		Then there should be a 422 response
 
+@actionplans
 		Scenario: Patch with invalid CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -164,6 +165,7 @@ Feature: Patch
 		| DateActionPlanCreated          | 1					 |
 		Then there should be a 422 response
 
+@actionplans
 		Scenario: Patch with invalid DateAndTimeCharterShown
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -180,6 +182,7 @@ Feature: Patch
 		| DateAndTimeCharterShown        | 20181-07-30T09:00:00Z |
 		Then there should be a 422 response
 
+@actionplans
 		Scenario: Patch with invalid DateActionPlanSentToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |

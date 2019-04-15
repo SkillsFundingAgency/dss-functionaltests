@@ -25,7 +25,7 @@ Feature: Post
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z   |
 		| VenuePostCode            | NN1 2NN                |
 
-
+@actionplans
 	Scenario: Post Valid ActionPlan with all fields
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |
@@ -51,7 +51,7 @@ Feature: Post
 
 
 
-
+@actionplans
 	Scenario: Post Valid ActionPlan with only mandatory fields
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |
@@ -69,7 +69,7 @@ Feature: Post
 
 
 
-
+@actionplans
 	Scenario: Post ActionPlan with missing DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |
@@ -85,7 +85,7 @@ Feature: Post
 
 
 
-
+@actionplans
 	Scenario: Post ActionPlan with invalid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |

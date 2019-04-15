@@ -109,10 +109,12 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Transfer")]
+        [NUnit.Framework.CategoryAttribute("transfers")]
         [NUnit.Framework.CategoryAttribute("InteractionId")]
         public virtual void PostTransfer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Transfer", null, new string[] {
+                        "transfers",
                         "InteractionId"});
 #line 17
  this.ScenarioInitialize(scenarioInfo);

@@ -133,9 +133,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with all fields")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostValidActionPlanWithAllFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, new string[] {
+                        "actionplans"});
 #line 29
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -209,9 +211,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with only mandatory fields")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostValidActionPlanWithOnlyMandatoryFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields", null, new string[] {
+                        "actionplans"});
 #line 55
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -261,9 +265,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post ActionPlan with missing DateActionPlanCreated")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostActionPlanWithMissingDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, new string[] {
+                        "actionplans"});
 #line 73
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -304,9 +310,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post ActionPlan with invalid DateActionPlanCreated")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostActionPlanWithInvalidDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, new string[] {
+                        "actionplans"});
 #line 89
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

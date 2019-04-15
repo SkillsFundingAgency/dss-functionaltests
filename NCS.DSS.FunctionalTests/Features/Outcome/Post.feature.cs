@@ -151,9 +151,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with all valid values")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithAllValidValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with all valid values", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with all valid values", null, new string[] {
+                        "outcomes"});
 #line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -197,9 +199,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeType", null, new string[] {
+                        "outcomes"});
 #line 51
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -225,9 +229,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with invalid OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithInvalidOutcomeType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, new string[] {
+                        "outcomes"});
 #line 59
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -256,9 +262,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeClaimedDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeClaimedDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeClaimedDate", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeClaimedDate", null, new string[] {
+                        "outcomes"});
 #line 69
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -296,9 +304,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
 #line 81
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

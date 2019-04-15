@@ -43,7 +43,7 @@ Feature: PostV2withSessionDate
 
 
 
-
+@outcomes
 	Scenario:  Outcome effective date earlier than Session.DateandTimeOfSession
 		Given I post an adviser with the following details:
 		| Field						 | Value				|
@@ -80,7 +80,7 @@ Feature: PostV2withSessionDate
 		| ClaimedPriorityGroup | 3                    |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario:  Outcome effective date less than Outcome claimed date
 		Given I post an adviser with the following details:
 		| Field						 | Value				|
@@ -117,7 +117,7 @@ Feature: PostV2withSessionDate
 		| ClaimedPriorityGroup | 3                    |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Outcome effective date greater than Session.DateandTimeOfSession + 12 months
 		Given I post an adviser with the following details:
 		| Field						 | Value				|
@@ -153,6 +153,7 @@ Feature: PostV2withSessionDate
 		| ClaimedPriorityGroup | 3                     |
 		Then there should be a 422 response
 
+@outcomes
 	Scenario: Outcome effective date greater than Session.DateandTimeOfSession + 12 months with outcome type 3
 		Given I post an adviser with the following details:
 		| Field						 | Value				|
@@ -188,7 +189,7 @@ Feature: PostV2withSessionDate
 		| ClaimedPriorityGroup | 3                     |
 		Then there should be a 201 response
 
-
+@outcomes
 	Scenario: Claimed priority group missing
 		Given I post an adviser with the following details:
 		| Field						 | Value				|

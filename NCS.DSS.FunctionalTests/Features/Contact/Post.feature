@@ -9,7 +9,7 @@ Feature: Post
 		| FamilyName           | Customer             |
 
 
-
+@contactdetails
 	Scenario:Post valid contact
 	Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -30,7 +30,7 @@ Feature: Post
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 
 
-
+@contactdetails
 	Scenario: Post Valid ContactDetail one contact method
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -44,6 +44,7 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 
+@contactdetails
 	 Scenario: Post Valid ContactDetail with ten digit phone numbers
 		Given I post a Contact with the following details:
 		| Field                  | Value       |
@@ -61,7 +62,7 @@ Feature: Post
 		| AlternativeNumber      | 01254 57611                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 
-
+@contactdetails
 	Scenario: Post ContactDetail Mandatory PreferredContactMethod Field missing
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -73,7 +74,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The PreferredContactMethod Field is required."
 
-
+@contactdetails
 	Scenario: Post ContactDetail with invalid PreferredContactMethod Value
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -86,7 +87,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "Please supply a valid Preferred Contact Method"
 		
-
+@contactdetails
 	Scenario: Post ContactDetail with Invalid MobileNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -99,7 +100,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Field MobileNumber must be a string with a maximum length of 20."
 
-
+@contactdetails
 	Scenario: Post ContactDetail with Invalid HomeNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -112,7 +113,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Field HomeNumber must be a string with a maximum length of 20."
 
-
+@contactdetails
 	Scenario: Post ContactDetail with Invalid AlternativeNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -125,7 +126,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Field AlternativeNumber must be a string with a maximum length of 20."
 
-
+@contactdetails
 	Scenario: Post ContactDetail with Invalid EmailAddress
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -138,7 +139,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Field EmailAddress must match the regular expression '^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$'"
 
-
+@contactdetails
 	Scenario: Post ContactDetail with Invalid LastModifiedDate
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -151,7 +152,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "Last Modified Date must be less the current date/time"
 
-
+@contactdetails
 	Scenario: Post ContactDetail with missing PreferredContactMethod - email
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -163,7 +164,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "Email Address must be supplied."
 
-
+@contactdetails
 	Scenario: Post ContactDetail with missing PreferredContactMethod - mobile
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -175,7 +176,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "Mobile Number must be supplied."
 
-
+@contactdetails
 	Scenario: Post ContactDetail with missing PreferredContactMethod - phone
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -186,7 +187,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "Home Number must be supplied."
 
-
+@contactdetails
 	Scenario: Post ContactDetail with missing PreferredContactMethod - SMS
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -199,7 +200,7 @@ Feature: Post
 		#And the error message should be "Mobile Number must be supplied."	
 
 
-
+@contactdetails
 	Scenario: Post ContactDetail where one already exists
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |

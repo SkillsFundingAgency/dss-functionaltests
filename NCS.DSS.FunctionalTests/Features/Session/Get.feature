@@ -24,7 +24,7 @@ Feature: Get
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z   |
 		| VenuePostCode            |NN1 2NN                 |
 
-
+@sessions
 	Scenario: Get Session by ID
 	When I get a Session by ID
 	Then there should be a 200 response

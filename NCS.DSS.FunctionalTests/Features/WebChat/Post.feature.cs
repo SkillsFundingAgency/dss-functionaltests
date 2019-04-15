@@ -109,10 +109,12 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a webchat with all valid values")]
+        [NUnit.Framework.CategoryAttribute("webchats")]
         public virtual void CreateAWebchatWithAllValidValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with all valid values", null, ((string[])(null)));
-#line 21
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with all valid values", null, new string[] {
+                        "webchats"});
+#line 19
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -142,9 +144,9 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "DateandTimeSentToCustomers",
                         "2018-07-20T13:45:00Z"});
-#line 22
+#line 20
  testRunner.Given("I post a webchat with the following details:", ((string)(null)), table3, "Given ");
-#line 31
+#line 29
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -171,7 +173,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "DateandTimeSentToCustomers",
                         "2018-07-20T13:45:00Z"});
-#line 32
+#line 30
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -179,10 +181,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a webchat with only mandatory values")]
+        [NUnit.Framework.CategoryAttribute("webchats")]
         public virtual void CreateAWebchatWithOnlyMandatoryValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with only mandatory values", null, ((string[])(null)));
-#line 42
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with only mandatory values", null, new string[] {
+                        "webchats"});
+#line 41
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -200,9 +204,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-#line 43
+#line 42
  testRunner.Given("I post a webchat with the following details:", ((string)(null)), table5, "Given ");
-#line 48
+#line 47
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -217,7 +221,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-#line 49
+#line 48
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();

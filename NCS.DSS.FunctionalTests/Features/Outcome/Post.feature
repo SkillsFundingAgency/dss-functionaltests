@@ -33,7 +33,7 @@ Background: Prepare test
 
 
 
-
+@outcomes
 	Scenario: Create an outcome with all valid values
 	Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -47,7 +47,7 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 
-
+@outcomes
 	Scenario: Create an outcome with missing OutcomeType
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -55,7 +55,7 @@ Background: Prepare test
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Create an outcome with invalid OutcomeType
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -65,7 +65,7 @@ Background: Prepare test
 		Then there should be a 422 response
 
 
-
+@outcomes
 	Scenario: Create an outcome with missing OutcomeClaimedDate
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -77,7 +77,7 @@ Background: Prepare test
 	    | OutcomeType          | 2                    |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 
-
+@outcomes
 	Scenario: Create an outcome with missing OutcomeEffectiveDate
 		Given I post an outcome with the following details:
 	    | Field                | Value                |

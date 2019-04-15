@@ -12,7 +12,7 @@ Feature: Get
 		| AdviserEmailAddress	| billy@bill.com|
 		| AdviserContactNumber	| 98798678967967|
 
-
+@adviserdetails
 	Scenario: Get Adviser by ID
 	When I get an Adviser by ID
 	Then there should be a 200 response

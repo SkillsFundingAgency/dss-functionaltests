@@ -305,11 +305,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PostV2.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Change Feed\ChangeFeed.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChangeFeed.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Contact\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -670,10 +665,6 @@
     <None Include="Features\Adviser\PostV2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PostV2.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Change Feed\ChangeFeed.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ChangeFeed.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Contact\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

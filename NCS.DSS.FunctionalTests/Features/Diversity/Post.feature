@@ -7,7 +7,7 @@ Feature: Post
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 
-
+@diversitydetails
 	Scenario: Post Valid DiversityDetails with all Fields
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -33,6 +33,7 @@ Feature: Post
 		| DateAndTimeEthnicityCollected             | 2018-09-19T09:01:00Z |
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 
+@diversitydetails
 	Scenario: Post DiversityDetails with only mandatory Fields
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -48,7 +49,7 @@ Feature: Post
 		| ConsentToCollectEthnicity                 | true                 |
 		| Ethnicity                               | 44                   |
 
-
+@diversitydetails
 	Scenario: Post DiversityDetails with missing ConsentToCollectLLDDHealth Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -62,7 +63,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@diversitydetails
 	Scenario: Post DiversityDetails with invalid ConsentToCollectLLDDHealth Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -77,7 +78,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@diversitydetails
 	Scenario: Post DiversityDetails with missing LearningDifficultyOrDisabilityDeclaration Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -91,7 +92,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@diversitydetails
 		Scenario: Post DiversityDetails with invalid LearningDifficultyOrDisabilityDeclaration Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -106,7 +107,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-		
+@diversitydetails		
 	Scenario: Post DiversityDetails with invalid PrimaryLearningDifficultyOrDisability Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -121,7 +122,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@diversitydetails
 	Scenario: Post DiversityDetails with invalid SecondaryLearningDifficultyOrDisability Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -136,7 +137,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@diversitydetails
 	Scenario: Post DiversityDetails with invalid DateAndTimeLLDDHealthConsentCollected Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -151,6 +152,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
+@diversitydetails
 	Scenario: Post DiversityDetails with missing ConsentToCollectEthnicity Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -164,7 +166,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@diversitydetails
 	Scenario: Post DiversityDetails with invalid ConsentToCollectEthnicity Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -179,6 +181,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
+@diversitydetails
 	Scenario: Post DiversityDetails with invalid Ethnicity Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |
@@ -193,7 +196,7 @@ Feature: Post
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@diversitydetails
 	Scenario: Post DiversityDetails with invalid DateAndTimeEthnicityCollected Value
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |

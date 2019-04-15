@@ -17,7 +17,7 @@ Background: Prepare test
 
 
 
-
+@webchats
 	Scenario: Patch DigitalReference
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -42,6 +42,7 @@ Background: Prepare test
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
+@webchats
 	Scenario: Patch WebChatStartDateandTime
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -66,7 +67,7 @@ Background: Prepare test
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
-
+@webchats
 	Scenario: Patch WebChatEndDateandTime
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -91,7 +92,7 @@ Background: Prepare test
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
-
+@webchats
 	Scenario: Patch WebChatDuration
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -116,6 +117,7 @@ Background: Prepare test
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
+@webchats
 	Scenario: Patch WebChatNarrative
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -140,6 +142,7 @@ Background: Prepare test
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
+@webchats
 	Scenario: Patch SentToCustomer
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -164,7 +167,7 @@ Background: Prepare test
 	    | SentToCustomer             | false                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
-
+@webchats
 	Scenario: Patch DateandTimeSentToCustomers
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |

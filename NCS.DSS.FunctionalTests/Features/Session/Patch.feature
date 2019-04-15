@@ -23,7 +23,7 @@ Feature: Patch
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 
 
-
+@sessions
 	Scenario: Patch DateandTimeOfSession
 	Given I post a session with the following details:
 	    | field                    | value                          |
@@ -40,6 +40,7 @@ Feature: Patch
 		| VenuePostCode            |NN1 2NN                         |
 		| SessionAttended          |true                            |
 
+@sessions
 	Scenario: Patch VenuePostCode
 	Given I post a session with the following details:
 	    | field                    | value                          |
@@ -56,7 +57,7 @@ Feature: Patch
 		| VenuePostCode            |NN1 2NQ                         |
 		| SessionAttended          |true                            |
 
-
+@sessions
 	Scenario: Patch SessionAttended
 	Given I post a session with the following details:
 	    | field                    | value                          |

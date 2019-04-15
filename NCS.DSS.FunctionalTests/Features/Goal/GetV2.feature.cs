@@ -174,9 +174,11 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Goal by ID")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         public virtual void GetGoalByID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Goal by ID", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Goal by ID", null, new string[] {
+                        "goals"});
 #line 43
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -3,7 +3,7 @@
 
 Feature: Post
 
-
+@adviserdetails
 	Scenario: Create Valid Adviser
 		Given I post an adviser with the following details:
 			| Field                 | Value			|
@@ -17,7 +17,7 @@ Feature: Post
 			| AdviserEmailAddress	| billy@bill.com|
 			| AdviserContactNumber	| 98798678967967|
 
-
+@adviserdetails
 		Scenario: Missing AdviserName
 		Given I post an adviser with the following details:
 			| Field                 | Value			|

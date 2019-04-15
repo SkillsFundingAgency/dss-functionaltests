@@ -73,9 +73,11 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create Valid Adviser")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
         public virtual void CreateValidAdviser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser", null, new string[] {
+                        "adviserdetails"});
 #line 7
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -117,9 +119,11 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Missing AdviserName")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
         public virtual void MissingAdviserName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, new string[] {
+                        "adviserdetails"});
 #line 21
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

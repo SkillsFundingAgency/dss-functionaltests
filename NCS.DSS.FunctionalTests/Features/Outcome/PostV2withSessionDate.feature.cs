@@ -186,9 +186,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Outcome effective date earlier than Session.DateandTimeOfSession")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void OutcomeEffectiveDateEarlierThanSession_DateandTimeOfSession()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date earlier than Session.DateandTimeOfSession", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date earlier than Session.DateandTimeOfSession", null, new string[] {
+                        "outcomes"});
 #line 47
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -299,9 +301,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Outcome effective date less than Outcome claimed date")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void OutcomeEffectiveDateLessThanOutcomeClaimedDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date less than Outcome claimed date", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date less than Outcome claimed date", null, new string[] {
+                        "outcomes"});
 #line 84
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -412,9 +416,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Outcome effective date greater than Session.DateandTimeOfSession + 12 months")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void OutcomeEffectiveDateGreaterThanSession_DateandTimeOfSession12Months()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date greater than Session.DateandTimeOfSession + 12 months", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date greater than Session.DateandTimeOfSession + 12 months", null, new string[] {
+                        "outcomes"});
 #line 121
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -523,11 +529,13 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Outcome effective date greater than Session.DateandTimeOfSession + 12 months with" +
             " outcome type 3")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void OutcomeEffectiveDateGreaterThanSession_DateandTimeOfSession12MonthsWithOutcomeType3()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date greater than Session.DateandTimeOfSession + 12 months with" +
-                    " outcome type 3", null, ((string[])(null)));
-#line 156
+                    " outcome type 3", null, new string[] {
+                        "outcomes"});
+#line 157
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -540,7 +548,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table25.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 157
+#line 158
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table25, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -552,7 +560,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table26.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 161
+#line 162
   testRunner.And("I post a Customer with the following details:", ((string)(null)), table26, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -567,7 +575,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table27.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 165
+#line 166
   testRunner.And("I post an Interaction with the following details:", ((string)(null)), table27, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -579,7 +587,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table28.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 170
+#line 171
   testRunner.And("I post a session with the following details:", ((string)(null)), table28, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -609,7 +617,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table29.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 174
+#line 175
   testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table29, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -624,9 +632,9 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table30.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "3"});
-#line 184
+#line 185
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table30, "Given ");
-#line 189
+#line 190
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -634,10 +642,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Claimed priority group missing")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void ClaimedPriorityGroupMissing()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Claimed priority group missing", null, ((string[])(null)));
-#line 192
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Claimed priority group missing", null, new string[] {
+                        "outcomes"});
+#line 193
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -650,7 +660,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table31.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 193
+#line 194
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table31, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -662,7 +672,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table32.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 197
+#line 198
   testRunner.And("I post a Customer with the following details:", ((string)(null)), table32, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -677,7 +687,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table33.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 201
+#line 202
   testRunner.And("I post an Interaction with the following details:", ((string)(null)), table33, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -689,7 +699,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table34.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 206
+#line 207
   testRunner.And("I post a session with the following details:", ((string)(null)), table34, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
@@ -719,7 +729,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table35.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 210
+#line 211
   testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table35, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
@@ -734,9 +744,9 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table36.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-05-05T11:21:00Z"});
-#line 220
+#line 221
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table36, "Given ");
-#line 225
+#line 226
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -15,7 +15,7 @@ Feature: Patch
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 
-
+@interactions
 	Scenario: Patch Date
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -32,7 +32,7 @@ Feature: Patch
 		| Channel                  | 2                                    |
 		| InteractionType          | 2                                    |
 
-
+@interactions
 	Scenario: Patch channel
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -49,7 +49,7 @@ Feature: Patch
 		| Channel                  | 1                                    |
 		| InteractionType          | 2                                    |
 
-
+@interactions
 	Scenario: Patch InteractionType
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |

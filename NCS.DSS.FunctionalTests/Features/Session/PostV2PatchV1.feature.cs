@@ -125,9 +125,11 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateandTimeOfSession")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
         public virtual void PatchDateandTimeOfSession()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateandTimeOfSession", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateandTimeOfSession", null, new string[] {
+                        "sessions"});
 #line 26
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -178,10 +180,12 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateandTimeOfSession with SubcontractorId")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void PatchDateandTimeOfSessionWithSubcontractorId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateandTimeOfSession with SubcontractorId", null, new string[] {
+                        "sessions",
                         "subcontractorId"});
 #line 43
  this.ScenarioInitialize(scenarioInfo);
@@ -237,9 +241,11 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch VenuePostCode")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
         public virtual void PatchVenuePostCode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch VenuePostCode", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch VenuePostCode", null, new string[] {
+                        "sessions"});
 #line 62
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -292,9 +298,11 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch SessionAttended")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
         public virtual void PatchSessionAttended()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SessionAttended", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SessionAttended", null, new string[] {
+                        "sessions"});
 #line 79
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

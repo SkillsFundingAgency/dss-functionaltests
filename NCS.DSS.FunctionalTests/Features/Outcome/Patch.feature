@@ -33,7 +33,7 @@ Background: Prepare test
 
 
 
-
+@outcomes
 	Scenario: Patch OutcomeType
 	Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -50,7 +50,7 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 
-
+@outcomes
 	Scenario: Patch OutcomeClaimedDate
 	Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -67,7 +67,7 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 
-
+@outcomes
 	Scenario: Patch OutcomeEffectiveDate
 	Given I post an outcome with the following details:
 	    | Field                | Value                |

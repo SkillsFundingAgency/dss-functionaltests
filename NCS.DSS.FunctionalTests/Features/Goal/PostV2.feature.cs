@@ -163,9 +163,11 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a Goal for existing customer with all valid values")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         public virtual void CreateAGoalForExistingCustomerWithAllValidValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal for existing customer with all valid values", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal for existing customer with all valid values", null, new string[] {
+                        "goals"});
 #line 40
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -220,12 +222,14 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing DateGoalCaptured")]
-        public virtual void CreateAGoalWithMissingDateGoalCaptured()
+        [NUnit.Framework.DescriptionAttribute("Post Valid Goal with all fields")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void PostValidGoalWithAllFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing DateGoalCaptured", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Goal with all fields", null, new string[] {
+                        "goals"});
 #line 58
- this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
 this.FeatureBackground();
@@ -234,174 +238,85 @@ this.FeatureBackground();
                         "Field",
                         "Value"});
             table8.AddRow(new string[] {
-                        "DateGoalShouldBeCompletedBy",
-                        "2018-06-21T14:45:00Z"});
+                        "AdviserName",
+                        "BillyAdviser"});
             table8.AddRow(new string[] {
-                        "GoalSummary",
-                        "some goal text"});
-            table8.AddRow(new string[] {
-                        "GoalType",
-                        "1"});
-            table8.AddRow(new string[] {
-                        "GoalStatus",
-                        "1"});
+                        "AdviserContactNumber",
+                        "98798678967967"});
 #line 59
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table8, "Given ");
-#line 65
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing DateGoalShouldBeCompletedBy")]
-        public virtual void CreateAGoalWithMissingDateGoalShouldBeCompletedBy()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing DateGoalShouldBeCompletedBy", null, ((string[])(null)));
-#line 68
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
-this.FeatureBackground();
+  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table9.AddRow(new string[] {
-                        "DateGoalCaptured",
-                        "2018-06-21T14:45:00Z"});
+                        "GivenName",
+                        "Bob"});
             table9.AddRow(new string[] {
-                        "GoalSummary",
-                        "some goal text"});
-            table9.AddRow(new string[] {
-                        "GoalType",
-                        "1"});
-            table9.AddRow(new string[] {
-                        "GoalStatus",
-                        "1"});
-#line 69
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table9, "Given ");
-#line 75
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing GoalSummary")]
-        public virtual void CreateAGoalWithMissingGoalSummary()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing GoalSummary", null, ((string[])(null)));
-#line 78
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
-this.FeatureBackground();
+                        "FamilyName",
+                        "Customer"});
+#line 63
+  testRunner.And("I post a Customer with the following details:", ((string)(null)), table9, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table10.AddRow(new string[] {
-                        "DateGoalCaptured",
-                        "2018-06-21T14:45:00Z"});
+                        "DateandTimeOfInteraction",
+                        "2018-06-25T11:21:00Z"});
             table10.AddRow(new string[] {
-                        "DateGoalShouldBeCompletedBy",
-                        "2018-06-21T14:45:00Z"});
+                        "Channel",
+                        "2"});
             table10.AddRow(new string[] {
-                        "GoalType",
-                        "1"});
+                        "InteractionType",
+                        "2"});
             table10.AddRow(new string[] {
-                        "GoalStatus",
-                        "1"});
-#line 79
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table10, "Given ");
-#line 85
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing GoalType")]
-        public virtual void CreateAGoalWithMissingGoalType()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing GoalType", null, ((string[])(null)));
-#line 88
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
-this.FeatureBackground();
+                        "LastModifiedDate",
+                        "2018-06-22T16:52:10Z"});
+#line 67
+  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table10, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table11.AddRow(new string[] {
-                        "DateGoalCaptured",
+                        "DateandTimeOfSession",
                         "2018-06-21T14:45:00Z"});
             table11.AddRow(new string[] {
-                        "DateGoalShouldBeCompletedBy",
-                        "2018-06-21T14:45:00Z"});
-            table11.AddRow(new string[] {
-                        "GoalSummary",
-                        "some goal text"});
-            table11.AddRow(new string[] {
-                        "GoalStatus",
-                        "1"});
-#line 89
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table11, "Given ");
-#line 95
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Goal with invalid GoalType")]
-        public virtual void CreateAGoalWithInvalidGoalType()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with invalid GoalType", null, ((string[])(null)));
-#line 98
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
-this.FeatureBackground();
+                        "VenuePostCode",
+                        "NN1 2NN"});
+#line 73
+  testRunner.And("I post a session with the following details:", ((string)(null)), table11, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
+                        "field",
+                        "value"});
             table12.AddRow(new string[] {
-                        "DateGoalCaptured",
-                        "2018-06-21T14:45:00Z"});
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
             table12.AddRow(new string[] {
-                        "DateGoalShouldBeCompletedBy",
-                        "2018-06-21T14:45:00Z"});
+                        "CustomerCharterShownToCustomer",
+                        "true"});
             table12.AddRow(new string[] {
-                        "GoalSummary",
-                        "some goal text"});
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
             table12.AddRow(new string[] {
-                        "GoalType",
-                        "11"});
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
             table12.AddRow(new string[] {
-                        "GoalStatus",
+                        "ActionPlanDeliveryMethod",
                         "1"});
-#line 99
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table12, "Given ");
-#line 106
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Goal with invalid GoalStatus")]
-        public virtual void CreateAGoalWithInvalidGoalStatus()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with invalid GoalStatus", null, ((string[])(null)));
-#line 109
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
-this.FeatureBackground();
+            table12.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table12.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table12.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 77
+  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table12, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -420,21 +335,25 @@ this.FeatureBackground();
                         "1"});
             table13.AddRow(new string[] {
                         "GoalStatus",
-                        "11"});
-#line 110
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table13, "Given ");
-#line 117
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "1"});
+#line 87
+  testRunner.Given("I post a goal with the following details:", ((string)(null)), table13, "Given ");
+#line 94
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 95
+  testRunner.And("there should be a record in the goals ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing GoalStatus")]
-        public virtual void CreateAGoalWithMissingGoalStatus()
+        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing DateGoalCaptured")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void CreateAGoalWithMissingDateGoalCaptured()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing GoalStatus", null, ((string[])(null)));
-#line 120
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing DateGoalCaptured", null, new string[] {
+                        "goals"});
+#line 98
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -444,9 +363,6 @@ this.FeatureBackground();
                         "Field",
                         "Value"});
             table14.AddRow(new string[] {
-                        "DateGoalCaptured",
-                        "2018-06-21T14:45:00Z"});
-            table14.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
             table14.AddRow(new string[] {
@@ -455,19 +371,35 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "GoalType",
                         "1"});
-#line 121
+            table14.AddRow(new string[] {
+                        "GoalStatus",
+                        "1"});
+#line 99
  testRunner.Given("I post a goal with the following details:", ((string)(null)), table14, "Given ");
-#line 127
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 105
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing DateGoalShouldBeCompletedBy")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void CreateAGoalWithMissingDateGoalShouldBeCompletedBy()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing DateGoalShouldBeCompletedBy", null, new string[] {
+                        "goals"});
+#line 108
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table15.AddRow(new string[] {
                         "DateGoalCaptured",
-                        "2018-06-21T14:45:00Z"});
-            table15.AddRow(new string[] {
-                        "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
             table15.AddRow(new string[] {
                         "GoalSummary",
@@ -478,8 +410,217 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
+#line 109
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table15, "Given ");
+#line 115
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing GoalSummary")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void CreateAGoalWithMissingGoalSummary()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing GoalSummary", null, new string[] {
+                        "goals"});
+#line 118
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table16.AddRow(new string[] {
+                        "DateGoalCaptured",
+                        "2018-06-21T14:45:00Z"});
+            table16.AddRow(new string[] {
+                        "DateGoalShouldBeCompletedBy",
+                        "2018-06-21T14:45:00Z"});
+            table16.AddRow(new string[] {
+                        "GoalType",
+                        "1"});
+            table16.AddRow(new string[] {
+                        "GoalStatus",
+                        "1"});
+#line 119
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table16, "Given ");
+#line 125
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing GoalType")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void CreateAGoalWithMissingGoalType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing GoalType", null, new string[] {
+                        "goals"});
 #line 128
-  testRunner.And("the response body should contain:", ((string)(null)), table15, "And ");
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table17.AddRow(new string[] {
+                        "DateGoalCaptured",
+                        "2018-06-21T14:45:00Z"});
+            table17.AddRow(new string[] {
+                        "DateGoalShouldBeCompletedBy",
+                        "2018-06-21T14:45:00Z"});
+            table17.AddRow(new string[] {
+                        "GoalSummary",
+                        "some goal text"});
+            table17.AddRow(new string[] {
+                        "GoalStatus",
+                        "1"});
+#line 129
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table17, "Given ");
+#line 135
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a Goal with invalid GoalType")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void CreateAGoalWithInvalidGoalType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with invalid GoalType", null, new string[] {
+                        "goals"});
+#line 138
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table18.AddRow(new string[] {
+                        "DateGoalCaptured",
+                        "2018-06-21T14:45:00Z"});
+            table18.AddRow(new string[] {
+                        "DateGoalShouldBeCompletedBy",
+                        "2018-06-21T14:45:00Z"});
+            table18.AddRow(new string[] {
+                        "GoalSummary",
+                        "some goal text"});
+            table18.AddRow(new string[] {
+                        "GoalType",
+                        "11"});
+            table18.AddRow(new string[] {
+                        "GoalStatus",
+                        "1"});
+#line 139
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table18, "Given ");
+#line 146
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a Goal with invalid GoalStatus")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void CreateAGoalWithInvalidGoalStatus()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with invalid GoalStatus", null, new string[] {
+                        "goals"});
+#line 149
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table19.AddRow(new string[] {
+                        "DateGoalCaptured",
+                        "2018-06-21T14:45:00Z"});
+            table19.AddRow(new string[] {
+                        "DateGoalShouldBeCompletedBy",
+                        "2018-06-21T14:45:00Z"});
+            table19.AddRow(new string[] {
+                        "GoalSummary",
+                        "some goal text"});
+            table19.AddRow(new string[] {
+                        "GoalType",
+                        "1"});
+            table19.AddRow(new string[] {
+                        "GoalStatus",
+                        "11"});
+#line 150
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table19, "Given ");
+#line 157
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a Goal with missing GoalStatus")]
+        [NUnit.Framework.CategoryAttribute("goals")]
+        public virtual void CreateAGoalWithMissingGoalStatus()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal with missing GoalStatus", null, new string[] {
+                        "goals"});
+#line 160
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table20.AddRow(new string[] {
+                        "DateGoalCaptured",
+                        "2018-06-21T14:45:00Z"});
+            table20.AddRow(new string[] {
+                        "DateGoalShouldBeCompletedBy",
+                        "2018-06-21T14:45:00Z"});
+            table20.AddRow(new string[] {
+                        "GoalSummary",
+                        "some goal text"});
+            table20.AddRow(new string[] {
+                        "GoalType",
+                        "1"});
+#line 161
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table20, "Given ");
+#line 167
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table21.AddRow(new string[] {
+                        "DateGoalCaptured",
+                        "2018-06-21T14:45:00Z"});
+            table21.AddRow(new string[] {
+                        "DateGoalShouldBeCompletedBy",
+                        "2018-06-21T14:45:00Z"});
+            table21.AddRow(new string[] {
+                        "GoalSummary",
+                        "some goal text"});
+            table21.AddRow(new string[] {
+                        "GoalType",
+                        "1"});
+            table21.AddRow(new string[] {
+                        "GoalStatus",
+                        "1"});
+#line 168
+  testRunner.And("the response body should contain:", ((string)(null)), table21, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

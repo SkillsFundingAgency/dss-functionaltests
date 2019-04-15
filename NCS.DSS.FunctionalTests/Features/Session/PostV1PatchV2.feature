@@ -22,7 +22,7 @@ Feature: PostV1PatchV2
 		| LastModifiedDate         | 2018-06-22T16:52:10Z |
 
 
-
+@sessions
 	Scenario: Patch DateandTimeOfSession
 		Given I post a session with the following details:
 	    | field                    | value                          |
@@ -39,7 +39,7 @@ Feature: PostV1PatchV2
 		| SessionAttended          | true                           |
 
 
-	@subcontractorId
+@sessions @subcontractorId
 	Scenario: Patch DateandTimeOfSession with SubcontractorId
 		Given I post a session with the following details:
 	    | field                    | value                          |
@@ -55,6 +55,8 @@ Feature: PostV1PatchV2
 		| VenuePostCode            | NN1 2NN                        |
 		| SessionAttended          | true                           |
 		And the response body should contain the SubContractorId
+
+@sessions
 	Scenario: Patch VenuePostCode
 		Given I post a session with the following details:
 	    | field                    | value                          |
@@ -71,7 +73,7 @@ Feature: PostV1PatchV2
 		| VenuePostCode            | NN1 2NQ                        |
 		| SessionAttended          | true                           |
 
-
+@sessions
 	Scenario: Patch SessionAttended
 		Given I post a session with the following details:
 	    | field                    | value                          |

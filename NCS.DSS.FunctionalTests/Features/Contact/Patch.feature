@@ -9,7 +9,7 @@
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
 
-
+@contactdetails
 	Scenario: Patch PreferredContactMethod
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -30,7 +30,7 @@
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
 
-
+@contactdetails
 	Scenario: Patch PreferredContactMethod with invalid data
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -45,7 +45,7 @@
 		Then there should be a 422 response
 		#And the error message should be "Please supply a valid Preferred Contact Method"
 		
-		
+@contactdetails		
 	Scenario: Patch MobileNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -66,8 +66,7 @@
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
 
-
-
+@contactdetails
 	Scenario: Patch HomeNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -89,7 +88,7 @@
 		| EmailAddress           | customer@customer.com        |
 
 
-
+@contactdetails
 	Scenario: Patch AlternativeNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -111,7 +110,7 @@
 		| EmailAddress           | customer@customer.com        |
 
 
-
+@contactdetails
 	Scenario: Patch EmailAddress
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -132,7 +131,7 @@
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@update.com          |
 
-
+@contactdetails
 	Scenario: Patch EmailAddress with invalid data
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -146,7 +145,7 @@
 		| EmailAddress           | customeratcustomer.com       |
 		Then there should be a 422 response
 
-
+@contactdetails
 	Scenario: Patch new PreferredContactMethod - MobileNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |

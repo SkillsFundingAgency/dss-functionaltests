@@ -15,7 +15,7 @@ Feature: Post
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 
-
+@interactions
 	Scenario: Post Valid Interaction with all Fields
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -31,7 +31,7 @@ Feature: Post
 		| InteractionType          | 2                                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 
-
+@interactions
 	Scenario: Post Interaction with missing Channel
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -41,7 +41,7 @@ Feature: Post
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
 
-
+@interactions
 	Scenario: Post Interaction with missing InteractionType
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -51,7 +51,7 @@ Feature: Post
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
 
-
+@interactions
 	Scenario: Post Interaction with invalid AdviserDetailsID
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -62,7 +62,7 @@ Feature: Post
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
 
-
+@interactions
 	Scenario: Post Interaction with invalid DateandTimeOfInteraction
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -74,7 +74,7 @@ Feature: Post
 		Then there should be a 422 response
 
 
-
+@interactions
 	Scenario: Post Interaction with invalid Channel
 			Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -85,7 +85,7 @@ Feature: Post
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 		Then there should be a 422 response
 
-
+@interactions
 	Scenario: Post Interaction with invalid InteractionType
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |
@@ -97,7 +97,7 @@ Feature: Post
 		Then there should be a 422 response
 
 
-
+@interactions
 	Scenario: Post Interaction with invalid LastModifiedDate
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |

@@ -5,7 +5,7 @@
 Feature: Post
 
 
-
+@customers
 		Scenario: Post Missing GivenName
 		Given I post a Customer with the following details:
 		| field						 | value                |
@@ -25,7 +25,7 @@ Feature: Post
 		Then there should be a 422 response
 		And the error message should be "Given Name is a required field"
 
-
+@customers
 		Scenario: Post Missing FamilyName
 		Given I post a Customer with the following details:
 		| field						 | value                |
@@ -45,7 +45,7 @@ Feature: Post
 		#And the error message should be "Family Name is a required field"
 
 
-
+@customers
 		Scenario: Post Valid Customer
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -82,11 +82,8 @@ Feature: Post
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 
 
-
-
-
-
-		Scenario: Post Valid Customer with maximum field lengths
+@customers
+	Scenario: Post Valid Customer with maximum field lengths
 		Given I post a Customer with the following details:
 		| field                      | value                                                                                                |
 		| DateOfRegistration         | 2018-07-27T16:11:00Z                                                                                 |
@@ -122,7 +119,7 @@ Feature: Post
 		| LastModifiedDate           | 2018-06-21T14:45:00Z                                                                                 |
 
 
-
+@customers
 	Scenario: Post Customer with only Mandatory fields
 		Given I post a Customer with the following details:
 
@@ -147,7 +144,7 @@ Feature: Post
 
 
 
-
+@customers
 	Scenario: Post Invalid DateOfRegistration						
 		Given I post a Customer with the following details:
 		| field						 | value                |

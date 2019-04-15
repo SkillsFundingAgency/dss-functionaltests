@@ -105,9 +105,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Date")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PatchDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Date", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Date", null, new string[] {
+                        "interactions"});
 #line 19
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -160,9 +162,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch channel")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PatchChannel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch channel", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch channel", null, new string[] {
+                        "interactions"});
 #line 36
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -215,9 +219,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch InteractionType")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PatchInteractionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch InteractionType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch InteractionType", null, new string[] {
+                        "interactions"});
 #line 53
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

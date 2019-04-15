@@ -151,11 +151,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Action")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostValidAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Action", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 38
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -229,11 +229,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Action with only mandatory Fields")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostValidActionWithOnlyMandatoryFields()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Action with only mandatory Fields", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 62
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -295,11 +295,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with invalid interactionId")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithInvalidInteractionId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with invalid interactionId", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 83
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -343,11 +343,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAgreed")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithMissingDateActionAgreed()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAgreed", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 97
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -391,11 +391,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAimsToBeCompletedBy")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithMissingDateActionAimsToBeCompletedBy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAimsToBeCompletedBy", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 111
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -439,11 +439,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionActuallyCompleted")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithMissingDateActionActuallyCompleted()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionActuallyCompleted", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 125
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -520,11 +520,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionSummary")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithMissingActionSummary()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionSummary", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 150
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -568,11 +568,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionType")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithMissingActionType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionType", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 164
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -616,11 +616,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with invalid ActionType")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithInvalidActionType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with invalid ActionType", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 178
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -667,11 +667,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with missing PersonResponsible")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithMissingPersonResponsible()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing PersonResponsible", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 193
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -715,11 +715,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with invalid PersonResponsible")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithInvalidPersonResponsible()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with invalid PersonResponsible", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 207
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -766,11 +766,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Action with invalid ActionStatus")]
-        [NUnit.Framework.CategoryAttribute("Action")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PostActionWithInvalidActionStatus()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with invalid ActionStatus", null, new string[] {
-                        "Action"});
+                        "actions"});
 #line 222
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

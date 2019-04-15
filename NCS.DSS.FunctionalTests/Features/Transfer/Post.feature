@@ -13,7 +13,7 @@ Feature: Post
 		| InteractionType          | 2                      |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
-	@InteractionId
+@transfers @InteractionId
 	Scenario: Post Transfer
 	Given I post a Transfer with the following details:
 		| Field                   | Value             |

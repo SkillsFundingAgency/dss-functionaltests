@@ -167,9 +167,11 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateGoalCaptured")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         public virtual void PatchDateGoalCaptured()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalCaptured", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalCaptured", null, new string[] {
+                        "goals"});
 #line 40
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -234,10 +236,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateGoalCaptured with SubcontractorId")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void PatchDateGoalCapturedWithSubcontractorId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalCaptured with SubcontractorId", null, new string[] {
+                        "goals",
                         "subcontractorId"});
 #line 62
  this.ScenarioInitialize(scenarioInfo);
@@ -305,9 +309,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateGoalShouldBeCompletedBy")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         public virtual void PatchDateGoalShouldBeCompletedBy()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalShouldBeCompletedBy", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalShouldBeCompletedBy", null, new string[] {
+                        "goals"});
 #line 84
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -372,9 +378,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateGoalAchieved")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         public virtual void PatchDateGoalAchieved()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalAchieved", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalAchieved", null, new string[] {
+                        "goals"});
 #line 105
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -442,9 +450,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid GoalType")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         public virtual void PatchWithInvalidGoalType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalType", null, new string[] {
+                        "goals"});
 #line 127
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -488,10 +498,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid GoalStatus")]
+        [NUnit.Framework.CategoryAttribute("goals")]
         public virtual void PatchWithInvalidGoalStatus()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalStatus", null, ((string[])(null)));
-#line 140
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalStatus", null, new string[] {
+                        "goals"});
+#line 141
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -515,7 +527,7 @@ this.FeatureBackground();
             table20.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
-#line 141
+#line 142
   testRunner.Given("I post a goal with the following details:", ((string)(null)), table20, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -524,9 +536,9 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "GoalStatus",
                         "4"});
-#line 148
+#line 149
   testRunner.When("I patch the following:", ((string)(null)), table21, "When ");
-#line 151
+#line 152
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

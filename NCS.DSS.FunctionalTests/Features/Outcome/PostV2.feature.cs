@@ -167,9 +167,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with minimum valid values")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMinimumValidValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with minimum valid values", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with minimum valid values", null, new string[] {
+                        "outcomes"});
 #line 39
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -201,10 +203,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with all valid values")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void CreateAnOutcomeWithAllValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with all valid values", null, new string[] {
+                        "outcomes",
                         "subcontractorId"});
 #line 49
  this.ScenarioInitialize(scenarioInfo);
@@ -256,12 +260,14 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create an outcome with invalid OutcomeType")]
-        public virtual void CreateAnOutcomeWithInvalidOutcomeType()
+        [NUnit.Framework.DescriptionAttribute("Change feed for Post Outcome")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
+        public virtual void ChangeFeedForPostOutcome()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Outcome", null, new string[] {
+                        "outcomes"});
 #line 66
- this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  this.FeatureBackground();
@@ -270,20 +276,133 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
                         "Field",
                         "Value"});
             table10.AddRow(new string[] {
+                        "AdviserName",
+                        "BillyAdviser"});
+            table10.AddRow(new string[] {
+                        "AdviserContactNumber",
+                        "98798678967967"});
+#line 67
+  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table10, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table11.AddRow(new string[] {
+                        "GivenName",
+                        "Bob"});
+            table11.AddRow(new string[] {
+                        "FamilyName",
+                        "Customer"});
+#line 71
+  testRunner.And("I post a Customer with the following details:", ((string)(null)), table11, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table12.AddRow(new string[] {
+                        "DateandTimeOfInteraction",
+                        "2018-06-25T11:21:00Z"});
+            table12.AddRow(new string[] {
+                        "Channel",
+                        "2"});
+            table12.AddRow(new string[] {
+                        "InteractionType",
+                        "2"});
+            table12.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-06-22T16:52:10Z"});
+#line 75
+  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table12, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table13.AddRow(new string[] {
+                        "DateandTimeOfSession",
+                        "2018-06-21T14:45:00Z"});
+            table13.AddRow(new string[] {
+                        "VenuePostCode",
+                        "NN1 2NN"});
+#line 81
+  testRunner.And("I post a session with the following details:", ((string)(null)), table13, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table14.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table14.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table14.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table14.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table14.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table14.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table14.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table14.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 85
+  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table14, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table15.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+#line 95
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table15, "Given ");
+#line 98
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 99
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create an outcome with invalid OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
+        public virtual void CreateAnOutcomeWithInvalidOutcomeType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, new string[] {
+                        "outcomes"});
+#line 102
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table16.AddRow(new string[] {
                         "OutcomeType",
                         "6"});
-            table10.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-20T21:45:00Z"});
-            table10.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-            table10.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 67
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table10, "Given ");
-#line 73
+#line 103
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table16, "Given ");
+#line 109
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -291,30 +410,32 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing ClaimedPriorityGroup")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingClaimedPriorityGroup()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing ClaimedPriorityGroup", null, ((string[])(null)));
-#line 76
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing ClaimedPriorityGroup", null, new string[] {
+                        "outcomes"});
+#line 112
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "OutcomeType",
                         "6"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-20T21:45:00Z"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 77
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table11, "Given ");
-#line 82
+#line 113
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table17, "Given ");
+#line 118
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -322,30 +443,32 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, ((string[])(null)));
-#line 85
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
+#line 121
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table12.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "OutcomeType",
                         "6"});
-            table12.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-20T21:45:00Z"});
-            table12.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 86
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table12, "Given ");
-#line 91
+#line 122
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table18, "Given ");
+#line 127
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -353,33 +476,35 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with OutcomeClaimedDate earlier than OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithOutcomeClaimedDateEarlierThanOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with OutcomeClaimedDate earlier than OutcomeEffectiveDate", null, ((string[])(null)));
-#line 94
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with OutcomeClaimedDate earlier than OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
+#line 130
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table13.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "OutcomeType",
                         "6"});
-            table13.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-19T21:45:00Z"});
-            table13.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-            table13.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 95
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table13, "Given ");
-#line 101
+#line 131
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table19, "Given ");
+#line 137
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
