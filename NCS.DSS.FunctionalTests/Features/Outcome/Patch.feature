@@ -45,10 +45,12 @@ Background: Prepare test
 	    | OutcomeType          | 2                    |
 		Then there should be a 200 response
 		And the response body should contain:
-		| Field                    | Value                                |
-	    | OutcomeType          | 2                    |
-	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
-	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		| Field                | Value                |
+		| OutcomeType          | 2                    |
+		| OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes
 	Scenario: Patch OutcomeClaimedDate
@@ -62,10 +64,12 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
 		Then there should be a 200 response
 		And the response body should contain:
-		| Field                    | Value                                |
-	    | OutcomeType          | 3                    |
-	    | OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
-	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		| Field                | Value                |
+		| OutcomeType          | 3                    |
+		| OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
+		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes
 	Scenario: Patch OutcomeEffectiveDate
@@ -79,7 +83,9 @@ Background: Prepare test
 	    | OutcomeEffectiveDate | 2018-07-20T22:45:00Z |
 		Then there should be a 200 response
 		And the response body should contain:
-		| Field                    | Value                                |
+		| Field                    | Value            |
 	    | OutcomeType          | 3                    |
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T22:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table

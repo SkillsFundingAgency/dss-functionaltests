@@ -39,6 +39,8 @@ Feature: Patch
 		| DateandTimeOfSession     | 2018-06-22T14:45:00Z           |
 		| VenuePostCode            |NN1 2NN                         |
 		| SessionAttended          |true                            |
+		And there should be a record in the sessions ChangeFeed table
+		And there should be a record in the sessions-history ChangeFeed table
 
 @sessions
 	Scenario: Patch VenuePostCode

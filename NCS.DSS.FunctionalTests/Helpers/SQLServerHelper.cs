@@ -87,10 +87,16 @@ namespace NCS.DSS.FunctionalTests.Helpers
             return returnValue;
         }
 
-        public DataSet GetRecord(string table, string recordId)
+        public DataSet GetRecord(string table, string recordId, string orderBy = "")
         {
             DataSet ds = new DataSet(table);
             string sql = @"select* from[" + table + "] where id = '" + recordId + "'";
+
+            if (orderBy.Length > 0)
+            {
+                sql = sql + " order by " + orderBy;
+
+            }
             if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
             {
                 using (SqlCommand cmd = new SqlCommand(sql, Connection))

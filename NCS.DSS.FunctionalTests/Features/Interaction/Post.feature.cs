@@ -151,6 +151,10 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
                         "2018-06-22T16:52:10Z"});
 #line 27
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
+#line 33
+  testRunner.And("there should be a record in the interactions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+  testRunner.And("there should be a record in the interactions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -162,7 +166,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing Channel", null, new string[] {
                         "interactions"});
-#line 35
+#line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -183,9 +187,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table5.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 36
+#line 38
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table5, "Given ");
-#line 42
+#line 44
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -198,7 +202,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing InteractionType", null, new string[] {
                         "interactions"});
-#line 45
+#line 47
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -219,9 +223,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table6.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 46
+#line 48
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table6, "Given ");
-#line 52
+#line 54
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -234,7 +238,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid AdviserDetailsID", null, new string[] {
                         "interactions"});
-#line 55
+#line 57
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -258,9 +262,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table7.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 56
+#line 58
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table7, "Given ");
-#line 63
+#line 65
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -273,7 +277,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid DateandTimeOfInteraction", null, new string[] {
                         "interactions"});
-#line 66
+#line 68
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -297,9 +301,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table8.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 67
+#line 69
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table8, "Given ");
-#line 74
+#line 76
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -312,7 +316,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid Channel", null, new string[] {
                         "interactions"});
-#line 78
+#line 80
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -336,9 +340,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table9.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 79
+#line 81
    testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table9, "Given ");
-#line 86
+#line 88
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -351,7 +355,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid InteractionType", null, new string[] {
                         "interactions"});
-#line 89
+#line 91
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -375,9 +379,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table10.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 90
+#line 92
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table10, "Given ");
-#line 97
+#line 99
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -390,7 +394,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid LastModifiedDate", null, new string[] {
                         "interactions"});
-#line 101
+#line 103
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -414,9 +418,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table11.AddRow(new string[] {
                         "LastModifiedDate",
                         "2033-06-22T16:52:10Z"});
-#line 102
+#line 104
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table11, "Given ");
-#line 109
+#line 111
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

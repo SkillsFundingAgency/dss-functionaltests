@@ -57,6 +57,8 @@ Feature: Post Action
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
 @actions
 	Scenario: Post Valid Action with only mandatory Fields

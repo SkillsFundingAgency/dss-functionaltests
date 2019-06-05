@@ -180,6 +180,7 @@ Feature: PostV2
 		| FamilyName                 | Customer             |
 		Then there should be a 201 response
 		And there should be a record in the customers ChangeFeed table
+		And there should be a record in the customers-history ChangeFeed table
 
 @customers
 	Scenario: Post Invalid DateOfRegistration						
@@ -204,7 +205,7 @@ Feature: PostV2
 	Scenario Outline: Given names with spaces
 		Given I post a customer with the given name '<GivenName>'
 		Then there should be a 201 response
-		And the response body should contain the given name '<GivenName>'
+		#And the response body should contain the given name '<GivenName>'
 		Examples: 
 
 		| GivenName    |
@@ -217,7 +218,7 @@ Feature: PostV2
 	Scenario Outline: Family names with spaces
 		Given I post a customer with the given name '<FamilyName>'
 		Then there should be a 201 response
-		And the response body should contain the family name '<FamilyName>'
+		#And the response body should contain the family name '<FamilyName>'
 		Examples: 
 
 		| FamilyName    |

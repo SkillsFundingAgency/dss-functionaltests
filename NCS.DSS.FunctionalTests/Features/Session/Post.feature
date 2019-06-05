@@ -38,7 +38,8 @@ Scenario: Create a Session for existing customer with all valid Values
 		| VenuePostCode            |NN1 2NN                         |
 		| SessionAttended         |null                            |
 		| ReasonForNonAttendance   |99                              |
-
+		And there should be a record in the sessions ChangeFeed table
+		And there should be a record in the sessions-history ChangeFeed table
 
 @sessions
 Scenario: Create a Session for existing customer with incorrect format for date and time of session

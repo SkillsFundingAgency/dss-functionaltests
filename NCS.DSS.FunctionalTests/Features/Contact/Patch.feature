@@ -29,6 +29,8 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
+     And there should be a record in the contacts ChangeFeed table
+	 And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch PreferredContactMethod with invalid data
@@ -65,6 +67,8 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch HomeNumber
@@ -86,7 +90,8 @@
 		| HomeNumber             | 08654 654321                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
-
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch AlternativeNumber
@@ -108,7 +113,8 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 08654 123458                 |
 		| EmailAddress           | customer@customer.com        |
-
+	    And there should be a record in the contacts ChangeFeed table
+	    And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch EmailAddress
@@ -130,6 +136,8 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@update.com          |
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch EmailAddress with invalid data
@@ -165,6 +173,8 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
 #	Scenario: Patch new preferredContactMethod - HomeNumber
 #

@@ -172,6 +172,10 @@ namespace NCS.DSS.FunctionalTests.Features.Session
                         "true"});
 #line 35
   testRunner.Then("the response body should contain:", ((string)(null)), table6, "Then ");
+#line 40
+  testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+  testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -185,7 +189,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateandTimeOfSession with SubcontractorId", null, new string[] {
                         "sessions",
                         "subcontractorId"});
-#line 43
+#line 44
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -203,7 +207,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table7.AddRow(new string[] {
                         "SessionAttended",
                         "true"});
-#line 44
+#line 45
   testRunner.Given("I post a session with the following details:", ((string)(null)), table7, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -212,7 +216,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table8.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "2018-06-22T14:45:00Z"});
-#line 49
+#line 50
   testRunner.When("I patch the following:", ((string)(null)), table8, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -227,9 +231,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table9.AddRow(new string[] {
                         "SessionAttended",
                         "true"});
-#line 52
+#line 53
   testRunner.Then("the response body should contain:", ((string)(null)), table9, "Then ");
-#line 57
+#line 58
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -242,7 +246,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch VenuePostCode", null, new string[] {
                         "sessions"});
-#line 60
+#line 61
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -260,7 +264,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table10.AddRow(new string[] {
                         "SessionAttended",
                         "true"});
-#line 61
+#line 62
   testRunner.Given("I post a session with the following details:", ((string)(null)), table10, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -269,9 +273,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table11.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NQ"});
-#line 66
+#line 67
   testRunner.When("I patch the following:", ((string)(null)), table11, "When ");
-#line 69
+#line 70
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -286,7 +290,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table12.AddRow(new string[] {
                         "SessionAttended",
                         "true"});
-#line 70
+#line 71
   testRunner.And("the response body should contain:", ((string)(null)), table12, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -299,7 +303,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SessionAttended", null, new string[] {
                         "sessions"});
-#line 77
+#line 78
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -317,7 +321,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table13.AddRow(new string[] {
                         "SessionAttended",
                         "true"});
-#line 78
+#line 79
   testRunner.Given("I post a session with the following details:", ((string)(null)), table13, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -326,9 +330,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table14.AddRow(new string[] {
                         "SessionAttended",
                         "false"});
-#line 83
+#line 84
   testRunner.When("I patch the following:", ((string)(null)), table14, "When ");
-#line 86
+#line 87
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -343,7 +347,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table15.AddRow(new string[] {
                         "SessionAttended",
                         "false"});
-#line 87
+#line 88
   testRunner.And("the response body should contain:", ((string)(null)), table15, "And ");
 #line hidden
             this.ScenarioCleanup();

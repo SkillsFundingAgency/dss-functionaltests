@@ -54,7 +54,8 @@ Feature: Patch
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-
+		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
 @actions
 	Scenario: Patch ActionSummary
@@ -130,6 +131,7 @@ Feature: Patch
 		| ActionType                    | 2                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
+		
 
 @actions
 	Scenario: Patch ActionStatus

@@ -55,7 +55,7 @@ Background: Prepare test
 	    | GoalStatus                  | 1                    |
 
 @goals
-Scenario:Post Valid Goal with all fields
+Scenario:Change feed for Goal with all fields
 		Given I post an adviser with the following details:
 		| Field						 | Value				|
 		| AdviserName				 | BillyAdviser			|
@@ -93,6 +93,7 @@ Scenario:Post Valid Goal with all fields
 	    | GoalStatus                  | 1                    |
 		Then there should be a 201 response
 		And there should be a record in the goals ChangeFeed table
+		And there should be a record in the goals-history ChangeFeed table
 
 @goals
 	Scenario: Create a Goal with missing DateGoalCaptured

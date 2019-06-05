@@ -48,6 +48,8 @@ Feature: Post
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
+		And there should be a record in the actionPlans ChangeFeed table
+		And there should be a record in the actionPlans-history ChangeFeed table
 
 
 

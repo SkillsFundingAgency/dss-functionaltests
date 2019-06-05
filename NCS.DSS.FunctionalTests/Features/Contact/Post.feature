@@ -28,6 +28,8 @@ Feature: Post
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	And there should be a record in the contacts ChangeFeed table
+	And there should be a record in the contacts-history ChangeFeed table
 
 
 @contactdetails
@@ -43,6 +45,8 @@ Feature: Post
 		| PreferredContactMethod | 2                            |
 		| MobileNumber           | 07676 123456                 |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	And there should be a record in the contacts ChangeFeed table
+	And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	 Scenario: Post Valid ContactDetail with ten digit phone numbers
@@ -61,6 +65,8 @@ Feature: Post
 		| HomeNumber             | 0125 455294                  |
 		| AlternativeNumber      | 01254 57611                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	And there should be a record in the contacts ChangeFeed table
+	And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Post ContactDetail Mandatory PreferredContactMethod Field missing

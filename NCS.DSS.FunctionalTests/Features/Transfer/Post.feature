@@ -28,3 +28,5 @@ Feature: Post
 		| OriginatingTouchpointId | 9000000001         |
 		| TargetTouchpointId      | 9111111111        |
 		| Context                 | Some context text |
+	And there should be a record in the transfers ChangeFeed table
+	And there should be a record in the transfers-history ChangeFeed table

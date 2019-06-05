@@ -31,6 +31,8 @@ Feature: Patch
 		| DateandTimeOfInteraction | 2018-06-26T11:21:00Z                 |
 		| Channel                  | 2                                    |
 		| InteractionType          | 2                                    |
+		And there should be a record in the interactions ChangeFeed table
+		And there should be a record in the interactions-history ChangeFeed table
 
 @interactions
 	Scenario: Patch channel
@@ -48,6 +50,8 @@ Feature: Patch
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z                 |
 		| Channel                  | 1                                    |
 		| InteractionType          | 2                                    |
+		And there should be a record in the interactions ChangeFeed table
+		And there should be a record in the interactions-history ChangeFeed table
 
 @interactions
 	Scenario: Patch InteractionType
@@ -65,3 +69,5 @@ Feature: Patch
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z                 |
 		| Channel                  | 2                                    |
 		| InteractionType          | 1                                    |
+		And there should be a record in the interactions ChangeFeed table
+		And there should be a record in the interactions-history ChangeFeed table

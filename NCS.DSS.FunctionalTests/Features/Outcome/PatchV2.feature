@@ -47,6 +47,8 @@ Background: Prepare test
 		| OutcomeClaimedDate   | 2018-08-20T21:45:00Z |
 		| ClaimedPriorityGroup | 5                    |
 		Then there should be a 200 response
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes	@Cat1
 	Scenario: Valid Patch remove value for OutcomeClaimedDate
@@ -66,6 +68,8 @@ Background: Prepare test
          | OutcomeType          | 3                    |
          | OutcomeClaimedDate   |                      |
          | ClaimedPriorityGroup | 5                    |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes
 		Scenario: Valid Patch remove value for OutcomeClaimedDate and OutcomeEffectiveDate 
@@ -86,6 +90,8 @@ Background: Prepare test
          | OutcomeType          | 3                    |
          | OutcomeClaimedDate   |                      |
          | ClaimedPriorityGroup | 5                    |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes
 		Scenario: Valid Patch add values for OutcomeClaimedDate and OutcomeEffectiveDate 
@@ -104,6 +110,8 @@ Background: Prepare test
          | OutcomeType          | 3                    |
          | OutcomeClaimedDate   | 2018-08-20T21:46:00Z |
          | ClaimedPriorityGroup | 5                    |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes
 	Scenario: Patch OutcomeClaimedDate without ClaimedPriorityGroup

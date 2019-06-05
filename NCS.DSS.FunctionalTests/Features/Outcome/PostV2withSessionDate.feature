@@ -40,6 +40,8 @@ Feature: PostV2withSessionDate
 	    | OutcomeEffectiveDate | 2018-05-05T11:21:00Z  |
 		| ClaimedPriorityGroup | 3                     |
 		Then there should be a 201 response
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 
 

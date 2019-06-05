@@ -46,6 +46,8 @@ Background: Prepare test
 	    | OutcomeType          | 3                    |
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	And there should be a record in the outcomes ChangeFeed table
+	And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes
 	Scenario: Create an outcome with missing OutcomeType
@@ -76,6 +78,8 @@ Background: Prepare test
 	    | Field                | Value                |
 	    | OutcomeType          | 2                    |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 @outcomes
 	Scenario: Create an outcome with missing OutcomeEffectiveDate
@@ -88,3 +92,5 @@ Background: Prepare test
 	    | Field                | Value                |
 	    | OutcomeType          | 2                    |
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table

@@ -30,6 +30,8 @@ Feature: Post
 		| Channel                  | 2                                    |
 		| InteractionType          | 2                                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
+		And there should be a record in the interactions ChangeFeed table
+		And there should be a record in the interactions-history ChangeFeed table
 
 @interactions
 	Scenario: Post Interaction with missing Channel

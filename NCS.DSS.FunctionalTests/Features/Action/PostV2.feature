@@ -123,6 +123,7 @@ Feature: PostV2
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 201 response
 		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
 
 @actions @V2

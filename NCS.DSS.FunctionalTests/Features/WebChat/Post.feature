@@ -36,6 +36,8 @@ Background: Prepare test
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		And there should be a record in the webchats ChangeFeed table
+		And there should be a record in the webchats-history ChangeFeed table
 
 @webchats
 	Scenario: Create a webchat with only mandatory values
@@ -50,3 +52,5 @@ Background: Prepare test
 	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
 	    | WebChatNarrative           | some text here       |
+		And there should be a record in the webchats ChangeFeed table
+		And there should be a record in the webchats-history ChangeFeed table

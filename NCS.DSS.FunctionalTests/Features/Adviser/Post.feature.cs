@@ -113,6 +113,10 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
                         "98798678967967"});
 #line 14
   testRunner.And("the response body should contain:", ((string)(null)), table2, "And ");
+#line 19
+  testRunner.And("there should be a record in the adviserDetails ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+  testRunner.And("there should be a record in the adviserDetails-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -124,7 +128,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, new string[] {
                         "adviserdetails"});
-#line 21
+#line 23
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -137,9 +141,9 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table3.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 22
+#line 24
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table3, "Given ");
-#line 26
+#line 28
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

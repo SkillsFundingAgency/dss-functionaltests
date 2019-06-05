@@ -41,6 +41,8 @@ Feature: PostV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
 
 @addresses @subcontractorId
@@ -75,6 +77,9 @@ Feature: PostV2
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		And the response body should contain the SubContractorId 
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Post Address with only mandatory Fields
@@ -96,6 +101,9 @@ Feature: PostV2
 		| Latitude             | null	              |
 		| EffectiveFrom        | null	              |
 		| EffectiveTo          | null	              |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Post Address with maximum Field lengths
@@ -126,6 +134,9 @@ Feature: PostV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 
 @addresses
@@ -140,6 +151,8 @@ Feature: PostV2
 		| PostCode             | NW11WN               |
 		Then there should be a 201 response
 		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Post Address with Address1 Field missing

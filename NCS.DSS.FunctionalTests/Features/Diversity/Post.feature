@@ -32,6 +32,8 @@ Feature: Post
 		| Ethnicity                               | 44                   |
 		| DateAndTimeEthnicityCollected             | 2018-09-19T09:01:00Z |
 		| LastModifiedDate                          | 2018-09-19T09:01:00Z |
+		And there should be a record in the diversitydetails ChangeFeed table
+		And there should be a record in the diversitydetails-history ChangeFeed table
 
 @diversitydetails
 	Scenario: Post DiversityDetails with only mandatory Fields
@@ -48,6 +50,8 @@ Feature: Post
 		| LearningDifficultyOrDisabilityDeclaration | 1                 |
 		| ConsentToCollectEthnicity                 | true                 |
 		| Ethnicity                               | 44                   |
+		And there should be a record in the diversitydetails ChangeFeed table
+		And there should be a record in the diversitydetails-history ChangeFeed table
 
 @diversitydetails
 	Scenario: Post DiversityDetails with missing ConsentToCollectLLDDHealth Value

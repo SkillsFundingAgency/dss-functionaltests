@@ -41,6 +41,8 @@ Feature: Post
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
 @addresses
 		Scenario: Post Address with only mandatory Fields

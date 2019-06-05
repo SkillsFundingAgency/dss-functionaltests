@@ -159,6 +159,10 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                         "Some context text"});
 #line 26
  testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
+#line 31
+ testRunner.And("there should be a record in the transfers ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("there should be a record in the transfers-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

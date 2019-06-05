@@ -511,6 +511,8 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 148
   testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 149
+  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -522,7 +524,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, new string[] {
                         "actionplans"});
-#line 151
+#line 152
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -552,9 +554,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table18.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 152
+#line 153
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table18, "Given ");
-#line 161
+#line 162
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -567,7 +569,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, new string[] {
                         "actionplans"});
-#line 164
+#line 165
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -600,9 +602,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table19.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 165
+#line 166
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table19, "Given ");
-#line 175
+#line 176
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -617,7 +619,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanCreated earlier than Session.DateandTimeOfSess" +
                     "ion", null, new string[] {
                         "actionplans"});
-#line 178
+#line 179
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -650,9 +652,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table20.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 179
+#line 180
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table20, "Given ");
-#line 189
+#line 190
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -667,7 +669,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated", null, new string[] {
                         "actionplans",
                         "ignore"});
-#line 192
+#line 193
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -700,9 +702,9 @@ this.ScenarioInitialize(scenarioInfo);
             table21.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 193
+#line 194
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table21, "Given ");
-#line 203
+#line 204
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -717,7 +719,7 @@ this.ScenarioInitialize(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanSentToCustomer earlier than DateActionPlanCrea" +
                     "ted", null, new string[] {
                         "actionplans"});
-#line 206
+#line 207
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -750,9 +752,9 @@ this.ScenarioInitialize(scenarioInfo);
             table22.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 207
+#line 208
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table22, "Given ");
-#line 217
+#line 218
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -767,7 +769,7 @@ this.ScenarioInitialize(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanAcknowledged earlier than DateActionPlanCreate" +
                     "d", null, new string[] {
                         "actionplans"});
-#line 220
+#line 221
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -800,9 +802,9 @@ this.ScenarioInitialize(scenarioInfo);
             table23.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 221
+#line 222
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table23, "Given ");
-#line 231
+#line 232
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -815,7 +817,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing CustomerCharterShownToCustomer", null, new string[] {
                         "actionplans"});
-#line 234
+#line 235
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -845,9 +847,9 @@ this.ScenarioInitialize(scenarioInfo);
             table24.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 235
+#line 236
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table24, "Given ");
-#line 244
+#line 245
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -860,7 +862,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid CustomerCharterShownToCustomer", null, new string[] {
                         "actionplans"});
-#line 247
+#line 248
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -893,9 +895,9 @@ this.ScenarioInitialize(scenarioInfo);
             table25.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 248
+#line 249
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table25, "Given ");
-#line 258
+#line 259
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

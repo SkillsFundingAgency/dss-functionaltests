@@ -175,6 +175,10 @@ this.FeatureBackground();
                         "2018-07-20T13:45:00Z"});
 #line 30
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
+#line 39
+  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -186,7 +190,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with only mandatory values", null, new string[] {
                         "webchats"});
-#line 41
+#line 43
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -204,9 +208,9 @@ this.FeatureBackground();
             table5.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-#line 42
+#line 44
  testRunner.Given("I post a webchat with the following details:", ((string)(null)), table5, "Given ");
-#line 47
+#line 49
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -221,8 +225,12 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-#line 48
+#line 50
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
+#line 55
+  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

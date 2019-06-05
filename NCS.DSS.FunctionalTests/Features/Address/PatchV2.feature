@@ -44,6 +44,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch Address2
@@ -78,6 +81,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch Address3
@@ -112,6 +118,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch Address4
@@ -146,6 +155,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch Address5
@@ -180,6 +192,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch PostCode
@@ -214,6 +229,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch AlternativePostCode
@@ -248,6 +266,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch Longitude
@@ -282,6 +303,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch Latitude
@@ -316,6 +340,9 @@ Feature: PatchV2
 		| Latitude             | 52.40122             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch EffectiveFrom
@@ -350,6 +377,9 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:02:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 
 @addresses
 	Scenario: Patch EffectiveTo
@@ -384,4 +414,7 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:13:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 

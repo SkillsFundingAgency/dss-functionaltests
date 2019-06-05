@@ -58,6 +58,8 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 		And the response body should contain the SubContractorId
+		And there should be a record in the goals ChangeFeed table
+		And there should be a record in the goals-history ChangeFeed table
 
 
 @goals @subcontractorId

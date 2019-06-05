@@ -97,6 +97,8 @@ Background: Prepare test
 	    | GoalSummary                 | some goal text       |
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
+		And there should be a record in the goals ChangeFeed table
+		And there should be a record in the goals-history ChangeFeed table
 
 @goals
 	Scenario: Patch with invalid GoalType

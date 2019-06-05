@@ -60,6 +60,7 @@ Feature: PostV2
 		| VenuePostCode            | NN1 2NN                |
 		Then there should be a 201 response
 		And there should be a record in the sessions ChangeFeed table
+		And there should be a record in the sessions-history ChangeFeed table
 
 @sessions
 	Scenario: Create a Session for existing customer with incorrect format for date and time of session

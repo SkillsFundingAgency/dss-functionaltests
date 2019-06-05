@@ -148,7 +148,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table4.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 24
+#line 25
  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table4, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -160,7 +160,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table5.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 34
+#line 35
  testRunner.And("I post a session with the following details:", ((string)(null)), table5, "And ");
 #line hidden
         }
@@ -174,7 +174,7 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup", null, new string[] {
                         "outcomes",
                         "SessionId"});
-#line 41
+#line 42
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -192,7 +192,7 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 42
+#line 43
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -204,9 +204,9 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 47
+#line 48
   testRunner.When("I patch the following:", ((string)(null)), table7, "When ");
-#line 51
+#line 52
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -219,7 +219,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeClaimedDate without ClaimedPriorityGroup", null, new string[] {
                         "outcomes"});
-#line 54
+#line 55
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -234,7 +234,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 55
+#line 56
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -243,9 +243,9 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-20T21:45:00Z"});
-#line 59
+#line 60
   testRunner.When("I patch the following:", ((string)(null)), table9, "When ");
-#line 62
+#line 63
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -258,7 +258,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid OutcomeType", null, new string[] {
                         "outcomes"});
-#line 65
+#line 66
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -273,7 +273,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 66
+#line 67
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table10, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -282,9 +282,9 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "OutcomeType",
                         "7"});
-#line 70
+#line 71
   testRunner.When("I patch the following:", ((string)(null)), table11, "When ");
-#line 73
+#line 74
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -297,7 +297,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date earlier than Session.DateandTimeOfSession", null, new string[] {
                         "outcomes"});
-#line 78
+#line 79
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -312,7 +312,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 79
+#line 80
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table12, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -321,9 +321,9 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2017-07-20T21:45:00Z"});
-#line 83
+#line 84
   testRunner.When("I patch the following:", ((string)(null)), table13, "When ");
-#line 86
+#line 87
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -336,7 +336,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date less than Outcome claimed date", null, new string[] {
                         "outcomes"});
-#line 89
+#line 90
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -351,7 +351,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 90
+#line 91
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table14, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -363,9 +363,9 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 94
+#line 95
   testRunner.When("I patch the following:", ((string)(null)), table15, "When ");
-#line 98
+#line 99
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -380,7 +380,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date greater than Session.DateandTimeOfSession + 12 month" +
                     "s", null, new string[] {
                         "outcomes"});
-#line 101
+#line 102
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -395,7 +395,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 102
+#line 103
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table16, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -404,9 +404,9 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2019-01-22T22:45:00Z"});
-#line 106
+#line 107
   testRunner.When("I patch the following:", ((string)(null)), table17, "When ");
-#line 109
+#line 110
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -421,7 +421,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Outcome effective date greater than Session.DateandTimeOfSession + 13 month" +
                     "s", null, new string[] {
                         "outcomes"});
-#line 112
+#line 113
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -436,7 +436,7 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 113
+#line 114
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table18, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -445,9 +445,9 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2019-02-22T22:45:00Z"});
-#line 117
+#line 118
   testRunner.When("I patch the following:", ((string)(null)), table19, "When ");
-#line 120
+#line 121
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

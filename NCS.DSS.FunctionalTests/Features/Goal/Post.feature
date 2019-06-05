@@ -51,6 +51,8 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalSummary                 | some goal text       |
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
+		And there should be a record in the goals ChangeFeed table
+		And there should be a record in the goals-history ChangeFeed table
 
 @goals
 	Scenario: Create a Goal with missing DateGoalCaptured

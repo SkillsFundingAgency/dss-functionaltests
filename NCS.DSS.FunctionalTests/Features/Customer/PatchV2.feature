@@ -73,6 +73,8 @@ Feature: PatchV2
 		| OptInMarketResearch        | false                |
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
+	    And there should be a record in the customers ChangeFeed table
+		And there should be a record in the customers-history ChangeFeed table
 
 
 @customers

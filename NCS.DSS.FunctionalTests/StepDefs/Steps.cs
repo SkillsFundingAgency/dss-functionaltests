@@ -4,6 +4,7 @@ using FunctionalTests.Models;
 using NCS.DSS.FunctionalTests.Helpers;
 using NCS.DSS.FunctionalTests.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -44,9 +45,16 @@ namespace FunctionalTests.StepDefs
         private string diversityId;
         private string subscriptionId;
         private string transferId;
+        private List<TestDataItem> loadedData = new List<TestDataItem>();
 
         public string actionId { get; set; }
+        private readonly ScenarioContext scenarioContext;
 
+        public Steps(ScenarioContext context)
+        {
+            scenarioContext = context;
+            
+        }
         string AssertAndExtract(string key, IRestResponse response)
         {
             string extractedValue = "";
@@ -60,6 +68,9 @@ namespace FunctionalTests.StepDefs
                     Console.WriteLine("extraction failed, response.content:\n" + response.Content);
                     Console.WriteLine("");
                 }
+                extractedValue.Should().NotBeNullOrEmpty();
+                loadedData.Add(new TestDataItem(key, extractedValue));
+                scenarioContext["TestData"] = loadedData;
             }
             else
             {
@@ -125,18 +136,19 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post a customer with the given name '(.*)'")]
         public void GivenIPostACustomerWithTheGivenName(string givenName)
         {
-            SetVersion("post");
+            SetVersion("post", true);
             url = envSettings.BaseUrl + "customers/api/customers/";
             var customer = new Customer();
             customer.GivenName = givenName;
             customer.FamilyName = "Smith";
             json = JsonConvert.SerializeObject(customer);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
-            if (response.IsSuccessful)
+            customerId = AssertAndExtract("CustomerId", response);
+            /*if (response.IsSuccessful)
             {
                 Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
                 customerId = actualVals["CustomerId"];
-            }
+            }*/
         }
 
 
@@ -169,6 +181,11 @@ namespace FunctionalTests.StepDefs
         {
             url = envSettings.BaseUrl + "interactions/api/Customers/" + customerId + "/Interactions/";
             var interaction = table.CreateInstance<Interaction>();
+
+  //          if (interaction.AdviserDetailsId is null && adviserDetailId.Length > 0 )
+  //            {
+  //              interaction.AdviserDetailsId = adviserDetailId;
+  //          }
             json2 = JsonConvert.SerializeObject(interaction);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             interactionId = AssertAndExtract("InteractionId", response);
@@ -195,6 +212,13 @@ namespace FunctionalTests.StepDefs
             //    addressId = addressDictionary["AddressId"];
             //}
         }
+
+        [Then(@"when I post an Address with the following details:")]
+        public void ThenWhenIPostAnAddressWithTheFollowingDetails(Table table)
+        {
+            GivenIPostAnAddressWithTheFollowingDetails(table);
+        }
+
 
         [Given(@"I post a Contact with the following details:")]
         public void GivenIPostAContactWithTheFollowingDetails(Table table)
@@ -463,14 +487,23 @@ namespace FunctionalTests.StepDefs
                                                    NullValueHandling = NullValueHandling.Ignore
                                                });
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
-            if (response.IsSuccessful)
+            transferId = AssertAndExtract("TransferId", response);
+            /*if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
                 transferId = dict["TransferId"];
-            }
+            }*/
 
         }
 
+        [Given(@"I post a new subscription request")]
+        public void GivenIPostANewSubscriptionRequest()
+        {
+            url = envSettings.BaseUrl + "subscriptions/api/Customers/" + customerId + "/subscriptions/";
+            json2 = "{ \"subscribe\": true }";
+            response = RestHelper.Post(url, json2, envSettings.TestEndpoint02, envSettings.SubscriptionKey);
+            subscriptionId = AssertAndExtract("SubscriptionId", response);
+        }
 
 
         [Given(@"I post an subscription with the following details:")]
@@ -689,6 +722,12 @@ namespace FunctionalTests.StepDefs
             }
         }
 
+        [Then(@"the error message should be ""(.*)""")]
+        public void ThenTheErrorMessageShouldBe(string expectedMessage)
+        {
+                   response.Content.Should().Contain(expectedMessage);
+        }
+
         public bool CheckFamilyName(string name)
         {
             return true;
@@ -706,11 +745,13 @@ namespace FunctionalTests.StepDefs
             customer.UniqueLearnerNumber = UniqueLearnerNumber;
             json = JsonConvert.SerializeObject(customer);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
-            if (response.IsSuccessful)
+
+            id = AssertAndExtract("CustomerId", response);
+            /*if (response.IsSuccessful)
             {
                 Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
                 id = actualVals["CustomerId"];
-            }
+            }*/
         }
 
         [Then(@"the response body should contain the SubContractorId")]
@@ -730,8 +771,16 @@ namespace FunctionalTests.StepDefs
         Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2)
         {
             if (dict1 == dict2) return true;
-            if ((dict1 == null) || (dict2 == null)) return false;
-            if (dict1.Count != dict2.Count) return false;
+            if ((dict1 == null) || (dict2 == null))
+            {
+                Console.WriteLine("Compare Dictionary: FALSE - null dictionary");
+                return false;
+            }
+            if (dict1.Count != dict2.Count)
+            {
+                Console.WriteLine("Compare Dictionary: FALSE - different number of records");
+                return false;
+            }
 
             var valueComparer = EqualityComparer<TValue>.Default;
 
@@ -739,6 +788,7 @@ namespace FunctionalTests.StepDefs
             {
                 TValue value2;
                 bool ret  = true;
+                string returnMessage = "";
                 DateTime tmpTime,tmpTime1;
                 if (!dict2.TryGetValue(kvp.Key, out value2)) ret = false;
                 switch (kvp.Value.ToString().ToLower())
@@ -756,16 +806,26 @@ namespace FunctionalTests.StepDefs
                                 tmpTime = new DateTime(tmpTime.Ticks - (tmpTime.Ticks % TimeSpan.TicksPerSecond), tmpTime.Kind);
                                 tmpTime1 = new DateTime(tmpTime1.Ticks - (tmpTime1.Ticks % TimeSpan.TicksPerSecond), tmpTime1.Kind);
                                 ret = tmpTime.Equals(tmpTime1);
+                                returnMessage = "Check " + kvp.Key + " Value1: " + tmpTime + " Value2: " + tmpTime1;
+                                
                             }
-                            else ret = false;
+                            else
+                            {
+                                returnMessage = "Date parse failed on" + kvp.Key + " (" + value2.ToString() + ")";
+                                ret = false;
+                            }
 
                         }
-                        else if ( (kvp.Value == null || kvp.Value.ToString() == string.Empty )
-                                && ( value2 == null || value2.ToString() == string.Empty ) ) 
+                        else if ((kvp.Value == null || kvp.Value.ToString() == string.Empty)
+                                && (value2 == null || value2.ToString() == string.Empty))
                         {
                             ret = true;
                         }
-                        else if (!valueComparer.Equals(kvp.Value, value2 ) ) ret = false;
+                        else if (!valueComparer.Equals(kvp.Value, value2))
+                        {
+                            ret = false;
+                            returnMessage = "Check " + kvp.Key + " Value1: " + kvp.Value + " Value2: " + value2;
+                        }
                         break;
     
                 }
@@ -773,10 +833,17 @@ namespace FunctionalTests.StepDefs
                 //if (!valueComparer.Equals(kvp.Value, value2)) ret =  false;
                 if (!ret)
                 {
+                    Console.WriteLine("Compare Dictionary: FALSE " + returnMessage);
                     return false;
                 }
             }
             return true;
+        }
+
+        [Then(@"a new notification should be received for ""(.*)""")]
+        public void ThenANewNotificationShouldBeReceivedFor(string p0)
+        {
+            ScenarioContext.Current.Pending();
         }
 
 
@@ -785,34 +852,115 @@ namespace FunctionalTests.StepDefs
         {
 //            table = "dss-" + table;
             bool found = false;
+            bool addSubcontractorIdToCollection = false;
+            bool addSessionIdToCollection = false;
+            bool addClaimedPriorityGroup = false;
+            bool historyTable = table.ToLower().Contains("history");
             string recordId;
+            string historyTableId = "";
+            string primaryTableId = "";
             SQLServerHelper helper = new SQLServerHelper();
 
-            switch( table)
+            string orderBy = ( historyTable ? "CosmosTimeStamp DESC" : "");
+
+            switch ( table ) 
             {
                 case "actions":
+                case "actions-history":
                     recordId = actionId;
+                    addSubcontractorIdToCollection = true;
+                    primaryTableId = "ActionId";
+                    historyTableId = "Actions-historyId";
                     break;
                 case "actionPlans":
+                case "actionPlans-history":
                     recordId = actionPlanId;
+                    addSessionIdToCollection = true;
+                    addSubcontractorIdToCollection = true;
+                    primaryTableId = "ActionPlanId";
+                    historyTableId = "ActionPlans-historyId";
                     break;
                 case "sessions":
+                case "sessions-history":
                     recordId = sessionId;
+                    addSubcontractorIdToCollection = true;
+                    primaryTableId = "SessionId";
+                    historyTableId = "Sessions-historyId";
                     break;
                 case "goals":
+                case "goals-history":
                     recordId = goalId;
+                    addSubcontractorIdToCollection = true;
+                    primaryTableId = "GoalId";
+                    historyTableId = "Goals-historyId";
+                    break;
+                case "contacts":
+                case "contacts-history":
+                    recordId = contactId;
+                    addSubcontractorIdToCollection = false;
+                    primaryTableId = "ContactId";
+                    historyTableId = "Contacts-historyId";
                     break;
                 case "customers":
+                case "customers-history":
                     recordId = customerId;
+                    addSubcontractorIdToCollection = true;
+                    primaryTableId = "CustomerId";
+                    historyTableId = "Customers-historyId";
+                    break;
+                case "diversitydetails":
+                case "diversitydetails-history":
+                    recordId = diversityId;
+                    addSubcontractorIdToCollection = false;
+                    primaryTableId = "DiversityId";
+                    historyTableId = "Diversitydetails-historyId";
                     break;
                 case "addresses":
+                case "addresses-history":
                     recordId = addressId;
+                    addSubcontractorIdToCollection = true;
+                    primaryTableId = "AddressId";
+                    historyTableId = "Addresses-historyId";
                     break;
                 case "adviserDetails":
+                case "adviserDetails-history":
                     recordId = adviserDetailId;
+                    addSubcontractorIdToCollection = true;
+                    primaryTableId = "AdviserDetailId";
+                    historyTableId = "AdviserDetails-historyId";
                     break;
                 case "outcomes":
+                case "outcomes-history":
                     recordId = outcomeId;
+                    addSubcontractorIdToCollection = true;
+                    addSessionIdToCollection = true;
+                    addClaimedPriorityGroup = true;
+                    primaryTableId = "OutcomeId";
+                    historyTableId = "Outcomes-historyId";
+                    break;
+                case "interactions":
+                case "interactions-history":
+                    recordId = interactionId;
+                    primaryTableId = "InteractionId";
+                    historyTableId = "Interactions-historyId";
+                    break;
+                case "subscriptions":
+                case "subscriptions-history":
+                    recordId = subscriptionId;
+                    primaryTableId = "SubscriptionId";
+                    historyTableId = "Subscriptions-historyId";
+                    break;
+                case "transfers":
+                case "transfers-history":
+                    recordId = transferId;
+                    primaryTableId = "TransferId";
+                    historyTableId = "Transfers-historyId";
+                    break;
+                case "webchats":
+                case "webchats-history":
+                    recordId = webChatId;
+                    primaryTableId = "WebChatId";
+                    historyTableId = "Webchats-historyId";
                     break;
                 default:
                     recordId = "";
@@ -830,15 +978,16 @@ namespace FunctionalTests.StepDefs
             //   found = helper.DoesResourceExist("dss-" + table, this.GetType().GetField(constants.IdFromResource(table)).GetValue(this).ToString() );
             System.Data.DataSet dataSet = null;
             DateTime loopUntil = new DateTime();
-            loopUntil = DateTime.Now.AddSeconds(8);
+            loopUntil = DateTime.Now.AddSeconds(20);
             while ( !found && DateTime.Now < loopUntil)
             {
-                dataSet = helper.GetRecord("dss-" + table, recordId);
+                Console.WriteLine("Attempt to retrieve SQL record from " + table + " for id " + recordId);
+                dataSet = helper.GetRecord("dss-" + table, recordId, orderBy);
                 found = ( dataSet.Tables[0].Rows.Count > 0 );
                 //found = helper.DoesResourceExist("dss-" + table, recordId);
                 System.Threading.Thread.Sleep( (found ? 0 : 2000) );
             }
-            found.Should().BeTrue("Because a record should exist in SQL stage DB for this resource");
+            found.Should().BeTrue("Because a record should exist in SQL stage DB for resource: " + table);
             if ( found)
             {
            //     var ds = helper.GetRecord("dss-" + table, recordId);
@@ -848,14 +997,63 @@ namespace FunctionalTests.StepDefs
                 //dict[0]["id"].Remove(.Remove();
                 // check all values in response are matched in dataset
                 var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+                if (addSubcontractorIdToCollection && !values.Keys.Contains("SubcontractorId") )
+                {
+                    values.Add("SubcontractorId", "");
+                }
+
+                if (table.Contains("webchats"))
+                {
+                    string newDuration = dict[0]["WebChatDuration"];
+                    newDuration = newDuration.Substring(11, 8);
+                    dict[0]["WebChatDuration"] = newDuration;
+                }
+                
+                if (addSessionIdToCollection && !values.Keys.Contains("SessionId"))
+                {
+                    values.Add("SessionId", "");
+                }
+                if (addClaimedPriorityGroup && !values.Keys.Contains("ClaimedPriorityGroup"))
+                {
+                    values.Add("ClaimedPriorityGroup", "");
+                }
+
+                if (historyTable)
+                {
+                    values.Add("CosmosTimeStamp", dict[0]["CosmosTimeStamp"]);
+                    values.Add("HistoryId", dict[0]["HistoryId"]);
+                    values.Add(historyTableId, dict[0][historyTableId]);
+                    values.Remove(primaryTableId);
+                }
+
+                if (table == "goals-history")
+                {
+                    // temp workaround
+                    values.Remove("LastModifiedBy");
+                    values.Add("LastModifiedTouchpointId", dict[0]["LastModifiedTouchpointId"]);
+                }
+
 
                 found = CompareX<string, string>(dict[0], values);
-                found.Should().BeTrue("because all SQL fields should match cosmos resource");
+
+                if (!found)
+                {
+                    //output the dictionaries
+                    Console.Write("SQL Data: ");
+                    foreach ( var kv in dict[0])
+                    {
+                        Console.Write(kv.Key + " = " + kv.Value);
+                    }
+                    Console.Write("API Data: ");
+                    foreach (var kv in values)
+                    {
+                        Console.Write(kv.Key + " = "  + kv.Value);
+                    }
+                }
+                found.Should().BeTrue("because all SQL fields should match cosmos resource: " + table);
             }
             return found;
         }
-
-
 
         private bool CheckResults(Dictionary<string, string> expectedVals, Dictionary<string, string> actualVals)
         {
@@ -915,9 +1113,47 @@ namespace FunctionalTests.StepDefs
             }
         }
 
-        private void SetVersion(string method)
+        private void SetVersion(string method, bool allowV3 = false)
         {
+            /* *****************************************************************  */
+            /* Check for versio related tags in feature and scenario context tags */
+            /* ****************************************************************** */
+            /* scenario tag takes precedence over feature tag                     */
+            /* Construct tag names from passed in string "method" which correspo  */
+            /* nds to the http verb                                               */
+
             bool problem = true;
+            if (scenarioContext.ScenarioInfo.Tags.Contains<string>(method + "V1"))
+            {
+                ScenarioContext.Current["version"] = "v1";
+            }
+            else if (scenarioContext.ScenarioInfo.Tags.Contains<string>(method + "V2"))
+            {
+                ScenarioContext.Current["version"] = "v2";
+            }
+            else if (allowV3 && scenarioContext.ScenarioInfo.Tags.Contains<string>(method + "V3"))
+            {
+                ScenarioContext.Current["version"] = "v3";
+            }
+            else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V1"))
+            {
+                ScenarioContext.Current["version"] = "v1";
+            }
+            else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V2"))
+            {
+                ScenarioContext.Current["version"] = "v2";
+            }
+            else if (allowV3 && FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V3"))
+            {
+                ScenarioContext.Current["version"] = "v3";
+            }
+            else
+            {
+                problem.Should().BeFalse("Because the version tag has not been defined in this feature");
+            }
+
+/*
+            
             switch (method)
             {
                 case "post":
@@ -928,6 +1164,10 @@ namespace FunctionalTests.StepDefs
                     else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"))
                     {
                         ScenarioContext.Current["version"] = "v2";
+                    }
+                    else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV3"))
+                    {
+                        ScenarioContext.Current["version"] = "v3";
                     }
                     else
                     {
@@ -967,7 +1207,7 @@ namespace FunctionalTests.StepDefs
                 default:
                     break;
             }
-
+            */
         }
  
 

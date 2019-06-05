@@ -51,7 +51,8 @@ Feature: PatchV2
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-
+		And there should be a record in the actionPlans ChangeFeed table
+		And there should be a record in the actionPlans-history ChangeFeed table
 
 @actionplans	
 	Scenario: Patch Valid DateAndTimeCharterShown
@@ -304,6 +305,8 @@ Feature: PatchV2
 		Then there should be a 400 response
 
 @actionplans
+	# THIS RULE HAS BEEN RELAXED (CDS-1511-RemoveValidationForDateAndTimeCharterShown-v2
+	# So changed expected outcome from 422 to 200
 	Scenario: Patch invalid DateAndTimeCharterShown
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -317,7 +320,7 @@ Feature: PatchV2
 		When I patch the following:
 		| Field                          | Value                |
 		| DateAndTimeCharterShown        | 2018-07-29T09:00:00Z |
-		Then there should be a 422 response
+		Then there should be a 200 response
 
 @actionplans
 	Scenario: Patch invalid DateActionPlanSentToCustomer

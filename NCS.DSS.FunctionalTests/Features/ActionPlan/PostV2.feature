@@ -146,6 +146,7 @@ Feature: PostV2
 		| CurrentSituation               | looking for work     |
 		Then there should be a 201 response
 		And there should be a record in the actionPlans ChangeFeed table
+		And there should be a record in the actionPlans-history ChangeFeed table
 
 @actionplans
 	Scenario: Post ActionPlan with missing DateActionPlanCreated

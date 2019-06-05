@@ -634,6 +634,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 182
   testRunner.And("there should be a record in the customers ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 183
+  testRunner.And("there should be a record in the customers-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -645,7 +647,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Invalid DateOfRegistration", null, new string[] {
                         "customers"});
-#line 185
+#line 186
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -688,11 +690,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table12.AddRow(new string[] {
                         "IntroducedByAdditionalInfo",
                         "additional info"});
-#line 186
+#line 187
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table12, "Given ");
-#line 200
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 201
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 202
   testRunner.And("the error message should be \"Family Name is a required field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -713,15 +715,13 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Given names with spaces", null, @__tags);
-#line 204
+#line 205
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 205
-  testRunner.Given(string.Format("I post a customer with the given name \'{0}\'", givenName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 206
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Given(string.Format("I post a customer with the given name \'{0}\'", givenName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 207
-  testRunner.And(string.Format("the response body should contain the given name \'{0}\'", givenName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -743,15 +743,13 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Family names with spaces", null, @__tags);
-#line 217
+#line 218
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 218
-  testRunner.Given(string.Format("I post a customer with the given name \'{0}\'", familyName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 219
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Given(string.Format("I post a customer with the given name \'{0}\'", familyName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 220
-  testRunner.And(string.Format("the response body should contain the family name \'{0}\'", familyName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

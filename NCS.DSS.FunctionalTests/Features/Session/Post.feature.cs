@@ -163,6 +163,10 @@ this.ScenarioInitialize(scenarioInfo);
                         "99"});
 #line 35
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
+#line 41
+  testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+  testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -176,7 +180,7 @@ this.ScenarioInitialize(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
                     " session", null, new string[] {
                         "sessions"});
-#line 44
+#line 45
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -191,9 +195,9 @@ this.ScenarioInitialize(scenarioInfo);
             table6.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 45
+#line 46
  testRunner.Given("I post a session with the following details:", ((string)(null)), table6, "Given ");
-#line 49
+#line 50
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -206,7 +210,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, new string[] {
                         "sessions"});
-#line 52
+#line 53
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -221,9 +225,9 @@ this.ScenarioInitialize(scenarioInfo);
             table7.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1"});
-#line 53
+#line 54
  testRunner.Given("I post a session with the following details:", ((string)(null)), table7, "Given ");
-#line 57
+#line 58
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

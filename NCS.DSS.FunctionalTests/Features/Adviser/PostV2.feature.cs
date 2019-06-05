@@ -193,6 +193,8 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 43
   testRunner.And("there should be a record in the adviserDetails ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+  testRunner.And("there should be a record in the adviserDetails-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -204,7 +206,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, new string[] {
                         "adviserdetails"});
-#line 46
+#line 47
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -217,9 +219,9 @@ this.ScenarioInitialize(scenarioInfo);
             table6.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 47
+#line 48
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table6, "Given ");
-#line 51
+#line 52
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

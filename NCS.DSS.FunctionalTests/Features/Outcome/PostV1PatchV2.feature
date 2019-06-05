@@ -18,6 +18,7 @@ Background: Prepare test
 	And I post an Interaction with the following details:
 		| Field                    | Value                  |
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z   |
+
 		| Channel                  | 2                      |
 		| InteractionType          | 2                      |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |

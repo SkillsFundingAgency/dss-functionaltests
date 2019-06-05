@@ -19,6 +19,8 @@ Feature: PatchV2
 		| AdviserName			| Billy Jones	|
 		| AdviserEmailAddress	| billy@bill.com|
 		| AdviserContactNumber	| 98798678967967|
+		And there should be a record in the adviserDetails ChangeFeed table
+		And there should be a record in the adviserDetails-history ChangeFeed table
 
 
 @adviserdetails	@subcontractorId

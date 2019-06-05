@@ -41,6 +41,7 @@ Scenario: Change feed for Post Adviser
 			| AdviserEmailAddress	| billy@bill.com|
 		Then there should be a 201 response
 		And there should be a record in the adviserDetails ChangeFeed table
+		And there should be a record in the adviserDetails-history ChangeFeed table
 
 @adviserdetails
 		Scenario: Missing AdviserName
