@@ -145,6 +145,8 @@ namespace NCS.DSS.FunctionalTests.Features.Session
   testRunner.Given("I post a session with the following details:", ((string)(null)), table4, "Given ");
 #line 33
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 34
+  testRunner.And("the \"sessions\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -161,8 +163,14 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table5.AddRow(new string[] {
                         "ReasonForNonAttendance",
                         "99"});
-#line 34
+#line 35
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
+#line 41
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+  testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+  testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -174,7 +182,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Session", null, new string[] {
                         "sessions"});
-#line 42
+#line 46
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -189,7 +197,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table6.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 43
+#line 47
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -201,7 +209,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table7.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 47
+#line 51
   testRunner.And("I post a Customer with the following details:", ((string)(null)), table7, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -219,7 +227,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table8.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 51
+#line 55
   testRunner.And("I post an Interaction with the following details:", ((string)(null)), table8, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -231,13 +239,17 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table9.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 57
-  testRunner.And("I post a session with the following details:", ((string)(null)), table9, "And ");
 #line 61
+  testRunner.And("I post a session with the following details:", ((string)(null)), table9, "And ");
+#line 65
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
+#line 66
+  testRunner.And("the \"sessions\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
   testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 69
   testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -252,7 +264,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
                     " session", null, new string[] {
                         "sessions"});
-#line 66
+#line 72
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -267,9 +279,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table10.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 67
+#line 73
   testRunner.Given("I post a session with the following details:", ((string)(null)), table10, "Given ");
-#line 71
+#line 77
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -282,7 +294,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, new string[] {
                         "sessions"});
-#line 74
+#line 80
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -297,9 +309,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table11.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1"});
-#line 75
+#line 81
   testRunner.Given("I post a session with the following details:", ((string)(null)), table11, "Given ");
-#line 79
+#line 85
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

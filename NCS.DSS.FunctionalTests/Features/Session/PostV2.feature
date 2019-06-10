@@ -31,12 +31,16 @@ Feature: PostV2
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z           |
 		| VenuePostCode            |NN1 2NN                         |
 		Then there should be a 201 response
+		And the "sessions" cosmos document should include CreatedBy
 		And the response body should contain:
 		| Field                  | Value                |
 		| DateandTimeOfSession   | 2018-06-21T14:45:00Z |
 		| VenuePostCode          | NN1 2NN              |
 		| SessionAttended        | null                 |
 		| ReasonForNonAttendance | 99                   |
+		And the response body should not contain the "CreatedBy"
+		And there should be a record in the sessions ChangeFeed table
+		And there should be a record in the sessions-history ChangeFeed table
 
 @sessions
 	Scenario: Change feed for Post Session
@@ -59,6 +63,8 @@ Feature: PostV2
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z   |
 		| VenuePostCode            | NN1 2NN                |
 		Then there should be a 201 response
+		And the "sessions" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the sessions ChangeFeed table
 		And there should be a record in the sessions-history ChangeFeed table
 

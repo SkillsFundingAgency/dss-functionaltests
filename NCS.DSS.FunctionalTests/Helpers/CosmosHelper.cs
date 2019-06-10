@@ -90,13 +90,14 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         }
 
-        public static Document RetrieveDocument(string database, string collection, string id)
+        public static string RetrieveDocument(string database, string collection, string id)
         {
-            Document doc = client.CreateDocumentQuery(
+            string doc = client.CreateDocumentQuery(
                 UriFactory.CreateDocumentCollectionUri(database, collection))
                           .Where(x => x.Id == id.ToString())
                           .AsEnumerable()
-                          .First();
+                          .First().ToString();
+            
             return doc;
         }
 
@@ -110,7 +111,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
         //    return doc;
         //}
 
-        public static bool UpdateDocument(string database, string collection, string id, Dictionary<string, string> updateFields)
+    /*    public static bool UpdateDocument(string database, string collection, string id, Dictionary<string, string> updateFields)
         {
             // first of all retreive the document
             var doc = RetrieveDocument(database, collection, id);
@@ -127,7 +128,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
             return true;
         }
-
+        */
         public static bool UpsertDocument<T>(string database, string collection, T document)
         {
             var collectionLink = UriFactory.CreateDocumentCollectionUri(database, collection);

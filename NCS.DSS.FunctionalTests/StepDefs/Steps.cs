@@ -258,6 +258,7 @@ namespace FunctionalTests.StepDefs
 
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             actionPlanId = AssertAndExtract("ActionPlanId", response);
+            id = actionPlanId;
             /*if (response.IsSuccessful)
             {
                 Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
@@ -298,6 +299,7 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(action);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             actionId = AssertAndExtract("ActionId", response);
+            id = actionId;
             /*
             if (response.IsSuccessful)
             {
@@ -354,6 +356,7 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(session);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             sessionId = AssertAndExtract("SessionId", response);
+            id = sessionId;
             /*
             if (response.IsSuccessful)
             {
@@ -448,6 +451,7 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(outcome);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             outcomeId = AssertAndExtract("OutcomeId", response);
+            id = outcomeId;
             /*
             if (response.IsSuccessful)
             {
@@ -766,6 +770,27 @@ namespace FunctionalTests.StepDefs
             response.Content.Should().Contain(sessionId);
         }
 
+        [Then(@"the response body should not contain the ""(.*)""")]
+        public void ThenTheResponseBodyShouldNotContainThe(string p0)
+        {
+            response.Content.Should().NotContain(p0);
+        }
+
+
+        [Then(@"the ""(.*)"" cosmos document should include CreatedBy")]
+        public void ThenTheCosmosDocumentShouldIncludeCreatedBy(string p0)
+        {
+            // retreive the cosmos document relating to the last request
+            CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            string docJson =  CosmosHelper.RetrieveDocument(p0, p0, id);
+            // determine the touchpoint used in the post
+            // check createdby field is present with expected value
+            //JObject docJsonObj = JObject.Parse(docJson);
+            JsonHelper.GetPropertyFromJsonString(docJson,"CreatedBy").Should().Be(envSettings.TestEndpoint01,"Because CreatedBy should exist in collection with value " + envSettings.TestEndpoint01);
+
+
+        }
+
 
         public bool CompareX<TKey, TValue>(
         Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2)
@@ -853,6 +878,7 @@ namespace FunctionalTests.StepDefs
 //            table = "dss-" + table;
             bool found = false;
             bool addSubcontractorIdToCollection = false;
+            bool addCreatedByToCollection = false;
             bool addSessionIdToCollection = false;
             bool addClaimedPriorityGroup = false;
             bool historyTable = table.ToLower().Contains("history");
@@ -862,7 +888,12 @@ namespace FunctionalTests.StepDefs
             SQLServerHelper helper = new SQLServerHelper();
 
             string orderBy = ( historyTable ? "CosmosTimeStamp DESC" : "");
+            string timestampField = "LastModifiedDate";
+            string timestampValue = "";
+            string timestampComparison = "";
+            // get time of last response
 
+            Console.WriteLine("Set up the variables for this change feed check");
             switch ( table ) 
             {
                 case "actions":
@@ -877,6 +908,7 @@ namespace FunctionalTests.StepDefs
                     recordId = actionPlanId;
                     addSessionIdToCollection = true;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "ActionPlanId";
                     historyTableId = "ActionPlans-historyId";
                     break;
@@ -884,6 +916,7 @@ namespace FunctionalTests.StepDefs
                 case "sessions-history":
                     recordId = sessionId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "SessionId";
                     historyTableId = "Sessions-historyId";
                     break;
@@ -933,6 +966,7 @@ namespace FunctionalTests.StepDefs
                 case "outcomes-history":
                     recordId = outcomeId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     addSessionIdToCollection = true;
                     addClaimedPriorityGroup = true;
                     primaryTableId = "OutcomeId";
@@ -966,14 +1000,18 @@ namespace FunctionalTests.StepDefs
                     recordId = "";
                     break;
             }
-
+            Console.WriteLine("Check we have a record ID to work on");
             recordId.Should().NotBeNullOrEmpty();
             //var f = this.GetType();
             //var fff = this.;
             //var ff = f.GetField("actionId").GetValue(this).ToString();
             //var g = f.GetField("actionId",  BindingFlags.Instance).GetValue(this).ToString(); 
-            
+
             //var field = this.GetType().GetField(constants.IdFromResource(table)).GetValue(this);
+
+            var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+            timestampValue = values[timestampField];
+            timestampComparison = timestampValue.Substring(0, 10) + "%" + timestampValue.Substring(11, 8) + "%";
             helper.SetConnection(envSettings.sqlConnectionString);
             //   found = helper.DoesResourceExist("dss-" + table, this.GetType().GetField(constants.IdFromResource(table)).GetValue(this).ToString() );
             System.Data.DataSet dataSet = null;
@@ -982,11 +1020,14 @@ namespace FunctionalTests.StepDefs
             while ( !found && DateTime.Now < loopUntil)
             {
                 Console.WriteLine("Attempt to retrieve SQL record from " + table + " for id " + recordId);
-                dataSet = helper.GetRecord("dss-" + table, recordId, orderBy);
+                dataSet = helper.GetRecord("dss-" + table, recordId, orderBy, timestampField + " like " + "'" + timestampComparison + "'");
                 found = ( dataSet.Tables[0].Rows.Count > 0 );
                 //found = helper.DoesResourceExist("dss-" + table, recordId);
                 System.Threading.Thread.Sleep( (found ? 0 : 2000) );
             }
+
+            Console.WriteLine("Get number of records in history table for analysis: " + helper.GetRecordCount("dss-"  + historyTableId.Substring(0,historyTableId.Length - 2), recordId));
+
             found.Should().BeTrue("Because a record should exist in SQL stage DB for resource: " + table);
             if ( found)
             {
@@ -996,10 +1037,16 @@ namespace FunctionalTests.StepDefs
                 var dict = helper.GetDataTableDictionaryList(dataSet, PrimaryKeyCap);
                 //dict[0]["id"].Remove(.Remove();
                 // check all values in response are matched in dataset
-                var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+                
                 if (addSubcontractorIdToCollection && !values.Keys.Contains("SubcontractorId") )
                 {
                     values.Add("SubcontractorId", "");
+                }
+
+                if (addCreatedByToCollection )
+                {
+                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
+                    values.Add("CreatedBy", (/*GetVersion() == "v2" */ addValue ? envSettings.TestEndpoint01 : "" ) );
                 }
 
                 if (table.Contains("webchats"))
@@ -1111,6 +1158,11 @@ namespace FunctionalTests.StepDefs
                 default:
                     return envSettings.TestEndpoint01;
             }
+        }
+        
+        private string GetVersion()
+        {
+            return ScenarioContext.Current["version"] as String;
         }
 
         private void SetVersion(string method, bool allowV3 = false)

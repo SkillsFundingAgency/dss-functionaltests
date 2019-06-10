@@ -32,7 +32,7 @@ namespace NCS.DSS.FunctionalTests.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            return ;
+            //return ;
             EnvironmentSettings envSettings = new EnvironmentSettings();
             SQLServerHelper sqlHelper = new SQLServerHelper();
             bool returnValue;
