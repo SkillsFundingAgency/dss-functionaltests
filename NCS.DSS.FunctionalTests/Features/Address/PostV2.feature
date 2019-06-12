@@ -153,6 +153,41 @@ Feature: PostV2
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
 
+@addresses @ignore
+	Scenario: Post Address with geocoding where postcode has no space
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | DE215DE               |
+		Then there should be a 201 response
+		And the response body should contain:
+		| field     | value     |
+		| Address1  | 1         |
+		| PostCode  | DE215DE   |
+		| Longitude | -1.460085 |
+		| Latitude  | 52.967834 |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
+@addresses @ignore
+	Scenario: Post Address with geocoding where postcode has space
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | DE21 5DE             |
+		Then there should be a 201 response
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+		
+
 
 @addresses
 	Scenario: Post Address with Address1 Field missing
