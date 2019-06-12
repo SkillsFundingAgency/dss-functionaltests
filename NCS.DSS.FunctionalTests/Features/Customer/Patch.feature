@@ -4,7 +4,7 @@
 Feature: Patch
 
 
-
+@customers
 	Scenario: Patch DateOfRegistration
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -37,9 +37,11 @@ Feature: Patch
 		| OptInMarketResearch        | false                |
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
+		And there should be a record in the customers ChangeFeed table
+		And there should be a record in the customers-history ChangeFeed table
 
 
-
+@customers
 	Scenario: Patch Title
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -73,7 +75,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch GivenName
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -107,7 +109,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-			
+@customers			
 	Scenario: Patch FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -141,7 +143,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch DateofBirth
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -175,7 +177,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch Gender
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -209,7 +211,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		
-		
+@customers		
 		Scenario: Patch UniqueLearnerNumber
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -243,7 +245,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		
-		
+@customers		
 		Scenario: Patch OptInUserResearch
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -277,7 +279,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 		Scenario: Patch OptInMarketResearch
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -311,7 +313,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch DateOfTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -345,7 +347,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch ReasonForTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -379,7 +381,7 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch IntroducedBy
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -413,7 +415,7 @@ Feature: Patch
 		| IntroducedBy               | 2                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch IntroducedByAdditionalInfo
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -447,6 +449,8 @@ Feature: Patch
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | updated info	        |
 
+
+@customers
 		Scenario: Patch With Existing DateOfTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |

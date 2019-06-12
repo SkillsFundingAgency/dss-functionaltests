@@ -75,7 +75,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         public virtual void FeatureBackground()
         {
-#line 8
+#line 6
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -86,7 +86,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 9
+#line 7
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -98,7 +98,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table2.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 13
+#line 11
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -116,7 +116,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table3.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 17
+#line 15
  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table3, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -128,7 +128,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table4.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 23
+#line 21
  testRunner.And("I post a session with the following details:", ((string)(null)), table4, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -158,7 +158,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table5.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 27
+#line 25
  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table5, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -188,24 +188,26 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table6.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 37
+#line 35
  testRunner.And("I post an Action with the following details:", ((string)(null)), table6, "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Action by ID")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void GetActionByID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Action by ID", null, ((string[])(null)));
-#line 49
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Action by ID", null, new string[] {
+                        "actions"});
+#line 47
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 8
+#line 6
  this.FeatureBackground();
-#line 50
+#line 48
  testRunner.When("I get an Action by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 51
+#line 49
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -235,7 +237,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table7.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-07-30T09:00:00Z"});
-#line 52
+#line 50
  testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
 #line hidden
             this.ScenarioCleanup();

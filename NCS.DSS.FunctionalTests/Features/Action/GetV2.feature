@@ -3,8 +3,6 @@
 
 Feature: GetV2
 
-
-
 	Background: Post
 	Given I post an adviser with the following details:
 		| Field						 | Value				|
@@ -45,7 +43,7 @@ Feature: GetV2
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
-
+@actions
 	Scenario: Get Action by ID
 	When I get an Action by ID
 	Then there should be a 200 response

@@ -23,7 +23,7 @@ Feature: Patch
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 
 
-
+@sessions
 	Scenario: Patch DateandTimeOfSession
 	Given I post a session with the following details:
 	    | field                    | value                          |
@@ -39,7 +39,10 @@ Feature: Patch
 		| DateandTimeOfSession     | 2018-06-22T14:45:00Z           |
 		| VenuePostCode            |NN1 2NN                         |
 		| SessionAttended          |true                            |
+		And there should be a record in the sessions ChangeFeed table
+		And there should be a record in the sessions-history ChangeFeed table
 
+@sessions
 	Scenario: Patch VenuePostCode
 	Given I post a session with the following details:
 	    | field                    | value                          |
@@ -56,7 +59,7 @@ Feature: Patch
 		| VenuePostCode            |NN1 2NQ                         |
 		| SessionAttended          |true                            |
 
-
+@sessions
 	Scenario: Patch SessionAttended
 	Given I post a session with the following details:
 	    | field                    | value                          |

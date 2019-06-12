@@ -46,6 +46,11 @@ namespace FunctionalTests.StepDefs
             return returnVal;
         }
 
+        public static string HistoryTableNameFromId(string primaryKey)
+        {
+            return BackupTableNameFromId(primaryKey) + "-history";
+        }
+
         public static string IdFromResource(string resource)
         {
             string returnVal;
@@ -55,6 +60,13 @@ namespace FunctionalTests.StepDefs
                 case "addresses":
                     returnVal = "addressId";
                     break;
+                case "webchats":
+                    returnVal = "WebChatId";
+                    break;
+                case "diversitydetails":
+                    returnVal = "DiversityId";
+                    break;
+        
                 default:
                     returnVal = resource.TrimEnd(new char[] { 's'}) + "Id";
                     break;

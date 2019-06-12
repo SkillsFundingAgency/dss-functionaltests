@@ -75,10 +75,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Customer by ID")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void GetCustomerByID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by ID", null, ((string[])(null)));
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by ID", null, new string[] {
+                        "customers"});
+#line 8
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -127,11 +129,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table1.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-21T14:45:00Z"});
-#line 8
+#line 9
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1, "Given ");
-#line 24
- testRunner.When("I get a Customer by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
+ testRunner.When("I get a Customer by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -179,7 +181,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-21T14:45:00Z"});
-#line 26
+#line 27
  testRunner.And("the response body should contain:", ((string)(null)), table2, "And ");
 #line hidden
             this.ScenarioCleanup();

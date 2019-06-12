@@ -34,7 +34,7 @@ Feature: Post Action
 
 
 
-
+@actions
 	Scenario: Post Valid Action
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -57,8 +57,10 @@ Feature: Post Action
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
-
+@actions
 	Scenario: Post Valid Action with only mandatory Fields
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -79,7 +81,7 @@ Feature: Post Action
 		| PersonResponsible             | 1                    |
 
 
-
+@actions
 	Scenario: Post Action with invalid interactionId
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -93,7 +95,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+@actions
 	Scenario: Post Action with missing DateActionAgreed
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -107,7 +109,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+@actions
 	Scenario: Post Action with missing DateActionAimsToBeCompletedBy
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -121,7 +123,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+@actions
 	Scenario: Post Action with missing DateActionActuallyCompleted
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -146,6 +148,7 @@ Feature: Post Action
 		| PersonResponsible             | 1                    |
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
+@actions
 	Scenario: Post Action with missing ActionSummary
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -159,7 +162,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
-
+@actions
 	Scenario: Post Action with missing ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -173,6 +176,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
+@actions
 	Scenario: Post Action with invalid ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -187,6 +191,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
+@actions
 	Scenario: Post Action with missing PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -200,6 +205,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
+@actions
 	Scenario: Post Action with invalid PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -214,7 +220,7 @@ Feature: Post Action
 		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 		
-		
+@actions		
 	Scenario: Post Action with invalid ActionStatus
 		Given I post an Action with the following details:
 		| Field                         | Value                |

@@ -4,7 +4,7 @@
 Feature: Search
 
 
-
+@customers
 	Scenario: Search without searchterm
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -16,7 +16,7 @@ Feature: Search
 		| parameter2                 |		               |
 		Then there should be a 204 response
 
-
+@customers
 	Scenario: Get Customer by FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -31,6 +31,7 @@ Feature: Search
 		| Field                      | Value               |
 		| FamilyName                 | Binks               |
 
+@customers
 	Scenario: Get Customer by GivenName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -45,6 +46,7 @@ Feature: Search
 		| Field                      | Value               |
 		| GivenName                 | Thomas               |
 
+@customers
 	Scenario: Get Customer by uln
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -60,7 +62,7 @@ Feature: Search
 		| Field                      | Value               |
 		| UniqueLearnerNumber                 | 7538571268               |
 
-
+@customers
 	Scenario: Get Customer by dob
 		Given I post a Customer with the following details:
 		| Field               | Value      |
@@ -76,6 +78,7 @@ Feature: Search
 		| Field                      | Value               |
 		| DateofBirth                | 2005-07-26T13:45:00Z |
 
+@customers
 	Scenario: Search for partial GivenName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -90,7 +93,7 @@ Feature: Search
 		| Field                      | Value               |
 		| GivenName                  | Edw                 |
 
-
+@customers
 	Scenario: Search for partial FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -105,7 +108,7 @@ Feature: Search
 		| Field                      | Value               |
 		| FamilyName                 | Bin                 |
 
-
+@customers
 	Scenario: Search for partial GivenName and Full FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -123,6 +126,7 @@ Feature: Search
 		| GivenName                  | Edw                 |
 		| FamilyName                 | Binks               |
 
+@customers
 	Scenario: Search for partial GivenName and Partial FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -140,6 +144,7 @@ Feature: Search
 		| GivenName                  | Edw                 |
 		| FamilyName                 | Bin                 |
 
+@customers
 	Scenario: Search for full GivenName and Full FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -157,7 +162,7 @@ Feature: Search
 		| GivenName                  | Edward              |
 		| FamilyName                 | Binks               |
 
-
+@customers
 	Scenario: Search for full GivenName and Partial FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -175,7 +180,7 @@ Feature: Search
 		| GivenName                  | Edward              |
 		| FamilyName                 | Bin               |
 
-
+@customers
 	Scenario: Search for partial GivenName and uln
 		Given I post a Customer with the following details:
 		| Field               | Value      |
@@ -195,6 +200,7 @@ Feature: Search
 		| FamilyName                 | Bin                 |
 		| UniqueLearnerNumber		 | 9753113579		   |
 
+@customers
 	Scenario: Search for partial GivenName and DoB
 		Given I post a Customer with the following details:
 		| Field               | Value      |
@@ -214,10 +220,7 @@ Feature: Search
 		| FamilyName                 | Bin                 |
 		| DateofBirth                | 2005-07-26T13:45:00Z |
 
-
-
-
-
+@customers
 		Scenario: Get Customer by uln & DoB
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -237,7 +240,7 @@ Feature: Search
 		| DateofBirth                 | 2005-07-26               |
 		| UniqueLearnerNumber                 | 7538571268               |
 
-
+@customers
 		Scenario: Get Customer by firstName & uln & DoB
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -261,7 +264,7 @@ Feature: Search
 		| UniqueLearnerNumber                 | 7538571268               |
 
 
-
+@customers
 	Scenario: Search for partial GivenName and Partial FamilyName with space after GivenName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -279,6 +282,7 @@ Feature: Search
 		| GivenName                  | Edw                 |
 		| FamilyName                 | Bin                 |
 
+@customers
 	Scenario: Search for partial GivenName and Partial FamilyName with double space after GivenName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -296,6 +300,7 @@ Feature: Search
 		| GivenName                  | Edw                 |
 		| FamilyName                 | Bin                 |
 
+@customers
 	Scenario: Search for partial GivenName and DateOfBirth with space after GivenName
 		Given I post a Customer with the following details:
 		| Field       | Value                |
@@ -315,7 +320,7 @@ Feature: Search
 		| FamilyName                 | Bin                 |
 		| DateofBirth				 | 1988-06-06		   |
 
-
+@customers
 	Scenario: Search for DateofBirth and GivenName with space after DoB
 		Given I post a Customer with the following details:
 		| Field       | Value                |
@@ -335,6 +340,7 @@ Feature: Search
 		| FamilyName                 | Binks               |
 		| DateofBirth				 | 1988-06-06		   |
 
+@customers
 	Scenario: Search for ULN and GivenName with space after ULN
 		Given I post a Customer with the following details:
 		| Field						 | Value                |
@@ -354,6 +360,7 @@ Feature: Search
 		| FamilyName                 | Binks               |
 		| UniqueLearnerNumber		 | 9876543210          |
 
+@customers
 	Scenario: Search for partial GivenName and Partial FamilyName and DateOfBirth with spaces
 		Given I post a Customer with the following details:
 		| Field       | Value      |

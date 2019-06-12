@@ -34,7 +34,7 @@ Background: Prepare test
 
 
 
-
+@goals
 Scenario: Create a Goal for existing customer with all valid values
 	Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -51,8 +51,10 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalSummary                 | some goal text       |
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
+		And there should be a record in the goals ChangeFeed table
+		And there should be a record in the goals-history ChangeFeed table
 
-
+@goals
 	Scenario: Create a Goal with missing DateGoalCaptured
 	Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -62,6 +64,7 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalStatus                  | 1                    |
 		Then there should be a 422 response
 
+@goals
 	Scenario: Create a Goal with missing DateGoalShouldBeCompletedBy
 	Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -71,6 +74,7 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalStatus                  | 1                    |
 		Then there should be a 422 response
 
+@goals
 	Scenario: Create a Goal with missing GoalSummary
 	Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -80,6 +84,7 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalStatus                  | 1                    |
 		Then there should be a 422 response
 
+@goals
 	Scenario: Create a Goal with missing GoalType
 	Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -89,6 +94,7 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalStatus                  | 1                    |
 		Then there should be a 422 response
 
+@goals
 	Scenario: Create a Goal with invalid GoalType
 	Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -99,6 +105,7 @@ Scenario: Create a Goal for existing customer with all valid values
 	    | GoalStatus                  | 1                    |
 		Then there should be a 422 response
 
+@goals
 	Scenario: Create a Goal with invalid GoalStatus
 	Given I post a goal with the following details:
 	    | Field                       | Value                |

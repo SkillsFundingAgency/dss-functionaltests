@@ -4,7 +4,7 @@
 
 Feature: GetV2
 
-
+@adviserdetails
 	Scenario: Get Adviser by ID
 		Given I post an adviser with the following details:
 		| Field                 | Value			|
@@ -20,7 +20,7 @@ Feature: GetV2
 		| AdviserContactNumber	| 98798678967967|
 
 
-	@subcontractorId
+@adviserdetails	@subcontractorId
 	Scenario: Get Adviser with SubcontractorId
 		Given I post an adviser with the following details:
 		| Field                 | Value			|

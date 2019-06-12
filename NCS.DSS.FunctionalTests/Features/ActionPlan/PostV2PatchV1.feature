@@ -27,7 +27,7 @@ Feature: PostV2PatchV1
 
 
 
-
+@actionplans
 	Scenario: Patch Valid CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -53,7 +53,7 @@ Feature: PostV2PatchV1
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch Valid DateAndTimeCharterShown
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -79,7 +79,7 @@ Feature: PostV2PatchV1
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch Valid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -106,7 +106,7 @@ Feature: PostV2PatchV1
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch Valid DateActionPlanSentToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -133,7 +133,7 @@ Feature: PostV2PatchV1
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch Valid DateActionPlanAcknowledged
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -160,7 +160,7 @@ Feature: PostV2PatchV1
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch Valid ActionPlanDeliveryMethod
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -187,7 +187,7 @@ Feature: PostV2PatchV1
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch Valid PriorityCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -214,7 +214,7 @@ Feature: PostV2PatchV1
 		| PriorityCustomer               | 2                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Patch Valid CurrentSituation
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |

@@ -75,10 +75,12 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Name")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
         public virtual void PatchName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Name", null, ((string[])(null)));
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Name", null, new string[] {
+                        "adviserdetails"});
+#line 7
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -94,7 +96,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 7
+#line 8
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -103,9 +105,9 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table2.AddRow(new string[] {
                         "AdviserName",
                         "Billy Jones"});
-#line 12
+#line 13
   testRunner.When("I patch the following:", ((string)(null)), table2, "When ");
-#line 15
+#line 16
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -120,18 +122,24 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table3.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 16
+#line 17
   testRunner.And("the response body should contain:", ((string)(null)), table3, "And ");
+#line 22
+  testRunner.And("there should be a record in the adviserDetails ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+  testRunner.And("there should be a record in the adviserDetails-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch email address")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
         public virtual void PatchEmailAddress()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch email address", null, ((string[])(null)));
-#line 22
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch email address", null, new string[] {
+                        "adviserdetails"});
+#line 26
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -147,7 +155,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table4.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 23
+#line 27
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -156,9 +164,9 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table5.AddRow(new string[] {
                         "AdviserEmailAddress",
                         "tom@bill.com"});
-#line 28
+#line 32
   testRunner.When("I patch the following:", ((string)(null)), table5, "When ");
-#line 31
+#line 35
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -173,7 +181,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table6.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 32
+#line 36
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -181,10 +189,12 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch AdviserContactNumber")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
         public virtual void PatchAdviserContactNumber()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch AdviserContactNumber", null, ((string[])(null)));
-#line 38
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch AdviserContactNumber", null, new string[] {
+                        "adviserdetails"});
+#line 43
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -200,7 +210,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table7.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 39
+#line 44
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table7, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -209,9 +219,9 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table8.AddRow(new string[] {
                         "AdviserContactNumber",
                         "77647647476743"});
-#line 44
+#line 49
   testRunner.When("I patch the following:", ((string)(null)), table8, "When ");
-#line 47
+#line 52
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -226,7 +236,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table9.AddRow(new string[] {
                         "AdviserContactNumber",
                         "77647647476743"});
-#line 48
+#line 53
   testRunner.And("the response body should contain:", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();

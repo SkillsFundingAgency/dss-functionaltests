@@ -133,9 +133,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with all fields")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostValidActionPlanWithAllFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, new string[] {
+                        "actionplans"});
 #line 29
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -173,6 +175,8 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table5, "Given ");
 #line 40
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 41
+     testRunner.And("the \"actionplans\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
@@ -201,22 +205,30 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table6.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 41
+#line 42
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
-#line 51
+#line 52
   testRunner.And("the response body should contain the SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with all fields and SubContractorId")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void PostValidActionPlanWithAllFieldsAndSubContractorId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields and SubContractorId", null, new string[] {
+                        "actionplans",
                         "subcontractorId"});
-#line 56
+#line 59
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -249,10 +261,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table7.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 57
+#line 60
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table7, "Given ");
-#line 67
+#line 70
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 71
+     testRunner.And("the \"actionplans\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
@@ -281,11 +295,13 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table8.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 68
+#line 72
   testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
-#line 78
+#line 82
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
   testRunner.And("the response body should contain the SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 84
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -293,10 +309,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with only mandatory fields")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostValidActionPlanWithOnlyMandatoryFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields", null, ((string[])(null)));
-#line 82
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields", null, new string[] {
+                        "actionplans"});
+#line 87
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -314,9 +332,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table9.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-#line 83
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table9, "Given ");
 #line 88
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table9, "Given ");
+#line 93
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -337,9 +355,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table10.AddRow(new string[] {
                         "CurrentSituation",
                         "null"});
-#line 89
+#line 94
   testRunner.And("the response body should contain:", ((string)(null)), table10, "And ");
-#line 96
+#line 101
   testRunner.And("the response body should contain the SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -347,12 +365,14 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with only mandatory fields and SubcontractorId")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void PostValidActionPlanWithOnlyMandatoryFieldsAndSubcontractorId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields and SubcontractorId", null, new string[] {
+                        "actionplans",
                         "subcontractorId"});
-#line 100
+#line 105
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -370,9 +390,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table11.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-#line 101
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table11, "Given ");
 #line 106
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table11, "Given ");
+#line 111
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -393,213 +413,82 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table12.AddRow(new string[] {
                         "CurrentSituation",
                         "null"});
-#line 107
+#line 112
   testRunner.And("the response body should contain:", ((string)(null)), table12, "And ");
-#line 114
+#line 119
   testRunner.And("the response body should contain the SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 120
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with missing DateActionPlanCreated")]
-        public virtual void PostActionPlanWithMissingDateActionPlanCreated()
+        [NUnit.Framework.DescriptionAttribute("Changed feed for Post ActionPlan")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void ChangedFeedForPostActionPlan()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, ((string[])(null)));
-#line 119
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changed feed for Post ActionPlan", null, new string[] {
+                        "actionplans"});
+#line 123
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
+                        "Field",
+                        "Value"});
             table13.AddRow(new string[] {
-                        "CustomerCharterShownToCustomer",
-                        "true"});
+                        "AdviserName",
+                        "BillyAdviser"});
             table13.AddRow(new string[] {
-                        "DateAndTimeCharterShown",
-                        "2018-07-30T09:00:00Z"});
-            table13.AddRow(new string[] {
-                        "DateActionPlanSentToCustomer",
-                        "2018-07-30T09:00:00Z"});
-            table13.AddRow(new string[] {
-                        "ActionPlanDeliveryMethod",
-                        "1"});
-            table13.AddRow(new string[] {
-                        "DateActionPlanAcknowledged",
-                        "2018-07-30T09:00:00Z"});
-            table13.AddRow(new string[] {
-                        "PriorityCustomer",
-                        "1"});
-            table13.AddRow(new string[] {
-                        "CurrentSituation",
-                        "looking for work"});
-#line 120
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table13, "Given ");
-#line 129
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with invalid DateActionPlanCreated")]
-        public virtual void PostActionPlanWithInvalidDateActionPlanCreated()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, ((string[])(null)));
-#line 132
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 8
- this.FeatureBackground();
+                        "AdviserContactNumber",
+                        "98798678967967"});
+#line 124
+  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table13, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
+                        "Field",
+                        "Value"});
             table14.AddRow(new string[] {
-                        "DateActionPlanCreated",
-                        "2058-07-30T09:00:00Z"});
+                        "GivenName",
+                        "Bob"});
             table14.AddRow(new string[] {
-                        "CustomerCharterShownToCustomer",
-                        "true"});
-            table14.AddRow(new string[] {
-                        "DateAndTimeCharterShown",
-                        "2018-07-30T09:00:00Z"});
-            table14.AddRow(new string[] {
-                        "DateActionPlanSentToCustomer",
-                        "2018-07-30T09:00:00Z"});
-            table14.AddRow(new string[] {
-                        "ActionPlanDeliveryMethod",
-                        "1"});
-            table14.AddRow(new string[] {
-                        "DateActionPlanAcknowledged",
-                        "2018-07-30T09:00:00Z"});
-            table14.AddRow(new string[] {
-                        "PriorityCustomer",
-                        "1"});
-            table14.AddRow(new string[] {
-                        "CurrentSituation",
-                        "looking for work"});
-#line 133
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table14, "Given ");
-#line 143
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateActionPlanCreated earlier than Session.DateandTimeOfSess" +
-            "ion")]
-        public virtual void PostActionPlanWithDateActionPlanCreatedEarlierThanSession_DateandTimeOfSession()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanCreated earlier than Session.DateandTimeOfSess" +
-                    "ion", null, ((string[])(null)));
-#line 145
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 8
- this.FeatureBackground();
+                        "FamilyName",
+                        "Customer"});
+#line 128
+  testRunner.And("I post a Customer with the following details:", ((string)(null)), table14, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
+                        "Field",
+                        "Value"});
             table15.AddRow(new string[] {
-                        "DateActionPlanCreated",
-                        "2017-07-30T09:00:00Z"});
+                        "DateandTimeOfInteraction",
+                        "2018-06-25T11:21:00Z"});
             table15.AddRow(new string[] {
-                        "CustomerCharterShownToCustomer",
-                        "true"});
+                        "Channel",
+                        "2"});
             table15.AddRow(new string[] {
-                        "DateAndTimeCharterShown",
-                        "2018-07-30T09:00:00Z"});
+                        "InteractionType",
+                        "2"});
             table15.AddRow(new string[] {
-                        "DateActionPlanSentToCustomer",
-                        "2018-07-30T09:00:00Z"});
-            table15.AddRow(new string[] {
-                        "ActionPlanDeliveryMethod",
-                        "1"});
-            table15.AddRow(new string[] {
-                        "DateActionPlanAcknowledged",
-                        "2018-07-30T09:00:00Z"});
-            table15.AddRow(new string[] {
-                        "PriorityCustomer",
-                        "1"});
-            table15.AddRow(new string[] {
-                        "CurrentSituation",
-                        "looking for work"});
-#line 146
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table15, "Given ");
-#line 156
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
-        public virtual void PostActionPlanWithDateAndTimeCharterShownEarlierThanDateActionPlanCreated()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated", null, new string[] {
-                        "ignore"});
-#line 159
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 8
- this.FeatureBackground();
+                        "LastModifiedDate",
+                        "2018-06-22T16:52:10Z"});
+#line 132
+  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table15, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
+                        "Field",
+                        "Value"});
             table16.AddRow(new string[] {
-                        "DateActionPlanCreated",
-                        "2018-07-30T09:00:00Z"});
+                        "DateandTimeOfSession",
+                        "2018-06-21T14:45:00Z"});
             table16.AddRow(new string[] {
-                        "CustomerCharterShownToCustomer",
-                        "true"});
-            table16.AddRow(new string[] {
-                        "DateAndTimeCharterShown",
-                        "2018-07-29T09:00:00Z"});
-            table16.AddRow(new string[] {
-                        "DateActionPlanSentToCustomer",
-                        "2018-07-30T09:00:00Z"});
-            table16.AddRow(new string[] {
-                        "ActionPlanDeliveryMethod",
-                        "1"});
-            table16.AddRow(new string[] {
-                        "DateActionPlanAcknowledged",
-                        "2018-07-30T09:00:00Z"});
-            table16.AddRow(new string[] {
-                        "PriorityCustomer",
-                        "1"});
-            table16.AddRow(new string[] {
-                        "CurrentSituation",
-                        "looking for work"});
-#line 160
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table16, "Given ");
-#line 170
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateActionPlanSentToCustomer earlier than DateActionPlanCrea" +
-            "ted")]
-        public virtual void PostActionPlanWithDateActionPlanSentToCustomerEarlierThanDateActionPlanCreated()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanSentToCustomer earlier than DateActionPlanCrea" +
-                    "ted", null, ((string[])(null)));
-#line 173
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 8
- this.FeatureBackground();
+                        "VenuePostCode",
+                        "NN1 2NN"});
+#line 138
+  testRunner.And("I post a session with the following details:", ((string)(null)), table16, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
@@ -615,7 +504,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2018-07-30T09:00:00Z"});
             table17.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
-                        "2018-07-29T09:00:00Z"});
+                        "2018-07-30T09:00:00Z"});
             table17.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
@@ -628,22 +517,26 @@ this.ScenarioInitialize(scenarioInfo);
             table17.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 174
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table17, "Given ");
-#line 184
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 142
+  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table17, "And ");
+#line 152
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 153
+  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 154
+  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateActionPlanAcknowledged earlier than DateActionPlanCreate" +
-            "d")]
-        public virtual void PostActionPlanWithDateActionPlanAcknowledgedEarlierThanDateActionPlanCreated()
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with missing DateActionPlanCreated")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithMissingDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanAcknowledged earlier than DateActionPlanCreate" +
-                    "d", null, ((string[])(null)));
-#line 187
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, new string[] {
+                        "actionplans"});
+#line 157
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -652,9 +545,6 @@ this.ScenarioInitialize(scenarioInfo);
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table18.AddRow(new string[] {
-                        "DateActionPlanCreated",
-                        "2018-07-30T09:00:00Z"});
             table18.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
@@ -669,27 +559,29 @@ this.ScenarioInitialize(scenarioInfo);
                         "1"});
             table18.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
-                        "2018-07-29T09:00:00Z"});
+                        "2018-07-30T09:00:00Z"});
             table18.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
             table18.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 188
+#line 158
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table18, "Given ");
-#line 198
+#line 167
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with missing CustomerCharterShownToCustomer")]
-        public virtual void PostActionPlanWithMissingCustomerCharterShownToCustomer()
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with invalid DateActionPlanCreated")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithInvalidDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing CustomerCharterShownToCustomer", null, ((string[])(null)));
-#line 201
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, new string[] {
+                        "actionplans"});
+#line 170
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -700,7 +592,10 @@ this.ScenarioInitialize(scenarioInfo);
                         "value"});
             table19.AddRow(new string[] {
                         "DateActionPlanCreated",
-                        "2018-07-30T09:00:00Z"});
+                        "2058-07-30T09:00:00Z"});
+            table19.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
             table19.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
@@ -719,20 +614,24 @@ this.ScenarioInitialize(scenarioInfo);
             table19.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 202
+#line 171
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table19, "Given ");
-#line 211
+#line 181
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with invalid CustomerCharterShownToCustomer")]
-        public virtual void PostActionPlanWithInvalidCustomerCharterShownToCustomer()
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateActionPlanCreated earlier than Session.DateandTimeOfSess" +
+            "ion")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithDateActionPlanCreatedEarlierThanSession_DateandTimeOfSession()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid CustomerCharterShownToCustomer", null, ((string[])(null)));
-#line 214
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanCreated earlier than Session.DateandTimeOfSess" +
+                    "ion", null, new string[] {
+                        "actionplans"});
+#line 184
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -743,10 +642,10 @@ this.ScenarioInitialize(scenarioInfo);
                         "value"});
             table20.AddRow(new string[] {
                         "DateActionPlanCreated",
-                        "2058-07-30T09:00:00Z"});
+                        "2017-07-30T09:00:00Z"});
             table20.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
-                        "3"});
+                        "true"});
             table20.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
@@ -765,9 +664,252 @@ this.ScenarioInitialize(scenarioInfo);
             table20.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 215
+#line 185
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table20, "Given ");
-#line 225
+#line 195
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithDateAndTimeCharterShownEarlierThanDateActionPlanCreated()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateAndTimeCharterShown earlier than DateActionPlanCreated", null, new string[] {
+                        "actionplans",
+                        "ignore"});
+#line 198
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table21.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table21.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table21.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-29T09:00:00Z"});
+            table21.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table21.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table21.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table21.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table21.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 199
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table21, "Given ");
+#line 209
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateActionPlanSentToCustomer earlier than DateActionPlanCrea" +
+            "ted")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithDateActionPlanSentToCustomerEarlierThanDateActionPlanCreated()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanSentToCustomer earlier than DateActionPlanCrea" +
+                    "ted", null, new string[] {
+                        "actionplans"});
+#line 212
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table22.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table22.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-29T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table22.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table22.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table22.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 213
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table22, "Given ");
+#line 223
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with DateActionPlanAcknowledged earlier than DateActionPlanCreate" +
+            "d")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithDateActionPlanAcknowledgedEarlierThanDateActionPlanCreated()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with DateActionPlanAcknowledged earlier than DateActionPlanCreate" +
+                    "d", null, new string[] {
+                        "actionplans"});
+#line 226
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table23.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table23.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "true"});
+            table23.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table23.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table23.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table23.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-29T09:00:00Z"});
+            table23.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table23.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 227
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table23, "Given ");
+#line 237
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with missing CustomerCharterShownToCustomer")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithMissingCustomerCharterShownToCustomer()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing CustomerCharterShownToCustomer", null, new string[] {
+                        "actionplans"});
+#line 240
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table24.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2018-07-30T09:00:00Z"});
+            table24.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table24.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table24.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table24.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table24.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table24.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 241
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table24, "Given ");
+#line 250
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ActionPlan with invalid CustomerCharterShownToCustomer")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
+        public virtual void PostActionPlanWithInvalidCustomerCharterShownToCustomer()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid CustomerCharterShownToCustomer", null, new string[] {
+                        "actionplans"});
+#line 253
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 8
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table25.AddRow(new string[] {
+                        "DateActionPlanCreated",
+                        "2058-07-30T09:00:00Z"});
+            table25.AddRow(new string[] {
+                        "CustomerCharterShownToCustomer",
+                        "3"});
+            table25.AddRow(new string[] {
+                        "DateAndTimeCharterShown",
+                        "2018-07-30T09:00:00Z"});
+            table25.AddRow(new string[] {
+                        "DateActionPlanSentToCustomer",
+                        "2018-07-30T09:00:00Z"});
+            table25.AddRow(new string[] {
+                        "ActionPlanDeliveryMethod",
+                        "1"});
+            table25.AddRow(new string[] {
+                        "DateActionPlanAcknowledged",
+                        "2018-07-30T09:00:00Z"});
+            table25.AddRow(new string[] {
+                        "PriorityCustomer",
+                        "1"});
+            table25.AddRow(new string[] {
+                        "CurrentSituation",
+                        "looking for work"});
+#line 254
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table25, "Given ");
+#line 264
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

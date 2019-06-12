@@ -35,17 +35,21 @@ Feature: Post V2 Outcome
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@outcomes
 	Scenario: Create an outcome with minimum valid values
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
 		Then there should be a 201 response
+		And the "outcomes" cosmos document should include CreatedBy
 		And the response body should contain:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
+		And the response body should not contain the "CreatedBy"
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
-	@subcontractorId
+@outcomes	@subcontractorId
 	Scenario: Create an outcome with all valid values
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -54,6 +58,7 @@ Feature: Post V2 Outcome
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 	    | ClaimedPriorityGroup | 5                    |
 		Then there should be a 201 response
+		And the "outcomes" cosmos document should include CreatedBy
 		And the response body should contain:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
@@ -61,8 +66,12 @@ Feature: Post V2 Outcome
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 		| ClaimedPriorityGroup | 5                    |
 		And the response body should contain the SubContractorId
+		And the response body should not contain the "CreatedBy"
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
 
+@outcomes
 	Scenario: Create an outcome with invalid OutcomeType
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -72,7 +81,7 @@ Feature: Post V2 Outcome
 	    | ClaimedPriorityGroup | 5                    |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Create an outcome with missing ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -81,7 +90,7 @@ Feature: Post V2 Outcome
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Create an outcome with missing OutcomeEffectiveDate
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -90,7 +99,7 @@ Feature: Post V2 Outcome
 	    | ClaimedPriorityGroup | 5                    |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Create an outcome with OutcomeClaimedDate earlier than OutcomeEffectiveDate
 		Given I post an outcome with the following details:
 	    | Field                | Value                |

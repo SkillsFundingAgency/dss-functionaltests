@@ -17,7 +17,7 @@ Feature: Get
 		| EmailAddress           | customer@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 
-
+@contactdetails
 	Scenario: Get Contact by ID
 	When I get a Contact by ID
 	Then there should be a 200 response

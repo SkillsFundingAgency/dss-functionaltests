@@ -151,9 +151,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with all valid values")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithAllValidValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with all valid values", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with all valid values", null, new string[] {
+                        "outcomes"});
 #line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -191,16 +193,22 @@ this.FeatureBackground();
                         "2018-07-20T21:45:00Z"});
 #line 44
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
+#line 49
+ testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeType", null, ((string[])(null)));
-#line 51
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeType", null, new string[] {
+                        "outcomes"});
+#line 53
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -215,9 +223,9 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 52
+#line 54
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table7, "Given ");
-#line 56
+#line 58
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -225,10 +233,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with invalid OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithInvalidOutcomeType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, ((string[])(null)));
-#line 59
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, new string[] {
+                        "outcomes"});
+#line 61
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -246,9 +256,9 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 60
+#line 62
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table8, "Given ");
-#line 65
+#line 67
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -256,10 +266,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeClaimedDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeClaimedDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeClaimedDate", null, ((string[])(null)));
-#line 69
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeClaimedDate", null, new string[] {
+                        "outcomes"});
+#line 71
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -274,9 +286,9 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 70
+#line 72
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table9, "Given ");
-#line 74
+#line 76
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -288,18 +300,24 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 75
+#line 77
   testRunner.And("the response body should contain:", ((string)(null)), table10, "And ");
+#line 81
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, ((string[])(null)));
-#line 81
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
+#line 85
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -314,9 +332,9 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-20T21:45:00Z"});
-#line 82
-  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table11, "Given ");
 #line 86
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table11, "Given ");
+#line 90
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -328,8 +346,12 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-20T21:45:00Z"});
-#line 87
+#line 91
   testRunner.And("the response body should contain:", ((string)(null)), table12, "And ");
+#line 95
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

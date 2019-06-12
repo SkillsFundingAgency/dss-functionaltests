@@ -46,6 +46,9 @@
     <Reference Include="ImpromptuInterface, Version=6.2.2.0, Culture=neutral, PublicKeyToken=0b1781c923b2975b, processorArchitecture=MSIL">
       <HintPath>..\packages\ImpromptuInterface.6.2.2\lib\net40\ImpromptuInterface.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Azure.Documents.Client, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.DocumentDB.2.3.0\lib\net461\Microsoft.Azure.Documents.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
@@ -305,11 +308,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PostV2.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Change Feed\ChangeFeed.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ChangeFeed.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Contact\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -420,10 +418,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Interaction\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Interaction\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Interaction\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Interaction\PostV2.feature.cs">
+      <DependentUpon>PostV2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Features\Interaction\Post.feature.cs">
       <AutoGen>True</AutoGen>
@@ -500,6 +513,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Session\PostV3.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV3.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Subscription\Subscriber.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Subscriber.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Transfer\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -520,9 +543,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CosmosHelper.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\RestHelper.cs" />
     <Compile Include="Helpers\SQLServerHelper.cs" />
+    <Compile Include="Hooks\Hooks.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\ActionPlanV2.cs" />
     <Compile Include="Models\ActionPlan.cs" />
@@ -543,6 +568,7 @@
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\SessionV2.cs" />
     <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\TestDataItem.cs" />
     <Compile Include="Models\Transfer.cs" />
     <Compile Include="Models\WebChat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -671,10 +697,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PostV2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Change Feed\ChangeFeed.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ChangeFeed.feature.cs</LastGenOutput>
-    </None>
     <None Include="Features\Contact\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
@@ -763,9 +785,21 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Interaction\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Interaction\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Interaction\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Interaction\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Interaction\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -827,6 +861,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Session\PostV3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Subscription\Subscriber.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Subscriber.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\Transfer\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
@@ -850,9 +892,7 @@
   <ItemGroup>
     <Content Include="appsettings.readme.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Features\Subscription\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -864,7 +904,9 @@
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets'))" />
   </Target>
   <Import Project="..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.2.1\build\net45\MSTest.TestAdapter.targets')" />
   <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
+  <Import Project="..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\packages\Microsoft.Azure.DocumentDB.2.3.0\build\Microsoft.Azure.DocumentDB.targets')" />
 </Project>

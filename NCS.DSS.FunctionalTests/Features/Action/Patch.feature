@@ -30,7 +30,7 @@ Feature: Patch
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actions
 	Scenario: Patch DateActionAimsToBeCompletedBy
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -54,9 +54,10 @@ Feature: Patch
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
+		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
-
-
+@actions
 	Scenario: Patch ActionSummary
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -81,7 +82,7 @@ Feature: Patch
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@actions
 	Scenario: Patch SignpostedTo
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -106,7 +107,7 @@ Feature: Patch
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@actions
 	Scenario: Patch ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -130,8 +131,9 @@ Feature: Patch
 		| ActionType                    | 2                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
+		
 
-
+@actions
 	Scenario: Patch ActionStatus
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -156,7 +158,7 @@ Feature: Patch
 		| ActionStatus                  | 2                    |
 		| PersonResponsible             | 1                    |
 
-
+@actions
 	Scenario: Patch PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -181,7 +183,7 @@ Feature: Patch
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 2                    |
 
-
+@actions
 		Scenario: Patch with invalid ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -197,6 +199,7 @@ Feature: Patch
 		| ActionType                    | 33                   |
 		Then there should be a 422 response
 
+@actions
 		Scenario: Patch with invalid ActionStatus
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -212,6 +215,7 @@ Feature: Patch
 		| ActionStatus                  | 33                   |
 		Then there should be a 422 response
 
+@actions
 		Scenario: Patch with invalid PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |

@@ -18,6 +18,7 @@ Background: Prepare test
 	And I post an Interaction with the following details:
 		| Field                    | Value                  |
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z   |
+
 		| Channel                  | 2                      |
 		| InteractionType          | 2                      |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
@@ -37,7 +38,7 @@ Background: Prepare test
 		| VenuePostCode            | NN1 2NN                |
 
 
-	@SessionId
+@outcomes	@SessionId
 	Scenario: Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -50,6 +51,7 @@ Background: Prepare test
 		| ClaimedPriorityGroup | 5                    |
 		Then there should be a 200 response
 
+@outcomes
 	Scenario: Patch OutcomeClaimedDate without ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -60,7 +62,7 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Patch invalid OutcomeType
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -73,7 +75,7 @@ Background: Prepare test
 
 
 
-
+@outcomes
 	Scenario:  Patch Outcome effective date earlier than Session.DateandTimeOfSession
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -84,7 +86,7 @@ Background: Prepare test
 		| OutcomeEffectiveDate | 2017-07-20T21:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario:  Patch Outcome effective date less than Outcome claimed date
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -96,6 +98,7 @@ Background: Prepare test
 		| ClaimedPriorityGroup | 5                    |
 		Then there should be a 422 response
 
+@outcomes
 	Scenario: Patch Outcome effective date greater than Session.DateandTimeOfSession + 12 months
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -106,7 +109,7 @@ Background: Prepare test
 	    | OutcomeEffectiveDate | 2019-01-22T22:45:00Z |
 		Then there should be a 422 response
 
-
+@outcomes
 	Scenario: Patch Outcome effective date greater than Session.DateandTimeOfSession + 13 months
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -135,7 +138,7 @@ Background: Prepare test
 #	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 #
 #
-#
+#@outcomes
 #	Scenario: Patch OutcomeType with SubcontractorId
 #	Given I post an outcome with the following details:
 #	    | Field                | Value                |
@@ -153,7 +156,7 @@ Background: Prepare test
 #	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 #		And the response body should contain the SubContractorId
 #
-#
+#@outcomes
 #	Scenario: Patch OutcomeClaimedDate
 #	Given I post an outcome with the following details:
 #	    | Field                | Value                |
@@ -170,7 +173,7 @@ Background: Prepare test
 #	    | OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
 #	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 #
-#
+#@outcomes
 #	Scenario: Patch OutcomeEffectiveDate
 #	Given I post an outcome with the following details:
 #	    | Field                | Value                |

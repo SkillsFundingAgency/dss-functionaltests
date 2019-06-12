@@ -133,9 +133,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with all fields")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostValidActionPlanWithAllFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, new string[] {
+                        "actionplans"});
 #line 29
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -203,16 +205,22 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
                         "looking for work"});
 #line 41
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
+#line 51
+  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with only mandatory fields")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostValidActionPlanWithOnlyMandatoryFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields", null, ((string[])(null)));
-#line 55
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields", null, new string[] {
+                        "actionplans"});
+#line 57
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -230,9 +238,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table7.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-#line 56
+#line 58
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table7, "Given ");
-#line 61
+#line 63
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -253,7 +261,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table8.AddRow(new string[] {
                         "CurrentSituation",
                         "null"});
-#line 62
+#line 64
   testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -261,10 +269,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post ActionPlan with missing DateActionPlanCreated")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostActionPlanWithMissingDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, ((string[])(null)));
-#line 73
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, new string[] {
+                        "actionplans"});
+#line 75
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -294,9 +304,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table9.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 74
+#line 76
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table9, "Given ");
-#line 83
+#line 85
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -304,10 +314,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post ActionPlan with invalid DateActionPlanCreated")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PostActionPlanWithInvalidDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, ((string[])(null)));
-#line 89
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, new string[] {
+                        "actionplans"});
+#line 91
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -340,9 +352,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table10.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 90
+#line 92
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table10, "Given ");
-#line 100
+#line 102
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -138,9 +138,11 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get WebChat by ID")]
+        [NUnit.Framework.CategoryAttribute("webchats")]
         public virtual void GetWebChatByID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get WebChat by ID", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get WebChat by ID", null, new string[] {
+                        "webchats"});
 #line 27
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

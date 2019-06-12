@@ -168,9 +168,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Outcome by ID")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void GetOutcomeByID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Outcome by ID", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Outcome by ID", null, new string[] {
+                        "outcomes"});
 #line 40
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

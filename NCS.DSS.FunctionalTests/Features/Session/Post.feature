@@ -25,7 +25,7 @@ Feature: Post
 
 
 
-
+@sessions
 Scenario: Create a Session for existing customer with all valid Values
 	Given I post a session with the following details:
 	    | Field                    | Value                          |
@@ -38,9 +38,10 @@ Scenario: Create a Session for existing customer with all valid Values
 		| VenuePostCode            |NN1 2NN                         |
 		| SessionAttended         |null                            |
 		| ReasonForNonAttendance   |99                              |
+		And there should be a record in the sessions ChangeFeed table
+		And there should be a record in the sessions-history ChangeFeed table
 
-
-
+@sessions
 Scenario: Create a Session for existing customer with incorrect format for date and time of session
 	Given I post a session with the following details:
 	    | Field                | Value       |
@@ -48,6 +49,7 @@ Scenario: Create a Session for existing customer with incorrect format for date 
 	    | VenuePostCode        | NN1 2NN     |
 		Then there should be a 422 response
 
+@sessions
 Scenario: Create a Session for existing customer with incorrect format for venue post code
 	Given I post a session with the following details:
 	    | Field                    | Value                          |

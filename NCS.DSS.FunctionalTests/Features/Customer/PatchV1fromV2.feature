@@ -23,7 +23,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 
-
+@customers
 	Scenario: Patch DateOfRegistration
 		When I patch the following:
         | Field						 | Value                |
@@ -45,7 +45,7 @@ Feature: PatchV1fromV2
 
 
 
-	@subcontractorId
+@customers	@subcontractorId
 	Scenario: Patch DateOfRegistration with SubcontractorId
 		When I patch the following:
         | Field						 | Value                |
@@ -66,7 +66,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 		And the response body should contain the SubContractorId
 
-
+@customers
 	Scenario: Patch Title
 		When I patch the following:
         | Field						 | Value                |
@@ -86,7 +86,7 @@ Feature: PatchV1fromV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch GivenName
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -121,7 +121,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-
+@customers
 	Scenario: Patch FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -156,7 +156,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-
+@customers
 	Scenario: Patch DateofBirth
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -191,7 +191,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-
+@customers
 	Scenario: Patch Gender
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -227,7 +227,7 @@ Feature: PatchV1fromV2
 
 		
 
-
+@customers
 	Scenario: Patch UniqueLearnerNumber
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -262,7 +262,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-
+@customers
 	Scenario: Patch OptInUserResearch
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -296,7 +296,7 @@ Feature: PatchV1fromV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch OptInMarketResearch
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -331,7 +331,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-
+@customers
 	Scenario: Patch DateOfTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -365,7 +365,7 @@ Feature: PatchV1fromV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch ReasonForTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -399,7 +399,7 @@ Feature: PatchV1fromV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 
-
+@customers
 	Scenario: Patch IntroducedBy
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -434,7 +434,7 @@ Feature: PatchV1fromV2
 		| IntroducedByAdditionalInfo | additional info      |
 
 
-
+@customers
 	Scenario: Patch IntroducedByAdditionalInfo
 		Given I post a Customer with the following details:
 		| Field                      | Value                |
@@ -468,7 +468,7 @@ Feature: PatchV1fromV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | updated info	        |
 
-
+@customers
 	Scenario: Patch With Existing DateOfTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |

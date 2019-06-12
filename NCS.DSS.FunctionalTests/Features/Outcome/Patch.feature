@@ -33,7 +33,7 @@ Background: Prepare test
 
 
 
-
+@outcomes
 	Scenario: Patch OutcomeType
 	Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -45,12 +45,14 @@ Background: Prepare test
 	    | OutcomeType          | 2                    |
 		Then there should be a 200 response
 		And the response body should contain:
-		| Field                    | Value                                |
-	    | OutcomeType          | 2                    |
-	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
-	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		| Field                | Value                |
+		| OutcomeType          | 2                    |
+		| OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
-
+@outcomes
 	Scenario: Patch OutcomeClaimedDate
 	Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -62,12 +64,14 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
 		Then there should be a 200 response
 		And the response body should contain:
-		| Field                    | Value                                |
-	    | OutcomeType          | 3                    |
-	    | OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
-	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		| Field                | Value                |
+		| OutcomeType          | 3                    |
+		| OutcomeClaimedDate   | 2018-07-21T21:45:00Z |
+		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
 
-
+@outcomes
 	Scenario: Patch OutcomeEffectiveDate
 	Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -79,7 +83,9 @@ Background: Prepare test
 	    | OutcomeEffectiveDate | 2018-07-20T22:45:00Z |
 		Then there should be a 200 response
 		And the response body should contain:
-		| Field                    | Value                                |
+		| Field                    | Value            |
 	    | OutcomeType          | 3                    |
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T22:45:00Z |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table

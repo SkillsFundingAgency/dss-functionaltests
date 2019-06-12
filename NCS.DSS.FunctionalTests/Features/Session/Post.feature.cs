@@ -121,9 +121,11 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with all valid Values")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
         public virtual void CreateASessionForExistingCustomerWithAllValidValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with all valid Values", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with all valid Values", null, new string[] {
+                        "sessions"});
 #line 29
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -161,6 +163,10 @@ this.ScenarioInitialize(scenarioInfo);
                         "99"});
 #line 35
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
+#line 41
+  testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+  testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -168,11 +174,13 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with incorrect format for date and time of" +
             " session")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
         public virtual void CreateASessionForExistingCustomerWithIncorrectFormatForDateAndTimeOfSession()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
-                    " session", null, ((string[])(null)));
-#line 44
+                    " session", null, new string[] {
+                        "sessions"});
+#line 45
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -187,9 +195,9 @@ this.ScenarioInitialize(scenarioInfo);
             table6.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 45
+#line 46
  testRunner.Given("I post a session with the following details:", ((string)(null)), table6, "Given ");
-#line 49
+#line 50
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -197,10 +205,12 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with incorrect format for venue post code")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
         public virtual void CreateASessionForExistingCustomerWithIncorrectFormatForVenuePostCode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, ((string[])(null)));
-#line 51
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, new string[] {
+                        "sessions"});
+#line 53
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -215,9 +225,9 @@ this.ScenarioInitialize(scenarioInfo);
             table7.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1"});
-#line 52
+#line 54
  testRunner.Given("I post a session with the following details:", ((string)(null)), table7, "Given ");
-#line 56
+#line 58
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

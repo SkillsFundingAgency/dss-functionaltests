@@ -73,9 +73,11 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create Valid Adviser")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
         public virtual void CreateValidAdviser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser", null, new string[] {
+                        "adviserdetails"});
 #line 8
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -117,10 +119,12 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create Valid Adviser with SubcontractorId")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void CreateValidAdviserWithSubcontractorId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser with SubcontractorId", null, new string[] {
+                        "adviserdetails",
                         "subcontractorId"});
 #line 22
  this.ScenarioInitialize(scenarioInfo);
@@ -164,26 +168,60 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Missing AdviserName")]
-        public virtual void MissingAdviserName()
+        [NUnit.Framework.DescriptionAttribute("Change feed for Post Adviser")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
+        public virtual void ChangeFeedForPostAdviser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, ((string[])(null)));
-#line 38
-  this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Adviser", null, new string[] {
+                        "adviserdetails"});
+#line 37
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table5.AddRow(new string[] {
+                        "AdviserName",
+                        "BillyAdviser"});
+            table5.AddRow(new string[] {
                         "AdviserEmailAddress",
                         "billy@bill.com"});
-            table5.AddRow(new string[] {
+#line 38
+  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table5, "Given ");
+#line 42
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 43
+  testRunner.And("there should be a record in the adviserDetails ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+  testRunner.And("there should be a record in the adviserDetails-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Missing AdviserName")]
+        [NUnit.Framework.CategoryAttribute("adviserdetails")]
+        public virtual void MissingAdviserName()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, new string[] {
+                        "adviserdetails"});
+#line 47
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table6.AddRow(new string[] {
+                        "AdviserEmailAddress",
+                        "billy@bill.com"});
+            table6.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 39
-  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table5, "Given ");
-#line 43
+#line 48
+  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table6, "Given ");
+#line 52
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

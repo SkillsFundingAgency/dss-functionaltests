@@ -39,7 +39,7 @@ Background: Prepare test
 	    | GoalStatus                  | 1                    |
 
 
-
+@goals
 	Scenario: Get Goal by ID
 	When I get a Goal by ID
 	Then there should be a 200 response

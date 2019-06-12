@@ -167,9 +167,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with minimum valid values")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMinimumValidValues()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with minimum valid values", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with minimum valid values", null, new string[] {
+                        "outcomes"});
 #line 39
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -186,6 +188,8 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table6, "Given ");
 #line 43
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 44
+  testRunner.And("the \"outcomes\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -193,20 +197,28 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table7.AddRow(new string[] {
                         "OutcomeType",
                         "3"});
-#line 44
+#line 45
   testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
+#line 48
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with all valid values")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void CreateAnOutcomeWithAllValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with all valid values", null, new string[] {
+                        "outcomes",
                         "subcontractorId"});
-#line 49
+#line 53
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -227,10 +239,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table8.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 50
+#line 54
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table8, "Given ");
-#line 56
+#line 60
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+  testRunner.And("the \"outcomes\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -247,20 +261,28 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table9.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 57
+#line 62
   testRunner.And("the response body should contain:", ((string)(null)), table9, "And ");
-#line 63
+#line 68
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with invalid OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithInvalidOutcomeType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, ((string[])(null)));
-#line 66
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, new string[] {
+                        "outcomes"});
+#line 75
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -281,9 +303,9 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table10.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 67
+#line 76
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table10, "Given ");
-#line 73
+#line 82
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -291,10 +313,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing ClaimedPriorityGroup")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingClaimedPriorityGroup()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing ClaimedPriorityGroup", null, ((string[])(null)));
-#line 76
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing ClaimedPriorityGroup", null, new string[] {
+                        "outcomes"});
+#line 85
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -312,9 +336,9 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table11.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 77
+#line 86
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table11, "Given ");
-#line 82
+#line 91
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -322,10 +346,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with missing OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithMissingOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, ((string[])(null)));
-#line 85
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
+#line 94
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -343,9 +369,9 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table12.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 86
+#line 95
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table12, "Given ");
-#line 91
+#line 100
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -353,10 +379,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with OutcomeClaimedDate earlier than OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void CreateAnOutcomeWithOutcomeClaimedDateEarlierThanOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with OutcomeClaimedDate earlier than OutcomeEffectiveDate", null, ((string[])(null)));
-#line 94
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with OutcomeClaimedDate earlier than OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
+#line 103
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -377,9 +405,9 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
             table13.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "5"});
-#line 95
+#line 104
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table13, "Given ");
-#line 101
+#line 110
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

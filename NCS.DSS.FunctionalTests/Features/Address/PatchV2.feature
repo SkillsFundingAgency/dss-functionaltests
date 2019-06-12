@@ -11,7 +11,7 @@ Feature: PatchV2
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
 
-	@subcontractorId
+@addresses @subcontractorId
 	Scenario: Patch Address1
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -44,7 +44,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch Address2
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -77,7 +81,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch Address3
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -110,8 +118,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
 
+@addresses
 	Scenario: Patch Address4
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -144,7 +155,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch Address5
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -177,7 +192,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch PostCode
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -210,7 +229,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch AlternativePostCode
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -243,7 +266,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch Longitude
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -276,7 +303,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch Latitude
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -309,7 +340,11 @@ Feature: PatchV2
 		| Latitude             | 52.40122             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch EffectiveFrom
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -342,7 +377,11 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:02:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
+
+@addresses
 	Scenario: Patch EffectiveTo
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -375,4 +414,7 @@ Feature: PatchV2
 		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:13:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
 

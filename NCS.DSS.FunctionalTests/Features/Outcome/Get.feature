@@ -36,7 +36,7 @@ Background: Prepare test
 	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 
-
+@outcomes
 	Scenario: Get Outcome by ID
 	When I get an Outcome by ID
 	Then there should be a 200 response

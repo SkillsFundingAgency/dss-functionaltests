@@ -109,10 +109,12 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Transfer")]
+        [NUnit.Framework.CategoryAttribute("transfers")]
         [NUnit.Framework.CategoryAttribute("InteractionId")]
         public virtual void PostTransfer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Transfer", null, new string[] {
+                        "transfers",
                         "InteractionId"});
 #line 17
  this.ScenarioInitialize(scenarioInfo);
@@ -157,6 +159,10 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                         "Some context text"});
 #line 26
  testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
+#line 31
+ testRunner.And("there should be a record in the transfers ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("there should be a record in the transfers-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

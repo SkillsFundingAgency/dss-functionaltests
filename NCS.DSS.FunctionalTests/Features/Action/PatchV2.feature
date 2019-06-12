@@ -35,7 +35,7 @@ Feature: PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actions
 	Scenario: Patch DateActionAimsToBeCompletedBy
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -59,9 +59,10 @@ Feature: PatchV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
+		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
-
-
+@actions
 	Scenario: Patch ActionSummary
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -86,7 +87,7 @@ Feature: PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@actions
 	Scenario: Patch SignpostedTo
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -111,7 +112,7 @@ Feature: PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@actions
 	Scenario: Patch ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -136,7 +137,7 @@ Feature: PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 
-
+@actions
 	Scenario: Patch ActionStatus
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -161,7 +162,7 @@ Feature: PatchV2
 		| ActionStatus                  | 2                    |
 		| PersonResponsible             | 1                    |
 
-
+@actions
 	Scenario: Patch PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |
@@ -186,8 +187,8 @@ Feature: PatchV2
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 2                    |
 
-
-		Scenario: Patch with invalid ActionType
+@actions
+	Scenario: Patch with invalid ActionType
 		Given I post an Action with the following details:
 		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
@@ -217,6 +218,7 @@ Feature: PatchV2
 		| ActionStatus                  | 33                   |
 		Then there should be a 422 response
 
+@actions
 		Scenario: Patch with invalid PersonResponsible
 		Given I post an Action with the following details:
 		| Field                         | Value                |

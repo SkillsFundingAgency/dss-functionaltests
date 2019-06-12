@@ -10,7 +10,7 @@ Feature: Post
 		| FamilyName           | Customer             |
 
 
-
+@addresses
 	Scenario:Post valid address
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -41,8 +41,10 @@ Feature: Post
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
-
+@addresses
 		Scenario: Post Address with only mandatory Fields
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -63,7 +65,7 @@ Feature: Post
 		| EffectiveFrom        | null	              |
 		| EffectiveTo          | null	              |
 
-
+@addresses
 	Scenario: Post Address with maximum Field lengths
 		Given I post an Address with the following details:
 		| Field				   | Value                                                                                                |
@@ -93,6 +95,7 @@ Feature: Post
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 
+@addresses
 	Scenario: Post Address with Address1 Field missing
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -110,7 +113,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Address1 Field is required."
 
-
+@addresses
 	Scenario: Post Address with Address1 Field over character limit
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -129,7 +132,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Field Address1 must match the regular expression '[A-Za-z0-9 ~!@&amp;'\\()*+,\\-.\\/:;]{1,100}'."
 
-
+@addresses
 	Scenario: Post Address with invalid Address1
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -148,7 +151,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Field Address1 must match the regular expression '[A-Za-z0-9 ~!@&amp;'\\()*+,\\-.\\/:;]{1,100}'."
 
-
+@addresses
 	Scenario: Post Address with PostCode Field missing
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -166,7 +169,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The PostCode Field is required."
 
-
+@addresses
 	Scenario: Post Address with invalid PostCode
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -185,7 +188,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "Please enter a valid postcode"
 
-
+@addresses
 	Scenario: Post Address with invalid Longitude
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -205,7 +208,7 @@ Feature: Post
 		#And the error message should be "The Field Longitude must match the regular expression '^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))$'."
 
 
-
+@addresses
 	Scenario: Post Address with invalid Latitude
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -224,7 +227,7 @@ Feature: Post
 		Then there should be a 422 response
 		#And the error message should be "The Field Latitude must match the regular expression '^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))$'."
 
-
+@addresses
 	Scenario: Post Valid Address with invalid EffectiveFrom date
 		Given I post an Address with the following details:
 		| Field                | Value                |

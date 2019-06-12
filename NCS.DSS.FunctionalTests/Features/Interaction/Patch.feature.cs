@@ -105,9 +105,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Date")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PatchDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Date", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Date", null, new string[] {
+                        "interactions"});
 #line 19
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -154,16 +156,22 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
                         "2"});
 #line 29
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
+#line 34
+  testRunner.And("there should be a record in the interactions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+  testRunner.And("there should be a record in the interactions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch channel")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PatchChannel()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch channel", null, ((string[])(null)));
-#line 36
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch channel", null, new string[] {
+                        "interactions"});
+#line 38
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -181,7 +189,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table6.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 37
+#line 39
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -190,9 +198,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table7.AddRow(new string[] {
                         "Channel",
                         "1"});
-#line 42
+#line 44
   testRunner.When("I patch the following:", ((string)(null)), table7, "When ");
-#line 45
+#line 47
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -207,18 +215,24 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table8.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 46
+#line 48
   testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
+#line 53
+  testRunner.And("there should be a record in the interactions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
+  testRunner.And("there should be a record in the interactions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch InteractionType")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
         public virtual void PatchInteractionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch InteractionType", null, ((string[])(null)));
-#line 53
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch InteractionType", null, new string[] {
+                        "interactions"});
+#line 57
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -236,7 +250,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table9.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-#line 54
+#line 58
   testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table9, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -245,9 +259,9 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table10.AddRow(new string[] {
                         "InteractionType",
                         "1"});
-#line 59
+#line 63
   testRunner.When("I patch the following:", ((string)(null)), table10, "When ");
-#line 62
+#line 66
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -262,8 +276,12 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table11.AddRow(new string[] {
                         "InteractionType",
                         "1"});
-#line 63
+#line 67
   testRunner.And("the response body should contain:", ((string)(null)), table11, "And ");
+#line 72
+  testRunner.And("there should be a record in the interactions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+  testRunner.And("there should be a record in the interactions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

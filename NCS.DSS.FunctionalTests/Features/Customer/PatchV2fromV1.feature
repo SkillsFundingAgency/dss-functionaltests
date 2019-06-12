@@ -21,7 +21,7 @@ Feature: PatchV2fromV1
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 
-	 @subcontractorId
+@customers	 @subcontractorId
 	 Scenario: Patch DateOfRegistration
 		When I patch the following:
         | Field						 | Value                |
@@ -42,8 +42,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch Title	
 		When I patch the following:
         | Field						 | Value                |
@@ -64,7 +63,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch GivenName
 		When I patch the following:
         | Field						 | Value                |
@@ -85,7 +84,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch FamilyName
 		When I patch the following:
         | Field						 | Value                |
@@ -106,7 +105,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch DateofBirth
 		When I patch the following:
         | Field						 | Value                |
@@ -127,7 +126,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch Gender
 		When I patch the following:
         | Field						 | Value                |
@@ -149,7 +148,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId		
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch UniqueLearnerNumber
 		When I patch the following:
         | Field						 | Value                |
@@ -171,7 +170,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch OptInUserResearch
 		When I patch the following:
         | Field						 | Value                |
@@ -193,7 +192,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch OptInMarketResearch
 		When I patch the following:
         | Field						 | Value                |
@@ -215,7 +214,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch DateOfTermination
 		When I patch the following:
         | Field						 | Value                |
@@ -237,7 +236,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch ReasonForTermination
 		When I patch the following:
         | Field						 | Value                |
@@ -259,7 +258,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch IntroducedBy
 		When I patch the following:
         | Field						 | Value                |
@@ -281,7 +280,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch IntroducedByAdditionalInfo
 		When I patch the following:
         | Field						 | Value                |
@@ -303,7 +302,7 @@ Feature: PatchV2fromV1
 		When I get a Customer by ID
 		Then the response body should contain the SubContractorId
 
-	 @subcontractorId
+@customers @subcontractorId
 	Scenario: Patch With Existing DateOfTermination
 		Given I post a Customer with the following details:
 		| Field                      | Value                |

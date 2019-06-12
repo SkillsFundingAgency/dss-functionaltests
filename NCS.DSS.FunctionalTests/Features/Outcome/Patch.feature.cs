@@ -153,9 +153,11 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OutcomeType")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void PatchOutcomeType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeType", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeType", null, new string[] {
+                        "outcomes"});
 #line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -202,16 +204,22 @@ this.FeatureBackground();
                         "2018-07-20T21:45:00Z"});
 #line 47
   testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
+#line 52
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OutcomeClaimedDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void PatchOutcomeClaimedDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeClaimedDate", null, ((string[])(null)));
-#line 54
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeClaimedDate", null, new string[] {
+                        "outcomes"});
+#line 56
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -229,7 +237,7 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 55
+#line 57
  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -238,9 +246,9 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         "2018-07-21T21:45:00Z"});
-#line 60
+#line 62
   testRunner.When("I patch the following:", ((string)(null)), table9, "When ");
-#line 63
+#line 65
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -255,18 +263,24 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 64
+#line 66
   testRunner.And("the response body should contain:", ((string)(null)), table10, "And ");
+#line 71
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OutcomeEffectiveDate")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
         public virtual void PatchOutcomeEffectiveDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeEffectiveDate", null, ((string[])(null)));
-#line 71
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeEffectiveDate", null, new string[] {
+                        "outcomes"});
+#line 75
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -284,7 +298,7 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T21:45:00Z"});
-#line 72
+#line 76
  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table11, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -293,9 +307,9 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T22:45:00Z"});
-#line 77
+#line 81
   testRunner.When("I patch the following:", ((string)(null)), table12, "When ");
-#line 80
+#line 84
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -310,8 +324,12 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "OutcomeEffectiveDate",
                         "2018-07-20T22:45:00Z"});
-#line 81
+#line 85
   testRunner.And("the response body should contain:", ((string)(null)), table13, "And ");
+#line 90
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

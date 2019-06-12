@@ -153,9 +153,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateActionAimsToBeCompletedBy")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchDateActionAimsToBeCompletedBy()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateActionAimsToBeCompletedBy", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateActionAimsToBeCompletedBy", null, new string[] {
+                        "actions"});
 #line 34
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -226,16 +228,22 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "1"});
 #line 48
   testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
+#line 57
+  testRunner.And("there should be a record in the actions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+  testRunner.And("there should be a record in the actions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionSummary")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchActionSummary()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionSummary", null, ((string[])(null)));
-#line 60
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionSummary", null, new string[] {
+                        "actions"});
+#line 61
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -265,7 +273,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table8.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 61
+#line 62
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -274,9 +282,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table9.AddRow(new string[] {
                         "ActionSummary",
                         "A New Summary"});
-#line 70
+#line 71
   testRunner.When("I patch the following:", ((string)(null)), table9, "When ");
-#line 73
+#line 74
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -303,7 +311,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table10.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 74
+#line 75
   testRunner.And("the response body should contain:", ((string)(null)), table10, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -311,10 +319,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch SignpostedTo")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchSignpostedTo()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SignpostedTo", null, ((string[])(null)));
-#line 85
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SignpostedTo", null, new string[] {
+                        "actions"});
+#line 86
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -344,7 +354,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table11.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 86
+#line 87
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table11, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -353,9 +363,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table12.AddRow(new string[] {
                         "SignpostedTo",
                         "Updated Details"});
-#line 95
+#line 96
   testRunner.When("I patch the following:", ((string)(null)), table12, "When ");
-#line 98
+#line 99
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -382,7 +392,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table13.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 99
+#line 100
   testRunner.And("the response body should contain:", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -390,10 +400,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionType")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchActionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionType", null, ((string[])(null)));
-#line 110
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionType", null, new string[] {
+                        "actions"});
+#line 111
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -423,7 +435,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table14.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 111
+#line 112
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table14, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -432,9 +444,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table15.AddRow(new string[] {
                         "ActionType",
                         "2"});
-#line 120
+#line 121
   testRunner.When("I patch the following:", ((string)(null)), table15, "When ");
-#line 123
+#line 124
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -461,7 +473,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table16.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 124
+#line 125
   testRunner.And("the response body should contain:", ((string)(null)), table16, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -469,10 +481,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch ActionStatus")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchActionStatus()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionStatus", null, ((string[])(null)));
-#line 135
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ActionStatus", null, new string[] {
+                        "actions"});
+#line 137
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -502,7 +516,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table17.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 136
+#line 138
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table17, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -511,9 +525,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table18.AddRow(new string[] {
                         "ActionStatus",
                         "2"});
-#line 145
+#line 147
   testRunner.When("I patch the following:", ((string)(null)), table18, "When ");
-#line 148
+#line 150
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -540,7 +554,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table19.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 149
+#line 151
   testRunner.And("the response body should contain:", ((string)(null)), table19, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -548,10 +562,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch PersonResponsible")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchPersonResponsible()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PersonResponsible", null, ((string[])(null)));
-#line 160
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PersonResponsible", null, new string[] {
+                        "actions"});
+#line 162
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -581,7 +597,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table20.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 161
+#line 163
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table20, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -590,9 +606,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table21.AddRow(new string[] {
                         "PersonResponsible",
                         "2"});
-#line 170
+#line 172
   testRunner.When("I patch the following:", ((string)(null)), table21, "When ");
-#line 173
+#line 175
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -619,7 +635,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table22.AddRow(new string[] {
                         "PersonResponsible",
                         "2"});
-#line 174
+#line 176
   testRunner.And("the response body should contain:", ((string)(null)), table22, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -627,10 +643,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid ActionType")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchWithInvalidActionType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionType", null, ((string[])(null)));
-#line 185
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionType", null, new string[] {
+                        "actions"});
+#line 187
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -660,7 +678,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table23.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 186
+#line 188
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table23, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -669,9 +687,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table24.AddRow(new string[] {
                         "ActionType",
                         "33"});
-#line 195
+#line 197
   testRunner.When("I patch the following:", ((string)(null)), table24, "When ");
-#line 198
+#line 200
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -679,10 +697,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid ActionStatus")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchWithInvalidActionStatus()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionStatus", null, ((string[])(null)));
-#line 200
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid ActionStatus", null, new string[] {
+                        "actions"});
+#line 203
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -712,7 +732,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table25.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 201
+#line 204
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table25, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -721,9 +741,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table26.AddRow(new string[] {
                         "ActionStatus",
                         "33"});
-#line 210
-  testRunner.When("I patch the following:", ((string)(null)), table26, "When ");
 #line 213
+  testRunner.When("I patch the following:", ((string)(null)), table26, "When ");
+#line 216
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -731,10 +751,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch with invalid PersonResponsible")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void PatchWithInvalidPersonResponsible()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid PersonResponsible", null, ((string[])(null)));
-#line 215
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid PersonResponsible", null, new string[] {
+                        "actions"});
+#line 219
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -764,7 +786,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table27.AddRow(new string[] {
                         "PersonResponsible",
                         "1"});
-#line 216
+#line 220
   testRunner.Given("I post an Action with the following details:", ((string)(null)), table27, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -773,9 +795,9 @@ namespace NCS.DSS.FunctionalTests.Features.Action
             table28.AddRow(new string[] {
                         "PersonResponsible",
                         "33"});
-#line 225
+#line 229
   testRunner.When("I patch the following:", ((string)(null)), table28, "When ");
-#line 228
+#line 232
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

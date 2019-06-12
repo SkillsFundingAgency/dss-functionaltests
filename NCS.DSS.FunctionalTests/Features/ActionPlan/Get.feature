@@ -3,8 +3,6 @@
 
 Feature: Get
 
-
-
 	Background: Post
 	Given I post an adviser with the following details:
 		| Field						 | Value				|
@@ -31,7 +29,7 @@ Feature: Get
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-
+@actionplans
 	Scenario: Get ActionPlan by ID
 	When I get an ActionPlan by ID
 	Then there should be a 200 response

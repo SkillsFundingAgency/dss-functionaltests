@@ -29,7 +29,7 @@ Feature: PostV1PatchV2
 
 
 
-	@SessionId
+@actionplans	@SessionId
 	Scenario: Patch Valid CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -56,7 +56,7 @@ Feature: PostV1PatchV2
 		| CurrentSituation               | looking for work     |
 
 
-	@SessionId
+@actionplans @SessionId
 	Scenario: Patch Valid DateAndTimeCharterShown
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -82,7 +82,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-	@SessionId
+@actionplans @SessionId
 	Scenario: Patch Valid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -109,7 +109,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-	@SessionId
+@actionplans @SessionId
 	Scenario: Patch Valid DateActionPlanSentToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -136,7 +136,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-	@SessionId
+@actionplans	@SessionId
 	Scenario: Patch Valid DateActionPlanAcknowledged
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -163,7 +163,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-	@SessionId
+@actionplans	@SessionId
 	Scenario: Patch Valid ActionPlanDeliveryMethod
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -190,7 +190,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-	@SessionId
+@actionplans	@SessionId
 	Scenario: Patch Valid PriorityCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -217,7 +217,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 2                    |
 		| CurrentSituation               | looking for work     |
 
-	@SessionId
+@actionplans	@SessionId
 	Scenario: Patch Valid CurrentSituation
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -245,7 +245,7 @@ Feature: PostV1PatchV2
 		| CurrentSituation               | still looking        |
 
 
-	@subcontractorId @SessionId
+@actionplans	@subcontractorId @SessionId
 	Scenario: Patch with SubcontractorId
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -273,7 +273,7 @@ Feature: PostV1PatchV2
 		| CurrentSituation               | still looking        |
 		And the response body should contain the SubContractorId
 
-
+@actionplans
 	Scenario: Patch invalid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -290,7 +290,7 @@ Feature: PostV1PatchV2
 		| DateActionPlanCreated          | 2018-07-31T09:00:00Z |
 		Then there should be a 422 response
 
-
+@actionplans
 	Scenario: Patch invalid CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -306,7 +306,7 @@ Feature: PostV1PatchV2
 		| CustomerCharterShownToCustomer | true				    |
 		Then there should be a 400 response
 
-
+@actionplans
 	Scenario: Patch invalid DateAndTimeCharterShown
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -322,7 +322,7 @@ Feature: PostV1PatchV2
 		| DateAndTimeCharterShown        | 2018-07-29T09:00:00Z |
 		Then there should be a 422 response
 
-
+@actionplans
 	Scenario: Patch invalid DateActionPlanSentToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -340,7 +340,7 @@ Feature: PostV1PatchV2
 		Then there should be a 422 response
 
 
-
+@actionplans
 	Scenario: Patch invalid DateActionPlanAcknowledged
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -357,7 +357,7 @@ Feature: PostV1PatchV2
 		| DateActionPlanAcknowledged     | 2018-07-29T09:00:00Z |
 		Then there should be a 422 response
 
-
+@actionplans
 	Scenario: Patch invalid ActionPlanDeliveryMethod
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -375,7 +375,7 @@ Feature: PostV1PatchV2
 		Then there should be a 422 response
 
 
-
+@actionplans
 	Scenario: Patch invalid PriorityCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |

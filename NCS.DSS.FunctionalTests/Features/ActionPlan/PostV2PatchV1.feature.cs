@@ -135,9 +135,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid CustomerCharterShownToCustomer")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidCustomerCharterShownToCustomer()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid CustomerCharterShownToCustomer", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid CustomerCharterShownToCustomer", null, new string[] {
+                        "actionplans"});
 #line 31
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -217,9 +219,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid DateAndTimeCharterShown")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidDateAndTimeCharterShown()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateAndTimeCharterShown", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateAndTimeCharterShown", null, new string[] {
+                        "actionplans"});
 #line 57
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -299,9 +303,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid DateActionPlanCreated")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidDateActionPlanCreated()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanCreated", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanCreated", null, new string[] {
+                        "actionplans"});
 #line 83
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -384,9 +390,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid DateActionPlanSentToCustomer")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidDateActionPlanSentToCustomer()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanSentToCustomer", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanSentToCustomer", null, new string[] {
+                        "actionplans"});
 #line 110
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -469,9 +477,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid DateActionPlanAcknowledged")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidDateActionPlanAcknowledged()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanAcknowledged", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanAcknowledged", null, new string[] {
+                        "actionplans"});
 #line 137
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -554,9 +564,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid ActionPlanDeliveryMethod")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidActionPlanDeliveryMethod()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid ActionPlanDeliveryMethod", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid ActionPlanDeliveryMethod", null, new string[] {
+                        "actionplans"});
 #line 164
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -639,9 +651,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid PriorityCustomer")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidPriorityCustomer()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid PriorityCustomer", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid PriorityCustomer", null, new string[] {
+                        "actionplans"});
 #line 191
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -724,9 +738,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid CurrentSituation")]
+        [NUnit.Framework.CategoryAttribute("actionplans")]
         public virtual void PatchValidCurrentSituation()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid CurrentSituation", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid CurrentSituation", null, new string[] {
+                        "actionplans"});
 #line 218
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

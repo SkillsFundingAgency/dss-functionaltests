@@ -10,7 +10,8 @@ Feature: PatchV1fromV2
 		| Field                | Value                |
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
-	
+
+@addresses
 	Scenario: Patch Address1
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -45,7 +46,7 @@ Feature: PatchV1fromV2
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
 
-	@subcontractorId
+@addresses	@subcontractorId
 	Scenario: Patch Address1 with SubcontractorId
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -82,7 +83,7 @@ Feature: PatchV1fromV2
 
 
 
-
+@addresses
 	Scenario: Patch Address2
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -116,7 +117,7 @@ Feature: PatchV1fromV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
-
+@addresses
 	Scenario: Patch Address3
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -150,7 +151,7 @@ Feature: PatchV1fromV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
-
+@addresses
 	Scenario: Patch Address4
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -185,7 +186,7 @@ Feature: PatchV1fromV2
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
 
-
+@addresses
 	Scenario: Patch Address5
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -219,7 +220,7 @@ Feature: PatchV1fromV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
-
+@addresses
 	Scenario: Patch PostCode
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -253,7 +254,7 @@ Feature: PatchV1fromV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
-
+@addresses
 	Scenario: Patch AlternativePostCode
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -287,7 +288,7 @@ Feature: PatchV1fromV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
-
+@addresses
 	Scenario: Patch Longitude
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -322,7 +323,7 @@ Feature: PatchV1fromV2
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
 
-
+@addresses
 	Scenario: Patch Latitude
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -356,7 +357,7 @@ Feature: PatchV1fromV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
-
+@addresses
 	Scenario: Patch EffectiveFrom
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -390,7 +391,7 @@ Feature: PatchV1fromV2
 		| EffectiveFrom        | 2018-06-19T09:02:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
-
+@addresses
 	Scenario: Patch EffectiveTo
 	Given I post an Address with the following details:
 		| Field                | Value                |

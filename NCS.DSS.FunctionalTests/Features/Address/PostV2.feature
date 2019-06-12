@@ -10,7 +10,7 @@ Feature: PostV2
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
 
-
+@addresses
 	Scenario:Post valid address
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -41,9 +41,11 @@ Feature: PostV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
 
-	@subcontractorId
+@addresses @subcontractorId
 	Scenario:Post valid address with Subcontractor Id
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -75,8 +77,11 @@ Feature: PostV2
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		And the response body should contain the SubContractorId 
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
 
+@addresses
 	Scenario: Post Address with only mandatory Fields
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -96,8 +101,11 @@ Feature: PostV2
 		| Latitude             | null	              |
 		| EffectiveFrom        | null	              |
 		| EffectiveTo          | null	              |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
 
+@addresses
 	Scenario: Post Address with maximum Field lengths
 		Given I post an Address with the following details:
 		| Field				   | Value                                                                                                |
@@ -126,8 +134,62 @@ Feature: PostV2
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 
 
+
+@addresses
+	Scenario: Post Address
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | NW11WN               |
+		Then there should be a 201 response
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
+@addresses @ignore
+	Scenario: Post Address with geocoding where postcode has no space
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | DE215DE               |
+		Then there should be a 201 response
+		And the response body should contain:
+		| field     | value     |
+		| Address1  | 1         |
+		| PostCode  | DE215DE   |
+		| Longitude | -1.460085 |
+		| Latitude  | 52.967834 |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
+@addresses @ignore
+	Scenario: Post Address with geocoding where postcode has space
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | DE21 5DE             |
+		Then there should be a 201 response
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+		
+
+
+@addresses
 	Scenario: Post Address with Address1 Field missing
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -144,7 +206,7 @@ Feature: PostV2
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@addresses
 	Scenario: Post Address with Address1 Field over character limit
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -162,7 +224,7 @@ Feature: PostV2
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@addresses
 	Scenario: Post Address with invalid Address1
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -180,7 +242,7 @@ Feature: PostV2
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@addresses
 	Scenario: Post Address with PostCode Field missing
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -197,7 +259,7 @@ Feature: PostV2
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@addresses
 	Scenario: Post Address with invalid PostCode
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -215,7 +277,7 @@ Feature: PostV2
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@addresses
 	Scenario: Post Address with invalid Longitude
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -234,7 +296,7 @@ Feature: PostV2
 		Then there should be a 422 response
 
 
-
+@addresses
 	Scenario: Post Address with invalid Latitude
 		Given I post an Address with the following details:
 		| Field                | Value                |
@@ -252,7 +314,7 @@ Feature: PostV2
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		Then there should be a 422 response
 
-
+@addresses
 	Scenario: Post Valid Address with invalid EffectiveFrom date
 		Given I post an Address with the following details:
 		| Field                | Value                |

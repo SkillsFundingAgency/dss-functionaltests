@@ -93,10 +93,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Address1")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchAddress1()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address1", null, ((string[])(null)));
-#line 14
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address1", null, new string[] {
+                        "addresses"});
+#line 15
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -141,7 +143,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 15
+#line 16
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table2, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -150,9 +152,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table3.AddRow(new string[] {
                         "Address1",
                         "2"});
-#line 29
+#line 30
   testRunner.When("I patch the following:", ((string)(null)), table3, "When ");
-#line 32
+#line 33
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -191,7 +193,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table4.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 33
+#line 34
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -199,12 +201,14 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Address1 with SubcontractorId")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void PatchAddress1WithSubcontractorId()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address1 with SubcontractorId", null, new string[] {
+                        "addresses",
                         "subcontractorId"});
-#line 49
+#line 50
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -249,7 +253,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table5.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 50
+#line 51
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table5, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -258,9 +262,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table6.AddRow(new string[] {
                         "Address1",
                         "2"});
-#line 64
+#line 65
   testRunner.When("I patch the following:", ((string)(null)), table6, "When ");
-#line 67
+#line 68
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -299,9 +303,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table7.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 68
+#line 69
   testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
-#line 81
+#line 82
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -309,10 +313,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Address2")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchAddress2()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address2", null, ((string[])(null)));
-#line 86
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address2", null, new string[] {
+                        "addresses"});
+#line 87
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -357,7 +363,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table8.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 87
+#line 88
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -366,9 +372,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table9.AddRow(new string[] {
                         "Address2",
                         "Changed"});
-#line 101
+#line 102
    testRunner.When("I patch the following:", ((string)(null)), table9, "When ");
-#line 104
+#line 105
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -407,7 +413,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table10.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 105
+#line 106
   testRunner.And("the response body should contain:", ((string)(null)), table10, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -415,10 +421,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Address3")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchAddress3()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address3", null, ((string[])(null)));
-#line 120
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address3", null, new string[] {
+                        "addresses"});
+#line 121
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -463,7 +471,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table11.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 121
+#line 122
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table11, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -472,9 +480,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table12.AddRow(new string[] {
                         "Address3",
                         "Changed"});
-#line 135
+#line 136
    testRunner.When("I patch the following:", ((string)(null)), table12, "When ");
-#line 138
+#line 139
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -513,7 +521,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table13.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 139
+#line 140
   testRunner.And("the response body should contain:", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -521,10 +529,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Address4")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchAddress4()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address4", null, ((string[])(null)));
-#line 154
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address4", null, new string[] {
+                        "addresses"});
+#line 155
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -569,7 +579,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table14.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 155
+#line 156
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table14, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -578,9 +588,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table15.AddRow(new string[] {
                         "Address4",
                         "Changed"});
-#line 169
+#line 170
    testRunner.When("I patch the following:", ((string)(null)), table15, "When ");
-#line 172
+#line 173
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -619,7 +629,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table16.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 173
+#line 174
   testRunner.And("the response body should contain:", ((string)(null)), table16, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -627,10 +637,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Address5")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchAddress5()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address5", null, ((string[])(null)));
-#line 189
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address5", null, new string[] {
+                        "addresses"});
+#line 190
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -675,7 +687,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table17.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 190
+#line 191
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table17, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -684,9 +696,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table18.AddRow(new string[] {
                         "Address5",
                         "Changed"});
-#line 204
+#line 205
    testRunner.When("I patch the following:", ((string)(null)), table18, "When ");
-#line 207
+#line 208
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -725,7 +737,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table19.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 208
+#line 209
   testRunner.And("the response body should contain:", ((string)(null)), table19, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -733,10 +745,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch PostCode")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchPostCode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PostCode", null, ((string[])(null)));
-#line 223
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PostCode", null, new string[] {
+                        "addresses"});
+#line 224
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -781,7 +795,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table20.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 224
+#line 225
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table20, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -790,9 +804,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table21.AddRow(new string[] {
                         "PostCode",
                         "NW11WW"});
-#line 238
+#line 239
    testRunner.When("I patch the following:", ((string)(null)), table21, "When ");
-#line 241
+#line 242
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -831,7 +845,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table22.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 242
+#line 243
   testRunner.And("the response body should contain:", ((string)(null)), table22, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -839,10 +853,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch AlternativePostCode")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchAlternativePostCode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch AlternativePostCode", null, ((string[])(null)));
-#line 257
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch AlternativePostCode", null, new string[] {
+                        "addresses"});
+#line 258
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -887,7 +903,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table23.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 258
+#line 259
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table23, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -896,9 +912,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table24.AddRow(new string[] {
                         "AlternativePostCode",
                         "NW22WW"});
-#line 272
+#line 273
    testRunner.When("I patch the following:", ((string)(null)), table24, "When ");
-#line 275
+#line 276
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -937,7 +953,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table25.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 276
+#line 277
   testRunner.And("the response body should contain:", ((string)(null)), table25, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -945,10 +961,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Longitude")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchLongitude()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Longitude", null, ((string[])(null)));
-#line 291
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Longitude", null, new string[] {
+                        "addresses"});
+#line 292
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -993,7 +1011,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table26.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 292
+#line 293
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table26, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1002,9 +1020,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table27.AddRow(new string[] {
                         "Longitude",
                         "-98.50813"});
-#line 306
+#line 307
    testRunner.When("I patch the following:", ((string)(null)), table27, "When ");
-#line 309
+#line 310
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1043,7 +1061,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table28.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 310
+#line 311
   testRunner.And("the response body should contain:", ((string)(null)), table28, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1051,10 +1069,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Latitude")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchLatitude()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Latitude", null, ((string[])(null)));
-#line 326
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Latitude", null, new string[] {
+                        "addresses"});
+#line 327
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -1099,7 +1119,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table29.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 327
+#line 328
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table29, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1108,9 +1128,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table30.AddRow(new string[] {
                         "Latitude",
                         "52.40122"});
-#line 341
+#line 342
    testRunner.When("I patch the following:", ((string)(null)), table30, "When ");
-#line 344
+#line 345
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1149,7 +1169,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table31.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 345
+#line 346
   testRunner.And("the response body should contain:", ((string)(null)), table31, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1157,10 +1177,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch EffectiveFrom")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchEffectiveFrom()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveFrom", null, ((string[])(null)));
-#line 360
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveFrom", null, new string[] {
+                        "addresses"});
+#line 361
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -1205,7 +1227,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table32.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 361
+#line 362
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table32, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1214,9 +1236,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table33.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:02:00Z"});
-#line 375
+#line 376
    testRunner.When("I patch the following:", ((string)(null)), table33, "When ");
-#line 378
+#line 379
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1255,7 +1277,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table34.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 379
+#line 380
   testRunner.And("the response body should contain:", ((string)(null)), table34, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1263,10 +1285,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch EffectiveTo")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
         public virtual void PatchEffectiveTo()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveTo", null, ((string[])(null)));
-#line 394
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveTo", null, new string[] {
+                        "addresses"});
+#line 395
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -1311,7 +1335,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table35.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 395
+#line 396
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table35, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1320,9 +1344,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table36.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:13:00Z"});
-#line 409
+#line 410
    testRunner.When("I patch the following:", ((string)(null)), table36, "When ");
-#line 412
+#line 413
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1361,7 +1385,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table37.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:13:00Z"});
-#line 413
+#line 414
   testRunner.And("the response body should contain:", ((string)(null)), table37, "And ");
 #line hidden
             this.ScenarioCleanup();

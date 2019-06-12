@@ -183,9 +183,11 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Action by ID")]
+        [NUnit.Framework.CategoryAttribute("actions")]
         public virtual void GetActionByID()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Action by ID", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Action by ID", null, new string[] {
+                        "actions"});
 #line 45
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

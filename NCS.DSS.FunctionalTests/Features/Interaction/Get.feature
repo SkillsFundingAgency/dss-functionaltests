@@ -21,7 +21,7 @@ Feature: Get
 		| InteractionType          | 2                      |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
-
+@interactions
 	Scenario: Get Interaction by ID
 	When I get an Interaction by ID
 	Then there should be a 200 response

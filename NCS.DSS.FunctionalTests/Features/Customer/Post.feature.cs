@@ -73,9 +73,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Missing GivenName")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PostMissingGivenName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Missing GivenName", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Missing GivenName", null, new string[] {
+                        "customers"});
 #line 9
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -134,9 +136,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Missing FamilyName")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PostMissingFamilyName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Missing FamilyName", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Missing FamilyName", null, new string[] {
+                        "customers"});
 #line 29
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -190,9 +194,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Customer")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PostValidCustomer()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Customer", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Customer", null, new string[] {
+                        "customers"});
 #line 49
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -300,11 +306,13 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Customer with maximum field lengths")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PostValidCustomerWithMaximumFieldLengths()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Customer with maximum field lengths", null, ((string[])(null)));
-#line 89
-  this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Customer with maximum field lengths", null, new string[] {
+                        "customers"});
+#line 86
+ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -355,9 +363,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table5.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-21T14:45:00Z"});
-#line 90
+#line 87
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table5, "Given ");
-#line 106
+#line 103
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -408,7 +416,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table6.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-21T14:45:00Z"});
-#line 107
+#line 104
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -416,10 +424,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Customer with only Mandatory fields")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PostCustomerWithOnlyMandatoryFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Customer with only Mandatory fields", null, ((string[])(null)));
-#line 126
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Customer with only Mandatory fields", null, new string[] {
+                        "customers"});
+#line 123
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -432,9 +442,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table7.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 127
+#line 124
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table7, "Given ");
-#line 132
+#line 129
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -476,7 +486,7 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table8.AddRow(new string[] {
                         "IntroducedByAdditionalInfo",
                         "null"});
-#line 133
+#line 130
   testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -484,10 +494,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Invalid DateOfRegistration")]
+        [NUnit.Framework.CategoryAttribute("customers")]
         public virtual void PostInvalidDateOfRegistration()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Invalid DateOfRegistration", null, ((string[])(null)));
-#line 151
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Invalid DateOfRegistration", null, new string[] {
+                        "customers"});
+#line 148
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -530,11 +542,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             table9.AddRow(new string[] {
                         "IntroducedByAdditionalInfo",
                         "additional info"});
-#line 152
+#line 149
   testRunner.Given("I post a Customer with the following details:", ((string)(null)), table9, "Given ");
-#line 166
+#line 163
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 167
+#line 164
   testRunner.And("the error message should be \"Family Name is a required field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

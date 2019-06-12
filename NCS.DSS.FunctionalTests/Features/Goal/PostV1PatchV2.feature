@@ -34,7 +34,7 @@ Background: Prepare test
 		| CurrentSituation               | looking for work     |
 
 
-
+@goals
 	Scenario: Patch DateGoalCaptured
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -56,7 +56,7 @@ Background: Prepare test
 	    | GoalStatus                  | 1                    |
 
 
-	@subcontractorId
+@goals	@subcontractorId
 	Scenario: Patch DateGoalCaptured with SubcontractorId
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -78,7 +78,7 @@ Background: Prepare test
 	    | GoalStatus                  | 1                    |
 		And the response body should contain the SubContractorId
 
-
+@goals
 	Scenario: Patch DateGoalShouldBeCompletedBy
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -99,7 +99,7 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 
-
+@goals
 	Scenario: Patch DateGoalAchieved
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -121,7 +121,7 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 
-
+@goals
 	Scenario: Patch with invalid GoalType
 		Given I post a goal with the following details:
 	    | Field                       | Value                |
@@ -135,6 +135,7 @@ Background: Prepare test
 	    | GoalType                    | 4                    |
 		Then there should be a 422 response
 
+@goals
 	Scenario: Patch with invalid GoalStatus
 		Given I post a goal with the following details:
 	    | Field                       | Value                |

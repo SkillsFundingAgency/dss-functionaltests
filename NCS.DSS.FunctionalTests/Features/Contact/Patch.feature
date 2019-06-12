@@ -9,7 +9,7 @@
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
 
-
+@contactdetails
 	Scenario: Patch PreferredContactMethod
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -29,8 +29,10 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
+     And there should be a record in the contacts ChangeFeed table
+	 And there should be a record in the contacts-history ChangeFeed table
 
-
+@contactdetails
 	Scenario: Patch PreferredContactMethod with invalid data
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -45,7 +47,7 @@
 		Then there should be a 422 response
 		#And the error message should be "Please supply a valid Preferred Contact Method"
 		
-		
+@contactdetails		
 	Scenario: Patch MobileNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -65,9 +67,10 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
-
-
+@contactdetails
 	Scenario: Patch HomeNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -87,9 +90,10 @@
 		| HomeNumber             | 08654 654321                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
-
-
+@contactdetails
 	Scenario: Patch AlternativeNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -109,9 +113,10 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 08654 123458                 |
 		| EmailAddress           | customer@customer.com        |
+	    And there should be a record in the contacts ChangeFeed table
+	    And there should be a record in the contacts-history ChangeFeed table
 
-
-
+@contactdetails
 	Scenario: Patch EmailAddress
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -131,8 +136,10 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@update.com          |
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
-
+@contactdetails
 	Scenario: Patch EmailAddress with invalid data
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -146,7 +153,7 @@
 		| EmailAddress           | customeratcustomer.com       |
 		Then there should be a 422 response
 
-
+@contactdetails
 	Scenario: Patch new PreferredContactMethod - MobileNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -166,6 +173,8 @@
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| EmailAddress           | customer@customer.com        |
+		And there should be a record in the contacts ChangeFeed table
+		And there should be a record in the contacts-history ChangeFeed table
 
 #	Scenario: Patch new preferredContactMethod - HomeNumber
 #
