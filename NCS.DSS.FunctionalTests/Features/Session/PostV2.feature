@@ -29,16 +29,20 @@ Feature: PostV2
 		Given I post a session with the following details:
 		| Field                    | Value                          |
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z           |
-		| VenuePostCode            |NN1 2NN                         |
+		| VenuePostCode            |NN1 5EW                         |
 		Then there should be a 201 response
 		And the "sessions" cosmos document should include CreatedBy
+		And the "sessions" cosmos document should include "Longitude" with value "-0.88325"
+		And the "sessions" cosmos document should include "Latitude" with value "52.23917"
 		And the response body should contain:
 		| Field                  | Value                |
 		| DateandTimeOfSession   | 2018-06-21T14:45:00Z |
-		| VenuePostCode          | NN1 2NN              |
+		| VenuePostCode          | NN1 5EW              |
 		| SessionAttended        | null                 |
 		| ReasonForNonAttendance | 99                   |
 		And the response body should not contain the "CreatedBy"
+		And the response body should not contain the "Longitude"
+		And the response body should not contain the "Latitude"
 		And there should be a record in the sessions ChangeFeed table
 		And there should be a record in the sessions-history ChangeFeed table
 

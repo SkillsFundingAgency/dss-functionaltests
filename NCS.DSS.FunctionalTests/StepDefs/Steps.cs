@@ -777,6 +777,8 @@ namespace FunctionalTests.StepDefs
         }
 
 
+
+
         [Then(@"the ""(.*)"" cosmos document should include CreatedBy")]
         public void ThenTheCosmosDocumentShouldIncludeCreatedBy(string p0)
         {
@@ -790,6 +792,21 @@ namespace FunctionalTests.StepDefs
 
 
         }
+
+        [Then(@"the ""(.*)"" cosmos document should include ""(.*)"" with value ""(.*)""")]
+        public void ThenTheCosmosDocumentShouldIncludeWithValue(string p0, string p1, string p2)
+        {
+            // retreive the cosmos document relating to the last request
+            CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            string docJson = CosmosHelper.RetrieveDocument(p0, p0, id);
+            // determine the touchpoint used in the post
+            // check createdby field is present with expected value
+            //JObject docJsonObj = JObject.Parse(docJson);
+            JsonHelper.GetPropertyFromJsonString(docJson, p1).Should().Be(p2, "Because " + p1 + " should exist in collection with value " + p2);
+
+        }
+
+
 
 
         public bool CompareX<TKey, TValue>(
@@ -1049,6 +1066,13 @@ namespace FunctionalTests.StepDefs
                     values.Add("CreatedBy", (/*GetVersion() == "v2" */ addValue ? envSettings.TestEndpoint01 : "" ) );
                 }
 
+                if (table.Contains("session"))
+                {
+                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
+                    values.Add("Longitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Longitude"] : ""));
+                    values.Add("Latitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Latitude"] : ""));
+                }
+
                 if (table.Contains("webchats"))
                 {
                     string newDuration = dict[0]["WebChatDuration"];
@@ -1086,15 +1110,15 @@ namespace FunctionalTests.StepDefs
                 if (!found)
                 {
                     //output the dictionaries
-                    Console.Write("SQL Data: ");
+                    Console.WriteLine("SQL Data: ");
                     foreach ( var kv in dict[0])
                     {
-                        Console.Write(kv.Key + " = " + kv.Value);
+                        Console.WriteLine("   " + kv.Key + " = " + kv.Value);
                     }
-                    Console.Write("API Data: ");
+                    Console.WriteLine("API Data: ");
                     foreach (var kv in values)
                     {
-                        Console.Write(kv.Key + " = "  + kv.Value);
+                        Console.WriteLine("   " + kv.Key + " = "  + kv.Value);
                     }
                 }
                 found.Should().BeTrue("because all SQL fields should match cosmos resource: " + table);
@@ -1117,6 +1141,7 @@ namespace FunctionalTests.StepDefs
 
                 if (result == false)
                 {
+                    Console.WriteLine("Check Results: Value mismatch for " + entry.Key + " - Expected: " + entry.Value + " Actual: " +  (actualVals.Keys.Contains(entry.Key) ? actualVals[entry.Key] : "N/A") );
                     return false;
                 }
             }

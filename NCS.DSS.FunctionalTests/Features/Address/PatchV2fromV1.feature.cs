@@ -183,10 +183,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table4.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table4.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table4.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -291,10 +291,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table7.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table7.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table7.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -399,10 +399,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table10.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table10.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table10.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -507,10 +507,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table13.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table13.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table13.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -615,10 +615,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table16.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table16.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table16.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -723,10 +723,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table19.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table19.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table19.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -831,10 +831,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WW"});
             table22.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table22.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table22.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -854,7 +854,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Longitude", null, new string[] {
                         "addresses"});
-#line 253
+#line 254
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -899,7 +899,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table23.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 254
+#line 255
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table23, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -908,9 +908,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table24.AddRow(new string[] {
                         "Longitude",
                         "-98.50813"});
-#line 268
+#line 269
    testRunner.When("I patch the following:", ((string)(null)), table24, "When ");
-#line 271
+#line 272
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -939,17 +939,17 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table25.AddRow(new string[] {
                         "Longitude",
-                        "-98.50813"});
+                        "-0.13426"});
             table25.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table25.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
             table25.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 272
+#line 273
   testRunner.And("the response body should contain:", ((string)(null)), table25, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -962,7 +962,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Latitude", null, new string[] {
                         "addresses"});
-#line 288
+#line 290
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -1007,7 +1007,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table26.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 289
+#line 291
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table26, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1016,9 +1016,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table27.AddRow(new string[] {
                         "Latitude",
                         "52.40122"});
-#line 303
+#line 305
    testRunner.When("I patch the following:", ((string)(null)), table27, "When ");
-#line 306
+#line 308
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1047,17 +1047,17 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table28.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table28.AddRow(new string[] {
                         "Latitude",
-                        "52.40122"});
+                        "51.53494"});
             table28.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
             table28.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 307
+#line 309
   testRunner.And("the response body should contain:", ((string)(null)), table28, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1070,7 +1070,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveFrom", null, new string[] {
                         "addresses"});
-#line 322
+#line 324
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -1115,7 +1115,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table29.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 323
+#line 325
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table29, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1124,9 +1124,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table30.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:02:00Z"});
-#line 337
+#line 339
    testRunner.When("I patch the following:", ((string)(null)), table30, "When ");
-#line 340
+#line 342
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1155,17 +1155,17 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table31.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table31.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table31.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:02:00Z"});
             table31.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-#line 341
+#line 343
   testRunner.And("the response body should contain:", ((string)(null)), table31, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1178,7 +1178,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveTo", null, new string[] {
                         "addresses"});
-#line 356
+#line 358
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -1223,7 +1223,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table32.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 357
+#line 359
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table32, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1232,9 +1232,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table33.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:13:00Z"});
-#line 371
+#line 373
    testRunner.When("I patch the following:", ((string)(null)), table33, "When ");
-#line 374
+#line 376
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1263,17 +1263,17 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table34.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-0.13426"});
             table34.AddRow(new string[] {
                         "Latitude",
-                        "52.40121"});
+                        "51.53494"});
             table34.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
             table34.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:13:00Z"});
-#line 375
+#line 377
   testRunner.And("the response body should contain:", ((string)(null)), table34, "And ");
 #line hidden
             this.ScenarioCleanup();
