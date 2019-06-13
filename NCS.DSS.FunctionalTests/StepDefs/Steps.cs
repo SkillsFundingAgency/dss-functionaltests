@@ -701,7 +701,24 @@ namespace FunctionalTests.StepDefs
             {
                 expectedVals.Add(row[0], row[1]);
             }
-            CheckResults(expectedVals, actualVals).Should().Be(true);
+            string message = "";
+            bool match = CheckResults(expectedVals, actualVals, out message);
+            if (!match)
+            {
+                //output the dictionaries
+                Console.WriteLine("Expected Results: ");
+                foreach (var kv in expectedVals)
+                {
+                    Console.WriteLine("   " + kv.Key + " = " + kv.Value);
+                }
+                Console.WriteLine("Actual Results: ");
+                foreach (var kv in actualVals)
+                {
+                    Console.WriteLine("   " + kv.Key + " = " + kv.Value);
+                }
+            }   
+
+            match.Should().Be(true, "Because " + message);
         }
 
 
@@ -811,20 +828,21 @@ namespace FunctionalTests.StepDefs
 
 
         public bool CompareX<TKey, TValue>(
-        Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2)
+        Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2, out string errorMessage)
         {
+            errorMessage = "";
             if (dict1 == dict2) return true;
             if ((dict1 == null) || (dict2 == null))
             {
                 Console.WriteLine("Compare Dictionary: FALSE - null dictionary");
                 return false;
             }
-            if (dict1.Count != dict2.Count)
+     /*       if (dict1.Count != dict2.Count)
             {
                 Console.WriteLine("Compare Dictionary: FALSE - different number of records");
                 return false;
             }
-
+*/
             var valueComparer = EqualityComparer<TValue>.Default;
 
             foreach (var kvp in dict1)
@@ -867,7 +885,7 @@ namespace FunctionalTests.StepDefs
                         else if (!valueComparer.Equals(kvp.Value, value2))
                         {
                             ret = false;
-                            returnMessage = "Check " + kvp.Key + " Value1: " + kvp.Value + " Value2: " + value2;
+                            errorMessage = "Check " + kvp.Key + " Value1: " + kvp.Value + " Value2: " + value2;
                         }
                         break;
     
@@ -876,7 +894,7 @@ namespace FunctionalTests.StepDefs
                 //if (!valueComparer.Equals(kvp.Value, value2)) ret =  false;
                 if (!ret)
                 {
-                    Console.WriteLine("Compare Dictionary: FALSE " + returnMessage);
+                    Console.WriteLine("Compare Dictionary: FALSE " + errorMessage);
                     return false;
                 }
             }
@@ -1106,8 +1124,8 @@ namespace FunctionalTests.StepDefs
                     values.Add("LastModifiedTouchpointId", dict[0]["LastModifiedTouchpointId"]);
                 }
 
-
-                found = CompareX<string, string>(dict[0], values);
+                string errorMessage;
+                found = CompareX<string, string>(dict[0], values, out errorMessage);
 
                 if (!found)
                 {
@@ -1123,7 +1141,7 @@ namespace FunctionalTests.StepDefs
                         Console.WriteLine("   " + kv.Key + " = "  + kv.Value);
                     }
                 }
-                found.Should().BeTrue("because all SQL fields should match cosmos resource: " + table);
+                found.Should().BeTrue("because " + errorMessage);
 
                 sqlData.Clear();
                 foreach ( var kv in dict[0])
@@ -1142,8 +1160,9 @@ namespace FunctionalTests.StepDefs
         }
 
 
-        private bool CheckResults(Dictionary<string, string> expectedVals, Dictionary<string, string> actualVals)
+        private bool CheckResults(Dictionary<string, string> expectedVals, Dictionary<string, string> actualVals, out string errMessage)
         {
+            errMessage = "";
             foreach (KeyValuePair<string, string> entry in expectedVals)
             {
                 //is it in the table?
@@ -1157,7 +1176,7 @@ namespace FunctionalTests.StepDefs
 
                 if (result == false)
                 {
-                    Console.WriteLine("Check Results: Value mismatch for " + entry.Key + " - Expected: " + entry.Value + " Actual: " +  (actualVals.Keys.Contains(entry.Key) ? actualVals[entry.Key] : "N/A") );
+                    errMessage = "Value mismatch for " + entry.Key + " - Expected: " + entry.Value + " Actual: " + (actualVals.Keys.Contains(entry.Key) ? actualVals[entry.Key] : "N / A");
                     return false;
                 }
             }
