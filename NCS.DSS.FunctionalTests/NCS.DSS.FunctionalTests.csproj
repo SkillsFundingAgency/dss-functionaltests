@@ -513,11 +513,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Session\PostV3.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PostV3.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Subscription\Subscriber.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -860,10 +855,6 @@
     <None Include="Features\Session\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Session\PostV3.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PostV3.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Subscription\Subscriber.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

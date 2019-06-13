@@ -70,7 +70,11 @@ Feature: PostV2
 		And the "sessions" cosmos document should include CreatedBy
 		And the response body should not contain the "CreatedBy"
 		And there should be a record in the sessions ChangeFeed table
+		And the captured table data should include key "Longitude" with value "-1.00181"
+		And the captured table data should include key "Latitude" with value "52.12814"
 		And there should be a record in the sessions-history ChangeFeed table
+		And the captured table data should include key "Longitude" with value "-1.00181"
+		And the captured table data should include key "Latitude" with value "52.12814"
 
 @sessions
 	Scenario: Create a Session for existing customer with incorrect format for date and time of session

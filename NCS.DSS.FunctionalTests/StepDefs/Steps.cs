@@ -46,6 +46,7 @@ namespace FunctionalTests.StepDefs
         private string subscriptionId;
         private string transferId;
         private List<TestDataItem> loadedData = new List<TestDataItem>();
+        Dictionary<string, string> sqlData = new Dictionary<string, string>();
 
         public string actionId { get; set; }
         private readonly ScenarioContext scenarioContext;
@@ -1068,8 +1069,9 @@ namespace FunctionalTests.StepDefs
 
                 if (table.Contains("session"))
                 {
-                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
+                    bool addValue = (dict[0].Keys.Contains("Longitude") && dict[0]["Longitude"].Length > 0);////(scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
                     values.Add("Longitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Longitude"] : ""));
+                    addValue = (dict[0].Keys.Contains("Latitude") && dict[0]["Latitude"].Length > 0);
                     values.Add("Latitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Latitude"] : ""));
                 }
 
@@ -1122,9 +1124,23 @@ namespace FunctionalTests.StepDefs
                     }
                 }
                 found.Should().BeTrue("because all SQL fields should match cosmos resource: " + table);
+
+                sqlData.Clear();
+                foreach ( var kv in dict[0])
+                {
+                    sqlData.Add(kv.Key, kv.Value);
+                }
             }
             return found;
         }
+
+        [Then(@"the captured table data should include key ""(.*)"" with value ""(.*)""")]
+        public void ThenTheCapturedTableDataShouldIncludeKeyWithValue(string p0, string p1)
+        {
+            sqlData.Keys.Contains(p0).Should().BeTrue("Because key " + p0 + " should be present in the SQL table");
+            sqlData[p0].Should().Be(p1);
+        }
+
 
         private bool CheckResults(Dictionary<string, string> expectedVals, Dictionary<string, string> actualVals)
         {

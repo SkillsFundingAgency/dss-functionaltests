@@ -939,7 +939,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table25.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50813"});
             table25.AddRow(new string[] {
                         "Latitude",
                         "51.53494"});
@@ -1050,7 +1050,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "-0.13426"});
             table28.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40122"});
             table28.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
