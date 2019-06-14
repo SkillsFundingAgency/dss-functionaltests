@@ -811,6 +811,7 @@ namespace FunctionalTests.StepDefs
             catch (Exception e)
             {
                 Console.WriteLine("Failed to retrieve " + p0 + " document with id " + id + " from end point: " + envSettings.CosmosEndPoint);
+                Console.WriteLine(e.Message);
             }
 
             docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to Cosmos was unsuccessful");
@@ -825,9 +826,21 @@ namespace FunctionalTests.StepDefs
         [Then(@"the ""(.*)"" cosmos document should include ""(.*)"" with value ""(.*)""")]
         public void ThenTheCosmosDocumentShouldIncludeWithValue(string p0, string p1, string p2)
         {
+            string docJson = "";
             // retreive the cosmos document relating to the last request
             CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
-            string docJson = CosmosHelper.RetrieveDocument(p0, p0, id);
+
+            try
+            {
+                docJson = CosmosHelper.RetrieveDocument(p0, p0, id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to retrieve " + p0 + " document with id " + id + " from end point: " + envSettings.CosmosEndPoint);
+                Console.WriteLine(e.Message);
+            }
+
+            docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to Cosmos was unsuccessful");
             // determine the touchpoint used in the post
             // check createdby field is present with expected value
             //JObject docJsonObj = JObject.Parse(docJson);
@@ -1058,7 +1071,7 @@ namespace FunctionalTests.StepDefs
 
             var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
             timestampValue = values[timestampField];
-            timestampComparison = timestampValue.Substring(0, 10) + "%" + timestampValue.Substring(11, 8) + "%";
+            timestampComparison = timestampValue.Substring(0, 10) + "%" + timestampValue.Substring(11, ( timestampValue.Contains(".")? 11 : 8 ) ) + "%";
             helper.SetConnection(envSettings.sqlConnectionString);
             //   found = helper.DoesResourceExist("dss-" + table, this.GetType().GetField(constants.IdFromResource(table)).GetValue(this).ToString() );
             System.Data.DataSet dataSet = null;
