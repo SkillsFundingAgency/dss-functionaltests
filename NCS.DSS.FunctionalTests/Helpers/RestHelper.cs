@@ -65,7 +65,7 @@ namespace FunctionalTests.Helpers
                     {
                         if (tries <= maxTries)
                         {
-                            Thread.Sleep(1000);
+                            Thread.Sleep(10000);
                         }
                         else retry = false;
                     }
@@ -121,7 +121,7 @@ namespace FunctionalTests.Helpers
                         if (tries <= maxTries)
                         {
                             Console.WriteLine("Sleep and retry");
-                            Thread.Sleep(1000);
+                            Thread.Sleep(10000);
                         }
                         else retry = false;
                     }
@@ -152,7 +152,7 @@ namespace FunctionalTests.Helpers
                             request.AddHeader("SubcontractorId", "67576575");
                         }
                     }
-                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("InvalidSubcontractorId"))
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("InvalidSubcontra    ctorId"))
                     {
                         ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
                         request.AddHeader("SubcontractorId", "123456789012345678901234567890123456789012345678901");

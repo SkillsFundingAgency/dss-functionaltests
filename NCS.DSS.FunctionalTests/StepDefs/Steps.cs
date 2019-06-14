@@ -800,9 +800,20 @@ namespace FunctionalTests.StepDefs
         [Then(@"the ""(.*)"" cosmos document should include CreatedBy")]
         public void ThenTheCosmosDocumentShouldIncludeCreatedBy(string p0)
         {
+            string docJson = "";
             // retreive the cosmos document relating to the last request
             CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
-            string docJson =  CosmosHelper.RetrieveDocument(p0, p0, id);
+
+            try
+            {
+                docJson = CosmosHelper.RetrieveDocument(p0, p0, id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to retrieve " + p0 + " document with id " + id + " from end point: " + envSettings.CosmosEndPoint);
+            }
+
+            docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to Cosmos was unsuccessful");
             // determine the touchpoint used in the post
             // check createdby field is present with expected value
             //JObject docJsonObj = JObject.Parse(docJson);
