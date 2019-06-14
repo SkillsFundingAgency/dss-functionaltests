@@ -55,13 +55,13 @@ namespace FunctionalTests.Helpers
                 IRestResponse response = null;
                 bool retry = true;
                 int tries = 0;
-                int maxTries = 5;
+                int maxTries = 10;
                 while (retry)
                 {
                     tries++;
                     response = client.Execute(request);
                     Console.WriteLine("Rest call Attempt: " + tries + " - Returned " + response.StatusCode);
-                    if (response.StatusCode.ToString() == "500" )
+                    if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError )
                     {
                         if (tries <= maxTries)
                         {
@@ -116,7 +116,7 @@ namespace FunctionalTests.Helpers
                     tries++;
                     response = client.Execute(request);
                     Console.WriteLine("Rest call Attempt: " + tries + " - Returned " + response.StatusCode);
-                    if (response.StatusCode.ToString() == "500")
+                    if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
                     {
                         if (tries <= maxTries)
                         {
