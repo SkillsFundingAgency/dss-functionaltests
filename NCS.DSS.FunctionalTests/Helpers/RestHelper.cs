@@ -120,11 +120,13 @@ namespace FunctionalTests.Helpers
                     {
                         if (tries <= maxTries)
                         {
+                            Console.WriteLine("Sleep and retry");
                             Thread.Sleep(1000);
                         }
                         else retry = false;
                     }
                     else retry = false;
+                    Console.WriteLine("Retry flag : " +  ( retry ? "True" : "False" ) );
                 }
                 return response;
             }
