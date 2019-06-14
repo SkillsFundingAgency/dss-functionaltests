@@ -1,7 +1,7 @@
 ﻿using RestSharp;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace FunctionalTests.Helpers
@@ -29,7 +29,7 @@ namespace FunctionalTests.Helpers
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("cache-control", "no-cache");
-                request.AddHeader("TouchpointId", touchPointId);
+                request.AddHeader("TouchpointId", touchPointId );
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
 
                 if (ScenarioContext.Current["version"].Equals("v2"))
@@ -50,10 +50,27 @@ namespace FunctionalTests.Helpers
                             request.AddHeader("SubcontractorId", "123456789012345678901234567890123456789012345678901");
                     }
                 }
+                request.AddParameter("undefined", json, ParameterType.RequestBody);
 
-
-                    request.AddParameter("undefined", json, ParameterType.RequestBody);
-                IRestResponse response = client.Execute(request);
+                IRestResponse response = null;
+                bool retry = true;
+                int tries = 0;
+                int maxTries = 5;
+                while (retry)
+                {
+                    tries++;
+                    response = client.Execute(request);
+                    Console.WriteLine("Rest call Attempt: " + tries + " - Returned " + response.StatusCode);
+                    if (response.StatusCode.ToString() == "500" )
+                    {
+                        if (tries <= maxTries)
+                        {
+                            Thread.Sleep(1000);
+                        }
+                        else retry = false;
+                    }
+                    else retry = false;
+                }
                 return response;
             }
             catch (Exception e) { throw e; }
@@ -89,7 +106,26 @@ namespace FunctionalTests.Helpers
                 }
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
-                IRestResponse response = client.Execute(request);
+               // IRestResponse response = client.Execute(request);
+                IRestResponse response = null;
+                bool retry = true;
+                int tries = 0;
+                int maxTries = 5;
+                while (retry)
+                {
+                    tries++;
+                    response = client.Execute(request);
+                    Console.WriteLine("Rest call Attempt: " + tries + " - Returned " + response.StatusCode);
+                    if (response.StatusCode.ToString() == "500")
+                    {
+                        if (tries <= maxTries)
+                        {
+                            Thread.Sleep(1000);
+                        }
+                        else retry = false;
+                    }
+                    else retry = false;
+                }
                 return response;
             }
             catch (Exception e) { throw e; }

@@ -32,8 +32,9 @@ namespace NCS.DSS.FunctionalTests.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            Console.WriteLine("After Scenario: Teardown disabled");
-            return ;
+            //Console.WriteLine("After Scenario: Tear down disabled");
+            Console.WriteLine("After Scenario: Teardown data if it is stored against scenario context");
+            //turn ;
             EnvironmentSettings envSettings = new EnvironmentSettings();
             SQLServerHelper sqlHelper = new SQLServerHelper();
             bool returnValue;
