@@ -32,7 +32,8 @@ namespace NCS.DSS.FunctionalTests.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            //return ;
+            Console.WriteLine("After Scenario: Teardown disabled");
+            return ;
             EnvironmentSettings envSettings = new EnvironmentSettings();
             SQLServerHelper sqlHelper = new SQLServerHelper();
             bool returnValue;

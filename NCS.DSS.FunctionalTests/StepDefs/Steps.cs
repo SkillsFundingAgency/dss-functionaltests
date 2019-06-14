@@ -1067,13 +1067,15 @@ namespace FunctionalTests.StepDefs
             found.Should().BeTrue("Because a record should exist in SQL stage DB for resource: " + table);
             if ( found)
             {
-           //     var ds = helper.GetRecord("dss-" + table, recordId);
+                
                 string PrimaryKeyId = constants.IdFromResource(table);
                 string PrimaryKeyCap = PrimaryKeyId.Substring(0, 1).ToUpper() + PrimaryKeyId.Substring(1);
                 var dict = helper.GetDataTableDictionaryList(dataSet, PrimaryKeyCap);
                 //dict[0]["id"].Remove(.Remove();
-                // check all values in response are matched in dataset
-                
+
+                // various factors affect what is present in the response data and the sql table data.
+                // some tweaks to the dictionaries are required to ensure a like for like comparision can be acheived
+
                 if (addSubcontractorIdToCollection && !values.Keys.Contains("SubcontractorId") )
                 {
                     values.Add("SubcontractorId", "");
@@ -1123,6 +1125,8 @@ namespace FunctionalTests.StepDefs
                     values.Remove("LastModifiedBy");
                     values.Add("LastModifiedTouchpointId", dict[0]["LastModifiedTouchpointId"]);
                 }
+
+                // check all values in response are matched in dataset
 
                 string errorMessage;
                 found = CompareX<string, string>(dict[0], values, out errorMessage);
