@@ -55,7 +55,7 @@ namespace FunctionalTests.Helpers
                 IRestResponse response = null;
                 bool retry = true;
                 int tries = 0;
-                int maxTries = 10;
+                int maxTries = 8;
                 while (retry)
                 {
                     tries++;
@@ -65,7 +65,8 @@ namespace FunctionalTests.Helpers
                     {
                         if (tries <= maxTries)
                         {
-                            Thread.Sleep(10000);
+                            Console.WriteLine("Sleep for " + (500 * tries) + " ms  and retry ");
+                            Thread.Sleep(500 * tries);
                         }
                         else retry = false;
                     }

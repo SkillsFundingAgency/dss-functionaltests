@@ -68,6 +68,8 @@ Feature: PostV2
 		| VenuePostCode            | NN1 2NN                |
 		Then there should be a 201 response
 		And the "sessions" cosmos document should include CreatedBy
+		And the "sessions" cosmos document should include "Longitude" with value "-1.00181"
+		And the "sessions" cosmos document should include "Latitude" with value "52.12814"
 		And the response body should not contain the "CreatedBy"
 		And there should be a record in the sessions ChangeFeed table
 		And the captured table data should include key "Longitude" with value "-1.00181"
@@ -75,7 +77,7 @@ Feature: PostV2
 		And there should be a record in the sessions-history ChangeFeed table
 		And the captured table data should include key "Longitude" with value "-1.00181"
 		And the captured table data should include key "Latitude" with value "52.12814"
-
+			
 @sessions
 	Scenario: Create a Session for existing customer with incorrect format for date and time of session
 		Given I post a session with the following details:

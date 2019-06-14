@@ -192,6 +192,26 @@ Feature: PostV2
 		| Latitude  | 52.12814 |
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
+
+@addresses 
+	Scenario: Post Address with geocoding where postcode cannot be geocoded
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | ze11 1ef             |
+		Then there should be a 201 response
+	    And the response body should contain:
+		| field     | value    |
+		| Address1  | 1        |
+		| PostCode  | ze11 1ef |
+		| Longitude |          |
+		| Latitude  |          |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
 		
 
 
