@@ -802,7 +802,17 @@ namespace FunctionalTests.StepDefs
         {
             string docJson = "";
             // retreive the cosmos document relating to the last request
-            CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            Console.WriteLine("CreatedBy check. Initialising cosmosdb connection objet for: " + envSettings.CosmosEndPoint);
+
+            try
+            {
+                CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to initialise:  " + e.Message);
+            }
+            
 
             try
             {
@@ -830,7 +840,17 @@ namespace FunctionalTests.StepDefs
         {
             string docJson = "";
             // retreive the cosmos document relating to the last request
-            CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            Console.WriteLine("Cosmos value check (" + p1 + "). Initialising cosmosdb connection objet for: " + envSettings.CosmosEndPoint);
+
+            try
+            {
+                CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to initialise:  " + e.Message);
+            }
+
 
             try
             {
