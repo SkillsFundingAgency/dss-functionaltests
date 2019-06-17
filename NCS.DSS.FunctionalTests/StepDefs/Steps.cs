@@ -824,7 +824,7 @@ namespace FunctionalTests.StepDefs
                 Console.WriteLine(e.Message);
             }
 
-            docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to Cosmos was unsuccessful");
+            docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to CosmosDB was unsuccessful");
             // determine the touchpoint used in the post
             // check createdby field is present with expected value
             //JObject docJsonObj = JObject.Parse(docJson);
