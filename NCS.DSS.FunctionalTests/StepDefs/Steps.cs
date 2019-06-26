@@ -435,7 +435,7 @@ namespace FunctionalTests.StepDefs
         private void patchFromTable(Table table, String touchpointId = "")
         {
             // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
-            Thread.Sleep(5000);
+            Thread.Sleep(5250);
             SetVersion("patch");
             Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
             id = dict.FirstOrDefault().Value;

@@ -13,7 +13,7 @@ namespace FunctionalTests.Helpers
     {
 
         public static Stopwatch responseTime = new Stopwatch();
-        static int ThrottleBackofThreshold = 200;
+        static int ThrottleBackofThreshold = 2000;
         static int ThrottleBackoffWaitTime = 5000;
         static bool ThrottleBackoff = false;
         static DateTime ThrottleBackoffStart = DateTime.MinValue;
