@@ -18,22 +18,24 @@ namespace NCS.DSS.FunctionalTests.Features.Session
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("PostV3")]
-    [NUnit.Framework.CategoryAttribute("postV2")]
-    public partial class PostV3Feature
+    [NUnit.Framework.DescriptionAttribute("Session Patch (V2)")]
+    [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("patchV2")]
+    public partial class SessionPatchV2Feature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "PostV3.feature"
+#line 1 "SessionPatcchV2.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "PostV3", null, ProgrammingLanguage.CSharp, new string[] {
-                        "postV2"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Session Patch (V2)", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV1",
+                        "patchV2"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,7 +75,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         
         public virtual void FeatureBackground()
         {
-#line 7
+#line 9
  #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -84,8 +86,8 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 8
-  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
+#line 10
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -96,8 +98,8 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table2.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 12
-  testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
+#line 14
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -114,115 +116,116 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table3.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 16
-  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table3, "And ");
+#line 18
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table3, "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with all valid Values")]
+        [NUnit.Framework.DescriptionAttribute("Patch DateandTimeOfSession")]
         [NUnit.Framework.CategoryAttribute("sessions")]
-        [NUnit.Framework.CategoryAttribute("postV3")]
-        public virtual void CreateASessionForExistingCustomerWithAllValidValues()
+        public virtual void PatchDateandTimeOfSession()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with all valid Values", null, new string[] {
-                        "sessions",
-                        "postV3"});
-#line 28
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateandTimeOfSession", null, new string[] {
+                        "sessions"});
+#line 27
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
+#line 9
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
+                        "field",
+                        "value"});
             table4.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "2018-06-21T14:45:00Z"});
             table4.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 29
-  testRunner.Given("I post a session with the following details:", ((string)(null)), table4, "Given ");
-#line 33
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            table4.AddRow(new string[] {
+                        "SessionAttended",
+                        "true"});
+#line 28
+ testRunner.Given("I post a session with the following details:", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table5.AddRow(new string[] {
                         "DateandTimeOfSession",
-                        "2018-06-21T14:45:00Z"});
-            table5.AddRow(new string[] {
-                        "VenuePostCode",
-                        "NN1 2NN"});
-            table5.AddRow(new string[] {
-                        "SessionAttended",
-                        "null"});
-            table5.AddRow(new string[] {
-                        "ReasonForNonAttendance",
-                        "99"});
-#line 34
-  testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Change feed for Post Session")]
-        [NUnit.Framework.CategoryAttribute("sessions")]
-        public virtual void ChangeFeedForPostSession()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Session", null, new string[] {
-                        "sessions"});
-#line 42
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
- this.FeatureBackground();
+                        "2018-06-22T14:45:00Z"});
+#line 33
+  testRunner.When("I patch the following:", ((string)(null)), table5, "When ");
+#line 36
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table6.AddRow(new string[] {
-                        "AdviserName",
-                        "BillyAdviser"});
+                        "DateandTimeOfSession",
+                        "2018-06-22T14:45:00Z"});
             table6.AddRow(new string[] {
-                        "AdviserContactNumber",
-                        "98798678967967"});
+                        "VenuePostCode",
+                        "NN1 2NN"});
+            table6.AddRow(new string[] {
+                        "SessionAttended",
+                        "true"});
+#line 37
+  testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
+#line 42
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
-  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table6, "Given ");
+  testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+  testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch VenuePostCode")]
+        [NUnit.Framework.CategoryAttribute("sessions")]
+        public virtual void PatchVenuePostCode()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch VenuePostCode", null, new string[] {
+                        "sessions"});
+#line 47
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+ this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
+                        "field",
+                        "value"});
             table7.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
+                        "DateandTimeOfSession",
+                        "2018-06-21T14:45:00Z"});
             table7.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 47
-  testRunner.And("I post a Customer with the following details:", ((string)(null)), table7, "And ");
+                        "VenuePostCode",
+                        "NN1 2NN"});
+            table7.AddRow(new string[] {
+                        "SessionAttended",
+                        "true"});
+#line 48
+ testRunner.Given("I post a session with the following details:", ((string)(null)), table7, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table8.AddRow(new string[] {
-                        "DateandTimeOfInteraction",
-                        "2018-06-25T11:21:00Z"});
-            table8.AddRow(new string[] {
-                        "Channel",
-                        "2"});
-            table8.AddRow(new string[] {
-                        "InteractionType",
-                        "2"});
-            table8.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-06-22T16:52:10Z"});
-#line 51
-  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table8, "And ");
+                        "VenuePostCode",
+                        "NN1 2NQ"});
+#line 53
+  testRunner.When("I patch the following via a different touchpoint", ((string)(null)), table8, "When ");
+#line 56
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 57
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+  testRunner.And("the response body should have different LastUpdatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -232,77 +235,69 @@ namespace NCS.DSS.FunctionalTests.Features.Session
                         "2018-06-21T14:45:00Z"});
             table9.AddRow(new string[] {
                         "VenuePostCode",
-                        "NN1 2NN"});
-#line 57
-  testRunner.And("I post a session with the following details:", ((string)(null)), table9, "And ");
-#line 61
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
-  testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
-  testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "NN1 2NQ"});
+            table9.AddRow(new string[] {
+                        "SessionAttended",
+                        "true"});
+#line 59
+  testRunner.And("the response body should contain:", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with incorrect format for date and time of" +
-            " session")]
+        [NUnit.Framework.DescriptionAttribute("Patch SessionAttended")]
         [NUnit.Framework.CategoryAttribute("sessions")]
-        public virtual void CreateASessionForExistingCustomerWithIncorrectFormatForDateAndTimeOfSession()
+        public virtual void PatchSessionAttended()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
-                    " session", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SessionAttended", null, new string[] {
                         "sessions"});
 #line 66
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
+#line 9
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
+                        "field",
+                        "value"});
             table10.AddRow(new string[] {
                         "DateandTimeOfSession",
-                        "21-065-2012"});
+                        "2018-06-21T14:45:00Z"});
             table10.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
+            table10.AddRow(new string[] {
+                        "SessionAttended",
+                        "true"});
 #line 67
-  testRunner.Given("I post a session with the following details:", ((string)(null)), table10, "Given ");
-#line 71
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with incorrect format for venue post code")]
-        [NUnit.Framework.CategoryAttribute("sessions")]
-        public virtual void CreateASessionForExistingCustomerWithIncorrectFormatForVenuePostCode()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, new string[] {
-                        "sessions"});
-#line 74
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
- this.FeatureBackground();
+ testRunner.Given("I post a session with the following details:", ((string)(null)), table10, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table11.AddRow(new string[] {
-                        "DateandTimeOfSession",
-                        "21-06-2018"});
-            table11.AddRow(new string[] {
-                        "VenuePostCode",
-                        "NN1"});
+                        "SessionAttended",
+                        "false"});
+#line 72
+  testRunner.When("I patch the following:", ((string)(null)), table11, "When ");
 #line 75
-  testRunner.Given("I post a session with the following details:", ((string)(null)), table11, "Given ");
-#line 79
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table12.AddRow(new string[] {
+                        "DateandTimeOfSession",
+                        "2018-06-21T14:45:00Z"});
+            table12.AddRow(new string[] {
+                        "VenuePostCode",
+                        "NN1 2NN"});
+            table12.AddRow(new string[] {
+                        "SessionAttended",
+                        "false"});
+#line 76
+  testRunner.And("the response body should contain:", ((string)(null)), table12, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

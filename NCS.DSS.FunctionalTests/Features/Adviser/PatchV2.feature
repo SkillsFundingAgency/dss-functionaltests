@@ -19,6 +19,7 @@ Feature: PatchV2
 		| AdviserName			| Billy Jones	|
 		| AdviserEmailAddress	| billy@bill.com|
 		| AdviserContactNumber	| 98798678967967|
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the adviserDetails ChangeFeed table
 		And there should be a record in the adviserDetails-history ChangeFeed table
 
@@ -30,10 +31,12 @@ Feature: PatchV2
 		| AdviserName			| Billy Smith	|
 		| AdviserEmailAddress	| billy@bill.com|
 		| AdviserContactNumber	| 98798678967967|
-		When I patch the following:
+		When I patch the following via a different touchpoint
 		| Field                 | Value         |
 		| AdviserName			| Billy Jones	|
 		Then there should be a 200 response
+		And the response body should not contain the "CreatedBy"
+		And the response body should have different LastUpdatedBy
 		And the response body should contain:
 		| Field                 | Value			|
 		| AdviserName			| Billy Jones	|

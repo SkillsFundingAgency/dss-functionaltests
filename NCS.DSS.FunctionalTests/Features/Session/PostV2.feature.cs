@@ -140,11 +140,17 @@ namespace NCS.DSS.FunctionalTests.Features.Session
                         "2018-06-21T14:45:00Z"});
             table4.AddRow(new string[] {
                         "VenuePostCode",
-                        "NN1 2NN"});
+                        "NN1 5EW"});
 #line 29
   testRunner.Given("I post a session with the following details:", ((string)(null)), table4, "Given ");
 #line 33
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 34
+  testRunner.And("the \"sessions\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+  testRunner.And("the \"sessions\" cosmos document should include \"Longitude\" with value \"-0.88325\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+  testRunner.And("the \"sessions\" cosmos document should include \"Latitude\" with value \"52.23917\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -154,15 +160,25 @@ namespace NCS.DSS.FunctionalTests.Features.Session
                         "2018-06-21T14:45:00Z"});
             table5.AddRow(new string[] {
                         "VenuePostCode",
-                        "NN1 2NN"});
+                        "NN1 5EW"});
             table5.AddRow(new string[] {
                         "SessionAttended",
                         "null"});
             table5.AddRow(new string[] {
                         "ReasonForNonAttendance",
                         "99"});
-#line 34
+#line 37
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
+#line 43
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+  testRunner.And("the response body should not contain the \"Longitude\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+  testRunner.And("the response body should not contain the \"Latitude\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+  testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+  testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -174,7 +190,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Session", null, new string[] {
                         "sessions"});
-#line 42
+#line 50
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -189,7 +205,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table6.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 43
+#line 51
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -201,7 +217,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table7.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 47
+#line 55
   testRunner.And("I post a Customer with the following details:", ((string)(null)), table7, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -219,7 +235,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table8.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 51
+#line 59
   testRunner.And("I post an Interaction with the following details:", ((string)(null)), table8, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -231,14 +247,30 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table9.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 57
+#line 65
   testRunner.And("I post a session with the following details:", ((string)(null)), table9, "And ");
-#line 61
+#line 69
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
+#line 70
+  testRunner.And("the \"sessions\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+  testRunner.And("the \"sessions\" cosmos document should include \"Longitude\" with value \"-1.00181\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+  testRunner.And("the \"sessions\" cosmos document should include \"Latitude\" with value \"52.12814\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 74
   testRunner.And("there should be a record in the sessions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 75
+  testRunner.And("the captured table data should include key \"Longitude\" with value \"-1.00181\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+  testRunner.And("the captured table data should include key \"Latitude\" with value \"52.12814\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
   testRunner.And("there should be a record in the sessions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+  testRunner.And("the captured table data should include key \"Longitude\" with value \"-1.00181\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+  testRunner.And("the captured table data should include key \"Latitude\" with value \"52.12814\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -252,7 +284,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
                     " session", null, new string[] {
                         "sessions"});
-#line 66
+#line 82
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -267,9 +299,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table10.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 67
+#line 83
   testRunner.Given("I post a session with the following details:", ((string)(null)), table10, "Given ");
-#line 71
+#line 87
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -282,7 +314,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, new string[] {
                         "sessions"});
-#line 74
+#line 90
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -297,9 +329,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table11.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1"});
-#line 75
+#line 91
   testRunner.Given("I post a session with the following details:", ((string)(null)), table11, "Given ");
-#line 79
+#line 95
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

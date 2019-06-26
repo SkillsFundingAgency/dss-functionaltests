@@ -51,6 +51,7 @@ Feature: PatchV2
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the actionPlans ChangeFeed table
 		And there should be a record in the actionPlans-history ChangeFeed table
 
@@ -65,7 +66,7 @@ Feature: PatchV2
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		When I patch the following:
+		When I patch the following via a different touchpoint
 		| Field                          | Value                |
 		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
 		Then there should be a 200 response
@@ -79,6 +80,10 @@ Feature: PatchV2
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
+		And the response body should not contain the "CreatedBy"
+		And the response body should have different LastUpdatedBy
+		And there should be a record in the actionPlans ChangeFeed table
+		And there should be a record in the actionPlans-history ChangeFeed table
 
 @actionplans
 	Scenario: Patch Valid DateActionPlanCreated

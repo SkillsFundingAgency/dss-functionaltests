@@ -15,6 +15,7 @@ namespace FunctionalTests
         public string TestEndpoint01 => Configuration["RestService:TestEndpoint01"];
         public string TestEndpoint02 => Configuration["RestService:TestEndpoint02"];
         public string TestEndpoint03 => Configuration["RestService:TestEndpoint03"];
+        public int ThrottleValue => 3;// Configuration["RestService:ThrottleValue"];
         public string SubscriptionKey => Configuration["RestService:SubscriptionKey"];
         public string sqlConnectionString => Configuration["SQLDataStore:ConnectionString"];
         public string CosmosEndPoint => Configuration["CosmosDB:EndPoint"];

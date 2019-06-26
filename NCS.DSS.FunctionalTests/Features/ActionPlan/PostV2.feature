@@ -38,6 +38,7 @@ Feature: PostV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		Then there should be a 201 response
+	    And the "actionplans" cosmos document should include CreatedBy
 		And the response body should contain:
 		| field                          | value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
@@ -49,7 +50,9 @@ Feature: PostV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		And the response body should contain the SessionId 
-
+		And the response body should not contain the "CreatedBy"
+		And there should be a record in the actionPlans ChangeFeed table
+		And there should be a record in the actionPlans-history ChangeFeed table
 
 	
 @actionplans	@subcontractorId
@@ -65,6 +68,7 @@ Feature: PostV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		Then there should be a 201 response
+	    And the "actionplans" cosmos document should include CreatedBy
 		And the response body should contain:
 		| field                          | value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
@@ -75,6 +79,7 @@ Feature: PostV2
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
+		And the response body should not contain the "CreatedBy"
 		And the response body should contain the SessionId 
 		And the response body should contain the SubContractorId 
 

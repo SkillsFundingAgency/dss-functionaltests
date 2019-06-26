@@ -25,12 +25,12 @@ Background:
 		| VenuePostCode            |NN1 2NN                         |
 		| SessionAttended          |true                            |
 
-@mytag
+@mytag @ignore
 Scenario: Subscribe to a customer
 	Given I post a new subscription request
 	Then there should be a 201 response
-		And the response body should contain:
 		| Field      | Value |
+		And the response body should contain:
 		| Subscribe  | true  |
     	And there should be a record in the subscriptions ChangeFeed table
 		And there should be a record in the subscriptions-history ChangeFeed table

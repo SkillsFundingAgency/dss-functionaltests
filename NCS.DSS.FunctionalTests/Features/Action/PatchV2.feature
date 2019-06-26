@@ -59,6 +59,7 @@ Feature: PatchV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the actions ChangeFeed table
 		And there should be a record in the actions-history ChangeFeed table
 
@@ -73,7 +74,7 @@ Feature: PatchV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		When I patch the following:
+		When I patch the following via a different touchpoint
 		| Field                         | Value                |
 		| ActionSummary                 | A New Summary        |
 		Then there should be a 200 response
@@ -86,6 +87,10 @@ Feature: PatchV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
+		And the response body should not contain the "CreatedBy"
+		And the response body should have different LastUpdatedBy
+		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
 @actions
 	Scenario: Patch SignpostedTo

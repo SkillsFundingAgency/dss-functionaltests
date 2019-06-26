@@ -36,11 +36,14 @@ Feature: PostV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -98.50812            |
-		| Latitude             | 52.40121             |
+		| Longitude            | -0.13426            |
+		| Latitude             | 51.53494             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
+	    And the "addresses" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
+		And the "addresses" cosmos document should include CreatedBy
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
 
@@ -71,12 +74,14 @@ Feature: PostV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -98.50812            |
-		| Latitude             | 52.40121             |
+		| Longitude            | -0.13426            |
+		| Latitude             | 51.53494             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 		And the response body should contain the SubContractorId 
+	    And the "addresses" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
 
@@ -97,8 +102,8 @@ Feature: PostV2
 		| Address5             | null	              |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | null	              |
-		| Longitude            | null	              |
-		| Latitude             | null	              |
+		| Longitude            | -0.13426            |
+		| Latitude             | 51.53494             |
 		| EffectiveFrom        | null	              |
 		| EffectiveTo          | null	              |
 		And there should be a record in the addresses ChangeFeed table
@@ -129,8 +134,8 @@ Feature: PostV2
 		| Address5             | AbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghij |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode | NW22WN               |
-		| Longitude            | -98.50812            |
-		| Latitude             | 52.40121             |
+		| Longitude            | -0.13426            |
+		| Latitude             | 51.53494             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
@@ -152,6 +157,67 @@ Feature: PostV2
 		Then there should be a 201 response
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
+
+@addresses
+	Scenario: Post Address with geocoding where postcode has no space
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | nn12tx               |
+		Then there should be a 201 response
+		And the response body should contain:
+		| field     | value     |
+		| Address1  | 1         |
+		| PostCode  | nn12tx   |
+		| Longitude | -1.00181 |
+		| Latitude  | 52.12814 |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
+@addresses 
+	Scenario: Post Address with geocoding where postcode has space
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | nn1 2tx             |
+		Then there should be a 201 response
+	    And the response body should contain:
+		| field     | value     |
+		| Address1  | 1         |
+		| PostCode  | nn1 2tx   |
+		| Longitude | -1.00181 |
+		| Latitude  | 52.12814 |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
+@addresses 
+	Scenario: Post Address with geocoding where postcode cannot be geocoded
+		Given I post a Customer with the following details:
+		| field						 | value                |
+		| GivenName                  | Bob                  |
+		| FamilyName                 | Customer             |
+		And I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | ze11 1ef             |
+		Then there should be a 201 response
+	    And the response body should contain:
+		| field     | value    |
+		| Address1  | 1        |
+		| PostCode  | ze11 1ef |
+		| Longitude |          |
+		| Latitude  |          |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+		
 
 
 @addresses

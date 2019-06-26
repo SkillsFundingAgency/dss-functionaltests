@@ -87,16 +87,18 @@ namespace NCS.DSS.FunctionalTests.Helpers
             return returnValue;
         }
 
-        public DataSet GetRecord(string table, string recordId, string orderBy = "")
+        public DataSet GetRecord(string table, string recordId, string orderBy = "", string additionalClause = "")
         {
             DataSet ds = new DataSet(table);
-            string sql = @"select* from[" + table + "] where id = '" + recordId + "'";
+            string sql = @"select* from[" + table + "] where id = '" + recordId + "'" + (additionalClause.Length >0 ? " AND " + additionalClause : "" );
 
             if (orderBy.Length > 0)
             {
                 sql = sql + " order by " + orderBy;
 
             }
+            Console.WriteLine("SQLHelper: GetRecord. Table: " + table + " id: " + recordId);
+            Console.WriteLine("SQLHelper: sql: " + sql);
             if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
             {
                 using (SqlCommand cmd = new SqlCommand(sql, Connection))
@@ -108,6 +110,26 @@ namespace NCS.DSS.FunctionalTests.Helpers
                 }
             }
             return ds;
+        }
+
+
+        public long GetRecordCount(string table, string recordId )
+        {
+           // DataSet ds = new DataSet(table);
+            string sql = @"select count(1) from[" + table + "] where id = '" + recordId + "'";
+            string returnValueString = "0";
+
+            if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, Connection))
+                {
+                    returnValueString = cmd.ExecuteScalar().ToString(); ;
+                    //SqlDataAdapter da = new SqlDataAdapter();
+                    //da.SelectCommand = cmd;
+                    //da.Fill(ds);
+                }
+            }
+            return long.Parse(returnValueString);
         }
 
         public List<Dictionary<string, string>> GetDataTableDictionaryList(DataSet dataSet, string primaryKey)

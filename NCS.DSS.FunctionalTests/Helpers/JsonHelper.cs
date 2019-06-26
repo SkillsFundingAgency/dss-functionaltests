@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace NCS.DSS.TestHelperLibrary.Helpers
+namespace NCS.DSS.FunctionalTests.Helpers
 {
     public static class JsonHelper
     {

@@ -3,7 +3,7 @@ using FunctionalTests.Helpers;
 using FunctionalTests.Models;
 using NCS.DSS.FunctionalTests.Helpers;
 using NCS.DSS.FunctionalTests.Models;
-using Newtonsoft.Json;
+using Newtonsoft.Json;  
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
@@ -45,7 +45,13 @@ namespace FunctionalTests.StepDefs
         private string diversityId;
         private string subscriptionId;
         private string transferId;
+        private bool lastRequestWasPatch = false;
+        private DateTime requestTime;
+        private DateTime PostUpdateTime;
+        private string creatingTouchpoint;
+        private string lastTouchpoint;
         private List<TestDataItem> loadedData = new List<TestDataItem>();
+        Dictionary<string, string> sqlData = new Dictionary<string, string>();
 
         public string actionId { get; set; }
         private readonly ScenarioContext scenarioContext;
@@ -53,9 +59,19 @@ namespace FunctionalTests.StepDefs
         public Steps(ScenarioContext context)
         {
             scenarioContext = context;
+            RestHelper.Throttle = envSettings.ThrottleValue;
             
         }
         string AssertAndExtract(string key, IRestResponse response)
+        {
+            string extractedValue = ExtractFromResponse(key, response);
+            
+            loadedData.Add(new TestDataItem(key, extractedValue));
+            scenarioContext["TestData"] = loadedData;
+            return extractedValue;
+        }
+
+        string ExtractFromResponse(string key, IRestResponse response)
         {
             string extractedValue = "";
             if (response.IsSuccessful)
@@ -69,8 +85,6 @@ namespace FunctionalTests.StepDefs
                     Console.WriteLine("");
                 }
                 extractedValue.Should().NotBeNullOrEmpty();
-                loadedData.Add(new TestDataItem(key, extractedValue));
-                scenarioContext["TestData"] = loadedData;
             }
             else
             {
@@ -101,33 +115,9 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(customer);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             customerId = AssertAndExtract("CustomerId", response);
-            /*if (response.IsSuccessful)
-            {
-                Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                customerId = actualVals["CustomerId"];
-            }
-
-            url = envSettings.BaseUrl + "customers/api/customers/";
-            var customer = table.CreateInstance<Customer>();
-            json2 = JsonConvert.SerializeObject(customer);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            customerId = AssertAndExtract("CustomerId", response);*/
-
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    customerId = actualVals["CustomerId"];
-            //    Console.WriteLine("Storing context information:" + customerId + " - " + customerId);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Request was unsuccessful" );
-            //    Console.WriteLine("response status: " + response.StatusCode);
-            //    Console.WriteLine("response message: " + response.ErrorMessage);
-            //    Console.WriteLine("response expection: " + response.ErrorException);
-            //}
-            
-
+            id = customerId;
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
       
@@ -144,11 +134,8 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(customer);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             customerId = AssertAndExtract("CustomerId", response);
-            /*if (response.IsSuccessful)
-            {
-                Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                customerId = actualVals["CustomerId"];
-            }*/
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -161,19 +148,9 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(adviser);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             adviserDetailId = AssertAndExtract("AdviserDetailId", response);
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> actualVals = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    adviserDetailId = actualVals["AdviserDetailId"];
-            //    Console.WriteLine("Storing context information:" + adviserDetailId + " - " + adviserDetailId);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Request was unsuccessful");
-            //    Console.WriteLine("response status: " + response.StatusCode);
-            //    Console.WriteLine("response message: " + response.ErrorMessage);
-            //    Console.WriteLine("response expection: " + response.ErrorException);
-            //}
+            id = adviserDetailId;
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
         [Given(@"I post an Interaction with the following details:")]
@@ -189,11 +166,8 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(interaction);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             interactionId = AssertAndExtract("InteractionId", response);
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> interactionDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    interactionId = interactionDictionary["InteractionId"];
-            //}
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -206,11 +180,9 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(address);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             addressId = AssertAndExtract("AddressId", response);
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> addressDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    addressId = addressDictionary["AddressId"];
-            //}
+            id = addressId;
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
         [Then(@"when I post an Address with the following details:")]
@@ -229,11 +201,8 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(contact);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             contactId = AssertAndExtract("ContactId", response);
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> contactDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    contactId = contactDictionary["ContactId"];
-            //}
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -258,21 +227,9 @@ namespace FunctionalTests.StepDefs
 
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             actionPlanId = AssertAndExtract("ActionPlanId", response);
-            /*if (response.IsSuccessful)
-            {
-                Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                actionPlanId = dict["ActionPlanId"];
-            }
-
-            var actionPlan = table.CreateInstance<ActionPlan>();
-            json2 = JsonConvert.SerializeObject(actionPlan);
-            response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
-            actionPlanId = AssertAndExtract("ActionPlanId", response);*/
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    actionPlanId = dict["ActionPlanId"];
-            //}
+            id = actionPlanId;
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -298,22 +255,9 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(action);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             actionId = AssertAndExtract("ActionId", response);
-            /*
-            if (response.IsSuccessful)
-            {
-                Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                actionId = dict["ActionId"];
-            }
-
-            var action = table.CreateInstance<NCS.DSS.FunctionalTests.Models.Action>();
-            json2 = JsonConvert.SerializeObject(action);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            actionId = AssertAndExtract("ActionId", response);*/
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    actionId = dict["ActionId"];
-            //}
+            id = actionId;
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -326,11 +270,8 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(diversity);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             diversityId = AssertAndExtract("DiversityId", response);
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    actionId = dict["DiversityId"];
-            //}
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -354,22 +295,9 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(session);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             sessionId = AssertAndExtract("SessionId", response);
-            /*
-            if (response.IsSuccessful)
-            {
-                Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                sessionId = dict["SessionId"];
-            }
-        
-            var session = table.CreateInstance<Session>();
-            json2 = JsonConvert.SerializeObject(session);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            sessionId = AssertAndExtract("SessionId", response);*/
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    sessionId = dict["SessionId"];
-            //}
+            id = sessionId;
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -393,24 +321,9 @@ namespace FunctionalTests.StepDefs
 
             json = JsonConvert.SerializeObject(goal);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
-            goalId = AssertAndExtract("GoalId", response);
-
-            /*
-            if (response.IsSuccessful)
-            {
-                Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                goalId = dict["GoalId"];
-            }
-            var goal = table.CreateInstance<Goal>();
-            json2 = JsonConvert.SerializeObject(goal);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            goalId = AssertAndExtract("GoalId", response);*/
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    goalId = dict["GoalId"];
-            //}
-
+            id = goalId = AssertAndExtract("GoalId", response);
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
         [Given(@"I post a webchat with the following details:")]
@@ -421,11 +334,9 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(webchat);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             webChatId = AssertAndExtract("WebChatId", response);
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    webChatId = dict["WebChatId"];
-            //}
+            PostUpdateTime = DateTime.Parse(ExtractFromResponse("LastModifiedDate", response)).ToUniversalTime();
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
         [Given(@"I post an outcome with the following details:")]
@@ -448,21 +359,9 @@ namespace FunctionalTests.StepDefs
             json = JsonConvert.SerializeObject(outcome);
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             outcomeId = AssertAndExtract("OutcomeId", response);
-            /*
-            if (response.IsSuccessful)
-            {
-                Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                outcomeId = dict["OutcomeId"];
-            }
-            var outcome = table.CreateInstance<Outcome>();
-            json2 = JsonConvert.SerializeObject(outcome);
-            response = RestHelper.Post(url, json2, envSettings.TouchPointId, envSettings.SubscriptionKey);
-            outcomeId = AssertAndExtract("OutcomeId", response);*/
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    outcomeId = dict["OutcomeId"];
-            //}
+            id = outcomeId;
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
         [Given(@"I post a Transfer with the following details:")]
@@ -488,12 +387,8 @@ namespace FunctionalTests.StepDefs
                                                });
             response = RestHelper.Post(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             transferId = AssertAndExtract("TransferId", response);
-            /*if (response.IsSuccessful)
-            {
-                Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-                transferId = dict["TransferId"];
-            }*/
-
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
         [Given(@"I post a new subscription request")]
@@ -503,6 +398,8 @@ namespace FunctionalTests.StepDefs
             json2 = "{ \"subscribe\": true }";
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint02, envSettings.SubscriptionKey);
             subscriptionId = AssertAndExtract("SubscriptionId", response);
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
 
@@ -514,20 +411,32 @@ namespace FunctionalTests.StepDefs
             json2 = JsonConvert.SerializeObject(subscription);
             response = RestHelper.Post(url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             subscriptionId = AssertAndExtract("SubscriptionId", response);
-            //if (response.IsSuccessful)
-            //{
-            //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            //    goalId = dict["SubscriptionId"];
-            //}
+            creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
+            lastRequestWasPatch = false;
         }
 
+
+        [When(@"I patch the following using ""(.*)"":")]
+        [When(@"I patch the following via a different touchpoint")]
+        public void WhenIPatchTheFollowingViaADifferentTouchpoint(Table table)
+        {
+            // pass through to overload
+            patchFromTable(table, envSettings.TestEndpoint02);
+        }
 
 
 
         [When(@"I patch the following:")]
         public void WhenIPatchTheFollowing(Table table)
         {
-            SetVersion("patch");    
+            patchFromTable(table);
+        }
+
+        private void patchFromTable(Table table, String touchpointId = "")
+        {
+            // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
+            Thread.Sleep(5000);
+            SetVersion("patch");
             Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
             id = dict.FirstOrDefault().Value;
             Dictionary<string, string> patchVals = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
@@ -536,7 +445,17 @@ namespace FunctionalTests.StepDefs
                 patchVals.Add("SessionId", sessionId);
             }
             json = JsonConvert.SerializeObject(patchVals);
-            response = RestHelper.Patch(url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey, id);
+            lastTouchpoint = (touchpointId.Equals(string.Empty) ? envSettings.TestEndpoint01 : touchpointId);
+            //requestTime = DateTime.UtcNow;
+
+
+            response = RestHelper.Patch(url, json, lastTouchpoint, envSettings.SubscriptionKey, id);
+            string RequestTimeString = response.Headers
+                .Where(x => x.Name == "Date")
+                .Select(x => x.Value)
+                .FirstOrDefault().ToString();
+            requestTime = DateTime.Parse(RequestTimeString).ToUniversalTime();
+            lastRequestWasPatch = true;
 
         }
 
@@ -696,7 +615,24 @@ namespace FunctionalTests.StepDefs
             {
                 expectedVals.Add(row[0], row[1]);
             }
-            CheckResults(expectedVals, actualVals).Should().Be(true);
+            string message = "";
+            bool match = CheckResults(expectedVals, actualVals, out message);
+            if (!match)
+            {
+                //output the dictionaries
+                Console.WriteLine("Expected Results: ");
+                foreach (var kv in expectedVals)
+                {
+                    Console.WriteLine("   " + kv.Key + " = " + kv.Value);
+                }
+                Console.WriteLine("Actual Results: ");
+                foreach (var kv in actualVals)
+                {
+                    Console.WriteLine("   " + kv.Key + " = " + kv.Value);
+                }
+            }   
+
+            match.Should().Be(true, "Because " + message);
         }
 
 
@@ -766,22 +702,123 @@ namespace FunctionalTests.StepDefs
             response.Content.Should().Contain(sessionId);
         }
 
+        [Then(@"the response body should not contain the ""(.*)""")]
+        public void ThenTheResponseBodyShouldNotContainThe(string p0)
+        {
+            response.Content.Should().NotContain(p0);
+        }
+
+        [Then(@"the response body should have different LastUpdatedBy")]
+        public void ThenTheResponseBodyShouldHaveDifferentLastUpdatedBy()
+        {
+            Table tempTable = new Table( new string[]{ "Field", "Value" } );
+            tempTable.AddRow(new Dictionary<string, string>()
+                                {
+                                    // goals uses different field name for last modified by, so check if last ID was a goal and use appropriate field name
+                                     { "Field", ( goalId == id ? "LastModifiedBy" : "LastModifiedTouchpointId" ) }
+                                    ,{ "Value", lastTouchpoint }
+                                } 
+                            );
+
+            ThenMyBindingShouldHaveTheFollowingObjects(tempTable);
+        }
+
+      
+
+
+
+        [Then(@"the ""(.*)"" cosmos document should include CreatedBy")]
+        public void ThenTheCosmosDocumentShouldIncludeCreatedBy(string p0)
+        {
+            string docJson = "";
+            // retreive the cosmos document relating to the last request
+            Console.WriteLine("CreatedBy check. Initialising cosmosdb connection object for: " + creatingTouchpoint);
+
+            try
+            {
+                CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to initialise:  " + e.Message);
+            }
+            
+
+            try
+            {
+                docJson = CosmosHelper.RetrieveDocument(p0, p0, id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to retrieve " + p0 + " document with id " + id + " from end point: " + envSettings.CosmosEndPoint);
+                Console.WriteLine(e.Message);
+            }
+
+            docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to CosmosDB was unsuccessful");
+            // determine the touchpoint used in the post
+            // check createdby field is present with expected value
+            //JObject docJsonObj = JObject.Parse(docJson);
+            JsonHelper.GetPropertyFromJsonString(docJson,"CreatedBy").Should().Be(creatingTouchpoint, "Because CreatedBy should exist in collection with value " + creatingTouchpoint);
+
+
+        }
+
+
+
+        [Then(@"the ""(.*)"" cosmos document should include ""(.*)"" with value ""(.*)""")]
+        public void ThenTheCosmosDocumentShouldIncludeWithValue(string p0, string p1, string p2)
+        {
+            string docJson = "";
+            // retreive the cosmos document relating to the last request
+            Console.WriteLine("Cosmos value check (" + p1 + "). Initialising cosmosdb connection object for: " + envSettings.CosmosEndPoint);
+
+            try
+            {
+                CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to initialise:  " + e.Message);
+            }
+
+
+            try
+            {
+                docJson = CosmosHelper.RetrieveDocument(p0, p0, id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Failed to retrieve " + p0 + " document with id " + id + " from end point: " + envSettings.CosmosEndPoint);
+                Console.WriteLine(e.Message);
+            }
+
+            docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to Cosmos was unsuccessful");
+            // determine the touchpoint used in the post
+            // check createdby field is present with expected value
+            //JObject docJsonObj = JObject.Parse(docJson);
+            JsonHelper.GetPropertyFromJsonString(docJson, p1).Should().Be(p2, "Because " + p1 + " should exist in collection with value " + p2);
+
+        }
+
+
+
 
         public bool CompareX<TKey, TValue>(
-        Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2)
+        Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2, out string errorMessage)
         {
+            errorMessage = "";
             if (dict1 == dict2) return true;
             if ((dict1 == null) || (dict2 == null))
             {
                 Console.WriteLine("Compare Dictionary: FALSE - null dictionary");
                 return false;
             }
-            if (dict1.Count != dict2.Count)
+     /*       if (dict1.Count != dict2.Count)
             {
                 Console.WriteLine("Compare Dictionary: FALSE - different number of records");
                 return false;
             }
-
+*/
             var valueComparer = EqualityComparer<TValue>.Default;
 
             foreach (var kvp in dict1)
@@ -806,12 +843,13 @@ namespace FunctionalTests.StepDefs
                                 tmpTime = new DateTime(tmpTime.Ticks - (tmpTime.Ticks % TimeSpan.TicksPerSecond), tmpTime.Kind);
                                 tmpTime1 = new DateTime(tmpTime1.Ticks - (tmpTime1.Ticks % TimeSpan.TicksPerSecond), tmpTime1.Kind);
                                 ret = tmpTime.Equals(tmpTime1);
-                                returnMessage = "Check " + kvp.Key + " Value1: " + tmpTime + " Value2: " + tmpTime1;
-                                
+                                errorMessage = "Check " + kvp.Key + " Value1: " + tmpTime.ToString("yyyy-MM-dd HH:mm:ss.fff") + " [" + tmpTime.Ticks + "] Value2: " + tmpTime1.ToString("yyyy-MM-dd HH:mm:ss.fff" + " [" + tmpTime1.Ticks + "]");
+
+
                             }
                             else
                             {
-                                returnMessage = "Date parse failed on" + kvp.Key + " (" + value2.ToString() + ")";
+                                errorMessage = "Date parse failed on" + kvp.Key + " (" + value2.ToString() + ")";
                                 ret = false;
                             }
 
@@ -824,7 +862,7 @@ namespace FunctionalTests.StepDefs
                         else if (!valueComparer.Equals(kvp.Value, value2))
                         {
                             ret = false;
-                            returnMessage = "Check " + kvp.Key + " Value1: " + kvp.Value + " Value2: " + value2;
+                            errorMessage = "Check " + kvp.Key + " Value1: " + kvp.Value + " Value2: " + value2;
                         }
                         break;
     
@@ -833,7 +871,7 @@ namespace FunctionalTests.StepDefs
                 //if (!valueComparer.Equals(kvp.Value, value2)) ret =  false;
                 if (!ret)
                 {
-                    Console.WriteLine("Compare Dictionary: FALSE " + returnMessage);
+                    Console.WriteLine("Compare Dictionary: FALSE " + errorMessage);
                     return false;
                 }
             }
@@ -853,6 +891,7 @@ namespace FunctionalTests.StepDefs
 //            table = "dss-" + table;
             bool found = false;
             bool addSubcontractorIdToCollection = false;
+            bool addCreatedByToCollection = false;
             bool addSessionIdToCollection = false;
             bool addClaimedPriorityGroup = false;
             bool historyTable = table.ToLower().Contains("history");
@@ -862,13 +901,19 @@ namespace FunctionalTests.StepDefs
             SQLServerHelper helper = new SQLServerHelper();
 
             string orderBy = ( historyTable ? "CosmosTimeStamp DESC" : "");
+            string timestampField = "LastModifiedDate";
+            string timestampValue = "";
+            string timestampComparison = "";
+            // get time of last response
 
+            Console.WriteLine("Set up the variables for this change feed check");
             switch ( table ) 
             {
                 case "actions":
                 case "actions-history":
                     recordId = actionId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "ActionId";
                     historyTableId = "Actions-historyId";
                     break;
@@ -877,6 +922,7 @@ namespace FunctionalTests.StepDefs
                     recordId = actionPlanId;
                     addSessionIdToCollection = true;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "ActionPlanId";
                     historyTableId = "ActionPlans-historyId";
                     break;
@@ -884,6 +930,7 @@ namespace FunctionalTests.StepDefs
                 case "sessions-history":
                     recordId = sessionId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "SessionId";
                     historyTableId = "Sessions-historyId";
                     break;
@@ -891,6 +938,7 @@ namespace FunctionalTests.StepDefs
                 case "goals-history":
                     recordId = goalId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "GoalId";
                     historyTableId = "Goals-historyId";
                     break;
@@ -905,6 +953,7 @@ namespace FunctionalTests.StepDefs
                 case "customers-history":
                     recordId = customerId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "CustomerId";
                     historyTableId = "Customers-historyId";
                     break;
@@ -919,6 +968,7 @@ namespace FunctionalTests.StepDefs
                 case "addresses-history":
                     recordId = addressId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "AddressId";
                     historyTableId = "Addresses-historyId";
                     break;
@@ -926,6 +976,7 @@ namespace FunctionalTests.StepDefs
                 case "adviserDetails-history":
                     recordId = adviserDetailId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     primaryTableId = "AdviserDetailId";
                     historyTableId = "AdviserDetails-historyId";
                     break;
@@ -933,6 +984,7 @@ namespace FunctionalTests.StepDefs
                 case "outcomes-history":
                     recordId = outcomeId;
                     addSubcontractorIdToCollection = true;
+                    addCreatedByToCollection = true;
                     addSessionIdToCollection = true;
                     addClaimedPriorityGroup = true;
                     primaryTableId = "OutcomeId";
@@ -966,14 +1018,12 @@ namespace FunctionalTests.StepDefs
                     recordId = "";
                     break;
             }
-
+            Console.WriteLine("Check we have a record ID to work on");
             recordId.Should().NotBeNullOrEmpty();
-            //var f = this.GetType();
-            //var fff = this.;
-            //var ff = f.GetField("actionId").GetValue(this).ToString();
-            //var g = f.GetField("actionId",  BindingFlags.Instance).GetValue(this).ToString(); 
-            
-            //var field = this.GetType().GetField(constants.IdFromResource(table)).GetValue(this);
+
+            var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+            timestampValue = values[timestampField];
+            timestampComparison = timestampValue.Substring(0, 10) + "%" + timestampValue.Substring(11, ( timestampValue.Contains(".")? 11 : 8 ) ) + "%";
             helper.SetConnection(envSettings.sqlConnectionString);
             //   found = helper.DoesResourceExist("dss-" + table, this.GetType().GetField(constants.IdFromResource(table)).GetValue(this).ToString() );
             System.Data.DataSet dataSet = null;
@@ -982,24 +1032,50 @@ namespace FunctionalTests.StepDefs
             while ( !found && DateTime.Now < loopUntil)
             {
                 Console.WriteLine("Attempt to retrieve SQL record from " + table + " for id " + recordId);
-                dataSet = helper.GetRecord("dss-" + table, recordId, orderBy);
-                found = ( dataSet.Tables[0].Rows.Count > 0 );
+                Console.WriteLine("historyTable flag value :" + (historyTable ? "true":"false") );
+                Console.WriteLine("lastRequestWasPatch flag value :" + (lastRequestWasPatch ? "true" : "false"));
+                Console.WriteLine("GetRecordCount return :" + helper.GetRecordCount("dss-" + table, recordId));
+                if (!historyTable || !lastRequestWasPatch || helper.GetRecordCount("dss-" + table, recordId) > 1)
+                {
+                    
+                    dataSet = helper.GetRecord("dss-" + table, recordId, orderBy, timestampField + " like " + "'" + timestampComparison + "'");
+                    found = (dataSet.Tables[0].Rows.Count > 0);
+                }
                 //found = helper.DoesResourceExist("dss-" + table, recordId);
                 System.Threading.Thread.Sleep( (found ? 0 : 2000) );
             }
+
+            Console.WriteLine("Get number of records in history table for analysis: " + helper.GetRecordCount("dss-"  + historyTableId.Substring(0,historyTableId.Length - 2), recordId));
+
             found.Should().BeTrue("Because a record should exist in SQL stage DB for resource: " + table);
             if ( found)
             {
-           //     var ds = helper.GetRecord("dss-" + table, recordId);
+                
                 string PrimaryKeyId = constants.IdFromResource(table);
                 string PrimaryKeyCap = PrimaryKeyId.Substring(0, 1).ToUpper() + PrimaryKeyId.Substring(1);
                 var dict = helper.GetDataTableDictionaryList(dataSet, PrimaryKeyCap);
                 //dict[0]["id"].Remove(.Remove();
-                // check all values in response are matched in dataset
-                var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+
+                // various factors affect what is present in the response data and the sql table data.
+                // some tweaks to the dictionaries are required to ensure a like for like comparision can be acheived
+
                 if (addSubcontractorIdToCollection && !values.Keys.Contains("SubcontractorId") )
                 {
                     values.Add("SubcontractorId", "");
+                }
+
+                if (addCreatedByToCollection )
+                {
+                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
+                    values.Add("CreatedBy", (/*GetVersion() == "v2" */ addValue ? envSettings.TestEndpoint01 : "" ) );
+                }
+
+                if (table.Contains("session"))
+                {
+                    bool addValue = (dict[0].Keys.Contains("Longitude") && dict[0]["Longitude"].Length > 0);////(scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
+                    values.Add("Longitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Longitude"] : ""));
+                    addValue = (dict[0].Keys.Contains("Latitude") && dict[0]["Latitude"].Length > 0);
+                    values.Add("Latitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Latitude"] : ""));
                 }
 
                 if (table.Contains("webchats"))
@@ -1033,30 +1109,62 @@ namespace FunctionalTests.StepDefs
                     values.Add("LastModifiedTouchpointId", dict[0]["LastModifiedTouchpointId"]);
                 }
 
+                // check all values in response are matched in dataset
 
-                found = CompareX<string, string>(dict[0], values);
+                string errorMessage;
+                found = CompareX<string, string>(dict[0], values, out errorMessage);
 
                 if (!found)
                 {
                     //output the dictionaries
-                    Console.Write("SQL Data: ");
+                    Console.WriteLine("SQL Data: ");
                     foreach ( var kv in dict[0])
                     {
-                        Console.Write(kv.Key + " = " + kv.Value);
+                        Console.WriteLine("   " + kv.Key + " = " + kv.Value);
                     }
-                    Console.Write("API Data: ");
+                    Console.WriteLine("API Data: ");
                     foreach (var kv in values)
                     {
-                        Console.Write(kv.Key + " = "  + kv.Value);
+                        Console.WriteLine("   " + kv.Key + " = "  + kv.Value);
                     }
                 }
-                found.Should().BeTrue("because all SQL fields should match cosmos resource: " + table);
+                found.Should().BeTrue("because " + errorMessage);
+
+                sqlData.Clear();
+                foreach ( var kv in dict[0])
+                {
+                    sqlData.Add(kv.Key, kv.Value);
+                }
             }
             return found;
         }
 
-        private bool CheckResults(Dictionary<string, string> expectedVals, Dictionary<string, string> actualVals)
+        [Then(@"the captured table data should include key ""(.*)"" with value ""(.*)""")]
+        public void ThenTheCapturedTableDataShouldIncludeKeyWithValue(string p0, string p1)
         {
+            sqlData.Keys.Contains(p0).Should().BeTrue("Because key " + p0 + " should be present in the SQL table");
+            sqlData[p0].Should().Be(p1);
+        }
+
+        [Then(@"the last updated time should be later than the request time")]
+        public void ThenTheLastUpdatedTimeShouldBeLaterThanTheRequestTime()
+        {
+            var keyValuePairs = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+            DateTime lastUpdatedTime = DateTimeOffset.Parse(keyValuePairs["LastModifiedDate"]).UtcDateTime;
+            Console.WriteLine("Check request time is before last update time");
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("requestTime: " + requestTime.ToLongTimeString());
+            Console.WriteLine("lastUpdateTime: " + lastUpdatedTime.ToLongTimeString());
+            Console.WriteLine("Difference: " + (lastUpdatedTime - requestTime));
+            Console.WriteLine("-------------------------------------------");
+            ( requestTime - PostUpdateTime).Should().BePositive("Because the last modified time should be greater than the time the request was made");
+        }
+
+
+
+        private bool CheckResults(Dictionary<string, string> expectedVals, Dictionary<string, string> actualVals, out string errMessage)
+        {
+            errMessage = "";
             foreach (KeyValuePair<string, string> entry in expectedVals)
             {
                 //is it in the table?
@@ -1070,6 +1178,7 @@ namespace FunctionalTests.StepDefs
 
                 if (result == false)
                 {
+                    errMessage = "Value mismatch for " + entry.Key + " - Expected: " + entry.Value + " Actual: " + (actualVals.Keys.Contains(entry.Key) ? actualVals[entry.Key] : "N / A");
                     return false;
                 }
             }
@@ -1112,6 +1221,11 @@ namespace FunctionalTests.StepDefs
                     return envSettings.TestEndpoint01;
             }
         }
+        
+        private string GetVersion()
+        {
+            return ScenarioContext.Current["version"] as String;
+        }
 
         private void SetVersion(string method, bool allowV3 = false)
         {
@@ -1151,63 +1265,6 @@ namespace FunctionalTests.StepDefs
             {
                 problem.Should().BeFalse("Because the version tag has not been defined in this feature");
             }
-
-/*
-            
-            switch (method)
-            {
-                case "post":
-                    if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV1"))
-                    {
-                        ScenarioContext.Current["version"] = "v1";
-                    }
-                    else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"))
-                    {
-                        ScenarioContext.Current["version"] = "v2";
-                    }
-                    else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV3"))
-                    {
-                        ScenarioContext.Current["version"] = "v3";
-                    }
-                    else
-                    {
-                        problem.Should().BeFalse("Because the version tag has not been defined in this feature");
-                    }
-                    break;
-
-                case "patch":
-                    if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("patchV1"))
-                    {
-                        ScenarioContext.Current["version"] = "v1";
-                    }
-                    else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("patchV2"))
-                    {
-                        ScenarioContext.Current["version"] = "v2";
-                    }
-                    else
-                    {
-                        problem.Should().BeFalse("Because the version tag has not been defined in this feature");
-                    }
-                    break;
-
-                case "get":
-                    if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("getV1"))
-                    {
-                        ScenarioContext.Current["version"] = "v1";
-                    }
-                    else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("getV2"))
-                    {
-                        ScenarioContext.Current["version"] = "v2";
-                    }
-                    else
-                    {
-                        problem.Should().BeFalse("Because the version tag has not been defined in this feature");
-                    }
-                    break;
-                default:
-                    break;
-            }
-            */
         }
  
 
@@ -1215,8 +1272,5 @@ namespace FunctionalTests.StepDefs
         {
             ScenarioContext.Current["version"] = "v1";
         }
-
-
-    
     }
 }

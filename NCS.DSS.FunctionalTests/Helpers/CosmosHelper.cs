@@ -51,23 +51,6 @@ namespace NCS.DSS.FunctionalTests.Helpers
         {
             dynamic obj = JsonConvert.DeserializeObject(json);
             return InsertDocumentFromJson<dynamic>(database, collection, obj, out response);
-            bool returnValue = true;
-            try
-            {
-                dynamic doc = JsonConvert.DeserializeObject(json);
-                var returnDoc = client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(database, collection), doc).GetAwaiter().GetResult();
-                var res = returnDoc.Resource;
-                response = res.ToString();
-            }
-            catch (DocumentClientException de)
-            {
-                Exception baseException = de.GetBaseException();
-                Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
-                response = "";
-                returnValue = false;
-            }
-            return returnValue;
-
         }
 
         public static bool InsertDocumentFromJson<T>(string database, string collection, T obj, out string response)
@@ -90,13 +73,24 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         }
 
-        public static Document RetrieveDocument(string database, string collection, string id)
+        public static string RetrieveDocument(string database, string collection, string id)
         {
-            Document doc = client.CreateDocumentQuery(
+            string doc = "";
+            try
+            {
+                doc = client.CreateDocumentQuery(
                 UriFactory.CreateDocumentCollectionUri(database, collection))
-                          .Where(x => x.Id == id.ToString())
-                          .AsEnumerable()
-                          .First();
+                            .Where(x => x.Id == id.ToString())
+                            .AsEnumerable()
+                            .First().ToString();
+            }
+            catch (DocumentClientException de)
+            {
+                Exception baseException = de.GetBaseException();
+                Console.WriteLine("Failed to retrieve cosmos document: " + database + " id: " + id);
+                Console.WriteLine("{0} error occurred: {1}, Message: {2}", de.StatusCode, de.Message, baseException.Message);
+
+            }
             return doc;
         }
 
@@ -110,7 +104,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
         //    return doc;
         //}
 
-        public static bool UpdateDocument(string database, string collection, string id, Dictionary<string, string> updateFields)
+    /*    public static bool UpdateDocument(string database, string collection, string id, Dictionary<string, string> updateFields)
         {
             // first of all retreive the document
             var doc = RetrieveDocument(database, collection, id);
@@ -127,7 +121,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
             return true;
         }
-
+        */
         public static bool UpsertDocument<T>(string database, string collection, T document)
         {
             var collectionLink = UriFactory.CreateDocumentCollectionUri(database, collection);

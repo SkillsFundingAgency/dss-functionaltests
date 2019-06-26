@@ -41,9 +41,11 @@ Feature: Post V2 Outcome
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
 		Then there should be a 201 response
+		And the "outcomes" cosmos document should include CreatedBy
 		And the response body should contain:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the outcomes ChangeFeed table
 		And there should be a record in the outcomes-history ChangeFeed table
 
@@ -56,6 +58,7 @@ Feature: Post V2 Outcome
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 	    | ClaimedPriorityGroup | 5                    |
 		Then there should be a 201 response
+		And the "outcomes" cosmos document should include CreatedBy
 		And the response body should contain:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
@@ -63,6 +66,7 @@ Feature: Post V2 Outcome
 	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 		| ClaimedPriorityGroup | 5                    |
 		And the response body should contain the SubContractorId
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the outcomes ChangeFeed table
 		And there should be a record in the outcomes-history ChangeFeed table
 

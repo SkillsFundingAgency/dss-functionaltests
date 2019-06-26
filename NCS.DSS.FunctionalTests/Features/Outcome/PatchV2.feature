@@ -47,6 +47,7 @@ Background: Prepare test
 		| OutcomeClaimedDate   | 2018-08-20T21:45:00Z |
 		| ClaimedPriorityGroup | 5                    |
 		Then there should be a 200 response
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the outcomes ChangeFeed table
 		And there should be a record in the outcomes-history ChangeFeed table
 
@@ -58,10 +59,12 @@ Background: Prepare test
 	    | OutcomeEffectiveDate | 2018-08-20T21:45:00Z |
 	    | OutcomeClaimedDate   | 2018-08-20T21:45:00Z |
 	    | ClaimedPriorityGroup | 5                    |
-		When I patch the following:
+		When I patch the following via a different touchpoint
 		| Field                | Value                |
 		| OutcomeClaimedDate   |                      |
 		Then there should be a 200 response
+		And the response body should not contain the "CreatedBy"
+		And the response body should have different LastUpdatedBy
 		And the response body should contain:
          | Field                | Value                |
          | OutcomeEffectiveDate | 2018-08-20T21:45:00Z |

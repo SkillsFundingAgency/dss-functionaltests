@@ -9,6 +9,8 @@
         public string SubcontractorId { get; set; }
         public string DateandTimeOfSession { get; set; }
         public string VenuePostCode { get; set; }
+        public string Longitude { get; set; }
+        public string Latitude { get; set; }
         public string SessionAttended { get; set; }
         public string ReasonForNonAttendance { get; set; }
         public string LastModifiedDate { get; set; }
