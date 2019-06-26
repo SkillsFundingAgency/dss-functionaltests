@@ -663,6 +663,8 @@ namespace NCS.DSS.FunctionalTests.Features.Address
 #line 192
      testRunner.And("the response body should contain:", ((string)(null)), table17, "And ");
 #line 198
+     testRunner.And("the response body should contain:", ((string)(null)), table17, "And ");
+#line 193
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 199
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

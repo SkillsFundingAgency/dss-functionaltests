@@ -72,6 +72,7 @@ namespace FunctionalTests.Helpers
             Console.WriteLine("Attempt to POST: " + url);
             Console.WriteLine("Header value: touchPointId: " + touchPointId);
             Console.WriteLine("JSON Document: " + json);
+            Thread.Sleep(250);
             try
             {
 
@@ -154,6 +155,7 @@ namespace FunctionalTests.Helpers
         internal static IRestResponse Patch(string url, string json, string touchPointId, string subscriptionKey, string id)
         {
             Console.WriteLine("Attempt to PATCH: " + url);
+            Thread.Sleep(250);
             try
             {
                 var client = new RestClient(url + id);
@@ -218,6 +220,7 @@ namespace FunctionalTests.Helpers
 
         internal static IRestResponse Get(string url, string touchPointId, string subscriptionKey)
         {
+            Thread.Sleep(250);
             Console.WriteLine("Attempt to GET: " + url);
             try
             {
