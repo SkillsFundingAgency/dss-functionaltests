@@ -802,44 +802,6 @@ namespace FunctionalTests.StepDefs
 
 
 
-        [Then(@"the ""(.*)"" cosmos document should include ""(.*)"" with value ""(.*)""")]
-        public void ThenTheCosmosDocumentShouldIncludeWithValue(string p0, string p1, string p2)
-        {
-            string docJson = "";
-            // retreive the cosmos document relating to the last request
-            Console.WriteLine("Cosmos value check (" + p1 + "). Initialising cosmosdb connection object for: " + envSettings.CosmosEndPoint);
-
-            try
-            {
-                CosmosHelper.Initialise(envSettings.CosmosEndPoint, envSettings.CosmosAccountKey);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Failed to initialise:  " + e.Message);
-            }
-
-
-            try
-            {
-                docJson = CosmosHelper.RetrieveDocument(p0, p0, id);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Failed to retrieve " + p0 + " document with id " + id + " from end point: " + envSettings.CosmosEndPoint);
-                Console.WriteLine(e.Message);
-            }
-
-            docJson.Length.Should().BeGreaterThan(0, "Because zero length document means the call to Cosmos was unsuccessful");
-            // determine the touchpoint used in the post
-            // check createdby field is present with expected value
-            //JObject docJsonObj = JObject.Parse(docJson);
-            JsonHelper.GetPropertyFromJsonString(docJson, p1).Should().Be(p2, "Because " + p1 + " should exist in collection with value " + p2);
-
-        }
-
-
-
-
         public bool CompareX<TKey, TValue>(
         Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2, out string errorMessage)
         {
