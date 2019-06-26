@@ -97,6 +97,8 @@ namespace NCS.DSS.FunctionalTests.Helpers
                 sql = sql + " order by " + orderBy;
 
             }
+            Console.WriteLine("SQLHelper: GetRecord. Table: " + table + " id: " + recordId);
+            Console.WriteLine("SQLHelper: sql: " + sql);
             if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
             {
                 using (SqlCommand cmd = new SqlCommand(sql, Connection))
@@ -113,7 +115,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         public long GetRecordCount(string table, string recordId )
         {
-            DataSet ds = new DataSet(table);
+           // DataSet ds = new DataSet(table);
             string sql = @"select count(1) from[" + table + "] where id = '" + recordId + "'";
             string returnValueString = "0";
 
@@ -122,9 +124,9 @@ namespace NCS.DSS.FunctionalTests.Helpers
                 using (SqlCommand cmd = new SqlCommand(sql, Connection))
                 {
                     returnValueString = cmd.ExecuteScalar().ToString(); ;
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = cmd;
-                    da.Fill(ds);
+                    //SqlDataAdapter da = new SqlDataAdapter();
+                    //da.SelectCommand = cmd;
+                    //da.Fill(ds);
                 }
             }
             return long.Parse(returnValueString);

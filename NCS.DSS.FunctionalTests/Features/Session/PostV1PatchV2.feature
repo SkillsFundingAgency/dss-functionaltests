@@ -73,6 +73,15 @@ Feature: PostV1PatchV2
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z           |
 		| VenuePostCode            | NN1 2NQ                        |
 		| SessionAttended          | true                           |
+		#And the "sessions" cosmos document should include CreatedBy
+		And the "sessions" cosmos document should include "Longitude" with value "-0.89818"
+		And the "sessions" cosmos document should include "Latitude" with value "52.24083"
+		And the response body should not contain the "CreatedBy"
+		And the response body should not contain the "Longitude"
+		And the response body should not contain the "Latitude"
+		And there should be a record in the sessions ChangeFeed table
+		And there should be a record in the sessions-history ChangeFeed table
+
 
 @sessions
 	Scenario: Patch SessionAttended

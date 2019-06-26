@@ -17,6 +17,8 @@ Feature: PostV2
 			| AdviserName			| BillyAdviser	|
 			| AdviserEmailAddress	| billy@bill.com|
 			| AdviserContactNumber	| 98798678967967|
+		And the "adviserdetails" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 
 @adviserdetails @subcontractorId
 	Scenario: Create Valid Adviser with SubcontractorId
@@ -32,6 +34,8 @@ Feature: PostV2
 			| AdviserEmailAddress	| billy@bill.com|
 			| AdviserContactNumber	| 98798678967967|
 		And the response body should contain the SubContractorId
+		And the "adviserdetails" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 
 @adviserdetails
 Scenario: Change feed for Post Adviser
@@ -42,6 +46,8 @@ Scenario: Change feed for Post Adviser
 		Then there should be a 201 response
 		And there should be a record in the adviserDetails ChangeFeed table
 		And there should be a record in the adviserDetails-history ChangeFeed table
+		And the "adviserdetails" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 
 @adviserdetails
 		Scenario: Missing AdviserName

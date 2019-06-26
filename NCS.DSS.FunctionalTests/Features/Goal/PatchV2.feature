@@ -58,6 +58,7 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 		And the response body should contain the SubContractorId
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the goals ChangeFeed table
 		And there should be a record in the goals-history ChangeFeed table
 
@@ -71,10 +72,12 @@ Background: Prepare test
 	    | GoalSummary                 | some goal text       |
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
-		When I patch the following:
+		When I patch the following via a different touchpoint
 		| Field                       | Value                |
 	    | DateGoalShouldBeCompletedBy | 2018-07-22T14:45:00Z |
 		Then there should be a 200 response
+		And the response body should not contain the "CreatedBy"
+		And the response body should have different LastUpdatedBy
 		And the response body should contain:
 	    | Field			              | Value                |
 	    | DateGoalCaptured            | 2018-06-21T14:45:00Z |

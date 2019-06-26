@@ -19,7 +19,7 @@ Feature: PostV2
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z   |
 		| Channel                  | 2                      |
 		| InteractionType          | 2                      |
-		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
+#		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 	And I post a session with the following details:
 		| Field                    | Value                  |
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z   |
@@ -48,7 +48,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 201 response
 		And the response body should contain:
 		| Field                         | Value                |
@@ -59,7 +59,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
 @actions @V2
 	Scenario: Post Valid Action with only mandatory Fields
@@ -80,6 +80,10 @@ Feature: PostV2
 		| SignpostedTo                  | Some Details         |
 		| ActionType                    | 1                    |
 		| PersonResponsible             | 1                    |
+	    And the "actions" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
+		And there should be a record in the actions ChangeFeed table
+		And there should be a record in the actions-history ChangeFeed table
 
 @actions @V2
 	Scenario: Change feed for Post Action
@@ -120,7 +124,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 201 response
 		And there should be a record in the actions ChangeFeed table
 		And there should be a record in the actions-history ChangeFeed table
@@ -137,7 +141,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
 @actions @V2
@@ -151,7 +155,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
 @actions @V2
@@ -165,7 +169,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 422 response
 
 @actions @V2
@@ -179,7 +183,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 		Then there should be a 201 response
 		And the response body should contain:
 		| Field                         | Value                |
@@ -191,7 +195,7 @@ Feature: PostV2
 		| ActionType                    | 1                    |
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
-		| LastModifiedDate              | 2018-07-30T09:00:00Z |
+#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 
 @actions @V2
 	Scenario: Post Action with missing ActionSummary

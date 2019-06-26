@@ -137,11 +137,13 @@ namespace NCS.DSS.FunctionalTests.Features.Subscription
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Subscribe to a customer")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("mytag")]
         public virtual void SubscribeToACustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subscribe to a customer", null, new string[] {
-                        "mytag"});
+                        "mytag",
+                        "ignore"});
 #line 29
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -149,33 +151,34 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line 30
  testRunner.Given("I post a new subscription request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 31
- testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table5.AddRow(new string[] {
+#line 31
+ testRunner.Then("there should be a 201 response", ((string)(null)), table5, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subscribe",
                         "true"});
-#line 32
-  testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
+#line 33
+  testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line 35
      testRunner.And("there should be a record in the subscriptions ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
   testRunner.And("there should be a record in the subscriptions-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Address1",
                         "1"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "PostCode",
                         "NW11WN"});
 #line 38
- testRunner.And("when I post an Address with the following details:", ((string)(null)), table6, "And ");
+ testRunner.And("when I post an Address with the following details:", ((string)(null)), table7, "And ");
 #line 42
  testRunner.Then("a new notification should be received for \"Address\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

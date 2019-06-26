@@ -60,6 +60,8 @@ Feature: PostV2
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 		Then there should be a 201 response
+	    And the "customers" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And the response body should contain:
 		| Field                      | Value                |
 		| DateOfRegistration         | 2018-07-27T16:11:00Z |
@@ -96,6 +98,8 @@ Feature: PostV2
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 		Then there should be a 201 response
+	    And the "customers" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And the response body should contain:
 		| Field                      | Value                |
 		| DateOfRegistration         | 2018-07-27T16:11:00Z |
@@ -157,6 +161,8 @@ Feature: PostV2
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 		Then there should be a 201 response
+		And the "customers" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And the response body should contain:
 		| field						 | value                |
 		| Title						 | 99                    |
@@ -179,6 +185,8 @@ Feature: PostV2
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 		Then there should be a 201 response
+	    And the "customers" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the customers ChangeFeed table
 		And there should be a record in the customers-history ChangeFeed table
 

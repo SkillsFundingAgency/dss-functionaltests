@@ -24,6 +24,7 @@ Feature: PatchV2
         | Field						 | Value                |
         | DateOfRegistration		 | 2018-07-28T16:11:00Z |
 		Then there should be a 200 response
+		And the response body should not contain the "CreatedBy"
 		And the response body should contain:
 		| Field                      | Value                |
 		| DateOfRegistration         | 2018-07-28T16:11:00Z |
@@ -56,10 +57,12 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following via a different touchpoint
         | Field						 | Value                |
 		| Title						 | 2                    |
 		Then there should be a 200 response
+		And the response body should not contain the "CreatedBy"
+		And the response body should have different LastUpdatedBy
 		And the response body should contain:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
