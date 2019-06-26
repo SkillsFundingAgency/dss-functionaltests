@@ -233,8 +233,10 @@ this.FeatureBackground();
 #line 60
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
-  testRunner.And("there should be a record in the goals ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
+  testRunner.And("there should be a record in the goals ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
   testRunner.And("there should be a record in the goals-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -249,7 +251,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalShouldBeCompletedBy", null, new string[] {
                         "goals",
                         "subcontractorId"});
-#line 66
+#line 67
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -273,7 +275,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
-#line 67
+#line 68
   testRunner.Given("I post a goal with the following details:", ((string)(null)), table9, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -282,10 +284,14 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-07-22T14:45:00Z"});
-#line 74
-  testRunner.When("I patch the following:", ((string)(null)), table10, "When ");
-#line 77
+#line 75
+  testRunner.When("I patch the following via a different touchpoint", ((string)(null)), table10, "When ");
+#line 78
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+  testRunner.And("the response body should have different LastUpdatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -305,9 +311,9 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
-#line 78
+#line 81
   testRunner.And("the response body should contain:", ((string)(null)), table11, "And ");
-#line 85
+#line 88
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -320,7 +326,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalAchieved", null, new string[] {
                         "goals"});
-#line 88
+#line 91
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -344,7 +350,7 @@ this.FeatureBackground();
             table12.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
-#line 89
+#line 92
   testRunner.Given("I post a goal with the following details:", ((string)(null)), table12, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -353,9 +359,9 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "DateGoalAchieved",
                         "2018-07-15T14:45:00Z"});
-#line 96
-  testRunner.When("I patch the following:", ((string)(null)), table13, "When ");
 #line 99
+  testRunner.When("I patch the following:", ((string)(null)), table13, "When ");
+#line 102
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -379,7 +385,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
-#line 100
+#line 103
   testRunner.And("the response body should contain:", ((string)(null)), table14, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -392,7 +398,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalType", null, new string[] {
                         "goals"});
-#line 110
+#line 113
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -416,7 +422,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
-#line 111
+#line 114
   testRunner.Given("I post a goal with the following details:", ((string)(null)), table15, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -425,9 +431,9 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "GoalType",
                         "4"});
-#line 118
-  testRunner.When("I patch the following:", ((string)(null)), table16, "When ");
 #line 121
+  testRunner.When("I patch the following:", ((string)(null)), table16, "When ");
+#line 124
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -440,7 +446,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalStatus", null, new string[] {
                         "goals"});
-#line 124
+#line 127
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
@@ -464,7 +470,7 @@ this.FeatureBackground();
             table17.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
-#line 125
+#line 128
   testRunner.Given("I post a goal with the following details:", ((string)(null)), table17, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -473,9 +479,9 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "GoalStatus",
                         "4"});
-#line 132
-  testRunner.When("I patch the following:", ((string)(null)), table18, "When ");
 #line 135
+  testRunner.When("I patch the following:", ((string)(null)), table18, "When ");
+#line 138
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -113,6 +113,10 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
                         "98798678967967"});
 #line 15
   testRunner.And("the response body should contain:", ((string)(null)), table2, "And ");
+#line 20
+  testRunner.And("the \"adviserdetails\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -126,7 +130,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser with SubcontractorId", null, new string[] {
                         "adviserdetails",
                         "subcontractorId"});
-#line 22
+#line 24
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -142,9 +146,9 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table3.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 23
+#line 25
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table3, "Given ");
-#line 28
+#line 30
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -159,10 +163,14 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
             table4.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 29
+#line 31
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
-#line 34
+#line 36
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+  testRunner.And("the \"adviserdetails\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -174,7 +182,7 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Adviser", null, new string[] {
                         "adviserdetails"});
-#line 37
+#line 41
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -187,14 +195,18 @@ this.ScenarioInitialize(scenarioInfo);
             table5.AddRow(new string[] {
                         "AdviserEmailAddress",
                         "billy@bill.com"});
-#line 38
-  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table5, "Given ");
 #line 42
+  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table5, "Given ");
+#line 46
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 43
+#line 47
   testRunner.And("there should be a record in the adviserDetails ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 48
   testRunner.And("there should be a record in the adviserDetails-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+  testRunner.And("the \"adviserdetails\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -206,7 +218,7 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, new string[] {
                         "adviserdetails"});
-#line 47
+#line 53
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
@@ -219,9 +231,9 @@ this.ScenarioInitialize(scenarioInfo);
             table6.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 48
+#line 54
   testRunner.Given("I post an adviser with the following details:", ((string)(null)), table6, "Given ");
-#line 52
+#line 58
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

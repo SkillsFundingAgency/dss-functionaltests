@@ -211,8 +211,10 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 45
   testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
 #line 54
-  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
+  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
   testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -225,7 +227,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateAndTimeCharterShown", null, new string[] {
                         "actionplans"});
-#line 58
+#line 59
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -255,7 +257,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table8.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 59
+#line 60
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table8, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -264,9 +266,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table9.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-#line 68
-  testRunner.When("I patch the following:", ((string)(null)), table9, "When ");
-#line 71
+#line 69
+  testRunner.When("I patch the following via a different touchpoint", ((string)(null)), table9, "When ");
+#line 72
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -296,8 +298,16 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table10.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 72
+#line 73
   testRunner.And("the response body should contain:", ((string)(null)), table10, "And ");
+#line 83
+  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+  testRunner.And("the response body should have different LastUpdatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -309,7 +319,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanCreated", null, new string[] {
                         "actionplans"});
-#line 84
+#line 89
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -342,7 +352,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table11.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 85
+#line 90
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table11, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -351,9 +361,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table12.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-#line 95
+#line 100
   testRunner.When("I patch the following:", ((string)(null)), table12, "When ");
-#line 98
+#line 103
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -383,7 +393,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table13.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 99
+#line 104
   testRunner.And("the response body should contain:", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -396,7 +406,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanSentToCustomer", null, new string[] {
                         "actionplans"});
-#line 111
+#line 116
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -429,7 +439,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table14.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 112
+#line 117
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table14, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -438,9 +448,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table15.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-31T09:00:00Z"});
-#line 122
+#line 127
   testRunner.When("I patch the following:", ((string)(null)), table15, "When ");
-#line 125
+#line 130
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -470,7 +480,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table16.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 126
+#line 131
   testRunner.And("the response body should contain:", ((string)(null)), table16, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -483,7 +493,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid DateActionPlanAcknowledged", null, new string[] {
                         "actionplans"});
-#line 138
+#line 143
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -516,7 +526,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table17.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 139
+#line 144
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table17, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -525,9 +535,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table18.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-31T09:00:00Z"});
-#line 149
+#line 154
   testRunner.When("I patch the following:", ((string)(null)), table18, "When ");
-#line 152
+#line 157
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -557,7 +567,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table19.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 153
+#line 158
   testRunner.And("the response body should contain:", ((string)(null)), table19, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -570,7 +580,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid ActionPlanDeliveryMethod", null, new string[] {
                         "actionplans"});
-#line 165
+#line 170
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -603,7 +613,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table20.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 166
+#line 171
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table20, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -612,9 +622,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table21.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-#line 176
+#line 181
   testRunner.When("I patch the following:", ((string)(null)), table21, "When ");
-#line 179
+#line 184
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -644,7 +654,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table22.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 180
+#line 185
   testRunner.And("the response body should contain:", ((string)(null)), table22, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -657,7 +667,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid PriorityCustomer", null, new string[] {
                         "actionplans"});
-#line 192
+#line 197
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -690,7 +700,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table23.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 193
+#line 198
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table23, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -699,9 +709,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table24.AddRow(new string[] {
                         "PriorityCustomer",
                         "2"});
-#line 203
+#line 208
   testRunner.When("I patch the following:", ((string)(null)), table24, "When ");
-#line 206
+#line 211
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -731,7 +741,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table25.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 207
+#line 212
   testRunner.And("the response body should contain:", ((string)(null)), table25, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -744,7 +754,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid CurrentSituation", null, new string[] {
                         "actionplans"});
-#line 219
+#line 224
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -777,7 +787,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table26.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 220
+#line 225
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table26, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -786,9 +796,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table27.AddRow(new string[] {
                         "CurrentSituation",
                         "still looking"});
-#line 230
+#line 235
   testRunner.When("I patch the following:", ((string)(null)), table27, "When ");
-#line 233
+#line 238
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -818,7 +828,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table28.AddRow(new string[] {
                         "CurrentSituation",
                         "still looking"});
-#line 234
+#line 239
   testRunner.And("the response body should contain:", ((string)(null)), table28, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -833,7 +843,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with SubcontractorId", null, new string[] {
                         "actionplans",
                         "subcontractorId"});
-#line 247
+#line 252
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -866,7 +876,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table29.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 248
+#line 253
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table29, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -875,9 +885,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table30.AddRow(new string[] {
                         "CurrentSituation",
                         "still looking"});
-#line 258
+#line 263
   testRunner.When("I patch the following:", ((string)(null)), table30, "When ");
-#line 261
+#line 266
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -907,9 +917,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table31.AddRow(new string[] {
                         "CurrentSituation",
                         "still looking"});
-#line 262
+#line 267
   testRunner.And("the response body should contain:", ((string)(null)), table31, "And ");
-#line 272
+#line 277
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -922,7 +932,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid DateActionPlanCreated", null, new string[] {
                         "actionplans"});
-#line 275
+#line 280
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -955,7 +965,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table32.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 276
+#line 281
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table32, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -964,9 +974,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table33.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-31T09:00:00Z"});
-#line 286
+#line 291
   testRunner.When("I patch the following:", ((string)(null)), table33, "When ");
-#line 289
+#line 294
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -979,7 +989,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid CustomerCharterShownToCustomer", null, new string[] {
                         "actionplans"});
-#line 292
+#line 297
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1009,7 +1019,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table34.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 293
+#line 298
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table34, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1018,9 +1028,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table35.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-#line 302
+#line 307
   testRunner.When("I patch the following:", ((string)(null)), table35, "When ");
-#line 305
+#line 310
   testRunner.Then("there should be a 400 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1033,7 +1043,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid DateAndTimeCharterShown", null, new string[] {
                         "actionplans"});
-#line 310
+#line 315
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1063,7 +1073,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table36.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 311
+#line 316
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table36, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1072,9 +1082,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table37.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-29T09:00:00Z"});
-#line 320
+#line 325
   testRunner.When("I patch the following:", ((string)(null)), table37, "When ");
-#line 323
+#line 328
   testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1087,7 +1097,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid DateActionPlanSentToCustomer", null, new string[] {
                         "actionplans"});
-#line 326
+#line 331
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1120,7 +1130,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table38.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 327
+#line 332
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table38, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1129,9 +1139,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table39.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-29T09:00:00Z"});
-#line 337
+#line 342
   testRunner.When("I patch the following:", ((string)(null)), table39, "When ");
-#line 340
+#line 345
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1144,7 +1154,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid DateActionPlanAcknowledged", null, new string[] {
                         "actionplans"});
-#line 344
+#line 349
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1177,7 +1187,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table40.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 345
+#line 350
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table40, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1186,9 +1196,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table41.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-29T09:00:00Z"});
-#line 355
+#line 360
   testRunner.When("I patch the following:", ((string)(null)), table41, "When ");
-#line 358
+#line 363
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1201,7 +1211,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid ActionPlanDeliveryMethod", null, new string[] {
                         "actionplans"});
-#line 361
+#line 366
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1234,7 +1244,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table42.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 362
+#line 367
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table42, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1243,9 +1253,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table43.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-29T09:00:00Z"});
-#line 372
+#line 377
   testRunner.When("I patch the following:", ((string)(null)), table43, "When ");
-#line 375
+#line 380
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1258,7 +1268,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid PriorityCustomer", null, new string[] {
                         "actionplans"});
-#line 379
+#line 384
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1291,7 +1301,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table44.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 380
+#line 385
   testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table44, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1300,9 +1310,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
             table45.AddRow(new string[] {
                         "PriorityCustomer",
                         "7"});
-#line 390
+#line 395
   testRunner.When("I patch the following:", ((string)(null)), table45, "When ");
-#line 393
+#line 398
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -46,6 +46,8 @@ Background: Prepare test
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 		Then there should be a 201 response
+	    And the "goals" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And the response body should contain:
 	    | Field			              | Value                |
 	    | DateGoalCaptured            | 2018-06-21T14:45:00Z |
@@ -92,6 +94,8 @@ Scenario:Change feed for Goal with all fields
 	    | GoalType                    | 1                    |
 	    | GoalStatus                  | 1                    |
 		Then there should be a 201 response
+	    And the "goals" cosmos document should include CreatedBy
+		And the response body should not contain the "CreatedBy"
 		And there should be a record in the goals ChangeFeed table
 		And there should be a record in the goals-history ChangeFeed table
 
