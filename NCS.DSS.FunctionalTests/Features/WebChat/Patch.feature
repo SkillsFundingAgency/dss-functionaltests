@@ -41,6 +41,7 @@ Background: Prepare test
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
 
@@ -65,10 +66,11 @@ Background: Prepare test
 		| DigitalReference           | abc1234              |
 	    | WebChatStartDateandTime    | 2018-07-20T13:00:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
-	    | WebChatDuration            | 00:25:00             |
+	    | WebChatDuration            | 00:45:00             |
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
 
@@ -93,10 +95,11 @@ Background: Prepare test
 		| DigitalReference           | abc1234              |
 	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T14:45:00Z |
-	    | WebChatDuration            | 00:25:00             |
+	    | WebChatDuration            | 01:25:00             |
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
 
@@ -125,6 +128,7 @@ Background: Prepare test
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
 
@@ -152,6 +156,7 @@ Background: Prepare test
 	    | WebChatNarrative           | updated text        |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+	    And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
 
@@ -179,9 +184,10 @@ Background: Prepare test
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | false                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
-
+			
 @webchats
 	Scenario: Patch DateandTimeSentToCustomers
 	Given I post a webchat with the following details:
@@ -206,6 +212,36 @@ Background: Prepare test
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-21T13:45:00Z |
+		And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
 
+
+@webchats
+	Scenario: Patch webchat with a different touchpoint
+	Given I post a webchat with the following details:
+	    | Field                      | Value                |
+	    | DigitalReference           | abc1234              |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatDuration            | 00:25:00             |
+	    | WebChatNarrative           | some text here       |
+	    | SentToCustomer             | true                 |
+	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+	When I patch the following via a different touchpoint
+		| Field                    | Value                  |
+	    | DateandTimeSentToCustomers | 2018-07-21T13:45:00Z |
+		Then there should be a 200 response
+		And the response body should contain:
+		| Field                      | Value                |
+		| DigitalReference           | abc1234              |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatDuration            | 00:25:00             |
+	    | WebChatNarrative           | some text here       |
+	    | SentToCustomer             | true                 |
+	    | DateandTimeSentToCustomers | 2018-07-21T13:45:00Z |
+		And the last updated time should be later than the request time
+		And the response body should have different LastUpdatedBy
+		And there should be a record in the webchats ChangeFeed table
+		And there should be a record in the webchats-history ChangeFeed table
