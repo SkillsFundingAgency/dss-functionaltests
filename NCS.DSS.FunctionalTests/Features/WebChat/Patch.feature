@@ -66,7 +66,7 @@ Background: Prepare test
 		| DigitalReference           | abc1234              |
 	    | WebChatStartDateandTime    | 2018-07-20T13:00:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
-	    | WebChatDuration            | 00:45:00             |
+	    | WebChatDuration            | 00:25:00             |
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
@@ -95,7 +95,7 @@ Background: Prepare test
 		| DigitalReference           | abc1234              |
 	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T14:45:00Z |
-	    | WebChatDuration            | 01:25:00             |
+	    | WebChatDuration            | 00:25:00             |
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
