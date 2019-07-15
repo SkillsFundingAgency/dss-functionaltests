@@ -184,11 +184,11 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create a webchat with only mandatory values")]
+        [NUnit.Framework.DescriptionAttribute("Create a webchat supplying lastmodifieddate")]
         [NUnit.Framework.CategoryAttribute("webchats")]
-        public virtual void CreateAWebchatWithOnlyMandatoryValues()
+        public virtual void CreateAWebchatSupplyingLastmodifieddate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with only mandatory values", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat supplying lastmodifieddate", null, new string[] {
                         "webchats"});
 #line 43
  this.ScenarioInitialize(scenarioInfo);
@@ -200,36 +200,118 @@ this.FeatureBackground();
                         "Field",
                         "Value"});
             table5.AddRow(new string[] {
+                        "DigitalReference",
+                        "abc1234"});
+            table5.AddRow(new string[] {
                         "WebChatStartDateandTime",
                         "2018-07-20T13:20:00Z"});
             table5.AddRow(new string[] {
                         "WebChatEndDateandTime",
                         "2018-07-20T13:45:00Z"});
             table5.AddRow(new string[] {
+                        "WebChatDuration",
+                        "00:25:00"});
+            table5.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
+            table5.AddRow(new string[] {
+                        "SentToCustomer",
+                        "true"});
+            table5.AddRow(new string[] {
+                        "DateandTimeSentToCustomers",
+                        "2018-07-20T13:45:00Z"});
+            table5.AddRow(new string[] {
+                        "lastmodifieddate",
+                        "2018-07-19T12:45:00Z"});
 #line 44
  testRunner.Given("I post a webchat with the following details:", ((string)(null)), table5, "Given ");
-#line 49
+#line 54
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table6.AddRow(new string[] {
+                        "DigitalReference",
+                        "abc1234"});
+            table6.AddRow(new string[] {
                         "WebChatStartDateandTime",
                         "2018-07-20T13:20:00Z"});
             table6.AddRow(new string[] {
                         "WebChatEndDateandTime",
                         "2018-07-20T13:45:00Z"});
             table6.AddRow(new string[] {
+                        "WebChatDuration",
+                        "00:25:00"});
+            table6.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-#line 50
-  testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
+            table6.AddRow(new string[] {
+                        "SentToCustomer",
+                        "true"});
+            table6.AddRow(new string[] {
+                        "DateandTimeSentToCustomers",
+                        "2018-07-20T13:45:00Z"});
+            table6.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-07-19T12:45:00Z"});
 #line 55
+  testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
+#line 65
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 66
+  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create a webchat with only mandatory values")]
+        [NUnit.Framework.CategoryAttribute("webchats")]
+        public virtual void CreateAWebchatWithOnlyMandatoryValues()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a webchat with only mandatory values", null, new string[] {
+                        "webchats"});
+#line 69
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table7.AddRow(new string[] {
+                        "WebChatStartDateandTime",
+                        "2018-07-20T13:20:00Z"});
+            table7.AddRow(new string[] {
+                        "WebChatEndDateandTime",
+                        "2018-07-20T13:45:00Z"});
+            table7.AddRow(new string[] {
+                        "WebChatNarrative",
+                        "some text here"});
+#line 70
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table7, "Given ");
+#line 75
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table8.AddRow(new string[] {
+                        "WebChatStartDateandTime",
+                        "2018-07-20T13:20:00Z"});
+            table8.AddRow(new string[] {
+                        "WebChatEndDateandTime",
+                        "2018-07-20T13:45:00Z"});
+            table8.AddRow(new string[] {
+                        "WebChatNarrative",
+                        "some text here"});
+#line 76
+  testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
+#line 81
+  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
   testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

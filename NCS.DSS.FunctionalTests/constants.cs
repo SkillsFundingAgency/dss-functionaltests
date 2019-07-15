@@ -8,6 +8,21 @@ namespace FunctionalTests.StepDefs
 {
     public class constants
     {
+        public const string Customers = "Customers";
+        public const string Addresses = "Addresses";
+        public const string Contacts = "Contacts";
+        public const string Interactions = "Interactions";
+        public const string Sessions = "Sessions";
+        public const string ActionPlans = "ActionPlans";
+        public const string Actions = "Actions";
+        public const string AdviserDetails = "AdviserDetails";
+        public const string WebChats = "WebChats";
+        public const string DiversityDetails = "DiversityDetails";
+        public const string Transfers = "Transfers";
+        public const string Subscriptions = "Subscriptions";
+        public const string Goals = "Goals";
+        public const string Outcomes = "Outcomes";
+
         public const string CustomerId = "CustomerId";
         public const string AddressId = "AddressId";
         public const string ContactId = "ContactId";

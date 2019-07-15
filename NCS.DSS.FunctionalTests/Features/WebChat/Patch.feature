@@ -66,7 +66,7 @@ Background: Prepare test
 		| DigitalReference           | abc1234              |
 	    | WebChatStartDateandTime    | 2018-07-20T13:00:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
-	    | WebChatDuration            | 00:25:00             |
+	    | WebChatDuration            | 00:45:00             |
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
@@ -95,7 +95,7 @@ Background: Prepare test
 		| DigitalReference           | abc1234              |
 	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T14:45:00Z |
-	    | WebChatDuration            | 00:25:00             |
+	    | WebChatDuration            | 01:25:00             |
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
@@ -104,7 +104,7 @@ Background: Prepare test
 		And there should be a record in the webchats-history ChangeFeed table
 
 
-@webchats @ignore
+@webchats @Ignore
 	Scenario: Patch WebChatDuration
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -131,6 +131,66 @@ Background: Prepare test
 		And the last updated time should be later than the request time
 		And there should be a record in the webchats ChangeFeed table
 		And there should be a record in the webchats-history ChangeFeed table
+
+@webchats 
+	Scenario: Patch LastModifiedDate
+	Given I post a webchat with the following details:
+	    | Field                      | Value                |
+	    | DigitalReference           | abc1234              |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatDuration            | 00:25:00             |
+	    | WebChatNarrative           | some text here       |
+	    | SentToCustomer             | true                 |
+	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+	When I patch the following:
+		| Field            | Value                |
+		| LastModifiedDate | 2018-08-21T11:45:00Z |
+		Then there should be a 200 response
+		And the response body should contain:
+		| Field                      | Value                |
+		| DigitalReference           | abc1234              |
+		| WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+		| WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+		| WebChatDuration            | 00:25:00             |
+		| WebChatNarrative           | some text here       |
+		| SentToCustomer             | true                 |
+		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		| LastModifiedDate           | 2018-08-21T11:45:00Z |
+		And the last updated time should be later than the request time
+		And there should be a record in the webchats ChangeFeed table
+		And there should be a record in the webchats-history ChangeFeed table
+
+@webchats 
+	Scenario: Patch LastModifiedDate and WebChatEndDateandTime
+	Given I post a webchat with the following details:
+	    | Field                      | Value                |
+	    | DigitalReference           | abc1234              |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatDuration            | 00:25:00             |
+	    | WebChatNarrative           | some text here       |
+	    | SentToCustomer             | true                 |
+	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+	When I patch the following:
+		| Field                 | Value                |
+		| WebChatEndDateandTime | 2018-07-20T14:45:00Z |
+		| LastModifiedDate      | 2018-08-21T11:45:00Z |
+		Then there should be a 200 response
+		And the response body should contain:
+		| Field                      | Value                |
+		| DigitalReference           | abc1234              |
+		| WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+		| WebChatEndDateandTime      | 2018-07-20T14:45:00Z |
+		| WebChatDuration            | 01:25:00             |
+		| WebChatNarrative           | some text here       |
+		| SentToCustomer             | true                 |
+		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		| LastModifiedDate           | 2018-08-21T11:45:00Z |
+		And the last updated time should be later than the request time
+		And there should be a record in the webchats ChangeFeed table
+		And there should be a record in the webchats-history ChangeFeed table
+
 
 @webchats
 	Scenario: Patch WebChatNarrative
