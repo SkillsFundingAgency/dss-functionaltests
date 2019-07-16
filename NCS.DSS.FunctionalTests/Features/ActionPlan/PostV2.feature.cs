@@ -212,9 +212,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 53
   testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
-  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
-  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -522,9 +522,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 152
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
-  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 154
-  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

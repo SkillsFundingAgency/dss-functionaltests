@@ -51,8 +51,8 @@ Feature: PostV2
 		| CurrentSituation               | looking for work     |
 		And the response body should contain the SessionId 
 		And the response body should not contain the "CreatedBy"
-		And there should be a record in the actionPlans ChangeFeed table
-		And there should be a record in the actionPlans-history ChangeFeed table
+		And there should be a record in the ActionPlans ChangeFeed table
+		And there should be a record in the ActionPlans-history ChangeFeed table
 
 	
 @actionplans	@subcontractorId
@@ -150,8 +150,8 @@ Feature: PostV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		Then there should be a 201 response
-		And there should be a record in the actionPlans ChangeFeed table
-		And there should be a record in the actionPlans-history ChangeFeed table
+		And there should be a record in the ActionPlans ChangeFeed table
+		And there should be a record in the ActionPlans-history ChangeFeed table
 
 @actionplans
 	Scenario: Post ActionPlan with missing DateActionPlanCreated

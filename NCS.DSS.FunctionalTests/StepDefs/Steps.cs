@@ -51,6 +51,7 @@ namespace FunctionalTests.StepDefs
         private DateTime PostUpdateTime;
         private string creatingTouchpoint;
         private string lastTouchpoint;
+        private String lastResourceName;
         private List<TestDataItem> loadedData = new List<TestDataItem>();
         Dictionary<string, string> sqlData = new Dictionary<string, string>();
 
@@ -114,7 +115,7 @@ namespace FunctionalTests.StepDefs
             }
 
             json = JsonConvert.SerializeObject(customer);
-            response = RestHelper.Post(constants.Customers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Customers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             customerId = AssertAndExtract("CustomerId", response);
             id = customerId;
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -133,7 +134,7 @@ namespace FunctionalTests.StepDefs
             customer.GivenName = givenName;
             customer.FamilyName = "Smith";
             json = JsonConvert.SerializeObject(customer);
-            response = RestHelper.Post(constants.Customers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Customers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             customerId = AssertAndExtract("CustomerId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -147,7 +148,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "adviserdetails/api/AdviserDetails/";
             var adviser = table.CreateInstance<Adviser>();
             json2 = JsonConvert.SerializeObject(adviser);
-            response = RestHelper.Post(constants.AdviserDetails, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.AdviserDetails, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             adviserDetailId = AssertAndExtract("AdviserDetailId", response);
             id = adviserDetailId;
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -165,7 +166,7 @@ namespace FunctionalTests.StepDefs
   //              interaction.AdviserDetailsId = adviserDetailId;
   //          }
             json2 = JsonConvert.SerializeObject(interaction);
-            response = RestHelper.Post(constants.Interactions, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Interactions, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             interactionId = AssertAndExtract("InteractionId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -179,7 +180,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "addresses/api/Customers/" + customerId + "/Addresses/";
             var address = table.CreateInstance<Address>();
             json2 = JsonConvert.SerializeObject(address);
-            response = RestHelper.Post(targetOfLastPost = constants.Addresses, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = targetOfLastPost = constants.Addresses, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             addressId = AssertAndExtract("AddressId", response);
             id = addressId;
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -200,7 +201,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/";
             var contact = table.CreateInstance<Contact>();
             json2 = JsonConvert.SerializeObject(contact);
-            response = RestHelper.Post(targetOfLastPost = constants.Contacts, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = targetOfLastPost = constants.Contacts, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             contactId = AssertAndExtract("ContactId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -226,7 +227,7 @@ namespace FunctionalTests.StepDefs
 
             json = JsonConvert.SerializeObject(actionPlan);
 
-            response = RestHelper.Post(constants.ActionPlans, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.ActionPlans, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             actionPlanId = AssertAndExtract("ActionPlanId", response);
             id = actionPlanId;
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -254,7 +255,7 @@ namespace FunctionalTests.StepDefs
             }
 
             json = JsonConvert.SerializeObject(action);
-            response = RestHelper.Post(constants.Actions, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Actions, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             actionId = AssertAndExtract("ActionId", response);
             id = actionId;
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -269,7 +270,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
             var diversity = table.CreateInstance<Diversity>();
             json2 = JsonConvert.SerializeObject(diversity);
-            response = RestHelper.Post(constants.DiversityDetails, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.DiversityDetails, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             diversityId = AssertAndExtract("DiversityId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -294,7 +295,7 @@ namespace FunctionalTests.StepDefs
             }
 
             json = JsonConvert.SerializeObject(session);
-            response = RestHelper.Post(constants.Sessions, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Sessions, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             sessionId = AssertAndExtract("SessionId", response);
             id = sessionId;
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -321,7 +322,7 @@ namespace FunctionalTests.StepDefs
             }
 
             json = JsonConvert.SerializeObject(goal);
-            response = RestHelper.Post(constants.Goals, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Goals, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             id = goalId = AssertAndExtract("GoalId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -333,7 +334,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/";
             var webchat = table.CreateInstance<WebChat>();
             json2 = JsonConvert.SerializeObject(webchat);
-            response = RestHelper.Post(constants.WebChats, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.WebChats, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             webChatId = AssertAndExtract("WebChatId", response);
             PostUpdateTime = DateTime.Parse(ExtractFromResponse("LastModifiedDate", response)).ToUniversalTime();
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -358,7 +359,7 @@ namespace FunctionalTests.StepDefs
             }
 
             json = JsonConvert.SerializeObject(outcome);
-            response = RestHelper.Post(constants.Outcomes, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Outcomes, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             outcomeId = AssertAndExtract("OutcomeId", response);
             id = outcomeId;
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -386,7 +387,7 @@ namespace FunctionalTests.StepDefs
                                                {
                                                    NullValueHandling = NullValueHandling.Ignore
                                                });
-            response = RestHelper.Post(constants.Transfers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Transfers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             transferId = AssertAndExtract("TransferId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -410,7 +411,7 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "subscriptions/api/Customers/" + customerId + "/subscriptions/";
             var subscription = table.CreateInstance<Subscription>();
             json2 = JsonConvert.SerializeObject(subscription);
-            response = RestHelper.Post(constants.Subscriptions, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            response = RestHelper.Post(lastResourceName = constants.Subscriptions, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             subscriptionId = AssertAndExtract("SubscriptionId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -435,8 +436,13 @@ namespace FunctionalTests.StepDefs
 
         private void patchFromTable(Table table, String touchpointId = "")
         {
+            // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
+            // otherwise  post and patch change feed may get wrapped up into one.
+            ThenThereShouldBeARecordInTheChangeFeedTable(lastResourceName);
+
+
             // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
-            Thread.Sleep(5250);
+            //Thread.Sleep(5250);
             SetVersion("patch");
             Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
             id = dict.FirstOrDefault().Value;
@@ -904,10 +910,11 @@ namespace FunctionalTests.StepDefs
             string timestampField = "LastModifiedDate";
             string timestampValue = "";
             string timestampComparison = "";
+      //      table = table.ToLower();
             // get time of last response
 
             Console.WriteLine("Set up the variables for this change feed check");
-            switch ( table ) 
+            switch ( table.ToLower() ) 
             {
                 case "actions":
                 case "actions-history":
@@ -917,8 +924,8 @@ namespace FunctionalTests.StepDefs
                     primaryTableId = "ActionId";
                     historyTableId = "Actions-historyId";
                     break;
-                case "actionPlans":
-                case "actionPlans-history":
+                case "actionplans":
+                case "actionplans-history":
                     recordId = actionPlanId;
                     addSessionIdToCollection = true;
                     addSubcontractorIdToCollection = true;
@@ -972,8 +979,8 @@ namespace FunctionalTests.StepDefs
                     primaryTableId = "AddressId";
                     historyTableId = "Addresses-historyId";
                     break;
-                case "adviserDetails":
-                case "adviserDetails-history":
+                case "adviserdetails":
+                case "adviserdetails-history":
                     recordId = adviserDetailId;
                     addSubcontractorIdToCollection = true;
                     addCreatedByToCollection = true;
@@ -1078,7 +1085,7 @@ namespace FunctionalTests.StepDefs
                     values.Add("Latitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Latitude"] : ""));
                 }
 
-                if (table.Contains("webchats"))
+                if (table.ToLower().Contains("webchats"))
                 {
                     string newDuration = dict[0]["WebChatDuration"];
                     newDuration = newDuration.Substring(11, 8);

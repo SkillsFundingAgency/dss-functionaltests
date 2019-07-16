@@ -199,7 +199,7 @@ namespace FunctionalTests.Helpers
                 while (retry)
                 {
                     tries++;
-                    ThrottleHandler(5250); // pause for 5 and a bit seconds to ensure change feed has had time on initial post
+                    ThrottleHandler();//  try logic to check change feed has fired first. should be faster... 5250); // pause for 5 and a bit seconds to ensure change feed has had time on initial post
                     responseTime.Reset();
                     responseTime.Start();
                     response = client.Execute(request);

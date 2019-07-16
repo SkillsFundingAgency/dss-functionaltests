@@ -186,8 +186,6 @@ this.FeatureBackground();
                         "2018-07-20T13:45:00Z"});
 #line 35
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
-#line 44
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
@@ -273,8 +271,6 @@ this.FeatureBackground();
                         "2018-07-20T13:45:00Z"});
 #line 64
   testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
-#line 73
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
@@ -360,8 +356,6 @@ this.FeatureBackground();
                         "2018-07-20T13:45:00Z"});
 #line 93
   testRunner.And("the response body should contain:", ((string)(null)), table11, "And ");
-#line 102
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
@@ -449,8 +443,6 @@ this.FeatureBackground();
                         "2018-07-20T13:45:00Z"});
 #line 122
   testRunner.And("the response body should contain:", ((string)(null)), table14, "And ");
-#line 131
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 132
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
@@ -539,8 +531,6 @@ this.FeatureBackground();
                         "2018-08-21T11:45:00Z"});
 #line 150
   testRunner.And("the response body should contain:", ((string)(null)), table17, "And ");
-#line 160
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 161
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 162
@@ -632,8 +622,6 @@ this.FeatureBackground();
                         "2018-08-21T11:45:00Z"});
 #line 180
   testRunner.And("the response body should contain:", ((string)(null)), table20, "And ");
-#line 190
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 191
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 192
@@ -719,8 +707,6 @@ this.FeatureBackground();
                         "2018-07-20T13:45:00Z"});
 #line 210
   testRunner.And("the response body should contain:", ((string)(null)), table23, "And ");
-#line 219
-     testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 220
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 221
@@ -806,8 +792,6 @@ this.FeatureBackground();
                         "2018-07-20T13:45:00Z"});
 #line 238
   testRunner.And("the response body should contain:", ((string)(null)), table26, "And ");
-#line 247
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 248
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 249
@@ -893,8 +877,6 @@ this.FeatureBackground();
                         "2018-07-21T13:45:00Z"});
 #line 266
   testRunner.And("the response body should contain:", ((string)(null)), table29, "And ");
-#line 275
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 276
   testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 277
@@ -980,8 +962,6 @@ this.FeatureBackground();
                         "2018-07-21T13:45:00Z"});
 #line 295
   testRunner.And("the response body should contain:", ((string)(null)), table32, "And ");
-#line 304
-  testRunner.And("the last updated time should be later than the request time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 305
   testRunner.And("the response body should have different LastUpdatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 306

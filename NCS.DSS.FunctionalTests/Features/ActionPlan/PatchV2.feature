@@ -52,8 +52,8 @@ Feature: PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 		And the response body should not contain the "CreatedBy"
-		And there should be a record in the actionPlans ChangeFeed table
-		And there should be a record in the actionPlans-history ChangeFeed table
+		And there should be a record in the ActionPlans ChangeFeed table
+		And there should be a record in the ActionPlans-history ChangeFeed table
 
 @actionplans	
 	Scenario: Patch Valid DateAndTimeCharterShown
@@ -82,8 +82,8 @@ Feature: PatchV2
 		| CurrentSituation               | looking for work     |
 		And the response body should not contain the "CreatedBy"
 		And the response body should have different LastUpdatedBy
-		And there should be a record in the actionPlans ChangeFeed table
-		And there should be a record in the actionPlans-history ChangeFeed table
+		And there should be a record in the ActionPlans ChangeFeed table
+		And there should be a record in the ActionPlans-history ChangeFeed table
 
 @actionplans
 	Scenario: Patch Valid DateActionPlanCreated
@@ -298,7 +298,7 @@ Feature: PatchV2
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
-		| CustomerCharterShownToCustomer | 1					|
+		| CustomerCharterShownToCustomer | true					|
 		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
 		| ActionPlanDeliveryMethod       | 1                    |
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
@@ -306,8 +306,8 @@ Feature: PatchV2
 		| CurrentSituation               | looking for work     |
 		When I patch the following:
 		| Field                          | Value                |
-		| CustomerCharterShownToCustomer | true				    |
-		Then there should be a 400 response
+		| CustomerCharterShownToCustomer | 1				    |
+		Then there should be a 422 response
 
 @actionplans
 	# THIS RULE HAS BEEN RELAXED (CDS-1511-RemoveValidationForDateAndTimeCharterShown-v2

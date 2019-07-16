@@ -206,9 +206,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 41
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line 51
-  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
-  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
