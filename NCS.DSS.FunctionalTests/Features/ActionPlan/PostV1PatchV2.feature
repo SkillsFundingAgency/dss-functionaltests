@@ -295,7 +295,7 @@ Feature: PostV1PatchV2
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
-		| CustomerCharterShownToCustomer | 1					|
+		| CustomerCharterShownToCustomer | true					|
 		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
 		| ActionPlanDeliveryMethod       | 1                    |
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
@@ -303,8 +303,8 @@ Feature: PostV1PatchV2
 		| CurrentSituation               | looking for work     |
 		When I patch the following:
 		| Field                          | Value                |
-		| CustomerCharterShownToCustomer | true				    |
-		Then there should be a 400 response
+		| CustomerCharterShownToCustomer | 1				    |
+		Then there should be a 422 response
 
 @actionplans
 	Scenario: Patch invalid DateAndTimeCharterShown

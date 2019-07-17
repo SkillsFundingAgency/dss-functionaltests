@@ -430,7 +430,7 @@ namespace FunctionalTests.StepDefs
 
         [When(@"I patch the following:")]
         public void WhenIPatchTheFollowing(Table table)
-        {
+      {
             patchFromTable(table);
         }
 
@@ -438,6 +438,7 @@ namespace FunctionalTests.StepDefs
         {
             // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
             // otherwise  post and patch change feed may get wrapped up into one.
+            response.StatusCode.Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
             ThenThereShouldBeARecordInTheChangeFeedTable(lastResourceName);
 
 
@@ -1077,7 +1078,7 @@ namespace FunctionalTests.StepDefs
                     values.Add("CreatedBy", (/*GetVersion() == "v2" */ addValue ? envSettings.TestEndpoint01 : "" ) );
                 }
 
-                if (table.Contains("session"))
+                if (table.ToLower().Contains("session"))
                 {
                     bool addValue = (dict[0].Keys.Contains("Longitude") && dict[0]["Longitude"].Length > 0);////(scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
                     values.Add("Longitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Longitude"] : ""));
