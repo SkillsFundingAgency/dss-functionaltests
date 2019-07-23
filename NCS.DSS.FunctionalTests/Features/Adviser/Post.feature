@@ -3,7 +3,7 @@
 
 Feature: Post
 
-@adviserdetails
+@adviserdetails @smoke
 	Scenario: Create Valid Adviser
 		Given I post an adviser with the following details:
 			| Field                 | Value			|

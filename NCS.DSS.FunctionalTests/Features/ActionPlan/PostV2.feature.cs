@@ -134,10 +134,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with all fields")]
         [NUnit.Framework.CategoryAttribute("actionplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidActionPlanWithAllFields()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, new string[] {
-                        "actionplans"});
+                        "actionplans",
+                        "smoke"});
 #line 29
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -437,88 +439,34 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table13.AddRow(new string[] {
-                        "AdviserName",
-                        "BillyAdviser"});
-            table13.AddRow(new string[] {
-                        "AdviserContactNumber",
-                        "98798678967967"});
-#line 124
-  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table13, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table14.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table14.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 128
-  testRunner.And("I post a Customer with the following details:", ((string)(null)), table14, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table15.AddRow(new string[] {
-                        "DateandTimeOfInteraction",
-                        "2018-06-25T11:21:00Z"});
-            table15.AddRow(new string[] {
-                        "Channel",
-                        "2"});
-            table15.AddRow(new string[] {
-                        "InteractionType",
-                        "2"});
-            table15.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-06-22T16:52:10Z"});
-#line 132
-  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table15, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table16.AddRow(new string[] {
-                        "DateandTimeOfSession",
-                        "2018-06-21T14:45:00Z"});
-            table16.AddRow(new string[] {
-                        "VenuePostCode",
-                        "NN1 2NN"});
-#line 138
-  testRunner.And("I post a session with the following details:", ((string)(null)), table16, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table17.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 142
-  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table17, "And ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table13, "Given ");
 #line 152
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 153
@@ -542,32 +490,32 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table18.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table18.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table18.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table18.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table18.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table18.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table18.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 158
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table18, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table14, "Given ");
 #line 167
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -587,35 +535,35 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2058-07-30T09:00:00Z"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table19.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 171
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table19, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table15, "Given ");
 #line 181
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -637,35 +585,35 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2017-07-30T09:00:00Z"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table20.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 185
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table20, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table16, "Given ");
 #line 195
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -687,35 +635,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-29T09:00:00Z"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table21.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 199
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table21, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table17, "Given ");
 #line 209
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -737,35 +685,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-29T09:00:00Z"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table22.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 213
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table22, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table18, "Given ");
 #line 223
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -787,35 +735,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-29T09:00:00Z"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table23.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 227
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table23, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table19, "Given ");
 #line 237
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -835,32 +783,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table24.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table24.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table24.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table24.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table24.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table24.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table24.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 241
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table24, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table20, "Given ");
 #line 250
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -880,35 +828,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2058-07-30T09:00:00Z"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "3"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table25.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 254
-  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table25, "Given ");
+  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table21, "Given ");
 #line 264
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

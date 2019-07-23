@@ -10,7 +10,7 @@ Feature: PostV2
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
 
-@addresses
+@addresses @smoke
 	Scenario:Post valid address
 	Given I post an Address with the following details:
 		| Field                | Value                |
@@ -146,11 +146,11 @@ Feature: PostV2
 
 @addresses
 	Scenario: Post Address
-		Given I post a Customer with the following details:
-		| field						 | value                |
-		| GivenName                  | Bob                  |
-		| FamilyName                 | Customer             |
-		And I post an Address with the following details:
+#		Given I post a Customer with the following details:
+#		| field						 | value                |
+#		| GivenName                  | Bob                  |
+#		| FamilyName                 | Customer             |
+		Given I post an Address with the following details:
 		| Field                | Value                |
 		| Address1             | 1                    |
 		| PostCode             | NW11WN               |
@@ -160,11 +160,11 @@ Feature: PostV2
 
 @addresses
 	Scenario: Post Address with geocoding where postcode has no space
-		Given I post a Customer with the following details:
-		| field						 | value                |
-		| GivenName                  | Bob                  |
-		| FamilyName                 | Customer             |
-		And I post an Address with the following details:
+#		Given I post a Customer with the following details:
+#		| field						 | value                |
+#		| GivenName                  | Bob                  |
+#		| FamilyName                 | Customer             |
+		Given I post an Address with the following details:
 		| Field                | Value                |
 		| Address1             | 1                    |
 		| PostCode             | nn12tx               |
@@ -180,11 +180,11 @@ Feature: PostV2
 
 @addresses 
 	Scenario: Post Address with geocoding where postcode has space
-		Given I post a Customer with the following details:
-		| field						 | value                |
-		| GivenName                  | Bob                  |
-		| FamilyName                 | Customer             |
-		And I post an Address with the following details:
+###		Given I post a Customer with the following details:
+#		| field						 | value                |
+#		| GivenName                  | Bob                  |
+#		| FamilyName                 | Customer             |
+		Given I post an Address with the following details:
 		| Field                | Value                |
 		| Address1             | 1                    |
 		| PostCode             | nn1 2tx             |
@@ -200,11 +200,11 @@ Feature: PostV2
 
 @addresses 
 	Scenario: Post Address with geocoding where postcode cannot be geocoded
-		Given I post a Customer with the following details:
-		| field						 | value                |
-		| GivenName                  | Bob                  |
-		| FamilyName                 | Customer             |
-		And I post an Address with the following details:
+#		Given I post a Customer with the following details:
+#		| field						 | value                |
+#		| GivenName                  | Bob                  |
+#		| FamilyName                 | Customer             |
+		Given I post an Address with the following details:
 		| Field                | Value                |
 		| Address1             | 1                    |
 		| PostCode             | ze11 1ef             |

@@ -76,10 +76,12 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Name")]
         [NUnit.Framework.CategoryAttribute("adviserdetails")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Name", null, new string[] {
-                        "adviserdetails"});
+                        "adviserdetails",
+                        "smoke"});
 #line 7
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

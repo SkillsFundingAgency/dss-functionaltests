@@ -3,7 +3,7 @@
 
 Feature: GetV2
 
-@addresses @subcontractorId
+@addresses @smoke @subcontractorId
 	Scenario: Get Address by ID 
 		Given I post a Customer with the following details:
 		| Field                | Value                |

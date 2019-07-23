@@ -33,8 +33,8 @@ Background: Prepare test
 		| CurrentSituation               | looking for work     |
 
 
-
-@goals
+		 
+@goals @smoke
 	Scenario: Patch DateGoalCaptured
 		Given I post a goal with the following details:
 	    | Field                       | Value                |

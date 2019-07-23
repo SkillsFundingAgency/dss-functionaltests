@@ -152,10 +152,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Action")]
         [NUnit.Framework.CategoryAttribute("actions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Action", null, new string[] {
-                        "actions"});
+                        "actions",
+                        "smoke"});
 #line 38
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

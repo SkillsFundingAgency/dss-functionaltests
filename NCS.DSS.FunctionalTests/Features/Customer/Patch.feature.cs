@@ -76,10 +76,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateOfRegistration")]
         [NUnit.Framework.CategoryAttribute("customers")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchDateOfRegistration()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfRegistration", null, new string[] {
-                        "customers"});
+                        "customers",
+                        "smoke"});
 #line 8
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

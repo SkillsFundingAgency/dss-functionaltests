@@ -122,10 +122,12 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a Session for existing customer with all valid Values")]
         [NUnit.Framework.CategoryAttribute("sessions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void CreateASessionForExistingCustomerWithAllValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with all valid Values", null, new string[] {
-                        "sessions"});
+                        "sessions",
+                        "smoke"});
 #line 29
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

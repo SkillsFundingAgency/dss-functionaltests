@@ -112,10 +112,12 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DigitalReference")]
         [NUnit.Framework.CategoryAttribute("webchats")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchDigitalReference()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DigitalReference", null, new string[] {
-                        "webchats"});
+                        "webchats",
+                        "smoke"});
 #line 21
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -187,9 +189,9 @@ this.FeatureBackground();
 #line 35
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
 #line 45
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -272,9 +274,9 @@ this.FeatureBackground();
 #line 64
   testRunner.And("the response body should contain:", ((string)(null)), table8, "And ");
 #line 74
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -357,9 +359,9 @@ this.FeatureBackground();
 #line 93
   testRunner.And("the response body should contain:", ((string)(null)), table11, "And ");
 #line 103
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -444,9 +446,9 @@ this.FeatureBackground();
 #line 122
   testRunner.And("the response body should contain:", ((string)(null)), table14, "And ");
 #line 132
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 133
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -532,9 +534,9 @@ this.FeatureBackground();
 #line 150
   testRunner.And("the response body should contain:", ((string)(null)), table17, "And ");
 #line 161
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 162
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -623,9 +625,9 @@ this.FeatureBackground();
 #line 180
   testRunner.And("the response body should contain:", ((string)(null)), table20, "And ");
 #line 191
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 192
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -708,9 +710,9 @@ this.FeatureBackground();
 #line 210
   testRunner.And("the response body should contain:", ((string)(null)), table23, "And ");
 #line 220
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 221
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -793,9 +795,9 @@ this.FeatureBackground();
 #line 238
   testRunner.And("the response body should contain:", ((string)(null)), table26, "And ");
 #line 248
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 249
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -878,9 +880,9 @@ this.FeatureBackground();
 #line 266
   testRunner.And("the response body should contain:", ((string)(null)), table29, "And ");
 #line 276
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 277
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -965,9 +967,9 @@ this.FeatureBackground();
 #line 305
   testRunner.And("the response body should have different LastUpdatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 306
-  testRunner.And("there should be a record in the webchats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 307
-  testRunner.And("there should be a record in the webchats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the WebChats-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

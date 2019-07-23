@@ -935,10 +935,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch invalid DateActionPlanCreated")]
         [NUnit.Framework.CategoryAttribute("actionplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchInvalidDateActionPlanCreated()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid DateActionPlanCreated", null, new string[] {
-                        "actionplans"});
+                        "actionplans",
+                        "smoke"});
 #line 277
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -186,10 +186,12 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Change feed for Post Session")]
         [NUnit.Framework.CategoryAttribute("sessions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void ChangeFeedForPostSession()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Session", null, new string[] {
-                        "sessions"});
+                        "sessions",
+                        "smoke"});
 #line 50
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -200,55 +202,13 @@ namespace NCS.DSS.FunctionalTests.Features.Session
                         "Field",
                         "Value"});
             table6.AddRow(new string[] {
-                        "AdviserName",
-                        "BillyAdviser"});
-            table6.AddRow(new string[] {
-                        "AdviserContactNumber",
-                        "98798678967967"});
-#line 51
-  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table6, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table7.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table7.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 55
-  testRunner.And("I post a Customer with the following details:", ((string)(null)), table7, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table8.AddRow(new string[] {
-                        "DateandTimeOfInteraction",
-                        "2018-06-25T11:21:00Z"});
-            table8.AddRow(new string[] {
-                        "Channel",
-                        "2"});
-            table8.AddRow(new string[] {
-                        "InteractionType",
-                        "2"});
-            table8.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-06-22T16:52:10Z"});
-#line 59
-  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table8, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table9.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "2018-06-21T14:45:00Z"});
-            table9.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
 #line 65
-  testRunner.And("I post a session with the following details:", ((string)(null)), table9, "And ");
+  testRunner.Given("I post a session with the following details:", ((string)(null)), table6, "Given ");
 #line 69
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 70
@@ -290,17 +250,17 @@ namespace NCS.DSS.FunctionalTests.Features.Session
 #line 7
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table10.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "21-065-2012"});
-            table10.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
 #line 83
-  testRunner.Given("I post a session with the following details:", ((string)(null)), table10, "Given ");
+  testRunner.Given("I post a session with the following details:", ((string)(null)), table7, "Given ");
 #line 87
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -320,17 +280,17 @@ namespace NCS.DSS.FunctionalTests.Features.Session
 #line 7
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table11.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "21-06-2018"});
-            table11.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1"});
 #line 91
-  testRunner.Given("I post a session with the following details:", ((string)(null)), table11, "Given ");
+  testRunner.Given("I post a session with the following details:", ((string)(null)), table8, "Given ");
 #line 95
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

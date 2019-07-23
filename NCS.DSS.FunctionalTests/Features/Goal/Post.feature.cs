@@ -152,10 +152,12 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a Goal for existing customer with all valid values")]
         [NUnit.Framework.CategoryAttribute("goals")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void CreateAGoalForExistingCustomerWithAllValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal for existing customer with all valid values", null, new string[] {
-                        "goals"});
+                        "goals",
+                        "smoke"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

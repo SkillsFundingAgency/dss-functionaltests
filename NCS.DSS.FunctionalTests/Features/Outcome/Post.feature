@@ -33,7 +33,7 @@ Background: Prepare test
 
 
 
-@outcomes
+@outcomes @smoke
 	Scenario: Create an outcome with all valid values
 	Given I post an outcome with the following details:
 	    | Field                | Value                |

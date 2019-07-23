@@ -104,10 +104,12 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Interaction with all Fields")]
         [NUnit.Framework.CategoryAttribute("interactions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidInteractionWithAllFields()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Interaction with all Fields", null, new string[] {
-                        "interactions"});
+                        "interactions",
+                        "smoke"});
 #line 19
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

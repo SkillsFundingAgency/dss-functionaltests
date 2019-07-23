@@ -124,10 +124,12 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateandTimeOfSession")]
         [NUnit.Framework.CategoryAttribute("sessions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchDateandTimeOfSession()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateandTimeOfSession", null, new string[] {
-                        "sessions"});
+                        "sessions",
+                        "smoke"});
 #line 27
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

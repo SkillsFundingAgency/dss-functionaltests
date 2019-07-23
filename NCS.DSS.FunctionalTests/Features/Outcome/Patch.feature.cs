@@ -154,10 +154,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch OutcomeType")]
         [NUnit.Framework.CategoryAttribute("outcomes")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchOutcomeType()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OutcomeType", null, new string[] {
-                        "outcomes"});
+                        "outcomes",
+                        "smoke"});
 #line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

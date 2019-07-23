@@ -31,7 +31,7 @@ Feature: PostV1PatchV2
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-@actions	@subcontractorId
+@actions @smoke	@subcontractorId
 	Scenario: Patch DateActionAimsToBeCompletedBy with SubcontractorId
 		Given I post an Action with the following details:
 		| Field                         | Value                |

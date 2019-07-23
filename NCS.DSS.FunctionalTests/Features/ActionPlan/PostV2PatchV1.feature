@@ -27,7 +27,7 @@ Feature: PostV2PatchV1
 
 
 
-@actionplans
+@actionplans @smoke
 	Scenario: Patch Valid CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |

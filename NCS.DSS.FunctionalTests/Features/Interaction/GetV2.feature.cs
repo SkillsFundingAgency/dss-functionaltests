@@ -124,10 +124,12 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Interaction by ID")]
         [NUnit.Framework.CategoryAttribute("interactions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void GetInteractionByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Interaction by ID", null, new string[] {
-                        "interactions"});
+                        "interactions",
+                        "smoke"});
 #line 25
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

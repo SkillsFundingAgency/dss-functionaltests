@@ -195,10 +195,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid Customer")]
         [NUnit.Framework.CategoryAttribute("customers")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidCustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Customer", null, new string[] {
-                        "customers"});
+                        "customers",
+                        "smoke"});
 #line 45
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -4,7 +4,7 @@
 
 Feature: Get
 
-@customers
+@customers @smoke
 	Scenario: Get Customer by ID
 	Given I post a Customer with the following details:
 		| Field                      | Value                |

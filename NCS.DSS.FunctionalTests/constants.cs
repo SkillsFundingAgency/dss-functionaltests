@@ -73,7 +73,7 @@ namespace FunctionalTests.StepDefs
             switch (resource.ToLower())
             {
                 case "addresses":
-                    returnVal = "addressId";
+                    returnVal = "AddressId";
                     break;
                 case "webchats":
                     returnVal = "WebChatId";
@@ -81,7 +81,6 @@ namespace FunctionalTests.StepDefs
                 case "diversitydetails":
                     returnVal = "DiversityId";
                     break;
-        
                 default:
                     returnVal = resource.TrimEnd(new char[] { 's'}) + "Id";
                     break;

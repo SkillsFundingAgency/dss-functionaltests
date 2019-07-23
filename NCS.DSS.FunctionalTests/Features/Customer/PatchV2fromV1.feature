@@ -21,7 +21,7 @@ Feature: PatchV2fromV1
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 
-@customers	 @subcontractorId
+@customers @smoke	 @subcontractorId
 	 Scenario: Patch DateOfRegistration
 		When I patch the following:
         | Field						 | Value                |

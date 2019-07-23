@@ -11,7 +11,7 @@ Feature: PatchV1fromV2
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
 
-@addresses
+@addresses @smoke
 	Scenario: Patch Address1
 	Given I post an Address with the following details:
 		| Field                | Value                |

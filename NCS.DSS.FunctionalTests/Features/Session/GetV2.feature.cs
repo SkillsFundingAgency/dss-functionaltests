@@ -136,10 +136,12 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Session by ID")]
         [NUnit.Framework.CategoryAttribute("sessions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void GetSessionByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Session by ID", null, new string[] {
-                        "sessions"});
+                        "sessions",
+                        "smoke"});
 #line 28
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

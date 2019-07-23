@@ -94,10 +94,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Address1")]
         [NUnit.Framework.CategoryAttribute("addresses")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchAddress1()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address1", null, new string[] {
-                        "addresses"});
+                        "addresses",
+                        "smoke"});
 #line 15
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

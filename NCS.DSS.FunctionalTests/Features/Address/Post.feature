@@ -10,7 +10,7 @@ Feature: Post
 		| FamilyName           | Customer             |
 
 
-@addresses
+@addresses @smoke
 	Scenario:Post valid address
 	Given I post an Address with the following details:
 		| Field                | Value                |

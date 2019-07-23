@@ -134,10 +134,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Valid ActionPlan with all fields")]
         [NUnit.Framework.CategoryAttribute("actionplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidActionPlanWithAllFields()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with all fields", null, new string[] {
-                        "actionplans"});
+                        "actionplans",
+                        "smoke"});
 #line 29
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

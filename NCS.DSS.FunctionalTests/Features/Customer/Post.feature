@@ -45,7 +45,7 @@ Feature: Post
 		#And the error message should be "Family Name is a required field"
 
 
-@customers
+@customers @smoke
 		Scenario: Post Valid Customer
 		Given I post a Customer with the following details:
 		| Field                      | Value                |

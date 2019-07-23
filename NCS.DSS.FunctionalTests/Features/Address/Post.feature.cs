@@ -92,10 +92,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post valid address")]
         [NUnit.Framework.CategoryAttribute("addresses")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidAddress()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post valid address", null, new string[] {
-                        "addresses"});
+                        "addresses",
+                        "smoke"});
 #line 14
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -22,7 +22,7 @@ Feature: Patch
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
 
-@actionplans
+@actionplans @smoke
 	Scenario: Patch CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |

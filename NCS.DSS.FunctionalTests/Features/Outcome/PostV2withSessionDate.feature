@@ -155,7 +155,7 @@ Feature: PostV2withSessionDate
 		| ClaimedPriorityGroup | 3                     |
 		Then there should be a 422 response
 
-@outcomes
+@outcomes @smoke
 	Scenario: Outcome effective date greater than Session.DateandTimeOfSession + 12 months with outcome type 3
 		Given I post an adviser with the following details:
 		| Field						 | Value				|

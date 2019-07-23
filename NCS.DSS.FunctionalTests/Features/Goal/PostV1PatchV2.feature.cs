@@ -168,10 +168,12 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateGoalCaptured")]
         [NUnit.Framework.CategoryAttribute("goals")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchDateGoalCaptured()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalCaptured", null, new string[] {
-                        "goals"});
+                        "goals",
+                        "smoke"});
 #line 38
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

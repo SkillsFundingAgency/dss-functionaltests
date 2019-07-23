@@ -82,7 +82,7 @@ namespace FunctionalTests.Helpers
             Console.WriteLine("Attempt to POST: " + url);
             Console.WriteLine("Header value: touchPointId: " + touchPointId);
             Console.WriteLine("JSON Document: " + json);
-            Thread.Sleep(250);
+            //Thread.Sleep(250);
             try
             {
 
@@ -229,7 +229,7 @@ namespace FunctionalTests.Helpers
 
         internal static IRestResponse Get(/*string resourceName,*/ string url, string touchPointId, string subscriptionKey)
         {
-            Thread.Sleep(250);
+            //Thread.Sleep(250);
             Console.WriteLine("Attempt to GET: " + url);
             try
             {
@@ -261,12 +261,36 @@ namespace FunctionalTests.Helpers
                 }
  
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-                ThrottleHandler();
-                responseTime.Reset();
-                responseTime.Start();
-                IRestResponse response = client.Execute(request);
-                responseTime.Stop();
-                Console.WriteLine("Rest call Attempt Returned " + response.StatusCode + " in " + responseTime.ElapsedMilliseconds + " ms");
+                IRestResponse response = null;
+                bool retry = true;
+                int tries = 0;
+                int maxTries = 5;
+                while (retry)
+                {
+                    tries++;
+                    ThrottleHandler();
+                    responseTime.Reset();
+                    responseTime.Start();
+                    response = client.Execute(request);
+                    responseTime.Stop();
+                    Console.WriteLine("Rest call Attempt (" + tries + ") Returned " + response.StatusCode + " in " + responseTime.ElapsedMilliseconds + " ms");
+                    if ( response.StatusCode != System.Net.HttpStatusCode.OK )
+                    {
+                        if (tries <= maxTries)
+                        {
+                            Console.WriteLine("Sleep and retry");
+                            Thread.Sleep(500);
+                            if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError && !ThrottleBackoff)
+                            {
+                                Console.WriteLine("Throttling: Backoff invoked following 500 error");
+                                ThrottleBackoff = true;
+                            }
+                        }
+                        else retry = false;
+                    }
+                    else retry = false;
+                }
+
                 return response;
             }
             catch (Exception e) { throw e; }

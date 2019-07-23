@@ -34,7 +34,7 @@ Feature: Post Action
 
 
 
-@actions
+@actions @smoke
 	Scenario: Post Valid Action
 		Given I post an Action with the following details:
 		| Field                         | Value                |

@@ -124,10 +124,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch CustomerCharterShownToCustomer")]
         [NUnit.Framework.CategoryAttribute("actionplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchCustomerCharterShownToCustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch CustomerCharterShownToCustomer", null, new string[] {
-                        "actionplans"});
+                        "actionplans",
+                        "smoke"});
 #line 26
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -273,7 +273,7 @@ Feature: PostV1PatchV2
 		| CurrentSituation               | still looking        |
 		And the response body should contain the SubContractorId
 
-@actionplans
+@actionplans @smoke
 	Scenario: Patch invalid DateActionPlanCreated
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |

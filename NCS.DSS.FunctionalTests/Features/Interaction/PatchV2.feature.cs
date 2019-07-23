@@ -106,10 +106,12 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Date")]
         [NUnit.Framework.CategoryAttribute("interactions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchDate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Date", null, new string[] {
-                        "interactions"});
+                        "interactions",
+                        "smoke"});
 #line 19
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

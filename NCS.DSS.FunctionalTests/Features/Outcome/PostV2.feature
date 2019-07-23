@@ -35,7 +35,7 @@ Feature: Post V2 Outcome
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-@outcomes
+@outcomes @smoke
 	Scenario: Create an outcome with minimum valid values
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
