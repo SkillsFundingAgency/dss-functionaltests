@@ -344,7 +344,7 @@ Background: Prepare test
 		 | OutcomeType | 1     |
 		Then there should be a 403 response
 
-		Scenario: Customer is terminated with reason 3 - Duplicate, patch to valid and invalid elements is received
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: OutcomeType is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
@@ -360,9 +360,45 @@ Background: Prepare test
 		 | OutcomeType          | 1     |
 		 | OutcomeEffectiveDate |       |
 		 | OutcomeClaimedDate   |       |
-		Then there should be a 200 response
-		And the response body should contain:
-         | Field                | Value |
-         | OutcomeType          | 3     |
-         | OutcomeEffectiveDate |       |
-         | OutcomeClaimedDate   |       |
+		Then there should be a 403 response
+		And the response body should include "ERRORMESSAGE"
+        
+		
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: ClaimedPriorityGroup is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | ClaimedPriorityGroup | 1     |
+		 | OutcomeEffectiveDate |       |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 403 response
+		And the response body should include "ERRORMESSAGE"
+
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: LastModifiedDate is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value                |
+		 | LastModifiedDate     | 2018-07-20T21:45:00Z |
+		 | OutcomeEffectiveDate |                      |
+		 | OutcomeClaimedDate   |                      |
+		Then there should be a 403 response
+		And the response body should include "ERRORMESSAGE"
+        
