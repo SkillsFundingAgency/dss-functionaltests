@@ -43,7 +43,6 @@ Feature: PostV2
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	    And the "addresses" cosmos document should include CreatedBy
 		And the response body should not contain the "CreatedBy"
-		And the "addresses" cosmos document should include CreatedBy
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
 

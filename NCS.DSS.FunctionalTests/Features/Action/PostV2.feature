@@ -30,7 +30,7 @@ Feature: PostV2
 		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
 		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
 		| ActionPlanDeliveryMethod       | 1                    |
-		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
+		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |s
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 

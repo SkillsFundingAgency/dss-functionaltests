@@ -194,10 +194,8 @@ namespace NCS.DSS.FunctionalTests.Features.Address
 #line 45
   testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
-  testRunner.And("the \"addresses\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 47
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -212,7 +210,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post valid address with Subcontractor Id", null, new string[] {
                         "addresses",
                         "subcontractorId"});
-#line 52
+#line 51
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -257,9 +255,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table4.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 53
+#line 52
  testRunner.Given("I post an Address with the following details:", ((string)(null)), table4, "Given ");
-#line 67
+#line 66
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -301,17 +299,17 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table5.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 68
+#line 67
   testRunner.And("the response body should contain:", ((string)(null)), table5, "And ");
-#line 82
+#line 81
   testRunner.And("the response body should contain the SubContractorId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 82
      testRunner.And("the \"addresses\" cosmos document should include CreatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 83
   testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 84
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 85
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -324,7 +322,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with only mandatory Fields", null, new string[] {
                         "addresses"});
-#line 90
+#line 89
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -339,9 +337,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table6.AddRow(new string[] {
                         "PostCode",
                         "NW11WN"});
-#line 91
+#line 90
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table6, "Given ");
-#line 95
+#line 94
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -380,11 +378,11 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table7.AddRow(new string[] {
                         "EffectiveTo",
                         "null"});
-#line 96
+#line 95
   testRunner.And("the response body should contain:", ((string)(null)), table7, "And ");
-#line 109
+#line 108
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 109
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -397,7 +395,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with maximum Field lengths", null, new string[] {
                         "addresses"});
-#line 114
+#line 113
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -443,9 +441,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table8.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 115
+#line 114
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table8, "Given ");
-#line 128
+#line 127
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -488,11 +486,11 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table9.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 129
+#line 128
   testRunner.And("the response body should contain:", ((string)(null)), table9, "And ");
-#line 142
+#line 141
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 142
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -505,7 +503,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address", null, new string[] {
                         "addresses"});
-#line 148
+#line 147
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -520,13 +518,13 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table10.AddRow(new string[] {
                         "PostCode",
                         "NW11WN"});
-#line 153
+#line 152
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table10, "Given ");
-#line 157
+#line 156
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 158
+#line 157
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 159
+#line 158
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -539,7 +537,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with geocoding where postcode has no space", null, new string[] {
                         "addresses"});
-#line 162
+#line 161
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -554,9 +552,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table11.AddRow(new string[] {
                         "PostCode",
                         "nn12tx"});
-#line 167
+#line 166
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table11, "Given ");
-#line 171
+#line 170
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -574,11 +572,11 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table12.AddRow(new string[] {
                         "Latitude",
                         "52.12814"});
-#line 172
+#line 171
   testRunner.And("the response body should contain:", ((string)(null)), table12, "And ");
-#line 178
+#line 177
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
+#line 178
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -591,7 +589,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with geocoding where postcode has space", null, new string[] {
                         "addresses"});
-#line 182
+#line 181
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -606,9 +604,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table13.AddRow(new string[] {
                         "PostCode",
                         "nn1 2tx"});
-#line 187
+#line 186
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table13, "Given ");
-#line 191
+#line 190
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -626,11 +624,11 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table14.AddRow(new string[] {
                         "Latitude",
                         "52.12814"});
-#line 192
+#line 191
      testRunner.And("the response body should contain:", ((string)(null)), table14, "And ");
-#line 198
+#line 197
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
+#line 198
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -643,7 +641,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with geocoding where postcode cannot be geocoded", null, new string[] {
                         "addresses"});
-#line 202
+#line 201
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -658,9 +656,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table15.AddRow(new string[] {
                         "PostCode",
                         "ze11 1ef"});
-#line 207
+#line 206
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table15, "Given ");
-#line 211
+#line 210
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -678,11 +676,11 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table16.AddRow(new string[] {
                         "Latitude",
                         ""});
-#line 212
+#line 211
      testRunner.And("the response body should contain:", ((string)(null)), table16, "And ");
-#line 218
+#line 217
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 219
+#line 218
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -695,7 +693,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with Address1 Field missing", null, new string[] {
                         "addresses"});
-#line 224
+#line 223
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -737,9 +735,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table17.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 225
+#line 224
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table17, "Given ");
-#line 238
+#line 237
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -752,7 +750,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with Address1 Field over character limit", null, new string[] {
                         "addresses"});
-#line 241
+#line 240
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -798,9 +796,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table18.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 242
+#line 241
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table18, "Given ");
-#line 256
+#line 255
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -813,7 +811,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Address1", null, new string[] {
                         "addresses"});
-#line 259
+#line 258
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -858,9 +856,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table19.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 260
+#line 259
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table19, "Given ");
-#line 274
+#line 273
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -873,7 +871,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with PostCode Field missing", null, new string[] {
                         "addresses"});
-#line 277
+#line 276
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -915,9 +913,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table20.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 278
+#line 277
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table20, "Given ");
-#line 291
+#line 290
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -930,7 +928,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid PostCode", null, new string[] {
                         "addresses"});
-#line 294
+#line 293
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -975,9 +973,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table21.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 295
+#line 294
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table21, "Given ");
-#line 309
+#line 308
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -990,7 +988,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Longitude", null, new string[] {
                         "addresses"});
-#line 312
+#line 311
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1035,9 +1033,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table22.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 313
+#line 312
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table22, "Given ");
-#line 327
+#line 326
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1050,7 +1048,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Latitude", null, new string[] {
                         "addresses"});
-#line 331
+#line 330
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1095,9 +1093,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table23.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 332
+#line 331
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table23, "Given ");
-#line 346
+#line 345
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1110,7 +1108,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Address with invalid EffectiveFrom date", null, new string[] {
                         "addresses"});
-#line 349
+#line 348
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1155,9 +1153,9 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table24.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 350
+#line 349
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table24, "Given ");
-#line 364
+#line 363
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -45,14 +45,16 @@ namespace NCS.DSS.FunctionalTests
 
         public void SetRequestDetails(string resource, string url, Guid guid, HttpStatusCode responseCode, string responseContent)
         {
-            if (documentIds.ContainsKey(resource))
-            {
-                documentIds[resource] = guid;
-            }
-            else
-            {
-                documentIds.Add(resource, guid);
-            }
+            //if (documentIds.ContainsKey(resource))
+            //{
+            //    documentIds[resource] = guid;
+            //}
+            //else
+            //{
+            //    documentIds.Add(resource, guid);
+            //}
+            SetDocumentId(resource, guid);
+
             if (requestUrls.ContainsKey(resource))
             {
                 requestUrls[resource] = url;
@@ -94,6 +96,18 @@ namespace NCS.DSS.FunctionalTests
             return documentIds[resource];
         }
 
+        public void SetDocumentId(string resource, Guid guid)
+        {
+            if (documentIds.ContainsKey(resource))
+            {
+                documentIds[resource] = guid;
+            }
+            else
+            {
+                documentIds.Add(resource, guid);
+            }
+        }
+
         public string GetDocumentBaseUrl(string resource)
         {
             return requestUrls[resource];
@@ -128,6 +142,7 @@ namespace NCS.DSS.FunctionalTests
                 case constants.Subscriptions:
                 case constants.DiversityDetails:
                 case constants.Addresses:
+                case constants.LearningProgression:
                     returnUrl += getUrlPart(constants.Customers) + resource + "/";
                     break;
                 case constants.Sessions:
