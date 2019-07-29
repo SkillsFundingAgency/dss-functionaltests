@@ -48,6 +48,7 @@ namespace FunctionalTests.StepDefs
              private string diversityId;
              private string subscriptionId;
              private string transferId;
+             private string learningProgressionId;
              private bool lastRequestWasPatch = false;
              private string targetOfLastPost = "";
              private DateTime requestTime;
@@ -450,13 +451,37 @@ namespace FunctionalTests.StepDefs
 
         }
 
+        [Given(@"I post a Learning Progression record with the following details:")]
+        public void GivenIPostALearningProgressionRecordWithTheFollowingDetails(Table table)
+        {
+            table = SpecflowHelper.ReplaceTokensInTable(table, false, "Field");
+            
+            var learningProgression = table.CreateInstance<LearningProgression>();
+            json2 = JsonConvert.SerializeObject(learningProgression);
+
+            if (scenarioContext.ContainsKey("AdditionalFieldName"))
+            {
+                json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+            }
+
+            url = PostRequest(envSettings.BaseUrl, json, constants.LearningProgression);
+            learningProgressionId = id;
+        }
+
+        [Given(@"I want to send (.*) with value (.*) in the following request")]
+        public void GivenIWantToSendCurrentLearningStatusWithValueInTheFollowingRequest(string p0, string p1)
+        {
+            scenarioContext["AdditionalFieldName"] = p0;
+            scenarioContext["AdditionalFieldValue"] = p1;
+        }
+
 
         [When(@"I patch the following using ""(.*)"":")]
         [When(@"I patch the following via a different touchpoint")]
         public void WhenIPatchTheFollowingViaADifferentTouchpoint(Table table)
         {
             // pass through to overload
-            patchFromTable(table, envSettings.TestEndpoint02);
+            patchFromTable2(table, envSettings.TestEndpoint02);
         }
 
 
@@ -472,6 +497,23 @@ namespace FunctionalTests.StepDefs
         {
             patchFromTable2(table, p0);
         }
+
+        [When(@"I patch the element (.*) with (.*):")]
+        public void WhenIPatchTheElementWith(string p0, string p1)
+        {
+            Table table = new Table(new string[] { "Field", "Value" });
+            table.AddRow(new string[] { p0, p1 });
+            patchFromTable2(table, lastResourceName);
+        }
+
+        [When(@"I patch an unknown resource with the element (.*) with (.*):")]
+        public void WhenIPatchAnUnknownResourceWithTheElementWith(string p0, string p1)
+        {
+            // update last resource with a random guid
+            requestContext.SetDocumentId(lastResourceName, Guid.NewGuid());
+            WhenIPatchTheElementWith(p0, p1);
+        }
+
 
         private void patchFromTable2(Table table, string resource, String touchpointId = "")
         {
@@ -507,38 +549,41 @@ namespace FunctionalTests.StepDefs
 
         }
 
-        private void patchFromTable(Table table, String touchpointId = "")
-        {
-            // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
-            // otherwise  post and patch change feed may get wrapped up into one.
-            response.StatusCode.Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
-            ThenThereShouldBeARecordInTheChangeFeedTable(lastResourceName);
+  
 
 
-            // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
-            //Thread.Sleep(5250);
-            SetVersion("patch");
-            Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
-            id = dict.FirstOrDefault().Value;
-            Dictionary<string, string> patchVals = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
-            if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("SessionId"))
-            {
-                patchVals.Add("SessionId", sessionId);
-            }
-            json = JsonConvert.SerializeObject(patchVals);
-            lastTouchpoint = (touchpointId.Equals(string.Empty) ? envSettings.TestEndpoint01 : touchpointId);
-            //requestTime = DateTime.UtcNow;
+        //private void patchFromTable(Table table, String touchpointId = "")
+        //{
+        //    // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
+        //    // otherwise  post and patch change feed may get wrapped up into one.
+        //    response.StatusCode.Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
+        //    ThenThereShouldBeARecordInTheChangeFeedTable(lastResourceName);
 
 
-            response = RestHelper.Patch(url, json, lastTouchpoint, envSettings.SubscriptionKey, id);
-            string RequestTimeString = response.Headers
-                .Where(x => x.Name == "Date")
-                .Select(x => x.Value)
-                .FirstOrDefault().ToString();
-            requestTime = DateTime.Parse(RequestTimeString).ToUniversalTime();
-            lastRequestWasPatch = true;
+        //    // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
+        //    //Thread.Sleep(5250);
+        //    SetVersion("patch");
+        //    Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+        //    id = dict.FirstOrDefault().Value;
+        //    Dictionary<string, string> patchVals = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
+        //    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("SessionId"))
+        //    {
+        //        patchVals.Add("SessionId", sessionId);
+        //    }
+        //    json = JsonConvert.SerializeObject(patchVals);
+        //    lastTouchpoint = (touchpointId.Equals(string.Empty) ? envSettings.TestEndpoint01 : touchpointId);
+        //    //requestTime = DateTime.UtcNow;
 
-        }
+
+        //    response = RestHelper.Patch(url, json, lastTouchpoint, envSettings.SubscriptionKey, id);
+        //    string RequestTimeString = response.Headers
+        //        .Where(x => x.Name == "Date")
+        //        .Select(x => x.Value)
+        //        .FirstOrDefault().ToString();
+        //    requestTime = DateTime.Parse(RequestTimeString).ToUniversalTime();
+        //    lastRequestWasPatch = true;
+
+        //}
 
 
 
@@ -650,6 +695,48 @@ namespace FunctionalTests.StepDefs
         {
             url = envSettings.BaseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/" + webChatId;
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+        [When(@"I get a Learning Progression by ID")]
+        public void WhenIGetALearningProgressionByID()
+        {
+            url = envSettings.BaseUrl + "LearningProgression/api/Customers/" + customerId + "/LearningProgression/" + learningProgressionId;
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+        [When(@"I get all Learning Progression records for a customer")]
+        public void WhenIGetAllLearningProgressionRecordsForACustomer()
+        {
+            url = envSettings.BaseUrl + "LearningProgression/api/Customers/" + customerId + "/LearningProgression/";
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+        [When(@"I get all Address records for a customer")]
+        public void WhenIGetAllAddressRecordsForACustomer()
+        {
+            url = envSettings.BaseUrl + "Addresses/api/Customers/" + customerId + "/Addresses/";
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+
+        [Then(@"the response should contain (.*) document\(s\)")]
+        public void ThenTheResponseShouldContainDocumentS(int p0)
+        {
+            JsonHelper.DocumentCount(response.Content).Should().Be(p0);
+        }
+
+
+        [Then(@"the response body should incorporate a document with the following details:")]
+        public void ThenTheResponseBodyShouldIncorporateADocumentWithTheFollowingDetails(Table table)
+        {
+            var expectedVals = new Dictionary<string, string>();
+            string jsonString = "{}";
+            foreach (var row in table.Rows)
+            {
+                jsonString = JsonHelper.AddPropertyToJsonString(jsonString, row[0], row[1]);
+               // expectedVals.Add(row[0], row[1]);
+            }
+            JsonHelper.MatchDocument(jsonString, response.Content).Should().BeTrue();
         }
 
         [Given(@"with an invalid subcontractorId")]
@@ -783,10 +870,22 @@ namespace FunctionalTests.StepDefs
             response.Content.Should().Contain(sessionId);
         }
 
+        [Then(@"the response body should have (.*) with value (.*)")]
+        public void ThenTheResponseBodyShouldHaveFieldWithValue(string p0, string p1)
+        {
+            JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(p1);
+        }
+
         [Then(@"the response body should not contain the ""(.*)""")]
         public void ThenTheResponseBodyShouldNotContainThe(string p0)
         {
             response.Content.Should().NotContain(p0);
+        }
+
+        [Then(@"the response body should include (.*)")]
+        public void ThenTheResponseBodyShouldinclude(string p0)
+        {
+            response.Content.Should().Contain(p0);
         }
 
         [Then(@"the response body should have different LastUpdatedBy")]
@@ -846,7 +945,7 @@ namespace FunctionalTests.StepDefs
 
 
 
-        [Then(@"the ""(.*)"" cosmos document should include ""(.*)"" with value ""(.*)""")]
+        [Then(@"the ""(.*)"" cosmos document should have ""(.*)"" with value ""(.*)""")]
         public void ThenTheCosmosDocumentShouldIncludeWithValue(string p0, string p1, string p2)
         {
             string docJson = "";
