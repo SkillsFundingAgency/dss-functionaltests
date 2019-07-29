@@ -17,6 +17,48 @@ namespace NCS.DSS.FunctionalTests.Helpers
             return (check != null);//.GetValue(property.ToLower()).ToString().Length > 0;
         }
 
+        public static int DocumentCount( string json)
+        {
+            JArray a = JArray.Parse(json);
+            return a.Count();
+        }
+
+        public static bool MatchDocument(string jsonDocument, string jsonCollection)
+        {
+            // This function attempts to find a record in JsonCollection that matches all elements in jsonDocument
+            // It doesn't care if the docs in JsonCollection contain elements that aren't in JsonDocument.
+
+            bool foundMatch = false;
+            JArray a = JArray.Parse(jsonCollection);
+            JObject b = JObject.Parse(jsonDocument);
+            foreach (var doc in a.Children<JObject>().Select((value, index) => new { value, index }))
+            {
+                bool thisMatches = true;
+                foreach (var property in b.Properties() )
+                {
+                     // does each property in b exist in this item from a?
+                    // if (doc.ContainsKey(property.Name) && doc.Property(property.Name).Value == property.Value)
+                    // {
+
+                    // }
+                    //else
+                    if ( !doc.value.ContainsKey(property.Name)  || doc.value.Property(property.Name).Value.ToString() != property.Value.ToString())
+                    {
+                        //Console.WriteLine("Mismatch found for: " + property.Name + " - " + property.Value);
+                        thisMatches = false;
+                        break;
+                    }
+                }
+                if ( thisMatches)
+                {
+                    foundMatch = true;
+                    Console.WriteLine("Matching record found at index " + doc.index);
+                    break;
+                }
+            }
+            return foundMatch;
+        }
+
         public static Boolean CheckJsonPropertyHasValue(string json, string property)
         {
             var obj = (Newtonsoft.Json.Linq.JObject)JsonConvert.DeserializeObject(json.ToLower());

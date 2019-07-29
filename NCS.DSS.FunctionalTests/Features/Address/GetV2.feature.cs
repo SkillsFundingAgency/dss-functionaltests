@@ -192,6 +192,180 @@ namespace NCS.DSS.FunctionalTests.Features.Address
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Get All Address records where 2 exist")]
+        public virtual void GetAllAddressRecordsWhere2Exist()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Address records where 2 exist", null, ((string[])(null)));
+#line 44
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table4.AddRow(new string[] {
+                        "GivenName",
+                        "Bob"});
+            table4.AddRow(new string[] {
+                        "FamilyName",
+                        "Customer"});
+#line 45
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table4, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table5.AddRow(new string[] {
+                        "Address1",
+                        "1"});
+            table5.AddRow(new string[] {
+                        "Address2",
+                        "The Street"});
+            table5.AddRow(new string[] {
+                        "Address3",
+                        "The Town"});
+            table5.AddRow(new string[] {
+                        "Address4",
+                        "The Area"});
+            table5.AddRow(new string[] {
+                        "Address5",
+                        "The County"});
+            table5.AddRow(new string[] {
+                        "PostCode",
+                        "NW11WN"});
+            table5.AddRow(new string[] {
+                        "AlternativePostCode",
+                        "NW22WN"});
+            table5.AddRow(new string[] {
+                        "Longitude",
+                        "-98.50812"});
+            table5.AddRow(new string[] {
+                        "Latitude",
+                        "52.40121"});
+            table5.AddRow(new string[] {
+                        "EffectiveFrom",
+                        ""});
+            table5.AddRow(new string[] {
+                        "EffectiveTo",
+                        ""});
+#line 49
+ testRunner.Given("I post an Address with the following details:", ((string)(null)), table5, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table6.AddRow(new string[] {
+                        "Address1",
+                        "2"});
+            table6.AddRow(new string[] {
+                        "Address2",
+                        "That Street"});
+            table6.AddRow(new string[] {
+                        "Address3",
+                        "That Town"});
+            table6.AddRow(new string[] {
+                        "Address4",
+                        "That Area"});
+            table6.AddRow(new string[] {
+                        "Address5",
+                        "That County"});
+            table6.AddRow(new string[] {
+                        "PostCode",
+                        "NW21WN"});
+            table6.AddRow(new string[] {
+                        "AlternativePostCode",
+                        "NW32WN"});
+            table6.AddRow(new string[] {
+                        "Longitude",
+                        "-98.50812"});
+            table6.AddRow(new string[] {
+                        "Latitude",
+                        "52.40121"});
+            table6.AddRow(new string[] {
+                        "EffectiveFrom",
+                        ""});
+            table6.AddRow(new string[] {
+                        "EffectiveTo",
+                        ""});
+            table6.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-09-19T09:01:00Z"});
+#line 62
+ testRunner.And("I post an Address with the following details:", ((string)(null)), table6, "And ");
+#line 76
+ testRunner.When("I get all Address records for a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 77
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 78
+ testRunner.And("the response should contain 2 document(s)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table7.AddRow(new string[] {
+                        "Address1",
+                        "1"});
+            table7.AddRow(new string[] {
+                        "Address2",
+                        "The Street"});
+            table7.AddRow(new string[] {
+                        "Address3",
+                        "The Town"});
+            table7.AddRow(new string[] {
+                        "Address4",
+                        "The Area"});
+            table7.AddRow(new string[] {
+                        "Address5",
+                        "The County"});
+            table7.AddRow(new string[] {
+                        "PostCode",
+                        "NW11WN"});
+            table7.AddRow(new string[] {
+                        "AlternativePostCode",
+                        "NW22WN"});
+            table7.AddRow(new string[] {
+                        "EffectiveFrom",
+                        ""});
+            table7.AddRow(new string[] {
+                        "EffectiveTo",
+                        ""});
+#line 79
+ testRunner.And("the response body should incorporate a document with the following details:", ((string)(null)), table7, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table8.AddRow(new string[] {
+                        "Address1",
+                        "2"});
+            table8.AddRow(new string[] {
+                        "Address2",
+                        "That Street"});
+            table8.AddRow(new string[] {
+                        "Address3",
+                        "That Town"});
+            table8.AddRow(new string[] {
+                        "Address4",
+                        "That Area"});
+            table8.AddRow(new string[] {
+                        "Address5",
+                        "That County"});
+            table8.AddRow(new string[] {
+                        "PostCode",
+                        "NW21WN"});
+            table8.AddRow(new string[] {
+                        "AlternativePostCode",
+                        "NW32WN"});
+            table8.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-09-19T09:01:00Z"});
+#line 90
+ testRunner.And("the response body should incorporate a document with the following details:", ((string)(null)), table8, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

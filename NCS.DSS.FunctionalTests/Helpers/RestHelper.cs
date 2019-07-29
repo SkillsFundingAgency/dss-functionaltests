@@ -118,6 +118,11 @@ namespace FunctionalTests.Helpers
                         }
                         request.AddHeader("SubcontractorId", "67576575");
                     }
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("MaxLengthSubcontractorId"))
+                    {
+                        //ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
+                        request.AddHeader("SubcontractorId", "12345678901234567890123456789012345678901234567890");
+                    }
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("invalidSubcontractorId"))
                     {
                             //ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
