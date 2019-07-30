@@ -1105,6 +1105,9 @@ this.FeatureBackground();
   testRunner.And("I patch the following:", ((string)(null)), table51, "And ");
 #line 329
   testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 330
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1116,7 +1119,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch to OutcomeType is receive" +
                     "d", null, ((string[])(null)));
-#line 331
+#line 333
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -1137,7 +1140,7 @@ this.FeatureBackground();
             table52.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "99"});
-#line 332
+#line 334
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table52, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1149,7 +1152,7 @@ this.FeatureBackground();
             table53.AddRow(new string[] {
                         "ReasonForTermination",
                         "3"});
-#line 338
+#line 340
   testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table53, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1158,10 +1161,13 @@ this.FeatureBackground();
             table54.AddRow(new string[] {
                         "OutcomeType",
                         "1"});
-#line 342
+#line 344
   testRunner.And("I patch the following:", ((string)(null)), table54, "And ");
-#line 345
+#line 347
   testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 348
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1173,7 +1179,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
                     ": OutcomeType is received", null, ((string[])(null)));
-#line 347
+#line 351
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -1194,7 +1200,7 @@ this.FeatureBackground();
             table55.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "99"});
-#line 348
+#line 352
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table55, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1206,7 +1212,7 @@ this.FeatureBackground();
             table56.AddRow(new string[] {
                         "ReasonForTermination",
                         "3"});
-#line 354
+#line 358
   testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table56, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1221,12 +1227,13 @@ this.FeatureBackground();
             table57.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         ""});
-#line 358
+#line 362
   testRunner.And("I patch the following:", ((string)(null)), table57, "And ");
-#line 363
+#line 367
   testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 364
-  testRunner.And("the response body should include \"ERRORMESSAGE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 368
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1238,7 +1245,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
                     ": ClaimedPriorityGroup is received", null, ((string[])(null)));
-#line 367
+#line 371
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -1259,7 +1266,7 @@ this.FeatureBackground();
             table58.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "99"});
-#line 368
+#line 372
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table58, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1271,7 +1278,7 @@ this.FeatureBackground();
             table59.AddRow(new string[] {
                         "ReasonForTermination",
                         "3"});
-#line 374
+#line 378
   testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table59, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1286,12 +1293,13 @@ this.FeatureBackground();
             table60.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         ""});
-#line 378
+#line 382
   testRunner.And("I patch the following:", ((string)(null)), table60, "And ");
-#line 383
+#line 387
   testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 384
-  testRunner.And("the response body should include \"ERRORMESSAGE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 388
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1303,7 +1311,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
                     ": LastModifiedDate is received", null, ((string[])(null)));
-#line 386
+#line 390
   this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
@@ -1324,7 +1332,7 @@ this.FeatureBackground();
             table61.AddRow(new string[] {
                         "ClaimedPriorityGroup",
                         "99"});
-#line 387
+#line 391
   testRunner.Given("I post an outcome with the following details:", ((string)(null)), table61, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1336,7 +1344,7 @@ this.FeatureBackground();
             table62.AddRow(new string[] {
                         "ReasonForTermination",
                         "3"});
-#line 393
+#line 397
   testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table62, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1351,12 +1359,13 @@ this.FeatureBackground();
             table63.AddRow(new string[] {
                         "OutcomeClaimedDate",
                         ""});
-#line 397
+#line 401
   testRunner.And("I patch the following:", ((string)(null)), table63, "And ");
-#line 402
+#line 406
   testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 403
-  testRunner.And("the response body should include \"ERRORMESSAGE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 407
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

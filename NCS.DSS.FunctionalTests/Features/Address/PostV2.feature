@@ -198,6 +198,27 @@ Feature: PostV2
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
 
+@addresses
+Scenario: Post Address with postcode that maps incorrectly without the CountrySet parameter in the geocoding request
+###		Given I post a Customer with the following details:
+#		| field						 | value                |
+#		| GivenName                  | Bob                  |
+#		| FamilyName                 | Customer             |
+		Given I post an Address with the following details:
+		| Field                | Value                |
+		| Address1             | 1                    |
+		| PostCode             | S41 8SE             |
+		Then there should be a 201 response
+	    And the response body should contain:
+		| field     | value     |
+		| Address1  | 1         |
+		| PostCode  | S41 8SE   |
+		| Longitude |  -1.43018 |
+		| Latitude  | 53.25289  |
+		And there should be a record in the addresses ChangeFeed table
+		And there should be a record in the addresses-history ChangeFeed table
+
+
 @addresses 
 	Scenario: Post Address with geocoding where postcode cannot be geocoded
 #		Given I post a Customer with the following details:

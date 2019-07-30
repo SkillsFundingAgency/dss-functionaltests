@@ -327,6 +327,8 @@ Background: Prepare test
 		 | Field                | Value |
 		 | ClaimedPriorityGroup |   1    |
 		Then there should be a 403 response
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       
 
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch to OutcomeType is received
 		Given I post an outcome with the following details:
@@ -343,6 +345,8 @@ Background: Prepare test
 		 | Field       | Value |
 		 | OutcomeType | 1     |
 		Then there should be a 403 response
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       
 
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: OutcomeType is received
 		Given I post an outcome with the following details:
@@ -361,7 +365,7 @@ Background: Prepare test
 		 | OutcomeEffectiveDate |       |
 		 | OutcomeClaimedDate   |       |
 		Then there should be a 403 response
-		And the response body should include "ERRORMESSAGE"
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
         
 		
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: ClaimedPriorityGroup is received
@@ -381,8 +385,8 @@ Background: Prepare test
 		 | OutcomeEffectiveDate |       |
 		 | OutcomeClaimedDate   |       |
 		Then there should be a 403 response
-		And the response body should include "ERRORMESSAGE"
-
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: LastModifiedDate is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -400,5 +404,5 @@ Background: Prepare test
 		 | OutcomeEffectiveDate |                      |
 		 | OutcomeClaimedDate   |                      |
 		Then there should be a 403 response
-		And the response body should include "ERRORMESSAGE"
-        
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       
