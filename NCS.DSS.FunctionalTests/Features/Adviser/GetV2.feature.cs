@@ -76,10 +76,12 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Adviser by ID")]
         [NUnit.Framework.CategoryAttribute("adviserdetails")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void GetAdviserByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Adviser by ID", null, new string[] {
-                        "adviserdetails"});
+                        "adviserdetails",
+                        "smoke"});
 #line 8
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -76,10 +76,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Address by ID")]
         [NUnit.Framework.CategoryAttribute("addresses")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void GetAddressByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Address by ID", null, new string[] {
-                        "addresses"});
+                        "addresses",
+                        "smoke"});
 #line 8
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

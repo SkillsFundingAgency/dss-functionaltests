@@ -29,7 +29,7 @@ Feature: Get
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-@actionplans
+@actionplans @smoke
 	Scenario: Get ActionPlan by ID
 	When I get an ActionPlan by ID
 	Then there should be a 200 response

@@ -935,10 +935,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch invalid DateActionPlanCreated")]
         [NUnit.Framework.CategoryAttribute("actionplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchInvalidDateActionPlanCreated()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch invalid DateActionPlanCreated", null, new string[] {
-                        "actionplans"});
+                        "actionplans",
+                        "smoke"});
 #line 277
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1010,7 +1012,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
                         "2018-07-30T09:00:00Z"});
             table34.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
-                        "1"});
+                        "true"});
             table34.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
@@ -1034,11 +1036,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
                         "Value"});
             table35.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
-                        "true"});
+                        "1"});
 #line 304
   testRunner.When("I patch the following:", ((string)(null)), table35, "When ");
 #line 307
-  testRunner.Then("there should be a 400 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

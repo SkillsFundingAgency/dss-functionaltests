@@ -116,10 +116,12 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Customer by FamilyName")]
         [NUnit.Framework.CategoryAttribute("customers")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void GetCustomerByFamilyName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by FamilyName", null, new string[] {
-                        "customers"});
+                        "customers",
+                        "smoke"});
 #line 20
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

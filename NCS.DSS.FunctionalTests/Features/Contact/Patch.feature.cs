@@ -94,10 +94,12 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch PreferredContactMethod")]
         [NUnit.Framework.CategoryAttribute("contactdetails")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchPreferredContactMethod()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PreferredContactMethod", null, new string[] {
-                        "contactdetails"});
+                        "contactdetails",
+                        "smoke"});
 #line 13
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

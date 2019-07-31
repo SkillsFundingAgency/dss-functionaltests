@@ -33,7 +33,7 @@ Background: Prepare test
 
 
 
-@outcomes
+@outcomes @smoke
 	Scenario: Patch OutcomeType
 	Given I post an outcome with the following details:
 	    | Field                | Value                |

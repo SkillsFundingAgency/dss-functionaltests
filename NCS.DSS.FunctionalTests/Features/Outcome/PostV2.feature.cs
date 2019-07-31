@@ -168,10 +168,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with minimum valid values")]
         [NUnit.Framework.CategoryAttribute("outcomes")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void CreateAnOutcomeWithMinimumValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with minimum valid values", null, new string[] {
-                        "outcomes"});
+                        "outcomes",
+                        "smoke"});
 #line 39
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

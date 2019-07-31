@@ -38,7 +38,7 @@ Background: Prepare test
 		| VenuePostCode            | NN1 2NN                |
 
 
-@outcomes	@SessionId
+@outcomes	@smoke @SessionId
 	Scenario: Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |

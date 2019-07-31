@@ -92,10 +92,12 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post valid contact")]
         [NUnit.Framework.CategoryAttribute("contactdetails")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidContact()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post valid contact", null, new string[] {
-                        "contactdetails"});
+                        "contactdetails",
+                        "smoke"});
 #line 13
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

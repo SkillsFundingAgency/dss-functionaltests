@@ -37,7 +37,7 @@ Background: Prepare test
 
 
 
-@goals @subcontractorId
+@goals @smoke @subcontractorId
 	Scenario: Patch DateGoalCaptured
 		Given I post a goal with the following details:
 	    | Field                       | Value                |

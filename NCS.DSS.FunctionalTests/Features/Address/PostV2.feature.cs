@@ -92,10 +92,12 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post valid address")]
         [NUnit.Framework.CategoryAttribute("addresses")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostValidAddress()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post valid address", null, new string[] {
-                        "addresses"});
+                        "addresses",
+                        "smoke"});
 #line 14
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -510,28 +512,16 @@ namespace NCS.DSS.FunctionalTests.Features.Address
  this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
-            table10.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table10.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 149
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table10, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table11.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Address1",
                         "1"});
-            table11.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "PostCode",
                         "NW11WN"});
 #line 153
-  testRunner.And("I post an Address with the following details:", ((string)(null)), table11, "And ");
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table10, "Given ");
 #line 157
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 158
@@ -555,49 +545,37 @@ namespace NCS.DSS.FunctionalTests.Features.Address
 #line 7
  this.FeatureBackground();
 #line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table11.AddRow(new string[] {
+                        "Address1",
+                        "1"});
+            table11.AddRow(new string[] {
+                        "PostCode",
+                        "nn12tx"});
+#line 167
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table11, "Given ");
+#line 171
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
             table12.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
+                        "Address1",
+                        "1"});
             table12.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 163
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table12, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table13.AddRow(new string[] {
-                        "Address1",
-                        "1"});
-            table13.AddRow(new string[] {
                         "PostCode",
                         "nn12tx"});
-#line 167
-  testRunner.And("I post an Address with the following details:", ((string)(null)), table13, "And ");
-#line 171
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
-            table14.AddRow(new string[] {
-                        "Address1",
-                        "1"});
-            table14.AddRow(new string[] {
-                        "PostCode",
-                        "nn12tx"});
-            table14.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Longitude",
                         "-1.00181"});
-            table14.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Latitude",
                         "52.12814"});
 #line 172
-  testRunner.And("the response body should contain:", ((string)(null)), table14, "And ");
+  testRunner.And("the response body should contain:", ((string)(null)), table12, "And ");
 #line 178
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 179
@@ -619,54 +597,94 @@ namespace NCS.DSS.FunctionalTests.Features.Address
 #line 7
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
-            table15.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table15.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 183
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table15, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table16.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Address1",
                         "1"});
-            table16.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "PostCode",
                         "nn1 2tx"});
 #line 187
-  testRunner.And("I post an Address with the following details:", ((string)(null)), table16, "And ");
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table13, "Given ");
 #line 191
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table17.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Address1",
                         "1"});
-            table17.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "PostCode",
                         "nn1 2tx"});
-            table17.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Longitude",
                         "-1.00181"});
-            table17.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Latitude",
                         "52.12814"});
 #line 192
-     testRunner.And("the response body should contain:", ((string)(null)), table17, "And ");
+     testRunner.And("the response body should contain:", ((string)(null)), table14, "And ");
 #line 198
-     testRunner.And("the response body should contain:", ((string)(null)), table17, "And ");
-#line 193
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 199
+  testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Address with postcode that maps incorrectly without the CountrySet parameter" +
+            " in the geocoding request")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
+        public virtual void PostAddressWithPostcodeThatMapsIncorrectlyWithoutTheCountrySetParameterInTheGeocodingRequest()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with postcode that maps incorrectly without the CountrySet parameter" +
+                    " in the geocoding request", null, new string[] {
+                        "addresses"});
+#line 202
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table15.AddRow(new string[] {
+                        "Address1",
+                        "1"});
+            table15.AddRow(new string[] {
+                        "PostCode",
+                        "S41 8SE"});
+#line 207
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table15, "Given ");
+#line 211
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field",
+                        "value"});
+            table16.AddRow(new string[] {
+                        "Address1",
+                        "1"});
+            table16.AddRow(new string[] {
+                        "PostCode",
+                        "S41 8SE"});
+            table16.AddRow(new string[] {
+                        "Longitude",
+                        "-1.43018"});
+            table16.AddRow(new string[] {
+                        "Latitude",
+                        "53.25289"});
+#line 212
+     testRunner.And("the response body should contain:", ((string)(null)), table16, "And ");
+#line 218
+  testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 219
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -679,58 +697,46 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with geocoding where postcode cannot be geocoded", null, new string[] {
                         "addresses"});
-#line 202
+#line 223
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
  this.FeatureBackground();
 #line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table17.AddRow(new string[] {
+                        "Address1",
+                        "1"});
+            table17.AddRow(new string[] {
+                        "PostCode",
+                        "ze11 1ef"});
+#line 228
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table17, "Given ");
+#line 232
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
             table18.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
+                        "Address1",
+                        "1"});
             table18.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 203
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table18, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table19.AddRow(new string[] {
-                        "Address1",
-                        "1"});
-            table19.AddRow(new string[] {
                         "PostCode",
                         "ze11 1ef"});
-#line 207
-  testRunner.And("I post an Address with the following details:", ((string)(null)), table19, "And ");
-#line 211
-  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
-            table20.AddRow(new string[] {
-                        "Address1",
-                        "1"});
-            table20.AddRow(new string[] {
-                        "PostCode",
-                        "ze11 1ef"});
-            table20.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Longitude",
                         ""});
-            table20.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Latitude",
                         ""});
-#line 212
-     testRunner.And("the response body should contain:", ((string)(null)), table20, "And ");
-#line 218
+#line 233
+     testRunner.And("the response body should contain:", ((string)(null)), table18, "And ");
+#line 239
   testRunner.And("there should be a record in the addresses ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 219
+#line 240
   testRunner.And("there should be a record in the addresses-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -743,51 +749,51 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with Address1 Field missing", null, new string[] {
                         "addresses"});
-#line 224
+#line 245
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Address2",
                         "The Street"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Address3",
                         "The Town"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Address4",
                         "The Area"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Address5",
                         "The County"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "PostCode",
                         "NW11WN"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "AlternativePostCode",
                         "NW22WN"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Longitude",
                         "-98.50812"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Latitude",
                         "52.40121"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-            table21.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 225
-  testRunner.Given("I post an Address with the following details:", ((string)(null)), table21, "Given ");
-#line 238
+#line 246
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table19, "Given ");
+#line 259
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -800,55 +806,55 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with Address1 Field over character limit", null, new string[] {
                         "addresses"});
-#line 241
+#line 262
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
  this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Address1",
                         "AbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijA" +
                             "bcdefghijAbcdefghijA"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Address2",
                         "The Street"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Address3",
                         "The Town"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Address4",
                         "The Area"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Address5",
                         "The County"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "PostCode",
                         "NW11WN"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "AlternativePostCode",
                         "NW22WN"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Longitude",
                         "-98.50812"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Latitude",
                         "52.40100"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-            table22.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 242
-  testRunner.Given("I post an Address with the following details:", ((string)(null)), table22, "Given ");
-#line 256
+#line 263
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table20, "Given ");
+#line 277
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -861,7 +867,124 @@ namespace NCS.DSS.FunctionalTests.Features.Address
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Address1", null, new string[] {
                         "addresses"});
-#line 259
+#line 280
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table21.AddRow(new string[] {
+                        "Address1",
+                        "1#"});
+            table21.AddRow(new string[] {
+                        "Address2",
+                        "The Street"});
+            table21.AddRow(new string[] {
+                        "Address3",
+                        "The Town"});
+            table21.AddRow(new string[] {
+                        "Address4",
+                        "The Area"});
+            table21.AddRow(new string[] {
+                        "Address5",
+                        "The County"});
+            table21.AddRow(new string[] {
+                        "PostCode",
+                        "AA999AAA"});
+            table21.AddRow(new string[] {
+                        "AlternativePostCode",
+                        "NW22WN"});
+            table21.AddRow(new string[] {
+                        "Longitude",
+                        "-98.50812"});
+            table21.AddRow(new string[] {
+                        "Latitude",
+                        "52.40100"});
+            table21.AddRow(new string[] {
+                        "EffectiveFrom",
+                        "2018-06-19T09:01:00Z"});
+            table21.AddRow(new string[] {
+                        "EffectiveTo",
+                        "2018-06-21T13:12:00Z"});
+            table21.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-09-19T09:01:00Z"});
+#line 281
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table21, "Given ");
+#line 295
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Address with PostCode Field missing")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
+        public virtual void PostAddressWithPostCodeFieldMissing()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with PostCode Field missing", null, new string[] {
+                        "addresses"});
+#line 298
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 7
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table22.AddRow(new string[] {
+                        "Address1",
+                        "1"});
+            table22.AddRow(new string[] {
+                        "Address2",
+                        "The Street"});
+            table22.AddRow(new string[] {
+                        "Address3",
+                        "The Town"});
+            table22.AddRow(new string[] {
+                        "Address4",
+                        "The Area"});
+            table22.AddRow(new string[] {
+                        "Address5",
+                        "The County"});
+            table22.AddRow(new string[] {
+                        "AlternativePostCode",
+                        "NW22WN"});
+            table22.AddRow(new string[] {
+                        "Longitude",
+                        "-98.50812"});
+            table22.AddRow(new string[] {
+                        "Latitude",
+                        "52.40100"});
+            table22.AddRow(new string[] {
+                        "EffectiveFrom",
+                        "2018-06-19T09:01:00Z"});
+            table22.AddRow(new string[] {
+                        "EffectiveTo",
+                        "2018-06-21T13:12:00Z"});
+            table22.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-09-19T09:01:00Z"});
+#line 299
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table22, "Given ");
+#line 312
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Address with invalid PostCode")]
+        [NUnit.Framework.CategoryAttribute("addresses")]
+        public virtual void PostAddressWithInvalidPostCode()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid PostCode", null, new string[] {
+                        "addresses"});
+#line 315
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -872,7 +995,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "Value"});
             table23.AddRow(new string[] {
                         "Address1",
-                        "1#"});
+                        "1"});
             table23.AddRow(new string[] {
                         "Address2",
                         "The Street"});
@@ -887,7 +1010,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "The County"});
             table23.AddRow(new string[] {
                         "PostCode",
-                        "AA999AAA"});
+                        "AA999AAAA"});
             table23.AddRow(new string[] {
                         "AlternativePostCode",
                         "NW22WN"});
@@ -906,22 +1029,22 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table23.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 260
+#line 316
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table23, "Given ");
-#line 274
+#line 330
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Address with PostCode Field missing")]
+        [NUnit.Framework.DescriptionAttribute("Post Address with invalid Longitude")]
         [NUnit.Framework.CategoryAttribute("addresses")]
-        public virtual void PostAddressWithPostCodeFieldMissing()
+        public virtual void PostAddressWithInvalidLongitude()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with PostCode Field missing", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Longitude", null, new string[] {
                         "addresses"});
-#line 277
+#line 333
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -946,11 +1069,14 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "Address5",
                         "The County"});
             table24.AddRow(new string[] {
+                        "PostCode",
+                        "NW11WN"});
+            table24.AddRow(new string[] {
                         "AlternativePostCode",
                         "NW22WN"});
             table24.AddRow(new string[] {
                         "Longitude",
-                        "-98.50812"});
+                        "-981.50812"});
             table24.AddRow(new string[] {
                         "Latitude",
                         "52.40100"});
@@ -963,22 +1089,22 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table24.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 278
+#line 334
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table24, "Given ");
-#line 291
+#line 348
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Address with invalid PostCode")]
+        [NUnit.Framework.DescriptionAttribute("Post Address with invalid Latitude")]
         [NUnit.Framework.CategoryAttribute("addresses")]
-        public virtual void PostAddressWithInvalidPostCode()
+        public virtual void PostAddressWithInvalidLatitude()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid PostCode", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Latitude", null, new string[] {
                         "addresses"});
-#line 294
+#line 352
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1004,7 +1130,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "The County"});
             table25.AddRow(new string[] {
                         "PostCode",
-                        "AA999AAAA"});
+                        "NW11WN"});
             table25.AddRow(new string[] {
                         "AlternativePostCode",
                         "NW22WN"});
@@ -1013,7 +1139,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "-98.50812"});
             table25.AddRow(new string[] {
                         "Latitude",
-                        "52.40100"});
+                        "521.40100"});
             table25.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -1023,22 +1149,22 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table25.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 295
+#line 353
   testRunner.Given("I post an Address with the following details:", ((string)(null)), table25, "Given ");
-#line 309
+#line 367
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Address with invalid Longitude")]
+        [NUnit.Framework.DescriptionAttribute("Post Valid Address with invalid EffectiveFrom date")]
         [NUnit.Framework.CategoryAttribute("addresses")]
-        public virtual void PostAddressWithInvalidLongitude()
+        public virtual void PostValidAddressWithInvalidEffectiveFromDate()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Longitude", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Address with invalid EffectiveFrom date", null, new string[] {
                         "addresses"});
-#line 312
+#line 370
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
@@ -1070,142 +1196,22 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table26.AddRow(new string[] {
                         "Longitude",
-                        "-981.50812"});
+                        "-98.50812"});
             table26.AddRow(new string[] {
                         "Latitude",
                         "52.40100"});
             table26.AddRow(new string[] {
-                        "EffectiveFrom",
-                        "2018-06-19T09:01:00Z"});
-            table26.AddRow(new string[] {
-                        "EffectiveTo",
-                        "2018-06-21T13:12:00Z"});
-            table26.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-09-19T09:01:00Z"});
-#line 313
-  testRunner.Given("I post an Address with the following details:", ((string)(null)), table26, "Given ");
-#line 327
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Address with invalid Latitude")]
-        [NUnit.Framework.CategoryAttribute("addresses")]
-        public virtual void PostAddressWithInvalidLatitude()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Latitude", null, new string[] {
-                        "addresses"});
-#line 331
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
- this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table27.AddRow(new string[] {
-                        "Address1",
-                        "1"});
-            table27.AddRow(new string[] {
-                        "Address2",
-                        "The Street"});
-            table27.AddRow(new string[] {
-                        "Address3",
-                        "The Town"});
-            table27.AddRow(new string[] {
-                        "Address4",
-                        "The Area"});
-            table27.AddRow(new string[] {
-                        "Address5",
-                        "The County"});
-            table27.AddRow(new string[] {
-                        "PostCode",
-                        "NW11WN"});
-            table27.AddRow(new string[] {
-                        "AlternativePostCode",
-                        "NW22WN"});
-            table27.AddRow(new string[] {
-                        "Longitude",
-                        "-98.50812"});
-            table27.AddRow(new string[] {
-                        "Latitude",
-                        "521.40100"});
-            table27.AddRow(new string[] {
-                        "EffectiveFrom",
-                        "2018-06-19T09:01:00Z"});
-            table27.AddRow(new string[] {
-                        "EffectiveTo",
-                        "2018-06-21T13:12:00Z"});
-            table27.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-09-19T09:01:00Z"});
-#line 332
-  testRunner.Given("I post an Address with the following details:", ((string)(null)), table27, "Given ");
-#line 346
-  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Valid Address with invalid EffectiveFrom date")]
-        [NUnit.Framework.CategoryAttribute("addresses")]
-        public virtual void PostValidAddressWithInvalidEffectiveFromDate()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Address with invalid EffectiveFrom date", null, new string[] {
-                        "addresses"});
-#line 349
- this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 7
- this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table28.AddRow(new string[] {
-                        "Address1",
-                        "1"});
-            table28.AddRow(new string[] {
-                        "Address2",
-                        "The Street"});
-            table28.AddRow(new string[] {
-                        "Address3",
-                        "The Town"});
-            table28.AddRow(new string[] {
-                        "Address4",
-                        "The Area"});
-            table28.AddRow(new string[] {
-                        "Address5",
-                        "The County"});
-            table28.AddRow(new string[] {
-                        "PostCode",
-                        "NW11WN"});
-            table28.AddRow(new string[] {
-                        "AlternativePostCode",
-                        "NW22WN"});
-            table28.AddRow(new string[] {
-                        "Longitude",
-                        "-98.50812"});
-            table28.AddRow(new string[] {
-                        "Latitude",
-                        "52.40100"});
-            table28.AddRow(new string[] {
                         "EffectiveFrom",
                         "2033-06-19T09:01:00Z"});
-            table28.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "EffectiveTo",
                         "2018-06-21T13:12:00Z"});
-            table28.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-09-19T09:01:00Z"});
-#line 350
-  testRunner.Given("I post an Address with the following details:", ((string)(null)), table28, "Given ");
-#line 364
+#line 371
+  testRunner.Given("I post an Address with the following details:", ((string)(null)), table26, "Given ");
+#line 385
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

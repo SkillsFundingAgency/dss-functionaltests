@@ -9,7 +9,7 @@
 		| GivenName            | Bob                  |
 		| FamilyName           | Customer             |
 
-@contactdetails
+@contactdetails @smoke
 	Scenario: Patch PreferredContactMethod
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |

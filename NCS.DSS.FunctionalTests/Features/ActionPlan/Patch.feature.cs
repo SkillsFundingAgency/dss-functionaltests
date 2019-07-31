@@ -124,10 +124,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch CustomerCharterShownToCustomer")]
         [NUnit.Framework.CategoryAttribute("actionplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchCustomerCharterShownToCustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch CustomerCharterShownToCustomer", null, new string[] {
-                        "actionplans"});
+                        "actionplans",
+                        "smoke"});
 #line 26
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -205,9 +207,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 41
   testRunner.And("the response body should contain:", ((string)(null)), table6, "And ");
 #line 51
-  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
-  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

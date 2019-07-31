@@ -9,7 +9,7 @@ Feature: Post
 		| FamilyName           | Customer             |
 
 
-@contactdetails
+@contactdetails @smoke
 	Scenario:Post valid contact
 	Given I post a Contact with the following details:
 		| Field                  | Value                        |

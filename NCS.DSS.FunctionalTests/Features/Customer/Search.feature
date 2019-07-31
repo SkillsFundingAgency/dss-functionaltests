@@ -4,7 +4,7 @@
 Feature: Search
 
 
-@customers
+@customers 
 	Scenario: Search without searchterm
 		Given I post a Customer with the following details:
 		| Field                      | Value               |
@@ -16,7 +16,7 @@ Feature: Search
 		| parameter2                 |		               |
 		Then there should be a 204 response
 
-@customers
+@customers @smoke
 	Scenario: Get Customer by FamilyName
 		Given I post a Customer with the following details:
 		| Field                      | Value               |

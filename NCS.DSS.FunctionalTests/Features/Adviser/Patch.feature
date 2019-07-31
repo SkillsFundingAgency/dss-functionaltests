@@ -3,7 +3,7 @@
 
 Feature: Patch
 
-@adviserdetails
+@adviserdetails @smoke
 	Scenario: Patch Name
 		Given I post an adviser with the following details:
 		| Field                 | Value			|

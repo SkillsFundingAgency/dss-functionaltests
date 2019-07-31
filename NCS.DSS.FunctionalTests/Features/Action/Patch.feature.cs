@@ -154,10 +154,12 @@ namespace NCS.DSS.FunctionalTests.Features.Action
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch DateActionAimsToBeCompletedBy")]
         [NUnit.Framework.CategoryAttribute("actions")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchDateActionAimsToBeCompletedBy()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateActionAimsToBeCompletedBy", null, new string[] {
-                        "actions"});
+                        "actions",
+                        "smoke"});
 #line 34
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

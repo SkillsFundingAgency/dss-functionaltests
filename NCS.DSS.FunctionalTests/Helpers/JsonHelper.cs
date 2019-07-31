@@ -89,7 +89,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
         public static string GetPropertyFromJsonString(string json, string property)
         {
             var obj = (Newtonsoft.Json.Linq.JObject)JsonConvert.DeserializeObject(json);
-            return obj.Property(property).Value.ToString();
+            return (obj.ContainsKey(property)? obj.Property(property).Value.ToString() : string.Empty );
         }
     }
 }

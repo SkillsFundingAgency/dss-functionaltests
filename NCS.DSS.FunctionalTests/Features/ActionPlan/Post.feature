@@ -25,7 +25,7 @@ Feature: Post
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z   |
 		| VenuePostCode            | NN1 2NN                |
 
-@actionplans
+@actionplans @smoke
 	Scenario: Post Valid ActionPlan with all fields
 		Given I post an ActionPlan with the following details:
 		| field                          | value                |
@@ -48,8 +48,8 @@ Feature: Post
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		And there should be a record in the actionPlans ChangeFeed table
-		And there should be a record in the actionPlans-history ChangeFeed table
+		And there should be a record in the ActionPlans ChangeFeed table
+		And there should be a record in the ActionPlans-history ChangeFeed table
 
 
 

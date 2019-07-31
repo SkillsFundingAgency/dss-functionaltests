@@ -74,10 +74,12 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create Valid Adviser")]
         [NUnit.Framework.CategoryAttribute("adviserdetails")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void CreateValidAdviser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser", null, new string[] {
-                        "adviserdetails"});
+                        "adviserdetails",
+                        "smoke"});
 #line 7
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

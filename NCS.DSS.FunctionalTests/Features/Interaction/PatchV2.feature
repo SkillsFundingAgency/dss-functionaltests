@@ -15,7 +15,7 @@ Feature: PatchV2
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 
-@interactions
+@interactions @smoke
 	Scenario: Patch Date
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |

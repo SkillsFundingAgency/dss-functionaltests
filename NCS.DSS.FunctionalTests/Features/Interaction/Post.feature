@@ -15,7 +15,7 @@ Feature: Post
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 
-@interactions
+@interactions @smoke
 	Scenario: Post Valid Interaction with all Fields
 		Given I post an Interaction with the following details:
 		| Field                    | Value                                |

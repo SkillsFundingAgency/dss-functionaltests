@@ -76,11 +76,13 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Customer by ID")]
         [NUnit.Framework.CategoryAttribute("customers")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("subcontractorId")]
         public virtual void GetCustomerByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Customer by ID", null, new string[] {
                         "customers",
+                        "smoke",
                         "subcontractorId"});
 #line 7
  this.ScenarioInitialize(scenarioInfo);

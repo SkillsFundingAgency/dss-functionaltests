@@ -23,7 +23,7 @@ Background: Prepare test
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 
-@webchats
+@webchats @smoke
 	Scenario: Get WebChat by ID
 	When I get a WebChat by ID
 	Then there should be a 200 response

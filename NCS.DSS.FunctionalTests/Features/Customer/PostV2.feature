@@ -41,7 +41,7 @@ Feature: PostV2
 		| IntroducedByAdditionalInfo | additional info      |
 		Then there should be a 422 response
 
-@customers
+@customers @smoke
 	Scenario: Post Valid Customer
 		Given I post a Customer with the following details:
 		| Field                      | Value                |

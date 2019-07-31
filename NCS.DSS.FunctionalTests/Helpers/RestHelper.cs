@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Diagnostics;
 using TechTalk.SpecFlow;
+using System.Collections.Generic;
 
 namespace FunctionalTests.Helpers
 {
@@ -19,14 +20,17 @@ namespace FunctionalTests.Helpers
         static DateTime ThrottleBackoffStart = DateTime.MinValue;
         static int ThrottleBackoffPeriod = 60;
         static int RequestCount = 0;
+        //static Dictionary<string, int> FailureTracker = new Dictionary<string, int>;
+
         public static int Throttle { get; set; }
+
 
         public RestHelper()
         {
             Throttle = 0;
         }
 
-        public static void ThrottleHandler()
+        public static void ThrottleHandler(int minimumWaitTime = 0)
         {
             int wait = 0;
             if (ThrottleBackoff)
@@ -37,7 +41,7 @@ namespace FunctionalTests.Helpers
                     ThrottleBackoffStart = DateTime.Now;
                     Console.WriteLine("Throttling: Backoff for " + ThrottleBackoffPeriod + "seconds");
                 }
-                else if (ThrottleBackoffStart.AddSeconds(ThrottleBackoffPeriod) > DateTime.Now)
+                else if (ThrottleBackoffStart.AddSeconds(ThrottleBackoffPeriod) < DateTime.Now)
                 {
                     Console.WriteLine("Throttling: Backoff period expired - return to normal proccesing after this request");
                     ThrottleBackoff = false;
@@ -63,16 +67,22 @@ namespace FunctionalTests.Helpers
             
             RequestCount++;
             Console.WriteLine("Throttling: Request " + RequestCount + " limited to " + Throttle + " requests per second.\nThrottling: Last responsetime was " + responseTime.ElapsedMilliseconds + " waiting for " + wait);
+            Console.Write("Throttle Pause from:" + DateTime.UtcNow.ToString("MM/dd/yyyy hh:mm:ss.fff"));
+            if (wait < minimumWaitTime)
+            {
+                wait = minimumWaitTime;
+            }
             Thread.Sleep(wait);
+            Console.WriteLine(" - Until " + DateTime.UtcNow.ToString("MM/dd/yyyy hh:mm:ss.fff"));
 
         }
 
-        internal static IRestResponse Post(string url, string json, string touchPointId, string subscriptionKey)
+        internal static IRestResponse Post(string resourceName, string url, string json, string touchPointId, string subscriptionKey)
         {
             Console.WriteLine("Attempt to POST: " + url);
             Console.WriteLine("Header value: touchPointId: " + touchPointId);
             Console.WriteLine("JSON Document: " + json);
-            Thread.Sleep(250);
+            //Thread.Sleep(250);
             try
             {
 
@@ -152,10 +162,9 @@ namespace FunctionalTests.Helpers
         }
 
 
-        internal static IRestResponse Patch(string url, string json, string touchPointId, string subscriptionKey, string id)
+        internal static IRestResponse Patch(/*string resourceName,*/ string url, string json, string touchPointId, string subscriptionKey, string id)
         {
             Console.WriteLine("Attempt to PATCH: " + url);
-            Thread.Sleep(250);
             try
             {
                 var client = new RestClient(url + id);
@@ -190,7 +199,7 @@ namespace FunctionalTests.Helpers
                 while (retry)
                 {
                     tries++;
-                    ThrottleHandler();
+                    ThrottleHandler();//  try logic to check change feed has fired first. should be faster... 5250); // pause for 5 and a bit seconds to ensure change feed has had time on initial post
                     responseTime.Reset();
                     responseTime.Start();
                     response = client.Execute(request);
@@ -218,9 +227,9 @@ namespace FunctionalTests.Helpers
             catch (Exception e) { throw e; }
         }
 
-        internal static IRestResponse Get(string url, string touchPointId, string subscriptionKey)
+        internal static IRestResponse Get(/*string resourceName,*/ string url, string touchPointId, string subscriptionKey)
         {
-            Thread.Sleep(250);
+            //Thread.Sleep(250);
             Console.WriteLine("Attempt to GET: " + url);
             try
             {
@@ -252,12 +261,36 @@ namespace FunctionalTests.Helpers
                 }
  
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-                ThrottleHandler();
-                responseTime.Reset();
-                responseTime.Start();
-                IRestResponse response = client.Execute(request);
-                responseTime.Stop();
-                Console.WriteLine("Rest call Attempt Returned " + response.StatusCode + " in " + responseTime.ElapsedMilliseconds + " ms");
+                IRestResponse response = null;
+                bool retry = true;
+                int tries = 0;
+                int maxTries = 5;
+                while (retry)
+                {
+                    tries++;
+                    ThrottleHandler();
+                    responseTime.Reset();
+                    responseTime.Start();
+                    response = client.Execute(request);
+                    responseTime.Stop();
+                    Console.WriteLine("Rest call Attempt (" + tries + ") Returned " + response.StatusCode + " in " + responseTime.ElapsedMilliseconds + " ms");
+                    if ( response.StatusCode != System.Net.HttpStatusCode.OK )
+                    {
+                        if (tries <= maxTries)
+                        {
+                            Console.WriteLine("Sleep and retry");
+                            Thread.Sleep(500);
+                            if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError && !ThrottleBackoff)
+                            {
+                                Console.WriteLine("Throttling: Backoff invoked following 500 error");
+                                ThrottleBackoff = true;
+                            }
+                        }
+                        else retry = false;
+                    }
+                    else retry = false;
+                }
+
                 return response;
             }
             catch (Exception e) { throw e; }

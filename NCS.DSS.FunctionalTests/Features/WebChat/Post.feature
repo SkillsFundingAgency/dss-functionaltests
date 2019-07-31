@@ -15,7 +15,7 @@ Background: Prepare test
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
 
-@webchats
+@webchats @smoke
 	Scenario: Create a webchat with all valid values
 	Given I post a webchat with the following details:
 	    | Field                      | Value                |
@@ -36,8 +36,34 @@ Background: Prepare test
 	    | WebChatNarrative           | some text here       |
 	    | SentToCustomer             | true                 |
 	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
-		And there should be a record in the webchats ChangeFeed table
-		And there should be a record in the webchats-history ChangeFeed table
+		And there should be a record in the WebChats ChangeFeed table
+		And there should be a record in the WebChats-history ChangeFeed table
+
+@webchats
+	Scenario: Create a webchat supplying lastmodifieddate
+	Given I post a webchat with the following details:
+	    | Field                      | Value                |
+	    | DigitalReference           | abc1234              |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatDuration            | 00:25:00             |
+	    | WebChatNarrative           | some text here       |
+	    | SentToCustomer             | true                 |
+	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+	    | lastmodifieddate           | 2018-07-19T12:45:00Z |
+		Then there should be a 201 response
+		And the response body should contain:
+	    | Field                      | Value                |
+		| DigitalReference           | abc1234              |
+	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
+	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
+	    | WebChatDuration            | 00:25:00             |
+	    | WebChatNarrative           | some text here       |
+	    | SentToCustomer             | true                 |
+	    | DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+		| LastModifiedDate           | 2018-07-19T12:45:00Z |
+		And there should be a record in the WebChats ChangeFeed table
+		And there should be a record in the WebChats-history ChangeFeed table
 
 @webchats
 	Scenario: Create a webchat with only mandatory values
@@ -52,5 +78,5 @@ Background: Prepare test
 	    | WebChatStartDateandTime    | 2018-07-20T13:20:00Z |
 	    | WebChatEndDateandTime      | 2018-07-20T13:45:00Z |
 	    | WebChatNarrative           | some text here       |
-		And there should be a record in the webchats ChangeFeed table
-		And there should be a record in the webchats-history ChangeFeed table
+		And there should be a record in the WebChats ChangeFeed table
+		And there should be a record in the WebChats-history ChangeFeed table

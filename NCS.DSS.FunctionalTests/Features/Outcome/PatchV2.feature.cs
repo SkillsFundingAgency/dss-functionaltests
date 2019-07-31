@@ -166,11 +166,13 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup")]
         [NUnit.Framework.CategoryAttribute("outcomes")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         [NUnit.Framework.CategoryAttribute("Cat1")]
         public virtual void ValidPatchOutcomeClaimedDateWithClaimedPriorityGroup()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup", null, new string[] {
                         "outcomes",
+                        "smoke",
                         "Cat1"});
 #line 40
  this.ScenarioInitialize(scenarioInfo);
@@ -657,6 +659,713 @@ this.FeatureBackground();
   testRunner.When("I patch the following:", ((string)(null)), table28, "When ");
 #line 186
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 1 - Customer Choice, patch to Outcome is recei" +
+            "ved")]
+        [NUnit.Framework.CategoryAttribute("outcomes")]
+        public virtual void CustomerIsTerminatedWithReason1_CustomerChoicePatchToOutcomeIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 1 - Customer Choice, patch to Outcome is recei" +
+                    "ved", null, new string[] {
+                        "outcomes"});
+#line 202
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table29.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table29.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table29.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table29.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 203
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table29, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table30.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table30.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "1"});
+#line 209
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table30, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table31.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+            table31.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 213
+  testRunner.And("I patch the following:", ((string)(null)), table31, "And ");
+#line 217
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 2 - Deceased, patch to Outcome is received")]
+        public virtual void CustomerIsTerminatedWithReason2_DeceasedPatchToOutcomeIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 2 - Deceased, patch to Outcome is received", null, ((string[])(null)));
+#line 219
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table32.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table32.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table32.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table32.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 220
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table32, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table33.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table33.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "2"});
+#line 226
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table33, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table34.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+            table34.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 230
+  testRunner.And("I patch the following:", ((string)(null)), table34, "And ");
+#line 234
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 99 - Other, patch to  Claimed date and Effecti" +
+            "ve date is received")]
+        public virtual void CustomerIsTerminatedWithReason99_OtherPatchToClaimedDateAndEffectiveDateIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 99 - Other, patch to  Claimed date and Effecti" +
+                    "ve date is received", null, ((string[])(null)));
+#line 236
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table35.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table35.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table35.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table35.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 237
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table35, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table36.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table36.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "99"});
+#line 243
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table36, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table37.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+            table37.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 247
+  testRunner.And("I patch the following:", ((string)(null)), table37, "And ");
+#line 251
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch to Claimed date and Effec" +
+            "tive date is received")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchToClaimedDateAndEffectiveDateIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch to Claimed date and Effec" +
+                    "tive date is received", null, ((string[])(null)));
+#line 253
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table38.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table38.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table38.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table38.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 254
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table38, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table39.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table39.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 260
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table39, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table40.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+            table40.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 264
+  testRunner.And("I patch the following:", ((string)(null)), table40, "And ");
+#line 268
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table41.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table41.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+            table41.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+#line 269
+  testRunner.And("the response body should contain:", ((string)(null)), table41, "And ");
+#line 274
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 275
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch to Claimed date is receiv" +
+            "ed")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchToClaimedDateIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch to Claimed date is receiv" +
+                    "ed", null, ((string[])(null)));
+#line 277
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table42.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table42.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table42.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table42.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 278
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table42, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table43.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table43.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 284
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table43, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table44.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 288
+  testRunner.And("I patch the following:", ((string)(null)), table44, "And ");
+#line 291
+  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table45.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table45.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 292
+  testRunner.And("the response body should contain:", ((string)(null)), table45, "And ");
+#line 296
+  testRunner.And("there should be a record in the outcomes ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 297
+  testRunner.And("there should be a record in the outcomes-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch to Effective date is rece" +
+            "ived")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchToEffectiveDateIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch to Effective date is rece" +
+                    "ived", null, ((string[])(null)));
+#line 299
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table46.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table46.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table46.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table46.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 300
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table46, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table47.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table47.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 306
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table47, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table48.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+#line 310
+  testRunner.And("I patch the following:", ((string)(null)), table48, "And ");
+#line 313
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch to ClaimedPriorityGroup i" +
+            "s received")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchToClaimedPriorityGroupIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch to ClaimedPriorityGroup i" +
+                    "s received", null, ((string[])(null)));
+#line 315
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table49.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table49.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table49.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table49.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 316
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table49, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table50.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table50.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 322
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table50, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table51.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "1"});
+#line 326
+  testRunner.And("I patch the following:", ((string)(null)), table51, "And ");
+#line 329
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 330
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch to OutcomeType is receive" +
+            "d")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchToOutcomeTypeIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch to OutcomeType is receive" +
+                    "d", null, ((string[])(null)));
+#line 333
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table52.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table52.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table52.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table52.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 334
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table52, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table53.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table53.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 340
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table53, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table54.AddRow(new string[] {
+                        "OutcomeType",
+                        "1"});
+#line 344
+  testRunner.And("I patch the following:", ((string)(null)), table54, "And ");
+#line 347
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 348
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
+            ": OutcomeType is received")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchDatesAndInvalidElementOutcomeTypeIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
+                    ": OutcomeType is received", null, ((string[])(null)));
+#line 351
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table55.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table55.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table55.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table55.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 352
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table55, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table56.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table56.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 358
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table56, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table57.AddRow(new string[] {
+                        "OutcomeType",
+                        "1"});
+            table57.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+            table57.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 362
+  testRunner.And("I patch the following:", ((string)(null)), table57, "And ");
+#line 367
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 368
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
+            ": ClaimedPriorityGroup is received")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchDatesAndInvalidElementClaimedPriorityGroupIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
+                    ": ClaimedPriorityGroup is received", null, ((string[])(null)));
+#line 371
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table58.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table58.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table58.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table58.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 372
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table58, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table59.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table59.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 378
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table59, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table60.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "1"});
+            table60.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+            table60.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 382
+  testRunner.And("I patch the following:", ((string)(null)), table60, "And ");
+#line 387
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 388
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
+            ": LastModifiedDate is received")]
+        public virtual void CustomerIsTerminatedWithReason3_DuplicatePatchDatesAndInvalidElementLastModifiedDateIsReceived()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element" +
+                    ": LastModifiedDate is received", null, ((string[])(null)));
+#line 390
+  this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table61.AddRow(new string[] {
+                        "OutcomeType",
+                        "3"});
+            table61.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        "2018-07-20T21:45:00Z"});
+            table61.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        "2018-07-20T21:45:00Z"});
+            table61.AddRow(new string[] {
+                        "ClaimedPriorityGroup",
+                        "99"});
+#line 391
+  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table61, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table62.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table62.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "3"});
+#line 397
+  testRunner.When("I patch \"Customers\" with the following details:", ((string)(null)), table62, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table63.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-07-20T21:45:00Z"});
+            table63.AddRow(new string[] {
+                        "OutcomeEffectiveDate",
+                        ""});
+            table63.AddRow(new string[] {
+                        "OutcomeClaimedDate",
+                        ""});
+#line 401
+  testRunner.And("I patch the following:", ((string)(null)), table63, "And ");
+#line 406
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 407
+  testRunner.And("the error message should be \"Duplicate Customer: This resource is read only. You " +
+                    "may only remove values for Outcome Claimed and Effective date\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

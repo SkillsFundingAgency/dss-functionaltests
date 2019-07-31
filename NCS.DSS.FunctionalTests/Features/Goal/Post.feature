@@ -34,7 +34,7 @@ Background: Prepare test
 
 
 
-@goals
+@goals @smoke
 Scenario: Create a Goal for existing customer with all valid values
 	Given I post a goal with the following details:
 	    | Field                       | Value                |

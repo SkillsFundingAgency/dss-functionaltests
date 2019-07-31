@@ -30,7 +30,7 @@ Feature: Patch
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-@actions
+@actions @smoke
 	Scenario: Patch DateActionAimsToBeCompletedBy
 		Given I post an Action with the following details:
 		| Field                         | Value                |

@@ -23,7 +23,7 @@ Feature: Patch
 		| LastModifiedDate         | 2018-06-22T16:52:10Z                 |
 
 
-@sessions
+@sessions @smoke
 	Scenario: Patch DateandTimeOfSession
 	Given I post a session with the following details:
 	    | field                    | value                          |

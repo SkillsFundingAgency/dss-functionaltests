@@ -7,7 +7,7 @@ Feature: Post
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 
-@diversitydetails
+@diversitydetails @smoke
 	Scenario: Post Valid DiversityDetails with all Fields
 		When I post a DiversityDetail with the following details:
 		| Field                                     | Value                |

@@ -36,7 +36,7 @@ Background: Prepare test
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 
-@outcomes	@Cat1
+@outcomes @smoke	@Cat1
 	Scenario: Valid Patch OutcomeClaimedDate with ClaimedPriorityGroup
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -184,3 +184,225 @@ Background: Prepare test
 		| Field                | Value                |
 	    | OutcomeEffectiveDate | 2019-02-22T22:45:00Z |
 		Then there should be a 422 response
+
+
+### NEW TEST FOR SDD-4 Allow the removal of Outcome Claimed Date for duplicate Customers
+
+#######################
+## Termination Reasons
+#######################
+#1 - Customer choice
+#2 - Deceased
+#3 - Duplicate
+#99 - Other
+#######################
+
+
+@outcomes
+	Scenario: Customer is terminated with reason 1 - Customer Choice, patch to Outcome is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 1                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | OutcomeEffectiveDate |       |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 403 response
+
+	Scenario: Customer is terminated with reason 2 - Deceased, patch to Outcome is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 2                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | OutcomeEffectiveDate |       |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 403 response
+
+	Scenario: Customer is terminated with reason 99 - Other, patch to  Claimed date and Effective date is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 99                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | OutcomeEffectiveDate |       |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 403 response
+
+	Scenario: Customer is terminated with reason 3 - Duplicate, patch to Claimed date and Effective date is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | OutcomeEffectiveDate |       |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 200 response
+		And the response body should contain:
+         | Field                | Value |
+         | OutcomeType          | 3     |
+         | OutcomeClaimedDate   |       |
+         | OutcomeEffectiveDate |       |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
+
+	Scenario: Customer is terminated with reason 3 - Duplicate, patch to Claimed date is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 200 response
+		And the response body should contain:
+         | Field                | Value |
+         | OutcomeType          | 3     |
+         | OutcomeClaimedDate   |       |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
+
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch to Effective date is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | OutcomeEffectiveDate |       |
+		Then there should be a 422 response
+		
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch to ClaimedPriorityGroup is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | ClaimedPriorityGroup |   1    |
+		Then there should be a 403 response
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       
+
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch to OutcomeType is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field       | Value |
+		 | OutcomeType | 1     |
+		Then there should be a 403 response
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       
+
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: OutcomeType is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | OutcomeType          | 1     |
+		 | OutcomeEffectiveDate |       |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 403 response
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+        
+		
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: ClaimedPriorityGroup is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value |
+		 | ClaimedPriorityGroup | 1     |
+		 | OutcomeEffectiveDate |       |
+		 | OutcomeClaimedDate   |       |
+		Then there should be a 403 response
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       
+		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: LastModifiedDate is received
+		Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+		When I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 3                    |
+		And I patch the following:
+		 | Field                | Value                |
+		 | LastModifiedDate     | 2018-07-20T21:45:00Z |
+		 | OutcomeEffectiveDate |                      |
+		 | OutcomeClaimedDate   |                      |
+		Then there should be a 403 response
+		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
+       

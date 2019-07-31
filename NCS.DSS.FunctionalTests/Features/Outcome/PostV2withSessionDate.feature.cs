@@ -534,11 +534,13 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         [NUnit.Framework.DescriptionAttribute("Outcome effective date greater than Session.DateandTimeOfSession + 12 months with" +
             " outcome type 3")]
         [NUnit.Framework.CategoryAttribute("outcomes")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void OutcomeEffectiveDateGreaterThanSession_DateandTimeOfSession12MonthsWithOutcomeType3()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Outcome effective date greater than Session.DateandTimeOfSession + 12 months with" +
                     " outcome type 3", null, new string[] {
-                        "outcomes"});
+                        "outcomes",
+                        "smoke"});
 #line 159
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

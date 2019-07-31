@@ -22,7 +22,7 @@ Feature: Patch
 		| LastModifiedDate         | 2018-06-22T16:52:10Z   |
 
 
-@actionplans
+@actionplans @smoke
 	Scenario: Patch CustomerCharterShownToCustomer
 		Given I post an ActionPlan with the following details:
 		| Field                          | Value                |
@@ -48,8 +48,8 @@ Feature: Patch
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
-		And there should be a record in the actionPlans ChangeFeed table
-		And there should be a record in the actionPlans-history ChangeFeed table
+		And there should be a record in the ActionPlans ChangeFeed table
+		And there should be a record in the ActionPlans-history ChangeFeed table
 
 @actionplans
 	Scenario: Patch ActionPlanDeliveryMethod

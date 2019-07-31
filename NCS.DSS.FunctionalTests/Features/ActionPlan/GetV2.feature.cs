@@ -166,10 +166,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get ActionPlan by ID")]
         [NUnit.Framework.CategoryAttribute("actionsplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void GetActionPlanByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get ActionPlan by ID", null, new string[] {
-                        "actionsplans"});
+                        "actionsplans",
+                        "smoke"});
 #line 38
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

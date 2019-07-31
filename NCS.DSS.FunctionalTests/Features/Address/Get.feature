@@ -4,7 +4,7 @@
 Feature: Get
 
 
-@addresses
+@addresses @smoke
 	Scenario: Get Address by ID
 		Given I post a Customer with the following details:
 		| Field                | Value                |

@@ -4,7 +4,7 @@
 Feature: Patch
 
 
-@customers
+@customers @smoke
 	Scenario: Patch DateOfRegistration
 		Given I post a Customer with the following details:
 		| Field                      | Value                |

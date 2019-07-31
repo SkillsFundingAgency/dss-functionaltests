@@ -136,10 +136,12 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Valid CustomerCharterShownToCustomer")]
         [NUnit.Framework.CategoryAttribute("actionplans")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchValidCustomerCharterShownToCustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Valid CustomerCharterShownToCustomer", null, new string[] {
-                        "actionplans"});
+                        "actionplans",
+                        "smoke"});
 #line 31
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -213,9 +215,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 54
   testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
-  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
-  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -305,9 +307,9 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
 #line 84
   testRunner.And("the response body should have different LastUpdatedBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
-  testRunner.And("there should be a record in the actionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 86
-  testRunner.And("there should be a record in the actionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("there should be a record in the ActionPlans-history ChangeFeed table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1003,7 +1005,7 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
                         "2018-07-30T09:00:00Z"});
             table34.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
-                        "1"});
+                        "true"});
             table34.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
@@ -1027,11 +1029,11 @@ namespace NCS.DSS.FunctionalTests.Features.ActionPlan
                         "Value"});
             table35.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
-                        "true"});
+                        "1"});
 #line 307
   testRunner.When("I patch the following:", ((string)(null)), table35, "When ");
 #line 310
-  testRunner.Then("there should be a 400 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

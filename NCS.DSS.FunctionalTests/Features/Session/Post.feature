@@ -25,7 +25,7 @@ Feature: Post
 
 
 
-@sessions
+@sessions @smoke
 Scenario: Create a Session for existing customer with all valid Values
 	Given I post a session with the following details:
 	    | Field                    | Value                          |

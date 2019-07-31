@@ -152,10 +152,12 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create an outcome with all valid values")]
         [NUnit.Framework.CategoryAttribute("outcomes")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void CreateAnOutcomeWithAllValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with all valid values", null, new string[] {
-                        "outcomes"});
+                        "outcomes",
+                        "smoke"});
 #line 37
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

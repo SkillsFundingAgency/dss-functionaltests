@@ -4,7 +4,7 @@
 
 Feature: GetV2
 
-@adviserdetails
+@adviserdetails @smoke
 	Scenario: Get Adviser by ID
 		Given I post an adviser with the following details:
 		| Field                 | Value			|

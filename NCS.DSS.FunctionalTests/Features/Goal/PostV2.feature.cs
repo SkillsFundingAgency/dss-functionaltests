@@ -164,10 +164,12 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a Goal for existing customer with all valid values")]
         [NUnit.Framework.CategoryAttribute("goals")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void CreateAGoalForExistingCustomerWithAllValidValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Goal for existing customer with all valid values", null, new string[] {
-                        "goals"});
+                        "goals",
+                        "smoke"});
 #line 40
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -242,106 +244,22 @@ this.FeatureBackground();
                         "Field",
                         "Value"});
             table8.AddRow(new string[] {
-                        "AdviserName",
-                        "BillyAdviser"});
-            table8.AddRow(new string[] {
-                        "AdviserContactNumber",
-                        "98798678967967"});
-#line 61
-  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table8, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table9.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table9.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 65
-  testRunner.And("I post a Customer with the following details:", ((string)(null)), table9, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table10.AddRow(new string[] {
-                        "DateandTimeOfInteraction",
-                        "2018-06-25T11:21:00Z"});
-            table10.AddRow(new string[] {
-                        "Channel",
-                        "2"});
-            table10.AddRow(new string[] {
-                        "InteractionType",
-                        "2"});
-            table10.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-06-22T16:52:10Z"});
-#line 69
-  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table10, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table11.AddRow(new string[] {
-                        "DateandTimeOfSession",
-                        "2018-06-21T14:45:00Z"});
-            table11.AddRow(new string[] {
-                        "VenuePostCode",
-                        "NN1 2NN"});
-#line 75
-  testRunner.And("I post a session with the following details:", ((string)(null)), table11, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field",
-                        "value"});
-            table12.AddRow(new string[] {
-                        "DateActionPlanCreated",
-                        "2018-07-30T09:00:00Z"});
-            table12.AddRow(new string[] {
-                        "CustomerCharterShownToCustomer",
-                        "true"});
-            table12.AddRow(new string[] {
-                        "DateAndTimeCharterShown",
-                        "2018-07-30T09:00:00Z"});
-            table12.AddRow(new string[] {
-                        "DateActionPlanSentToCustomer",
-                        "2018-07-30T09:00:00Z"});
-            table12.AddRow(new string[] {
-                        "ActionPlanDeliveryMethod",
-                        "1"});
-            table12.AddRow(new string[] {
-                        "DateActionPlanAcknowledged",
-                        "2018-07-30T09:00:00Z"});
-            table12.AddRow(new string[] {
-                        "PriorityCustomer",
-                        "1"});
-            table12.AddRow(new string[] {
-                        "CurrentSituation",
-                        "looking for work"});
-#line 79
-  testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table12, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table13.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table13.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table13.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table13.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "GoalType",
                         "1"});
-            table13.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
 #line 89
-  testRunner.Given("I post a goal with the following details:", ((string)(null)), table13, "Given ");
+  testRunner.Given("I post a goal with the following details:", ((string)(null)), table8, "Given ");
 #line 96
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 97
@@ -369,23 +287,23 @@ this.FeatureBackground();
 #line 7
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table14.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table14.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table14.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "GoalType",
                         "1"});
-            table14.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
 #line 104
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table14, "Given ");
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table9, "Given ");
 #line 110
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -405,23 +323,23 @@ this.FeatureBackground();
 #line 7
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table15.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table15.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table15.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "GoalType",
                         "1"});
-            table15.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
 #line 114
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table15, "Given ");
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table10, "Given ");
 #line 120
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -441,23 +359,23 @@ this.FeatureBackground();
 #line 7
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table16.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table16.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table16.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "GoalType",
                         "1"});
-            table16.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
 #line 124
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table16, "Given ");
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table11, "Given ");
 #line 130
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -477,23 +395,23 @@ this.FeatureBackground();
 #line 7
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table17.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table17.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table17.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table17.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
 #line 134
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table17, "Given ");
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table12, "Given ");
 #line 140
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -513,26 +431,26 @@ this.FeatureBackground();
 #line 7
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table18.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table18.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table18.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table18.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "GoalType",
                         "11"});
-            table18.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
 #line 144
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table18, "Given ");
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table13, "Given ");
 #line 151
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -552,26 +470,26 @@ this.FeatureBackground();
 #line 7
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table19.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table19.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table19.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table19.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "GoalType",
                         "1"});
-            table19.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "GoalStatus",
                         "11"});
 #line 155
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table19, "Given ");
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table14, "Given ");
 #line 162
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -591,46 +509,46 @@ this.FeatureBackground();
 #line 7
 this.FeatureBackground();
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table20.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table20.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table20.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table20.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "GoalType",
                         "1"});
 #line 166
- testRunner.Given("I post a goal with the following details:", ((string)(null)), table20, "Given ");
+ testRunner.Given("I post a goal with the following details:", ((string)(null)), table15, "Given ");
 #line 172
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table21.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "DateGoalCaptured",
                         "2018-06-21T14:45:00Z"});
-            table21.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "DateGoalShouldBeCompletedBy",
                         "2018-06-21T14:45:00Z"});
-            table21.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "GoalSummary",
                         "some goal text"});
-            table21.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "GoalType",
                         "1"});
-            table21.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "GoalStatus",
                         "1"});
 #line 173
-  testRunner.And("the response body should contain:", ((string)(null)), table21, "And ");
+  testRunner.And("the response body should contain:", ((string)(null)), table16, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
