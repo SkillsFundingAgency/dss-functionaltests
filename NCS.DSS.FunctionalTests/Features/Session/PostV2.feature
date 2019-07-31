@@ -24,20 +24,22 @@ Feature: PostV2
 
 
 
+
+
 @sessions
-	Scenario: Create a Session for existing customer with all valid Values
+	Scenario: Create a Session for with venue postcode that reports wrong location when Country paraneters is not passed to geocoding
 		Given I post a session with the following details:
 		| Field                    | Value                          |
 		| DateandTimeOfSession     | 2018-06-21T14:45:00Z           |
-		| VenuePostCode            |NN1 5EW                         |
+		| VenuePostCode            |S41 8SE                         |
 		Then there should be a 201 response
 		And the "sessions" cosmos document should include CreatedBy
-		And the "sessions" cosmos document should include "Longitude" with value "-0.88325"
-		And the "sessions" cosmos document should include "Latitude" with value "52.23917"
+		And the "sessions" cosmos document should include "Longitude" with value "-1.43018"
+		And the "sessions" cosmos document should include "Latitude" with value "53.25289"
 		And the response body should contain:
 		| Field                  | Value                |
 		| DateandTimeOfSession   | 2018-06-21T14:45:00Z |
-		| VenuePostCode          | NN1 5EW              |
+		| VenuePostCode          | S41 8SE	              |
 		| SessionAttended        | null                 |
 		| ReasonForNonAttendance | 99                   |
 		And the response body should not contain the "CreatedBy"
