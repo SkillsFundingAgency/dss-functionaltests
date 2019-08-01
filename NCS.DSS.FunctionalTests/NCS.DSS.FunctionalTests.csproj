@@ -368,6 +368,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Diversity\DiversityV3_Get.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiversityV3_Get.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Diversity\DiversityV3_Patch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiversityV3_Patch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Diversity\DiversityV3_Post.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiversityV3_Post.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Diversity\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -762,6 +777,18 @@
     <None Include="Features\Customer\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Diversity\DiversityV3_Get.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DiversityV3_Get.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Diversity\DiversityV3_Patch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DiversityV3_Patch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Diversity\DiversityV3_Post.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DiversityV3_Post.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Diversity\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
