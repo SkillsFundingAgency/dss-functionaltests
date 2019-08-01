@@ -1,4 +1,4 @@
-﻿@postV1
+﻿@postV3
 
 Feature: DiversityV3_Post
 
@@ -94,13 +94,33 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectLLDDHealth
 	| ConsentToCollectLLDDHealth | false |		
 	
 @diversitydetails  
-Scenario: Post Diversity with invalid values for ConsentToCollectLLDDHealth 
+Scenario Outline: Post Diversity with invalid values for ConsentToCollectLLDDHealth 
+
+	Given I want to send <Field> with value <Value> in the following request
+	When I post a DiversityDetail with the following details:
+	| Field                                     | Value |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
+	| ConsentToCollectEthnicity                 | false |
+	| Ethnicity                                 | 99    |
+	Then there should be a 422 response
+	
+	Examples:
+	| Field                      | Value |
+	| ConsentToCollectLLDDHealth | 1     |
+	| ConsentToCollectLLDDHealth | car   |	
 
 @diversitydetails  
 Scenario: Post Diversity with no value supplied for ConsentToCollectLLDDHealth 
 
 
-
+	When I post a DiversityDetail with the following details:
+	| Field                                     | Value |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
+	| ConsentToCollectEthnicity                 | false |
+	| Ethnicity                                 | 99    |
+	| ConsentToCollectLLDDHealth                |       |
+	Then there should be a 422 response
+	And the error message should be "The ConsentToCollectLLDDHealth field is required."
 ############################################################################################################################
 ## LearningDifficultyOrDisabilityDeclaration
 ############################################################################################################################
@@ -407,8 +427,6 @@ Scenario Outline: Post Diversity with invalid values for DateAndTimeLDDHealthCon
 	| Field                                 | Value |
 	| DateAndTimeLDDHealthConsentCollected | TODO     |
 
-@diversitydetails  
-Scenario Outline: Post Diversity with invalid values for DateAndTimeLDDHealthConsentCollected 
 
 @diversitydetails  
 Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyOrDisability with no consent to collect  LDD Health data given
@@ -685,3 +703,29 @@ Scenario: Post Diversity with no value supplied for DateAndTimeEthnicityCollecte
 ############################################################################################################################
 ## Other tests
 ############################################################################################################################
+
+
+@diversitydetails  
+Scenario: Post a second Diversity record
+
+	Given I post a Diversity Details record with the following details:
+		| Field                                     | Value                |
+		| ConsentToCollectLLDDHealth                | true                 |
+		| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		| PrimaryLearningDifficultyOrDisability     | 4                    |
+		| SecondaryLearningDifficultyOrDisability   | 5                    |
+		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | true                 |
+		| EthnicityID                               | 32                   |
+		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+	When I post a DiversityDetail with the following details:
+		| Field                                     | Value                |
+		| ConsentToCollectLLDDHealth                | true                 |
+		| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		| PrimaryLearningDifficultyOrDisability     | 4                    |
+		| SecondaryLearningDifficultyOrDisability   | 5                    |
+		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | true                 |
+		| EthnicityID                               | 32                   |
+		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+	Then there should be a 409 response

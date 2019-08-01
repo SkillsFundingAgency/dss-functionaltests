@@ -17,7 +17,6 @@ using System.Data.SqlTypes;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using System.Configuration;
-using Newtonsoft.Json.Linq;
 using System.Threading;
 
 namespace FunctionalTests.StepDefs
@@ -279,6 +278,12 @@ namespace FunctionalTests.StepDefs
             //lastRequestWasPatch = false;
         }
 
+        [Given(@"I post a Diversity Details record with the following details:")]
+        public void GivenIPostADiversityDetailsRecordWithTheFollowingDetails(Table table)
+        {
+            WhenIPostADiversityDetailWithTheFollowingDetails(table);
+        }
+
 
         [When(@"I post a DiversityDetail with the following details:")]
         public void WhenIPostADiversityDetailWithTheFollowingDetails(Table table)
@@ -533,7 +538,13 @@ namespace FunctionalTests.StepDefs
             {
                 patchVals.Add("SessionId", sessionId);
             }
+
             json = JsonConvert.SerializeObject(patchVals);
+
+            if (scenarioContext.ContainsKey("AdditionalFieldName"))
+            {
+                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+            }
             lastTouchpoint = (touchpointId.Equals(string.Empty) ? envSettings.TestEndpoint01 : touchpointId);
             //requestTime = DateTime.UtcNow;
 
@@ -697,6 +708,14 @@ namespace FunctionalTests.StepDefs
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 
+        [When(@"I get a Diversity Details by ID")]
+        public void WhenIGetADiversityDetailsByID()
+        {
+            url = envSettings.BaseUrl + "diverstiydetails/api/Customers/" + customerId + "/diverstiydetails/" + diversityId;
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+
         [When(@"I get a Learning Progression by ID")]
         public void WhenIGetALearningProgressionByID()
         {
@@ -717,6 +736,14 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "Addresses/api/Customers/" + customerId + "/Addresses/";
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
+
+        [When(@"I get all Diversity Details records for a customer")]
+        public void WhenIGetAllDiversityDetailsRecordsForACustomer()
+        {
+            url = envSettings.BaseUrl + "diverstydetail/api/Customers/" + customerId + "/diverstydetail/";
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
 
 
         [Then(@"the response should contain (.*) document\(s\)")]
