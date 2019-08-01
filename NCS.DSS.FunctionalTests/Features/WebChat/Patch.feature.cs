@@ -260,9 +260,6 @@ this.FeatureBackground();
                         "WebChatEndDateandTime",
                         "2018-07-20T13:45:00Z"});
             table8.AddRow(new string[] {
-                        "WebChatDuration",
-                        "00:45:00"});
-            table8.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
             table8.AddRow(new string[] {
@@ -344,9 +341,6 @@ this.FeatureBackground();
             table11.AddRow(new string[] {
                         "WebChatEndDateandTime",
                         "2018-07-20T14:45:00Z"});
-            table11.AddRow(new string[] {
-                        "WebChatDuration",
-                        "01:25:00"});
             table11.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
@@ -607,9 +601,6 @@ this.FeatureBackground();
             table20.AddRow(new string[] {
                         "WebChatEndDateandTime",
                         "2018-07-20T14:45:00Z"});
-            table20.AddRow(new string[] {
-                        "WebChatDuration",
-                        "01:25:00"});
             table20.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
