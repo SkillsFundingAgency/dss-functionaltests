@@ -906,6 +906,10 @@ namespace FunctionalTests.StepDefs
         [Then(@"the response body should have (.*) with value (.*)")]
         public void ThenTheResponseBodyShouldHaveFieldWithValue(string p0, string p1)
         {
+            /*if ( p0.Contains("Date"))
+            {
+                p1 = SpecflowHelper.TranslateDateToken(p1).ToString();
+            }*/
             JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(p1);
         }
 
