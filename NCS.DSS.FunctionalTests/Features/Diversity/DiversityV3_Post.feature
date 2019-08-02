@@ -82,7 +82,6 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectLLDDHealth
 	Then there should be a 201 response
 	And the response body should contain:
 	| Field                                     | Value |
-	| Field                                     | Value |
 	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| ConsentToCollectEthnicity                 | false |
 	| Ethnicity                                 | 99    |
@@ -90,8 +89,8 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectLLDDHealth
 	
 	Examples:
 	| Field                     | Value |
-	| ConsentToCollectLLDDHealth | true  |
-	| ConsentToCollectLLDDHealth | false |		
+	| ConsentToCollectLLDDHealth | True  |
+	| ConsentToCollectLLDDHealth | False |		
 	
 @diversitydetails  
 Scenario Outline: Post Diversity with invalid values for ConsentToCollectLLDDHealth 
@@ -485,15 +484,13 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectEthnicity
 	Then there should be a 201 response
 	And the response body should contain:
 	| Field                      | Value |
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
 	| Ethnicity                  | 99    |
 	And the response body should have <Field> with value <Value>
 	
 	Examples:
 	| Field                     | Value |
-	| ConsentToCollectEthnicity | true  |
-	| ConsentToCollectEthnicity | false |
+	| ConsentToCollectEthnicity | True  |
+	| ConsentToCollectEthnicity | False |
 	
 
 
@@ -582,7 +579,7 @@ Scenario Outline: Post Diversity with invalid values for Ethnicity
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | true  |
 	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	And the error message should be "Please supply a valid Ethnicity"
 	
 	Examples:
 	| Field     | Value |
