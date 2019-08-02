@@ -18,25 +18,25 @@ Background: Create Adviser
 Scenario:Post Diversity with all values
 	When I post a DiversityDetail with the following details:
 	| Field                                     | Value                |
-	| ConsentToCollectLLDDHealth                 | true                 |
+	| ConsentToCollectLLDDHealth                | true                 |
 	| LearningDifficultyOrDisabilityDeclaration | 1                    |
 	| PrimaryLearningDifficultyOrDisability     | 4                    |
 	| SecondaryLearningDifficultyOrDisability   | 5                    |
-	| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 	| ConsentToCollectEthnicity                 | true                 |
-	| EthnicityID                               | 32                   |
+	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
 	Then there should be a 201 response
 	And the response body should contain:
 	| Field                                     | Value                |
-	| ConsentToCollectLLDDHealth                 | true                 |
+	| ConsentToCollectLLDDHealth                | true                 |
 	| LearningDifficultyOrDisabilityDeclaration | 1                    |
 	| PrimaryLearningDifficultyOrDisability     | 4                    |
 	| SecondaryLearningDifficultyOrDisability   | 5                    |
-	| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+	| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
 	| ConsentToCollectEthnicity                 | true                 |
-	| EthnicityID                               | 32                   |
+	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
 	#And the "diversitydetails" cosmos document should include CreatedBy
@@ -59,8 +59,6 @@ Scenario:Post Diversity with all mandatory values
 	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| ConsentToCollectEthnicity                 | false |
 	| Ethnicity                                 | 99    |
-	| PrimaryLearningDifficultyOrDisability     | 4     |
-	| SecondaryLearningDifficultyOrDisability   | 5     |
 	#And the "diversitydetails" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	#And there should be a record in the diversitydetails ChangeFeed table
@@ -134,7 +132,6 @@ Scenario Outline:Post Diversity with valid values for LearningDifficultyOrDisabi
 	| Ethnicity                  | 99    |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                      | Value |
 	| Field                      | Value |
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | false |
@@ -538,12 +535,12 @@ Scenario: Post Diversity with no value supplied for ConsentToCollectEthnicity
 Scenario Outline:Post Diversity with valid values for Ethnicity 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
-	| ConsentToCollectEthnicity  | true  |
+	| Field                                     | Value |
+	| ConsentToCollectLLDDHealth                | true  |
+	| ConsentToCollectEthnicity                 | true  |
+	| LearningDifficultyOrDisabilityDeclaration | 1      |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                      | Value |
 	| Field                      | Value |
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | true  |
@@ -614,13 +611,13 @@ Scenario: Post Diversity with no value supplied for Ethnicity
 Scenario Outline:Post Diversity with valid values for DateAndTimeEthnicityCollected 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
-	| ConsentToCollectEthnicity  | false |
-	| Ethnicity                  | 99    |
+	| Field                                     | Value |
+	| ConsentToCollectLLDDHealth                | true  |
+	| ConsentToCollectEthnicity                 | false |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
+	| Ethnicity                                 | 99    |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                      | Value |
 	| Field                      | Value |
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | false |
@@ -640,10 +637,11 @@ Scenario Outline:Post Diversity with valid values for DateAndTimeEthnicityCollec
 Scenario Outline: Post Diversity with invalid values for DateAndTimeEthnicityCollected 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
-	| ConsentToCollectEthnicity  | false |
-	| Ethnicity                  | 99    |
+	| Field                                     | Value |
+	| ConsentToCollectLLDDHealth                | true  |
+	| ConsentToCollectEthnicity                 | false |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
+	| Ethnicity                                 | 99    |
 	Then there should be a 422 response
 	And the error message should be "PLACEHOLDER"
 	
@@ -657,7 +655,7 @@ Scenario: Post Diversity with no value supplied for DateAndTimeEthnicityCollecte
 	When I post a DiversityDetail with the following details:
 	| Field                                     | Value |
 	| ConsentToCollectLLDDHealth                | false |
-	| LearningDifficultyOrDisabilityDeclaration |       |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| PrimaryLearningDifficultyOrDisability     | 5     |
 	| SecondaryLearningDifficultyOrDisability   |       |
 	| DateAndTimeLDDHealthConsentCollected      |       |
