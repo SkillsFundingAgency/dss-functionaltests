@@ -478,9 +478,10 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 Scenario Outline:Post Diversity with valid values for ConsentToCollectEthnicity 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
-	| Ethnicity                  | 99    |
+	| Field                                     | Value |
+	| ConsentToCollectLLDDHealth                | false |
+	| LearningDifficultyOrDisabilityDeclaration | 9     |
+	| Ethnicity                                 | 99    |
 	Then there should be a 201 response
 	And the response body should contain:
 	| Field                      | Value |
@@ -502,11 +503,12 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectEthnicity
 Scenario Outline: Post Diversity with invalid values for ConsentToCollectEthnicity 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
+	| Field                                     | Value |
+	| LearningDifficultyOrDisabilityDeclaration |   9    |
+	| ConsentToCollectLLDDHealth | false  |
 	| Ethnicity                  | 99    |
 	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	#And the error message should be "PLACEHOLDER"
 	
 	Examples:
 	| Field                     | Value |
