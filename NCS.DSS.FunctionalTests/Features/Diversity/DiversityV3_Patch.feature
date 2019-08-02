@@ -131,7 +131,7 @@ Scenario Outline: Patch Diversity with invalid values for LearningDifficultyOrDi
 	| LearningDifficultyOrDisabilityDeclaration | 100   | 
 
 @diversitydetails  
-Scenario: Patch Diversity with no value supplied for LearningDifficultyOrDisabilityDeclaration 
+Scenario Outline: Patch Diversity with no value supplied for LearningDifficultyOrDisabilityDeclaration 
 
 	When I patch the element <Field> with <value>:
 	Then there should be a 200 response
@@ -205,7 +205,7 @@ Scenario Outline: Patch Diversity with invalid values for PrimaryLearningDifficu
 #	| PrimaryLearningDifficultyOrDisability | a     |
 
 @diversitydetails  
-Scenario: Patch Diversity with no value supplied for PrimaryLearningDifficultyOrDisability 
+Scenario Outline: Patch Diversity with no value supplied for PrimaryLearningDifficultyOrDisability 
 
 	When I patch the element <Field> with <value>:
 	Then there should be a 200 response
@@ -368,7 +368,7 @@ Scenario Outline: Patch Diversity with invalid values for ConsentToCollectEthnic
 	| ConsentToCollectEthnicity | abc   |
 
 @diversitydetails  
-Scenario: Patch Diversity with no value supplied for ConsentToCollectEthnicity
+Scenario Outline: Patch Diversity with no value supplied for ConsentToCollectEthnicity
 
 	When I patch the element <Field> with <value>:
 	Then there should be a 200 response
@@ -428,7 +428,7 @@ Scenario Outline: Patch Diversity with invalid values for Ethnicity
 	| Ethnicity | 100   |
 
 @diversitydetails  
-Scenario: Patch Diversity with no value supplied for Ethnicity
+Scenario Outline: Patch Diversity with no value supplied for Ethnicity
 
 	When I patch the element <Field> with <value>:
 	Then there should be a 200 response
@@ -467,7 +467,7 @@ Scenario Outline: Patch Diversity with invalid values for DateAndTimeEthnicityCo
 	| DateAndTimeEthnicityCollected | TODO  |
 
 @diversitydetails  
-Scenario: Patch Diversity with no value supplied for DateAndTimeEthnicityCollected and no consent to collect  Ethnicity data given
+Scenario Outline: Patch Diversity with no value supplied for DateAndTimeEthnicityCollected and no consent to collect  Ethnicity data given
 
 	When I patch the element <Field> with <value>:
 	Then there should be a 200 response

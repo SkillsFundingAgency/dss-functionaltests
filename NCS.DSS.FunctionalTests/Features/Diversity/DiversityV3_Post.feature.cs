@@ -1257,13 +1257,16 @@ this.FeatureBackground();
                         "Value"});
             table31.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "true"});
+                        "false"});
+            table31.AddRow(new string[] {
+                        "LearningDifficultyOrDisabilityDeclaration",
+                        "9"});
             table31.AddRow(new string[] {
                         "Ethnicity",
                         "99"});
 #line 480
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table31, "When ");
-#line 484
+#line 485
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1278,9 +1281,9 @@ this.FeatureBackground();
             table32.AddRow(new string[] {
                         "Ethnicity",
                         "99"});
-#line 485
+#line 486
  testRunner.And("the response body should contain:", ((string)(null)), table32, "And ");
-#line 490
+#line 491
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1300,29 +1303,30 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with invalid values for ConsentToCollectEthnicity", null, @__tags);
-#line 502
+#line 503
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line 503
+#line 504
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table33.AddRow(new string[] {
+                        "LearningDifficultyOrDisabilityDeclaration",
+                        "9"});
+            table33.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "true"});
+                        "false"});
             table33.AddRow(new string[] {
                         "Ethnicity",
                         "99"});
-#line 504
+#line 505
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table33, "When ");
-#line 508
+#line 510
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 509
- testRunner.And("the error message should be \"PLACEHOLDER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1334,7 +1338,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with no value supplied for ConsentToCollectEthnicity", null, new string[] {
                         "diversitydetails"});
-#line 517
+#line 519
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
@@ -1367,11 +1371,11 @@ this.FeatureBackground();
             table34.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 519
+#line 521
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table34, "When ");
-#line 529
+#line 531
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 530
+#line 532
  testRunner.And("the error message should be \"PLACEHOLDER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1408,12 +1412,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with valid values for Ethnicity", null, @__tags);
-#line 539
+#line 541
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line 540
+#line 542
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1425,9 +1429,9 @@ this.FeatureBackground();
             table35.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
                         "true"});
-#line 541
+#line 543
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table35, "When ");
-#line 545
+#line 547
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1442,9 +1446,9 @@ this.FeatureBackground();
             table36.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
                         "true"});
-#line 546
+#line 548
  testRunner.And("the response body should contain:", ((string)(null)), table36, "And ");
-#line 551
+#line 553
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1469,12 +1473,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with invalid values for Ethnicity", null, @__tags);
-#line 576
+#line 578
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line 577
+#line 579
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1486,11 +1490,11 @@ this.FeatureBackground();
             table37.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
                         "true"});
-#line 578
+#line 580
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table37, "When ");
-#line 582
+#line 584
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 583
+#line 585
  testRunner.And("the error message should be \"PLACEHOLDER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1503,7 +1507,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with no value supplied for Ethnicity", null, new string[] {
                         "diversitydetails"});
-#line 596
+#line 598
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
@@ -1533,11 +1537,11 @@ this.FeatureBackground();
             table38.AddRow(new string[] {
                         "Ethnicity",
                         ""});
-#line 598
+#line 600
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table38, "When ");
-#line 607
+#line 609
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 608
+#line 610
  testRunner.And("the error message should be \"PLACEHOLDER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1558,12 +1562,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with valid values for DateAndTimeEthnicityCollected", null, @__tags);
-#line 615
+#line 617
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line 616
+#line 618
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1578,9 +1582,9 @@ this.FeatureBackground();
             table39.AddRow(new string[] {
                         "Ethnicity",
                         "99"});
-#line 617
+#line 619
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table39, "When ");
-#line 622
+#line 624
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1598,9 +1602,9 @@ this.FeatureBackground();
             table40.AddRow(new string[] {
                         "Ethnicity",
                         "99"});
-#line 623
+#line 625
  testRunner.And("the response body should contain:", ((string)(null)), table40, "And ");
-#line 629
+#line 631
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1619,12 +1623,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with invalid values for DateAndTimeEthnicityCollected", null, @__tags);
-#line 641
+#line 643
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line 642
+#line 644
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1639,11 +1643,11 @@ this.FeatureBackground();
             table41.AddRow(new string[] {
                         "Ethnicity",
                         "99"});
-#line 643
+#line 645
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table41, "When ");
-#line 648
+#line 650
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 649
+#line 651
  testRunner.And("the error message should be \"PLACEHOLDER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1658,7 +1662,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with no value supplied for DateAndTimeEthnicityCollected and no co" +
                     "nsent to collect  Ethnicity data given", null, new string[] {
                         "diversitydetails"});
-#line 656
+#line 658
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
@@ -1691,9 +1695,9 @@ this.FeatureBackground();
             table42.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         ""});
-#line 658
+#line 660
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table42, "When ");
-#line 668
+#line 670
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1720,7 +1724,7 @@ this.FeatureBackground();
             table43.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         ""});
-#line 669
+#line 671
  testRunner.And("the response body should contain:", ((string)(null)), table43, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1735,7 +1739,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with no value supplied for DateAndTimeEthnicityCollected with cons" +
                     "ent to collect Ethnicity data given", null, new string[] {
                         "diversitydetails"});
-#line 680
+#line 682
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
@@ -1765,11 +1769,11 @@ this.FeatureBackground();
             table44.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         ""});
-#line 682
+#line 684
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table44, "When ");
-#line 691
+#line 693
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 692
+#line 694
  testRunner.And("the error message should be \"PLACEHOLDER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1782,7 +1786,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post a second Diversity record", null, new string[] {
                         "diversitydetails"});
-#line 709
+#line 711
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
@@ -1815,7 +1819,7 @@ this.FeatureBackground();
             table45.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 711
+#line 713
  testRunner.Given("I post a Diversity Details record with the following details:", ((string)(null)), table45, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1845,9 +1849,9 @@ this.FeatureBackground();
             table46.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 721
+#line 723
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table46, "When ");
-#line 731
+#line 733
  testRunner.Then("there should be a 409 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -288,10 +288,16 @@ namespace FunctionalTests.StepDefs
         [When(@"I post a DiversityDetail with the following details:")]
         public void WhenIPostADiversityDetailWithTheFollowingDetails(Table table)
         {
+            SetVersion("post", true);
             ScenarioContext.Current["version"] = "";
            // url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
             var diversity = table.CreateInstance<Diversity>();
             json2 = JsonConvert.SerializeObject(diversity);
+
+            if (scenarioContext.ContainsKey("AdditionalFieldName"))
+            {
+                json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+            }
 
             url = PostRequest(envSettings.BaseUrl, json2, constants.DiversityDetails);
             diversityId = id;
@@ -1474,9 +1480,9 @@ namespace FunctionalTests.StepDefs
             {
                 ScenarioContext.Current["version"] = "v2";
             }
-            else if (allowV3 && scenarioContext.ScenarioInfo.Tags.Contains<string>(method + "V3"))
+            else if (scenarioContext.ScenarioInfo.Tags.Contains<string>(method + "V3"))
             {
-                ScenarioContext.Current["version"] = "v3";
+                ScenarioContext.Current["version"] = (allowV3 ? "v3" : "v2" );
             }
             else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V1"))
             {
@@ -1486,9 +1492,9 @@ namespace FunctionalTests.StepDefs
             {
                 ScenarioContext.Current["version"] = "v2";
             }
-            else if (allowV3 && FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V3"))
+            else if ( FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V3"))
             {
-                ScenarioContext.Current["version"] = "v3";
+                ScenarioContext.Current["version"] = (allowV3 ?  "v3" : "v2");
             }
             else
             {
