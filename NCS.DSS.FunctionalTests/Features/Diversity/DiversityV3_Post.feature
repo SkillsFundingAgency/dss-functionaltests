@@ -90,21 +90,21 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectLLDDHealth
 	| ConsentToCollectLLDDHealth | True  |
 	| ConsentToCollectLLDDHealth | False |		
 	
-@diversitydetails  
-Scenario Outline: Post Diversity with invalid values for ConsentToCollectLLDDHealth 
-
-	Given I want to send <Field> with value <Value> in the following request
-	When I post a DiversityDetail with the following details:
-	| Field                                     | Value |
-	| LearningDifficultyOrDisabilityDeclaration | 1     |
-	| ConsentToCollectEthnicity                 | false |
-	| Ethnicity                                 | 99    |
-	Then there should be a 422 response
-	
-	Examples:
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | 1     |
-	| ConsentToCollectLLDDHealth | car   |	
+#@diversitydetails  
+#Scenario Outline: Post Diversity with invalid values for ConsentToCollectLLDDHealth 
+#
+#	Given I want to send <Field> with value <Value> in the following request
+#	When I post a DiversityDetail with the following details:
+#	| Field                                     | Value |
+#	| LearningDifficultyOrDisabilityDeclaration | 1     |
+#	| ConsentToCollectEthnicity                 | false |
+#	| Ethnicity                                 | 99    |
+#	Then there should be a 422 response
+#	
+#	Examples:
+#	| Field                      | Value |
+#	| ConsentToCollectLLDDHealth | 1     |
+#	| ConsentToCollectLLDDHealth | car   |	
 
 @diversitydetails  
 Scenario: Post Diversity with no value supplied for ConsentToCollectLLDDHealth 
@@ -142,7 +142,7 @@ Scenario Outline:Post Diversity with valid values for LearningDifficultyOrDisabi
 	| Field                                     | Value |
 	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| LearningDifficultyOrDisabilityDeclaration | 2     |
-	| LearningDifficultyOrDisabilityDeclaration | 99    |
+	| LearningDifficultyOrDisabilityDeclaration | 9    |
 
 
 
@@ -162,7 +162,10 @@ Scenario Outline: Post Diversity with invalid values for LearningDifficultyOrDis
 	| LearningDifficultyOrDisabilityDeclaration | -1    | 
 	| LearningDifficultyOrDisabilityDeclaration | 0     | 
 	| LearningDifficultyOrDisabilityDeclaration | 3     |
+	| LearningDifficultyOrDisabilityDeclaration | 8     |
+	| LearningDifficultyOrDisabilityDeclaration | 10     |
 	| LearningDifficultyOrDisabilityDeclaration | 98    | 
+	| LearningDifficultyOrDisabilityDeclaration | 99    | 
 	| LearningDifficultyOrDisabilityDeclaration | 100   | 
 
 @diversitydetails  
@@ -174,13 +177,15 @@ Scenario: Post Diversity with no value supplied for LearningDifficultyOrDisabili
 	| LearningDifficultyOrDisabilityDeclaration |                      |
 	| PrimaryLearningDifficultyOrDisability     | 4                    |
 	| SecondaryLearningDifficultyOrDisability   | 5                    |
-	| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+	| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
-	Then there should be a 422 response
-	And the error message should be "The LearningDifficultyOrDisabilityDeclaration field is required."
+	Then there should be a 201 response
+	And the response body should contain:
+	| Field                                     | Value |
+	| LearningDifficultyOrDisabilityDeclaration | 9     |
 
 ############################################################################################################################
 ## PrimaryLearningDifficultyOrDisability
@@ -190,17 +195,18 @@ Scenario: Post Diversity with no value supplied for LearningDifficultyOrDisabili
 Scenario Outline:Post Diversity with valid values for PrimaryLearningDifficultyOrDisability 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
-	| ConsentToCollectEthnicity  | false |
-	| Ethnicity                  | 99    |
+	| Field                                     | Value |
+	| ConsentToCollectLLDDHealth                | true  |
+	| ConsentToCollectEthnicity                 | false |
+	| Ethnicity                                 | 99    |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                      | Value |
-	| Field                      | Value |
-	| ConsentToCollectLLDDHealth | true  |
-	| ConsentToCollectEthnicity  | false |
-	| Ethnicity                  | 99    |
+	| Field                                     | Value |
+	| ConsentToCollectLLDDHealth                | true  |
+	| ConsentToCollectEthnicity                 | false |
+	| Ethnicity                                 | 99    |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	And the response body should have <Field> with value <Value>
 	
 	Examples:
@@ -263,18 +269,19 @@ Scenario: Post Diversity with no value supplied for PrimaryLearningDifficultyOrD
 	| LearningDifficultyOrDisabilityDeclaration |                      |
 	| PrimaryLearningDifficultyOrDisability     |                     |
 	| SecondaryLearningDifficultyOrDisability   | 5                    |
-	| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+	| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
 	Then there should be a 201 response
 	And the response body should contain:
+	| Field                                     | Value                |
 	| ConsentToCollectLLDDHealth                | true                 |
-	| LearningDifficultyOrDisabilityDeclaration |                      |
+	| LearningDifficultyOrDisabilityDeclaration | 9                    |
 	| PrimaryLearningDifficultyOrDisability     | 99                   |
 	| SecondaryLearningDifficultyOrDisability   | 5                    |
-	| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
@@ -294,7 +301,6 @@ Scenario Outline:Post Diversity with valid values for SecondaryLearningDifficult
 	| Ethnicity                  | 99    |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                      | Value |
 	| Field                      | Value |
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | false |
@@ -361,7 +367,7 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 	| LearningDifficultyOrDisabilityDeclaration |                      |
 	| PrimaryLearningDifficultyOrDisability     | 5                    |
 	| SecondaryLearningDifficultyOrDisability   |                      |
-	| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+	| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
@@ -369,21 +375,21 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 	Then there should be a 201 response
 	And the response body should contain:
 	| ConsentToCollectLLDDHealth                | true                 |
-	| LearningDifficultyOrDisabilityDeclaration |                      |
-	| PrimaryLearningDifficultyOrDisability     | 5                   |
-	| SecondaryLearningDifficultyOrDisability   | 99                    |
-	| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+	| LearningDifficultyOrDisabilityDeclaration | 9                    |
+	| PrimaryLearningDifficultyOrDisability     | 5                    |
+	| SecondaryLearningDifficultyOrDisability   | 99                   |
+	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
 
 ############################################################################################################################
-## DateAndTimeLDDHealthConsentCollected			MANDATORY IF CONSENT GIVEN	Date < NOW
+## DateAndTimeLLDDHealthConsentCollected			MANDATORY IF CONSENT GIVEN	Date < NOW
 ############################################################################################################################
 
 @diversitydetails  
-Scenario Outline:Post Diversity with valid values for DateAndTimeLDDHealthConsentCollected 
+Scenario Outline:Post Diversity with valid values for DateAndTimeLLDDHealthConsentCollected 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
 	| Field                      | Value |
@@ -393,23 +399,22 @@ Scenario Outline:Post Diversity with valid values for DateAndTimeLDDHealthConsen
 	Then there should be a 201 response
 	And the response body should contain:
 	| Field                      | Value |
-	| Field                      | Value |
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | false |
 	| Ethnicity                  | 99    |
-	And the response body should have <Field> with value <Value>
+#	And the response body should have <Field> with value <Value>
 	
 	Examples:
 	| Field                                | Value                |
-	| DateAndTimeLDDHealthConsentCollected | now                  |
-	| DateAndTimeLDDHealthConsentCollected | today                |
-	| DateAndTimeLDDHealthConsentCollected | 2018-08-25T11:21:00Z |
+	| DateAndTimeLLDDHealthConsentCollected | now                  |
+	| DateAndTimeLLDDHealthConsentCollected | today                |
+	| DateAndTimeLLDDHealthConsentCollected | 2018-08-25T11:21:00Z |
 
 
 
 
 @diversitydetails  
-Scenario Outline: Post Diversity with invalid values for DateAndTimeLDDHealthConsentCollected 
+Scenario Outline: Post Diversity with invalid values for DateAndTimeLLDDHealthConsentCollected 
 	Given I want to send <Field> with value <Value> in the following request
 	When I post a DiversityDetail with the following details:
 	| Field                      | Value |
@@ -417,11 +422,12 @@ Scenario Outline: Post Diversity with invalid values for DateAndTimeLDDHealthCon
 	| ConsentToCollectEthnicity  | false |
 	| Ethnicity                  | 99    |
 	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	And the error message should be "Date And Time LLDD Health Consent Collected must be less the current date/time"
 	
 	Examples:
-	| Field                                 | Value |
-	| DateAndTimeLDDHealthConsentCollected | TODO     |
+	| Field                                 | Value       |
+	| DateAndTimeLLDDHealthConsentCollected | now +1Hour  |
+	| DateAndTimeLLDDHealthConsentCollected | today +1Day |
 
 
 @diversitydetails  
@@ -433,7 +439,7 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 	| LearningDifficultyOrDisabilityDeclaration |                      |
 	| PrimaryLearningDifficultyOrDisability     | 5                    |
 	| SecondaryLearningDifficultyOrDisability   |                      |
-	| DateAndTimeLDDHealthConsentCollected      |                      |
+	| DateAndTimeLLDDHealthConsentCollected      |                      |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
@@ -441,10 +447,10 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 	And the response body should contain:
 	| Field                                     | Value                |
 	| ConsentToCollectLLDDHealth                | false                |
-	| LearningDifficultyOrDisabilityDeclaration |                      |
+	| LearningDifficultyOrDisabilityDeclaration | 9                    |
 	| PrimaryLearningDifficultyOrDisability     | 5                    |
-	| SecondaryLearningDifficultyOrDisability   |                      |
-	| DateAndTimeLDDHealthConsentCollected      |                      |
+	| SecondaryLearningDifficultyOrDisability   | 99                   |
+	| DateAndTimeLLDDHealthConsentCollected     |                      |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
@@ -458,12 +464,21 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 	| LearningDifficultyOrDisabilityDeclaration |                      |
 	| PrimaryLearningDifficultyOrDisability     | 5                    |
 	| SecondaryLearningDifficultyOrDisability   |                      |
-	| DateAndTimeLDDHealthConsentCollected      |                      |
+	| DateAndTimeLLDDHealthConsentCollected     |                      |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	Then there should be a 201 response
+	And the response body should contain:
+	| Field                                     | Value                |
+	| ConsentToCollectLLDDHealth                | false                |
+	| LearningDifficultyOrDisabilityDeclaration | 9                    |
+	| PrimaryLearningDifficultyOrDisability     | 5                    |
+	| SecondaryLearningDifficultyOrDisability   | 99                   |
+	| DateAndTimeLLDDHealthConsentCollected     |                      |
+	| ConsentToCollectEthnicity                 | true                 |
+	| Ethnicity                                 | 32                   |
+	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 
 ############################################################################################################################
 ## ConsentToCollectEthnicity	MANDATORY
@@ -493,21 +508,21 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectEthnicity
 
 
 
-@diversitydetails  
-Scenario Outline: Post Diversity with invalid values for ConsentToCollectEthnicity 
-	Given I want to send <Field> with value <Value> in the following request
-	When I post a DiversityDetail with the following details:
-	| Field                                     | Value |
-	| LearningDifficultyOrDisabilityDeclaration |   9    |
-	| ConsentToCollectLLDDHealth | false  |
-	| Ethnicity                  | 99    |
-	Then there should be a 422 response
-	#And the error message should be "PLACEHOLDER"
-	
-	Examples:
-	| Field                     | Value |
-	| ConsentToCollectEthnicity | 1     |
-	| ConsentToCollectEthnicity | abc   |
+#@diversitydetails  
+#Scenario Outline: Post Diversity with invalid values for ConsentToCollectEthnicity 
+#	Given I want to send <Field> with value <Value> in the following request
+#	When I post a DiversityDetail with the following details:
+#	| Field                                     | Value |
+#	| LearningDifficultyOrDisabilityDeclaration |   9    |
+#	| ConsentToCollectLLDDHealth | false  |
+#	| Ethnicity                  | 99    |
+#	Then there should be a 422 response
+#	#And the error message should be "PLACEHOLDER"
+#	
+#	Examples:
+#	| Field                     | Value |
+#	| ConsentToCollectEthnicity | 1     |
+#	| ConsentToCollectEthnicity | abc   |
 
 @diversitydetails  
 Scenario: Post Diversity with no value supplied for ConsentToCollectEthnicity
@@ -518,12 +533,12 @@ Scenario: Post Diversity with no value supplied for ConsentToCollectEthnicity
 	| LearningDifficultyOrDisabilityDeclaration |                      |
 	| PrimaryLearningDifficultyOrDisability     | 5                    |
 	| SecondaryLearningDifficultyOrDisability   |                      |
-	| DateAndTimeLDDHealthConsentCollected      |                      |
+	| DateAndTimeLLDDHealthConsentCollected      |                      |
 	| ConsentToCollectEthnicity                 |                      |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	And the error message should be "The ConsentToCollectEthnicity field is required."
 
 
 ############################################################################################################################
@@ -597,11 +612,14 @@ Scenario: Post Diversity with no value supplied for Ethnicity
 	| LearningDifficultyOrDisabilityDeclaration |       |
 	| PrimaryLearningDifficultyOrDisability     | 5     |
 	| SecondaryLearningDifficultyOrDisability   |       |
-	| DateAndTimeLDDHealthConsentCollected      |       |
-	| ConsentToCollectEthnicity                 |       |
+	| DateAndTimeLLDDHealthConsentCollected     |       |
+	| ConsentToCollectEthnicity                 | true  |
 	| Ethnicity                                 |       |
-	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	Then there should be a 201 response
+		And the response body should contain:
+	| Field     | Value |
+	| Ethnicity | 99    |
+	
 
 ############################################################################################################################
 ## DateAndTimeEthnicityCollected	MANDATORY if Consent is Given   :  <= Now
@@ -622,7 +640,7 @@ Scenario Outline:Post Diversity with valid values for DateAndTimeEthnicityCollec
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | false |
 	| Ethnicity                  | 99    |
-	And the response body should have <Field> with value <Value>
+	#And the response body should have <Field> with value <Value>
 	
 	Examples:
 	| Field                         | Value                |
@@ -643,11 +661,12 @@ Scenario Outline: Post Diversity with invalid values for DateAndTimeEthnicityCol
 	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| Ethnicity                                 | 99    |
 	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	And the error message should be "Date And Time Ethnicity Collected must be less the current date/time"
 	
 	Examples:
-	| Field                         | Value |
-	| DateAndTimeEthnicityCollected | TODO  |
+	| Field                         | Value       |
+	| DateAndTimeEthnicityCollected | now +1Hour  |
+	| DateAndTimeEthnicityCollected | today +1Day |
 
 @diversitydetails  
 Scenario: Post Diversity with no value supplied for DateAndTimeEthnicityCollected and no consent to collect  Ethnicity data given
@@ -658,18 +677,18 @@ Scenario: Post Diversity with no value supplied for DateAndTimeEthnicityCollecte
 	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| PrimaryLearningDifficultyOrDisability     | 5     |
 	| SecondaryLearningDifficultyOrDisability   |       |
-	| DateAndTimeLDDHealthConsentCollected      |       |
+	| DateAndTimeLLDDHealthConsentCollected     |       |
 	| ConsentToCollectEthnicity                 | false |
 	| Ethnicity                                 | 38    |
 	| DateAndTimeEthnicityCollected             |       |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                                     | Value                |
+	| Field                                     | Value |
 	| ConsentToCollectLLDDHealth                | false |
-	| LearningDifficultyOrDisabilityDeclaration |       |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| PrimaryLearningDifficultyOrDisability     | 5     |
-	| SecondaryLearningDifficultyOrDisability   |       |
-	| DateAndTimeLDDHealthConsentCollected      |       |
+	| SecondaryLearningDifficultyOrDisability   | 99    |
+	| DateAndTimeLLDDHealthConsentCollected     |       |
 	| ConsentToCollectEthnicity                 | false |
 	| DateAndTimeEthnicityCollected             |       |
 
@@ -682,11 +701,11 @@ Scenario: Post Diversity with no value supplied for DateAndTimeEthnicityCollecte
 	| LearningDifficultyOrDisabilityDeclaration |       |
 	| PrimaryLearningDifficultyOrDisability     | 5     |
 	| SecondaryLearningDifficultyOrDisability   |       |
-	| DateAndTimeLDDHealthConsentCollected      |       |
+	| DateAndTimeLLDDHealthConsentCollected      |       |
 	| ConsentToCollectEthnicity                 | true |
 	| DateAndTimeEthnicityCollected             |       |
-	Then there should be a 422 response
-	And the error message should be "PLACEHOLDER"
+	Then there should be a 201 response
+	#And the error message should be "PLACEHOLDER"
 
 
 ############################################################################################################################
@@ -711,7 +730,7 @@ Scenario: Post a second Diversity record
 		| LearningDifficultyOrDisabilityDeclaration | 1                    |
 		| PrimaryLearningDifficultyOrDisability     | 4                    |
 		| SecondaryLearningDifficultyOrDisability   | 5                    |
-		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
 		| ConsentToCollectEthnicity                 | true                 |
 		| EthnicityID                               | 32                   |
 		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
@@ -721,7 +740,7 @@ Scenario: Post a second Diversity record
 		| LearningDifficultyOrDisabilityDeclaration | 1                    |
 		| PrimaryLearningDifficultyOrDisability     | 4                    |
 		| SecondaryLearningDifficultyOrDisability   | 5                    |
-		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
 		| ConsentToCollectEthnicity                 | true                 |
 		| EthnicityID                               | 32                   |
 		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |

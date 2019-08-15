@@ -288,15 +288,19 @@ namespace FunctionalTests.StepDefs
         [When(@"I post a DiversityDetail with the following details:")]
         public void WhenIPostADiversityDetailWithTheFollowingDetails(Table table)
         {
+           // ScenarioContext.Current["version"] = "";
             SetVersion("post", true);
-            ScenarioContext.Current["version"] = "";
+            
            // url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
             var diversity = table.CreateInstance<Diversity>();
             json2 = JsonConvert.SerializeObject(diversity);
 
             if (scenarioContext.ContainsKey("AdditionalFieldName"))
             {
-                json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+                json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"],
+                                    ((string)scenarioContext["AdditionalFieldName"]).Contains("Date")? 
+                                                                             SpecflowHelper.TranslateDateToken((string)scenarioContext["AdditionalFieldValue"]).ToString("yyyy-MM-ddTHH:mm:ssZ")
+                                                                            : (string)scenarioContext["AdditionalFieldValue"] );  
             }
 
             url = PostRequest(envSettings.BaseUrl, json2, constants.DiversityDetails);
@@ -525,6 +529,16 @@ namespace FunctionalTests.StepDefs
             WhenIPatchTheElementWith(p0, p1);
         }
 
+        private bool V3PatchSupported(string resource)
+        {
+            switch (resource)
+            {
+                case constants.DiversityDetails:
+                    return true;
+                default:
+                    return false;
+            }
+        }
 
         private void patchFromTable2(Table table, string resource, String touchpointId = "")
         {
@@ -536,7 +550,7 @@ namespace FunctionalTests.StepDefs
 
             // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
             //Thread.Sleep(5250);
-            SetVersion("patch");
+            SetVersion("patch", V3PatchSupported(resource));
            // Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
            // id = dict.FirstOrDefault().Value;
             Dictionary<string, string> patchVals = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
@@ -549,7 +563,13 @@ namespace FunctionalTests.StepDefs
 
             if (scenarioContext.ContainsKey("AdditionalFieldName"))
             {
-                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+//                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+
+                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"],
+                               ((string)scenarioContext["AdditionalFieldName"]).Contains("Date") ?
+                                                                        SpecflowHelper.TranslateDateToken((string)scenarioContext["AdditionalFieldValue"]).ToString("yyyy-MM-ddTHH:mm:ssZ")
+                                                                       : (string)scenarioContext["AdditionalFieldValue"]);
+
             }
             lastTouchpoint = (touchpointId.Equals(string.Empty) ? envSettings.TestEndpoint01 : touchpointId);
             //requestTime = DateTime.UtcNow;
@@ -717,7 +737,7 @@ namespace FunctionalTests.StepDefs
         [When(@"I get a Diversity Details by ID")]
         public void WhenIGetADiversityDetailsByID()
         {
-            url = envSettings.BaseUrl + "diverstiydetails/api/Customers/" + customerId + "/diverstiydetails/" + diversityId;
+            url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/diversitydetails/" + diversityId;
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 
@@ -746,7 +766,7 @@ namespace FunctionalTests.StepDefs
         [When(@"I get all Diversity Details records for a customer")]
         public void WhenIGetAllDiversityDetailsRecordsForACustomer()
         {
-            url = envSettings.BaseUrl + "diverstydetail/api/Customers/" + customerId + "/diverstydetail/";
+            url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/diversitydetails/";
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 
@@ -906,10 +926,10 @@ namespace FunctionalTests.StepDefs
         [Then(@"the response body should have (.*) with value (.*)")]
         public void ThenTheResponseBodyShouldHaveFieldWithValue(string p0, string p1)
         {
-            /*if ( p0.Contains("Date"))
+            if ( p0.Contains("Date"))
             {
-                p1 = SpecflowHelper.TranslateDateToken(p1).ToString();
-            }*/
+                p1 = SpecflowHelper.TranslateDateToken(p1).ToString("yyyy-MM-ddTHH:mm:ssZ");
+            }
             JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(p1);
         }
 

@@ -18,13 +18,13 @@ Scenario:Get Diversity Details by ID
 
 	Given I post a Diversity Details record with the following details:
 		| Field                                     | Value                |
-		| ConsentToCollectLLDDHealth                | true                 |
+		| ConsentToCollectLLDDHealth                | True                 |
 		| LearningDifficultyOrDisabilityDeclaration | 1                    |
 		| PrimaryLearningDifficultyOrDisability     | 4                    |
 		| SecondaryLearningDifficultyOrDisability   | 5                    |
-		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
-		| ConsentToCollectEthnicity                 | true                 |
-		| EthnicityID                               | 32                   |
+		| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | True                 |
+		| Ethnicity                                 | 32                   |
 		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	When I get a Diversity Details by ID
 	Then there should be a 200 response
@@ -34,9 +34,9 @@ Scenario:Get Diversity Details by ID
 		| LearningDifficultyOrDisabilityDeclaration | 1                    |
 		| PrimaryLearningDifficultyOrDisability     | 4                    |
 		| SecondaryLearningDifficultyOrDisability   | 5                    |
-		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 		| ConsentToCollectEthnicity                 | true                 |
-		| EthnicityID                               | 32                   |
+		| Ethnicity                                 | 32                   |
 		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 
 
@@ -45,26 +45,26 @@ Scenario:Get Diversity Details by ID
 Scenario:Get All Diversity Details records where 1 exists
 	Given I post a Diversity Details record with the following details:
 		| Field                                     | Value                |
-		| ConsentToCollectLLDDHealth                | true                 |
+		| ConsentToCollectLLDDHealth                | True                 |
 		| LearningDifficultyOrDisabilityDeclaration | 1                    |
 		| PrimaryLearningDifficultyOrDisability     | 4                    |
 		| SecondaryLearningDifficultyOrDisability   | 5                    |
-		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
-		| ConsentToCollectEthnicity                 | true                 |
-		| EthnicityID                               | 32                   |
+		| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | True                 |
+		| Ethnicity                               | 32                   |
 		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	When I get all Diversity Details records for a customer
 	Then there should be a 200 response
 	And the response should contain 1 document(s)
 	And the response body should incorporate a document with the following details:
 		| Field                                     | Value                |
-		| ConsentToCollectLLDDHealth                | true                 |
+		| ConsentToCollectLLDDHealth                | True                 |
 		| LearningDifficultyOrDisabilityDeclaration | 1                    |
 		| PrimaryLearningDifficultyOrDisability     | 4                    |
 		| SecondaryLearningDifficultyOrDisability   | 5                    |
-		| DateAndTimeLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
-		| ConsentToCollectEthnicity                 | true                 |
-		| EthnicityID                               | 32                   |
+		| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | True                 |
+		| Ethnicity                                 | 32                   |
 		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 
 
@@ -85,7 +85,7 @@ Scenario:Get Diversity Details by invalid ID
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
 	When I get a Diversity Details by ID
-	Then there should be a 204 response
+	Then there should be a 404 response
 
 @LearningProgression
 Scenario:Get All Diversity Details records where none exist
@@ -105,4 +105,4 @@ Scenario:Get All Diversity Details records where none exist
 	#	| GivenName  | Bob      |
 	#	| FamilyName | Customer |
 	When I get all Diversity Details records for a customer
-	Then there should be a 204 response
+	Then there should be a 404 response

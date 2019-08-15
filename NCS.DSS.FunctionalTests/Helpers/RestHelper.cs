@@ -106,7 +106,7 @@ namespace FunctionalTests.Helpers
                 request.AddHeader("TouchpointId", touchPointId );
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
 
-                if (ScenarioContext.Current["version"] != "v2" )
+                if (ScenarioContext.Current["version"] != "v1" )
                 {
                     request.AddHeader("version", (string)ScenarioContext.Current["version"]);
 
@@ -177,9 +177,9 @@ namespace FunctionalTests.Helpers
                 request.AddHeader("cache-control", "no-cache");
                 request.AddHeader("TouchpointId", touchPointId);
 
-                if (ScenarioContext.Current["version"].Equals("v2"))
+                if (ScenarioContext.Current["version"] != "v1")
                 {
-                    request.AddHeader("version", "v2");
+                    request.AddHeader("version", (string)ScenarioContext.Current["version"]);
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("subcontractorId"))
                     {
                         if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
@@ -240,10 +240,10 @@ namespace FunctionalTests.Helpers
             {
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.GET);
- 
-                if (ScenarioContext.Current["version"].Equals("v2"))
+
+                if (ScenarioContext.Current["version"] != "v1")
                 {
-                    request.AddHeader("version", "v2");
+                    request.AddHeader("version", (string)ScenarioContext.Current["version"]);
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("SubcontractorId"))
                     {
                         if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
