@@ -123,7 +123,7 @@ this.FeatureBackground();
                         "Value"});
             table3.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "true"});
+                        "True"});
             table3.AddRow(new string[] {
                         "LearningDifficultyOrDisabilityDeclaration",
                         "1"});
@@ -134,13 +134,13 @@ this.FeatureBackground();
                         "SecondaryLearningDifficultyOrDisability",
                         "5"});
             table3.AddRow(new string[] {
-                        "DateAndTimeLDDHealthConsentCollected",
+                        "DateAndTimeLLDDHealthConsentCollected",
                         "2018-06-25T11:21:00Z"});
             table3.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
-                        "true"});
+                        "True"});
             table3.AddRow(new string[] {
-                        "EthnicityID",
+                        "Ethnicity",
                         "32"});
             table3.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
@@ -168,13 +168,13 @@ this.FeatureBackground();
                         "SecondaryLearningDifficultyOrDisability",
                         "5"});
             table4.AddRow(new string[] {
-                        "DateAndTimeLDDHealthConsentCollected",
+                        "DateAndTimeLLDDHealthConsentCollected",
                         "2018-06-25T11:21:00Z"});
             table4.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
                         "true"});
             table4.AddRow(new string[] {
-                        "EthnicityID",
+                        "Ethnicity",
                         "32"});
             table4.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
@@ -203,7 +203,7 @@ this.FeatureBackground();
                         "Value"});
             table5.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "true"});
+                        "True"});
             table5.AddRow(new string[] {
                         "LearningDifficultyOrDisabilityDeclaration",
                         "1"});
@@ -214,13 +214,13 @@ this.FeatureBackground();
                         "SecondaryLearningDifficultyOrDisability",
                         "5"});
             table5.AddRow(new string[] {
-                        "DateAndTimeLDDHealthConsentCollected",
+                        "DateAndTimeLLDDHealthConsentCollected",
                         "2018-06-25T11:21:00Z"});
             table5.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
-                        "true"});
+                        "True"});
             table5.AddRow(new string[] {
-                        "EthnicityID",
+                        "Ethnicity",
                         "32"});
             table5.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
@@ -239,7 +239,7 @@ this.FeatureBackground();
                         "Value"});
             table6.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "true"});
+                        "True"});
             table6.AddRow(new string[] {
                         "LearningDifficultyOrDisabilityDeclaration",
                         "1"});
@@ -250,13 +250,13 @@ this.FeatureBackground();
                         "SecondaryLearningDifficultyOrDisability",
                         "5"});
             table6.AddRow(new string[] {
-                        "DateAndTimeLDDHealthConsentCollected",
+                        "DateAndTimeLLDDHealthConsentCollected",
                         "2018-06-25T11:21:00Z"});
             table6.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
-                        "true"});
+                        "True"});
             table6.AddRow(new string[] {
-                        "EthnicityID",
+                        "Ethnicity",
                         "32"});
             table6.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
@@ -324,7 +324,7 @@ this.FeatureBackground();
 #line 87
  testRunner.When("I get a Diversity Details by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 88
- testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -344,7 +344,7 @@ this.FeatureBackground();
 #line 107
  testRunner.When("I get all Diversity Details records for a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 108
- testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
