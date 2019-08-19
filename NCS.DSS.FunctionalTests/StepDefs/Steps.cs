@@ -831,6 +831,15 @@ namespace FunctionalTests.StepDefs
             numericStatusCode.Should().Be(expectedResponseCode);
         }
 
+        [Then(@"the date field (.*) should hold a recent value")]
+        public void ThenTheDateFieldShouldHoldARecentValue(string p0)
+        {
+            DateTime testDate;
+            DateTime.TryParse(JsonHelper.GetPropertyFromJsonString(response.Content, p0), out testDate).Should().BeTrue("Because a date is expected in " + p0);
+            testDate.Should().BeCloseTo(DateTime.Now, 60000, "Because " + JsonHelper.GetPropertyFromJsonString(response.Content, p0) + " should be a recent value");
+            // THIS CONVERTS ALL DATE TO LOCAL TIME RATHER THAN UTC, BUT AS COMPARIING THEM THIS SHOULD BE OK
+        }
+
 
         [Then(@"the response body should contain:")]
         public void ThenMyBindingShouldHaveTheFollowingObjects(Table table)
