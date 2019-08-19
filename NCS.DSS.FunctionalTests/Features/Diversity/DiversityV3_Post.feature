@@ -39,10 +39,10 @@ Scenario:Post Diversity with all values
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
-	#And the "diversitydetails" cosmos document should include CreatedBy
+	And the "diversitydetails" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	#And there should be a record in the diversitydetails ChangeFeed table
-	#And there should be a record in the diversitydetails-history ChangeFeed table
+	And there should be a record in the diversitydetails ChangeFeed table
+	And there should be a record in the diversitydetails-history ChangeFeed table
 
 @diversitydetails  
 Scenario:Post Diversity with all mandatory values
@@ -430,8 +430,11 @@ Scenario Outline: Post Diversity with invalid values for DateAndTimeLLDDHealthCo
 	| DateAndTimeLLDDHealthConsentCollected | today +1Day |
 
 
+
+
+
 @diversitydetails  
-Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyOrDisability with no consent to collect  LDD Health data given
+Scenario: Post Diversity with no value supplied for DateAndTimeLLDDHealthConsentCollected with no consent to collect  LDD Health data given
 
 	When I post a DiversityDetail with the following details:
 	| Field                                     | Value                |
@@ -456,11 +459,11 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 
 @diversitydetails  
-Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyOrDisability with consent to collect LDD Health data given
+Scenario: Post Diversity with no value supplied for DateAndTimeLLDDHealthConsentCollected with consent to collect LDD Health data given
 
 	When I post a DiversityDetail with the following details:
 	| Field                                     | Value                |
-	| ConsentToCollectLLDDHealth                | false                |
+	| ConsentToCollectLLDDHealth                | true                 |
 	| LearningDifficultyOrDisabilityDeclaration |                      |
 	| PrimaryLearningDifficultyOrDisability     | 5                    |
 	| SecondaryLearningDifficultyOrDisability   |                      |
@@ -471,14 +474,14 @@ Scenario: Post Diversity with no value supplied for SecondaryLearningDifficultyO
 	Then there should be a 201 response
 	And the response body should contain:
 	| Field                                     | Value                |
-	| ConsentToCollectLLDDHealth                | false                |
+	| ConsentToCollectLLDDHealth                | true                 |
 	| LearningDifficultyOrDisabilityDeclaration | 9                    |
 	| PrimaryLearningDifficultyOrDisability     | 5                    |
 	| SecondaryLearningDifficultyOrDisability   | 99                   |
-	| DateAndTimeLLDDHealthConsentCollected     |                      |
 	| ConsentToCollectEthnicity                 | true                 |
 	| Ethnicity                                 | 32                   |
 	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+	And the date field DateAndTimeLLDDHealthConsentCollected should hold a recent value
 
 ############################################################################################################################
 ## ConsentToCollectEthnicity	MANDATORY
@@ -705,6 +708,7 @@ Scenario: Post Diversity with no value supplied for DateAndTimeEthnicityCollecte
 	| ConsentToCollectEthnicity                 | true |
 	| DateAndTimeEthnicityCollected             |       |
 	Then there should be a 201 response
+	And the date field DateAndTimeEthnicityCollected should hold a recent value
 	#And the error message should be "PLACEHOLDER"
 
 
