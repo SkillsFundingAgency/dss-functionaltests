@@ -841,6 +841,16 @@ namespace FunctionalTests.StepDefs
                    response.Content.Should().Contain(expectedMessage);
         }
 
+        [Then(@"the number of errors returned should be (.*)")]
+        public void ThenTheNumberOfErrorsReturnedShouldBe(int p0)
+        {
+            // assume response.content is a json record
+            // assert number of records is 1
+
+            JsonHelper.DocumentCount(response.Content).Should().Be(p0, "Because we don't want an expected error message returned in the response");
+        }
+
+
         public bool CheckFamilyName(string name)
         {
             return true;

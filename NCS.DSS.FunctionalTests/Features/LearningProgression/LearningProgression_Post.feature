@@ -383,10 +383,11 @@ Scenario: Post learning progression with future timestamped value for DateProgre
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value    |
 	| DateProgressionRecorded   | Now +1H |
-	| CurrentLearningStatus     | 1        |
+	| CurrentLearningStatus     | 99       |
 	| CurrentQualificationLevel | 1        |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the error message should be "DateProgressionRecorded"],"ErrorMessage":"Date And Time must be less the current date/time""
+	And the number of errors returned should be 1
 
 @LearningProgression	
 Scenario: Post learning progression with future dated value for DateProgressionRecorded 
@@ -454,8 +455,9 @@ Scenario: Post learning progression with In Learning status and no value for Lea
 	| Field                     | Value |
 	| DateProgressionRecorded   | Now   |
 	| CurrentLearningStatus     | 1     |
-	| CurrentQualificationLevel | 1     |
-	| LearningHours             |       |
+	| DateLearningStarted       | Today |
+	| CurrentQualificationLevel | 99    |
+#	| LearningHours             |       |
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 
@@ -466,9 +468,10 @@ Scenario: Post learning progression with In Learning status and invalid value fo
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value |
 	| DateProgressionRecorded   | Now   |
-	| CurrentLearningStatus     | 99     |
-	| CurrentQualificationLevel | 1     |
-	| LearningHours             | 99    |
+	| CurrentLearningStatus     | 99    |
+	| CurrentQualificationLevel | 99    |
+	| DateLearningStarted       | Today |
+	| LearningHours             | 93    |
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 
@@ -483,7 +486,8 @@ Scenario: Post learning progression with In Learning status and no value for Dat
 	| LearningHours             | 1     |
 	| DateLearningStarted       |       |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the error message should be "The DateLearningStarted field is required"
+	And the number of errors returned should be 1
 
 @LearningProgression
 Scenario: Post learning progression with In Learning status and future value for DateLearningStarted
