@@ -454,6 +454,7 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post a Learning Progression record with the following details:")]
         public void GivenIPostALearningProgressionRecordWithTheFollowingDetails(Table table)
         {
+            SetVersion("post",true);
             table = SpecflowHelper.ReplaceTokensInTable(table, false, "Field");
             
             var learningProgression = table.CreateInstance<LearningProgression>();
@@ -464,7 +465,7 @@ namespace FunctionalTests.StepDefs
                 json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
             }
 
-            url = PostRequest(envSettings.BaseUrl, json, constants.LearningProgression);
+            url = PostRequest(envSettings.BaseUrl, json2, constants.LearningProgressions);
             learningProgressionId = id;
         }
 
@@ -772,6 +773,14 @@ namespace FunctionalTests.StepDefs
             numericStatusCode.Should().Be(expectedResponseCode);
         }
 
+        [Then(@"the date field (.*) should hold a recent value")]
+        public void ThenTheDateFieldShouldHoldARecentValue(string p0)
+        {
+            DateTime testDate;
+            DateTime.TryParse(JsonHelper.GetPropertyFromJsonString(response.Content, p0), out testDate).Should().BeTrue("Because a date is expected in " + p0);
+            testDate.Should().BeCloseTo(DateTime.Now, 60000, "Because " + JsonHelper.GetPropertyFromJsonString(response.Content, p0) + " should be a recent value");
+            // THIS CONVERTS ALL DATE TO LOCAL TIME RATHER THAN UTC, BUT AS COMPARIING THEM THIS SHOULD BE OK
+        }
 
         [Then(@"the response body should contain:")]
         public void ThenMyBindingShouldHaveTheFollowingObjects(Table table)
@@ -1211,6 +1220,14 @@ namespace FunctionalTests.StepDefs
                     historyTableId = "WebChats-historyId";
                     resource = constants.WebChats;
                     break;
+                case "learningprogressions":
+                case "learningprogressions-history":
+                    recordId = learningProgressionId;
+                    addCreatedByToCollection = true;
+                    primaryTableId = "LearningProgressionId";
+                    historyTableId = "Learningprogressions-historyId";
+                    resource = constants.LearningProgressions;
+                    break;
                 default:
                     recordId = "";
                     break;
@@ -1262,7 +1279,8 @@ namespace FunctionalTests.StepDefs
 
                 if (addCreatedByToCollection )
                 {
-                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
+                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2")
+                          || scenarioContext.ScenarioInfo.Tags.Contains<string>("postV3") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV3"));
                     values.Add("CreatedBy", (/*GetVersion() == "v2" */ addValue ? envSettings.TestEndpoint01 : "" ) );
                 }
 
@@ -1441,9 +1459,9 @@ namespace FunctionalTests.StepDefs
             {
                 ScenarioContext.Current["version"] = "v2";
             }
-            else if (allowV3 && scenarioContext.ScenarioInfo.Tags.Contains<string>(method + "V3"))
+            else if (scenarioContext.ScenarioInfo.Tags.Contains<string>(method + "V3"))
             {
-                ScenarioContext.Current["version"] = "v3";
+                ScenarioContext.Current["version"] = (allowV3 ? "v3" : "v2");
             }
             else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V1"))
             {
@@ -1453,9 +1471,9 @@ namespace FunctionalTests.StepDefs
             {
                 ScenarioContext.Current["version"] = "v2";
             }
-            else if (allowV3 && FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V3"))
+            else if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>(method + "V3"))
             {
-                ScenarioContext.Current["version"] = "v3";
+                ScenarioContext.Current["version"] = (allowV3 ? "v3" : "v2");
             }
             else
             {

@@ -106,9 +106,9 @@ namespace FunctionalTests.Helpers
                 request.AddHeader("TouchpointId", touchPointId );
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
 
-                if (ScenarioContext.Current["version"].Equals("v2"))
+                if (ScenarioContext.Current["version"] != "v1")
                 {
-                    request.AddHeader("version", "v2");
+                    request.AddHeader("version", (string)ScenarioContext.Current["version"]);
 
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("subcontractorId"))
                     {

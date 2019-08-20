@@ -82,7 +82,8 @@ namespace NCS.DSS.FunctionalTests.Helpers
                             extractedDateTime = DateTime.Today;
                             break;
                         case "now":
-                            extractedDateTime = DateTime.Now;
+                            extractedDateTime = DateTime.UtcNow;
+                            extractedDateTime = extractedDateTime.AddSeconds(-10);
                             //                            longDate = true;
                             break;
                         default:
@@ -115,7 +116,8 @@ namespace NCS.DSS.FunctionalTests.Helpers
             }
             else if (inString.ToLower() == "now")
             {
-                extractedDateTime = DateTime.Now;
+                extractedDateTime = DateTime.UtcNow;
+                extractedDateTime = extractedDateTime.AddSeconds(-10);
             }
             else
             {

@@ -142,7 +142,7 @@ namespace NCS.DSS.FunctionalTests
                 case constants.Subscriptions:
                 case constants.DiversityDetails:
                 case constants.Addresses:
-                case constants.LearningProgression:
+                case constants.LearningProgressions:
                     returnUrl += getUrlPart(constants.Customers) + resource + "/";
                     break;
                 case constants.Sessions:
