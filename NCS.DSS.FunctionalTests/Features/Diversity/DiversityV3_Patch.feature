@@ -838,3 +838,30 @@ Scenario Outline: Patch Diversity with no value supplied for DateAndTimeEthnicit
 ## Other tests
 ############################################################################################################################
 
+Scenario: Patch diversity for a terminated customer
+		#Given I post a Diversity Details record with the following details:
+		#| Field                                     | Value                |
+		#| ConsentToCollectLLDDHealth                | true                 |
+		#| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		#| PrimaryLearningDifficultyOrDisability     | 4                    |
+		#| SecondaryLearningDifficultyOrDisability   | 5                    |
+		#| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
+		#| ConsentToCollectEthnicity                 | true                 |
+		#| Ethnicity                                 | 32                   |
+		#| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+		#And I patch "Customers" with the following details:
+		# | Field                | Value                |
+		# | DateOfTermination    | 2018-07-20T21:45:00Z |
+		# | ReasonForTermination | 1        
+		# When |
+		#When I patch DiversityDetail with the following details:
+		#| Field                                     | Value                |
+		#| ConsentToCollectLLDDHealth                | true                 |
+		#| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		#| PrimaryLearningDifficultyOrDisability     | 4                    |
+		#| SecondaryLearningDifficultyOrDisability   | 5                    |
+		#| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		#| ConsentToCollectEthnicity                 | true                 |
+		#| EthnicityID                               | 32                   |
+		#| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+		#Then there should be a 403 response

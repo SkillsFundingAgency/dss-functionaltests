@@ -1,4 +1,4 @@
-﻿@postV3
+﻿@postV3 @patchV2
 
 Feature: DiversityV3_Post
 
@@ -749,3 +749,20 @@ Scenario: Post a second Diversity record
 		| EthnicityID                               | 32                   |
 		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 	Then there should be a 409 response
+
+Scenario: Post diversity for a terminated customer
+		Given I patch "Customers" with the following details:
+		 | Field                | Value                |
+		 | DateOfTermination    | 2018-07-20T21:45:00Z |
+		 | ReasonForTermination | 1                    |
+		When I post a DiversityDetail with the following details:
+		| Field                                     | Value                |
+		| ConsentToCollectLLDDHealth                | true                 |
+		| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		| PrimaryLearningDifficultyOrDisability     | 4                    |
+		| SecondaryLearningDifficultyOrDisability   | 5                    |
+		| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | true                 |
+		| EthnicityID                               | 32                   |
+		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+		Then there should be a 403 response

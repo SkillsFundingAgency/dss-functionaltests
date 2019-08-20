@@ -20,6 +20,7 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("DiversityV3_Post")]
     [NUnit.Framework.CategoryAttribute("postV3")]
+    [NUnit.Framework.CategoryAttribute("patchV2")]
     public partial class DiversityV3_PostFeature
     {
         
@@ -33,7 +34,8 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DiversityV3_Post", null, ProgrammingLanguage.CSharp, new string[] {
-                        "postV3"});
+                        "postV3",
+                        "patchV2"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -1803,6 +1805,64 @@ this.FeatureBackground();
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table47, "When ");
 #line 751
  testRunner.Then("there should be a 409 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post diversity for a terminated customer")]
+        public virtual void PostDiversityForATerminatedCustomer()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post diversity for a terminated customer", null, ((string[])(null)));
+#line 753
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table48.AddRow(new string[] {
+                        "DateOfTermination",
+                        "2018-07-20T21:45:00Z"});
+            table48.AddRow(new string[] {
+                        "ReasonForTermination",
+                        "1"});
+#line 754
+  testRunner.Given("I patch \"Customers\" with the following details:", ((string)(null)), table48, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table49.AddRow(new string[] {
+                        "ConsentToCollectLLDDHealth",
+                        "true"});
+            table49.AddRow(new string[] {
+                        "LearningDifficultyOrDisabilityDeclaration",
+                        "1"});
+            table49.AddRow(new string[] {
+                        "PrimaryLearningDifficultyOrDisability",
+                        "4"});
+            table49.AddRow(new string[] {
+                        "SecondaryLearningDifficultyOrDisability",
+                        "5"});
+            table49.AddRow(new string[] {
+                        "DateAndTimeLLDDHealthConsentCollected",
+                        "2018-06-25T11:21:00Z"});
+            table49.AddRow(new string[] {
+                        "ConsentToCollectEthnicity",
+                        "true"});
+            table49.AddRow(new string[] {
+                        "EthnicityID",
+                        "32"});
+            table49.AddRow(new string[] {
+                        "DateAndTimeEthnicityCollected",
+                        "2018-06-25T11:22:00Z"});
+#line 758
+  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table49, "When ");
+#line 768
+  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

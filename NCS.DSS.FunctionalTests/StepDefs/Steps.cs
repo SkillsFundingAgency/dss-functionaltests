@@ -507,6 +507,13 @@ namespace FunctionalTests.StepDefs
             patchFromTable2(table, lastResourceName);
         }
 
+        [Given(@"I patch ""(.*)"" with the following details:")]
+        public void GivenIPatchWithTheFollowingDetails(string p0, Table table)
+        {
+            patchFromTable2(table, p0);
+        }
+
+
         [When(@"I patch ""(.*)"" with the following details:")]
         public void WhenIPatchWithTheFollowingDetails(string p0, Table table)
         {
@@ -1222,6 +1229,7 @@ namespace FunctionalTests.StepDefs
                 case "diversitydetails-history":
                     recordId = diversityId;
                     addSubcontractorIdToCollection = false;
+                    addCreatedByToCollection = true;
                     primaryTableId = "DiversityId";
                     historyTableId = "Diversitydetails-historyId";
                     resource = constants.DiversityDetails;
@@ -1334,7 +1342,8 @@ namespace FunctionalTests.StepDefs
 
                 if (addCreatedByToCollection )
                 {
-                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
+                    bool addValue = (scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2")
+                                       || scenarioContext.ScenarioInfo.Tags.Contains<string>("postV3") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV3"));
                     values.Add("CreatedBy", (/*GetVersion() == "v2" */ addValue ? envSettings.TestEndpoint01 : "" ) );
                 }
 
