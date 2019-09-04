@@ -19,8 +19,18 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         public static int DocumentCount( string json)
         {
-            JArray a = JArray.Parse(json);
-            return a.Count();
+            int count = 0;
+            try
+            {
+                JArray a = JArray.Parse(json);
+                count = a.Count();
+            }
+            catch
+            {
+                // assume not an array, so has count of 1
+                count = 1;
+            }
+            return count;
         }
 
         public static bool MatchDocument(string jsonDocument, string jsonCollection)
@@ -130,8 +140,10 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
         public static string GetPropertyFromJsonString(string json, string property)
         {
-            var obj = (Newtonsoft.Json.Linq.JObject)JsonConvert.DeserializeObject(json);
-            return (obj.ContainsKey(property)? obj.Property(property).Value.ToString() : string.Empty );
+            JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings();
+            jsonSerializerSettings.DateParseHandling = DateParseHandling.None;
+            var obj = (Newtonsoft.Json.Linq.JObject)JsonConvert.DeserializeObject(json, jsonSerializerSettings);
+            return (obj.ContainsKey(property) ? obj.Property(property).Value.ToString() : string.Empty);
         }
     }
 }

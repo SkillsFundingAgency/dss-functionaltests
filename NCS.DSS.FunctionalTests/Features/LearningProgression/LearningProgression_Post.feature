@@ -23,7 +23,7 @@ Scenario:Post learning progression with all values
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	Then there should be a 200 response
+	Then there should be a 201 response
 	And the response body should contain:
 	| Field                          | Value    |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -42,24 +42,24 @@ Scenario:Post learning progression with all values
 @LearningProgression
 Scenario:Post learning progression with all mandatory values
 	Given I post a Learning Progression record with the following details:
-	| Field                     | Value      |
-	| DateProgressionRecorded   | 2019-06-25 |
-	| CurrentLearningStatus     | 99         |
-	| CurrentQualificationLevel | 99         |
+	| Field                     | Value                |
+	| DateProgressionRecorded   | 2019-06-25T11:21:00Z |
+	| CurrentLearningStatus     | 99                   |
+	| CurrentQualificationLevel | 99                   |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                          | Value      |
-	| DateProgressionRecorded        | 2019-06-25 |
-	| CurrentLearningStatus          | 99         |
-	| LearningHours                  | 99         |
-	| DateLearningStarted            |            |
-	| CurrentQualificationLevel      |            |
-	| DateQualificationLevelAchieved |            |
-	| LastLearningProvidersUKPRN     |            |
-	And the "learningprogression" cosmos document should include CreatedBy
+	| Field                          | Value                |
+	| DateProgressionRecorded        | 2019-06-25T11:21:00Z |
+	| CurrentLearningStatus          | 99                   |
+	| LearningHours                  |                      |
+	| DateLearningStarted            |                      |
+	| CurrentQualificationLevel      | 99                   |
+	| DateQualificationLevelAchieved |                      |
+	| LastLearningProvidersUKPRN     |                      |
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 
 
 @LearningProgression
@@ -72,7 +72,7 @@ Scenario:Post learning progression supplying LastModifiedDate
 	| DateLearningStarted       | Today                |
 	| CurrentQualificationLevel | 99                   |
 	| LastModifiedDate          | 2019-06-19T09:01:00Z |
-	Then there should be a 200 response
+	Then there should be a 201 response
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-12-19T09:01:00Z |
@@ -93,18 +93,18 @@ Scenario Outline:  Post learning progression with valid values for CurrentLearni
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value                |
-	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
-	| CurrentQualificationLevel | 1                    |
-	Then there should be a 200 response
+	| DateProgressionRecorded   | 2019-06-19T09:01:00Z |
+	| CurrentQualificationLevel | 99                   |
+	| LearningHours             | 1                    |
+	| DateLearningStarted       | 2019-06-19T09:01:00Z |
+	Then there should be a 201 response
 	And the response body should contain:
-	| Field                          | Value                |
-	| DateProgressionRecorded        | 2018-06-19T09:01:00Z |
-	| LearningHours                  |                      |
-	| DateLearningStarted            |                      |
-	| CurrentQualificationLevel      | 1                    |
-	| DateQualificationLevelAchieved |                      |
-	| LastLearningProvidersUKPRN     |                      |
-	| LastModifiedDate               |                      |
+	| Field                     | Value                |
+	| DateProgressionRecorded   | 2019-06-19T09:01:00Z |
+#	| LearningHours             | 1                    |
+	| DateLearningStarted       | 2019-06-19T09:01:00Z |
+	| CurrentQualificationLevel | 99                   |
+
 	And the response body should have <Field> with value <Value>
 	
 	Examples:
@@ -126,7 +126,7 @@ Scenario Outline: Post learning progression with valid values for LearningHours
 	| DateLearningStarted       | Today                |
 	| CurrentQualificationLevel | 99                   |
 	| LastModifiedDate          | 2019-06-19T09:01:00Z |
-	Then there should be a 200 response
+	Then there should be a 201 response
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded   | 2018-12-19T09:01:00Z |
@@ -147,18 +147,16 @@ Scenario Outline: Post learning progression with valid values for LearningHours
 Scenario Outline: Post learning progression with valid values for CurrentQualificationLevel
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
-	| Field                     | Value                |
-	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
-	| CurrentLearningStatus | 1                    |
-	Then there should be a 200 response
+	| Field                          | Value                |
+	| DateProgressionRecorded        | 2018-06-19T09:01:00Z |
+	| CurrentLearningStatus          | 99                   |
+	| DateQualificationLevelAchieved | 2019-06-19T09:01:00Z |
+	Then there should be a 201 response
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-19T09:01:00Z |
-	| DateLearningStarted            |                      |
-	| CurrentQualificationLevel      | 1                    |
-	| DateQualificationLevelAchieved |                      |
-	| LastLearningProvidersUKPRN     |                      |
-	| LastModifiedDate               |                      |
+	| CurrentLearningStatus          | 99                   |
+	| DateQualificationLevelAchieved | 2019-06-19T09:01:00Z |
 	And the response body should have <Field> with value <Value>
 	
 	Examples:
@@ -181,16 +179,15 @@ Scenario Outline: Post learning progression with valid values for LastLearningPr
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value                |
 	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
-	| CurrentLearningStatus | 1                    |
-	Then there should be a 200 response
+	| CurrentLearningStatus     | 99                   |
+	| CurrentQualificationLevel | 99                   |
+	Then there should be a 201 response
 	And the response body should contain:
-	| Field                          | Value                |
-	| DateProgressionRecorded        | 2018-06-19T09:01:00Z |
-	| DateLearningStarted            |                      |
-	| CurrentQualificationLevel      | 1                    |
-	| DateQualificationLevelAchieved |                      |
-	| LastLearningProvidersUKPRN     |                      |
-	| LastModifiedDate               |                      |
+	| Field                     | Value                |
+	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
+	| CurrentLearningStatus     | 99                   |
+	| CurrentQualificationLevel | 99                   |
+
 	And the response body should have <Field> with value <Value>
 	
 	Examples:
@@ -216,13 +213,13 @@ Scenario Outline: Post learning progression with invalid value for LastLearningP
 		And the response body should include <ErrorMessage>
 
 Examples:
-	| Field                      | Value     |
-	| LastLearningProvidersUKPRN | 00000000  |
-	| LastLearningProvidersUKPRN | 9999999   |
-	| LastLearningProvidersUKPRN | 100000000 |
-	| LastLearningProvidersUKPRN | a         |
-	| LastLearningProvidersUKPRN | a1234567  |
-	| LastLearningProvidersUKPRN | sausages  |
+	| Field                      | Value                      | ErrorMessage                                                                  |
+#	|                           | LastLearningProvidersUKPRN | 00000000                                                                      |
+	| LastLearningProvidersUKPRN | 9999999                    | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
+	| LastLearningProvidersUKPRN | 100000000                  | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
+	| LastLearningProvidersUKPRN | a                          | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
+	| LastLearningProvidersUKPRN | a1234567                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
+	| LastLearningProvidersUKPRN | sausages                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
 
 
 @LearningProgression
@@ -231,16 +228,16 @@ Scenario Outline: Post learning progression with invalid values for  CurrentLear
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value                |
 	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
-	| CurrentQualificationLevel | 1                    |
+	| CurrentQualificationLevel | 99                   |
 	Then there should be a 422 response
-	And the response body should contain <ErrorMessage>
+	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                 | Value | ErrorMessage |
-	| CurrentLearningStatus | 0     | placeholder  |
-	| CurrentLearningStatus | 4     | placeholder  |
-	| CurrentLearningStatus | 97    | placeholder  |
-	| CurrentLearningStatus | 100   | placeholder  |
+	| Field                 | Value | ErrorMessage                                          |
+	| CurrentLearningStatus | 0     | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | 4     | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid learning status |
 	
 @LearningProgression
 Scenario Outline: Post learning progression with invalid values for  LearningHours
@@ -251,7 +248,7 @@ Scenario Outline: Post learning progression with invalid values for  LearningHou
 	| CurrentLearningStatus     | 1                    |
 	| CurrentQualificationLevel | 1                    |
 	Then there should be a 422 response
-	And the response body should contain <ErrorMessage>
+	And the response body should include DateLearningStarted must have a value
 	
 	Examples:
 	| Field         | Value | ErrorMessage |
@@ -265,90 +262,91 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value                |
 	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
-	| CurrentLearningStatus     | 1                    |
+	| CurrentLearningStatus     | 99                   |
 	Then there should be a 422 response
-	And the response body should contain <ErrorMessage>
+	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field         | Value | ErrorMessage |
-	| CurrentQualificationLevel | -1     | placeholder  |
-	| CurrentQualificationLevel | 9     | placeholder  |
-	| CurrentQualificationLevel | 98     | placeholder  |
-	| CurrentQualificationLevel | 100    | placeholder  |
+	| Field                     | Value | ErrorMessage                                               |
+	| CurrentQualificationLevel | -1    | Please supply a valid value for CurrentQualificationLevel. |
+	| CurrentQualificationLevel | 9     | Please supply a valid value for CurrentQualificationLevel. |
+	| CurrentQualificationLevel | 98    | Please supply a valid value for CurrentQualificationLevel. |
+	| CurrentQualificationLevel | 100   | Please supply a valid value for CurrentQualificationLevel. |
 
 
-@LearningProgression @SubcontractorId
-Scenario:Post learning progression with subcontractor id supplied in header
-
-	Given I post a Learning Progression record with the following details:
-	| Field                          | Value |
-	| DateProgressionRecorded        |       |
-	| CurrentLearningStatus          |       |
-	| LearningHours                  |       |
-	| DateLearningStarted            |       |
-	| CurrentQualificationLevel      |       |
-	| DateQualificationLevelAchieved |       |
-	| LastLearningProvidersUKPRN     |       |
-	Then there should be a 200 response
-	And the response body should contain:
-	| Field                          | Value |
-	| DateProgressionRecorded        |       |
-	| CurrentLearningStatus          |       |
-	| LearningHours                  |       |
-	| DateLearningStarted            |       |
-	| CurrentQualificationLevel      |       |
-	| DateQualificationLevelAchieved |       |
-	| LastLearningProvidersUKPRN     |       |
-	And the "learningprogression" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
-	And the response body should include SubcontractorId with value 67576575
-
-
-@LearningProgression @MaxLengthSubcontractorId
-Scenario:Post learning progression with subcontractor id of max length supplied in header
-
-	Given I post a Learning Progression record with the following details:
-	| Field                          | Value |
-	| DateProgressionRecorded        |       |
-	| CurrentLearningStatus          |       |
-	| LearningHours                  |       |
-	| DateLearningStarted            |       |
-	| CurrentQualificationLevel      |       |
-	| DateQualificationLevelAchieved |       |
-	| LastLearningProvidersUKPRN     |       |
-	Then there should be a 200 response
-	And the response body should contain:
-	| Field                          | Value |
-	| DateProgressionRecorded        |       |
-	| CurrentLearningStatus          |       |
-	| LearningHours                  |       |
-	| DateLearningStarted            |       |
-	| CurrentQualificationLevel      |       |
-	| DateQualificationLevelAchieved |       |
-	| LastLearningProvidersUKPRN     |       |
-	And the "learningprogression" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
-	And the response body should have SubcontractorId with value 12345678901234567890123456789012345678901234567890
+#@LearningProgression @SubcontractorId
+#Scenario:Post learning progression with subcontractor id supplied in header
+#
+#	Given I post a Learning Progression record with the following details:
+#	| Field                          | Value                |
+#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+#	| CurrentLearningStatus          | 1                    |
+#	| LearningHours                  | 1                    |
+#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
+#	| CurrentQualificationLevel      | 2                    |
+#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+#	| LastLearningProvidersUKPRN     | 12345678             |
+#	Then there should be a 201 response
+#	And the response body should contain:
+#	| Field                          | Value                |
+#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+#	| CurrentLearningStatus          | 1                    |
+#	| LearningHours                  | 1                    |
+#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
+#	| CurrentQualificationLevel      | 2                    |
+#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+#	| LastLearningProvidersUKPRN     | 12345678             |
+#	| SubcontractorId                | 67576575             |
+#	And the "learningprogression" cosmos document should include CreatedBy
+#	And the response body should not contain the "CreatedBy"
+#	And there should be a record in the learningprogression ChangeFeed table
+#	And there should be a record in the learningprogression-history ChangeFeed table
+#	#And the response body should include SubcontractorId with value 67576575
 
 
-@LearningProgression @invalidSubcontractorId
-Scenario:Post learning progression with subcontractor id greater than max length supplied in header
+#@LearningProgression @MaxLengthSubcontractorId
+#Scenario:Post learning progression with subcontractor id of max length supplied in header
+#
+#	Given I post a Learning Progression record with the following details:
+#	| Field                          | Value |
+#	| DateProgressionRecorded        |       |
+#	| CurrentLearningStatus          |       |
+#	| LearningHours                  |       |
+#	| DateLearningStarted            |       |
+#	| CurrentQualificationLevel      |       |
+#	| DateQualificationLevelAchieved |       |
+#	| LastLearningProvidersUKPRN     |       |
+#	Then there should be a 201 response
+#	And the response body should contain:
+#	| Field                          | Value |
+#	| DateProgressionRecorded        |       |
+#	| CurrentLearningStatus          |       |
+#	| LearningHours                  |       |
+#	| DateLearningStarted            |       |
+#	| CurrentQualificationLevel      |       |
+#	| DateQualificationLevelAchieved |       |
+#	| LastLearningProvidersUKPRN     |       |
+#	And the "learningprogression" cosmos document should include CreatedBy
+#	And the response body should not contain the "CreatedBy"
+#	And there should be a record in the learningprogression ChangeFeed table
+#	And there should be a record in the learningprogression-history ChangeFeed table
+#	And the response body should have SubcontractorId with value 12345678901234567890123456789012345678901234567890
 
-	Given I post a Learning Progression record with the following details:
-	| Field                          | Value |
-	| DateProgressionRecorded        |       |
-	| CurrentLearningStatus          |       |
-	| LearningHours                  |       |
-	| DateLearningStarted            |       |
-	| CurrentQualificationLevel      |       |
-	| DateQualificationLevelAchieved |       |
-	| LastLearningProvidersUKPRN     |       |
-	Then there should be a 422 response
-	And the response body should include <PlaceHolder>
+
+#@LearningProgression @invalidSubcontractorId
+#Scenario:Post learning progression with subcontractor id greater than max length supplied in header
+#
+#	Given I post a Learning Progression record with the following details:
+#	| Field                          | Value |
+#	| DateProgressionRecorded        |       |
+#	| CurrentLearningStatus          |       |
+#	| LearningHours                  |       |
+#	| DateLearningStarted            |       |
+#	| CurrentQualificationLevel      |       |
+#	| DateQualificationLevelAchieved |       |
+#	| LastLearningProvidersUKPRN     |       |
+#	Then there should be a 422 response
+#	And the response body should include <PlaceHolder>
 
 
 
@@ -358,24 +356,24 @@ Scenario Outline: Post learning progression with invalid dates
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value                |
 	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
-	| CurrentLearningStatus     | 1                    |
+	| CurrentLearningStatus     | 99                   |
 	| DateLearningStarted       | Today                |
 	| CurrentQualificationLevel | 99                   | 
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                   | Date                 | ErrorMessage |
-	| DateProgressionRecorded | 8-06-19T09:01:00Z    | placeholder  |
-	| DateProgressionRecorded | 2018-00-19T09:01:00Z | placeholder  |
-	| DateProgressionRecorded | 2018-13-19T09:01:00Z | placeholder  |
-	| DateProgressionRecorded | 2018-05-00T09:01:00Z | placeholder  |
-	| DateProgressionRecorded | 2018-05-32T09:01:00Z | placeholder  |
-	| DateLearningStarted     | 018-06-19T09:01:00Z  | placeholder  |
-	| DateLearningStarted     | 2018-00-19T09:01:00Z | placeholder  |
-	| DateLearningStarted     | 2018-13-19T09:01:00Z | placeholder  |
-	| DateLearningStarted     | 2018-05-00T09:01:00Z | placeholder  |
-	| DateLearningStarted     | 2018-05-32T09:01:00Z | placeholder  |  
+	| Field                   | Date                 | ErrorMessage                         |
+#	| DateProgressionRecorded | eioe-06-49T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
+	| DateLearningStarted     | 018-06-19T09:01:00Z  | Could not convert string to DateTime |
+	| DateLearningStarted     | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
+	| DateLearningStarted     | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
+	| DateLearningStarted     | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
+	| DateLearningStarted     | 2018-05-32T09:01:00Z | Could not convert string to DateTime | 
 
 @LearningProgression
 Scenario: Post learning progression with future timestamped value for DateProgressionRecorded
@@ -384,9 +382,9 @@ Scenario: Post learning progression with future timestamped value for DateProgre
 	| Field                     | Value    |
 	| DateProgressionRecorded   | Now +1H |
 	| CurrentLearningStatus     | 99       |
-	| CurrentQualificationLevel | 1        |
+	| CurrentQualificationLevel |99        |
 	Then there should be a 422 response
-	And the error message should be "DateProgressionRecorded"],"ErrorMessage":"Date And Time must be less the current date/time""
+	And the error message should be "DateProgressionRecorded must be less than or equal to now"
 	And the number of errors returned should be 1
 
 @LearningProgression	
@@ -398,7 +396,7 @@ Scenario: Post learning progression with future dated value for DateProgressionR
 	| CurrentLearningStatus     | 99      |
 	| CurrentQualificationLevel | 1       |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the response body should include DateProgressionRecorded must be less than or equal to now.
 	
 @LearningProgression
 Scenario: Post learning progression with future timestamped value for DateLearningStarted
@@ -410,7 +408,7 @@ Scenario: Post learning progression with future timestamped value for DateLearni
 	| CurrentQualificationLevel | 1        |
 	| DateLearningStarted       | Now + 1H |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the response body should include DateLearningStarted must be less than or equal to now.
 
 @LearningProgression	
 Scenario: Post learning progression with future dated value for DateLearningStarted 
@@ -422,7 +420,7 @@ Scenario: Post learning progression with future dated value for DateLearningStar
 	| CurrentQualificationLevel | 99      |
 	| DateLearningStarted       | Now +1D |
 	Then there should be a 422 response
-	And the response body should include Date And Time must be less the current date/time
+	And the response body should include DateLearningStarted must be less than or equal to now.
 
 @LearningProgression
 Scenario: Post learning progression with future timestamped value for DateQualificationLevelAchieved
@@ -434,7 +432,7 @@ Scenario: Post learning progression with future timestamped value for DateQualif
 	| CurrentQualificationLevel      | 1        |
 	| DateQualificationLevelAchieved | Now + 1H |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the response body should include DateQualificationLevelAchieved must be less than or equal to now
 
 @LearningProgression	
 Scenario: Post learning progression with future dated value for DateQualificationLevelAchieved 
@@ -446,7 +444,7 @@ Scenario: Post learning progression with future dated value for DateQualificatio
 	| CurrentQualificationLevel      | 1       |
 	| DateQualificationLevelAchieved | Now +1D |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the response body should include DateQualificationLevelAchieved must be less than or equal to now.
 
 @LearningProgression
 Scenario: Post learning progression with In Learning status and no value for LearningHours
@@ -459,7 +457,7 @@ Scenario: Post learning progression with In Learning status and no value for Lea
 	| CurrentQualificationLevel | 99    |
 #	| LearningHours             |       |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the response body should include LearningHours must have a value when CurrentLearningStatus is InLearning 
 
 
 @LearningProgression
@@ -473,7 +471,7 @@ Scenario: Post learning progression with In Learning status and invalid value fo
 	| DateLearningStarted       | Today |
 	| LearningHours             | 93    |
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the response body should include LearningHours must have a valid learning hours value
 
 @LearningProgression
 Scenario: Post learning progression with In Learning status and no value for DateLearningStarted
@@ -486,7 +484,7 @@ Scenario: Post learning progression with In Learning status and no value for Dat
 	| LearningHours             | 1     |
 	| DateLearningStarted       |       |
 	Then there should be a 422 response
-	And the error message should be "The DateLearningStarted field is required"
+	And the error message should be "Date Learning Started must have a value when Current Learning Status is InLearning"
 	And the number of errors returned should be 1
 
 @LearningProgression
@@ -500,7 +498,7 @@ Scenario: Post learning progression with In Learning status and future value for
 		| LearningHours             | 1       |
 		| DateLearningStarted       | Now +1H |
 		Then there should be a 422 response
-		And the response body should include <ErrorMessage>
+		And the response body should include DateLearningStarted must be less than or equal to now.
 
 @LearningProgression
 Scenario: Post learning progression with a Current Qualification and no value for DateQualificationLevelAchieved
@@ -512,7 +510,7 @@ Scenario: Post learning progression with a Current Qualification and no value fo
 		| CurrentQualificationLevel      | 1     |
 		| DateQualificationLevelAchieved |       |
 		Then there should be a 422 response
-		And the response body should include <ErrorMessage>
+		And the response body should include When QualificationLevel < NoQualification (99) a valid value is required for DateQualificationLevelAchieved
 
 @LearningProgression
 Scenario: Post learning progression with a Current Qualification and future value for DateQualificationLevelAchieved
@@ -524,7 +522,7 @@ Scenario: Post learning progression with a Current Qualification and future valu
 		| CurrentQualificationLevel      | 8       |
 		| DateQualificationLevelAchieved | Now +1H |
 		Then there should be a 422 response
-		And the response body should include <ErrorMessage>
+		And the response body should include DateQualificationLevelAchieved must be less than or equal to now
 
 
 
@@ -565,6 +563,5 @@ Scenario:Post learning progression missing DateProgressionRecorded
 		| CurrentQualificationLevel | 99    |
 		| DateLearningStarted       | Today |
 		| LastLearningProvidersUKPRN | 00000000 |
-		Then there should be a 200 response
-		And the response body should include <ErrorMessage>
+		Then there should be a 201 response
 		And the date field DateProgressionRecorded should hold a recent value

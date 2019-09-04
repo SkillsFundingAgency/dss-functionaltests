@@ -1,4 +1,5 @@
-﻿Feature: LearningProgression_Get
+﻿@postV3 @getV3
+Feature: LearningProgression_Get
 
 
 Background: Create Adviser
@@ -35,7 +36,6 @@ Scenario:Get Learning Progression by ID
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-		| SubcontractorId                |                      |
 
 
 

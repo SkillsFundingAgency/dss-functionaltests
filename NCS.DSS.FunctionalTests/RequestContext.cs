@@ -116,6 +116,7 @@ namespace NCS.DSS.FunctionalTests
         public HttpStatusCode GetResponseCode(string resource)
         {
             return requestResponseCodes[resource];
+            return HttpStatusCode.Conflict;
         }
 
         public string GetResponseContent(string resource)
@@ -142,6 +143,7 @@ namespace NCS.DSS.FunctionalTests
                 case constants.Subscriptions:
                 case constants.DiversityDetails:
                 case constants.Addresses:
+                case constants.EmploymentProgressions:
                 case constants.LearningProgressions:
                     returnUrl += getUrlPart(constants.Customers) + resource + "/";
                     break;

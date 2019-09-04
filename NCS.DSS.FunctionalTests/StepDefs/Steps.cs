@@ -102,6 +102,7 @@ namespace FunctionalTests.StepDefs
                 Console.WriteLine("response status description: " + response.StatusDescription);
                 Console.WriteLine("response message: " + response.ErrorMessage);
                 Console.WriteLine("response expection: " + response.ErrorException);
+                Console.WriteLine("response content:" + response.Content);
             }
             return extractedValue;
         }
@@ -451,6 +452,35 @@ namespace FunctionalTests.StepDefs
 
         }
 
+
+        [Given(@"I post a Employment Progression record with the following details:")]
+        public void GivenIPostAEmploymentProgressionRecordWithTheFollowingDetails(Table table)
+        {
+            SetVersion("post", true);
+            table = SpecflowHelper.ReplaceTokensInTable(table, false, "Field");
+
+            var employmentProgression = table.CreateInstance<EmploymentProgression>();
+            json2 = JsonConvert.SerializeObject(employmentProgression);
+
+            if (scenarioContext.ContainsKey("AdditionalFieldName"))
+            {
+              //  json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+               // json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"],
+               //((string)scenarioContext["AdditionalFieldName"]).Contains("Date") ?
+               //                                         SpecflowHelper.TranslateDateToken((string)scenarioContext["AdditionalFieldValue"]).ToString("yyyy-MM-ddTHH:mm:ssZ")
+               //                                        : (string)scenarioContext["AdditionalFieldValue"]);
+                json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"],
+               ((string)scenarioContext["AdditionalFieldName"]).Contains("Date") ?
+                                                        SpecflowHelper.TranlateDateTokenAsString((string)scenarioContext["AdditionalFieldValue"])
+                                                       : (string)scenarioContext["AdditionalFieldValue"]);
+            }
+
+            url = PostRequest(envSettings.BaseUrl, json2, constants.EmploymentProgressions);
+            learningProgressionId = id;
+        }
+
+
+
         [Given(@"I post a Learning Progression record with the following details:")]
         public void GivenIPostALearningProgressionRecordWithTheFollowingDetails(Table table)
         {
@@ -482,7 +512,7 @@ namespace FunctionalTests.StepDefs
         public void WhenIPatchTheFollowingViaADifferentTouchpoint(Table table)
         {
             // pass through to overload
-            patchFromTable2(table, envSettings.TestEndpoint02);
+            patchFromTable2(table, lastResourceName, envSettings.TestEndpoint02);
         }
 
 
@@ -515,18 +545,31 @@ namespace FunctionalTests.StepDefs
             WhenIPatchTheElementWith(p0, p1);
         }
 
+        private bool V3PatchSupported(string resource)
+        {
+            switch (resource)
+            {
+                case constants.DiversityDetails:
+                case constants.LearningProgressions:
+                case constants.EmploymentProgressions:
+                    return true;
+                default:
+                    return false;
+            }
+        }
 
         private void patchFromTable2(Table table, string resource, String touchpointId = "")
         {
             // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
             // otherwise  post and patch change feed may get wrapped up into one.
-            requestContext.GetResponseCode(resource).Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
+            (requestContext.GetResponseCode(resource) == HttpStatusCode.Created || requestContext.GetResponseCode(resource) == HttpStatusCode.OK).Should().BeTrue("Temp check see code");
+//            requestContext.GetResponseCode(resource).Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
             ThenThereShouldBeARecordInTheChangeFeedTable(resource);
 
 
             // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
             //Thread.Sleep(5250);
-            SetVersion("patch");
+            SetVersion("patch", V3PatchSupported(resource));
            // Dictionary<string, string> dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
            // id = dict.FirstOrDefault().Value;
             Dictionary<string, string> patchVals = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
@@ -535,6 +578,18 @@ namespace FunctionalTests.StepDefs
                 patchVals.Add("SessionId", sessionId);
             }
             json = JsonConvert.SerializeObject(patchVals);
+
+            if (scenarioContext.ContainsKey("AdditionalFieldName"))
+            {
+                //                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+
+                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"],
+                               ((string)scenarioContext["AdditionalFieldName"]).Contains("Date") ?
+                                                                        SpecflowHelper.TranslateDateToken((string)scenarioContext["AdditionalFieldValue"]).ToString("yyyy-MM-ddTHH:mm:ssZ")
+                                                                       : (string)scenarioContext["AdditionalFieldValue"]);
+
+            }
+
             lastTouchpoint = (touchpointId.Equals(string.Empty) ? envSettings.TestEndpoint01 : touchpointId);
             //requestTime = DateTime.UtcNow;
 
@@ -701,7 +756,7 @@ namespace FunctionalTests.StepDefs
         [When(@"I get a Learning Progression by ID")]
         public void WhenIGetALearningProgressionByID()
         {
-            url = envSettings.BaseUrl + "LearningProgression/api/Customers/" + customerId + "/LearningProgression/" + learningProgressionId;
+            url = envSettings.BaseUrl + "LearningProgressions/api/Customers/" + customerId + "/LearningProgressions/" + learningProgressionId;
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 
@@ -1092,6 +1147,7 @@ namespace FunctionalTests.StepDefs
             bool addCreatedByToCollection = false;
             bool addSessionIdToCollection = false;
             bool addClaimedPriorityGroup = false;
+            bool addGeocode = false;
             bool historyTable = table.ToLower().Contains("history");
             string recordId;
             string historyTableId = "";
@@ -1133,6 +1189,7 @@ namespace FunctionalTests.StepDefs
                     recordId = sessionId;
                     addSubcontractorIdToCollection = true;
                     addCreatedByToCollection = true;
+                    addGeocode = true;
                     primaryTableId = "SessionId";
                     historyTableId = "Sessions-historyId";
                     resource = constants.Sessions;
@@ -1230,6 +1287,15 @@ namespace FunctionalTests.StepDefs
                     historyTableId = "WebChats-historyId";
                     resource = constants.WebChats;
                     break;
+                case "employmentprogressions":
+                case "employmentprogressions-history":
+                    recordId = learningProgressionId;
+                    addCreatedByToCollection = true;
+                    addGeocode = true;
+                    primaryTableId = "EmploymentProgressionId";
+                    historyTableId = "Employmentprogressions-historyId";
+                    resource = constants.EmploymentProgressions;
+                    break;
                 case "learningprogressions":
                 case "learningprogressions-history":
                     recordId = learningProgressionId;
@@ -1294,7 +1360,8 @@ namespace FunctionalTests.StepDefs
                     values.Add("CreatedBy", (/*GetVersion() == "v2" */ addValue ? envSettings.TestEndpoint01 : "" ) );
                 }
 
-                if (table.ToLower().Contains("session"))
+                //if (table.ToLower().Contains("session"))
+                if (addGeocode)
                 {
                     bool addValue = (dict[0].Keys.Contains("Longitude") && dict[0]["Longitude"].Length > 0);////(scenarioContext.ScenarioInfo.Tags.Contains<string>("postV2") || FeatureContext.Current.FeatureInfo.Tags.Contains<string>("postV2"));
                     values.Add("Longitude", (/*GetVersion() == "v2" */ addValue ? dict[0]["Longitude"] : ""));

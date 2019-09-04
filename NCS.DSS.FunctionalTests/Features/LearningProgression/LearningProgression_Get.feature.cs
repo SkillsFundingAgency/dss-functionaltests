@@ -14,11 +14,12 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
 {
     using TechTalk.SpecFlow;
     
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("LearningProgression_Get")]
+    [NUnit.Framework.CategoryAttribute("postV3")]
+    [NUnit.Framework.CategoryAttribute("getV3")]
     public partial class LearningProgression_GetFeature
     {
         
@@ -31,7 +32,9 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LearningProgression_Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LearningProgression_Get", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV3",
+                        "getV3"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,7 +74,7 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
         
         public virtual void FeatureBackground()
         {
-#line 4
+#line 5
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -82,7 +85,7 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
             table1.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
-#line 5
+#line 6
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -94,7 +97,7 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
             table2.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 9
+#line 10
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table2, "And ");
 #line hidden
         }
@@ -108,10 +111,10 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Learning Progression by ID", null, new string[] {
                         "LearningProgression",
                         "Smoke"});
-#line 16
+#line 17
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -138,11 +141,11 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "LastLearningProvidersUKPRN",
                         "12345678"});
-#line 18
+#line 19
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table3, "Given ");
-#line 27
- testRunner.When("I get a Learning Progression by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
+ testRunner.When("I get a Learning Progression by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -169,10 +172,7 @@ this.FeatureBackground();
             table4.AddRow(new string[] {
                         "LastLearningProvidersUKPRN",
                         "12345678"});
-            table4.AddRow(new string[] {
-                        "SubcontractorId",
-                        ""});
-#line 29
+#line 30
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -190,7 +190,7 @@ this.FeatureBackground();
 #line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -267,7 +267,7 @@ this.FeatureBackground();
 #line 68
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -346,7 +346,7 @@ this.FeatureBackground();
 #line 93
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -479,7 +479,7 @@ this.FeatureBackground();
 #line 137
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -771,7 +771,7 @@ this.FeatureBackground();
 #line 234
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -830,7 +830,7 @@ this.FeatureBackground();
 #line 252
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
+#line 5
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {

@@ -1,4 +1,4 @@
-﻿@patchV2
+﻿@postV3 @patchV3
 Feature: LearningProgression_Patch
 
 Background:
@@ -11,6 +11,18 @@ Background:
 		| Field                      | Value                |
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
+	#Given I post a Learning Progression record with the following details:
+	#	| Field                          | Value                |
+	#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+	#	| CurrentLearningStatus          | 1                    |
+	#	| LearningHours                  | 1                    |
+	#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
+	#	| CurrentQualificationLevel      | 2                    |
+	#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+	#	| LastLearningProvidersUKPRN     | 12345678             |
+
+@LearningProgression  @smoke
+Scenario:Patch Learning Progression with  all values
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
 		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -20,9 +32,6 @@ Background:
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-
-@LearningProgression  @smoke
-Scenario:Patch Learning Progression with  all values
 	When I patch the following:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -34,45 +43,46 @@ Scenario:Patch Learning Progression with  all values
 	| LastLearningProvidersUKPRN     | 12345678             |
 	| LastModifiedDate               | 2019-07-25T11:21:00Z |
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+#	And the response body should have <Field> with value <Value>
 	And the response body should contain:
-	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-	| CurrentLearningStatus          | 1                    |
-	| LearningHours                  | 1                    |
-	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-	| CurrentQualificationLevel      | 2                    |
-	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
-	
-
-
-@LearningProgression @SubcontractorId
-Scenario Outline: Patch Learning Progression with SubcontractorId
-
-	When I patch the element <Field> with <value>:
-	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
-	And the response body should contain:
-	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-	| CurrentLearningStatus          | 1                    |
-	| LearningHours                  | 1                    |
-	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-	| CurrentQualificationLevel      | 2                    |
-	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	And the response body should contain the SubContractorId
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
-	
-	Examples:
 	| Field                          | Value                |
-	| DateProgressionRecorded        | 2019-06-19T09:01:00Z  |
+	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+	| CurrentLearningStatus          | 1                    |
+	| LearningHours                  | 1                    |
+	| DateLearningStarted            | 2019-06-25T11:21:00Z |
+	| CurrentQualificationLevel      | 2                    |
+	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+	| LastLearningProvidersUKPRN     | 12345678             |
+	And the "learningprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
+	
+
+
+#@LearningProgression @SubcontractorId
+#Scenario Outline: Patch Learning Progression with SubcontractorId
+#
+#	When I patch the element <Field> with <Value>:
+#	Then there should be a 200 response
+#	And the response body should have <Field> with value <Value>
+#	And the response body should contain:
+#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+#	| CurrentLearningStatus          | 1                    |
+#	| LearningHours                  | 1                    |
+#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
+#	| CurrentQualificationLevel      | 2                    |
+#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+#	| LastLearningProvidersUKPRN     | 12345678             |
+#	And the "learningprogressions" cosmos document should include CreatedBy
+#	And the response body should not contain the "CreatedBy"
+#	And the response body should contain the SubContractorId
+#	And there should be a record in the learningprogressions ChangeFeed table
+#	And there should be a record in the learningprogressions-history ChangeFeed table
+#	
+#	Examples:
+#	| Field                          | Value                |
+#	| DateProgressionRecorded        | 2019-06-19T09:01:00Z  |
 
 
 ###########################################################################################
@@ -80,7 +90,16 @@ Scenario Outline: Patch Learning Progression with SubcontractorId
 ###########################################################################################
 @LearningProgression
 Scenario Outline: Patch Learning Progression with valid values for DateProgressionRecorded
-	When I patch the element <Field> with <value>:
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should have <Field> with value <Value>
 	And the response body should contain:
@@ -91,10 +110,10 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field                          | Value                |
@@ -103,39 +122,68 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 @LearningProgression
 Scenario Outline: Patch Learning Progression with invalid DateProgressionRecorded
 
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                   | Value                | <ErrorMessage> |
-	| DateProgressionRecorded | 018-06-19T09:01:00Z  | placeholder    |
-	| DateProgressionRecorded | 2018-00-19T09:01:00Z | placeholder    |
-	| DateProgressionRecorded | 2018-13-19T09:01:00Z | placeholder    |
-	| DateProgressionRecorded | 2018-05-00T09:01:00Z | placeholder    |
-	| DateProgressionRecorded | 2018-05-32T09:01:00Z | placeholder    |
+	| Field                   | Value                |  ErrorMessage                        |
+	| DateProgressionRecorded | gtfr-06-19T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
+	| DateProgressionRecorded | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
 
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with future dated DateProgressionRecorded
 
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value <Value> in the following request
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                   | Value     | <ErrorMessage> |
-	| DateProgressionRecorded | Today +1D | placeholder    |
-	| DateProgressionRecorded | Now + 1H  | placeholder    |
-	| DateProgressionRecorded | Today +1Y | placeholder    |
+	| Field                   | Value     | ErrorMessage                                               |
+	| DateProgressionRecorded | Today +1D | DateProgressionRecorded must be less than or equal to now. |
+	| DateProgressionRecorded | Now + 1H  | DateProgressionRecorded must be less than or equal to now. |
+	| DateProgressionRecorded | Today +1Y | DateProgressionRecorded must be less than or equal to now. |
 
 
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with empty DateProgressionRecorded
-	When I patch the element <Field> with <value>:
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+#	And the response body should have <Field> with value <Value>
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -156,7 +204,17 @@ Scenario Outline: Patch Learning Progression with empty DateProgressionRecorded
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with CurrentLearningStatus
-	When I patch the element <Field> with <value>:
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should have <Field> with value <Value>
 	And the response body should contain:
@@ -167,10 +225,10 @@ Scenario Outline: Patch Learning Progression with CurrentLearningStatus
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 
 	Examples:
 	| Field                 | Value |
@@ -185,26 +243,41 @@ Scenario Outline: Patch Learning Progression with CurrentLearningStatus
 @LearningProgression
 Scenario Outline: Patch Learning Progression with invalid CurrentLearningStatus
 
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
-	And the "learningprogression" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
 	
 	Examples:
-	| Field                 | Value | <ErrorMessage> |
-	| CurrentLearningStatus | -1    | placeholder    |
-	| CurrentLearningStatus | 0     | placeholder    |
-	| CurrentLearningStatus | 4     | placeholder    |
-	| CurrentLearningStatus | 97    | placeholder    |
-	| CurrentLearningStatus | 100   | placeholder    |
+	| Field                 | Value |  ErrorMessage                                         |
+	| CurrentLearningStatus | -1    | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | 0     | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | 4     | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid learning status |
 	
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with empty CurrentLearningStatus
-	When I patch the element <Field> with <value>:
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should contain:
 	| Field                          | Value                |
@@ -218,18 +291,19 @@ Scenario Outline: Patch Learning Progression with empty CurrentLearningStatus
 	
 	Examples:
 	| Field                 | Value |
-	| CurrentLearningStatus | 2     |
+	| CurrentLearningStatus |       |
 	
 @LearningProgression
 Scenario Outline: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus or LearningHours
+
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
 		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
@@ -250,7 +324,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 	 | Field                 | Value |
 	 | CurrentLearningStatus | 1     |
 	 | LearningHours         | 1     |
-	Then there should be a 403 response
+	Then there should be a 422 response
 	And the response body should include "Place Holder"
 	
 @LearningProgression
@@ -266,7 +340,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus where 
 	 | Field                 | Value |
 	 | CurrentLearningStatus | 1     |
 
-	Then there should be a 403 response
+	Then there should be a 422 response
 	And the response body should include "Place Holder"
 
 @LearningProgression
@@ -277,29 +351,26 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-
 	When I patch the following:
 	 | Field                 | Value                |
 	 | CurrentLearningStatus | 1                    |
 	 | DateLearningStarted   | 2019-07-23T11:21:00Z |
-
-	Then there should be a 403 response
+	Then there should be a 422 response
 	And the response body should include "Place Holder"
 
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus, DateLearningStarted or LearningHours
+
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
 		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-
 	When I patch the following:
 	 | Field                 | Value                |
 	 | CurrentLearningStatus | 1                    |
-
-	Then there should be a 403 response
+	Then there should be a 422 response
 	And the response body should include "Place Holder"
 
 @LearningProgression
@@ -330,21 +401,31 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with LearningHours
-	When I patch the element <Field> with <value>:
+	
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should have <Field> with value <Value>
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-	| LearningHours                  | 1                    |
+#	| LearningHours                  | 1                    |
 	| DateLearningStarted            | 2019-06-25T11:21:00Z |
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field         | Value |
@@ -355,23 +436,42 @@ Scenario Outline: Patch Learning Progression with LearningHours
 @LearningProgression
 Scenario Outline: Patch Learning Progression with invalid LearningHours
 
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field         | Value | <ErrorMessage> |
-	| LearningHours | -1    | placeholder    |
-	| LearningHours | 0     | placeholder    |
-	| LearningHours | 3     | placeholder    |
-	| LearningHours | 99    | placeholder    |
+	| Field         | Value |  ErrorMessage  |
+	| LearningHours | -1    | LearningHours must have a valid learning hours value    |
+	| LearningHours | 0     | LearningHours must have a valid learning hours value    |
+	| LearningHours | 3     | LearningHours must have a valid learning hours value    |
+	| LearningHours | 97    | LearningHours must have a valid learning hours value    |
+	| LearningHours | 100   | LearningHours must have a valid learning hours value    |
 	
 
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with empty LearningHours
 
-	When I patch the element <Field> with <value>:
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should contain:
 	| Field                          | Value                |
@@ -393,22 +493,32 @@ Scenario Outline: Patch Learning Progression with empty LearningHours
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with DateLearningStarted
-	When I patch the element <Field> with <value>:
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value <Value> in the following request
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+	#And the response body should have <Field> with value <Value>
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
 	| CurrentLearningStatus          | 1                    |
 	| LearningHours                  | 1                    |
-	| DateLearningStarted            | 2019-06-25T11:21:00Z |
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field               | Value                |
@@ -419,30 +529,50 @@ Scenario Outline: Patch Learning Progression with DateLearningStarted
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with invalid value for DateLearningStarted
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field               | Value                | <ErrorMessage> |
-	| DateLearningStarted | 018-06-19T09:01:00Z  | placeholder    |
-	| DateLearningStarted | 2018-00-19T09:01:00Z | placeholder    |
-	| DateLearningStarted | 2018-13-19T09:01:00Z | placeholder    |
-	| DateLearningStarted | 2018-05-00T09:01:00Z | placeholder    |
-	| DateLearningStarted | 2018-05-32T09:01:00Z | placeholder    |
+	| Field               | Value                 |  ErrorMessage                        |
+	| DateLearningStarted | dfgdf-06-19T09:01:00Z | Could not convert string to DateTime |
+	| DateLearningStarted | 2018-00-19T09:01:00Z  | Could not convert string to DateTime |
+	| DateLearningStarted | 2018-13-19T09:01:00Z  | Could not convert string to DateTime |
+	| DateLearningStarted | 2018-05-00T09:01:00Z  | Could not convert string to DateTime |
+	| DateLearningStarted | 2018-05-32T09:01:00Z  | Could not convert string to DateTime |
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with future value for DateLearningStarted
 
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value <Value> in the following request
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field               | Value     | <ErrorMessage> |
-	| DateLearningStarted | Today +1D | placeholder    |
-	| DateLearningStarted | Now + 1H  | placeholder    |
-	| DateLearningStarted | Today +1Y | placeholder    |
+	| Field               | Value     | ErrorMessage |
+	| DateLearningStarted | Today +1D | DateLearningStarted must be less than or equal to now.    |
+	| DateLearningStarted | Now + 1H  | DateLearningStarted must be less than or equal to now.    |
+	| DateLearningStarted | Today +1Y | DateLearningStarted must be less than or equal to now.    |
 
 ###########################################################################################
 ##	CurrentQualificationLevel
@@ -451,7 +581,16 @@ Scenario Outline: Patch Learning Progression with future value for DateLearningS
 @LearningProgression
 Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 
-	When I patch the element <Field> with <value>:
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should have <Field> with value <Value>
 	And the response body should contain:
@@ -461,10 +600,10 @@ Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 	| DateLearningStarted            | 2019-06-25T11:21:00Z |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field                     | Value |
@@ -482,16 +621,25 @@ Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 @LearningProgression
 Scenario Outline: Patch Learning Progression with invalid value for CurrentQualificationLevel
 
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                   | Value | <ErrorMessage> |
-	| CurrentQualificationLevel   | -1    | placeholder    |
-	| CurrentQualificationLevel   | 9     | placeholder    |
-	| CurrentQualificationLevel | 98     | placeholder    |
-	| CurrentQualificationLevel | 100   | placeholder    |
+	| Field                     | Value |  ErrorMessage                                             |
+	| CurrentQualificationLevel | -1    | Please supply a valid value for CurrentQualificationLevel |
+	| CurrentQualificationLevel | 9     | Please supply a valid value for CurrentQualificationLevel |
+	| CurrentQualificationLevel | 98    | Please supply a valid value for CurrentQualificationLevel |
+	| CurrentQualificationLevel | 100   | Please supply a valid value for CurrentQualificationLevel |
 
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentQualificationLevel where there was no previous value for CurrentQualificationLevel or DateQualificationLevelAchieved
@@ -504,7 +652,7 @@ Scenario: Patch Learning Progression with value for CurrentQualificationLevel wh
 	When I patch the following:
 	 | Field                     | Value |
 	 | CurrentQualificationLevel | 1     |
-	Then there should be a 403 response
+	Then there should be a 422 response
 	And the response body should include "Place Holder"
 
 ###########################################################################################
@@ -513,9 +661,20 @@ Scenario: Patch Learning Progression with value for CurrentQualificationLevel wh
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
-	When I patch the element <Field> with <value>:
+	
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value <Value> in the following request
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+#	And the response body should have <Field> with value <Value>
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -523,12 +682,11 @@ Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 	| LearningHours                  | 1                    |
 	| DateLearningStarted            | 2019-06-25T11:21:00Z |
 	| CurrentQualificationLevel      | 2                    |
-	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field               | Value                |
@@ -539,30 +697,50 @@ Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with invalid value for DateQualificationLevelAchieved
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field               | Value                | <ErrorMessage> |
-	| DateQualificationLevelAchieved | 018-06-19T09:01:00Z  | placeholder    |
-	| DateQualificationLevelAchieved | 2018-00-19T09:01:00Z | placeholder    |
-	| DateQualificationLevelAchieved | 2018-13-19T09:01:00Z | placeholder    |
-	| DateQualificationLevelAchieved | 2018-05-00T09:01:00Z | placeholder    |
-	| DateQualificationLevelAchieved | 2018-05-32T09:01:00Z | placeholder    |
+	| Field                          | Value                |  ErrorMessage                        |
+	| DateQualificationLevelAchieved | sdfg-06-19T09:01:00Z | Could not convert string to DateTime |
+	| DateQualificationLevelAchieved | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
+	| DateQualificationLevelAchieved | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
+	| DateQualificationLevelAchieved | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
+	| DateQualificationLevelAchieved | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with future value for DateQualificationLevelAchieved
 
-	When I patch the element <Field> with <value>:
-	Then there should be a 403 response
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value <Value> in the following request
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                          | Value     | <ErrorMessage> |
-	| DateQualificationLevelAchieved | Today +1D | placeholder    |
-	| DateQualificationLevelAchieved | Now + 1H  | placeholder    |
-	| DateQualificationLevelAchieved | Today +1Y | placeholder    |
+	| Field                          | Value     | ErrorMessage                                                     |
+	| DateQualificationLevelAchieved | Today +1D | DateQualificationLevelAchieved must be less than or equal to now |
+	| DateQualificationLevelAchieved | Now + 1H  | DateQualificationLevelAchieved must be less than or equal to now |
+	| DateQualificationLevelAchieved | Today +1Y | DateQualificationLevelAchieved must be less than or equal to now |
 
 ###########################################################################################
 ##	LastLearningProvidersUKPRN
@@ -573,7 +751,16 @@ Scenario Outline: Patch Learning Progression with future value for DateQualifica
 @LearningProgression
 Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 
-	When I patch the element <Field> with <value>:
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should have <Field> with value <Value>
 	And the response body should contain:
@@ -583,10 +770,10 @@ Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 	| DateLearningStarted            | 2019-06-25T11:21:00Z |
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field                      | Value    |
@@ -595,23 +782,32 @@ Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 	| CurrentLearningStatus      | 51234567 |
 	| CurrentLearningStatus      | 99999998 |
 	| CurrentLearningStatus      | 99999999 |
-	| CurrentLearningStatus      |          |
+#	| CurrentLearningStatus      |          |
 	
 
 Scenario Outline: Patch Learning Progression with invalid LastLearningProvidersUKPRN
 
-	When I patch the element <Field> with <value>:
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                      | Value     | <ErrorMessage> |
-	| LastLearningProvidersUKPRN | 00000001  | placeholder    |
-	| LastLearningProvidersUKPRN | 9999999   | placeholder    |
-	| LastLearningProvidersUKPRN | 1         | placeholder    |
-	| LastLearningProvidersUKPRN | 1234567A  | placeholder    |
-	| LastLearningProvidersUKPRN | abcdefgh  | placeholder    |
-	| LastLearningProvidersUKPRN | 100000000 | placeholder    |
+	| Field                      | Value                      | ErrorMessage                                                                  |
+#	| LastLearningProvidersUKPRN | 00000001                   | placeholder                                                                   |
+	| LastLearningProvidersUKPRN | 9999999                    | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
+	| LastLearningProvidersUKPRN | 1                          | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
+	| LastLearningProvidersUKPRN | 1234567A                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
+	| LastLearningProvidersUKPRN | abcdefgh                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
+	| LastLearningProvidersUKPRN | 100000000                  | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
 
 
 ###########################################################################################
@@ -620,9 +816,20 @@ Scenario Outline: Patch Learning Progression with invalid LastLearningProvidersU
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with LastModifiedDate
-	When I patch the element <Field> with <value>:
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value <Value> in the following request
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+	#And the response body should have <Field> with value <Value>
 	And the response body should contain:
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
 	| CurrentLearningStatus          | 1                    |
@@ -631,10 +838,10 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And the "learningprogression" cosmos document should include CreatedBy
+	And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field            | Value                |
@@ -645,17 +852,27 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with invalid value for LastModifiedDate
-	When I patch the element <Field> with <value>:
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field            | Date                 | ErrorMessage |
-	| LastModifiedDate | 018-06-19T09:01:00Z  | placeholder  |
-	| LastModifiedDate | 2018-00-19T09:01:00Z | placeholder  |
-	| LastModifiedDate | 2018-13-19T09:01:00Z | placeholder  |
-	| LastModifiedDate | 2018-05-00T09:01:00Z | placeholder  |
-	| LastModifiedDate | 2018-05-32T09:01:00Z | placeholder  |
+	| Field            | Date                 | ErrorMessage                         |
+	| LastModifiedDate | sdrg-06-19T09:01:00Z | Could not convert string to DateTime |
+	| LastModifiedDate | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
+	| LastModifiedDate | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
+	| LastModifiedDate | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
+	| LastModifiedDate | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
 
 
 #############################################################################################
@@ -664,6 +881,15 @@ Scenario Outline: Patch Learning Progression with invalid value for LastModified
 @LearningProgression
 Scenario: Patch to Learning Progression received from another touchpoint
 
+		Given I post a Learning Progression record with the following details:
+			| Field                          | Value                |
+			| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+			| CurrentLearningStatus          | 1                    |
+			| LearningHours                  | 1                    |
+			| DateLearningStarted            | 2019-06-25T11:21:00Z |
+			| CurrentQualificationLevel      | 2                    |
+			| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+			| LastLearningProvidersUKPRN     | 12345678             |
 		When I patch the following via a different touchpoint
 		| Field                     | Value |
 		| CurrentQualificationLevel | 1     |
@@ -673,13 +899,23 @@ Scenario: Patch to Learning Progression received from another touchpoint
 		And the response body should contain:
          | Field                     | Value |
          | CurrentQualificationLevel | 1     |
-		And there should be a record in the learningprogression ChangeFeed table
-		And there should be a record in the learningprogression-history ChangeFeed table
+		And there should be a record in the learningprogressions ChangeFeed table
+		And there should be a record in the learningprogressions-history ChangeFeed table
 
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpointID
-	When I patch the element <Field> with <value>:
+	
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |	
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
 	And the response body should have <Field> with value <Value>
 	And the response body should contain:
@@ -691,8 +927,8 @@ Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpoi
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field                    | Value    |
@@ -700,9 +936,19 @@ Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpoi
 
 @LearningProgression
 Scenario Outline: Patch Learning Progression with value for CreatedBy
-	When I patch the element <Field> with <value>:
+
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+#	And the response body should have <Field> with value <Value>
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -712,8 +958,8 @@ Scenario Outline: Patch Learning Progression with value for CreatedBy
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And there should be a record in the learningprogression ChangeFeed table
-	And there should be a record in the learningprogression-history ChangeFeed table
+	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field     | Value    |
@@ -722,9 +968,18 @@ Scenario Outline: Patch Learning Progression with value for CreatedBy
 @LearningProgression
 Scenario Outline: Patch unknown Learning Progression record
 
-	When I patch an unknown resource with the element <Field> with <value>:
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch an unknown resource with the element <Field> with <Value>:
 	Then there should be a 204 response
-	And the response body should contain <ErrorMessage>
+	#And the response body should contain <ErrorMessage>
 	
 	Examples:
 	| Field         | Value | ErrorMessage |
@@ -733,9 +988,18 @@ Scenario Outline: Patch unknown Learning Progression record
 @LearningProgression
 Scenario Outline: Patch Learning Progression record with incorrect CustomerId
 
-	When I patch an unknown resource with the element <Field> with <value>:
+	Given I post a Learning Progression record with the following details:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch an unknown resource with the element <Field> with <Value>:
 	Then there should be a 204 response
-	And the response body should contain <ErrorMessage>
+	#And the response body should contain <ErrorMessage>
 	
 	Examples:
 	| Field         | Value | ErrorMessage |

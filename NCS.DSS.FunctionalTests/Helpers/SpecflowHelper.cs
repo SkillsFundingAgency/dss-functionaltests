@@ -65,6 +65,11 @@ namespace NCS.DSS.FunctionalTests.Helpers
             return newTable;
         }
 
+        public static string TranlateDateTokenAsString(string inString)
+        {
+            DateTime extractedDateTime = TranslateDateToken(inString);
+            return (extractedDateTime.Equals(DateTime.MinValue) ? inString : extractedDateTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
+        }
         public static DateTime TranslateDateToken(string inString)
         {
             DateTime extractedDateTime = DateTime.MinValue;
