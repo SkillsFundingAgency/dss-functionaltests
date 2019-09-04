@@ -456,7 +456,7 @@ namespace FunctionalTests.StepDefs
         public void WhenIPatchTheFollowingViaADifferentTouchpoint(Table table)
         {
             // pass through to overload
-            patchFromTable(table, lastResourceName, envSettings.TestEndpoint02);
+            patchFromTable2(table, lastResourceName, envSettings.TestEndpoint02);
         }
 
 
