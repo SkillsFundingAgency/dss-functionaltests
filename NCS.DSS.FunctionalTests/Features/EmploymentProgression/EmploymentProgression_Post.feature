@@ -29,7 +29,7 @@ Scenario:Post employment progression with all values
 	| LengthOfUnemployment    | 1                    |
 	Then there should be a 201 response
 	And the response body should contain:
-	| Field                          | Value    |
+	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 8                    |
 	| EconomicShockStatus     | 2                    |

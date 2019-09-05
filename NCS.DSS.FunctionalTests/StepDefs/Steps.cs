@@ -526,7 +526,7 @@ namespace FunctionalTests.StepDefs
         [When(@"I patch ""(.*)"" with the following details:")]
         public void WhenIPatchWithTheFollowingDetails(string p0, Table table)
         {
-            patchFromTable2(table, p0);
+            patchFromTable2(SpecflowHelper.ReplaceTokensInTable(table), p0);
         }
 
         [When(@"I patch the element (.*) with (.*):")]
@@ -534,7 +534,7 @@ namespace FunctionalTests.StepDefs
         {
             Table table = new Table(new string[] { "Field", "Value" });
             table.AddRow(new string[] { p0, p1 });
-            patchFromTable2(table, lastResourceName);
+            patchFromTable2(SpecflowHelper.ReplaceTokensInTable(table, false, "Field"), lastResourceName);
         }
 
         [When(@"I patch an unknown resource with the element (.*) with (.*):")]
