@@ -678,10 +678,10 @@ Scenario Outline: Post Employment progression with invalid values for DateOfEmpl
 	And the number of errors returned should be 1
 	
 	Examples:
-	| Field            | Value      | ErrorMessage                         |
-	| DateOfEmployment | Today +1D  | wer                                  |
-	| DateOfEmployment | Now +1H    | 324                                  |
-	| DateOfEmployment | 2019-13-01 | Could not convert string to DateTime |
+	| Field            | Value      | ErrorMessage                                       |
+	| DateOfEmployment | Today +1D  | DateOfEmployment must be less than or equal to now |
+	| DateOfEmployment | Now +1H    | DateOfEmployment must be less than or equal to now |
+	| DateOfEmployment | 2019-13-01 | Could not convert string to DateTime               |
 
 
 Scenario Outline: Post Employment progression with no value for DateOfEmployment and CurrentEmploymentStatus not in 1, 4, 5, 8, 9 

@@ -1743,8 +1743,8 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for DateOfEmployment")]
-        [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Today +1D", "wer", null)]
-        [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Now +1H", "324", null)]
+        [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Today +1D", "DateOfEmployment must be less than or equal to now", null)]
+        [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Now +1H", "DateOfEmployment must be less than or equal to now", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "2019-13-01", "Could not convert string to DateTime", null)]
         public virtual void PostEmploymentProgressionWithInvalidValuesForDateOfEmployment(string field, string value, string errorMessage, string[] exampleTags)
         {

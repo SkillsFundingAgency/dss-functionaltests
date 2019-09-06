@@ -49,6 +49,7 @@ namespace FunctionalTests.StepDefs
              private string subscriptionId;
              private string transferId;
              private string learningProgressionId;
+             private string employmentProgressionId;
              private bool lastRequestWasPatch = false;
              private string targetOfLastPost = "";
              private DateTime requestTime;
@@ -603,6 +604,16 @@ namespace FunctionalTests.StepDefs
             lastRequestWasPatch = true;
             requestContext.UpdateRequestDetails(resource, response.StatusCode, response.Content);
 
+            if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Request was unsuccessful");
+                Console.WriteLine("response status: " + response.StatusCode);
+                Console.WriteLine("response status description: " + response.StatusDescription);
+                Console.WriteLine("response message: " + response.ErrorMessage);
+                Console.WriteLine("response expection: " + response.ErrorException);
+                Console.WriteLine("response content:" + response.Content);
+            }
+
         }
 
   
@@ -763,7 +774,21 @@ namespace FunctionalTests.StepDefs
         [When(@"I get all Learning Progression records for a customer")]
         public void WhenIGetAllLearningProgressionRecordsForACustomer()
         {
-            url = envSettings.BaseUrl + "LearningProgression/api/Customers/" + customerId + "/LearningProgression/";
+            url = envSettings.BaseUrl + "LearningProgressions/api/Customers/" + customerId + "/LearningProgressions/";
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+        [When(@"I get a Employment Progression by ID")]
+        public void WhenIGetAEmploymentProgressionByID()
+        {
+            url = envSettings.BaseUrl + "EmploymentProgressions/api/Customers/" + customerId + "/EmploymentProgressions/" + employmentProgressionId;
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+        [When(@"I get all Employment Progression records for a customer")]
+        public void WhenIGetAllEmploymentProgressionRecordsForACustomer()
+        {
+            url = envSettings.BaseUrl + "EmploymentProgression/api/Customers/" + customerId + "/EmploymentProgressions/";
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 

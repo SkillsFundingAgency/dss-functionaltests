@@ -134,6 +134,7 @@ Scenario Outline: Patch Learning Progression with invalid DateProgressionRecorde
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field                   | Value                |  ErrorMessage                        |
@@ -160,6 +161,7 @@ Scenario Outline: Patch Learning Progression with future dated DateProgressionRe
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field                   | Value     | ErrorMessage                                               |
@@ -255,14 +257,15 @@ Scenario Outline: Patch Learning Progression with invalid CurrentLearningStatus
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field                 | Value |  ErrorMessage                                         |
-	| CurrentLearningStatus | -1    | CurrentLearningStatus must be a valid learning status |
-	| CurrentLearningStatus | 0     | CurrentLearningStatus must be a valid learning status |
-	| CurrentLearningStatus | 4     | CurrentLearningStatus must be a valid learning status |
-	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid learning status |
-	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid learning status |
+	| CurrentLearningStatus | -1    | CurrentLearningStatus must be a valid current Learning Status |
+	| CurrentLearningStatus | 0     | CurrentLearningStatus must be a valid current Learning Status |
+	| CurrentLearningStatus | 4     | CurrentLearningStatus must be a valid current Learning Status |
+	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid current Learning Status |
+	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid current Learning Status |
 	
 
 @LearningProgression
@@ -302,13 +305,16 @@ Scenario Outline: Patch Learning Progression with value for CurrentLearningStatu
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
+		| CurrentLearningStatus          | 99                   |
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
-	And the response body should include <ErrorMessage>
+	And the response body should include DateLearningStarted must have a value when Current Learning Status is InLearning
+	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
+	And the number of errors returned should be 2
 	
 	Examples:
-	| Field                 | Value | ErrorMessage |
-	| CurrentLearningStatus | 2     | PlaceHolder  |
+	| Field                 | Value | 
+	| CurrentLearningStatus | 1     | 
 
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentLearningStatus AND DateLearningStarted where there was no previous value for CurrentLearningStatus or LearningHours
@@ -320,12 +326,14 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 		| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
 		| DateLearningStarted            | 2019-07-23T11:21:00Z |
+		| CurrentLearningStatus          | 99                   |
 	When I patch the following:
-	 | Field                 | Value |
-	 | CurrentLearningStatus | 1     |
-	 | LearningHours         | 1     |
+	 | Field                 | Value                |
+	 | CurrentLearningStatus | 1                    |
+	 | DateLearningStarted   | 2019-07-23T11:21:00Z |
 	Then there should be a 422 response
-	And the response body should include "Place Holder"
+	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
+	And the number of errors returned should be 1
 	
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus or DateLearningStarted
@@ -336,12 +344,14 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus where 
 		| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
 		| DateLearningStarted            | 2019-07-23T11:21:00Z |
+		| CurrentLearningStatus          | 99                   |
 	When I patch the following:
 	 | Field                 | Value |
 	 | CurrentLearningStatus | 1     |
 
 	Then there should be a 422 response
-	And the response body should include "Place Holder"
+	And the response body should include "LearningHours must have a value when Current Learning Status is InLearning."
+	And the number of errors returned should be 1
 
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentLearningStatus AND DateLearningStarted where there was no previous value for CurrentLearningStatus or DateLearningStarted or LearningHours
@@ -351,12 +361,14 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
+		| CurrentLearningStatus          | 99                   |
 	When I patch the following:
 	 | Field                 | Value                |
 	 | CurrentLearningStatus | 1                    |
 	 | DateLearningStarted   | 2019-07-23T11:21:00Z |
 	Then there should be a 422 response
-	And the response body should include "Place Holder"
+	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
+	And the number of errors returned should be 1
 
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus, DateLearningStarted or LearningHours
@@ -367,11 +379,14 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus where 
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
+		| CurrentLearningStatus          | 99                   |
 	When I patch the following:
 	 | Field                 | Value                |
 	 | CurrentLearningStatus | 1                    |
 	Then there should be a 422 response
-	And the response body should include "Place Holder"
+	And the response body should include DateLearningStarted must have a value when Current Learning Status is InLearning
+	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
+	And the number of errors returned should be 2
 
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentLearningStatus AND DateLearningStarted AND LearningHours where there was no previous value for CurrentLearningStatus, DateLearningStarted or LearningHours
@@ -382,6 +397,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
+		| CurrentLearningStatus          | 99                   |
 
 	When I patch the following:
 	 | Field                 | Value                |
@@ -390,7 +406,15 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 	 | LearningHours         | 2                    |
 
 	Then there should be a 200 response
-	And the response body should include "Place Holder"
+	And the response body should contain:
+	| Field                          | Value                |
+	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+	| CurrentQualificationLevel      | 2                    |
+	| DateQualificationLevelAchieved | 2019-07-24T11:21:00Z |
+	| LastLearningProvidersUKPRN     | 12345678             |
+	| CurrentLearningStatus          | 1                    |
+	| DateLearningStarted            | 2019-07-24T11:21:00Z |
+	| LearningHours                  | 2                    |
 
 
 ###########################################################################################
@@ -448,14 +472,15 @@ Scenario Outline: Patch Learning Progression with invalid LearningHours
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field         | Value |  ErrorMessage  |
-	| LearningHours | -1    | LearningHours must have a valid learning hours value    |
-	| LearningHours | 0     | LearningHours must have a valid learning hours value    |
-	| LearningHours | 3     | LearningHours must have a valid learning hours value    |
-	| LearningHours | 97    | LearningHours must have a valid learning hours value    |
-	| LearningHours | 100   | LearningHours must have a valid learning hours value    |
+	| LearningHours | -1    | LearningHours must have a valid Learning Hours value    |
+	| LearningHours | 0     | LearningHours must have a valid Learning Hours value    |
+	| LearningHours | 3     | LearningHours must have a valid Learning Hours value    |
+	| LearningHours | 97    | LearningHours must have a valid Learning Hours value    |
+	| LearningHours | 100   | LearningHours must have a valid Learning Hours value    |
 	
 
 
@@ -542,6 +567,7 @@ Scenario Outline: Patch Learning Progression with invalid value for DateLearning
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field               | Value                 |  ErrorMessage                        |
@@ -567,6 +593,7 @@ Scenario Outline: Patch Learning Progression with future value for DateLearningS
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field               | Value     | ErrorMessage |
@@ -633,27 +660,31 @@ Scenario Outline: Patch Learning Progression with invalid value for CurrentQuali
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
-	| Field                     | Value |  ErrorMessage                                             |
-	| CurrentQualificationLevel | -1    | Please supply a valid value for CurrentQualificationLevel |
-	| CurrentQualificationLevel | 9     | Please supply a valid value for CurrentQualificationLevel |
-	| CurrentQualificationLevel | 98    | Please supply a valid value for CurrentQualificationLevel |
-	| CurrentQualificationLevel | 100   | Please supply a valid value for CurrentQualificationLevel |
+	| Field                     | Value | ErrorMessage                                                          |
+	| CurrentQualificationLevel | -1    | CurrentQualificationLevel must be a valid current Qualification Level |
+	| CurrentQualificationLevel | 9     | CurrentQualificationLevel must be a valid current Qualification Level |
+	| CurrentQualificationLevel | 98    | CurrentQualificationLevel must be a valid current Qualification Level |
+	| CurrentQualificationLevel | 100   | CurrentQualificationLevel must be a valid current Qualification Level |
 
 @LearningProgression
 Scenario: Patch Learning Progression with value for CurrentQualificationLevel where there was no previous value for CurrentQualificationLevel or DateQualificationLevelAchieved
 
 	Given I post a Learning Progression record with the following details:
-		| Field                          | Value                |
-		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-		| LastLearningProvidersUKPRN     | 12345678             |
-		| DateLearningStarted            | 2019-07-23T11:21:00Z |
+		| Field                      | Value                |
+		| DateProgressionRecorded    | 2018-06-25T11:21:00Z |
+		| LastLearningProvidersUKPRN | 12345678             |
+		| DateLearningStarted        | 2019-07-23T11:21:00Z |
+		| CurrentLearningStatus      | 99                   |
+		| CurrentQualificationLevel  | 99                   |
 	When I patch the following:
 	 | Field                     | Value |
 	 | CurrentQualificationLevel | 1     |
 	Then there should be a 422 response
-	And the response body should include "Place Holder"
+	And the response body should include DateQualificationLevelAchieved is required when QualificationLevel < NoQualification (99).
+	And the number of errors returned should be 1
 
 ###########################################################################################
 ##	DateQualificationLevelAchieved
@@ -710,6 +741,7 @@ Scenario Outline: Patch Learning Progression with invalid value for DateQualific
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field                          | Value                |  ErrorMessage                        |
@@ -735,6 +767,7 @@ Scenario Outline: Patch Learning Progression with future value for DateQualifica
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field                          | Value     | ErrorMessage                                                     |
@@ -779,9 +812,9 @@ Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 	| Field                      | Value    |
 	| LastLearningProvidersUKPRN | 10000000 |
 	| LastLearningProvidersUKPRN | 10000001 |
-	| CurrentLearningStatus      | 51234567 |
-	| CurrentLearningStatus      | 99999998 |
-	| CurrentLearningStatus      | 99999999 |
+	| LastLearningProvidersUKPRN | 51234567 |
+	| LastLearningProvidersUKPRN | 99999998 |
+	| LastLearningProvidersUKPRN | 99999999 |
 #	| CurrentLearningStatus      |          |
 	
 
@@ -799,15 +832,15 @@ Scenario Outline: Patch Learning Progression with invalid LastLearningProvidersU
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be <ErrorCount>
 	
 	Examples:
-	| Field                      | Value                      | ErrorMessage                                                                  |
-#	| LastLearningProvidersUKPRN | 00000001                   | placeholder                                                                   |
-	| LastLearningProvidersUKPRN | 9999999                    | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
-	| LastLearningProvidersUKPRN | 1                          | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
-	| LastLearningProvidersUKPRN | 1234567A                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
-	| LastLearningProvidersUKPRN | abcdefgh                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
-	| LastLearningProvidersUKPRN | 100000000                  | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
+	| Field                      | Value     | ErrorMessage                                                                      | ErrorCount |
+	| LastLearningProvidersUKPRN | 9999999   | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. | 1          |
+	| LastLearningProvidersUKPRN | 1         | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. | 1          |
+	| LastLearningProvidersUKPRN | 1234567A  | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)     | 1          |
+	| LastLearningProvidersUKPRN | abcdefgh  | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)     | 1          |
+	| LastLearningProvidersUKPRN | 100000000 | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. | 2          |
 
 
 ###########################################################################################
@@ -865,6 +898,7 @@ Scenario Outline: Patch Learning Progression with invalid value for LastModified
 	When I patch the element <Field> with <Value>:
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
 	
 	Examples:
 	| Field            | Date                 | ErrorMessage                         |
@@ -917,7 +951,7 @@ Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpoi
 		| LastLearningProvidersUKPRN     | 12345678             |	
 	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+	And the response body should have LastModifiedTouchpointId with value 9000000001
 	And the response body should contain:
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -958,8 +992,9 @@ Scenario Outline: Patch Learning Progression with value for CreatedBy
 	| CurrentQualificationLevel      | 2                    |
 	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	| LastLearningProvidersUKPRN     | 12345678             |
-	And there should be a record in the learningprogressions ChangeFeed table
-	And there should be a record in the learningprogressions-history ChangeFeed table
+	And the "learningprogressions" cosmos document should have "CreatedBy" with value "9000000001"
+#	And there should be a record in the learningprogressions ChangeFeed table
+#	And there should be a record in the learningprogressions-history ChangeFeed table
 	
 	Examples:
 	| Field     | Value    |
@@ -979,7 +1014,8 @@ Scenario Outline: Patch unknown Learning Progression record
 		| LastLearningProvidersUKPRN     | 12345678             |
 	When I patch an unknown resource with the element <Field> with <Value>:
 	Then there should be a 204 response
-	#And the response body should contain <ErrorMessage>
+#	And the response body should contain <ErrorMessage>
+#	And the number of errors returned should be 1
 	
 	Examples:
 	| Field         | Value | ErrorMessage |
@@ -999,7 +1035,8 @@ Scenario Outline: Patch Learning Progression record with incorrect CustomerId
 		| LastLearningProvidersUKPRN     | 12345678             |
 	When I patch an unknown resource with the element <Field> with <Value>:
 	Then there should be a 204 response
-	#And the response body should contain <ErrorMessage>
+#	And the response body should contain <ErrorMessage>
+#	And the number of errors returned should be 1
 	
 	Examples:
 	| Field         | Value | ErrorMessage |

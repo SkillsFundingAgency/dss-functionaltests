@@ -369,7 +369,7 @@ Scenario Outline: Post learning progression with invalid dates
 	| DateProgressionRecorded | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
 	| DateProgressionRecorded | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
 	| DateProgressionRecorded | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
-	| DateLearningStarted     | 018-06-19T09:01:00Z  | Could not convert string to DateTime |
+	| DateLearningStarted     | 018-0g-19T09:01:00Z  | Could not convert string to DateTime |
 	| DateLearningStarted     | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
 	| DateLearningStarted     | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
 	| DateLearningStarted     | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
@@ -457,7 +457,8 @@ Scenario: Post learning progression with In Learning status and no value for Lea
 	| CurrentQualificationLevel | 99    |
 #	| LearningHours             |       |
 	Then there should be a 422 response
-	And the response body should include LearningHours must have a value when CurrentLearningStatus is InLearning 
+	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
+	And the number of errors returned should be 1
 
 
 @LearningProgression
@@ -471,7 +472,7 @@ Scenario: Post learning progression with In Learning status and invalid value fo
 	| DateLearningStarted       | Today |
 	| LearningHours             | 93    |
 	Then there should be a 422 response
-	And the response body should include LearningHours must have a valid learning hours value
+	And the response body should include LearningHours must have a valid Learning Hours value.
 
 @LearningProgression
 Scenario: Post learning progression with In Learning status and no value for DateLearningStarted
@@ -484,7 +485,7 @@ Scenario: Post learning progression with In Learning status and no value for Dat
 	| LearningHours             | 1     |
 	| DateLearningStarted       |       |
 	Then there should be a 422 response
-	And the error message should be "Date Learning Started must have a value when Current Learning Status is InLearning"
+	And the error message should be "DateLearningStarted must have a value when Current Learning Status is InLearning"
 	And the number of errors returned should be 1
 
 @LearningProgression

@@ -109,7 +109,7 @@ namespace NCS.DSS.FunctionalTests
         }
 
         public string GetDocumentBaseUrl(string resource)
-        {
+        {   
             return requestUrls[resource];
         }
 

@@ -56,12 +56,12 @@ Scenario:Patch Employment Progression with  all values
 	| DateOfEmployment        | 2019-01-24T00:00:00Z |
 	| DateOfLastEmployment    | 2019-01-25T00:00:00Z |
 	| LengthOfUnemployment    | 2                    |
-	And the "learningprogressions" cosmos document should include CreatedBy
+	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the learningprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions ChangeFeed table
 	And the captured table data should include key "Longitude" with value "-1.50728"
 	And the captured table data should include key "Latitude" with value "52.92878"
-	And there should be a record in the learningprogressions-history ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
 	And the captured table data should include key "Longitude" with value "-1.50728"
 	And the captured table data should include key "Latitude" with value "52.92878"
 
@@ -247,6 +247,66 @@ Scenario Outline: Patch Employment progression with no value for CurrentEmployme
 	Examples:
 	| Field                   | Value |
 	| CurrentEmploymentStatus |       |
+
+Scenario Outline: Patch Employment progression with CurrentEmploymentStatus in 1, 4, 5, 8, 9 where no value for EmploymentHours or DateOfEmployment  exists
+
+	Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmploymentHours         |                      |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        |                      |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
+	And the error message should be "EmploymentHours must have a value when CurrentEmploymentStatus is Apprenticeship, Employed, EmployedAndVoluntaryWork, RetiredAndVoluntaryWork or SelfEmployed"
+	And the error message should be "DateOfEmployment must have a value when CurrentEmploymentStatus is Apprenticeship, Employed, EmployedAndVoluntaryWork, RetiredAndVoluntaryWork or SelfEmployed"
+	And the number of errors returned should be 2
+	
+	Examples:
+	| Field                   | Value |
+	| CurrentEmploymentStatus | 1     |
+	| CurrentEmploymentStatus | 4     |
+	| CurrentEmploymentStatus | 5     |
+	| CurrentEmploymentStatus | 8     |
+	| CurrentEmploymentStatus | 9     |
+
+
+Scenario Outline: Patch Employment progression with CurrentEmploymentStatus not in 1, 4, 5, 8, 9 where no value for EmploymentHours or DateOfEmployment exists
+
+	Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmploymentHours         |                      |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        |                      |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| EmploymentHours         |                      |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        |                      |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+	Examples:
+	| Field                   | Value |
+	| CurrentEmploymentStatus | 2     |
+	| CurrentEmploymentStatus | 3     |
+	| CurrentEmploymentStatus | 6     |
+	| CurrentEmploymentStatus | 7     |
+	| CurrentEmploymentStatus | 10    |
+	| CurrentEmploymentStatus | 11    |
+	| CurrentEmploymentStatus | 12    |
+	| CurrentEmploymentStatus | 13    |
+	| CurrentEmploymentStatus | 99    |
+
 
 ##########################################################################################################################################################################################
 ##	EconomicShockStatus	enum	Y		A valid EconomicShockStatus reference data item	See DSS Reference Data Resource for values.						
@@ -710,35 +770,338 @@ Scenario Outline: Patch Employment progression with no value for EmployerPostcod
 ##	EmploymentHours	enum			If CurrentEmployment status = 1, 4, 5, 8, 9 then the item must be a valid EmploymentHours reference data item	See DSS Reference Data Resource for values 						
 ##########################################################################################################################################################################################
 
-#Scenario Outline: Patch Employment progression with valid values for EmploymentHours												
-#Scenario Outline: Patch Employment progression with invalid values for EmploymentHours												
-#Scenario Outline: Patch Employment progression with no value for EmploymentHours and CurrentEmploymentStatus in 1, 4, 5, 8, 9 												
-#Scenario Outline: Patch Employment progression with no value for EmploymentHours and CurrentEmploymentStatus not in 1, 4, 5, 8, 9 												
+Scenario Outline: Patch Employment progression with valid values for EmploymentHours
+
+Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+
+	Examples:
+	| Field           | Value |
+	| EmploymentHours | 1     |
+	| EmploymentHours | 2     |
+	| EmploymentHours | 98    |
+	| EmploymentHours | 99    |
+
+
+Scenario Outline: Patch Employment progression with invalid values for EmploymentHours	
+
+	Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
+	And the response body should include <ErrorMessage>
+	
+	Examples:
+	| Field           | Value | ErrorMessage                                     |
+	| EmploymentHours | -1    | EmploymentHours must be a valid employment hours |
+	| EmploymentHours | 0     | EmploymentHours must be a valid employment hours |
+	| EmploymentHours | 97    | EmploymentHours must be a valid employment hours |
+	| EmploymentHours | 100   | EmploymentHours must be a valid employment hours |
+
+
+Scenario Outline: : Patch Employment progression with no value for EmploymentHours
+
+Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+		| EmploymentHours         |                      |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+	Examples:
+	| Field           | Value |
+	| EmploymentHours |       |
 
 ##########################################################################################################################################################################################
 ##	DateOfEmployment	If CurrentEmployment status = 1, 4, 5, 8, 9 then the item is mandatory, ISO8601:2004 <= datetime.now	The date the customer started employment.									
 ##						See DSS Reference Data Resource for values 						
 ##########################################################################################################################################################################################
 
-#Scenario Outline: Patch Employment progression with valid values for DateOfEmployment												
-#Scenario Outline: Patch Employment progression with invalid values for DateOfEmployment												
-#Scenario Outline: Patch Employment progression with no value for DateOfEmployment and CurrentEmploymentStatus not in 1, 4, 5, 8, 9 												
-#Scenario Outline: Patch Employment progression with no value for DateOfEmployment and CurrentEmploymentStatus in 1, 4, 5, 8, 9 												
+Scenario Outline: Patch Employment progression with valid values for DateOfEmployment
+
+Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+#	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| EmploymentHours         |                      |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+	Examples:
+	| Field            | Value                |
+	| DateOfEmployment | 2018-06-19T09:01:00Z |
+	| DateOfEmployment | Today                |
+	| DateOfEmployment | Now                  |
+
+Scenario Outline: Patch Employment progression with invalid values for DateOfEmployment												
+
+	Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
+	And the response body should include <ErrorMessage>
+	
+	Examples:
+	| Field            | Value     | ErrorMessage                                       |
+	| DateOfEmployment | Today +1D | DateOfEmployment must be less than or equal to now |
+	| DateOfEmployment | Now +1H   | DateOfEmployment must be less than or equal to now |
+
+
+Scenario Outline: Patch Employment progression with no value for DateOfEmployment
+
+Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        |                      |
+		| EmploymentHours         |                      |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+	Examples:
+	| Field            | Value |
+	| DateOfEmployment |       |
+
 
 ##########################################################################################################################################################################################
 ##	DateOfLastEmployment	Date			ISO8601:2004 <= datetime.now	The date the customer was last in employment if they are retired, economically inactive or unemployed.  This field has been left optional in case the customer has never been in employment.						
 ##########################################################################################################################################################################################
 
-#Scenario Outline: Patch Employment progression with valid values for DateOfLastEmployment												
-#Scenario Outline: Patch Employment progression with invalid values for DateOfLastEmployment												
-##Scenario: Post Employment progression with future values for DateOfLastEmployment												
-##Scenario: Post Employment progression with no value for DateOfLastEmployment												
+Scenario Outline: Patch Employment progression with valid values for DateOfLastEmployment												
 
+Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+#	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+		| EmploymentHours         |                      |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+	Examples:
+	| Field                | Value                |
+	| DateOfLastEmployment | 2018-06-19T09:01:00Z |
+	| DateOfLastEmployment | Today                |
+	| DateOfLastEmployment | Now                  |
+
+Scenario Outline: Patch Employment progression with invalid values for DateOfLastEmployment	
+
+	Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
+	And the response body should include <ErrorMessage>
+	
+	Examples:
+	| Field                | Value                | ErrorMessage                                           |
+	| DateOfLastEmployment | 2018-13-19T09:01:00Z | Could not convert string to DateTime                   |
+	| DateOfLastEmployment | Today +1D            | DateOfLastEmployment must be less than or equal to now |
+	| DateOfLastEmployment | Now +1H              | DateOfLastEmployment must be less than or equal to now |
+
+
+Scenario Outline: Post Employment progression with no value for DateOfLastEmployment	
+
+
+Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+		| EmploymentHours         |                      |
+		| DateOfLastEmployment    |                      |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+	Examples:
+	| Field                | Value |
+	| DateOfLastEmployment |       |
+											
 ##########################################################################################################################################################################################
 ##	LengthOfUnemployment	enum			A valid LenghtOfUnemployment reference data item	See DSS Reference Data Resource for values 						
 ##########################################################################################################################################################################################
 
-#Scenario Outline: Patch Employment progression with valid values for LengthOfUnemployment												
+Scenario Outline: Patch Employment progression with valid values for LengthOfUnemployment	
+
+   Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+
+	Examples:
+	| Field                | Value |
+	| LengthOfUnemployment | 1     |
+	| LengthOfUnemployment | 2     |
+	| LengthOfUnemployment | 3     |
+	| LengthOfUnemployment | 4     |
+	| LengthOfUnemployment | 5     |
+	| LengthOfUnemployment | 6     |
+	| LengthOfUnemployment | 98    |
+	| LengthOfUnemployment | 99    |
+
+
+Scenario Outline: Patch Employment progression with invalid values for LengthOfUnemployment	
+
+	Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 422 response
+	And the response body should include <ErrorMessage>
+	
+	Examples:
+	| Field                | Value | ErrorMessage                                           |
+	| LengthOfUnemployment | -1    | Please supply a valid value for Length Of Unemployment |
+	| LengthOfUnemployment | 0     | Please supply a valid value for Length Of Unemployment |
+	| LengthOfUnemployment | 7     | Please supply a valid value for Length Of Unemployment |
+	| LengthOfUnemployment | 97    | Please supply a valid value for Length Of Unemployment |
+	| LengthOfUnemployment | 100   | Please supply a valid value for Length Of Unemployment |
+
+
+Scenario Outline: : Patch Employment progression with no value for LengthOfUnemployment
+
+Given I post a Employment Progression record with the following details:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EmployerPostcode        | ng1 1gn              |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	When I patch the element <Field> with <Value>:
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+	And the response body should contain:
+		| Field                   | Value                |
+		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
+		| CurrentEmploymentStatus | 99                   |
+		| EconomicShockStatus     | 1                    |
+		| DateOfEmployment        | 2018-06-19T09:01:00Z |
+		| EmploymentHours         |                      |
+		| LengthOfUnemployment    |                      |
+	And the "employmentprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+	And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the employmentprogressions-history ChangeFeed table
+
+	Examples:
+	| Field                | Value |
+	| LengthOfUnemployment |       |
+#											
 #Scenario Outline: Patch Employment progression with invalid values for LengthOfUnemployment												
 ##Scenario: Post Employment progression with no value for LengthOfUnemployment												
 
