@@ -103,12 +103,12 @@ namespace NCS.DSS.FunctionalTests.Features.EmploymentProgression
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post employment progression with all values")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostEmploymentProgressionWithAllValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post employment progression with all values", null, new string[] {
-                        "EmploymentProgression",
+                        "employmentprogressions",
                         "smoke"});
 #line 15
 this.ScenarioInitialize(scenarioInfo);
@@ -209,11 +209,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post employment progression with mandatory values")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithMandatoryValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post employment progression with mandatory values", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 50
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -265,14 +265,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-06-19T09:01:00Z", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "Today", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "Now -1H", null)]
         public virtual void PostEmploymentProgressionWithValidValuesForDateProgressionRecorded(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -322,7 +322,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-00-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-05-00T09:01:00Z", "Could not convert string to DateTime", null)]
@@ -330,7 +330,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithInvalidValuesForDateProgressionRecorded(string field, string date, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -368,13 +368,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with future value for DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "Today +1D", "DateProgressionRecorded must be less than or equal to now", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "Now +1H", "DateProgressionRecorded must be less than or equal to now", null)]
         public virtual void PostEmploymentProgressionWithFutureValueForDateProgressionRecorded(string field, string date, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -409,11 +409,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithNoValueForDateProgressionRecorded()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for DateProgressionRecorded", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 131
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -444,7 +444,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for CurrentEmploymentStatus")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "2", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "3", null)]
@@ -462,7 +462,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithValidValuesForCurrentEmploymentStatus(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -518,7 +518,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for CurrentEmploymentStatus")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "-1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "14", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "98", null)]
@@ -526,7 +526,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithInvalidValuesForCurrentEmploymentStatus(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -573,11 +573,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for CurrentEmploymentStatus")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithNoValueForCurrentEmploymentStatus()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for CurrentEmploymentStatus", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 202
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -610,11 +610,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for EconomicShockStatus")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithInvalidValuesForEconomicShockStatus()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with invalid values for EconomicShockStatus", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 217
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -626,11 +626,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EconomicShockStatus")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithNoValueForEconomicShockStatus()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for EconomicShockStatus", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 220
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -642,14 +642,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for EconomicShockStatus")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EconomicShockStatus", "1", null)]
         [NUnit.Framework.TestCaseAttribute("EconomicShockStatus", "2", null)]
         [NUnit.Framework.TestCaseAttribute("EconomicShockStatus", "3", null)]
         public virtual void PostEmploymentProgressionWithValidValuesForEconomicShockStatus(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -711,13 +711,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for EconomicShockCode")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EconomicShockCode", "Some Text", null)]
         [NUnit.Framework.TestCaseAttribute("EconomicShockCode", "12345678901234567890123456789012345678901234567890", null)]
         public virtual void PostEmploymentProgressionWithValidValuesForEconomicShockCode(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -779,12 +779,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for EconomicShockCode")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EconomicShockCode", "123456789012345678901234567890123456789012345678901", null)]
         public virtual void PostEmploymentProgressionWithInvalidValuesForEconomicShockCode(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -833,12 +833,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EconomicShockCode where EconomicSho" +
             "ckStatus is 2 - Government defined economic shock")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithNoValueForEconomicShockCodeWhereEconomicShockStatusIs2_GovernmentDefinedEconomicShock()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for EconomicShockCode where EconomicSho" +
                     "ckStatus is 2 - Government defined economic shock", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 301
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -882,13 +882,13 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EconomicShockCode where EconomicSho" +
             "ckStatus is not 2 - Government defined economic shock")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EconomicShockStatus", "1", null)]
         [NUnit.Framework.TestCaseAttribute("EconomicShockStatus", "3", null)]
         public virtual void PostEmploymentProgressionWithNoValueForEconomicShockCodeWhereEconomicShockStatusIsNot2_GovernmentDefinedEconomicShock(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -960,7 +960,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for EmployerName")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmployerName", "Some Value", null)]
         [NUnit.Framework.TestCaseAttribute("EmployerName", "123456789012345678901234567890123456789012345678901234567890123456789012345678901" +
             "23456789012345678901234567890123456789012345678901234567890123456789012345678901" +
@@ -968,7 +968,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithValidValuesForEmployerName(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1030,14 +1030,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for EmployerName")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmployerName", "123456789012345678901234567890123456789012345678901234567890123456789012345678901" +
             "23456789012345678901234567890123456789012345678901234567890123456789012345678901" +
             "2345678901234567890123456789012345678901", null)]
         public virtual void PostEmploymentProgressionWithInvalidValuesForEmployerName(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1084,11 +1084,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EmployerName")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithNoValueForEmployerName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for EmployerName", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 392
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1149,13 +1149,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for EmployerAddress")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmployerAddress", "Some Value", null)]
         [NUnit.Framework.TestCaseAttribute("EmployerAddress", @"12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890", null)]
         public virtual void PostEmploymentProgressionWithValidValuesForEmployerAddress(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1217,12 +1217,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for EmployerAddress")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmployerAddress", @"123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901", null)]
         public virtual void PostEmploymentProgressionWithInvalidValuesForEmployerAddress(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1269,11 +1269,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EmployerAddress")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithNoValueForEmployerAddress()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for EmployerAddress", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 461
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1334,13 +1334,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for EmployerPostcode")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmployerPostcode", "DE22 4DE", null)]
         [NUnit.Framework.TestCaseAttribute("EmployerPostcode", "DE224DE", null)]
         public virtual void PostEmploymentProgressionWithValidValuesForEmployerPostcode(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1410,12 +1410,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for EmployerPostcode")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmployerPostcode", "DE22 4def", null)]
         public virtual void PostEmploymentProgressionWithInvalidValuesForEmployerPostcode(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1461,11 +1461,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EmployerPostcode")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void PostEmploymentProgressionWithNoValueForEmployerPostcode()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for EmployerPostcode", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 535
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1526,7 +1526,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for EmploymentHours")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmploymentHours", "1", null)]
         [NUnit.Framework.TestCaseAttribute("EmploymentHours", "2", null)]
         [NUnit.Framework.TestCaseAttribute("EmploymentHours", "98", null)]
@@ -1534,7 +1534,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithValidValuesForEmploymentHours(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1590,7 +1590,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for EmploymentHours")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("EmploymentHours", "0", null)]
         [NUnit.Framework.TestCaseAttribute("EmploymentHours", "-1", null)]
         [NUnit.Framework.TestCaseAttribute("EmploymentHours", "3", null)]
@@ -1599,7 +1599,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithInvalidValuesForEmploymentHours(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1640,7 +1640,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EmploymentHours and CurrentEmployme" +
             "ntStatus in 1, 4, 5, 8, 9")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "4", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "5", null)]
@@ -1649,7 +1649,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithNoValueForEmploymentHoursAndCurrentEmploymentStatusIn14589(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1699,7 +1699,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for EmploymentHours and CurrentEmployme" +
             "ntStatus not in 1, 4, 5, 8, 9")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "2", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "3", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "6", null)]
@@ -1712,7 +1712,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithNoValueForEmploymentHoursAndCurrentEmploymentStatusNotIn14589(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1775,14 +1775,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for DateOfEmployment")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Today", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Now", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "2019-08-20T00:00:00Z", null)]
         public virtual void PostEmploymentProgressionWithValidValuesForDateOfEmployment(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1838,14 +1838,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for DateOfEmployment")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Today +1D", "DateOfEmployment must be less than or equal to now", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "Now +1H", "DateOfEmployment must be less than or equal to now", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfEmployment", "2019-13-01", "Could not convert string to DateTime", null)]
         public virtual void PostEmploymentProgressionWithInvalidValuesForDateOfEmployment(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1886,7 +1886,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for DateOfEmployment and CurrentEmploym" +
             "entStatus not in 1, 4, 5, 8, 9")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "2", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "3", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "6", null)]
@@ -1899,7 +1899,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithNoValueForDateOfEmploymentAndCurrentEmploymentStatusNotIn14589(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1963,7 +1963,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with no value for DateOfEmployment and CurrentEmploym" +
             "entStatus in 1, 4, 5, 8, 9")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "4", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentEmploymentStatus", "5", null)]
@@ -1972,7 +1972,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithNoValueForDateOfEmploymentAndCurrentEmploymentStatusIn14589(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2018,7 +2018,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for DateOfLastEmployment")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "Today", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "Now", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "2019-08-20T00:00:00Z", null)]
@@ -2026,7 +2026,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithValidValuesForDateOfLastEmployment(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2082,7 +2082,7 @@ testRunner.Given(string.Format("I want to send {0} with value {1} in the followi
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for DateOfLastEmployment")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "2018-00-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "2018-05-00T09:01:00Z", "Could not convert string to DateTime", null)]
@@ -2092,7 +2092,7 @@ testRunner.Given(string.Format("I want to send {0} with value {1} in the followi
         public virtual void PostEmploymentProgressionWithInvalidValuesForDateOfLastEmployment(string field, string date, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2130,7 +2130,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with valid values for LengthOfUnemployment")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("LengthOfUnemployment", "1", null)]
         [NUnit.Framework.TestCaseAttribute("LengthOfUnemployment", "2", null)]
         [NUnit.Framework.TestCaseAttribute("LengthOfUnemployment", "3", null)]
@@ -2143,7 +2143,7 @@ this.FeatureBackground();
         public virtual void PostEmploymentProgressionWithValidValuesForLengthOfUnemployment(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2201,7 +2201,7 @@ testRunner.Given(string.Format("I want to send {0} with value {1} in the followi
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post Employment progression with invalid values for LengthOfUnemployment")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.TestCaseAttribute("LengthOfUnemployment", "-1", "Please supply a valid value for Length Of Unemployment", null)]
         [NUnit.Framework.TestCaseAttribute("LengthOfUnemployment", "0", "Please supply a valid value for Length Of Unemployment", null)]
         [NUnit.Framework.TestCaseAttribute("LengthOfUnemployment", "97", "Please supply a valid value for Length Of Unemployment", null)]
@@ -2210,7 +2210,7 @@ testRunner.Given(string.Format("I want to send {0} with value {1} in the followi
         public virtual void PostEmploymentProgressionWithInvalidValuesForLengthOfUnemployment(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "EmploymentProgression"};
+                    "employmentprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
