@@ -105,12 +105,12 @@ namespace NCS.DSS.FunctionalTests.Features.EmploymentProgression
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Employment Progression by ID")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void GetEmploymentProgressionByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Employment Progression by ID", null, new string[] {
-                        "EmploymentProgression",
+                        "employmentprogressions",
                         "Smoke"});
 #line 17
 this.ScenarioInitialize(scenarioInfo);
@@ -205,11 +205,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get All Employment Progression records where 1 exists")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void GetAllEmploymentProgressionRecordsWhere1Exists()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Employment Progression records where 1 exists", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 52
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -305,11 +305,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Employment Progression by invalid ID")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void GetEmploymentProgressionByInvalidID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Employment Progression by invalid ID", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 86
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -364,11 +364,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get All Employment Progression records where none exist")]
-        [NUnit.Framework.CategoryAttribute("EmploymentProgression")]
+        [NUnit.Framework.CategoryAttribute("employmentprogressions")]
         public virtual void GetAllEmploymentProgressionRecordsWhereNoneExist()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Employment Progression records where none exist", null, new string[] {
-                        "EmploymentProgression"});
+                        "employmentprogressions"});
 #line 104
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
