@@ -1314,7 +1314,7 @@ namespace FunctionalTests.StepDefs
                     break;
                 case "employmentprogressions":
                 case "employmentprogressions-history":
-                    recordId = learningProgressionId;
+                    recordId = employmentProgressionId;
                     addCreatedByToCollection = true;
                     addGeocode = true;
                     primaryTableId = "EmploymentProgressionId";
