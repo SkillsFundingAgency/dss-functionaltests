@@ -14,7 +14,7 @@ Background:
 		| FamilyName                 | Customer             |
 
 
-@EmploymentProgression   @smoke
+@employmentprogressions   @smoke
 Scenario:Patch Employment Progression with  all values
 	Given I post a Employment Progression record with the following details:
 	| Field                   | Value                |
@@ -68,7 +68,7 @@ Scenario:Patch Employment Progression with  all values
 ##########################################################################################################################################################################################
 ##	DateProgressionRecorded	DateTime	Y		ISO8601:2004.  <= datetime.now	Date the progression was recorded.  If the date and time is not supplied default this value to datetime.now().						
 ##########################################################################################################################################################################################
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for DateProgressionRecorded	
 	Given I post a Employment Progression record with the following details:
 		| Field                   | Value                |
@@ -108,7 +108,7 @@ Examples:
 	| DateProgressionRecorded | Today				 |
 	| DateProgressionRecorded | Now					 |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for DateProgressionRecorded	
 
 	Given I post a Employment Progression record with the following details:
@@ -135,7 +135,7 @@ Scenario Outline: Patch Employment progression with invalid values for DateProgr
 	| DateProgressionRecorded | Now +1H             | DateProgressionRecorded must be less than or equal to now. |
 	| DateProgressionRecorded | Today +1Y            | DateProgressionRecorded must be less than or equal to now. |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with no value for DateProgressionRecorded												
 
 	Given I post a Employment Progression record with the following details:
@@ -164,7 +164,7 @@ Scenario Outline: Patch Employment progression with no value for DateProgression
 ##	CurrentEmploymentStatus	enum	Y		A valid EmploymentStatus reference data item	See DSS Reference Data Resource for values 						
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for CurrentEmploymentStatus
 
 	Given I post a Employment Progression record with the following details:
@@ -205,7 +205,7 @@ Scenario Outline: Patch Employment progression with valid values for CurrentEmpl
 	| CurrentEmploymentStatus | 13    |
 	| CurrentEmploymentStatus | 99    |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for CurrentEmploymentStatus	
 
 	Given I post a Employment Progression record with the following details:
@@ -227,7 +227,7 @@ Scenario Outline: Patch Employment progression with invalid values for CurrentEm
 	| CurrentEmploymentStatus | 98    | CurrentEmploymentStatus must have a valid Employment Status |
 	| CurrentEmploymentStatus | 100   | CurrentEmploymentStatus must have a valid Employment Status |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with no value for CurrentEmploymentStatus												
 
 	Given I post a Employment Progression record with the following details:
@@ -252,7 +252,7 @@ Scenario Outline: Patch Employment progression with no value for CurrentEmployme
 	| Field                   | Value |
 	| CurrentEmploymentStatus |       |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with CurrentEmploymentStatus in 1, 4, 5, 8, 9 where no value for EmploymentHours or DateOfEmployment  exists
 
 	Given I post a Employment Progression record with the following details:
@@ -276,7 +276,7 @@ Scenario Outline: Patch Employment progression with CurrentEmploymentStatus in 1
 	| CurrentEmploymentStatus | 8     |
 	| CurrentEmploymentStatus | 9     |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with CurrentEmploymentStatus not in 1, 4, 5, 8, 9 where no value for EmploymentHours or DateOfEmployment exists
 
 	Given I post a Employment Progression record with the following details:
@@ -317,7 +317,7 @@ Scenario Outline: Patch Employment progression with CurrentEmploymentStatus not 
 ##	EconomicShockStatus	enum	Y		A valid EconomicShockStatus reference data item	See DSS Reference Data Resource for values.						
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for EconomicShockStatus												
 
 	Given I post a Employment Progression record with the following details:
@@ -347,7 +347,7 @@ Scenario Outline: Patch Employment progression with valid values for EconomicSho
 	| EconomicShockStatus | 2     |
 	| EconomicShockStatus | 3     |
 
-@EmploymentProgression 		
+@employmentprogressions 		
 Scenario Outline: Patch Employment progression with invalid values for EconomicShockStatus	
 	
 	Given I post a Employment Progression record with the following details:
@@ -371,7 +371,7 @@ Scenario Outline: Patch Employment progression with invalid values for EconomicS
 	| EconomicShockStatus | 98    |
 	| EconomicShockStatus | 99    |
 
-@EmploymentProgression 	
+@employmentprogressions 	
 Scenario: Patch Employment progression field EconomicShockStatus to value GovernmentDefinedShock where no value has been set for EconomicShockStatus
 
 	Given I post a Employment Progression record with the following details:
@@ -385,7 +385,7 @@ Scenario: Patch Employment progression field EconomicShockStatus to value Govern
 	Then there should be a 422 response
 	And the response body should include EconomicShockCode must have a value when Government Defined Economic Shock
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario: Patch Employment progression field EconomicShockStatus to value GovernmentDefinedShock where a value exists for EconomicShockStatus
 
 	Given I post a Employment Progression record with the following details:
@@ -411,7 +411,7 @@ Scenario: Patch Employment progression field EconomicShockStatus to value Govern
 	And there should be a record in the employmentprogressions ChangeFeed table
 	And there should be a record in the employmentprogressions-history ChangeFeed table
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with no value for EconomicShockStatus												
 
 	Given I post a Employment Progression record with the following details:
@@ -440,7 +440,7 @@ Scenario Outline: Patch Employment progression with no value for EconomicShockSt
 ##	EconomicShockCode	string(50)				Mandatory if EconomicShockStatus = 2 - Government defined economic shock						
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for EconomicShockCode	
 
 	Given I post a Employment Progression record with the following details:
@@ -470,7 +470,7 @@ Scenario Outline: Patch Employment progression with valid values for EconomicSho
 	| EconomicShockCode | Some Text                                          |
 	| EconomicShockCode | 12345678901234567890123456789012345678901234567890 |
 
-@EmploymentProgression 		
+@employmentprogressions 		
 Scenario Outline: Patch Employment progression with invalid values for EconomicShockCode	
 	
 	Given I post a Employment Progression record with the following details:
@@ -490,7 +490,7 @@ Scenario Outline: Patch Employment progression with invalid values for EconomicS
 	| Field             | Value                                               | 
 	| EconomicShockCode | 123456789012345678901234567890123456789012345678901 | 
 
-@EmploymentProgression 											
+@employmentprogressions 											
 Scenario Outline: Patch Employment progression with no value for EconomicShockCode
 
 	Given I post a Employment Progression record with the following details:
@@ -521,7 +521,7 @@ Scenario Outline: Patch Employment progression with no value for EconomicShockCo
 ##	EmployerName	string(200)										
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for EmployerName		
 
 	Given I post a Employment Progression record with the following details:
@@ -551,7 +551,7 @@ Scenario Outline: Patch Employment progression with valid values for EmployerNam
 	| EmployerName | Some Text                                                                                                                                                                                                |
 	| EmployerName | 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for EmployerName		
 
 	Given I post a Employment Progression record with the following details:
@@ -571,7 +571,7 @@ Scenario Outline: Patch Employment progression with invalid values for EmployerN
 	| Field        | Value                                                                                                                                                                                                     | 
 	| EmployerName | 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901 | 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with no value for EmployerName												
 
 	Given I post a Employment Progression record with the following details:
@@ -604,7 +604,7 @@ Scenario Outline: Patch Employment progression with no value for EmployerName
 ##	EmployerAddress	string(500)										
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for EmployerAddress	
 
 	Given I post a Employment Progression record with the following details:
@@ -635,7 +635,7 @@ Scenario Outline: Patch Employment progression with valid values for EmployerAdd
 	| EmployerAddress | Some Text                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 	| EmployerAddress | 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for EmployerAddress		
 
 	Given I post a Employment Progression record with the following details:
@@ -655,7 +655,7 @@ Scenario Outline: Patch Employment progression with invalid values for EmployerA
 	| Field           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 
 	| EmployerAddress | 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901123456789012345678901234567890123456789012345678901 | 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with no value for EmployerAddress	
 
 	Given I post a Employment Progression record with the following details:
@@ -691,7 +691,7 @@ Scenario Outline: Patch Employment progression with no value for EmployerAddress
 ##	EmployerPostcode	string(10)										
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for EmployerPostcode
 
 Given I post a Employment Progression record with the following details:
@@ -726,7 +726,7 @@ Given I post a Employment Progression record with the following details:
 	| EmployerPostcode | DE22 4DE |
 	| EmployerPostcode | DE224DE  |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for EmployerPostcode		
 
 	Given I post a Employment Progression record with the following details:
@@ -745,7 +745,7 @@ Scenario Outline: Patch Employment progression with invalid values for EmployerP
 	| EmployerPostcode | DE22 4def | Please enter a valid postcode |
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with no value for EmployerPostcode												
 
 	Given I post a Employment Progression record with the following details:
@@ -792,7 +792,7 @@ Scenario Outline: Patch Employment progression with no value for EmployerPostcod
 ##	EmploymentHours	enum			If CurrentEmployment status = 1, 4, 5, 8, 9 then the item must be a valid EmploymentHours reference data item	See DSS Reference Data Resource for values 						
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for EmploymentHours
 
 Given I post a Employment Progression record with the following details:
@@ -825,7 +825,7 @@ Given I post a Employment Progression record with the following details:
 	| EmploymentHours | 99    |
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for EmploymentHours	
 
 	Given I post a Employment Progression record with the following details:
@@ -846,7 +846,7 @@ Scenario Outline: Patch Employment progression with invalid values for Employmen
 	| EmploymentHours | 100   | EmploymentHours must be a valid employment hours |
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: : Patch Employment progression with no value for EmploymentHours
 
 Given I post a Employment Progression record with the following details:
@@ -880,7 +880,7 @@ Given I post a Employment Progression record with the following details:
 ##						See DSS Reference Data Resource for values 						
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for DateOfEmployment
 
 Given I post a Employment Progression record with the following details:
@@ -910,7 +910,7 @@ Given I post a Employment Progression record with the following details:
 	| DateOfEmployment | Today                |
 	| DateOfEmployment | Now                  |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for DateOfEmployment												
 
 	Given I post a Employment Progression record with the following details:
@@ -928,7 +928,7 @@ Scenario Outline: Patch Employment progression with invalid values for DateOfEmp
 	| DateOfEmployment | Now +1H   | DateOfEmployment must be less than or equal to now |
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with no value for DateOfEmployment
 
 Given I post a Employment Progression record with the following details:
@@ -962,7 +962,7 @@ Given I post a Employment Progression record with the following details:
 ##	DateOfLastEmployment	Date			ISO8601:2004 <= datetime.now	The date the customer was last in employment if they are retired, economically inactive or unemployed.  This field has been left optional in case the customer has never been in employment.						
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for DateOfLastEmployment												
 
 Given I post a Employment Progression record with the following details:
@@ -993,7 +993,7 @@ Given I post a Employment Progression record with the following details:
 	| DateOfLastEmployment | Today                |
 	| DateOfLastEmployment | Now                  |
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for DateOfLastEmployment	
 
 	Given I post a Employment Progression record with the following details:
@@ -1012,7 +1012,7 @@ Scenario Outline: Patch Employment progression with invalid values for DateOfLas
 	| DateOfLastEmployment | Now +1H              | DateOfLastEmployment must be less than or equal to now |
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Post Employment progression with no value for DateOfLastEmployment	
 
 
@@ -1047,7 +1047,7 @@ Given I post a Employment Progression record with the following details:
 ##	LengthOfUnemployment	enum			A valid LenghtOfUnemployment reference data item	See DSS Reference Data Resource for values 						
 ##########################################################################################################################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with valid values for LengthOfUnemployment	
 
    Given I post a Employment Progression record with the following details:
@@ -1084,7 +1084,7 @@ Scenario Outline: Patch Employment progression with valid values for LengthOfUne
 	| LengthOfUnemployment | 99    |
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment progression with invalid values for LengthOfUnemployment	
 
 	Given I post a Employment Progression record with the following details:
@@ -1106,7 +1106,7 @@ Scenario Outline: Patch Employment progression with invalid values for LengthOfU
 	| LengthOfUnemployment | 100   | Please supply a valid value for Length Of Unemployment |
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: : Patch Employment progression with no value for LengthOfUnemployment
 
 Given I post a Employment Progression record with the following details:
@@ -1155,7 +1155,7 @@ Given I post a Employment Progression record with the following details:
 ## GENERAL TESTS
 #############################################################################################
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario: Patch to Employment Progression received from another touchpoint
 
 		Given I post a Employment Progression record with the following details:
@@ -1182,7 +1182,7 @@ Scenario: Patch to Employment Progression received from another touchpoint
 		And there should be a record in the employmentprogressions-history ChangeFeed table
 
 
-@EmploymentProgression 
+@employmentprogressions 
 Scenario Outline: Patch Employment Progression with value for LastModifiedTouchpointID
 	
 	Given I post a Employment Progression record with the following details:

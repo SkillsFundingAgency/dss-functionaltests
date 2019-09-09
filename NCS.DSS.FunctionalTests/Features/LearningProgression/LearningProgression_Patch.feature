@@ -21,7 +21,7 @@ Background:
 	#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	#	| LastLearningProvidersUKPRN     | 12345678             |
 
-@LearningProgression  @smoke
+@learningprogressions  @smoke
 Scenario:Patch Learning Progression with  all values
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
@@ -60,7 +60,7 @@ Scenario:Patch Learning Progression with  all values
 	
 
 
-#@LearningProgression @SubcontractorId
+#@learningprogressions @SubcontractorId
 #Scenario Outline: Patch Learning Progression with SubcontractorId
 #
 #	When I patch the element <Field> with <Value>:
@@ -88,7 +88,7 @@ Scenario:Patch Learning Progression with  all values
 ###########################################################################################
 ##	DateProgressionRecorded
 ###########################################################################################
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with valid values for DateProgressionRecorded
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
@@ -119,7 +119,7 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 	| Field                          | Value                |
 	| DateProgressionRecorded        | 2019-06-19T09:01:00Z  |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with invalid DateProgressionRecorded
 
 	Given I post a Learning Progression record with the following details:
@@ -145,7 +145,7 @@ Scenario Outline: Patch Learning Progression with invalid DateProgressionRecorde
 	| DateProgressionRecorded | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with future dated DateProgressionRecorded
 
 	Given I post a Learning Progression record with the following details:
@@ -171,7 +171,7 @@ Scenario Outline: Patch Learning Progression with future dated DateProgressionRe
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with empty DateProgressionRecorded
 
 	Given I post a Learning Progression record with the following details:
@@ -204,7 +204,7 @@ Scenario Outline: Patch Learning Progression with empty DateProgressionRecorded
 ##	CurrentLearningStatus
 ###########################################################################################
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with CurrentLearningStatus
 
 	Given I post a Learning Progression record with the following details:
@@ -242,7 +242,7 @@ Scenario Outline: Patch Learning Progression with CurrentLearningStatus
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with invalid CurrentLearningStatus
 
 	Given I post a Learning Progression record with the following details:
@@ -268,7 +268,7 @@ Scenario Outline: Patch Learning Progression with invalid CurrentLearningStatus
 	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid current Learning Status |
 	
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with empty CurrentLearningStatus
 
 	Given I post a Learning Progression record with the following details:
@@ -296,7 +296,7 @@ Scenario Outline: Patch Learning Progression with empty CurrentLearningStatus
 	| Field                 | Value |
 	| CurrentLearningStatus |       |
 	
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus or LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -316,7 +316,7 @@ Scenario Outline: Patch Learning Progression with value for CurrentLearningStatu
 	| Field                 | Value | 
 	| CurrentLearningStatus | 1     | 
 
-@LearningProgression
+@learningprogressions
 Scenario: Patch Learning Progression with value for CurrentLearningStatus AND DateLearningStarted where there was no previous value for CurrentLearningStatus or LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -335,7 +335,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
 	And the number of errors returned should be 1
 	
-@LearningProgression
+@learningprogressions
 Scenario: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus or DateLearningStarted
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
@@ -353,7 +353,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus where 
 	And the response body should include "LearningHours must have a value when Current Learning Status is InLearning."
 	And the number of errors returned should be 1
 
-@LearningProgression
+@learningprogressions
 Scenario: Patch Learning Progression with value for CurrentLearningStatus AND DateLearningStarted where there was no previous value for CurrentLearningStatus or DateLearningStarted or LearningHours
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
@@ -370,7 +370,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
 	And the number of errors returned should be 1
 
-@LearningProgression
+@learningprogressions
 Scenario: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus, DateLearningStarted or LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -388,7 +388,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus where 
 	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
 	And the number of errors returned should be 2
 
-@LearningProgression
+@learningprogressions
 Scenario: Patch Learning Progression with value for CurrentLearningStatus AND DateLearningStarted AND LearningHours where there was no previous value for CurrentLearningStatus, DateLearningStarted or LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -423,7 +423,7 @@ Scenario: Patch Learning Progression with value for CurrentLearningStatus AND Da
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with LearningHours
 	
 	Given I post a Learning Progression record with the following details:
@@ -457,7 +457,7 @@ Scenario Outline: Patch Learning Progression with LearningHours
 	| LearningHours | 2     |
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with invalid LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -484,7 +484,7 @@ Scenario Outline: Patch Learning Progression with invalid LearningHours
 	
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with empty LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -516,7 +516,7 @@ Scenario Outline: Patch Learning Progression with empty LearningHours
 ##	DateLearningStarted
 ###########################################################################################
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with DateLearningStarted
 
 	Given I post a Learning Progression record with the following details:
@@ -552,7 +552,7 @@ Scenario Outline: Patch Learning Progression with DateLearningStarted
 	| DateLearningStarted | Today                |
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with invalid value for DateLearningStarted
 
 	Given I post a Learning Progression record with the following details:
@@ -577,7 +577,7 @@ Scenario Outline: Patch Learning Progression with invalid value for DateLearning
 	| DateLearningStarted | 2018-05-00T09:01:00Z  | Could not convert string to DateTime |
 	| DateLearningStarted | 2018-05-32T09:01:00Z  | Could not convert string to DateTime |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with future value for DateLearningStarted
 
 	Given I post a Learning Progression record with the following details:
@@ -605,7 +605,7 @@ Scenario Outline: Patch Learning Progression with future value for DateLearningS
 ##	CurrentQualificationLevel
 ###########################################################################################
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 
 	Given I post a Learning Progression record with the following details:
@@ -645,7 +645,7 @@ Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 	| CurrentQualificationLevel | 8     |
 	| CurrentLearningStatus     | 99    |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with invalid value for CurrentQualificationLevel
 
 	Given I post a Learning Progression record with the following details:
@@ -669,7 +669,7 @@ Scenario Outline: Patch Learning Progression with invalid value for CurrentQuali
 	| CurrentQualificationLevel | 98    | CurrentQualificationLevel must be a valid current Qualification Level |
 	| CurrentQualificationLevel | 100   | CurrentQualificationLevel must be a valid current Qualification Level |
 
-@LearningProgression
+@learningprogressions
 Scenario: Patch Learning Progression with value for CurrentQualificationLevel where there was no previous value for CurrentQualificationLevel or DateQualificationLevelAchieved
 
 	Given I post a Learning Progression record with the following details:
@@ -690,7 +690,7 @@ Scenario: Patch Learning Progression with value for CurrentQualificationLevel wh
 ##	DateQualificationLevelAchieved
 ###########################################################################################
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 	
 	Given I post a Learning Progression record with the following details:
@@ -726,7 +726,7 @@ Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 	| DateQualificationLevelAchieved | Today                |
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with invalid value for DateQualificationLevelAchieved
 
 	Given I post a Learning Progression record with the following details:
@@ -751,7 +751,7 @@ Scenario Outline: Patch Learning Progression with invalid value for DateQualific
 	| DateQualificationLevelAchieved | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
 	| DateQualificationLevelAchieved | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with future value for DateQualificationLevelAchieved
 
 	Given I post a Learning Progression record with the following details:
@@ -781,7 +781,7 @@ Scenario Outline: Patch Learning Progression with future value for DateQualifica
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 
 	Given I post a Learning Progression record with the following details:
@@ -847,7 +847,7 @@ Scenario Outline: Patch Learning Progression with invalid LastLearningProvidersU
 ##	LastModifiedDate
 ###########################################################################################
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with LastModifiedDate
 
 	Given I post a Learning Progression record with the following details:
@@ -883,7 +883,7 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 	| LastModifiedDate | Now + 1              |
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with invalid value for LastModifiedDate
 
 	Given I post a Learning Progression record with the following details:
@@ -912,7 +912,7 @@ Scenario Outline: Patch Learning Progression with invalid value for LastModified
 #############################################################################################
 ## GENERAL TESTS
 #############################################################################################
-@LearningProgression
+@learningprogressions
 Scenario: Patch to Learning Progression received from another touchpoint
 
 		Given I post a Learning Progression record with the following details:
@@ -937,7 +937,7 @@ Scenario: Patch to Learning Progression received from another touchpoint
 		And there should be a record in the learningprogressions-history ChangeFeed table
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpointID
 	
 	Given I post a Learning Progression record with the following details:
@@ -968,7 +968,7 @@ Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpoi
 	| Field                    | Value    |
 	| LastModifiedTouchpointID | 99999999 |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression with value for CreatedBy
 
 	Given I post a Learning Progression record with the following details:
@@ -1000,7 +1000,7 @@ Scenario Outline: Patch Learning Progression with value for CreatedBy
 	| Field     | Value    |
 	| CreatedBy | 99999999 |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch unknown Learning Progression record
 
 	Given I post a Learning Progression record with the following details:
@@ -1021,7 +1021,7 @@ Scenario Outline: Patch unknown Learning Progression record
 	| Field         | Value | ErrorMessage |
 	| LearningHours | 1     | PlaceHolder  |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Patch Learning Progression record with incorrect CustomerId
 
 	Given I post a Learning Progression record with the following details:

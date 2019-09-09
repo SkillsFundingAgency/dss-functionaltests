@@ -13,7 +13,7 @@ Background: Create Adviser
 		| FamilyName                 | Customer             |
 	
 
-@LearningProgression  @Smoke
+@learningprogressions  @Smoke
 Scenario:Get Learning Progression by ID
 
 	Given I post a Learning Progression record with the following details:
@@ -39,7 +39,7 @@ Scenario:Get Learning Progression by ID
 
 
 
-#@LearningProgression @subcontractorId
+#@learningprogressions @subcontractorId
 #Scenario:Get Learning Progression by ID with subcontractorId
 #
 #	Given I post a Learning Progression record with the following details:
@@ -64,7 +64,7 @@ Scenario:Get Learning Progression by ID
 #		| LastLearningProvidersUKPRN     | 12345678             |
 #		| SubcontractorId                |                      |
 
-@LearningProgression
+@learningprogressions
 Scenario:Get All Learning Progression records where 1 exists
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
@@ -89,7 +89,7 @@ Scenario:Get All Learning Progression records where 1 exists
 		| LastLearningProvidersUKPRN     | 12345678             |
 
 
-#@LearningProgression
+#@learningprogressions
 #Scenario:Get All Learning Progression records where 2 exist
 #	Given I post a Learning Progression record with the following details:
 #		| Field                          | Value                |
@@ -133,7 +133,7 @@ Scenario:Get All Learning Progression records where 1 exists
 #		| LastLearningProvidersUKPRN     | 12345679             |
 
 
-#@LearningProgression
+#@learningprogressions
 #Scenario:Get All Learning Progression records where many exist
 #	Given I post a Learning Progression record with the following details:
 #		| Field                          | Value                |
@@ -230,7 +230,7 @@ Scenario:Get All Learning Progression records where 1 exists
 #		| LastLearningProvidersUKPRN     | 12345678             |
 
 
-@LearningProgression  
+@learningprogressions  
 Scenario:Get Learning Progression by invalid ID
 	Given I post a Learning Progression record with the following details:
 			| Field                          | Value                |
@@ -248,7 +248,7 @@ Scenario:Get Learning Progression by invalid ID
 	When I get a Learning Progression by ID
 	Then there should be a 404 response
 
-@LearningProgression
+@learningprogressions
 Scenario:Get All Learning Progression records where none exist
 
 	Given I post a Learning Progression record with the following details:

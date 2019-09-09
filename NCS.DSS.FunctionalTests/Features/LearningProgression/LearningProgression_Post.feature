@@ -12,7 +12,7 @@ Background: Create Adviser
 		| FamilyName                 | Customer             |
 
 
-@LearningProgression  @smoke
+@learningprogressions  @smoke
 Scenario:Post learning progression with all values
 	Given I post a Learning Progression record with the following details:
 	| Field                          | Value                |
@@ -39,7 +39,7 @@ Scenario:Post learning progression with all values
 	And there should be a record in the learningprogressions-history ChangeFeed table
 
 
-@LearningProgression
+@learningprogressions
 Scenario:Post learning progression with all mandatory values
 	Given I post a Learning Progression record with the following details:
 	| Field                     | Value                |
@@ -62,7 +62,7 @@ Scenario:Post learning progression with all mandatory values
 	And there should be a record in the learningprogressions-history ChangeFeed table
 
 
-@LearningProgression
+@learningprogressions
 Scenario:Post learning progression supplying LastModifiedDate
 
 	Given I post a Learning Progression record with the following details:
@@ -88,7 +88,7 @@ Scenario:Post learning progression supplying LastModifiedDate
 	And there should be a record in the learningprogressions ChangeFeed table
 	And there should be a record in the learningprogressions-history ChangeFeed table
 
-@LearningProgression
+@learningprogressions
 Scenario Outline:  Post learning progression with valid values for CurrentLearningStatus
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -116,7 +116,7 @@ Scenario Outline:  Post learning progression with valid values for CurrentLearni
 	| CurrentLearningStatus     | 99    |		
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Post learning progression with valid values for LearningHours
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -143,7 +143,7 @@ Scenario Outline: Post learning progression with valid values for LearningHours
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Post learning progression with valid values for CurrentQualificationLevel
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -173,7 +173,7 @@ Scenario Outline: Post learning progression with valid values for CurrentQualifi
 	| CurrentQualificationLevel | 99    |
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Post learning progression with valid values for LastLearningProvidersUKPRN
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -200,7 +200,7 @@ Scenario Outline: Post learning progression with valid values for LastLearningPr
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Post learning progression with invalid value for LastLearningProvidersUKPRN
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -221,7 +221,7 @@ Examples:
 	| LastLearningProvidersUKPRN | sausages  | LastLearningProvidersUKPRN must be a Number.                                      |
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Post learning progression with invalid values for  CurrentLearningStatus
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -238,7 +238,7 @@ Scenario Outline: Post learning progression with invalid values for  CurrentLear
 	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid current Learning Status |
 	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid current Learning Status |
 	
-@LearningProgression
+@learningprogressions
 Scenario Outline: Post learning progression with invalid values for  LearningHours
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -255,7 +255,7 @@ Scenario Outline: Post learning progression with invalid values for  LearningHou
 	| LearningHours | 3     | placeholder  |
 	| LearningHours | 99    | placeholder  |
 
-@LearningProgression
+@learningprogressions
 Scenario Outline:Post learning progression with invalid values for  CurrentQualificationLevel
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -273,7 +273,7 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 	| CurrentQualificationLevel | 100   | CurrentQualificationLevel must be a valid current Qualification Level. |
 
 
-#@LearningProgression @SubcontractorId
+#@learningprogressions @SubcontractorId
 #Scenario:Post learning progression with subcontractor id supplied in header
 #
 #	Given I post a Learning Progression record with the following details:
@@ -303,7 +303,7 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 #	#And the response body should include SubcontractorId with value 67576575
 
 
-#@LearningProgression @MaxLengthSubcontractorId
+#@learningprogressions @MaxLengthSubcontractorId
 #Scenario:Post learning progression with subcontractor id of max length supplied in header
 #
 #	Given I post a Learning Progression record with the following details:
@@ -332,7 +332,7 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 #	And the response body should have SubcontractorId with value 12345678901234567890123456789012345678901234567890
 
 
-#@LearningProgression @invalidSubcontractorId
+#@learningprogressions @invalidSubcontractorId
 #Scenario:Post learning progression with subcontractor id greater than max length supplied in header
 #
 #	Given I post a Learning Progression record with the following details:
@@ -349,7 +349,7 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario Outline: Post learning progression with invalid dates
 	Given I want to send <Field> with value <Date> in the following request
 	Given I post a Learning Progression record with the following details:
@@ -374,7 +374,7 @@ Scenario Outline: Post learning progression with invalid dates
 	| DateLearningStarted     | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
 	| DateLearningStarted     | 2018-05-32T09:01:00Z | Could not convert string to DateTime | 
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with future timestamped value for DateProgressionRecorded
 	
 	Given I post a Learning Progression record with the following details:
@@ -386,7 +386,7 @@ Scenario: Post learning progression with future timestamped value for DateProgre
 	And the error message should be "DateProgressionRecorded must be less than or equal to now"
 	And the number of errors returned should be 1
 
-@LearningProgression	
+@learningprogressions	
 Scenario: Post learning progression with future dated value for DateProgressionRecorded 
 	
 	Given I post a Learning Progression record with the following details:
@@ -397,7 +397,7 @@ Scenario: Post learning progression with future dated value for DateProgressionR
 	Then there should be a 422 response
 	And the response body should include DateProgressionRecorded must be less than or equal to now.
 	
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with future timestamped value for DateLearningStarted
 	
 	Given I post a Learning Progression record with the following details:
@@ -409,7 +409,7 @@ Scenario: Post learning progression with future timestamped value for DateLearni
 	Then there should be a 422 response
 	And the response body should include DateLearningStarted must be less than or equal to now.
 
-@LearningProgression	
+@learningprogressions	
 Scenario: Post learning progression with future dated value for DateLearningStarted 
 	
 	Given I post a Learning Progression record with the following details:
@@ -421,7 +421,7 @@ Scenario: Post learning progression with future dated value for DateLearningStar
 	Then there should be a 422 response
 	And the response body should include DateLearningStarted must be less than or equal to now.
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with future timestamped value for DateQualificationLevelAchieved
 	
 	Given I post a Learning Progression record with the following details:
@@ -433,7 +433,7 @@ Scenario: Post learning progression with future timestamped value for DateQualif
 	Then there should be a 422 response
 	And the response body should include DateQualificationLevelAchieved must be less than or equal to now
 
-@LearningProgression	
+@learningprogressions	
 Scenario: Post learning progression with future dated value for DateQualificationLevelAchieved 
 	
 	Given I post a Learning Progression record with the following details:
@@ -445,7 +445,7 @@ Scenario: Post learning progression with future dated value for DateQualificatio
 	Then there should be a 422 response
 	And the response body should include DateQualificationLevelAchieved must be less than or equal to now.
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with In Learning status and no value for LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -460,7 +460,7 @@ Scenario: Post learning progression with In Learning status and no value for Lea
 	And the number of errors returned should be 1
 
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with In Learning status and invalid value for LearningHours
 
 	Given I post a Learning Progression record with the following details:
@@ -473,7 +473,7 @@ Scenario: Post learning progression with In Learning status and invalid value fo
 	Then there should be a 422 response
 	And the response body should include LearningHours must have a valid Learning Hours value.
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with In Learning status and no value for DateLearningStarted
 
 	Given I post a Learning Progression record with the following details:
@@ -487,7 +487,7 @@ Scenario: Post learning progression with In Learning status and no value for Dat
 	And the error message should be "DateLearningStarted must have a value when Current Learning Status is InLearning"
 	And the number of errors returned should be 1
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with In Learning status and future value for DateLearningStarted
 
 	Given I post a Learning Progression record with the following details:
@@ -500,7 +500,7 @@ Scenario: Post learning progression with In Learning status and future value for
 		Then there should be a 422 response
 		And the response body should include DateLearningStarted must be less than or equal to now.
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with a Current Qualification and no value for DateQualificationLevelAchieved
 
 	Given I post a Learning Progression record with the following details:
@@ -512,7 +512,7 @@ Scenario: Post learning progression with a Current Qualification and no value fo
 		Then there should be a 422 response
 		And the response body should include DateQualificationLevelAchieved is required when QualificationLevel < NoQualification (99).
 
-@LearningProgression
+@learningprogressions
 Scenario: Post learning progression with a Current Qualification and future value for DateQualificationLevelAchieved
 
 	Given I post a Learning Progression record with the following details:
@@ -526,7 +526,7 @@ Scenario: Post learning progression with a Current Qualification and future valu
 
 
 
-@LearningProgression
+@learningprogressions
 Scenario:Post learning progression missing CurrentLearningStatus
 
 	Given I post a Learning Progression record with the following details:
@@ -539,7 +539,7 @@ Scenario:Post learning progression missing CurrentLearningStatus
 		Then there should be a 422 response
 		And the response body should include The CurrentLearningStatus field is required
 
-@LearningProgression
+@learningprogressions
 Scenario:Post learning progression missing CurrentQualification
 
 	Given I post a Learning Progression record with the following details:
@@ -552,7 +552,7 @@ Scenario:Post learning progression missing CurrentQualification
 		Then there should be a 422 response
 		And the response body should include The CurrentQualificationLevel field is required.
 
-@LearningProgression
+@learningprogressions
 Scenario:Post learning progression missing DateProgressionRecorded
 
 

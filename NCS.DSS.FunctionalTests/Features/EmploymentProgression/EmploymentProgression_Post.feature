@@ -11,7 +11,7 @@ Background: Create Adviser
 		| GivenName   | Bob      |
 		| FamilyName  | Customer |
 
-@EmploymentProgression  @smoke
+@employmentprogressions  @smoke
 Scenario:Post employment progression with all values
 
 	Given I post a Employment Progression record with the following details:
@@ -46,7 +46,7 @@ Scenario:Post employment progression with all values
 	And there should be a record in the employmentprogressions ChangeFeed table
     And there should be a record in the employmentprogressions-history ChangeFeed table
 
-@EmploymentProgression
+@employmentprogressions
 Scenario:Post employment progression with mandatory values
 
 	Given I post a Employment Progression record with the following details:
@@ -69,7 +69,7 @@ Scenario:Post employment progression with mandatory values
 #	DateProgressionRecorded	DateTime	Y		ISO8601:2004.  <= datetime.now	Date the progression was recorded.  If the date and time is not supplied default this value to datetime.now().
 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for DateProgressionRecorded
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -92,7 +92,7 @@ Scenario Outline: Post Employment progression with valid values for DateProgress
 	| DateProgressionRecorded | Today                |
 	| DateProgressionRecorded | Now -1H              |
 
-@EmploymentProgression	
+@employmentprogressions	
 Scenario Outline: Post Employment progression with invalid values for DateProgressionRecorded
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -111,7 +111,7 @@ Scenario Outline: Post Employment progression with invalid values for DateProgre
 	| DateProgressionRecorded | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
 	| DateProgressionRecorded | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with future value for DateProgressionRecorded
 
 	Given I want to send <Field> with value <Date> in the following request
@@ -127,7 +127,7 @@ Scenario Outline: Post Employment progression with future value for DateProgress
 	| DateProgressionRecorded | Today +1D | DateProgressionRecorded must be less than or equal to now |
 	| DateProgressionRecorded | Now +1H   | DateProgressionRecorded must be less than or equal to now |
 
-@EmploymentProgression	
+@employmentprogressions	
 Scenario: Post Employment progression with no value for DateProgressionRecorded
 
 	Given I post a Employment Progression record with the following details:
@@ -140,7 +140,7 @@ Scenario: Post Employment progression with no value for DateProgressionRecorded
 
 #	CurrentEmploymentStatus	enum	Y		A valid EmploymentStatus reference data item	See DSS Reference Data Resource for values 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for CurrentEmploymentStatus
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -176,7 +176,7 @@ Scenario Outline: Post Employment progression with valid values for CurrentEmplo
 	| CurrentEmploymentStatus | 13    |
 	| CurrentEmploymentStatus | 99    |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for CurrentEmploymentStatus
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -198,7 +198,7 @@ Scenario Outline: Post Employment progression with invalid values for CurrentEmp
 	| CurrentEmploymentStatus | 98    |
 	| CurrentEmploymentStatus | 100   |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario: Post Employment progression with no value for CurrentEmploymentStatus
 
 	Given I post a Employment Progression record with the following details:
@@ -213,14 +213,14 @@ Scenario: Post Employment progression with no value for CurrentEmploymentStatus
 
 #	EconomicShockStatus	enum	Y		A valid EconomicShockStatus reference data item	See DSS Reference Data Resource for values.
 
-@EmploymentProgression
+@employmentprogressions
 Scenario: Post Employment progression with invalid values for EconomicShockStatus
 
-@EmploymentProgression
+@employmentprogressions
 Scenario: Post Employment progression with no value for EconomicShockStatus
 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EconomicShockStatus
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -251,7 +251,7 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 
 #	EconomicShockCode	string(50)				Mandatory if EconomicShockStatus = 2 - Government defined economic shock
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EconomicShockCode
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -277,7 +277,7 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 	| EconomicShockCode | Some Text                                          |
 	| EconomicShockCode | 12345678901234567890123456789012345678901234567890 |
 
-@EmploymentProgression	
+@employmentprogressions	
 Scenario Outline: Post Employment progression with invalid values for EconomicShockCode
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -297,7 +297,7 @@ Scenario Outline: Post Employment progression with invalid values for EconomicSh
 	| EconomicShockCode | 123456789012345678901234567890123456789012345678901 |
 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario: Post Employment progression with no value for EconomicShockCode where EconomicShockStatus is 2 - Government defined economic shock
 
 	Given I post a Employment Progression record with the following details:
@@ -312,7 +312,7 @@ Scenario: Post Employment progression with no value for EconomicShockCode where 
 	And the error message should be "EconomicShockCode must have a value when Government Defined Economic Shock."
 	And the number of errors returned should be 1
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with no value for EconomicShockCode where EconomicShockStatus is not 2 - Government defined economic shock
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -343,7 +343,7 @@ Scenario Outline: Post Employment progression with no value for EconomicShockCod
 
 #	EmployerName	string(200)	
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmployerName
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -369,7 +369,7 @@ Scenario Outline: Post Employment progression with valid values for EmployerName
 	| EmployerName | Some Value                                                                                                                                                                                               |
 	| EmployerName | 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EmployerName
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -388,7 +388,7 @@ Scenario Outline: Post Employment progression with invalid values for EmployerNa
 	| Field        | Value                                                                                                                                                                                                     |
 	| EmployerName | 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901 |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario: Post Employment progression with no value for EmployerName
 
 	Given I post a Employment Progression record with the following details:
@@ -412,7 +412,7 @@ Scenario: Post Employment progression with no value for EmployerName
 
 #	EmployerAddress	string(500)				
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmployerAddress
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -438,7 +438,7 @@ Scenario Outline: Post Employment progression with valid values for EmployerAddr
 	| EmployerAddress | Some Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 	| EmployerAddress | 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EmployerAddress
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -457,7 +457,7 @@ Scenario Outline: Post Employment progression with invalid values for EmployerAd
 	| Field           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 	| EmployerAddress | 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901 |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario: Post Employment progression with no value for EmployerAddress
 
 	Given I post a Employment Progression record with the following details:
@@ -482,7 +482,7 @@ Scenario: Post Employment progression with no value for EmployerAddress
 
 #	EmployerPostcode	string(10)	
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmployerPostcode
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -512,7 +512,7 @@ Scenario Outline: Post Employment progression with valid values for EmployerPost
 	| EmployerPostcode | DE22 4DE |
 	| EmployerPostcode | DE224DE  |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EmployerPostcode
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -531,7 +531,7 @@ Scenario Outline: Post Employment progression with invalid values for EmployerPo
 	| Field           | Value     |
 	| EmployerPostcode | DE22 4def |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario: Post Employment progression with no value for EmployerPostcode
 
 	Given I post a Employment Progression record with the following details:
@@ -556,19 +556,19 @@ Scenario: Post Employment progression with no value for EmployerPostcode
 #	Longitude	double				These should be hidden fields and not returned in any GET request
 #	Latitude	double	
 
-#@EmploymentProgression
+#@employmentprogressions
 #Scenario: Post Employment progression with valid values for Longitude and Latitude
 #
-#@EmploymentProgression
+#@employmentprogressions
 #Scenario: Post Employment progression with invalid values for Longitude and Latitude
 #
-#@EmploymentProgression
+#@employmentprogressions
 #Scenario: Post Employment progression with no value for Longitude and Latitude
 
 
 #	EmploymentHours	enum			If CurrentEmployment status = 1, 4, 5, 8, 9 then the item must be a valid EmploymentHours reference data item	See DSS Reference Data Resource for values 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmploymentHours
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -594,7 +594,7 @@ Scenario Outline: Post Employment progression with valid values for EmploymentHo
 	| EmploymentHours | 98    |
 	| EmploymentHours | 99    |
 
-@EmploymentProgression	
+@employmentprogressions	
 Scenario Outline: Post Employment progression with invalid values for EmploymentHours
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -615,7 +615,7 @@ Scenario Outline: Post Employment progression with invalid values for Employment
 	| EmploymentHours | 97    |
 	| EmploymentHours | 100   |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with no value for EmploymentHours and CurrentEmploymentStatus in 1, 4, 5, 8, 9 
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -638,7 +638,7 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 	| CurrentEmploymentStatus | 8     |
 	| CurrentEmploymentStatus | 9     |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with no value for EmploymentHours and CurrentEmploymentStatus not in 1, 4, 5, 8, 9 
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -674,7 +674,7 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 #	DateOfEmployment	If CurrentEmployment status = 1, 4, 5, 8, 9 then the item is mandatory, ISO8601:2004 <= datetime.now	The date the customer started employment.
 #						See DSS Reference Data Resource for values 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for DateOfEmployment
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -699,7 +699,7 @@ Scenario Outline: Post Employment progression with valid values for DateOfEmploy
 	| DateOfEmployment | Now                  |
 	| DateOfEmployment | 2019-08-20T00:00:00Z |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for DateOfEmployment
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -719,7 +719,7 @@ Scenario Outline: Post Employment progression with invalid values for DateOfEmpl
 	| DateOfEmployment | 2019-13-01 | Could not convert string to DateTime               |
 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with no value for DateOfEmployment and CurrentEmploymentStatus not in 1, 4, 5, 8, 9 
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -752,7 +752,7 @@ Scenario Outline: Post Employment progression with no value for DateOfEmployment
 	| CurrentEmploymentStatus | 13    |
 	| CurrentEmploymentStatus | 99    |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with no value for DateOfEmployment and CurrentEmploymentStatus in 1, 4, 5, 8, 9 
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -776,7 +776,7 @@ Scenario Outline: Post Employment progression with no value for DateOfEmployment
 
 #	DateOfLastEmployment	Date			ISO8601:2004 <= datetime.now	The date the customer was last in employment if they are retired, economically inactive or unemployed.  This field has been left optional in case the customer has never been in employment.
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for DateOfLastEmployment
 
 Given I want to send <Field> with value <Value> in the following request
@@ -802,7 +802,7 @@ Given I want to send <Field> with value <Value> in the following request
 	| DateOfLastEmployment | 2019-08-20T00:00:00Z |
 	| DateOfLastEmployment |                      |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for DateOfLastEmployment
 
 	Given I want to send <Field> with value <Value> in the following request
@@ -826,7 +826,7 @@ Scenario Outline: Post Employment progression with invalid values for DateOfLast
 
 #	LengthOfUnemployment	enum			A valid LenghtOfUnemployment reference data item	See DSS Reference Data Resource for values 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with valid values for LengthOfUnemployment
 
 Given I want to send <Field> with value <Value> in the following request
@@ -858,7 +858,7 @@ Given I want to send <Field> with value <Value> in the following request
 	| LengthOfUnemployment | 99    |
 	| LengthOfUnemployment |       |
 
-@EmploymentProgression
+@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for LengthOfUnemployment
 
 	Given I want to send <Field> with value <Value> in the following request

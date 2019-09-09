@@ -105,12 +105,12 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Learning Progression by ID")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void GetLearningProgressionByID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Learning Progression by ID", null, new string[] {
-                        "LearningProgression",
+                        "learningprogressions",
                         "Smoke"});
 #line 17
 this.ScenarioInitialize(scenarioInfo);
@@ -181,11 +181,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get All Learning Progression records where 1 exists")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void GetAllLearningProgressionRecordsWhere1Exists()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Learning Progression records where 1 exists", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 68
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -257,11 +257,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get Learning Progression by invalid ID")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void GetLearningProgressionByInvalidID()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Learning Progression by invalid ID", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 234
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -316,11 +316,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get All Learning Progression records where none exist")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void GetAllLearningProgressionRecordsWhereNoneExist()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Learning Progression records where none exist", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 252
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

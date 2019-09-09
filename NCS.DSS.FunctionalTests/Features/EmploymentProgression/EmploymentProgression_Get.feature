@@ -13,7 +13,7 @@ Background: Create Adviser
 		| FamilyName                 | Customer             |
 	
 
-@EmploymentProgression  @Smoke
+@employmentprogressions  @Smoke
 Scenario:Get Employment Progression by ID
 
 	Given I post a Employment Progression record with the following details:
@@ -48,7 +48,7 @@ Scenario:Get Employment Progression by ID
 
 
 
-@EmploymentProgression
+@employmentprogressions
 Scenario:Get All Employment Progression records where 1 exists
 	Given I post a Employment Progression record with the following details:
 			| Field                          | Value                |
@@ -82,7 +82,7 @@ Scenario:Get All Employment Progression records where 1 exists
 
 
 
-@EmploymentProgression  
+@employmentprogressions  
 Scenario:Get Employment Progression by invalid ID
 	Given I post a Employment Progression record with the following details:
 			| Field                          | Value                |
@@ -100,7 +100,7 @@ Scenario:Get Employment Progression by invalid ID
 	When I get a Employment Progression by ID
 	Then there should be a 404 response
 
-@EmploymentProgression
+@employmentprogressions
 Scenario:Get All Employment Progression records where none exist
 
 	Given I post a Employment Progression record with the following details:
