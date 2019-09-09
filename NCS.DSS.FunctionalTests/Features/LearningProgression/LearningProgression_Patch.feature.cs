@@ -105,12 +105,12 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with  all values")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PatchLearningProgressionWithAllValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with  all values", null, new string[] {
-                        "LearningProgression",
+                        "learningprogressions",
                         "smoke"});
 #line 25
 this.ScenarioInitialize(scenarioInfo);
@@ -217,12 +217,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with valid values for DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2019-06-19T09:01:00Z", null)]
         public virtual void PatchLearningProgressionWithValidValuesForDateProgressionRecorded(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -304,7 +304,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "gtfr-06-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-00-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
@@ -313,7 +313,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithInvalidDateProgressionRecorded(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -365,14 +365,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with future dated DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "Today +1D", "DateProgressionRecorded must be less than or equal to now.", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "Now + 1H", "DateProgressionRecorded must be less than or equal to now.", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "Today +1Y", "DateProgressionRecorded must be less than or equal to now.", null)]
         public virtual void PatchLearningProgressionWithFutureDatedDateProgressionRecorded(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -426,12 +426,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with empty DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "", null)]
         public virtual void PatchLearningProgressionWithEmptyDateProgressionRecorded(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -506,7 +506,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with CurrentLearningStatus")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "2", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "3", null)]
@@ -515,7 +515,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithCurrentLearningStatus(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -597,7 +597,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid CurrentLearningStatus")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "-1", "CurrentLearningStatus must be a valid current Learning Status", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "0", "CurrentLearningStatus must be a valid current Learning Status", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "4", "CurrentLearningStatus must be a valid current Learning Status", null)]
@@ -606,7 +606,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithInvalidCurrentLearningStatus(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -658,12 +658,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with empty CurrentLearningStatus")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "", null)]
         public virtual void PatchLearningProgressionWithEmptyCurrentLearningStatus(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -739,12 +739,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CurrentLearningStatus where there was n" +
             "o previous value for CurrentLearningStatus or LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "1", null)]
         public virtual void PatchLearningProgressionWithValueForCurrentLearningStatusWhereThereWasNoPreviousValueForCurrentLearningStatusOrLearningHours(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -797,13 +797,13 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CurrentLearningStatus AND DateLearningS" +
             "tarted where there was no previous value for CurrentLearningStatus or LearningHo" +
             "urs")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PatchLearningProgressionWithValueForCurrentLearningStatusANDDateLearningStartedWhereThereWasNoPreviousValueForCurrentLearningStatusOrLearningHours()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with value for CurrentLearningStatus AND DateLearningS" +
                     "tarted where there was no previous value for CurrentLearningStatus or LearningHo" +
                     "urs", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 320
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -859,12 +859,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CurrentLearningStatus where there was n" +
             "o previous value for CurrentLearningStatus or DateLearningStarted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PatchLearningProgressionWithValueForCurrentLearningStatusWhereThereWasNoPreviousValueForCurrentLearningStatusOrDateLearningStarted()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with value for CurrentLearningStatus where there was n" +
                     "o previous value for CurrentLearningStatus or DateLearningStarted", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 339
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -918,13 +918,13 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CurrentLearningStatus AND DateLearningS" +
             "tarted where there was no previous value for CurrentLearningStatus or DateLearni" +
             "ngStarted or LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PatchLearningProgressionWithValueForCurrentLearningStatusANDDateLearningStartedWhereThereWasNoPreviousValueForCurrentLearningStatusOrDateLearningStartedOrLearningHours()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with value for CurrentLearningStatus AND DateLearningS" +
                     "tarted where there was no previous value for CurrentLearningStatus or DateLearni" +
                     "ngStarted or LearningHours", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 357
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -978,13 +978,13 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CurrentLearningStatus where there was n" +
             "o previous value for CurrentLearningStatus, DateLearningStarted or LearningHours" +
             "")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PatchLearningProgressionWithValueForCurrentLearningStatusWhereThereWasNoPreviousValueForCurrentLearningStatusDateLearningStartedOrLearningHours()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with value for CurrentLearningStatus where there was n" +
                     "o previous value for CurrentLearningStatus, DateLearningStarted or LearningHours" +
                     "", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 374
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1038,13 +1038,13 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CurrentLearningStatus AND DateLearningS" +
             "tarted AND LearningHours where there was no previous value for CurrentLearningSt" +
             "atus, DateLearningStarted or LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PatchLearningProgressionWithValueForCurrentLearningStatusANDDateLearningStartedANDLearningHoursWhereThereWasNoPreviousValueForCurrentLearningStatusDateLearningStartedOrLearningHours()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with value for CurrentLearningStatus AND DateLearningS" +
                     "tarted AND LearningHours where there was no previous value for CurrentLearningSt" +
                     "atus, DateLearningStarted or LearningHours", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 392
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1121,13 +1121,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "1", null)]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "2", null)]
         public virtual void PatchLearningProgressionWithLearningHours(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1206,7 +1206,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "-1", "LearningHours must have a valid Learning Hours value", null)]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "0", "LearningHours must have a valid Learning Hours value", null)]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "3", "LearningHours must have a valid Learning Hours value", null)]
@@ -1215,7 +1215,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithInvalidLearningHours(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1267,12 +1267,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with empty LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "", null)]
         public virtual void PatchLearningProgressionWithEmptyLearningHours(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1347,14 +1347,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with DateLearningStarted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "2018-06-25T11:21:00Z", null)]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "Now", null)]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "Today", null)]
         public virtual void PatchLearningProgressionWithDateLearningStarted(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1436,7 +1436,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid value for DateLearningStarted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "dfgdf-06-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "2018-00-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
@@ -1445,7 +1445,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithInvalidValueForDateLearningStarted(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1497,14 +1497,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with future value for DateLearningStarted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "Today +1D", "DateLearningStarted must be less than or equal to now.", null)]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "Now + 1H", "DateLearningStarted must be less than or equal to now.", null)]
         [NUnit.Framework.TestCaseAttribute("DateLearningStarted", "Today +1Y", "DateLearningStarted must be less than or equal to now.", null)]
         public virtual void PatchLearningProgressionWithFutureValueForDateLearningStarted(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1558,7 +1558,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with CurrentQualificationLevel")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "0", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "2", null)]
@@ -1572,7 +1572,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithCurrentQualificationLevel(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1651,7 +1651,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid value for CurrentQualificationLevel")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "-1", "CurrentQualificationLevel must be a valid current Qualification Level", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "9", "CurrentQualificationLevel must be a valid current Qualification Level", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "98", "CurrentQualificationLevel must be a valid current Qualification Level", null)]
@@ -1659,7 +1659,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithInvalidValueForCurrentQualificationLevel(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1713,13 +1713,13 @@ this.FeatureBackground();
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CurrentQualificationLevel where there w" +
             "as no previous value for CurrentQualificationLevel or DateQualificationLevelAchi" +
             "eved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PatchLearningProgressionWithValueForCurrentQualificationLevelWhereThereWasNoPreviousValueForCurrentQualificationLevelOrDateQualificationLevelAchieved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with value for CurrentQualificationLevel where there w" +
                     "as no previous value for CurrentQualificationLevel or DateQualificationLevelAchi" +
                     "eved", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 673
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1768,14 +1768,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with DateQualificationLevelAchieved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "2018-06-25T11:21:00Z", null)]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "Now", null)]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "Today", null)]
         public virtual void PatchLearningProgressionWithDateQualificationLevelAchieved(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1857,7 +1857,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid value for DateQualificationLevelAchieved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "sdfg-06-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "2018-00-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
@@ -1866,7 +1866,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithInvalidValueForDateQualificationLevelAchieved(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1918,14 +1918,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with future value for DateQualificationLevelAchieved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "Today +1D", "DateQualificationLevelAchieved must be less than or equal to now", null)]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "Now + 1H", "DateQualificationLevelAchieved must be less than or equal to now", null)]
         [NUnit.Framework.TestCaseAttribute("DateQualificationLevelAchieved", "Today +1Y", "DateQualificationLevelAchieved must be less than or equal to now", null)]
         public virtual void PatchLearningProgressionWithFutureValueForDateQualificationLevelAchieved(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1979,7 +1979,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with LastLearningProvidersUKPRN")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "10000000", null)]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "10000001", null)]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "51234567", null)]
@@ -1988,7 +1988,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithLastLearningProvidersUKPRN(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2124,14 +2124,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with LastModifiedDate")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LastModifiedDate", "2019-06-19T09:01:00Z", null)]
         [NUnit.Framework.TestCaseAttribute("LastModifiedDate", "Now", null)]
         [NUnit.Framework.TestCaseAttribute("LastModifiedDate", "Now + 1", null)]
         public virtual void PatchLearningProgressionWithLastModifiedDate(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2213,7 +2213,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid value for LastModifiedDate")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LastModifiedDate", "sdrg-06-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("LastModifiedDate", "2018-00-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("LastModifiedDate", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
@@ -2222,7 +2222,7 @@ this.FeatureBackground();
         public virtual void PatchLearningProgressionWithInvalidValueForLastModifiedDate(string field, string date, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2274,11 +2274,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch to Learning Progression received from another touchpoint")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PatchToLearningProgressionReceivedFromAnotherTouchpoint()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch to Learning Progression received from another touchpoint", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 916
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2345,12 +2345,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for LastModifiedTouchpointID")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LastModifiedTouchpointID", "99999999", null)]
         public virtual void PatchLearningProgressionWithValueForLastModifiedTouchpointID(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2431,12 +2431,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with value for CreatedBy")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CreatedBy", "99999999", null)]
         public virtual void PatchLearningProgressionWithValueForCreatedBy(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2514,12 +2514,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch unknown Learning Progression record")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "1", "PlaceHolder", null)]
         public virtual void PatchUnknownLearningProgressionRecord(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2567,12 +2567,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression record with incorrect CustomerId")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "1", "PlaceHolder", null)]
         public virtual void PatchLearningProgressionRecordWithIncorrectCustomerId(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

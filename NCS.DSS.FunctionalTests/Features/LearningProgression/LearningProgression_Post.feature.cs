@@ -103,12 +103,12 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with all values")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.CategoryAttribute("smoke")]
         public virtual void PostLearningProgressionWithAllValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with all values", null, new string[] {
-                        "LearningProgression",
+                        "learningprogressions",
                         "smoke"});
 #line 16
 this.ScenarioInitialize(scenarioInfo);
@@ -185,11 +185,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with all mandatory values")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithAllMandatoryValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with all mandatory values", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -253,11 +253,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression supplying LastModifiedDate")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionSupplyingLastModifiedDate()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression supplying LastModifiedDate", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 66
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -327,7 +327,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with valid values for CurrentLearningStatus")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "2", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "3", null)]
@@ -336,7 +336,7 @@ this.FeatureBackground();
         public virtual void PostLearningProgressionWithValidValuesForCurrentLearningStatus(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -392,13 +392,13 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with valid values for LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "1", null)]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "2", null)]
         public virtual void PostLearningProgressionWithValidValuesForLearningHours(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -460,7 +460,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with valid values for CurrentQualificationLevel")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "0", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "1", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "2", null)]
@@ -474,7 +474,7 @@ this.FeatureBackground();
         public virtual void PostLearningProgressionWithValidValuesForCurrentQualificationLevel(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -527,7 +527,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with valid values for LastLearningProvidersUKPRN")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "10000000", null)]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "12345678", null)]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "54123234", null)]
@@ -536,7 +536,7 @@ this.FeatureBackground();
         public virtual void PostLearningProgressionWithValidValuesForLastLearningProvidersUKPRN(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -589,7 +589,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid value for LastLearningProvidersUKPRN")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "9999999", "The field LastLearningProvidersUKPRN must be a string with a maximum length of 8." +
             "", null)]
         [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "100000000", "The field LastLearningProvidersUKPRN must be a string with a maximum length of 8", null)]
@@ -599,7 +599,7 @@ this.FeatureBackground();
         public virtual void PostLearningProgressionWithInvalidValueForLastLearningProvidersUKPRN(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -637,7 +637,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid values for  CurrentLearningStatus")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "0", "CurrentLearningStatus must be a valid current Learning Status", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "4", "CurrentLearningStatus must be a valid current Learning Status", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "97", "CurrentLearningStatus must be a valid current Learning Status", null)]
@@ -645,7 +645,7 @@ this.FeatureBackground();
         public virtual void PostLearningProgressionWithInvalidValuesForCurrentLearningStatus(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -680,14 +680,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid values for  LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "0", "placeholder", null)]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "3", "placeholder", null)]
         [NUnit.Framework.TestCaseAttribute("LearningHours", "99", "placeholder", null)]
         public virtual void PostLearningProgressionWithInvalidValuesForLearningHours(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -725,7 +725,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid values for  CurrentQualificationLevel")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "-1", "CurrentQualificationLevel must be a valid current Qualification Level.", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "9", "CurrentQualificationLevel must be a valid current Qualification Level.", null)]
         [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "98", "CurrentQualificationLevel must be a valid current Qualification Level.", null)]
@@ -733,7 +733,7 @@ this.FeatureBackground();
         public virtual void PostLearningProgressionWithInvalidValuesForCurrentQualificationLevel(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -768,7 +768,7 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid dates")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-00-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateProgressionRecorded", "2018-05-00T09:01:00Z", "Could not convert string to DateTime", null)]
@@ -781,7 +781,7 @@ this.FeatureBackground();
         public virtual void PostLearningProgressionWithInvalidDates(string field, string date, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "LearningProgression"};
+                    "learningprogressions"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -823,12 +823,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with future timestamped value for DateProgressionRecord" +
             "ed")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithFutureTimestampedValueForDateProgressionRecorded()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future timestamped value for DateProgressionRecord" +
                     "ed", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 378
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -862,11 +862,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with future dated value for DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithFutureDatedValueForDateProgressionRecorded()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future dated value for DateProgressionRecorded", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 390
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -898,11 +898,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with future timestamped value for DateLearningStarted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithFutureTimestampedValueForDateLearningStarted()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future timestamped value for DateLearningStarted", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 401
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -937,11 +937,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with future dated value for DateLearningStarted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithFutureDatedValueForDateLearningStarted()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future dated value for DateLearningStarted", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 413
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -977,12 +977,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with future timestamped value for DateQualificationLeve" +
             "lAchieved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithFutureTimestampedValueForDateQualificationLevelAchieved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future timestamped value for DateQualificationLeve" +
                     "lAchieved", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 425
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1018,12 +1018,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with future dated value for DateQualificationLevelAchie" +
             "ved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithFutureDatedValueForDateQualificationLevelAchieved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future dated value for DateQualificationLevelAchie" +
                     "ved", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 437
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1058,11 +1058,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with In Learning status and no value for LearningHours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithInLearningStatusAndNoValueForLearningHours()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and no value for LearningHours", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 449
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1100,12 +1100,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with In Learning status and invalid value for LearningH" +
             "ours")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithInLearningStatusAndInvalidValueForLearningHours()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and invalid value for LearningH" +
                     "ours", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 464
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1144,12 +1144,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with In Learning status and no value for DateLearningSt" +
             "arted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithInLearningStatusAndNoValueForDateLearningStarted()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and no value for DateLearningSt" +
                     "arted", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 477
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1190,12 +1190,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with In Learning status and future value for DateLearni" +
             "ngStarted")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithInLearningStatusAndFutureValueForDateLearningStarted()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and future value for DateLearni" +
                     "ngStarted", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 491
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1234,12 +1234,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with a Current Qualification and no value for DateQuali" +
             "ficationLevelAchieved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithACurrentQualificationAndNoValueForDateQualificationLevelAchieved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with a Current Qualification and no value for DateQuali" +
                     "ficationLevelAchieved", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 504
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1275,12 +1275,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with a Current Qualification and future value for DateQ" +
             "ualificationLevelAchieved")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionWithACurrentQualificationAndFutureValueForDateQualificationLevelAchieved()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with a Current Qualification and future value for DateQ" +
                     "ualificationLevelAchieved", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 516
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1315,11 +1315,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression missing CurrentLearningStatus")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionMissingCurrentLearningStatus()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression missing CurrentLearningStatus", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 530
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1356,11 +1356,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression missing CurrentQualification")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionMissingCurrentQualification()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression missing CurrentQualification", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 543
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1398,11 +1398,11 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression missing DateProgressionRecorded")]
-        [NUnit.Framework.CategoryAttribute("LearningProgression")]
+        [NUnit.Framework.CategoryAttribute("learningprogressions")]
         public virtual void PostLearningProgressionMissingDateProgressionRecorded()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression missing DateProgressionRecorded", null, new string[] {
-                        "LearningProgression"});
+                        "learningprogressions"});
 #line 556
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
