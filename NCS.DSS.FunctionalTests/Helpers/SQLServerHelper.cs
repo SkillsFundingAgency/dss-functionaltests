@@ -1,4 +1,4 @@
-﻿
+
 using FluentAssertions;
 using Newtonsoft.Json;
 using System;
@@ -72,16 +72,23 @@ namespace NCS.DSS.FunctionalTests.Helpers
             string sql = @"select* from[" + table + "] where id = '" + recordId + "'";
             if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
             {
-                using (SqlCommand cmd = new SqlCommand(sql, Connection))
+                try
                 {
-
-                    SqlDataReader reader = cmd.ExecuteReader();//(CommandBehavior.CloseConnection);
-
-                    if (reader.HasRows)
+                    using (SqlCommand cmd = new SqlCommand(sql, Connection))
                     {
-                        returnValue = true;  // data exists
+
+                        SqlDataReader reader = cmd.ExecuteReader();//(CommandBehavior.CloseConnection);
+
+                        if (reader.HasRows)
+                        {
+                            returnValue = true;  // data exists
+                        }
+                        reader.Close();
                     }
-                    reader.Close();
+                }
+                catch (SqlException se)
+                {
+                    Console.WriteLine(se);
                 }
             }
             return returnValue;
@@ -101,12 +108,18 @@ namespace NCS.DSS.FunctionalTests.Helpers
             Console.WriteLine("SQLHelper: sql: " + sql);
             if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
             {
-                using (SqlCommand cmd = new SqlCommand(sql, Connection))
-                {
+                try { 
+                    using (SqlCommand cmd = new SqlCommand(sql, Connection))
+                    {
 
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = cmd;
-                    da.Fill(ds);
+                        SqlDataAdapter da = new SqlDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(ds);
+                    }
+                }
+                catch (SqlException se)
+                {
+                    Console.WriteLine(se);
                 }
             }
             return ds;
@@ -121,12 +134,19 @@ namespace NCS.DSS.FunctionalTests.Helpers
 
             if (Connection.State == System.Data.ConnectionState.Open || OpenConnection())
             {
-                using (SqlCommand cmd = new SqlCommand(sql, Connection))
+                try
+                { 
+                    using (SqlCommand cmd = new SqlCommand(sql, Connection))
+                    {
+                        returnValueString = cmd.ExecuteScalar().ToString(); ;
+                        //SqlDataAdapter da = new SqlDataAdapter();
+                        //da.SelectCommand = cmd;
+                        //da.Fill(ds);
+                    }
+                }
+                catch (SqlException se)
                 {
-                    returnValueString = cmd.ExecuteScalar().ToString(); ;
-                    //SqlDataAdapter da = new SqlDataAdapter();
-                    //da.SelectCommand = cmd;
-                    //da.Fill(ds);
+                    Console.WriteLine(se);
                 }
             }
             return long.Parse(returnValueString);
