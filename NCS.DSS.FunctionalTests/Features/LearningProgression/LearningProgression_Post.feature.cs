@@ -590,11 +590,12 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid value for LastLearningProvidersUKPRN")]
         [NUnit.Framework.CategoryAttribute("LearningProgression")]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "9999999", "LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "100000000", "LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "a", "LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "a1234567", "LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "sausages", "LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "9999999", "The field LastLearningProvidersUKPRN must be a string with a maximum length of 8." +
+            "", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "100000000", "The field LastLearningProvidersUKPRN must be a string with a maximum length of 8", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "a", "LastLearningProvidersUKPRN must be a Number.", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "a1234567", "LastLearningProvidersUKPRN must be a Number.", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "sausages", "LastLearningProvidersUKPRN must be a Number.", null)]
         public virtual void PostLearningProgressionWithInvalidValueForLastLearningProvidersUKPRN(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -637,10 +638,10 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid values for  CurrentLearningStatus")]
         [NUnit.Framework.CategoryAttribute("LearningProgression")]
-        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "0", "CurrentLearningStatus must be a valid learning status", null)]
-        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "4", "CurrentLearningStatus must be a valid learning status", null)]
-        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "97", "CurrentLearningStatus must be a valid learning status", null)]
-        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "100", "CurrentLearningStatus must be a valid learning status", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "0", "CurrentLearningStatus must be a valid current Learning Status", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "4", "CurrentLearningStatus must be a valid current Learning Status", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "97", "CurrentLearningStatus must be a valid current Learning Status", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentLearningStatus", "100", "CurrentLearningStatus must be a valid current Learning Status", null)]
         public virtual void PostLearningProgressionWithInvalidValuesForCurrentLearningStatus(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -650,12 +651,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with invalid values for  CurrentLearningStatus", null, @__tags);
-#line 226
+#line 225
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 227
+#line 226
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -667,11 +668,11 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "CurrentQualificationLevel",
                         "99"});
-#line 228
+#line 227
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table18, "Given ");
-#line 232
+#line 231
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 233
+#line 232
  testRunner.And(string.Format("the response body should include {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -692,12 +693,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with invalid values for  LearningHours", null, @__tags);
-#line 243
+#line 242
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 244
+#line 243
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -712,11 +713,11 @@ this.FeatureBackground();
             table19.AddRow(new string[] {
                         "CurrentQualificationLevel",
                         "1"});
-#line 245
+#line 244
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table19, "Given ");
-#line 250
+#line 249
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 251
+#line 250
  testRunner.And("the response body should include DateLearningStarted must have a value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -725,10 +726,10 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Post learning progression with invalid values for  CurrentQualificationLevel")]
         [NUnit.Framework.CategoryAttribute("LearningProgression")]
-        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "-1", "Please supply a valid value for CurrentQualificationLevel.", null)]
-        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "9", "Please supply a valid value for CurrentQualificationLevel.", null)]
-        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "98", "Please supply a valid value for CurrentQualificationLevel.", null)]
-        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "100", "Please supply a valid value for CurrentQualificationLevel.", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "-1", "CurrentQualificationLevel must be a valid current Qualification Level.", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "9", "CurrentQualificationLevel must be a valid current Qualification Level.", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "98", "CurrentQualificationLevel must be a valid current Qualification Level.", null)]
+        [NUnit.Framework.TestCaseAttribute("CurrentQualificationLevel", "100", "CurrentQualificationLevel must be a valid current Qualification Level.", null)]
         public virtual void PostLearningProgressionWithInvalidValuesForCurrentQualificationLevel(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -738,12 +739,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with invalid values for  CurrentQualificationLevel", null, @__tags);
-#line 260
+#line 259
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 261
+#line 260
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -755,11 +756,11 @@ this.FeatureBackground();
             table20.AddRow(new string[] {
                         "CurrentLearningStatus",
                         "99"});
-#line 262
+#line 261
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table20, "Given ");
-#line 266
+#line 265
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 267
+#line 266
  testRunner.And(string.Format("the response body should include {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -786,12 +787,12 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with invalid dates", null, @__tags);
-#line 354
+#line 353
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 355
+#line 354
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, date), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -809,11 +810,11 @@ this.FeatureBackground();
             table21.AddRow(new string[] {
                         "CurrentQualificationLevel",
                         "99"});
-#line 356
+#line 355
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table21, "Given ");
-#line 362
+#line 361
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 363
+#line 362
  testRunner.And(string.Format("the response body should include {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -828,7 +829,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future timestamped value for DateProgressionRecord" +
                     "ed", null, new string[] {
                         "LearningProgression"});
-#line 379
+#line 378
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -846,14 +847,14 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         "CurrentQualificationLevel",
                         "99"});
-#line 381
+#line 380
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table22, "Given ");
-#line 386
+#line 385
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 387
+#line 386
  testRunner.And("the error message should be \"DateProgressionRecorded must be less than or equal t" +
                     "o now\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 388
+#line 387
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -866,7 +867,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future dated value for DateProgressionRecorded", null, new string[] {
                         "LearningProgression"});
-#line 391
+#line 390
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -884,11 +885,11 @@ this.FeatureBackground();
             table23.AddRow(new string[] {
                         "CurrentQualificationLevel",
                         "1"});
-#line 393
+#line 392
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table23, "Given ");
-#line 398
+#line 397
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 399
+#line 398
  testRunner.And("the response body should include DateProgressionRecorded must be less than or equ" +
                     "al to now.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -902,7 +903,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future timestamped value for DateLearningStarted", null, new string[] {
                         "LearningProgression"});
-#line 402
+#line 401
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -923,11 +924,11 @@ this.FeatureBackground();
             table24.AddRow(new string[] {
                         "DateLearningStarted",
                         "Now + 1H"});
-#line 404
+#line 403
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table24, "Given ");
-#line 410
+#line 409
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 411
+#line 410
  testRunner.And("the response body should include DateLearningStarted must be less than or equal t" +
                     "o now.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -941,7 +942,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future dated value for DateLearningStarted", null, new string[] {
                         "LearningProgression"});
-#line 414
+#line 413
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -962,11 +963,11 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "DateLearningStarted",
                         "Now +1D"});
-#line 416
+#line 415
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table25, "Given ");
-#line 422
+#line 421
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 423
+#line 422
  testRunner.And("the response body should include DateLearningStarted must be less than or equal t" +
                     "o now.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -982,7 +983,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future timestamped value for DateQualificationLeve" +
                     "lAchieved", null, new string[] {
                         "LearningProgression"});
-#line 426
+#line 425
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1003,11 +1004,11 @@ this.FeatureBackground();
             table26.AddRow(new string[] {
                         "DateQualificationLevelAchieved",
                         "Now + 1H"});
-#line 428
+#line 427
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table26, "Given ");
-#line 434
+#line 433
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 435
+#line 434
  testRunner.And("the response body should include DateQualificationLevelAchieved must be less than" +
                     " or equal to now", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1023,7 +1024,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with future dated value for DateQualificationLevelAchie" +
                     "ved", null, new string[] {
                         "LearningProgression"});
-#line 438
+#line 437
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1044,11 +1045,11 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "DateQualificationLevelAchieved",
                         "Now +1D"});
-#line 440
+#line 439
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table27, "Given ");
-#line 446
+#line 445
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 447
+#line 446
  testRunner.And("the response body should include DateQualificationLevelAchieved must be less than" +
                     " or equal to now.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1062,7 +1063,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and no value for LearningHours", null, new string[] {
                         "LearningProgression"});
-#line 450
+#line 449
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1083,14 +1084,14 @@ this.FeatureBackground();
             table28.AddRow(new string[] {
                         "CurrentQualificationLevel",
                         "99"});
-#line 452
+#line 451
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table28, "Given ");
-#line 459
+#line 458
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 460
+#line 459
  testRunner.And("the response body should include LearningHours must have a value when Current Lea" +
                     "rning Status is InLearning", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 461
+#line 460
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1105,7 +1106,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and invalid value for LearningH" +
                     "ours", null, new string[] {
                         "LearningProgression"});
-#line 465
+#line 464
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1129,11 +1130,11 @@ this.FeatureBackground();
             table29.AddRow(new string[] {
                         "LearningHours",
                         "93"});
-#line 467
+#line 466
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table29, "Given ");
-#line 474
+#line 473
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 475
+#line 474
  testRunner.And("the response body should include LearningHours must have a valid Learning Hours v" +
                     "alue.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1149,7 +1150,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and no value for DateLearningSt" +
                     "arted", null, new string[] {
                         "LearningProgression"});
-#line 478
+#line 477
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1173,14 +1174,14 @@ this.FeatureBackground();
             table30.AddRow(new string[] {
                         "DateLearningStarted",
                         ""});
-#line 480
+#line 479
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table30, "Given ");
-#line 487
+#line 486
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 488
+#line 487
  testRunner.And("the error message should be \"DateLearningStarted must have a value when Current L" +
                     "earning Status is InLearning\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 489
+#line 488
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1195,7 +1196,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with In Learning status and future value for DateLearni" +
                     "ngStarted", null, new string[] {
                         "LearningProgression"});
-#line 492
+#line 491
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1219,11 +1220,11 @@ this.FeatureBackground();
             table31.AddRow(new string[] {
                         "DateLearningStarted",
                         "Now +1H"});
-#line 494
+#line 493
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table31, "Given ");
-#line 501
+#line 500
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 502
+#line 501
   testRunner.And("the response body should include DateLearningStarted must be less than or equal t" +
                     "o now.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1239,7 +1240,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with a Current Qualification and no value for DateQuali" +
                     "ficationLevelAchieved", null, new string[] {
                         "LearningProgression"});
-#line 505
+#line 504
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1260,13 +1261,13 @@ this.FeatureBackground();
             table32.AddRow(new string[] {
                         "DateQualificationLevelAchieved",
                         ""});
-#line 507
+#line 506
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table32, "Given ");
-#line 513
+#line 512
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 514
-  testRunner.And("the response body should include When QualificationLevel < NoQualification (99) a" +
-                    " valid value is required for DateQualificationLevelAchieved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 513
+  testRunner.And("the response body should include DateQualificationLevelAchieved is required when " +
+                    "QualificationLevel < NoQualification (99).", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1280,7 +1281,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression with a Current Qualification and future value for DateQ" +
                     "ualificationLevelAchieved", null, new string[] {
                         "LearningProgression"});
-#line 517
+#line 516
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1301,11 +1302,11 @@ this.FeatureBackground();
             table33.AddRow(new string[] {
                         "DateQualificationLevelAchieved",
                         "Now +1H"});
-#line 519
+#line 518
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table33, "Given ");
-#line 525
+#line 524
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 526
+#line 525
   testRunner.And("the response body should include DateQualificationLevelAchieved must be less than" +
                     " or equal to now", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1319,7 +1320,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression missing CurrentLearningStatus", null, new string[] {
                         "LearningProgression"});
-#line 531
+#line 530
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1343,11 +1344,11 @@ this.FeatureBackground();
             table34.AddRow(new string[] {
                         "LastLearningProvidersUKPRN",
                         "00000000"});
-#line 533
+#line 532
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table34, "Given ");
-#line 540
+#line 539
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 541
+#line 540
   testRunner.And("the response body should include The CurrentLearningStatus field is required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1360,7 +1361,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression missing CurrentQualification", null, new string[] {
                         "LearningProgression"});
-#line 544
+#line 543
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1384,11 +1385,11 @@ this.FeatureBackground();
             table35.AddRow(new string[] {
                         "LastLearningProvidersUKPRN",
                         "00000000"});
-#line 546
+#line 545
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table35, "Given ");
-#line 553
+#line 552
   testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 554
+#line 553
   testRunner.And("the response body should include The CurrentQualificationLevel field is required." +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1402,7 +1403,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post learning progression missing DateProgressionRecorded", null, new string[] {
                         "LearningProgression"});
-#line 557
+#line 556
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -1426,11 +1427,11 @@ this.FeatureBackground();
             table36.AddRow(new string[] {
                         "LastLearningProvidersUKPRN",
                         "00000000"});
-#line 560
+#line 559
  testRunner.Given("I post a Learning Progression record with the following details:", ((string)(null)), table36, "Given ");
-#line 567
+#line 566
   testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 568
+#line 567
   testRunner.And("the date field DateProgressionRecorded should hold a recent value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

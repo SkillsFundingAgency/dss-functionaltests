@@ -213,13 +213,12 @@ Scenario Outline: Post learning progression with invalid value for LastLearningP
 		And the response body should include <ErrorMessage>
 
 Examples:
-	| Field                      | Value                      | ErrorMessage                                                                  |
-#	|                           | LastLearningProvidersUKPRN | 00000000                                                                      |
-	| LastLearningProvidersUKPRN | 9999999                    | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
-	| LastLearningProvidersUKPRN | 100000000                  | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
-	| LastLearningProvidersUKPRN | a                          | LastLearningProvidersUKPRN must be exactly 8 numeric digits in length.        |
-	| LastLearningProvidersUKPRN | a1234567                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
-	| LastLearningProvidersUKPRN | sausages                   | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999) |
+	| Field                      | Value     | ErrorMessage                                                                      |
+	| LastLearningProvidersUKPRN | 9999999   | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. |
+	| LastLearningProvidersUKPRN | 100000000 | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8  |
+	| LastLearningProvidersUKPRN | a         | LastLearningProvidersUKPRN must be a Number.                                      |
+	| LastLearningProvidersUKPRN | a1234567  | LastLearningProvidersUKPRN must be a Number.                                      |
+	| LastLearningProvidersUKPRN | sausages  | LastLearningProvidersUKPRN must be a Number.                                      |
 
 
 @LearningProgression
@@ -233,11 +232,11 @@ Scenario Outline: Post learning progression with invalid values for  CurrentLear
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                 | Value | ErrorMessage                                          |
-	| CurrentLearningStatus | 0     | CurrentLearningStatus must be a valid learning status |
-	| CurrentLearningStatus | 4     | CurrentLearningStatus must be a valid learning status |
-	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid learning status |
-	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid learning status |
+	| Field                 | Value | ErrorMessage                                                  |
+	| CurrentLearningStatus | 0     | CurrentLearningStatus must be a valid current Learning Status |
+	| CurrentLearningStatus | 4     | CurrentLearningStatus must be a valid current Learning Status |
+	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid current Learning Status |
+	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid current Learning Status |
 	
 @LearningProgression
 Scenario Outline: Post learning progression with invalid values for  LearningHours
@@ -267,11 +266,11 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 	And the response body should include <ErrorMessage>
 	
 	Examples:
-	| Field                     | Value | ErrorMessage                                               |
-	| CurrentQualificationLevel | -1    | Please supply a valid value for CurrentQualificationLevel. |
-	| CurrentQualificationLevel | 9     | Please supply a valid value for CurrentQualificationLevel. |
-	| CurrentQualificationLevel | 98    | Please supply a valid value for CurrentQualificationLevel. |
-	| CurrentQualificationLevel | 100   | Please supply a valid value for CurrentQualificationLevel. |
+	| Field                     | Value | ErrorMessage                                                           |
+	| CurrentQualificationLevel | -1    | CurrentQualificationLevel must be a valid current Qualification Level. |
+	| CurrentQualificationLevel | 9     | CurrentQualificationLevel must be a valid current Qualification Level. |
+	| CurrentQualificationLevel | 98    | CurrentQualificationLevel must be a valid current Qualification Level. |
+	| CurrentQualificationLevel | 100   | CurrentQualificationLevel must be a valid current Qualification Level. |
 
 
 #@LearningProgression @SubcontractorId
@@ -511,7 +510,7 @@ Scenario: Post learning progression with a Current Qualification and no value fo
 		| CurrentQualificationLevel      | 1     |
 		| DateQualificationLevelAchieved |       |
 		Then there should be a 422 response
-		And the response body should include When QualificationLevel < NoQualification (99) a valid value is required for DateQualificationLevelAchieved
+		And the response body should include DateQualificationLevelAchieved is required when QualificationLevel < NoQualification (99).
 
 @LearningProgression
 Scenario: Post learning progression with a Current Qualification and future value for DateQualificationLevelAchieved

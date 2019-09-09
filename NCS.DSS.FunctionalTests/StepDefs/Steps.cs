@@ -477,7 +477,7 @@ namespace FunctionalTests.StepDefs
             }
 
             url = PostRequest(envSettings.BaseUrl, json2, constants.EmploymentProgressions);
-            learningProgressionId = id;
+            employmentProgressionId = id;
         }
 
 
@@ -788,7 +788,7 @@ namespace FunctionalTests.StepDefs
         [When(@"I get all Employment Progression records for a customer")]
         public void WhenIGetAllEmploymentProgressionRecordsForACustomer()
         {
-            url = envSettings.BaseUrl + "EmploymentProgression/api/Customers/" + customerId + "/EmploymentProgressions/";
+            url = envSettings.BaseUrl + "EmploymentProgressions/api/Customers/" + customerId + "/EmploymentProgressions/";
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 

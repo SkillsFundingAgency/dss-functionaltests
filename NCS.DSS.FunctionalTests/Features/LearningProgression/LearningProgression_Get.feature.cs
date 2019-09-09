@@ -249,9 +249,6 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "LastLearningProvidersUKPRN",
                         "12345678"});
-            table6.AddRow(new string[] {
-                        "SubcontractorId",
-                        ""});
 #line 81
  testRunner.And("the response body should incorporate a document with the following details:", ((string)(null)), table6, "And ");
 #line hidden
@@ -312,7 +309,7 @@ this.FeatureBackground();
 #line 248
  testRunner.When("I get a Learning Progression by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 249
- testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -371,7 +368,7 @@ this.FeatureBackground();
 #line 267
  testRunner.When("I get all Learning Progression records for a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 268
- testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

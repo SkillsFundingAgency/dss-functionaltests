@@ -87,7 +87,7 @@ Scenario:Get All Learning Progression records where 1 exists
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-		| SubcontractorId                |                      |
+
 
 #@LearningProgression
 #Scenario:Get All Learning Progression records where 2 exist
@@ -246,7 +246,7 @@ Scenario:Get Learning Progression by invalid ID
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
 	When I get a Learning Progression by ID
-	Then there should be a 204 response
+	Then there should be a 404 response
 
 @LearningProgression
 Scenario:Get All Learning Progression records where none exist
@@ -265,4 +265,4 @@ Scenario:Get All Learning Progression records where none exist
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
 	When I get all Learning Progression records for a customer
-	Then there should be a 204 response
+	Then there should be a 404 response

@@ -2067,14 +2067,14 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Patch Learning Progression with invalid LastLearningProvidersUKPRN")]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "9999999", "The field LastLearningProvidersUKPRN must be a string with a maximum length of 8." +
-            "", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "1", "The field LastLearningProvidersUKPRN must be a string with a maximum length of 8." +
-            "", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "1234567A", "LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "abcdefgh", "LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "100000000", "The field LastLearningProvidersUKPRN must be a string with a maximum length of 8." +
-            "", "2", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "9999999", "The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 " +
+            "and a maximum length of 8", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "1", "The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 " +
+            "and a maximum length of 8.", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "1234567A", "LastLearningProvidersUKPRN must be a Number", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "abcdefgh", "LastLearningProvidersUKPRN must be a Number", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("LastLearningProvidersUKPRN", "100000000", "The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 " +
+            "and a maximum length of 8", "1", null)]
         public virtual void PatchLearningProgressionWithInvalidLastLearningProvidersUKPRN(string field, string value, string errorMessage, string errorCount, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Learning Progression with invalid LastLearningProvidersUKPRN", null, exampleTags);

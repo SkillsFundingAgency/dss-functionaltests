@@ -835,12 +835,12 @@ Scenario Outline: Patch Learning Progression with invalid LastLearningProvidersU
 	And the number of errors returned should be <ErrorCount>
 	
 	Examples:
-	| Field                      | Value     | ErrorMessage                                                                      | ErrorCount |
-	| LastLearningProvidersUKPRN | 9999999   | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. | 1          |
-	| LastLearningProvidersUKPRN | 1         | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. | 1          |
-	| LastLearningProvidersUKPRN | 1234567A  | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)     | 1          |
-	| LastLearningProvidersUKPRN | abcdefgh  | LastLearningProvidersUKPRN must be a Number (and between 10000000 - 99999999)     | 1          |
-	| LastLearningProvidersUKPRN | 100000000 | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. | 2          |
+	| Field                      | Value     | ErrorMessage                                                                                                | ErrorCount |
+	| LastLearningProvidersUKPRN | 9999999   | The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 and a maximum length of 8  | 1          |
+	| LastLearningProvidersUKPRN | 1         | The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 and a maximum length of 8. | 1          |
+	| LastLearningProvidersUKPRN | 1234567A  | LastLearningProvidersUKPRN must be a Number                                                                 | 1          |
+	| LastLearningProvidersUKPRN | abcdefgh  | LastLearningProvidersUKPRN must be a Number                                                                 | 1          |
+	| LastLearningProvidersUKPRN | 100000000 | The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 and a maximum length of 8  | 1          |
 
 
 ###########################################################################################
