@@ -92,7 +92,6 @@ Scenario:Patch Learning Progression with  all values
 Scenario Outline: Patch Learning Progression with valid values for DateProgressionRecorded
 	Given I post a Learning Progression record with the following details:
 		| Field                          | Value                |
-		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
 		| CurrentLearningStatus          | 1                    |
 		| LearningHours                  | 1                    |
 		| DateLearningStarted            | 2019-06-25T11:21:00Z |
@@ -103,7 +102,7 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 	Then there should be a 200 response
 	And the response body should have <Field> with value <Value>
 	And the response body should contain:
-	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+	| Field                          | Value                |
 	| CurrentLearningStatus          | 1                    |
 	| LearningHours                  | 1                    |
 	| DateLearningStarted            | 2019-06-25T11:21:00Z |

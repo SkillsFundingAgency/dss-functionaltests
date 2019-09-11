@@ -196,8 +196,23 @@ Scenario Outline: Post learning progression with valid values for LastLearningPr
 	| LastLearningProvidersUKPRN | 12345678 |
 	| LastLearningProvidersUKPRN | 54123234 |
 	| LastLearningProvidersUKPRN | 99999999 |
-	| LastLearningProvidersUKPRN |          |
+	#| LastLearningProvidersUKPRN |          |
 
+@learningprogressions
+Scenario: Post learning progression with no value for LastLearningProvidersUKPRN
+	Given I want to send <Field> with value <Value> in the following request
+	Given I post a Learning Progression record with the following details:
+	| Field                     | Value                |
+	| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
+	| CurrentLearningStatus     | 99                   |
+	| CurrentQualificationLevel | 99                   |
+	Then there should be a 201 response
+	And the response body should contain:
+	| Field                      | Value                |
+	| DateProgressionRecorded    | 2018-06-19T09:01:00Z |
+	| CurrentLearningStatus      | 99                   |
+	| CurrentQualificationLevel  | 99                   |
+	| LastLearningProvidersUKPRN |                      |
 
 
 @learningprogressions
@@ -213,12 +228,12 @@ Scenario Outline: Post learning progression with invalid value for LastLearningP
 		And the response body should include <ErrorMessage>
 
 Examples:
-	| Field                      | Value     | ErrorMessage                                                                      |
-	| LastLearningProvidersUKPRN | 9999999   | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8. |
-	| LastLearningProvidersUKPRN | 100000000 | The field LastLearningProvidersUKPRN must be a string with a maximum length of 8  |
-	| LastLearningProvidersUKPRN | a         | LastLearningProvidersUKPRN must be a Number.                                      |
-	| LastLearningProvidersUKPRN | a1234567  | LastLearningProvidersUKPRN must be a Number.                                      |
-	| LastLearningProvidersUKPRN | sausages  | LastLearningProvidersUKPRN must be a Number.                                      |
+	| Field                      | Value     | ErrorMessage                                                                                                |
+	| LastLearningProvidersUKPRN | 9999999   | The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 and a maximum length of 8. |
+	| LastLearningProvidersUKPRN | 100000000 | The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 and a maximum length of 8. |
+	| LastLearningProvidersUKPRN | a         | LastLearningProvidersUKPRN must be a Number.                                                                |
+	| LastLearningProvidersUKPRN | a1234567  | LastLearningProvidersUKPRN must be a Number.                                                                |
+	| LastLearningProvidersUKPRN | sausages  | LastLearningProvidersUKPRN must be a Number.                                                                |
 
 
 @learningprogressions

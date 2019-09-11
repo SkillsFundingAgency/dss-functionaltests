@@ -563,8 +563,8 @@ namespace FunctionalTests.StepDefs
         {
             // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
             // otherwise  post and patch change feed may get wrapped up into one.
-            (requestContext.GetResponseCode(resource) == HttpStatusCode.Created || requestContext.GetResponseCode(resource) == HttpStatusCode.OK).Should().BeTrue("Temp check see code");
-//            requestContext.GetResponseCode(resource).Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
+//            (requestContext.GetResponseCode(resource) == HttpStatusCode.Created || requestContext.GetResponseCode(resource) == HttpStatusCode.OK).Should().BeTrue("Temp check see code");
+            requestContext.GetResponseCode(resource).Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
             ThenThereShouldBeARecordInTheChangeFeedTable(resource);
 
 
