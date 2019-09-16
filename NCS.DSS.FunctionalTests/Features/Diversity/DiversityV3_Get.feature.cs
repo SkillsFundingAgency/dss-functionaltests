@@ -123,7 +123,7 @@ this.FeatureBackground();
                         "Value"});
             table3.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "True"});
+                        "true"});
             table3.AddRow(new string[] {
                         "LearningDifficultyOrDisabilityDeclaration",
                         "1"});
@@ -138,7 +138,7 @@ this.FeatureBackground();
                         "2018-06-25T11:21:00Z"});
             table3.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
-                        "True"});
+                        "true"});
             table3.AddRow(new string[] {
                         "Ethnicity",
                         "32"});
@@ -181,6 +181,12 @@ this.FeatureBackground();
                         "2018-06-25T11:22:00Z"});
 #line 31
   testRunner.And("the response body should contain:", ((string)(null)), table4, "And ");
+#line 41
+ testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And("the date field LastModifiedDate should hold a recent value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("the response body should have LastModifiedBy with value 9000000001", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -192,7 +198,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Diversity Details records where 1 exists", null, new string[] {
                         "LearningProgression"});
-#line 45
+#line 47
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -203,7 +209,7 @@ this.FeatureBackground();
                         "Value"});
             table5.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "True"});
+                        "false"});
             table5.AddRow(new string[] {
                         "LearningDifficultyOrDisabilityDeclaration",
                         "1"});
@@ -218,20 +224,20 @@ this.FeatureBackground();
                         "2018-06-25T11:21:00Z"});
             table5.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
-                        "True"});
+                        "false"});
             table5.AddRow(new string[] {
                         "Ethnicity",
                         "32"});
             table5.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 46
+#line 48
  testRunner.Given("I post a Diversity Details record with the following details:", ((string)(null)), table5, "Given ");
-#line 56
- testRunner.When("I get all Diversity Details records for a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
+ testRunner.When("I get all Diversity Details records for a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 59
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 60
  testRunner.And("the response should contain 1 document(s)", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -239,7 +245,7 @@ this.FeatureBackground();
                         "Value"});
             table6.AddRow(new string[] {
                         "ConsentToCollectLLDDHealth",
-                        "True"});
+                        "False"});
             table6.AddRow(new string[] {
                         "LearningDifficultyOrDisabilityDeclaration",
                         "1"});
@@ -254,14 +260,14 @@ this.FeatureBackground();
                         "2018-06-25T11:21:00Z"});
             table6.AddRow(new string[] {
                         "ConsentToCollectEthnicity",
-                        "True"});
+                        "False"});
             table6.AddRow(new string[] {
                         "Ethnicity",
                         "32"});
             table6.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 59
+#line 61
  testRunner.And("the response body should incorporate a document with the following details:", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -274,7 +280,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Diversity Details by invalid ID", null, new string[] {
                         "LearningProgression"});
-#line 72
+#line 78
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
@@ -307,7 +313,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 73
+#line 79
  testRunner.Given("I post a Diversity Details record with the following details:", ((string)(null)), table7, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -319,11 +325,11 @@ this.FeatureBackground();
             table8.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 83
+#line 89
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table8, "And ");
-#line 87
+#line 93
  testRunner.When("I get a Diversity Details by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 88
+#line 94
  testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -336,14 +342,14 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Diversity Details records where none exist", null, new string[] {
                         "LearningProgression"});
-#line 91
+#line 97
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 107
+#line 113
  testRunner.When("I get all Diversity Details records for a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 114
  testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

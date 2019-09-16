@@ -59,10 +59,10 @@ Scenario:Post Diversity with all mandatory values
 	| LearningDifficultyOrDisabilityDeclaration | 1     |
 	| ConsentToCollectEthnicity                 | false |
 	| Ethnicity                                 | 99    |
-	#And the "diversitydetails" cosmos document should include CreatedBy
+	And the "diversitydetails" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	#And there should be a record in the diversitydetails ChangeFeed table
-	#And there should be a record in the diversitydetails-history ChangeFeed table
+	And there should be a record in the diversitydetails ChangeFeed table
+	And there should be a record in the diversitydetails-history ChangeFeed table
 
 ############################################################################################################################
 ##	ConsentToCollectLLDDHealth
@@ -90,21 +90,21 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectLLDDHealth
 	| ConsentToCollectLLDDHealth | True  |
 	| ConsentToCollectLLDDHealth | False |		
 	
-#@diversitydetails  
-#Scenario Outline: Post Diversity with invalid values for ConsentToCollectLLDDHealth 
-#
-#	Given I want to send <Field> with value <Value> in the following request
-#	When I post a DiversityDetail with the following details:
-#	| Field                                     | Value |
-#	| LearningDifficultyOrDisabilityDeclaration | 1     |
-#	| ConsentToCollectEthnicity                 | false |
-#	| Ethnicity                                 | 99    |
-#	Then there should be a 422 response
-#	
-#	Examples:
-#	| Field                      | Value |
-#	| ConsentToCollectLLDDHealth | 1     |
-#	| ConsentToCollectLLDDHealth | car   |	
+@diversitydetails  
+Scenario Outline: Post Diversity with invalid values for ConsentToCollectLLDDHealth 
+
+	Given I want to send <Field> with value <Value> in the following request
+	When I post a DiversityDetail with the following details:
+	| Field                                     | Value |
+	| LearningDifficultyOrDisabilityDeclaration | 1     |
+	| ConsentToCollectEthnicity                 | false |
+	| Ethnicity                                 | 99    |
+	Then there should be a 422 response
+	
+	Examples:
+	| Field                      | Value |
+	| ConsentToCollectLLDDHealth | 1     |
+	| ConsentToCollectLLDDHealth | car   |	
 
 @diversitydetails  
 Scenario: Post Diversity with no value supplied for ConsentToCollectLLDDHealth 
@@ -118,6 +118,7 @@ Scenario: Post Diversity with no value supplied for ConsentToCollectLLDDHealth
 	| ConsentToCollectLLDDHealth                |       |
 	Then there should be a 422 response
 	And the error message should be "The ConsentToCollectLLDDHealth field is required."
+
 ############################################################################################################################
 ## LearningDifficultyOrDisabilityDeclaration
 ############################################################################################################################
@@ -402,6 +403,7 @@ Scenario Outline:Post Diversity with valid values for DateAndTimeLLDDHealthConse
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | false |
 	| Ethnicity                  | 99    |
+	And the response body value for DateAndTimeLLDDHealthConsentCollected should match the last request
 #	And the response body should have <Field> with value <Value>
 	
 	Examples:
@@ -511,21 +513,21 @@ Scenario Outline:Post Diversity with valid values for ConsentToCollectEthnicity
 
 
 
-#@diversitydetails  
-#Scenario Outline: Post Diversity with invalid values for ConsentToCollectEthnicity 
-#	Given I want to send <Field> with value <Value> in the following request
-#	When I post a DiversityDetail with the following details:
-#	| Field                                     | Value |
-#	| LearningDifficultyOrDisabilityDeclaration |   9    |
-#	| ConsentToCollectLLDDHealth | false  |
-#	| Ethnicity                  | 99    |
-#	Then there should be a 422 response
-#	#And the error message should be "PLACEHOLDER"
-#	
-#	Examples:
-#	| Field                     | Value |
-#	| ConsentToCollectEthnicity | 1     |
-#	| ConsentToCollectEthnicity | abc   |
+@diversitydetails  
+Scenario Outline: Post Diversity with invalid values for ConsentToCollectEthnicity 
+	Given I want to send <Field> with value <Value> in the following request
+	When I post a DiversityDetail with the following details:
+	| Field                                     | Value |
+	| LearningDifficultyOrDisabilityDeclaration |   9    |
+	| ConsentToCollectLLDDHealth | false  |
+	| Ethnicity                  | 99    |
+	Then there should be a 422 response
+	#And the error message should be "PLACEHOLDER"
+	
+	Examples:
+	| Field                     | Value |
+	| ConsentToCollectEthnicity | 1     |
+	| ConsentToCollectEthnicity | abc   |
 
 @diversitydetails  
 Scenario: Post Diversity with no value supplied for ConsentToCollectEthnicity
@@ -643,8 +645,8 @@ Scenario Outline:Post Diversity with valid values for DateAndTimeEthnicityCollec
 	| ConsentToCollectLLDDHealth | true  |
 	| ConsentToCollectEthnicity  | false |
 	| Ethnicity                  | 99    |
-	#And the response body should have <Field> with value <Value>
-	
+	And the response body value for DateAndTimeEthnicityCollected should match the last request
+
 	Examples:
 	| Field                         | Value                |
 	| DateAndTimeEthnicityCollected | now                  |

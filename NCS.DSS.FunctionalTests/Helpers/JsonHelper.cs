@@ -34,14 +34,15 @@ namespace NCS.DSS.FunctionalTests.Helpers
             foreach (var doc in a.Children<JObject>().Select((value, index) => new { value, index }))
             {
                 bool thisMatches = true;
-                foreach (var property in b.Properties() )
+                foreach (var property in b.Properties() ) //Properties() )
                 {
-                     // does each property in b exist in this item from a?
+                    // does each property in b exist in this item from a?
                     // if (doc.ContainsKey(property.Name) && doc.Property(property.Name).Value == property.Value)
                     // {
 
                     // }
                     //else
+                    //if (!doc.value.ContainsKey(val.Key) || doc.value.GetValue(val.Key, StringComparison..OrdinalIgnoreCase).ToString() != val.Value.ToString())
                     if ( !doc.value.ContainsKey(property.Name)  || doc.value.Property(property.Name).Value.ToString() != property.Value.ToString())
                     {
                         //Console.WriteLine("Mismatch found for: " + property.Name + " - " + property.Value);

@@ -493,7 +493,8 @@ Scenario Outline:Patch Diversity with valid values for DateAndTimeLLDDHealthCons
 	Given I want to send <Field> with value <Value> in the following request
 	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
+	And the response body value for DateAndTimeLLDDHealthConsentCollected should match the last request
+
 	
 	Examples:
 	| Field                                | Value                |

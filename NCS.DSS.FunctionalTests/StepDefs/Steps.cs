@@ -31,7 +31,8 @@ namespace FunctionalTests.StepDefs
             private string baseUrl;
              private string url;
              private string json;
-             private string json2;
+//             private string json;
+             private string postJson;
              private string id;
              private string customerId;
              private string adviserDetailId;
@@ -112,6 +113,7 @@ namespace FunctionalTests.StepDefs
             requestContext.SetRequestDetails(sResource, sUrl, (id == string.Empty ? Guid.Empty : new Guid(id)), response.StatusCode, response.Content);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
+            postJson = json;
             return sUrl;
         }
 
@@ -156,12 +158,12 @@ namespace FunctionalTests.StepDefs
             SetVersion("post");
             //url = envSettings.BaseUrl + "adviserdetails/api/AdviserDetails/";
             var adviser = table.CreateInstance<Adviser>();
-            json2 = JsonConvert.SerializeObject(adviser);
+            json = JsonConvert.SerializeObject(adviser);
 
-            url = PostRequest(envSettings.BaseUrl, json2, constants.AdviserDetails);
+            url = PostRequest(envSettings.BaseUrl, json, constants.AdviserDetails);
             adviserDetailId = id;
 
-            //response = RestHelper.Post(lastResourceName = constants.AdviserDetails, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            //response = RestHelper.Post(lastResourceName = constants.AdviserDetails, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             //adviserDetailId = AssertAndExtract("AdviserDetailId", response);
             //id = adviserDetailId;
             //creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -188,11 +190,11 @@ namespace FunctionalTests.StepDefs
             SetVersion("post");
            // url = envSettings.BaseUrl + "addresses/api/Customers/" + customerId + "/Addresses/";
             var address = table.CreateInstance<Address>();
-            json2 = JsonConvert.SerializeObject(address);
+            json = JsonConvert.SerializeObject(address);
 
-            url = PostRequest(envSettings.BaseUrl, json2, constants.Addresses);
+            url = PostRequest(envSettings.BaseUrl, json, constants.Addresses);
             addressId = id;
-            //response = RestHelper.Post(lastResourceName = targetOfLastPost = constants.Addresses, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            //response = RestHelper.Post(lastResourceName = targetOfLastPost = constants.Addresses, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             //addressId = AssertAndExtract("AddressId", response);
             //id = addressId;
             //creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -212,10 +214,10 @@ namespace FunctionalTests.StepDefs
             ScenarioContext.Current["version"] = "";
            // url = envSettings.BaseUrl + "contactDetails/api/Customers/" + customerId + "/contactDetails/";
             var contact = table.CreateInstance<Contact>();
-            json2 = JsonConvert.SerializeObject(contact);
-            url = PostRequest(envSettings.BaseUrl, json2, constants.Contacts);
+            json = JsonConvert.SerializeObject(contact);
+            url = PostRequest(envSettings.BaseUrl, json, constants.Contacts);
             contactId = id;
-            //response = RestHelper.Post(lastResourceName = targetOfLastPost = constants.Contacts, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            //response = RestHelper.Post(lastResourceName = targetOfLastPost = constants.Contacts, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             //contactId = AssertAndExtract("ContactId", response);
             //creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             //lastRequestWasPatch = false;
@@ -293,20 +295,20 @@ namespace FunctionalTests.StepDefs
             
            // url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
             var diversity = table.CreateInstance<Diversity>();
-            json2 = JsonConvert.SerializeObject(diversity);
+            json = JsonConvert.SerializeObject(diversity);
 
             if (scenarioContext.ContainsKey("AdditionalFieldName"))
             {
-                json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"],
+                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"],
                                     ((string)scenarioContext["AdditionalFieldName"]).Contains("Date")? 
                                                                              SpecflowHelper.TranslateDateToken((string)scenarioContext["AdditionalFieldValue"]).ToString("yyyy-MM-ddTHH:mm:ssZ")
                                                                             : (string)scenarioContext["AdditionalFieldValue"] );  
             }
 
-            url = PostRequest(envSettings.BaseUrl, json2, constants.DiversityDetails);
+            url = PostRequest(envSettings.BaseUrl, json, constants.DiversityDetails);
             diversityId = id;
 
-            //response = RestHelper.Post(lastResourceName = constants.DiversityDetails, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            //response = RestHelper.Post(lastResourceName = constants.DiversityDetails, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             //diversityId = AssertAndExtract("DiversityId", response);
             //creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             //lastRequestWasPatch = false;
@@ -371,13 +373,13 @@ namespace FunctionalTests.StepDefs
         {
             //url = envSettings.BaseUrl + "webchats/api/Customers/" + customerId + "/Interactions/" + interactionId + "/webchats/";
             var webchat = table.CreateInstance<WebChat>();
-            json2 = JsonConvert.SerializeObject(webchat);
+            json = JsonConvert.SerializeObject(webchat);
 
-            url = PostRequest(envSettings.BaseUrl, json2, constants.WebChats);
+            url = PostRequest(envSettings.BaseUrl, json, constants.WebChats);
             webChatId = id;
 
 
-            //response = RestHelper.Post(lastResourceName = constants.WebChats, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            //response = RestHelper.Post(lastResourceName = constants.WebChats, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             //webChatId = AssertAndExtract("WebChatId", response);
             //PostUpdateTime = DateTime.Parse(ExtractFromResponse("LastModifiedDate", response)).ToUniversalTime();
             //creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
@@ -440,8 +442,8 @@ namespace FunctionalTests.StepDefs
         public void GivenIPostANewSubscriptionRequest()
         {
             url = envSettings.BaseUrl + "subscriptions/api/Customers/" + customerId + "/subscriptions/";
-            json2 = "{ \"subscribe\": true }";
-            response = RestHelper.Post(constants.Subscriptions, url, json2, envSettings.TestEndpoint02, envSettings.SubscriptionKey);
+            json = "{ \"subscribe\": true }";
+            response = RestHelper.Post(constants.Subscriptions, url, json, envSettings.TestEndpoint02, envSettings.SubscriptionKey);
             subscriptionId = AssertAndExtract("SubscriptionId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;
@@ -453,12 +455,12 @@ namespace FunctionalTests.StepDefs
         {
            //rl = envSettings.BaseUrl + "subscriptions/api/Customers/" + customerId + "/subscriptions/";
             var subscription = table.CreateInstance<Subscription>();
-            json2 = JsonConvert.SerializeObject(subscription);
+            json = JsonConvert.SerializeObject(subscription);
 
             url = PostRequest(envSettings.BaseUrl, json, constants.Subscriptions);
             subscriptionId = id;
 
-            /*response = RestHelper.Post(lastResourceName = constants.Subscriptions, url, json2, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+            /*response = RestHelper.Post(lastResourceName = constants.Subscriptions, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             subscriptionId = AssertAndExtract("SubscriptionId", response);
             creatingTouchpoint = lastTouchpoint = envSettings.TestEndpoint01;
             lastRequestWasPatch = false;*/
@@ -472,11 +474,11 @@ namespace FunctionalTests.StepDefs
             table = SpecflowHelper.ReplaceTokensInTable(table, false, "Field");
             
             var learningProgression = table.CreateInstance<LearningProgression>();
-            json2 = JsonConvert.SerializeObject(learningProgression);
+            json = JsonConvert.SerializeObject(learningProgression);
 
             if (scenarioContext.ContainsKey("AdditionalFieldName"))
             {
-                json2 = JsonHelper.AddPropertyToJsonString(json2, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
+                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"], (string)scenarioContext["AdditionalFieldValue"]);
             }
 
             url = PostRequest(envSettings.BaseUrl, json, constants.LearningProgression);
@@ -953,6 +955,18 @@ namespace FunctionalTests.StepDefs
                 p1 = SpecflowHelper.TranslateDateToken(p1).ToString("yyyy-MM-ddTHH:mm:ssZ");
             }
             JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(p1);
+        }
+
+        [Then(@"the response body value for (.*) should match the last request")]
+        public void ThenTheResponseBodyValueForShouldMatchTheRequest(string p0)
+        {
+            JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(json, p0));
+        }
+
+        [Then(@"the response body value for (.*) should match the original request")]
+        public void ThenTheResponseBodyValueForShouldMatchTheOriginalRequest(string p0)
+        {
+            JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(postJson, p0));
         }
 
         [Then(@"the response body should not contain the ""(.*)""")]
