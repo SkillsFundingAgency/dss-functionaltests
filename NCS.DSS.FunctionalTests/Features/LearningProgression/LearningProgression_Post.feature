@@ -78,7 +78,6 @@ Scenario:Post learning progression supplying LastModifiedDate
 	| DateProgressionRecorded        | 2018-12-19T09:01:00Z |
 	| CurrentLearningStatus          | 99                   |
 	| LearningHours                  |                      |
-	#| DateLearningStarted            |                      |
 	| CurrentQualificationLevel      | 99                   |
 	| DateQualificationLevelAchieved |                      |
 	| LastLearningProvidersUKPRN     |                      |
@@ -87,6 +86,29 @@ Scenario:Post learning progression supplying LastModifiedDate
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the learningprogressions ChangeFeed table
 	And there should be a record in the learningprogressions-history ChangeFeed table
+
+@learningprogressions
+Scenario Outline: Post learning progression with valid values for DateProgressionRecorded
+	Given I want to send <Field> with value <Value> in the following request
+	Given I post a Learning Progression record with the following details:
+	| Field                     | Value                |
+	| CurrentLearningStatus     | 99                   |
+	| DateLearningStarted       | Today                |
+	| CurrentQualificationLevel | 99                   |
+	| LastModifiedDate          | 2019-06-19T09:01:00Z |
+	Then there should be a 201 response
+	And the response body should contain:
+	| Field                     | Value                |
+	| CurrentLearningStatus     | 99                   |
+	| CurrentQualificationLevel | 99                   |
+	| LastModifiedDate          | 2019-06-19T09:01:00Z |
+	And the response body value for DateProgressionRecorded should match the last request
+	
+	Examples:
+	| Field                   | Value                |
+	| DateProgressionRecorded | 2018-12-19T09:01:00Z |
+	| DateProgressionRecorded | Today                |
+	| DateProgressionRecorded | Now                  |
 
 @learningprogressions
 Scenario Outline:  Post learning progression with valid values for CurrentLearningStatus
@@ -101,7 +123,7 @@ Scenario Outline:  Post learning progression with valid values for CurrentLearni
 	And the response body should contain:
 	| Field                     | Value                |
 	| DateProgressionRecorded   | 2019-06-19T09:01:00Z |
-#	| LearningHours             | 1                    |
+	| LearningHours             | 1                    |
 	| DateLearningStarted       | 2019-06-19T09:01:00Z |
 	| CurrentQualificationLevel | 99                   |
 
@@ -286,81 +308,6 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 	| CurrentQualificationLevel | 9     | CurrentQualificationLevel must be a valid current Qualification Level. |
 	| CurrentQualificationLevel | 98    | CurrentQualificationLevel must be a valid current Qualification Level. |
 	| CurrentQualificationLevel | 100   | CurrentQualificationLevel must be a valid current Qualification Level. |
-
-
-#@learningprogressions @SubcontractorId
-#Scenario:Post learning progression with subcontractor id supplied in header
-#
-#	Given I post a Learning Progression record with the following details:
-#	| Field                          | Value                |
-#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#	| CurrentLearningStatus          | 1                    |
-#	| LearningHours                  | 1                    |
-#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	| CurrentQualificationLevel      | 2                    |
-#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	| LastLearningProvidersUKPRN     | 12345678             |
-#	Then there should be a 201 response
-#	And the response body should contain:
-#	| Field                          | Value                |
-#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#	| CurrentLearningStatus          | 1                    |
-#	| LearningHours                  | 1                    |
-#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	| CurrentQualificationLevel      | 2                    |
-#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	| LastLearningProvidersUKPRN     | 12345678             |
-#	| SubcontractorId                | 67576575             |
-#	And the "learningprogression" cosmos document should include CreatedBy
-#	And the response body should not contain the "CreatedBy"
-#	And there should be a record in the learningprogression ChangeFeed table
-#	And there should be a record in the learningprogression-history ChangeFeed table
-#	#And the response body should include SubcontractorId with value 67576575
-
-
-#@learningprogressions @MaxLengthSubcontractorId
-#Scenario:Post learning progression with subcontractor id of max length supplied in header
-#
-#	Given I post a Learning Progression record with the following details:
-#	| Field                          | Value |
-#	| DateProgressionRecorded        |       |
-#	| CurrentLearningStatus          |       |
-#	| LearningHours                  |       |
-#	| DateLearningStarted            |       |
-#	| CurrentQualificationLevel      |       |
-#	| DateQualificationLevelAchieved |       |
-#	| LastLearningProvidersUKPRN     |       |
-#	Then there should be a 201 response
-#	And the response body should contain:
-#	| Field                          | Value |
-#	| DateProgressionRecorded        |       |
-#	| CurrentLearningStatus          |       |
-#	| LearningHours                  |       |
-#	| DateLearningStarted            |       |
-#	| CurrentQualificationLevel      |       |
-#	| DateQualificationLevelAchieved |       |
-#	| LastLearningProvidersUKPRN     |       |
-#	And the "learningprogression" cosmos document should include CreatedBy
-#	And the response body should not contain the "CreatedBy"
-#	And there should be a record in the learningprogression ChangeFeed table
-#	And there should be a record in the learningprogression-history ChangeFeed table
-#	And the response body should have SubcontractorId with value 12345678901234567890123456789012345678901234567890
-
-
-#@learningprogressions @invalidSubcontractorId
-#Scenario:Post learning progression with subcontractor id greater than max length supplied in header
-#
-#	Given I post a Learning Progression record with the following details:
-#	| Field                          | Value |
-#	| DateProgressionRecorded        |       |
-#	| CurrentLearningStatus          |       |
-#	| LearningHours                  |       |
-#	| DateLearningStarted            |       |
-#	| CurrentQualificationLevel      |       |
-#	| DateQualificationLevelAchieved |       |
-#	| LastLearningProvidersUKPRN     |       |
-#	Then there should be a 422 response
-#	And the response body should include <PlaceHolder>
 
 
 

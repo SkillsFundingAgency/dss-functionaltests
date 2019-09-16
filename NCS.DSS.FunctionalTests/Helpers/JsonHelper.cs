@@ -143,6 +143,7 @@ namespace NCS.DSS.FunctionalTests.Helpers
             JsonSerializerSettings jsonSerializerSettings = new JsonSerializerSettings();
             jsonSerializerSettings.DateParseHandling = DateParseHandling.None;
             var obj = (Newtonsoft.Json.Linq.JObject)JsonConvert.DeserializeObject(json, jsonSerializerSettings);
+            //return (obj.ContainsKey(property) ? obj.Property(property).Value.ToString() : "NOT_FOUND");
             return (obj.ContainsKey(property) ? obj.Property(property).Value.ToString() : string.Empty);
         }
     }

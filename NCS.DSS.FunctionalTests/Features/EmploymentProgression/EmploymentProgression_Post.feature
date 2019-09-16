@@ -65,8 +65,10 @@ Scenario:Post employment progression with mandatory values
 	And there should be a record in the employmentprogressions ChangeFeed table
     And there should be a record in the employmentprogressions-history ChangeFeed table
 
-
-#	DateProgressionRecorded	DateTime	Y		ISO8601:2004.  <= datetime.now	Date the progression was recorded.  If the date and time is not supplied default this value to datetime.now().
+#############################################################################################################################
+#	DateProgressionRecorded	DateTime	Y		ISO8601:2004.  <= datetime.now	Date the progression was recorded.         ##
+##  If the date and time is not supplied default this value to datetime.now().											   ##
+#############################################################################################################################
 
 
 @employmentprogressions
@@ -81,6 +83,7 @@ Scenario Outline: Post Employment progression with valid values for DateProgress
 	And the response body should contain:
 	| Field                   | Value                |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body value for DateProgressionRecorded should match the last request
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -138,7 +141,9 @@ Scenario: Post Employment progression with no value for DateProgressionRecorded
 	Then there should be a 201 response
 	And the date field DateProgressionRecorded should hold a recent value
 
-#	CurrentEmploymentStatus	enum	Y		A valid EmploymentStatus reference data item	See DSS Reference Data Resource for values 
+##########################################################################################################################################
+#	CurrentEmploymentStatus	enum	Y		A valid EmploymentStatus reference data item	See DSS Reference Data Resource for values  ##
+##########################################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for CurrentEmploymentStatus
@@ -208,17 +213,35 @@ Scenario: Post Employment progression with no value for CurrentEmploymentStatus
 	| CurrentEmploymentStatus |                      |
 	Then there should be a 422 response
 	And the error message should be "The CurrentEmploymentStatus field is required"
-	#And the error message should be "The EconomicShockStatus field is required"
 	And the number of errors returned should be 1
 
-#	EconomicShockStatus	enum	Y		A valid EconomicShockStatus reference data item	See DSS Reference Data Resource for values.
+######################################################################################################################################
+#	EconomicShockStatus	enum	Y		A valid EconomicShockStatus reference data item	See DSS Reference Data Resource for values. ##
+######################################################################################################################################
 
 @employmentprogressions
-Scenario: Post Employment progression with invalid values for EconomicShockStatus
+Scenario Outline: Post Employment progression with invalid values for EconomicShockStatus
 
-@employmentprogressions
-Scenario: Post Employment progression with no value for EconomicShockStatus
+	Given I want to send <Field> with value <Value> in the following request
+	Given I post a Employment Progression record with the following details:
+	| Field                   | Value                |
+	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
+	| CurrentEmploymentStatus | 99                   |
+	| EconomicShockCode       | Some Text            |
+	| EmploymentHours         | 1                    |
+	| DateOfEmployment        | 2018-06-19T09:01:00Z |
+	Then there should be a 422 response
+	And the error message should be "EconomicShockStatus must have a valid Economic Shock Status."
+	
+	Examples:
+	| Field               | Value |
+	| EconomicShockStatus | -1    |
+	| EconomicShockStatus | 0     |
+	| EconomicShockStatus | 4     |
+	| EconomicShockStatus | 99    |
 
+#@employmentprogressions
+#Scenario: Post Employment progression with no value for EconomicShockStatus
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EconomicShockStatus
@@ -236,20 +259,22 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
     And there should be a record in the employmentprogressions-history ChangeFeed table
 	
 	Examples:
-	| Field                   | Value |
-	| EconomicShockStatus     | 1     |
-	| EconomicShockStatus     | 2     |
-	| EconomicShockStatus     | 3     |
+	| Field               | Value |
+	| EconomicShockStatus | 1     |
+	| EconomicShockStatus | 2     |
+	| EconomicShockStatus | 3     |
 
 
-
-#	EconomicShockCode	string(50)				Mandatory if EconomicShockStatus = 2 - Government defined economic shock
+############################################################################################################################
+#	EconomicShockCode	string(50)				Mandatory if EconomicShockStatus = 2 - Government defined economic shock  ##
+############################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EconomicShockCode
@@ -267,6 +292,7 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -341,7 +367,9 @@ Scenario Outline: Post Employment progression with no value for EconomicShockCod
 	| EconomicShockStatus | 1     |
 	| EconomicShockStatus | 3     |
 
-#	EmployerName	string(200)	
+#############################################################################################################################################
+##	EmployerName	string(200)																											   ##
+#############################################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmployerName
@@ -359,6 +387,7 @@ Scenario Outline: Post Employment progression with valid values for EmployerName
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -376,7 +405,7 @@ Scenario Outline: Post Employment progression with invalid values for EmployerNa
 	Given I post a Employment Progression record with the following details:
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-	| CurrentEmploymentStatus   | 99                   |
+	| CurrentEmploymentStatus | 99                   |
 	| EmploymentHours         | 1                    |
 	| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	| EconomicShockStatus     | 1                    |
@@ -405,12 +434,15 @@ Scenario: Post Employment progression with no value for EmployerName
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
 	| EmployerName            |                      |
+
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
     And there should be a record in the employmentprogressions-history ChangeFeed table
 
-#	EmployerAddress	string(500)				
+############################################################################################################################
+##	EmployerAddress	string(500)																							  ##
+############################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmployerAddress
@@ -428,6 +460,7 @@ Scenario Outline: Post Employment progression with valid values for EmployerAddr
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -479,8 +512,9 @@ Scenario: Post Employment progression with no value for EmployerAddress
 	And there should be a record in the employmentprogressions ChangeFeed table
     And there should be a record in the employmentprogressions-history ChangeFeed table
 
-
+#############################################################################################################
 #	EmployerPostcode	string(10)	
+#############################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmployerPostcode
@@ -498,6 +532,7 @@ Scenario Outline: Post Employment progression with valid values for EmployerPost
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -553,8 +588,10 @@ Scenario: Post Employment progression with no value for EmployerPostcode
 	And there should be a record in the employmentprogressions ChangeFeed table
     And there should be a record in the employmentprogressions-history ChangeFeed table
 
+#############################################################################################################################
 #	Longitude	double				These should be hidden fields and not returned in any GET request
 #	Latitude	double	
+#############################################################################################################################
 
 #@employmentprogressions
 #Scenario: Post Employment progression with valid values for Longitude and Latitude
@@ -565,8 +602,9 @@ Scenario: Post Employment progression with no value for EmployerPostcode
 #@employmentprogressions
 #Scenario: Post Employment progression with no value for Longitude and Latitude
 
-
+###########################################################################################################################################################################
 #	EmploymentHours	enum			If CurrentEmployment status = 1, 4, 5, 8, 9 then the item must be a valid EmploymentHours reference data item	See DSS Reference Data Resource for values 
+###############################################################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmploymentHours
@@ -582,6 +620,7 @@ Scenario Outline: Post Employment progression with valid values for EmploymentHo
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -602,7 +641,7 @@ Scenario Outline: Post Employment progression with invalid values for Employment
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2018-06-19T09:01:00Z |
 	| EconomicShockStatus     | 1                    |
-	| CurrentEmploymentStatus   | 99                   |
+	| CurrentEmploymentStatus | 99                   |
 	Then there should be a 422 response
 	And the error message should be "EmploymentHours must be a valid employment hours"
 	And the number of errors returned should be 1
@@ -654,6 +693,7 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 	| DateProgressionRecorded | 2018-06-19T09:01:00Z |
 	| EmploymentHours         |                      |
 	| EconomicShockStatus     | 1                    |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -671,8 +711,10 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 	| CurrentEmploymentStatus | 13    |
 	| CurrentEmploymentStatus | 99    |
 
+###############################################################################################################################################################
 #	DateOfEmployment	If CurrentEmployment status = 1, 4, 5, 8, 9 then the item is mandatory, ISO8601:2004 <= datetime.now	The date the customer started employment.
 #						See DSS Reference Data Resource for values 
+###############################################################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for DateOfEmployment
@@ -687,7 +729,8 @@ Scenario Outline: Post Employment progression with valid values for DateOfEmploy
 	And the response body should contain:
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-	| CurrentEmploymentStatus | 99                   |
+	| CurrentEmploymentStatus | 99                   |  
+	And the response body value for DateOfLastEmployment should match the last request
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -735,6 +778,7 @@ Scenario Outline: Post Employment progression with no value for DateOfEmployment
 	| DateProgressionRecorded | 2018-06-19T09:01:00Z |
 	| DateOfEmployment        |                      |
 	| EconomicShockStatus     | 1                    |
+	And the response body should have <Field> with value <Value>
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -774,12 +818,15 @@ Scenario Outline: Post Employment progression with no value for DateOfEmployment
 	| CurrentEmploymentStatus | 8     |
 	| CurrentEmploymentStatus | 9     |
 
-#	DateOfLastEmployment	Date			ISO8601:2004 <= datetime.now	The date the customer was last in employment if they are retired, economically inactive or unemployed.  This field has been left optional in case the customer has never been in employment.
+#############################################################################################################################################################################################
+#	DateOfLastEmployment	Date			ISO8601:2004 <= datetime.now	The date the customer was last in employment if they are retired, economically inactive or unemployed. 
+# This field has been left optional in case the customer has never been in employment.
+###################################################################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for DateOfLastEmployment
 
-Given I want to send <Field> with value <Value> in the following request
+	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Employment Progression record with the following details:
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
@@ -790,6 +837,7 @@ Given I want to send <Field> with value <Value> in the following request
 	| Field                   | Value                |
 	| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	| CurrentEmploymentStatus | 99                   |
+	And the response body value for DateOfLastEmployment should match the last request
 	And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the employmentprogressions ChangeFeed table
@@ -823,8 +871,9 @@ Scenario Outline: Post Employment progression with invalid values for DateOfLast
 	| DateOfLastEmployment | Today +1D            | Could not convert string to DateTime |
 	| DateOfLastEmployment | Now +1H              | Could not convert string to DateTime |
 
-
-#	LengthOfUnemployment	enum			A valid LenghtOfUnemployment reference data item	See DSS Reference Data Resource for values 
+##########################################################################################################################################
+#	LengthOfUnemployment	enum			A valid LenghtOfUnemployment reference data item	See DSS Reference Data Resource for values
+########################################################################################################################################################
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for LengthOfUnemployment
@@ -885,4 +934,4 @@ Scenario Outline: Post Employment progression with invalid values for LengthOfUn
 
 #	LastModifiedDate	DateTime			ISO8601:2004	
 #	LastModifiedTouchpointID	string(10)				Identifier of the touchpoint who made the last change to the record.  This value will be taken from the HTTP method header and is not needed to be supplied as a parameter
-#	CreatedBy	string(10)				Identifier of the touchpoint that created the record.  The value should be taken from the HTTP header and SHOULD NOT be
+#	CreatedBy	string(10)				Identifier of the touchpoint that created the record.  The value should be taken from the HTTP header and SHOULD NOT be suppliable in the body

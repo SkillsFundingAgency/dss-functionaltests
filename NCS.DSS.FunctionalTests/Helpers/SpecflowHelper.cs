@@ -65,6 +65,55 @@ namespace NCS.DSS.FunctionalTests.Helpers
             return newTable;
         }
 
+        public static Table ReplaceTokensInTableFromJson( Table table, string sourceJson )
+        {
+            // functions takes in a Specflow table (in Field, Value format) and attempts to update tables rows where Value ="[FROM_REQUEST]"  with corresponding value in Json
+            // if not found update to error value
+            int count = 0; //used to determine if processing a Field or a Value
+            string fieldKey = "";
+            string fieldName = "";
+
+            string[] headers = table.Header.ToArray();
+            Table newTable = new Table(headers);
+
+            foreach (var row in table.Rows)
+            {
+                foreach (var value in row)
+                {
+                    count++;
+
+                    if (count % 2 != 0)
+                    {
+                        // This is a Field value. Store it
+                        fieldName = value.Value;
+                        fieldKey = value.Key;
+                    }
+                    else
+                    {
+                        IDictionary<string, string> newRow = new Dictionary<string, string>();
+                        string newValue = "";
+                        //this is a Value. check if it needs to be replaced
+                        if (value.Value == "[FROM_REQUEST]")
+                        {
+                            newValue = JsonHelper.GetPropertyFromJsonString(sourceJson, fieldName);
+
+                        }
+                        else
+                        {
+                            newValue = value.Value;
+                        }
+                        newRow.Add(fieldKey, fieldName);
+                        newRow.Add(value.Key, newValue);
+
+
+                    }
+                }
+
+            }
+
+            return newTable;
+
+            }
         public static string TranlateDateTokenAsString(string inString)
         {
             DateTime extractedDateTime = TranslateDateToken(inString);
