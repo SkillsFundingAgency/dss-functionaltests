@@ -106,9 +106,9 @@ namespace FunctionalTests.Helpers
                 request.AddHeader("TouchpointId", touchPointId );
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
 
-                if (ScenarioContext.Current["version"].Equals("v2"))
+                if (ScenarioContext.Current["version"] != "v1")
                 {
-                    request.AddHeader("version", "v2");
+                    request.AddHeader("version", (string)ScenarioContext.Current["version"]);
 
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("subcontractorId"))
                     {
@@ -117,6 +117,11 @@ namespace FunctionalTests.Helpers
                             ScenarioContext.Current.Add("subcontractorId", "67576575");
                         }
                         request.AddHeader("SubcontractorId", "67576575");
+                    }
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("MaxLengthSubcontractorId"))
+                    {
+                        //ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
+                        request.AddHeader("SubcontractorId", "12345678901234567890123456789012345678901234567890");
                     }
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("invalidSubcontractorId"))
                     {
@@ -165,6 +170,7 @@ namespace FunctionalTests.Helpers
         internal static IRestResponse Patch(/*string resourceName,*/ string url, string json, string touchPointId, string subscriptionKey, string id)
         {
             Console.WriteLine("Attempt to PATCH: " + url);
+            Console.WriteLine("JSON Document: " + json);
             try
             {
                 var client = new RestClient(url + id);
@@ -172,9 +178,9 @@ namespace FunctionalTests.Helpers
                 request.AddHeader("cache-control", "no-cache");
                 request.AddHeader("TouchpointId", touchPointId);
 
-                if (ScenarioContext.Current["version"].Equals("v2"))
+                if (ScenarioContext.Current["version"] != "v1")
                 {
-                    request.AddHeader("version", "v2");
+                    request.AddHeader("version", (string)ScenarioContext.Current["version"]);
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("subcontractorId"))
                     {
                         if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
@@ -235,10 +241,10 @@ namespace FunctionalTests.Helpers
             {
                 var client = new RestClient(url);
                 var request = new RestRequest(Method.GET);
- 
-                if (ScenarioContext.Current["version"].Equals("v2"))
+
+                if (ScenarioContext.Current["version"] != "v1")
                 {
-                    request.AddHeader("version", "v2");
+                    request.AddHeader("version", (string)ScenarioContext.Current["version"]);
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("SubcontractorId"))
                     {
                         if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
