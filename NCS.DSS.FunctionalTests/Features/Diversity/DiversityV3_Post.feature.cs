@@ -1834,7 +1834,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post a second Diversity record", null, new string[] {
                         "diversitydetails"});
-#line 731
+#line 729
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
@@ -1867,7 +1867,7 @@ this.FeatureBackground();
             table48.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 733
+#line 731
  testRunner.Given("I post a Diversity Details record with the following details:", ((string)(null)), table48, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1897,9 +1897,9 @@ this.FeatureBackground();
             table49.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 743
+#line 741
  testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table49, "When ");
-#line 753
+#line 751
  testRunner.Then("there should be a 409 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1910,7 +1910,7 @@ this.FeatureBackground();
         public virtual void PostDiversityForATerminatedCustomer()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post diversity for a terminated customer", null, ((string[])(null)));
-#line 755
+#line 753
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
@@ -1925,7 +1925,7 @@ this.FeatureBackground();
             table50.AddRow(new string[] {
                         "ReasonForTermination",
                         "1"});
-#line 756
+#line 754
   testRunner.Given("I patch \"Customers\" with the following details:", ((string)(null)), table50, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1955,9 +1955,9 @@ this.FeatureBackground();
             table51.AddRow(new string[] {
                         "DateAndTimeEthnicityCollected",
                         "2018-06-25T11:22:00Z"});
-#line 760
+#line 758
   testRunner.When("I post a DiversityDetail with the following details:", ((string)(null)), table51, "When ");
-#line 770
+#line 768
   testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
