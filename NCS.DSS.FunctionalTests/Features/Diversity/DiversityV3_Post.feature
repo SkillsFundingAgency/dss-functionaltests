@@ -706,7 +706,7 @@ Scenario: Post Diversity with no value supplied for DateAndTimeEthnicityCollecte
 	| LearningDifficultyOrDisabilityDeclaration |       |
 	| PrimaryLearningDifficultyOrDisability     | 5     |
 	| SecondaryLearningDifficultyOrDisability   |       |
-	| DateAndTimeLLDDHealthConsentCollected      |       |
+	| DateAndTimeLLDDHealthConsentCollected     |       |
 	| ConsentToCollectEthnicity                 | true |
 	| DateAndTimeEthnicityCollected             |       |
 	Then there should be a 201 response
