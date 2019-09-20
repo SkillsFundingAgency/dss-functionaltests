@@ -14,7 +14,7 @@ Background: Create Adviser
 		| FamilyName                 | Customer             |
 
 
-@diversitydetails  @smoke
+@diversitydetails  @smoke @test
 Scenario:Post Diversity with all values
 	When I post a DiversityDetail with the following details:
 	| Field                                     | Value                |

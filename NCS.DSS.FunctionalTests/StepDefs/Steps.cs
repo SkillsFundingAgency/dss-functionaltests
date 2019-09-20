@@ -1036,17 +1036,17 @@ namespace FunctionalTests.StepDefs
             JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(postJson, p0));
         }
 
-        [Then(@"the response body value for (.*) should match the last request")]
-        public void ThenTheResponseBodyValueForShouldMatchTheRequest(string p0)
-        {
-            JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(json, p0));
-        }
+        //[Then(@"the response body value for (.*) should match the last request")]
+        //public void ThenTheResponseBodyValueForShouldMatchTheRequest(string p0)
+        //{
+        //    JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(json, p0));
+        //}
 
-        [Then(@"the response body value for (.*) should match the original request")]
-        public void ThenTheResponseBodyValueForShouldMatchTheOriginalRequest(string p0)
-        {
-            JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(postJson, p0));
-        }
+        //[Then(@"the response body value for (.*) should match the original request")]
+        //public void ThenTheResponseBodyValueForShouldMatchTheOriginalRequest(string p0)
+        //{
+        //    JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(postJson, p0));
+        //}
 
         [Then(@"the response body should not contain the ""(.*)""")]
         public void ThenTheResponseBodyShouldNotContainThe(string p0)

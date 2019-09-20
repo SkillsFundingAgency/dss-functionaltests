@@ -107,11 +107,13 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         [NUnit.Framework.DescriptionAttribute("Post Diversity with all values")]
         [NUnit.Framework.CategoryAttribute("diversitydetails")]
         [NUnit.Framework.CategoryAttribute("smoke")]
+        [NUnit.Framework.CategoryAttribute("test")]
         public virtual void PostDiversityWithAllValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Diversity with all values", null, new string[] {
                         "diversitydetails",
-                        "smoke"});
+                        "smoke",
+                        "test"});
 #line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
