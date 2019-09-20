@@ -595,13 +595,7 @@ namespace FunctionalTests.StepDefs
 
         }
 
-        private void patchFromTable(Table table, String touchpointId = "")
-        {
-            // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
-            // otherwise  post and patch change feed may get wrapped up into one.
-            response.StatusCode.Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
-            ThenThereShouldBeARecordInTheChangeFeedTable(lastResourceName);
-
+  
 
 
         //private void patchFromTable(Table table, String touchpointId = "")
