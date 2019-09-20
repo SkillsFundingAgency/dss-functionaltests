@@ -17,7 +17,6 @@ using System.Data.SqlTypes;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using System.Configuration;
-using Newtonsoft.Json.Linq;
 using System.Threading;
 
 namespace FunctionalTests.StepDefs
@@ -283,14 +282,30 @@ namespace FunctionalTests.StepDefs
             //lastRequestWasPatch = false;
         }
 
+        [Given(@"I post a Diversity Details record with the following details:")]
+        public void GivenIPostADiversityDetailsRecordWithTheFollowingDetails(Table table)
+        {
+            WhenIPostADiversityDetailWithTheFollowingDetails(table);
+        }
+
 
         [When(@"I post a DiversityDetail with the following details:")]
         public void WhenIPostADiversityDetailWithTheFollowingDetails(Table table)
         {
-            ScenarioContext.Current["version"] = "";
+           // ScenarioContext.Current["version"] = "";
+            SetVersion("post", true);
+            
            // url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/DiversityDetails/";
             var diversity = table.CreateInstance<Diversity>();
             json = JsonConvert.SerializeObject(diversity);
+
+            if (scenarioContext.ContainsKey("AdditionalFieldName"))
+            {
+                json = JsonHelper.AddPropertyToJsonString(json, (string)scenarioContext["AdditionalFieldName"],
+                                    ((string)scenarioContext["AdditionalFieldName"]).Contains("Date")? 
+                                                                             SpecflowHelper.TranslateDateToken((string)scenarioContext["AdditionalFieldValue"]).ToString("yyyy-MM-ddTHH:mm:ssZ")
+                                                                            : (string)scenarioContext["AdditionalFieldValue"] );  
+            }
 
             url = PostRequest(envSettings.BaseUrl, json, constants.DiversityDetails);
             diversityId = id;
@@ -530,6 +545,13 @@ namespace FunctionalTests.StepDefs
             patchFromTable2(table, lastResourceName);
         }
 
+        [Given(@"I patch ""(.*)"" with the following details:")]
+        public void GivenIPatchWithTheFollowingDetails(string p0, Table table)
+        {
+            patchFromTable2(table, p0);
+        }
+
+
         [When(@"I patch ""(.*)"" with the following details:")]
         public void WhenIPatchWithTheFollowingDetails(string p0, Table table)
         {
@@ -584,6 +606,7 @@ namespace FunctionalTests.StepDefs
             {
                 patchVals.Add("SessionId", sessionId);
             }
+
             json = JsonConvert.SerializeObject(patchVals);
 
             if (scenarioContext.ContainsKey("AdditionalFieldName"))
@@ -770,6 +793,14 @@ namespace FunctionalTests.StepDefs
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 
+        [When(@"I get a Diversity Details by ID")]
+        public void WhenIGetADiversityDetailsByID()
+        {
+            url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/diversitydetails/" + diversityId;
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+
         [When(@"I get a Learning Progression by ID")]
         public void WhenIGetALearningProgressionByID()
         {
@@ -804,6 +835,14 @@ namespace FunctionalTests.StepDefs
             url = envSettings.BaseUrl + "Addresses/api/Customers/" + customerId + "/Addresses/";
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
+
+        [When(@"I get all Diversity Details records for a customer")]
+        public void WhenIGetAllDiversityDetailsRecordsForACustomer()
+        {
+            url = envSettings.BaseUrl + "diversitydetails/api/Customers/" + customerId + "/diversitydetails/";
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
 
 
         [Then(@"the response should contain (.*) document\(s\)")]
@@ -978,6 +1017,10 @@ namespace FunctionalTests.StepDefs
         [Then(@"the response body should have (.*) with value (.*)")]
         public void ThenTheResponseBodyShouldHaveFieldWithValue(string p0, string p1)
         {
+            if ( p0.Contains("Date"))
+            {
+                p1 = SpecflowHelper.TranslateDateToken(p1).ToString("yyyy-MM-ddTHH:mm:ssZ");
+            }
             JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(p1);
         }
 
@@ -993,6 +1036,17 @@ namespace FunctionalTests.StepDefs
             JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(postJson, p0));
         }
 
+        [Then(@"the response body value for (.*) should match the last request")]
+        public void ThenTheResponseBodyValueForShouldMatchTheRequest(string p0)
+        {
+            JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(json, p0));
+        }
+
+        [Then(@"the response body value for (.*) should match the original request")]
+        public void ThenTheResponseBodyValueForShouldMatchTheOriginalRequest(string p0)
+        {
+            JsonHelper.GetPropertyFromJsonString(response.Content, p0).Should().Be(JsonHelper.GetPropertyFromJsonString(postJson, p0));
+        }
 
         [Then(@"the response body should not contain the ""(.*)""")]
         public void ThenTheResponseBodyShouldNotContainThe(string p0)
@@ -1270,6 +1324,7 @@ namespace FunctionalTests.StepDefs
                 case "diversitydetails-history":
                     recordId = diversityId;
                     addSubcontractorIdToCollection = false;
+                    addCreatedByToCollection = true;
                     primaryTableId = "DiversityId";
                     historyTableId = "Diversitydetails-historyId";
                     resource = constants.DiversityDetails;
