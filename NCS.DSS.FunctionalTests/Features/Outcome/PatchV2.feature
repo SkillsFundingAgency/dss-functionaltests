@@ -216,6 +216,7 @@ Background: Prepare test
 		 | OutcomeClaimedDate   |       |
 		Then there should be a 403 response
 
+@outcomes
 	Scenario: Customer is terminated with reason 2 - Deceased, patch to Outcome is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -233,6 +234,7 @@ Background: Prepare test
 		 | OutcomeClaimedDate   |       |
 		Then there should be a 403 response
 
+@outcomes
 	Scenario: Customer is terminated with reason 99 - Other, patch to  Claimed date and Effective date is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -250,6 +252,7 @@ Background: Prepare test
 		 | OutcomeClaimedDate   |       |
 		Then there should be a 403 response
 
+@outcomes
 	Scenario: Customer is terminated with reason 3 - Duplicate, patch to Claimed date and Effective date is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -274,6 +277,7 @@ Background: Prepare test
 		And there should be a record in the outcomes ChangeFeed table
 		And there should be a record in the outcomes-history ChangeFeed table
 
+@outcomes
 	Scenario: Customer is terminated with reason 3 - Duplicate, patch to Claimed date is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -296,7 +300,8 @@ Background: Prepare test
 		And there should be a record in the outcomes ChangeFeed table
 		And there should be a record in the outcomes-history ChangeFeed table
 
-		Scenario: Customer is terminated with reason 3 - Duplicate, patch to Effective date is received
+@outcomes
+	Scenario: Customer is terminated with reason 3 - Duplicate, patch to Effective date is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
@@ -311,8 +316,9 @@ Background: Prepare test
 		 | Field                | Value |
 		 | OutcomeEffectiveDate |       |
 		Then there should be a 422 response
-		
-		Scenario: Customer is terminated with reason 3 - Duplicate, patch to ClaimedPriorityGroup is received
+
+@outcomes		
+	Scenario: Customer is terminated with reason 3 - Duplicate, patch to ClaimedPriorityGroup is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
 	    | OutcomeType          | 3                    |
@@ -329,7 +335,7 @@ Background: Prepare test
 		Then there should be a 403 response
 		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
        
-
+@outcomes
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch to OutcomeType is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -347,7 +353,7 @@ Background: Prepare test
 		Then there should be a 403 response
 		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
        
-
+@outcomes
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: OutcomeType is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -367,7 +373,7 @@ Background: Prepare test
 		Then there should be a 403 response
 		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
         
-		
+@outcomes		
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: ClaimedPriorityGroup is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -386,7 +392,8 @@ Background: Prepare test
 		 | OutcomeClaimedDate   |       |
 		Then there should be a 403 response
 		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
-       
+
+@outcomes       
 		Scenario: Customer is terminated with reason 3 - Duplicate, patch Dates and invalid element: LastModifiedDate is received
 		Given I post an outcome with the following details:
 	    | Field                | Value                |
@@ -405,4 +412,50 @@ Background: Prepare test
 		 | OutcomeClaimedDate   |                      |
 		Then there should be a 403 response
 		And the error message should be "Duplicate Customer: This resource is read only. You may only remove values for Outcome Claimed and Effective date"
-       
+
+@outcomes       
+	   Scenario: Patch to outcome received from another touchpoint
+
+	   	Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+	    | TouchpointId         | 1234567890           |
+		When I patch the following via a different touchpoint
+		 | Field              | Value      |
+		 | OutcomeClaimedDate |            |
+		Then there should be a 200 response
+		And the response body should contain:
+         | Field                    | Value      |
+         | OutcomeType              | 3          |
+         | OutcomeClaimedDate       |            |
+         | TouchpointId             | 9000000001 |
+         | LastModifiedTouchpointId | 9111111111 |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
+
+@outcomes
+	   Scenario:  TouchpointId is patched to a new value in requeset body
+
+	   	Given I post an outcome with the following details:
+	    | Field                | Value                |
+	    | OutcomeType          | 3                    |
+	    | OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	    | OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
+	    | ClaimedPriorityGroup | 99                   |
+	    When I patch the following:
+		 | Field        | Value      |
+		 | TouchpointId | 1234567890 |
+		Then there should be a 200 response
+		And the response body should contain:
+         | Field                    | Value                |
+         | OutcomeType              | 3                    |
+         | OutcomeEffectiveDate     | 2018-07-20T21:45:00Z |
+         | OutcomeClaimedDate       | 2018-07-20T21:45:00Z |
+         | ClaimedPriorityGroup     | 99                   |
+         | TouchpointId             | 1234567890           |
+         | LastModifiedTouchpointId | 9000000001           |
+		And there should be a record in the outcomes ChangeFeed table
+		And there should be a record in the outcomes-history ChangeFeed table
