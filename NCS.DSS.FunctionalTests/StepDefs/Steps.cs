@@ -57,7 +57,8 @@ namespace FunctionalTests.StepDefs
              private string creatingTouchpoint;
              private string lastTouchpoint;
              private String lastResourceName;
-             public string actionId { get; set; }
+             private string overrideSessionId = "";
+        public string actionId { get; set; }
         RequestContext requestContext;
         private List<TestDataItem> loadedData = new List<TestDataItem>();
         Dictionary<string, string> sqlData = new Dictionary<string, string>();
@@ -1229,6 +1230,13 @@ namespace FunctionalTests.StepDefs
             return true;
         }
 
+        [Given(@"I want to send an invalid session id in the next request")]
+        public void GivenIWantToSendAnInvalidSessionIdInTheNextRequest()
+        {
+            overrideSessionId = Guid.NewGuid().ToString();
+        }
+
+
         [Then(@"a new notification should be received for ""(.*)""")]
         public void ThenANewNotificationShouldBeReceivedFor(string p0)
         {
@@ -1656,7 +1664,6 @@ namespace FunctionalTests.StepDefs
                 problem.Should().BeFalse("Because the version tag has not been defined in this feature");
             }
         }
- 
 
         private void ResetVersion()
         {

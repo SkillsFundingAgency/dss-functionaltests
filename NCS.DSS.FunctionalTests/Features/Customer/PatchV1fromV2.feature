@@ -382,13 +382,14 @@ Feature: PatchV1fromV2
 #		| IntroducedByAdditionalInfo | additional info      |
 #		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 		When I patch the following:
-        | Field						 | Value                |
-		| ReasonForTermination       | 2                    |
+        | Field                | Value                |
+        | ReasonForTermination | 2                    |
+        | DateOfTermination    | 2018-07-27T16:11:00Z |
 		Then there should be a 200 response
 		And the response body should contain:
 		| Field                      | Value                |
-		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
-		| Title						 | 1                    |
+		| DateOfRegistration         | 2018-07-27T16:11:00Z |
+		| Title                      | 1                    |
 		| GivenName                  | Bob                  |
 		| FamilyName                 | Customer             |
 		| DateofBirth                | 2005-07-26T13:45:00Z |
@@ -398,6 +399,8 @@ Feature: PatchV1fromV2
 		| OptInMarketResearch        | false                |
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
+		| ReasonForTermination       | 2                    |
+		| DateOfTermination          | 2018-07-27T16:11:00Z |
 
 @customers
 	Scenario: Patch IntroducedBy

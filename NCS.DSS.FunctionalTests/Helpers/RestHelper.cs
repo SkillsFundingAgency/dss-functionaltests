@@ -129,8 +129,19 @@ namespace FunctionalTests.Helpers
                             request.AddHeader("SubcontractorId", "123456789012345678901234567890123456789012345678901");
                     }
                 }
+
+                Console.WriteLine("The Following headers have been added");
+                Console.WriteLine("-------------------------------------");
+                foreach (var p in request.Parameters)
+                {
+                    Console.WriteLine(p.Name + " - " + (p.Value.ToString().Length > 10 ? "[hidden]" : p.Value));
+                }
+
+
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
 
+
+                Console.WriteLine("-------------------------------------");
                 IRestResponse response = null;
 
                 bool retry = true;
@@ -196,6 +207,15 @@ namespace FunctionalTests.Helpers
                     }
                 }
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+
+                Console.WriteLine("The Following headers have been added");
+                Console.WriteLine("-------------------------------------");
+                foreach (var p in request.Parameters)
+                {
+                    Console.WriteLine(p.Name + " - " + (p.Value.ToString().Length > 10 ? "[hidden]": p.Value ));
+                }
+
+
                 request.AddParameter("undefined", json, ParameterType.RequestBody);
                // IRestResponse response = client.Execute(request);
                 IRestResponse response = null;
