@@ -940,7 +940,6 @@ Given I post a Employment Progression record with the following details:
 
 	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
 	And the response body should contain:
 		| Field                   | Value                |
 		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
@@ -1025,7 +1024,6 @@ Given I post a Employment Progression record with the following details:
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	When I patch the element <Field> with <Value>:
 	Then there should be a 200 response
-	And the response body should have <Field> with value <Value>
 	And the response body should contain:
 		| Field                   | Value                |
 		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
