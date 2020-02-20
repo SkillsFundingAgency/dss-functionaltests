@@ -91,7 +91,7 @@ Scenario:Get Diversity Details by invalid ID
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
 	When I get a Diversity Details by ID
-	Then there should be a 404 response
+	Then there should be a 204 response
 
 @LearningProgression
 Scenario:Get All Diversity Details records where none exist
@@ -111,4 +111,4 @@ Scenario:Get All Diversity Details records where none exist
 	#	| GivenName  | Bob      |
 	#	| FamilyName | Customer |
 	When I get all Diversity Details records for a customer
-	Then there should be a 404 response
+	Then there should be a 204 response
