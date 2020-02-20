@@ -1,6 +1,6 @@
-﻿@postV3 @getV3
+﻿@postV2 @getV2
 
-Feature: DiversityV3_Get
+Feature: DiversityV2_Get
 
 Background: Create Adviser
 	Given I post an adviser with the following details:

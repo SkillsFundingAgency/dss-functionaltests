@@ -18,24 +18,24 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DiversityV3_Get")]
-    [NUnit.Framework.CategoryAttribute("postV3")]
-    [NUnit.Framework.CategoryAttribute("getV3")]
-    public partial class DiversityV3_GetFeature
+    [NUnit.Framework.DescriptionAttribute("DiversityV2_Get")]
+    [NUnit.Framework.CategoryAttribute("postV2")]
+    [NUnit.Framework.CategoryAttribute("getV2")]
+    public partial class DiversityV2_GetFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "DiversityV3_Get.feature"
+#line 1 "DiversityV2_Get.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DiversityV3_Get", null, ProgrammingLanguage.CSharp, new string[] {
-                        "postV3",
-                        "getV3"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DiversityV2_Get", null, ProgrammingLanguage.CSharp, new string[] {
+                        "postV2",
+                        "getV2"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
