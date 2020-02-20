@@ -1,5 +1,5 @@
-﻿@postV3 @patchV3
-Feature: DiversityV3_Patch
+﻿@postV2 @patchV2
+Feature: DiversityV2_Patch
 
 Background: Create Adviser
 	Given I post an adviser with the following details:
