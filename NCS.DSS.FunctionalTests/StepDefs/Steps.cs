@@ -147,6 +147,7 @@ namespace FunctionalTests.StepDefs
             var customer = new Customer();
             customer.GivenName = givenName;
             customer.FamilyName = "Smith";
+            customer.PriorityGroups = "[1, 6]";
             json = JsonConvert.SerializeObject(customer);
             response = RestHelper.Post(lastResourceName = constants.Customers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             customerId = AssertAndExtract("CustomerId", response);

@@ -19,6 +19,7 @@
         public string IntroducedByAdditionalInfo { get; set; }
         public string LastModifiedDate { get; set; }
         public string LastModifiedTouchpointID { get; set; }
+        public string PriorityGroups { get; set; }
 
     }
 }
