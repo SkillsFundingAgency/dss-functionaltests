@@ -1,4 +1,6 @@
-﻿namespace FunctionalTests.Models
+﻿using Newtonsoft.Json;
+
+namespace FunctionalTests.Models
 {
     class Customer
     {
