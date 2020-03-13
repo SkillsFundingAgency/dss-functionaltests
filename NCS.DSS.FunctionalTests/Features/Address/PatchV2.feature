@@ -40,8 +40,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -77,8 +77,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -114,8 +114,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -151,8 +151,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -188,8 +188,8 @@ Feature: PatchV2
 		| Address5			   | Changed              |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -262,8 +262,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WW               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -300,7 +300,7 @@ Feature: PatchV2
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
 		| Longitude            | -98.50813            |
-		| Latitude             | 51.53494             |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -336,7 +336,7 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426             |
+		| Longitude            | -98.50812             |
 		| Latitude             | 52.40122             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
@@ -373,8 +373,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:02:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
@@ -410,8 +410,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:13:00Z |
 		And the response body should not contain the "CreatedBy"
@@ -450,8 +450,8 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:13:00Z |
 		And there should be a record in the addresses ChangeFeed table
