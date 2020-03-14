@@ -911,6 +911,7 @@ namespace FunctionalTests.StepDefs
             // THIS CONVERTS ALL DATE TO LOCAL TIME RATHER THAN UTC, BUT AS COMPARIING THEM THIS SHOULD BE OK
         }
 
+        //Found .feature files not updating so some tests fail
         [Then(@"the response body should contain:")]
         public void ThenMyBindingShouldHaveTheFollowingObjects(Table table)
         {
