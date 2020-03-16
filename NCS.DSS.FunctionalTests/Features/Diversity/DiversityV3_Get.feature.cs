@@ -330,7 +330,7 @@ this.FeatureBackground();
 #line 93
  testRunner.When("I get a Diversity Details by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94
- testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -350,7 +350,7 @@ this.FeatureBackground();
 #line 113
  testRunner.When("I get all Diversity Details records for a customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 114
- testRunner.Then("there should be a 404 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
