@@ -36,8 +36,8 @@ Feature: PostV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
@@ -73,8 +73,8 @@ Feature: PostV2
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
@@ -101,8 +101,8 @@ Feature: PostV2
 		| Address5             | null	              |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | null	              |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | null                 |
+		| Latitude             | null                 |
 		| EffectiveFrom        | null	              |
 		| EffectiveTo          | null	              |
 		And there should be a record in the addresses ChangeFeed table
@@ -133,8 +133,8 @@ Feature: PostV2
 		| Address5             | AbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghij |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		| LastModifiedDate     | 2018-09-19T09:01:00Z |
@@ -172,8 +172,6 @@ Feature: PostV2
 		| field     | value     |
 		| Address1  | 1         |
 		| PostCode  | nn12tx   |
-		| Longitude | -1.00181 |
-		| Latitude  | 52.12814 |
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
 
@@ -192,8 +190,6 @@ Feature: PostV2
 		| field     | value     |
 		| Address1  | 1         |
 		| PostCode  | nn1 2tx   |
-		| Longitude | -1.00181 |
-		| Latitude  | 52.12814 |
 		And there should be a record in the addresses ChangeFeed table
 		And there should be a record in the addresses-history ChangeFeed table
 

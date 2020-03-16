@@ -249,8 +249,8 @@ Feature: PatchV1fromV2
 		| Address5             | The County           |
 		| PostCode             | NW11WW               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426             |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 

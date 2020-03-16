@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
-//using Microsoft.Azure.Documents.Client;
+// Added using statement back in
+using Microsoft.Azure.Documents.Client;
 
 namespace NCS.DSS.Action.Cosmos.Client
 {

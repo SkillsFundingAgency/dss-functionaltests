@@ -1,11 +1,17 @@
 ﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace FunctionalTests.Models
+namespace NCS.DSS.FunctionalTests.Models
 {
-    class Customer
+    class CustomerV3
     {
 
         public string CustomerID { get; set; }
+        public string SubcontractorId { get; set; }
         public string DateOfRegistration { get; set; }
         public string Title { get; set; }
         public string GivenName { get; set; }

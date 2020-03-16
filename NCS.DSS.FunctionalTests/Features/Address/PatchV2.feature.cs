@@ -184,10 +184,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table4.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table4.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table4.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -293,10 +293,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table7.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table7.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table7.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -402,10 +402,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table10.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table10.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table10.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -511,10 +511,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table13.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table13.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table13.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -620,10 +620,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table16.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table16.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table16.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -838,10 +838,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WW"});
             table22.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table22.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table22.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -950,7 +950,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "-98.50813"});
             table25.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table25.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -1056,7 +1056,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table28.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table28.AddRow(new string[] {
                         "Latitude",
                         "52.40122"});
@@ -1165,10 +1165,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table31.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table31.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table31.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:02:00Z"});
@@ -1274,10 +1274,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table34.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table34.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table34.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
@@ -1389,10 +1389,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table37.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table37.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table37.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});

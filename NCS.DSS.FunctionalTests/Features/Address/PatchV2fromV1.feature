@@ -40,8 +40,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -74,8 +74,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -108,8 +108,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -142,8 +142,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -176,8 +176,8 @@ Feature: PatchV2fromV1
 		| Address5			   | Changed              |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -210,8 +210,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WW               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -244,8 +244,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WW               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -280,7 +280,7 @@ Feature: PatchV2fromV1
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
 		| Longitude            | -98.50813            |
-		| Latitude             | 51.53494             |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -315,7 +315,7 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
+		| Longitude            | -98.50812            |
 		| Latitude             | 52.40122             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
@@ -349,8 +349,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:02:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 
@@ -383,8 +383,8 @@ Feature: PatchV2fromV1
 		| Address5             | The County           |
 		| PostCode             | NW11WN               |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -0.13426            |
-		| Latitude             | 51.53494             |
+		| Longitude            | -98.50812            |
+		| Latitude             | 52.40121             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:13:00Z |
 

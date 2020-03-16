@@ -172,10 +172,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table3.AddRow(new string[] {
                         "Longitude",
-                        "-0.13426"});
+                        "-98.50812"});
             table3.AddRow(new string[] {
                         "Latitude",
-                        "51.53494"});
+                        "52.40121"});
             table3.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});

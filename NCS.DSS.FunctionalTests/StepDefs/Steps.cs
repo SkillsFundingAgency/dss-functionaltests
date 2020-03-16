@@ -87,8 +87,10 @@ namespace FunctionalTests.StepDefs
             string extractedValue = "";
             if (response.IsSuccessful)
             {
-                Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+                //Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+                dynamic values = JObject.Parse(response.Content);
                 extractedValue = values[key];
+                //extractedValue = values.GetType().GetProperty(key).GetValue(values, null);
                 Console.WriteLine("Storing context information:" + key + " - " + extractedValue);
                 if (extractedValue.Trim().Length == 0)
                 {
@@ -147,6 +149,7 @@ namespace FunctionalTests.StepDefs
             var customer = new Customer();
             customer.GivenName = givenName;
             customer.FamilyName = "Smith";
+            customer.PriorityGroups = "[ 1, 3 ]";
             json = JsonConvert.SerializeObject(customer);
             response = RestHelper.Post(lastResourceName = constants.Customers, url, json, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
             customerId = AssertAndExtract("CustomerId", response);
@@ -908,6 +911,7 @@ namespace FunctionalTests.StepDefs
             // THIS CONVERTS ALL DATE TO LOCAL TIME RATHER THAN UTC, BUT AS COMPARIING THEM THIS SHOULD BE OK
         }
 
+        //Found .feature files not updating so some tests fail
         [Then(@"the response body should contain:")]
         public void ThenMyBindingShouldHaveTheFollowingObjects(Table table)
         {

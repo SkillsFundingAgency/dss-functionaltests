@@ -156,6 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="constants.cs" />
+    <Compile Include="Cosmos\Client\DocumentDBClient.cs" />
+    <Compile Include="Cosmos\Helper\DocumentDBHelper.cs" />
+    <Compile Include="Cosmos\Helper\IResourceHelper.cs" />
+    <Compile Include="Cosmos\Helper\ResourceHelper.cs" />
+    <Compile Include="Cosmos\Provider\DocumentDBProvider.cs" />
+    <Compile Include="Cosmos\Provider\IDocumentDBProvider.cs" />
     <Compile Include="EnvironmentSettings.cs" />
     <Compile Include="EnvironmentSettingsConfigurationBuilder.cs" />
     <Compile Include="Features\ActionPlan\Get.feature.cs">
@@ -168,6 +174,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GetV2.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ActionPlan\GetV3.cs" />
     <Compile Include="Features\ActionPlan\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +185,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PatchV2.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ActionPlan\PatchV3.cs" />
     <Compile Include="Features\ActionPlan\PostV1PatchV2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,6 +206,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PostV2PatchV1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ActionPlan\PostV3.cs" />
     <Compile Include="Features\Action\Get.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -333,6 +342,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GetV2.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Customer\GetV3.cs" />
     <Compile Include="Features\Customer\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -353,6 +363,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PatchV2fromV1.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Customer\PatchV3.cs" />
     <Compile Include="Features\Customer\Post.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -363,6 +374,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PostV2.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Customer\PostV3.cs" />
     <Compile Include="Features\Customer\Search.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -498,6 +510,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\Outcome\PatchV3.cs">
+      <DependentUpon>PatchV3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Features\Outcome\PatchV2.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -512,6 +529,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PostV1PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Outcome\PostV3.cs">
+      <DependentUpon>PostV3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Features\Outcome\PostV2.feature.cs">
       <AutoGen>True</AutoGen>
@@ -589,6 +611,7 @@
       <DependentUpon>Post.feature</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CosmosHelper.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\RestHelper.cs" />
     <Compile Include="Helpers\SpecflowHelper.cs" />
@@ -605,6 +628,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerV2.cs" />
+    <Compile Include="Models\CustomerV3.cs" />
     <Compile Include="Models\Diversity.cs" />
     <Compile Include="Models\EmploymentProgression.cs" />
     <Compile Include="Models\Goal.cs" />
@@ -621,11 +645,14 @@
     <Compile Include="Models\WebChat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestContext.cs" />
+    <Compile Include="StepDefs\Step.cs" />
     <Compile Include="StepDefs\Steps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="appsettings.json" />
+    <None Include="appsettings.local.json" />
+    <None Include="bin\Debug\nunit_random_seed.tmp" />
     <None Include="Features\ActionPlan\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
@@ -634,6 +661,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GetV2.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ActionPlan\GetV3.feature" />
     <None Include="Features\ActionPlan\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
@@ -642,6 +670,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ActionPlan\PatchV3.feature" />
     <None Include="Features\ActionPlan\PostV1PatchV2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PostV1PatchV2.feature.cs</LastGenOutput>
@@ -658,6 +687,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PostV2PatchV1.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ActionPlan\PostV3.feature" />
     <None Include="Features\Action\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
@@ -766,6 +796,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GetV2.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Customer\GetV3.feature" />
     <None Include="Features\Customer\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
@@ -782,6 +813,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PatchV2fromV1.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Customer\PatchV3.feature" />
     <None Include="Features\Customer\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
@@ -790,6 +822,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PostV2.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Customer\PostV3.feature" />
     <None Include="Features\Customer\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Search.feature.cs</LastGenOutput>
@@ -898,6 +931,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\Outcome\PatchV3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV3.cs</LastGenOutput>
+    </None>
     <None Include="Features\Outcome\PatchV2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
@@ -909,6 +946,10 @@
     <None Include="Features\Outcome\PostV1PatchV2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PostV1PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Outcome\PostV3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV3.cs</LastGenOutput>
     </None>
     <None Include="Features\Outcome\PostV2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -970,15 +1011,114 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Post.feature.cs</LastGenOutput>
     </None>
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\NCS.DSS.FunctionalTests.csprojAssemblyReference.cache" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="appsettings.readme.txt" />
+    <Content Include="obj\Debug\NCS.DSS.FunctionalTests.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\Features.Action.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Action.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Action.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Action.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Action.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Action.PostV1PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Action.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Action.PostV2PatchV1.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.GetV3.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.PatchV3.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.PostV1PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.PostV2PatchV1.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.ActionPlan.PostV3.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.PatchV1fromV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.PatchV2fromV1.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Address.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Adviser.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Adviser.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Adviser.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Adviser.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Adviser.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Adviser.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Contact.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Contact.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Contact.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.GetV2 - Copy.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.GetV3.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.PatchV1fromV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.PatchV2fromV1.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.PatchV3.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.PostV3.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Customer.Search.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Diversity.DiversityV3_Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Diversity.DiversityV3_Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Diversity.DiversityV3_Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Diversity.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.EmploymentProgression.EmploymentProgression_Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.EmploymentProgression.EmploymentProgression_Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.EmploymentProgression.EmploymentProgression_Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.PostV1PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Goal.PostV2PatchV1.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Interaction.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Interaction.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Interaction.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Interaction.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Interaction.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Interaction.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.LearningProgression.LearningProgression_Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.LearningProgression.LearningProgression_Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.LearningProgression.LearningProgression_Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Outcome.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Outcome.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Outcome.PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Outcome.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Outcome.PostV1PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Outcome.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Outcome.PostV2withSessionDate.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.GetV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.PostV1PatchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.PostV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.PostV2PatchV1.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Session.SessionPatcchV2.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Subscription.Subscriber.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.Transfer.Post.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.WebChat.Get.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.WebChat.Patch.feature.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Features.WebChat.Post.feature.cs.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
     <Folder Include="Features\Search\" />
+    <Folder Include="obj\Release\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

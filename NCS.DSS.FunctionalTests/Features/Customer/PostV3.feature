@@ -209,7 +209,7 @@ Feature: PostV3
 		Then there should be a 422 response
 		And the error message should be "Family Name is a required field"		
 
-@customers @ignore
+@customers
 	Scenario Outline: Given names with spaces
 		Given I post a customer with the given name '<GivenName>'
 		Then there should be a 201 response
@@ -222,7 +222,7 @@ Feature: PostV3
 		| Sarah - Jane |
 
 
-@customers @ignore
+@customers
 	Scenario Outline: Family names with spaces
 		Given I post a customer with the given name '<FamilyName>'
 		Then there should be a 201 response
