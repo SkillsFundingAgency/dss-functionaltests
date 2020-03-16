@@ -20,6 +20,7 @@ Feature: PatchV3
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
+		| PriorityGroups             | [2,7]				|
 		When I patch the following:
         | Field						 | Value                |
         | DateOfRegistration		 | 2018-07-28T16:11:00Z |

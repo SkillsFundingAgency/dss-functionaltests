@@ -380,20 +380,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Diversity\DiversityV3_Get.feature.cs">
+    <Compile Include="Features\Diversity\DiversityV2_Get.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DiversityV3_Get.feature</DependentUpon>
+      <DependentUpon>DiversityV2_Get.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Diversity\DiversityV3_Patch.feature.cs">
+    <Compile Include="Features\Diversity\DiversityV2_Patch.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DiversityV3_Patch.feature</DependentUpon>
+      <DependentUpon>DiversityV2_Patch.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Diversity\DiversityV3_Post.feature.cs">
+    <Compile Include="Features\Diversity\DiversityV2_Post.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DiversityV3_Post.feature</DependentUpon>
+      <DependentUpon>DiversityV2_Post.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Diversity\Post.feature.cs">
       <AutoGen>True</AutoGen>
@@ -827,17 +827,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Search.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Diversity\DiversityV3_Get.feature">
+    <None Include="Features\Diversity\DiversityV2_Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DiversityV3_Get.feature.cs</LastGenOutput>
+      <LastGenOutput>DiversityV2_Get.cs</LastGenOutput>
     </None>
-    <None Include="Features\Diversity\DiversityV3_Patch.feature">
+    <None Include="Features\Diversity\DiversityV2_Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DiversityV3_Patch.feature.cs</LastGenOutput>
+      <LastGenOutput>DiversityV2_Patch.cs</LastGenOutput>
     </None>
-    <None Include="Features\Diversity\DiversityV3_Post.feature">
+    <None Include="Features\Diversity\DiversityV2_Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DiversityV3_Post.feature.cs</LastGenOutput>
+      <LastGenOutput>DiversityV2_Post.cs</LastGenOutput>
     </None>
     <None Include="Features\Diversity\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
