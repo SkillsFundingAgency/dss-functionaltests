@@ -85,7 +85,7 @@ namespace FunctionalTests.StepDefs
         string ExtractFromResponse(string key, IRestResponse response)
         {
             string extractedValue = "";
-            if (response.IsSuccessful)
+            if (response.IsSuccessful && !string.IsNullOrEmpty(response.Content))
             {
                 //Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
                 dynamic values = JObject.Parse(response.Content);
@@ -179,6 +179,7 @@ namespace FunctionalTests.StepDefs
         [Given(@"I post an Interaction with the following details:")]
         public void GivenIPostAnInteractionWithTheFollowingDetails(Table table)
         {
+            ResetVersion();
             var interaction = table.CreateInstance<Interaction>();
             json = JsonConvert.SerializeObject(interaction);
             //          if (interaction.AdviserDetailsId is null && adviserDetailId.Length > 0 )

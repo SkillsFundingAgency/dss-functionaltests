@@ -460,25 +460,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Get.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Interaction\GetV2.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GetV2.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Interaction\Patch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patch.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Interaction\PatchV2.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PatchV2.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Interaction\PostV2.feature.cs">
-      <DependentUpon>PostV2.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Features\Interaction\Post.feature.cs">
       <AutoGen>True</AutoGen>
@@ -891,21 +876,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Get.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Interaction\GetV2.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
-    </None>
     <None Include="Features\Interaction\Patch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Patch.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Interaction\PatchV2.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Interaction\PostV2.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Interaction\Post.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
