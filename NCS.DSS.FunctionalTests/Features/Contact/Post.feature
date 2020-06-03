@@ -17,7 +17,7 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer10@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 		Then there should be a 201 response
 		And the response body should contain:
@@ -26,7 +26,7 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer10@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 	And there should be a record in the contacts ChangeFeed table
 	And there should be a record in the contacts-history ChangeFeed table
@@ -75,7 +75,7 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer11@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "The PreferredContactMethod Field is required."
@@ -88,11 +88,11 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer12@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "Please supply a valid Preferred Contact Method"
-		
+
 @contactdetails
 	Scenario: Post ContactDetail with Invalid MobileNumber
 		Given I post a Contact with the following details:
@@ -101,7 +101,7 @@ Feature: Post
 		| MobileNumber           | 012345678901234567890        |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer13@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "The Field MobileNumber must be a string with a maximum length of 20."
@@ -114,7 +114,7 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 012345678901234567890        |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer14@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "The Field HomeNumber must be a string with a maximum length of 20."
@@ -127,7 +127,7 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 012345678901234567890        |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer15@customer.com        |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "The Field AlternativeNumber must be a string with a maximum length of 20."
@@ -153,7 +153,7 @@ Feature: Post
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer16@customer.com        |
 		| LastModifiedDate       | 2033-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "Last Modified Date must be less the current date/time"
@@ -177,7 +177,7 @@ Feature: Post
 		| PreferredContactMethod | 2                            |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer17@customer.com        |
 		| LastModifiedDate       | 2033-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "Mobile Number must be supplied."
@@ -188,7 +188,7 @@ Feature: Post
 		| Field                  | Value                        |
 		| PreferredContactMethod | 3                            |
 		| MobileNumber           | 07676 123456                 |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer18@customer.com        |
 		| LastModifiedDate       | 2033-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
 		#And the error message should be "Home Number must be supplied."
@@ -200,10 +200,10 @@ Feature: Post
 		| PreferredContactMethod | 4                            |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer19@customer.com        |
 		| LastModifiedDate       | 2033-08-20T11:46:02.4482612Z |
 		Then there should be a 422 response
-		#And the error message should be "Mobile Number must be supplied."	
+		#And the error message should be "Mobile Number must be supplied."
 
 
 @contactdetails
@@ -211,7 +211,7 @@ Feature: Post
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer20@customer.com        |
 		And I post a Contact with the following details:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |

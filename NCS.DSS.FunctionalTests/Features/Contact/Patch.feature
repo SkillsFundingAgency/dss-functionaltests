@@ -17,7 +17,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer1@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |
@@ -28,7 +28,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer1@customer.com        |
      And there should be a record in the contacts ChangeFeed table
 	 And there should be a record in the contacts-history ChangeFeed table
 
@@ -40,14 +40,14 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer2@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 6                            |
 		Then there should be a 422 response
 		#And the error message should be "Please supply a valid Preferred Contact Method"
-		
-@contactdetails		
+
+@contactdetails
 	Scenario: Patch MobileNumber
 		Given I post a Contact with the following details:
 		| Field                  | Value                        |
@@ -55,7 +55,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer3@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| MobileNumber           | 07676 654321                 |
@@ -66,7 +66,7 @@
 		| MobileNumber           | 07676 654321                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer3@customer.com        |
 		And there should be a record in the contacts ChangeFeed table
 		And there should be a record in the contacts-history ChangeFeed table
 
@@ -78,7 +78,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer4@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| HomeNumber             | 08654 654321                 |
@@ -89,7 +89,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 654321                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer4@customer.com        |
 		And there should be a record in the contacts ChangeFeed table
 		And there should be a record in the contacts-history ChangeFeed table
 
@@ -101,7 +101,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 08654 123457                 |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer5@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| AlternativeNumber      | 08654 123458                 |
@@ -112,7 +112,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 08654 123458                 |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer5@customer.com        |
 	    And there should be a record in the contacts ChangeFeed table
 	    And there should be a record in the contacts-history ChangeFeed table
 
@@ -124,10 +124,10 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer6@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
-		| EmailAddress           | customer@update.com          |
+		| EmailAddress           | customer7@update.com          |
 		Then there should be a 200 response
 		And the response body should contain:
 		| Field                  | Value                        |
@@ -135,7 +135,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@update.com          |
+		| EmailAddress           | customer7@update.com          |
 		And there should be a record in the contacts ChangeFeed table
 		And there should be a record in the contacts-history ChangeFeed table
 
@@ -161,7 +161,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer8@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |
@@ -172,7 +172,7 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
+		| EmailAddress           | customer8@customer.com        |
 		And there should be a record in the contacts ChangeFeed table
 		And there should be a record in the contacts-history ChangeFeed table
 
