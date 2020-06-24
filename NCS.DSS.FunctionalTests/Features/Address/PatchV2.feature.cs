@@ -729,10 +729,10 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "NW22WN"});
             table19.AddRow(new string[] {
                         "Longitude",
-                        "-1.50752"});
+                        "-1.50763"});
             table19.AddRow(new string[] {
                         "Latitude",
-                        "52.92477"});
+                        "52.92542"});
             table19.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
