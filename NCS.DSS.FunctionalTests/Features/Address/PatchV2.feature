@@ -214,7 +214,7 @@ Feature: PatchV2
 #		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	  When I patch the following:
 		| Field                | Value                |
-		| PostCode             | DE223BY              |
+		| PostCode             | B168FN              |
 		Then there should be a 200 response
 		And the response body should contain:
 		| Field                | Value                |
@@ -223,10 +223,10 @@ Feature: PatchV2
 		| Address3             | The Town             |
 		| Address4             | The Area             |
 		| Address5             | The County           |
-		| PostCode             | DE223BY              |
+		| PostCode             | B168FN              |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -1.50763             |
-		| Latitude             | 52.92542             |
+		| Longitude            | -1.91864             |
+		| Latitude             | 52.47667             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
 		And there should be a record in the addresses ChangeFeed table
