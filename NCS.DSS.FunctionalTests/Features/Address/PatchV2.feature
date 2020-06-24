@@ -225,7 +225,7 @@ Feature: PatchV2
 		| Address5             | The County           |
 		| PostCode             | DE223BY              |
 		| AlternativePostCode  | NW22WN               |
-		| Longitude            | -1.50763            |
+		| Longitude            | -1.50752             |
 		| Latitude             | 52.92542             |
 		| EffectiveFrom        | 2018-06-19T09:01:00Z |
 		| EffectiveTo          | 2018-06-21T13:12:00Z |
