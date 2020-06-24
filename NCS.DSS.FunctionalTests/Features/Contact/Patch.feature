@@ -21,6 +21,7 @@
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |
+		| MobileNumber           | 07676 123456                 |
 		Then there should be a 200 response
 		And the response body should contain:
 		| Field                  | Value                        |
@@ -165,6 +166,7 @@
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |
+		| MobileNumber           | 07676 123456                 |
 		Then there should be a 200 response
 		And the response body should contain:
 		| Field                  | Value                        |
