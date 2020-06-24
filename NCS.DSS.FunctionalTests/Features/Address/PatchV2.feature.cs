@@ -697,7 +697,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "Value"});
             table18.AddRow(new string[] {
                         "PostCode",
-                        "DE223BY"});
+                        "B168FN"});
 #line 215
    testRunner.When("I patch the following:", ((string)(null)), table18, "When ");
 #line 218
@@ -723,16 +723,16 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                         "The County"});
             table19.AddRow(new string[] {
                         "PostCode",
-                        "DE223BY"});
+                        "B168FN"});
             table19.AddRow(new string[] {
                         "AlternativePostCode",
                         "NW22WN"});
             table19.AddRow(new string[] {
                         "Longitude",
-                        "-1.50763"});
+                        "-1.91864"});
             table19.AddRow(new string[] {
                         "Latitude",
-                        "52.92542"});
+                        "52.47667"});
             table19.AddRow(new string[] {
                         "EffectiveFrom",
                         "2018-06-19T09:01:00Z"});
