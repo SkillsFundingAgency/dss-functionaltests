@@ -11,7 +11,7 @@
 
 @contactdetails @smoke
 	Scenario: Patch PreferredContactMethod
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
@@ -28,13 +28,12 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer1@customer.com        |
      And there should be a record in the contacts ChangeFeed table
 	 And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch PreferredContactMethod with invalid data
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
@@ -49,7 +48,7 @@
 
 @contactdetails
 	Scenario: Patch MobileNumber
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
@@ -66,13 +65,12 @@
 		| MobileNumber           | 07676 654321                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer3@customer.com        |
 		And there should be a record in the contacts ChangeFeed table
 		And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch HomeNumber
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
@@ -89,19 +87,17 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 654321                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer4@customer.com        |
 		And there should be a record in the contacts ChangeFeed table
 		And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch AlternativeNumber
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 08654 123457                 |
-		| EmailAddress           | customer5@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| AlternativeNumber      | 08654 123458                 |
@@ -112,19 +108,17 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 08654 123458                 |
-		| EmailAddress           | customer5@customer.com        |
 	    And there should be a record in the contacts ChangeFeed table
 	    And there should be a record in the contacts-history ChangeFeed table
 
 @contactdetails
 	Scenario: Patch EmailAddress
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer6@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| EmailAddress           | customer7@update.com          |
@@ -141,7 +135,7 @@
 
 @contactdetails
 	Scenario: Patch EmailAddress with invalid data
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
@@ -155,13 +149,12 @@
 
 @contactdetails
 	Scenario: Patch new PreferredContactMethod - MobileNumber
-		Given I post a Contact with the following details:
+		Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer8@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |
@@ -172,7 +165,6 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer8@customer.com        |
 		And there should be a record in the contacts ChangeFeed table
 		And there should be a record in the contacts-history ChangeFeed table
 

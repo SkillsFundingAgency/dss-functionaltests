@@ -105,13 +105,10 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "AlternativeNumber",
                         "07564656766"});
             table2.AddRow(new string[] {
-                        "EmailAddress",
-                        "customer@customer.com"});
-            table2.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
 #line 11
- testRunner.And("I post a Contact with the following details:", ((string)(null)), table2, "And ");
+ testRunner.And("I post a Contact with the following details with unique email address:", ((string)(null)), table2, "And ");
 #line hidden
         }
         
@@ -124,14 +121,14 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Contact by ID", null, new string[] {
                         "contactdetails",
                         "smoke"});
-#line 21
+#line 20
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
  this.FeatureBackground();
-#line 22
+#line 21
  testRunner.When("I get a Contact by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 22
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -150,12 +147,9 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "AlternativeNumber",
                         "07564656766"});
             table3.AddRow(new string[] {
-                        "EmailAddress",
-                        "customer@customer.com"});
-            table3.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-08-20T11:46:02.4482612Z"});
-#line 24
+#line 23
  testRunner.And("the response body should contain:", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
