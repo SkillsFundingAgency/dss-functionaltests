@@ -19,6 +19,7 @@ using TechTalk.SpecFlow.Assist;
 using System.Configuration;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RestSharp.Extensions;
 
 namespace FunctionalTests.StepDefs
 {
@@ -41,6 +42,7 @@ namespace FunctionalTests.StepDefs
         private string contactId;
         private string interactionId;
         private string actionPlanId;
+        private string DigitalIdentityId;
 
         private string sessionId;
         private string goalId;
@@ -111,6 +113,8 @@ namespace FunctionalTests.StepDefs
             }
             return extractedValue;
         }
+
+
         public string PostRequest(string sBaseUrl, string sJson, string sResource)
         {
             string sUrl = sBaseUrl + requestContext.UrlBuilder(sResource);
@@ -247,7 +251,29 @@ namespace FunctionalTests.StepDefs
             contact.EmailAddress = $"someEmail{DateTime.Now.Ticks}@sometest.com";
             json = JsonConvert.SerializeObject(contact);
             url = PostRequest(envSettings.BaseUrl, json, constants.Contacts);
-            contactId = id;
+        }
+
+
+        [Given(@"I Post a digital identity with the following details")]
+        public void GivenIPostADigitalIdentityWithTheFollowingDetails(Table table)
+        {
+            ScenarioContext.Current["version"] = "v2";
+            var di = table.CreateInstance<DigitalIdentity>();
+            if (!di.CustomerId.HasValue)
+                di.CustomerId = new Guid(customerId);
+            json = JsonConvert.SerializeObject(di);
+            url = PostRequest(envSettings.BaseUrl, json, constants.DigitalIdentities);
+            DigitalIdentityId = id;
+        }
+
+        [Given(@"I Delete a Digital Identity")]
+        public void GivenIDeleteADigitalIdentityWithTheFollowingDetails()
+        {
+            ScenarioContext.Current["version"] = "v2";
+            var url = $"{envSettings.BaseUrl}/digitalidentities/api/customer/";
+            if(string.IsNullOrEmpty(customerId))
+                customerId = Guid.NewGuid().ToString();
+            response = RestHelper.DeleteRequest(url, envSettings.TestEndpoint01, customerId, envSettings.SubscriptionKey);
         }
 
         [Given(@"I post a Contact using existing Email:")]
@@ -574,10 +600,33 @@ namespace FunctionalTests.StepDefs
             patchFromTable2(table, lastResourceName, envSettings.TestEndpoint02);
         }
 
+        [Given(@"I patch the following digitalIdentity")]
+        public void WhenIPatchTheFollowingDigitalIdentity(Table table)
+        {
+            ScenarioContext.Current.Set("V2", "version");
+            Dictionary<string, string> patchVals = table.Rows.ToDictionary(r => r["Field"], r => r["Value"]);
+            if (patchVals.Keys.Contains("CustomerId"))
+                customerId = patchVals["CustomerId"];
 
+            json = JsonConvert.SerializeObject(patchVals);
+            var url = $"{envSettings.BaseUrl}/digitalidentities/api/customer/";
+            response = RestHelper.Patch(url, json, lastTouchpoint ?? envSettings.TestEndpoint01, envSettings.SubscriptionKey, customerId);
+            string RequestTimeString = response.Headers
+                .Where(x => x.Name == "Date")
+                .Select(x => x.Value)
+                .FirstOrDefault().ToString();
+            requestTime = DateTime.Parse(RequestTimeString).ToUniversalTime();
+            lastRequestWasPatch = true;
+        }
 
         [When(@"I patch the following:")]
         public void WhenIPatchTheFollowing(Table table)
+        {
+            patchFromTable2(table, lastResourceName);
+        }
+
+        [When(@"I Set DateOfTermination of a Customer:")]
+        public void WhenITerminateCustomer(Table table)
         {
             patchFromTable2(table, lastResourceName);
         }
@@ -624,14 +673,29 @@ namespace FunctionalTests.StepDefs
             }
         }
 
+        private string GetTableNameFromResource(string resource)
+        {
+            switch (resource)
+            {
+
+                case constants.DigitalIdentities:
+                    return "digitalidentities";
+                default: 
+                    return resource;
+
+            }
+        }
+
         private void patchFromTable2(Table table, string resource, String touchpointId = "")
         {
+
+            var res = GetTableNameFromResource(resource);
+
             // before we patch, make sure that the post has been picked up by change feed and arrived in staging db
             // otherwise  post and patch change feed may get wrapped up into one.
             //            (requestContext.GetResponseCode(resource) == HttpStatusCode.Created || requestContext.GetResponseCode(resource) == HttpStatusCode.OK).Should().BeTrue("Temp check see code");
             requestContext.GetResponseCode(resource).Should().Be(HttpStatusCode.Created, "Because a patch cannot be attempted unless the post returned with 201 - Created");
-            ThenThereShouldBeARecordInTheChangeFeedTable(resource);
-
+            ThenThereShouldBeARecordInTheChangeFeedTable(res);
 
             // five second pause to attempt to ensure that change feed trigger for patch is not wrapped up with post
             //Thread.Sleep(5250);
@@ -681,8 +745,6 @@ namespace FunctionalTests.StepDefs
             }
 
         }
-
-
 
 
         //private void patchFromTable(Table table, String touchpointId = "")
@@ -763,6 +825,13 @@ namespace FunctionalTests.StepDefs
         public void WhenIGetAnActionByID()
         {
             url = envSettings.BaseUrl + "actions/api/Customers/" + customerId + "/Interactions/" + interactionId + "/ActionPlans/" + actionPlanId + "/actions/" + actionId;
+            response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
+        }
+
+        [Given(@"I get a DigitalIdentity by CustomerID")]
+        public void WhenIGetDigitalIdentityByCustomerID()
+        {
+            url = $"{envSettings.BaseUrl}digitalidentities/api/customers/{customerId}";
             response = RestHelper.Get(url, envSettings.TestEndpoint01, envSettings.SubscriptionKey);
         }
 
@@ -1364,6 +1433,20 @@ namespace FunctionalTests.StepDefs
                     primaryTableId = "CustomerId";
                     historyTableId = "Customers-historyId";
                     resource = constants.Customers;
+                    break;
+                case "digitalidentities":
+                    recordId = id;
+                    addCreatedByToCollection = true;
+                    primaryTableId = "digitalidentities";
+                    historyTableId = "digitalidentities-history";
+                    resource = constants.DigitalIdentities;
+                    break;
+                case "identity":
+                    recordId = DigitalIdentityId;
+                    addCreatedByToCollection = true;
+                    primaryTableId = "digitalidentities";
+                    historyTableId = "digitalidentities-history";
+                    resource = constants.DigitalIdentities;
                     break;
                 case "diversitydetails":
                 case "diversitydetails-history":

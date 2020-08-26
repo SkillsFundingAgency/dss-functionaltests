@@ -109,7 +109,7 @@ namespace NCS.DSS.FunctionalTests
         }
 
         public string GetDocumentBaseUrl(string resource)
-        {   
+        {
             return requestUrls[resource];
         }
 
@@ -126,14 +126,14 @@ namespace NCS.DSS.FunctionalTests
 
         public string getUrlPart(string resource)
         {
-            return ( resource + "/" + GetDocumentId(resource) + "/");
+            return (resource + "/" + GetDocumentId(resource) + "/");
         }
 
-        public string UrlBuilder( string resource)
+        public string UrlBuilder(string resource)
         {
             string returnUrl = "/" + resource + "/api/";
-            
-            switch( resource)
+
+            switch (resource)
             {
                 case constants.Customers:
                 case constants.AdviserDetails:
@@ -160,6 +160,9 @@ namespace NCS.DSS.FunctionalTests
                     break;
                 case constants.Contacts: // exception - doesn't fit patter so handle on its own
                     returnUrl = "/ContactDetails/api/" + getUrlPart(constants.Customers) + "ContactDetails/";
+                    break;
+                case constants.DigitalIdentities:
+                    returnUrl = "/digitalidentities/api/identity";
                     break;
             }
             //returnUrl += resource + "/";
