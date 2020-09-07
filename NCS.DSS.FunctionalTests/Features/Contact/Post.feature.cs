@@ -20,6 +20,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Post")]
     [NUnit.Framework.CategoryAttribute("postV1")]
+    [NUnit.Framework.CategoryAttribute("patchV1")]
     public partial class PostFeature
     {
         
@@ -33,7 +34,8 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Post", null, ProgrammingLanguage.CSharp, new string[] {
-                        "postV1"});
+                        "postV1",
+                        "patchV1"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -758,7 +760,7 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
                         "EmailAddress",
                         "customer10@customer.com"});
 #line 215
-  testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table21, "Given ");
+  testRunner.Given("I post a Contact with the following details:", ((string)(null)), table21, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -773,6 +775,44 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
   testRunner.And("I post a Contact using existing Email:", ((string)(null)), table22, "And ");
 #line 223
   testRunner.Then("there should be a 409 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post ContactDetail with email that already exists for another customer that has b" +
+            "een terminated")]
+        [NUnit.Framework.CategoryAttribute("contactdetails")]
+        public virtual void PostContactDetailWithEmailThatAlreadyExistsForAnotherCustomerThatHasBeenTerminated()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ContactDetail with email that already exists for another customer that has b" +
+                    "een terminated", null, new string[] {
+                        "contactdetails"});
+#line 229
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+ this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table23.AddRow(new string[] {
+                        "PreferredContactMethod",
+                        "2"});
+            table23.AddRow(new string[] {
+                        "HomeNumber",
+                        "08654 123456"});
+            table23.AddRow(new string[] {
+                        "AlternativeNumber",
+                        "07564656766"});
+            table23.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2033-08-20T11:46:02.4482612Z"});
+#line 230
+  testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table23, "Given ");
+#line 236
+  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -251,6 +251,7 @@ namespace FunctionalTests.StepDefs
             contact.EmailAddress = $"someEmail{DateTime.Now.Ticks}@sometest.com";
             json = JsonConvert.SerializeObject(contact);
             url = PostRequest(envSettings.BaseUrl, json, constants.Contacts);
+            contactId = id;
         }
 
 

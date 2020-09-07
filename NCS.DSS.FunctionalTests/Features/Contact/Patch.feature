@@ -17,7 +17,6 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer1@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 2                            |
@@ -39,7 +38,6 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer2@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 6                            |
@@ -54,7 +52,6 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer3@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| MobileNumber           | 07676 654321                 |
@@ -76,7 +73,6 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer4@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| HomeNumber             | 08654 654321                 |
@@ -141,7 +137,6 @@
 		| MobileNumber           | 07676 123456                 |
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer@customer.com        |
 		When I patch the following:
 		| Field                  | Value                        |
 		| EmailAddress           | customeratcustomer.com       |

@@ -1,4 +1,4 @@
-﻿@postV1
+﻿@postV1 @patchV1
 Feature: Post
 
 
@@ -212,7 +212,7 @@ Feature: Post
 
 @contactdetails
 	Scenario: Post ContactDetail with email that already exists for another customer
-		Given I post a Contact with the following details with unique email address:
+		Given I post a Contact with the following details:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
 		| EmailAddress           | customer10@customer.com      |
@@ -221,3 +221,19 @@ Feature: Post
 		| PreferredContactMethod | 2                            |
 		| MobileNumber           | 07676 123456                 |
 		Then there should be a 409 response
+
+
+
+
+@contactdetails
+	Scenario: Post ContactDetail with email that already exists for another customer that has been terminated
+		Given I post a Contact with the following details with unique email address:
+		| Field                  | Value                        |
+		| PreferredContactMethod | 2                            |
+		| HomeNumber             | 08654 123456                 |
+		| AlternativeNumber      | 07564656766                  |
+		| LastModifiedDate       | 2033-08-20T11:46:02.4482612Z |
+		Then there should be a 201 response
+	 #   Given I patch "Customers" with the following details:
+		#| DateOfTermination          | 2020-09-07T14:45:00Z |
+		#Then there should be a 200 response
