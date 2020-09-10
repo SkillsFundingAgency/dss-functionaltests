@@ -264,6 +264,7 @@ namespace FunctionalTests.Helpers
                 if (ScenarioContext.Current["version"] != "v1")
                 {
                     request.AddHeader("version", (string)ScenarioContext.Current["version"]);
+                    request.AddHeader("apimUrl", "someUrl");
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("subcontractorId"))
                     {
                         if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
