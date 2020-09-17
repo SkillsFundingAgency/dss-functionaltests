@@ -221,28 +221,28 @@ Scenario: Post ContactDetail with email that already exists for another customer
 		| EmailAddress           | customer103@customer.com |
     Then there should be a 409 response
 
-@contactdetails
-Scenario: Post ContactDetail with email that already exists for another customer that has been terminated
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | CustomerThatWillBeTerminated  |
-		| FamilyName | Terminated  |
-	Given I post a Contact with the following details:
-		| Field                  | Value                        |
-		| PreferredContactMethod | 1                            |
-		| HomeNumber             | 08654 123456                 |
-		| AlternativeNumber      | 07564656766                  |
-		| EmailAddress           | customer2017@customer.com |
-	When I Set DateOfTermination of a Customer:
-		| Field             | Value                |
-		| DateOfTermination | 2020-08-27T14:45:00Z |
-	Then there should be a 200 response
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
-	Given I post a Contact with the following details:
-		| Field                  | Value                    |
-		| PreferredContactMethod | 1                       |
-		| EmailAddress           | customer2017@customer.com |
-	Then there should be a 201 response
+#@contactdetails
+#Scenario: Post ContactDetail with email that already exists for another customer that has been terminated
+#	Given I post a Customer with the following details:
+#		| Field      | Value    |
+#		| GivenName  | CustomerThatWillBeTerminated  |
+#		| FamilyName | Terminated  |
+#	Given I post a Contact with the following details:
+#		| Field                  | Value                        |
+#		| PreferredContactMethod | 1                            |
+#		| HomeNumber             | 08654 123456                 |
+#		| AlternativeNumber      | 07564656766                  |
+#		| EmailAddress           | customer2017@customer.com |
+#	When I Set DateOfTermination of a Customer:
+#		| Field             | Value                |
+#		| DateOfTermination | 2020-09-16T16:45:00Z |
+#	Then there should be a 200 response
+#	Given I post a Customer with the following details:
+#		| Field      | Value    |
+#		| GivenName  | Bob      |
+#		| FamilyName | Customer |
+#	Given I post a Contact with the following details:
+#		| Field                  | Value                    |
+#		| PreferredContactMethod | 1                       |
+#		| EmailAddress           | customer2017@customer.com |
+#	Then there should be a 201 response
