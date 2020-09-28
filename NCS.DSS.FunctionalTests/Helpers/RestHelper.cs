@@ -336,7 +336,8 @@ namespace FunctionalTests.Helpers
 
                 if (ScenarioContext.Current["version"] != "v1")
                 {
-                    request.AddHeader("version", (string)ScenarioContext.Current["version"]);
+                    if (!string.IsNullOrEmpty((string)ScenarioContext.Current["version"]))
+                        request.AddHeader("version", (string)ScenarioContext.Current["version"]);
                     if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("SubcontractorId"))
                     {
                         if (!ScenarioContext.Current.ContainsKey("subcontractorId"))
@@ -345,8 +346,7 @@ namespace FunctionalTests.Helpers
                             request.AddHeader("SubcontractorId", "67576575");
                         }
                     }
-
-                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("InvalidSubcontractorId"))
+                    if (ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("InvalidSubcontra    ctorId"))
                     {
                         ScenarioContext.Current.Add("subcontractorId", "123456789012345678901234567890123456789012345678901");
                         request.AddHeader("SubcontractorId", "123456789012345678901234567890123456789012345678901");
@@ -356,9 +356,10 @@ namespace FunctionalTests.Helpers
                 request.AddHeader("TouchpointId", touchPointId);
                 if (FeatureContext.Current.FeatureInfo.Tags.Contains<string>("getV2") || ScenarioContext.Current.ScenarioInfo.Tags.Contains<string>("getV2"))
                 {
+
                     request.AddHeader("version", "v2");
                 }
- 
+
                 request.AddHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
                 IRestResponse response = null;
                 bool retry = true;
@@ -373,7 +374,7 @@ namespace FunctionalTests.Helpers
                     response = client.Execute(request);
                     responseTime.Stop();
                     Console.WriteLine("Rest call Attempt (" + tries + ") Returned " + response.StatusCode + " in " + responseTime.ElapsedMilliseconds + " ms");
-                    if ( response.StatusCode != System.Net.HttpStatusCode.OK )
+                    if (response.StatusCode != System.Net.HttpStatusCode.OK)
                     {
                         if (tries <= maxTries)
                         {
@@ -415,7 +416,7 @@ namespace FunctionalTests.Helpers
             return tcs.Task;
         }*/
 
- 
+
 
     }
 
