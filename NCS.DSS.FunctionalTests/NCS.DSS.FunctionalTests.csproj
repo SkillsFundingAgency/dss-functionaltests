@@ -380,6 +380,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Search.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\DigitalIdentity\DeleteV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\DigitalIdentity\GetV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\DigitalIdentity\PatchV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchV2.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\DigitalIdentity\PostV2.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostV2.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\Diversity\DiversityV2_Get.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -614,6 +634,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerV2.cs" />
     <Compile Include="Models\CustomerV3.cs" />
+    <Compile Include="Models\DigitalIdentity.cs" />
     <Compile Include="Models\Diversity.cs" />
     <Compile Include="Models\EmploymentProgression.cs" />
     <Compile Include="Models\Goal.cs" />
@@ -811,6 +832,22 @@
     <None Include="Features\Customer\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DigitalIdentity\DeleteV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DigitalIdentity\GetV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DigitalIdentity\PatchV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PatchV2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DigitalIdentity\PostV2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PostV2.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Diversity\DiversityV2_Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

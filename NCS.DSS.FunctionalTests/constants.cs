@@ -26,6 +26,7 @@ namespace FunctionalTests.StepDefs
         public const string EmploymentProgressions = "EmploymentProgressions";
                 //public const string CustomerId = "CustomerId";
         public const string AddressId = "AddressId";
+        public const string DigitalIdentities = "identity";
         //public const string ContactId = "ContactId";
         //public const string InteractionId = "InteractionId";
         //public const string SessionId = "SessionId";
@@ -87,6 +88,12 @@ namespace FunctionalTests.StepDefs
                     break;
                 case "learningprogressions":
                     returnVal = "LearningProgressionId";
+                    break;
+                case "identity":
+                    returnVal = "IdentityID";
+                    break;
+                case "digitalidentities":
+                    returnVal = "IdentityID";
                     break;
                 default:
                     returnVal = resource.TrimEnd(new char[] { 's'}) + "Id";
