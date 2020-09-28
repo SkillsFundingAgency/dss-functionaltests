@@ -161,6 +161,9 @@ namespace NCS.DSS.FunctionalTests
                 case constants.Contacts: // exception - doesn't fit patter so handle on its own
                     returnUrl = "/ContactDetails/api/" + getUrlPart(constants.Customers) + "ContactDetails/";
                     break;
+                case constants.DigitalIdentities:
+                    returnUrl = "/digitalidentities/api/identity";
+                    break;
             }
             //returnUrl += resource + "/";
 
