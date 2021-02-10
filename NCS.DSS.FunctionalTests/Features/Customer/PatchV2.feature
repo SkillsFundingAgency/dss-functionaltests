@@ -1,12 +1,9 @@
-﻿
-@postV2 @patchV2
-
-Feature: PatchV2
+﻿Feature: CustomerPatchV2
 
 
 @customers @smoke
       Scenario: Patch DateOfRegistration
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -20,7 +17,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
         | DateOfRegistration		 | 2018-07-28T16:11:00Z |
 		Then there should be a 200 response
@@ -43,7 +40,7 @@ Feature: PatchV2
 
 @customers
 	Scenario: Patch Title
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -57,12 +54,12 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following via a different touchpoint
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| Title						 | 2                    |
 		Then there should be a 200 response
 		And the response body should not contain the "CreatedBy"
-		And the response body should have different LastUpdatedBy
+		#And the response body should have different LastUpdatedBy
 		And the response body should contain:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
@@ -76,8 +73,8 @@ Feature: PatchV2
 		| OptInMarketResearch        | false                |
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
-	    And there should be a record in the customers ChangeFeed table
-		And there should be a record in the customers-history ChangeFeed table
+	 #   And there should be a record in the customers ChangeFeed table
+		#And there should be a record in the customers-history ChangeFeed table
 
 
 @customers
@@ -96,7 +93,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| GivenName                  | Bill                 |
 		Then there should be a 200 response
@@ -117,7 +114,7 @@ Feature: PatchV2
 			
 @customers
     Scenario: Patch FamilyName
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -131,7 +128,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| FamilyName                 | Update               |
 		Then there should be a 200 response
@@ -152,7 +149,7 @@ Feature: PatchV2
 
 @customers
       Scenario: Patch DateofBirth
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -166,7 +163,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| DateofBirth                | 2005-07-27T13:45:00Z |
 		Then there should be a 200 response
@@ -187,7 +184,7 @@ Feature: PatchV2
 
 @customers
      Scenario: Patch Gender
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -201,7 +198,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| Gender                     | 2                    |
 		Then there should be a 200 response
@@ -222,7 +219,7 @@ Feature: PatchV2
 		
 @customers
     Scenario: Patch UniqueLearnerNumber
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -236,7 +233,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| UniqueLearnerNumber        | 9876543211           |
 		Then there should be a 200 response
@@ -257,7 +254,7 @@ Feature: PatchV2
 		
 @customers
      Scenario: Patch OptInUserResearch
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -271,7 +268,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| OptInUserResearch          | false                |
 		Then there should be a 200 response
@@ -292,7 +289,7 @@ Feature: PatchV2
 
 @customers
      Scenario: Patch OptInMarketResearch
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -306,7 +303,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| OptInMarketResearch        | true                 |
 		Then there should be a 200 response
@@ -327,7 +324,7 @@ Feature: PatchV2
 
 @customers
      Scenario: Patch DateOfTermination
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -341,7 +338,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| DateOfTermination          | 2018-08-27T14:45:00Z |
 		Then there should be a 200 response
@@ -362,7 +359,7 @@ Feature: PatchV2
 
 @customers
      Scenario: Patch ReasonForTermination
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -376,7 +373,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field                | Value                |
         | ReasonForTermination | 2                    |
         | DateOfTermination    | 2018-07-27T16:11:00Z |
@@ -400,7 +397,7 @@ Feature: PatchV2
 
 @customers
      Scenario: Patch IntroducedBy
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -414,7 +411,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| IntroducedBy               | 2                    |
 		Then there should be a 200 response
@@ -435,7 +432,7 @@ Feature: PatchV2
 
 @customers
      Scenario: Patch IntroducedByAdditionalInfo
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -449,7 +446,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| IntroducedByAdditionalInfo | updated info	        |
 		Then there should be a 200 response
@@ -469,7 +466,7 @@ Feature: PatchV2
 
 @customers
     Scenario: Patch With Existing DateOfTermination
-		Given I post a Customer with the following details:
+		Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration		 | 2018-07-27T16:11:00Z |
 		| Title						 | 1                    |
@@ -485,7 +482,7 @@ Feature: PatchV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-		When I patch the following:
+		When I patch the following Customer V2:
         | Field						 | Value                |
 		| IntroducedByAdditionalInfo | updated info	        |
 		Then there should be a 403 response

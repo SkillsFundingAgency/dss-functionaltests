@@ -27,7 +27,7 @@ namespace NCS.DSS.FunctionalTests.Models
         public string IntroducedByAdditionalInfo { get; set; }
         public string LastModifiedDate { get; set; }
         public string LastModifiedTouchpointID { get; set; }
-        public string PriorityGroups { get; set; }
+        public List<int> PriorityGroups { get; set; }
 
     }
 }
