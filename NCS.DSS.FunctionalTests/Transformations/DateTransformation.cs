@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
+using System.Text.RegularExpressions;
+
 
 namespace NCS.DSS.FunctionalTests.Transformations
 {
