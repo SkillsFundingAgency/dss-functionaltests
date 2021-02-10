@@ -1,2 +1,5 @@
 NCS.DSS.FunctionalTests/appsettings.local.json
-/.vs/*
+NCS.DSS.FunctionalTests/bin/
+NCS.DSS.FunctionalTests/obj/
+NCS.DSS.FunctionalTests/.vs
+/.vs
