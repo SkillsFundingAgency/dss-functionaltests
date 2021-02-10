@@ -1,0 +1,47 @@
+﻿using NCS.DSS.FunctionalTests.Models;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
+
+namespace NCS.DSS.FunctionalTests.Steps
+{
+    partial class Step
+    {
+        #region v3
+        [Given(@"I post a Learning Progression record with the following details V3:")]
+        public async Task GivenIPostALearningProgressionWithTheFollowingDetailsV2(Table table)
+        {
+            foreach (var item in _scenarioContext.Keys)
+            {
+                var value = _scenarioContext[item] as string;
+                table.AddRow(item, value);
+            }
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var learningProgression = table.CreateInstance<LearningProgression>();
+            await PostLearningProgression(learningProgression, customerId, "v3");
+            if (_response.IsSuccessStatusCode)
+                _scenarioContext["LearningProgressionId"] = await _assertionHelper.GetKeyFromResponse("LearningProgressionId", _response);
+        }
+        #endregion
+
+        #region private get/set/patch
+        private async Task PatchLearningProgression<T>(T learningProgression, Guid customerId, Guid learningProgressionId, string version)
+        {
+            _response = await _httpHelper.Patch(learningProgression, string.Format(_settings.LEARNINGPROGRESSION_PATCH_URL, customerId, learningProgressionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+        }
+
+        private async Task GetLearningProgressionById(Guid customerId, Guid learningProgressionId, string version)
+        {
+            _response = await _httpHelper.Get(string.Format(_settings.LEARNINGPROGRESSION_GET_URL, customerId, learningProgressionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+        }
+
+        private async Task PostLearningProgression<T>(T learningProgression, Guid customerId, string version)
+        {
+            _response = await _httpHelper.Post(learningProgression, string.Format(_settings.LEARNINGPROGRESSION_POST_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+        }
+        #endregion
+    }
+}
