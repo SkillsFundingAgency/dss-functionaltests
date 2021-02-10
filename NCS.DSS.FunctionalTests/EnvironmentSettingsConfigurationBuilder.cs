@@ -15,10 +15,9 @@ namespace NCS.DSS.FunctionalTests
         public IConfiguration BuildConfiguration()
         {
             var configurationBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()); ;
-            configurationBuilder
-                .AddJsonFile("appsettings.json")
-                .AddJsonFile("appsettings.local.json")
-                .AddEnvironmentVariables();;
+            configurationBuilder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            configurationBuilder.AddJsonFile("appsettings.local.json", optional: true, reloadOnChange: true);
+            configurationBuilder.AddEnvironmentVariables();;
             return configurationBuilder.Build();
         }
     }
