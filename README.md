@@ -5,7 +5,7 @@ This repository is responsible for running all functional tests against DSS apis
 unit tests; In most cases there is more than one microservice that is being tested, a service bus & sql audit tables being checked. The original solution was wrote in full
 framework (4.61), all Specflow features being migrated across into a new format with some code refactoring.
 
-###Apis being tested
+### Apis being tested
 -	dss-action - [https://github.com/SkillsFundingAgency/dss-actions]
 -	dss-actionplan - [https://github.com/SkillsFundingAgency/dss-actionplans]
 -	dss-address - [https://github.com/SkillsFundingAgency/dss-address]
@@ -25,17 +25,17 @@ framework (4.61), all Specflow features being migrated across into a new format 
 -	dss-transfer - [https://github.com/SkillsFundingAgency/dss-transfer]
 -	dss-webchat - [https://github.com/SkillsFundingAgency/dss-webchats]
 
-###Backend Services being tested indirectly.
+### Backend Services being tested indirectly
 	dss-contentenhancer - [https://github.com/SkillsFundingAgency/dss-contentenhancer]
 	dss-changefeedlistener - [https://github.com/SkillsFundingAgency/dss-changefeedlistener]
 	dss-changefeedsqlprocessor - [https://github.com/SkillsFundingAgency/dss-changefeedsqlprocessor]
 	
 
-##Prequesites
+## Prequesites
 - dotnetcore3.1
 - Visual studio Specflow plugin - [https://marketplace.visualstudio.com/items?itemName=TechTalkSpecFlowTeam.SpecFlowForVisualStudio]
 
-##Developer Setup
+## Developer Setup
 To configure the tests to be run locally, edit the appsettings.local.json file to include the sql connection string
 and the cosmos shared key and tests can be either ran from Visual Studio or the Command Prompt.
 
