@@ -24,7 +24,7 @@ namespace NCS.DSS.FunctionalTests
         public string ACTIONPLAN_POST_URL => BaseUrl + "actionplans/api/Customers/{0}/Interactions/{1}/ActionPlans";
         public string ACTIONPLAN_GET_URL => BaseUrl + "actionplans/api/Customers/{0}/Interactions/{1}/ActionPlans/{2}";
         public string ACTIONPLAN_PATCH_URL => BaseUrl + "actionplans/api/Customers/{0}/Interactions/{1}/ActionPlans/{2}";
-       
+
         public string ACTION_POST_URL => BaseUrl + "actions/api/Customers/{0}/Interactions/{1}/ActionPlans/{2}/Actions/";
         public string ACTION_GET_URL => BaseUrl + "actions/api/Customers/{0}/Interactions/{1}/ActionPlans/{2}/Actions/{3}";
         public string ACTION_PATCH_URL => BaseUrl + "actions/api/Customers/{0}/Interactions/{1}/ActionPlans/{2}/Actions/{3}";
@@ -64,11 +64,15 @@ namespace NCS.DSS.FunctionalTests
 
 
         public string SESSION_POST_URL => BaseUrl + "sessions/api/Customers/{0}/interactions/{1}/sessions/";
-        public string SESSION_GET_URL =>  BaseUrl + "sessions/api/Customers/{0}/interactions/{1}/sessions/{2}";
+        public string SESSION_GET_URL => BaseUrl + "sessions/api/Customers/{0}/interactions/{1}/sessions/{2}";
         public string SESSION_PATCH_URL => BaseUrl + "sessions/api/Customers/{0}/interactions/{1}/sessions/{2}";
 
         public string LEARNINGPROGRESSION_POST_URL => BaseUrl + "learningprogressions/api/customers/{0}/LearningProgressions";
         public string LEARNINGPROGRESSION_GET_URL => BaseUrl + "learningprogressions/api/customers/{0}/LearningProgressions/{1}";
         public string LEARNINGPROGRESSION_PATCH_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/{1}";
+        public string LEARNINGPROGRESSION_GETALL_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/";
+
+
+
     }
 }

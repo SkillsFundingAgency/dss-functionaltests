@@ -13,11 +13,6 @@ namespace NCS.DSS.FunctionSteps.Core
     {
         private static readonly HttpClient _client = new HttpClient();
 
-        public HttpHelper()
-        {
-            //_client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        }
-
         public async Task<HttpResponseMessage> Post<T>(T request, string url, string touchpoint, string version, string apiKey)
         {
             var json = request != null ? JsonConvert.SerializeObject(request) : null;

@@ -1,179 +1,168 @@
-﻿#Feature: LearningProgression_Patch
-#
-#Background:
-#
-#	Given I post an adviser with the following details:
-#		| Field						 | Value				|
-#		| AdviserName				 | BillyAdviser			|
-#		| AdviserContactNumber		 | 98798678967967		|
-#	And I post a Customer with the following details:
-#		| Field                      | Value                |
-#		| GivenName                  | Bob                  |
-#		| FamilyName                 | Customer             |
-#	#Given I post a Learning Progression record with the following details:
-#	#	| Field                          | Value                |
-#	#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#	#	| CurrentLearningStatus          | 1                    |
-#	#	| LearningHours                  | 1                    |
-#	#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	#	| CurrentQualificationLevel      | 2                    |
-#	#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	#	| LastLearningProvidersUKPRN     | 12345678             |
-#
-#@learningprogressions  @smoke
-#Scenario:Patch Learning Progression with  all values
-#	Given I post a Learning Progression record with the following details:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	When I patch the following:
-#	| Field                          | Value                |
-#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#	| CurrentLearningStatus          | 1                    |
-#	| LearningHours                  | 1                    |
-#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	| CurrentQualificationLevel      | 2                    |
-#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	| LastLearningProvidersUKPRN     | 12345678             |
-#	| LastModifiedDate               | 2019-07-25T11:21:00Z |
-#	Then there should be a 200 response
-##	And the response body should have <Field> with value <Value>
-#	And the response body should contain:
-#	| Field                          | Value                |
-#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#	| CurrentLearningStatus          | 1                    |
-#	| LearningHours                  | 1                    |
-#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	| CurrentQualificationLevel      | 2                    |
-#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	| LastLearningProvidersUKPRN     | 12345678             |
-#	And the "learningprogressions" cosmos document should include CreatedBy
-#	And the response body should not contain the "CreatedBy"
-#	And there should be a record in the learningprogressions ChangeFeed table
-#	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
-#
-############################################################################################
-###	DateProgressionRecorded
-############################################################################################
-#@learningprogressions
-#Scenario Outline: Patch Learning Progression with valid values for DateProgressionRecorded
-#	Given I post a Learning Progression record with the following details:
-#		| Field                          | Value                |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	When I patch the element <Field> with <Value>:
-#	Then there should be a 200 response
-##	And the response body should have <Field> with value <Value>
-#	And the response body value for <Field> should match the last request
-#	And the response body should contain:
-#	| Field                          | Value                |
-#	| CurrentLearningStatus          | 1                    |
-#	| LearningHours                  | 1                    |
-#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	| CurrentQualificationLevel      | 2                    |
-#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	| LastLearningProvidersUKPRN     | 12345678             |
-#	And the "learningprogressions" cosmos document should include CreatedBy
-#	And the response body should not contain the "CreatedBy"
-#	And there should be a record in the learningprogressions ChangeFeed table
-#	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
-#	Examples:
-#	| Field                   | Value                |
-#	| DateProgressionRecorded | Today                |
-#	| DateProgressionRecorded | Now                  |
-#	| DateProgressionRecorded | 2019-06-19T09:01:00Z |
-#
-#@learningprogressions
-#Scenario Outline: Patch Learning Progression with invalid DateProgressionRecorded
-#
-#	Given I post a Learning Progression record with the following details:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	When I patch the element <Field> with <Value>:
-#	Then there should be a 422 response
-#	And the response body should include <ErrorMessage>
-#	And the number of errors returned should be 1
-#	
-#	Examples:
-#	| Field                   | Value                |  ErrorMessage                        |
-#	| DateProgressionRecorded | gtfr-06-19T09:01:00Z | Could not convert string to DateTime |
-#	| DateProgressionRecorded | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
-#	| DateProgressionRecorded | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
-#	| DateProgressionRecorded | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
-#	| DateProgressionRecorded | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
-#
-#
-#@learningprogressions
-#Scenario Outline: Patch Learning Progression with future dated DateProgressionRecorded
-#
-#	Given I post a Learning Progression record with the following details:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	Given I want to send <Field> with value <Value> in the following request
-#	When I patch the element <Field> with <Value>:
-#	Then there should be a 422 response
-#	And the response body should include <ErrorMessage>
-#	And the number of errors returned should be 1
-#	
-#	Examples:
-#	| Field                   | Value     | ErrorMessage                                               |
-#	| DateProgressionRecorded | Today +1D | DateProgressionRecorded must be less than or equal to now. |
-#	| DateProgressionRecorded | Now + 1H  | DateProgressionRecorded must be less than or equal to now. |
-#	| DateProgressionRecorded | Today +1Y | DateProgressionRecorded must be less than or equal to now. |
-#
-#
-#
-#@learningprogressions
-#Scenario Outline: Patch Learning Progression with empty DateProgressionRecorded
-#
-#	Given I post a Learning Progression record with the following details:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	When I patch the element <Field> with <Value>:
-#	Then there should be a 200 response
-#	And the response body value for <Field> should match the original request
-#	And the response body should contain:
-#	| Field                          | Value                |
-#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#	| CurrentLearningStatus          | 1                    |
-#	| LearningHours                  | 1                    |
-#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	| CurrentQualificationLevel      | 2                    |
-#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	| LastLearningProvidersUKPRN     | 12345678             |
-#	
-#	Examples:
-#	| Field                   | Value |
-#	| DateProgressionRecorded |       |
+﻿Feature: LearningProgression_Patch
+
+Background:
+	Given I post an adviser with the following details:
+		| Field                | Value          |
+		| AdviserName          | BillyAdviser   |
+		| AdviserContactNumber | 98798678967967 |
+	And I post a Customer with the following details:
+		| Field      | Value    |
+		| GivenName  | Bob      |
+		| FamilyName | Customer |
+
+@learningprogressions  @smoke
+Scenario:Patch Learning Progression with  all values
+	Given I post a Learning Progression record with the following details V3:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	When I patch the following LearningProgression V3:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+		| LastModifiedDate               | 2019-07-25T11:21:00Z |
+	Then there should be a 200 response
+	And the response body should contain:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	#And the "learningprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+
+#And there should be a record in the learningprogressions ChangeFeed table
+#And there should be a record in the learningprogressions-history ChangeFeed table
+###########################################################################################
+##	DateProgressionRecorded
+###########################################################################################
+@learningprogressions
+Scenario Outline: Patch Learning Progression with valid values for DateProgressionRecorded
+	Given I post a Learning Progression record with the following details V3:
+		| Field                          | Value                |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value Translate Date To <Value>
+	When I patch the following LearningProgression V3:
+		| Field                   | Value                |
+	Then there should be a 200 response
+	#And the response body should have <Field> with value Translate Date <Value>
+	And the response body should contain:
+		| Field                          | Value                |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	#And the "learningprogressions" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+
+	#And there should be a record in the learningprogressions ChangeFeed table
+	#And there should be a record in the learningprogressions-history ChangeFeed table
+	Examples:
+		| Field                   | Value                |
+		| DateProgressionRecorded | Today                |
+		| DateProgressionRecorded | Now                  |
+		| DateProgressionRecorded | 2019-06-19T09:01:00Z |
+
+@learningprogressions
+Scenario Outline: Patch Learning Progression with invalid DateProgressionRecorded
+	Given I post a Learning Progression record with the following details V3:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value Translate Date To <Value>
+	When I patch the following LearningProgression V3:
+		| Field                   | Value                |
+	Then there should be a 422 response
+	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
+
+	Examples:
+		| Field                   | Value                | ErrorMessage                         |
+		| DateProgressionRecorded | gtfr-06-19T09:01:00Z | Could not convert string to DateTime |
+		| DateProgressionRecorded | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
+		| DateProgressionRecorded | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
+		| DateProgressionRecorded | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
+		| DateProgressionRecorded | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
+
+@learningprogressions
+Scenario Outline: Patch Learning Progression with future dated DateProgressionRecorded
+	Given I post a Learning Progression record with the following details V3:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+	Given I want to send <Field> with value Translate Date To <Value>
+	When I patch the following LearningProgression V3:
+		| Field                   | Value                |
+	Then there should be a 422 response
+	And the response body should include <ErrorMessage>
+	And the number of errors returned should be 1
+
+	Examples:
+		| Field                   | Value     | ErrorMessage                                               |
+		| DateProgressionRecorded | Today +1D | DateProgressionRecorded must be less than or equal to now. |
+		| DateProgressionRecorded | Now + 1H  | DateProgressionRecorded must be less than or equal to now. |
+		| DateProgressionRecorded | Today +1Y | DateProgressionRecorded must be less than or equal to now. |
+
+@learningprogressions
+Scenario Outline: Patch Learning Progression with empty DateProgressionRecorded
+	Given I post a Learning Progression record with the following details V3:
+		| Field                          | Value                |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+		| DateProgressionRecorded        |                      |
+	Given I want to send <Field> with value <Value> in the following request
+	When I patch the following LearningProgression V3:
+		| Field                   | Value                |
+	Then there should be a 200 response
+	#And the response body value for <Field> should match the original request
+	And the response body should contain:
+		| Field                          | Value                |
+		| CurrentLearningStatus          | 1                    |
+		| LearningHours                  | 1                    |
+		| DateLearningStarted            | 2019-06-25T11:21:00Z |
+		| CurrentQualificationLevel      | 2                    |
+		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
+		| LastLearningProvidersUKPRN     | 12345678             |
+		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
+
+	Examples:
+		| Field                   | Value |
+		| DateProgressionRecorded |       |
 #
 ############################################################################################
 ###	CurrentLearningStatus
@@ -233,7 +222,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field                 | Value |  ErrorMessage                                         |
 #	| CurrentLearningStatus | -1    | CurrentLearningStatus must be a valid current Learning Status |
@@ -241,7 +230,7 @@
 #	| CurrentLearningStatus | 4     | CurrentLearningStatus must be a valid current Learning Status |
 #	| CurrentLearningStatus | 97    | CurrentLearningStatus must be a valid current Learning Status |
 #	| CurrentLearningStatus | 100   | CurrentLearningStatus must be a valid current Learning Status |
-#	
+#
 #
 #@learningprogressions
 #Scenario Outline: Patch Learning Progression with empty CurrentLearningStatus
@@ -266,11 +255,11 @@
 #	| CurrentQualificationLevel      | 2                    |
 #	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 #	| LastLearningProvidersUKPRN     | 12345678             |
-#	
+#
 #	Examples:
 #	| Field                 | Value |
 #	| CurrentLearningStatus |       |
-#	
+#
 #@learningprogressions
 #Scenario Outline: Patch Learning Progression to set CurrentLearningStatus to a new valid value where there was no previous value for CurrentLearningStatus or LearningHours
 #
@@ -290,13 +279,13 @@
 #	| CurrentQualificationLevel      | 2                    |
 #	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 #	| LastLearningProvidersUKPRN     | 12345678             |
-#		
+#
 #	Examples:
-#	| Field                 | Value | 
-#	| CurrentLearningStatus | 2     | 
-#	| CurrentLearningStatus | 3     | 
-#	| CurrentLearningStatus | 98    | 
-#	| CurrentLearningStatus | 99    | 
+#	| Field                 | Value |
+#	| CurrentLearningStatus | 2     |
+#	| CurrentLearningStatus | 3     |
+#	| CurrentLearningStatus | 98    |
+#	| CurrentLearningStatus | 99    |
 #
 #@learningprogressions
 #Scenario Outline: Patch Learning Progression to set CurrentLearningStatus to InLearning where there was no previous value for CurrentLearningStatus or LearningHours
@@ -313,10 +302,10 @@
 #	And the response body should include DateLearningStarted must have a value when Current Learning Status is InLearning
 #	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
 #	And the number of errors returned should be 2
-#	
+#
 #	Examples:
-#	| Field                 | Value | 
-#	| CurrentLearningStatus | 1     | 
+#	| Field                 | Value |
+#	| CurrentLearningStatus | 1     |
 #
 #@learningprogressions
 #Scenario: Patch Learning Progression with value for CurrentLearningStatus AND DateLearningStarted where there was no previous value for CurrentLearningStatus or LearningHours
@@ -336,7 +325,7 @@
 #	Then there should be a 422 response
 #	And the response body should include LearningHours must have a value when Current Learning Status is InLearning
 #	And the number of errors returned should be 1
-#	
+#
 #@learningprogressions
 #Scenario: Patch Learning Progression with value for CurrentLearningStatus where there was no previous value for CurrentLearningStatus or DateLearningStarted
 #	Given I post a Learning Progression record with the following details:
@@ -427,7 +416,7 @@
 #
 #@learningprogressions
 #Scenario Outline: Patch Learning Progression with LearningHours
-#	
+#
 #	Given I post a Learning Progression record with the following details:
 #		| Field                          | Value                |
 #		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -452,7 +441,7 @@
 #	And the response body should not contain the "CreatedBy"
 #	And there should be a record in the learningprogressions ChangeFeed table
 #	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
+#
 #	Examples:
 #	| Field         | Value |
 #	| LearningHours | 1     |
@@ -477,7 +466,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field         | Value |  ErrorMessage  |
 #	| LearningHours | -1    | LearningHours must have a valid Learning Hours value    |
@@ -485,7 +474,7 @@
 #	| LearningHours | 3     | LearningHours must have a valid Learning Hours value    |
 #	| LearningHours | 97    | LearningHours must have a valid Learning Hours value    |
 #	| LearningHours | 100   | LearningHours must have a valid Learning Hours value    |
-#	
+#
 #
 #
 #@learningprogressions
@@ -512,7 +501,7 @@
 #	| CurrentQualificationLevel      | 2                    |
 #	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 #	| LastLearningProvidersUKPRN     | 12345678             |
-#	
+#
 #	Examples:
 #	| Field         | Value |
 #	| LearningHours |       |
@@ -549,7 +538,7 @@
 #	And the response body should not contain the "CreatedBy"
 #	And there should be a record in the learningprogressions ChangeFeed table
 #	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
+#
 #	Examples:
 #	| Field               | Value                |
 #	| DateLearningStarted | 2018-06-25T11:21:00Z |
@@ -573,7 +562,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field               | Value                 |  ErrorMessage                        |
 #	| DateLearningStarted | dfgdf-06-19T09:01:00Z | Could not convert string to DateTime |
@@ -599,7 +588,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field               | Value     | ErrorMessage |
 #	| DateLearningStarted | Today +1D | DateLearningStarted must be less than or equal to now.    |
@@ -636,7 +625,7 @@
 #	And the response body should not contain the "CreatedBy"
 #	And there should be a record in the learningprogressions ChangeFeed table
 #	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
+#
 #	Examples:
 #	| Field                     | Value |
 #	| CurrentQualificationLevel | 0     |
@@ -666,7 +655,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field                     | Value | ErrorMessage                                                          |
 #	| CurrentQualificationLevel | -1    | CurrentQualificationLevel must be a valid current Qualification Level |
@@ -700,7 +689,7 @@
 #
 #@learningprogressions
 #Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
-#	
+#
 #	Given I post a Learning Progression record with the following details:
 #		| Field                          | Value                |
 #		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -726,7 +715,7 @@
 #	And the response body should not contain the "CreatedBy"
 #	And there should be a record in the learningprogressions ChangeFeed table
 #	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
+#
 #	Examples:
 #	| Field                          | Value                |
 #	| DateQualificationLevelAchieved | 2018-06-25T11:21:00Z |
@@ -750,7 +739,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field                          | Value                |  ErrorMessage                        |
 #	| DateQualificationLevelAchieved | sdfg-06-19T09:01:00Z | Could not convert string to DateTime |
@@ -776,7 +765,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field                          | Value     | ErrorMessage                                                     |
 #	| DateQualificationLevelAchieved | Today +1D | DateQualificationLevelAchieved must be less than or equal to now |
@@ -815,7 +804,7 @@
 #	And the response body should not contain the "CreatedBy"
 #	And there should be a record in the learningprogressions ChangeFeed table
 #	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
+#
 #	Examples:
 #	| Field                      | Value    |
 #	| LastLearningProvidersUKPRN | 10000000 |
@@ -823,7 +812,7 @@
 #	| LastLearningProvidersUKPRN | 51234567 |
 #	| LastLearningProvidersUKPRN | 99999998 |
 #	| LastLearningProvidersUKPRN | 99999999 |
-#	
+#
 #
 #Scenario Outline: Patch Learning Progression with invalid LastLearningProvidersUKPRN
 #
@@ -840,7 +829,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be <ErrorCount>
-#	
+#
 #	Examples:
 #	| Field                      | Value     | ErrorMessage                                                                                                | ErrorCount |
 #	| LastLearningProvidersUKPRN | 9999999   | The field LastLearningProvidersUKPRN must be a string with a minimum length of 8 and a maximum length of 8  | 1          |
@@ -870,7 +859,7 @@
 #	| CurrentQualificationLevel      | 2                    |
 #	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 #	| LastLearningProvidersUKPRN     | 12345678             |
-#	
+#
 #	Examples:
 #	| Field                      | Value |
 #	| LastLearningProvidersUKPRN |       |
@@ -907,7 +896,7 @@
 #	And the response body should not contain the "CreatedBy"
 #	And there should be a record in the learningprogressions ChangeFeed table
 #	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
+#
 #	Examples:
 #	| Field            | Value                |
 #	| LastModifiedDate | 2019-06-19T09:01:00Z |
@@ -931,7 +920,7 @@
 #	Then there should be a 422 response
 #	And the response body should include <ErrorMessage>
 #	And the number of errors returned should be 1
-#	
+#
 #	Examples:
 #	| Field            | Date                 | ErrorMessage                         |
 #	| LastModifiedDate | sdrg-06-19T09:01:00Z | Could not convert string to DateTime |
@@ -971,7 +960,7 @@
 #
 #@learningprogressions
 #Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpointID
-#	
+#
 #	Given I post a Learning Progression record with the following details:
 #		| Field                          | Value                |
 #		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -980,7 +969,7 @@
 #		| DateLearningStarted            | 2019-06-25T11:21:00Z |
 #		| CurrentQualificationLevel      | 2                    |
 #		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |	
+#		| LastLearningProvidersUKPRN     | 12345678             |
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 200 response
 #	And the response body should have LastModifiedTouchpointId with value 9000000001
@@ -995,7 +984,7 @@
 #	| LastLearningProvidersUKPRN     | 12345678             |
 #	And there should be a record in the learningprogressions ChangeFeed table
 #	And there should be a record in the learningprogressions-history ChangeFeed table
-#	
+#
 #	Examples:
 #	| Field                    | Value    |
 #	| LastModifiedTouchpointID | 99999999 |
@@ -1024,7 +1013,7 @@
 #	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 #	| LastLearningProvidersUKPRN     | 12345678             |
 #	And the "learningprogressions" cosmos document should have "CreatedBy" with value "9000000001"
-#	
+#
 #	Examples:
 #	| Field     | Value    |
 #	| CreatedBy | 99999999 |
@@ -1043,7 +1032,7 @@
 #		| LastLearningProvidersUKPRN     | 12345678             |
 #	When I patch an unknown resource with the element <Field> with <Value>:
 #	Then there should be a 204 response
-#	
+#
 #	Examples:
 #	| Field         | Value | ErrorMessage |
 #	| LearningHours | 1     | PlaceHolder  |
@@ -1063,7 +1052,7 @@
 #	When I patch an unknown resource with the element <Field> with <Value>:
 #	Then there should be a 204 response
 #
-#	
+#
 #	Examples:
 #	| Field         | Value | ErrorMessage |
 #	| LearningHours | 1     | PlaceHolder  |

@@ -16,9 +16,9 @@ namespace NCS.DSS.FunctionalTests.Steps
         private readonly FeatureContext _featureContext;
         private readonly EnvironmentSettings _settings;
         private readonly HttpHelper _httpHelper;
-        private readonly HttpResponseAssertionHelper _assertionHelper;
+        private readonly HttpResponseHelper _assertionHelper;
 
-        public Step(ScenarioContext scenarioContext, FeatureContext featureContext, HttpHelper httphelper, EnvironmentSettings settings, HttpResponseAssertionHelper assertHelper)
+        public Step(ScenarioContext scenarioContext, FeatureContext featureContext, HttpHelper httphelper, EnvironmentSettings settings, HttpResponseHelper assertHelper)
         {
             _scenarioContext = scenarioContext;
             _featureContext = featureContext;
@@ -68,6 +68,20 @@ namespace NCS.DSS.FunctionalTests.Steps
             //response.Content.Should().Contain(ScenarioContext.Current.Get<string>("subcontractorId"));
         }
 
+        [Then(@"the response should contain (.*) document\(s\)")]
+        public async Task ThenTheResponseShouldContainDocumentS(int p0)
+        {
+            var count = await _assertionHelper.DocumentCount(_response);
+            Assert.AreEqual(p0, count);
+        }
+
+        [Then(@"the response body should incorporate a document with the following details:")]
+        public void ThenTheResponseBodyShouldIncorporateADocumentWithTheFollowingDetails(Table table)
+        {
+            
+        }
+
+
         [Given(@"I want to send (.*) with value (.*) in the following request")]
         public void GivenIAddAPropertyToScenarioContext(string propName, string propValue)
         {
@@ -111,7 +125,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var table = new Table("Field", "Value");
             table.AddRow(field, value);
-            await _assertionHelper.ResponseShouldContain(_response, table);
+            var result  = await _assertionHelper.ResponseShouldContain(_response, table);
+            Assert.True(result);
         }
+
+        //[Then(@"the response body should have (.*) with value date (Translate Date .*)")]
+        //public async Task ResponseBodyShouldContainFieldWithTranslatedValue(string field, string value)
+        //{
+        //    var table = new Table("Field", "Value");
+        //    table.AddRow(field, value);
+        //    var result = await _assertionHelper.ResponseShouldContain(_response, table);
+        //    Assert.True(result);
+        //}
     }
 }

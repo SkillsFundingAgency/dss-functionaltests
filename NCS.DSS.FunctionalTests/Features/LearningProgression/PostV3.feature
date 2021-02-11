@@ -304,7 +304,6 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 @learningprogressions
 Scenario Outline: Post learning progression with invalid dates
 	Given I want to send <Field> with value <Value> in the following request
-	Given I want to send DateLearningStarted with value Translate Date To Today
 	Given I post a Learning Progression record with the following details V3:
 		| Field                   | Value                |
 		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
