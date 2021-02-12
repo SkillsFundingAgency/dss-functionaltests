@@ -25,9 +25,45 @@ namespace NCS.DSS.FunctionalTests.Steps
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["LearningProgressionId"] = await _assertionHelper.GetKeyFromResponse("LearningProgressionId", _response);
         }
+
+        [When(@"I get a Learning Progression by ID V3")]
+        public async Task WhenIGetAnEmploymentProgressionByID()
+        {
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var learningProgressionId = Guid.Parse(_scenarioContext["LearningProgressionId"] as string);
+            await GetLearningProgressionById(customerId, learningProgressionId, "v3");
+        }
+
+        [When(@"I get all Learning Progression records for a customer V3")]
+        public async Task WhenIGetAllEmploymentProgressionByCustomerID()
+        {
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var learningProgressionId = Guid.Parse(_scenarioContext["LearningProgressionId"] as string);
+            await GetAllLearningProgressionById(customerId, "v3");
+        }
+
+        [When(@"I patch the following LearningProgression V3:")]
+        public async Task WhenPatchTheFollowingLearningProgression(Table table)
+        {
+            foreach (var item in _scenarioContext.Keys)
+            {
+                var value = _scenarioContext[item] as string;
+                table.AddRow(item, value);
+            }
+            var learningProgression = table.CreateInstance<LearningProgression>();
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var learningProgressionId = Guid.Parse(_scenarioContext["LearningProgressionId"] as string);
+            await PatchLearningProgression(learningProgression, customerId, learningProgressionId, "v3");
+        }
         #endregion
 
         #region private get/set/patch
+
+        private async Task GetAllLearningProgressionById(Guid customerId, string version)
+        {
+            _response = await _httpHelper.Get(string.Format(_settings.LEARNINGPROGRESSION_GETALL_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+        }
+
         private async Task PatchLearningProgression<T>(T learningProgression, Guid customerId, Guid learningProgressionId, string version)
         {
             _response = await _httpHelper.Patch(learningProgression, string.Format(_settings.LEARNINGPROGRESSION_PATCH_URL, customerId, learningProgressionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);

@@ -4,3 +4,6 @@ NCS.DSS.FunctionalTests/obj/
 NCS.DSS.FunctionalTests/.vs/
 /.vs
 /packages
+NCS.DSS.FunctionalTests.UnitTests/bin/
+NCS.DSS.FunctionalTests.UnitTests/obj/
+NCS.DSS.FunctionalTests.UnitTests/.vs/
