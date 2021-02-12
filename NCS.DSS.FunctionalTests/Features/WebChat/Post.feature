@@ -1,4 +1,4 @@
-﻿Feature: WebChatost
+﻿Feature: WebChatPost
 
 Background: Prepare test
 	Given I post a Customer with the following details:

@@ -18,10 +18,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             await PostWebChat(webchat, customerId, interactionId, "");
-            _scenarioContext["WebchatId"] = await _assertionHelper.GetKeyFromResponse("WebchatId", _response);
+            _scenarioContext["WebChatId"] = await _assertionHelper.GetKeyFromResponse("WebChatId", _response);
         }
 
-        [Given(@"I get a WebChat by ID")]
+        [When(@"I get a WebChat by ID")]
         public async Task WhenIGetAWebChatByID()
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
@@ -30,7 +30,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             await GetByWebChatId(webchatId, customerId, interactionId, "");
         }
 
-        [Given(@"I patch the following:")]
+        [When(@"I patch the following:")]
         public async Task GivenIPatchAWebChatWithTheFollowingDetails(Table table)
         {
             var webchat = table.CreateInstance<WebChat>();
