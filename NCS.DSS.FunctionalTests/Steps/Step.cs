@@ -1,6 +1,8 @@
-﻿using NCS.DSS.FunctionSteps.Core;
+﻿using NCS.DSS.FunctionalTests.Hooks;
+using NCS.DSS.FunctionSteps.Core;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
+using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -136,5 +138,19 @@ namespace NCS.DSS.FunctionalTests.Steps
         //    var result = await _assertionHelper.ResponseShouldContain(_response, table);
         //    Assert.True(result);
         //}
+
+        private void DeleteRowFromSql(string table, string primaryKey, string id)
+        {
+            if (_featureContext.ContainsKey("CleanupData"))
+            {
+                var cleanupData = _featureContext["CleanupData"] as CleanupData;
+                if (cleanupData != null)
+                {
+                    cleanupData.Database.Add(new Tuple<string, string, string>(table, primaryKey, id));
+                }
+            }
+            else
+                _featureContext.Add("CleanupData", new CleanupData());
+        }
     }
 }

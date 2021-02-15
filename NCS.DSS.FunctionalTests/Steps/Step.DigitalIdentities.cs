@@ -20,8 +20,12 @@ namespace NCS.DSS.FunctionalTests.Steps
             var di = table.CreateInstance<DigitalIdentity>();
             di.CustomerId = customerId;
             await PostDigitalIdentityDetail(di, "v2");
+            
             if (_response.IsSuccessStatusCode)
+            {
                 _scenarioContext["IdentityID"] = await _assertionHelper.GetKeyFromResponse("IdentityID", _response);
+                DeleteRowFromSql("dss-digitalidentities", "id", _scenarioContext["IdentityID"] as string);
+            }
         }
 
         [Given(@"I get a DigitalIdentity by CustomerID V2")]
@@ -68,7 +72,6 @@ namespace NCS.DSS.FunctionalTests.Steps
             di.CustomerId = customerId;
             await PatchDigitalIdentitByDigitalIdentityId(di, digitalIdentityId, "v2");
         }
-
         #endregion
 
         #region private methods for post/patch/get
