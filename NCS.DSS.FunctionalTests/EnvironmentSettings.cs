@@ -33,9 +33,9 @@ namespace NCS.DSS.FunctionalTests
         public string CUSTOMER_GET_URL => BaseUrl + "Customers/api/customers/{0}";
         public string CUSTOMER_PATCH_URL => BaseUrl + "Customers/api/customers/{0}";
 
-        public string WEBCHAT_POST_URL => BaseUrl + "Customers/{0}/Interactions/{1}/WebChats";
-        public string WEBCHAT_GET_URL => BaseUrl + "Customers/{0}/Interactions/{1}/WebChats/{2}";
-        public string WEBCHAT_PATCH_URL => BaseUrl + "Customers/{0}/Interactions/{1}/WebChats/{2}";
+        public string WEBCHAT_POST_URL => BaseUrl + "webchats/api/Customers/{0}/Interactions/{1}/WebChats";
+        public string WEBCHAT_GET_URL => BaseUrl + "webchats/api/Customers/{0}/Interactions/{1}/WebChats/{2}";
+        public string WEBCHAT_PATCH_URL => BaseUrl + "webchats/api/Customers/{0}/Interactions/{1}/WebChats/{2}";
 
         public string ADVISER_POST_URL => BaseUrl + "adviserdetails/api/AdviserDetails";
         public string ADVISER_GET_URL => BaseUrl + "adviserdetails/api/AdviserDetails/{0}";
