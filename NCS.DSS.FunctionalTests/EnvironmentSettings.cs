@@ -72,7 +72,14 @@ namespace NCS.DSS.FunctionalTests
         public string LEARNINGPROGRESSION_PATCH_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/{1}";
         public string LEARNINGPROGRESSION_GETALL_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/";
 
-
+        public string DIGITALIDENTITY_POST_URL => BaseUrl + "digitalidentities/api/identity";
+        public string DIGITALIDENTITY_GET__BYCUSTOMERID_URL => BaseUrl + "digitalidentities/api/customers/{0}";
+        public string DIGITALIDENTITY_GET_BYDIGITALIDENTITYID_URL => BaseUrl + "digitalidentities/api/identities/{0}";
+        public string DIGITALIDENTITY_PATCH_BYCUSTOMERID_URL => BaseUrl + "digitalidentities/api/customer/{0}";
+        public string DIGITALIDENTITY_PATCH_BYDIGITALIDENTITYID_URL => BaseUrl + "digitalidentities/api/identity/{0}";
+        public string DIGITALIDENTITY_DELETE_BYCUSTOMERID_URL => BaseUrl + "digitalidentities/api/customer/{0}";
 
     }
 }
+
+

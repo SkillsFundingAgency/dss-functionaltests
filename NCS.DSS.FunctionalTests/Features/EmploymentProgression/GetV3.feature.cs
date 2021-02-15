@@ -77,29 +77,29 @@ namespace NCS.DSS.FunctionalTests.Features.EmploymentProgression
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table527 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table586 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table527.AddRow(new string[] {
+            table586.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table527.AddRow(new string[] {
+            table586.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table527, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table586, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table528 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table587 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table528.AddRow(new string[] {
+            table587.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table528.AddRow(new string[] {
+            table587.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table528, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table587, "And ");
 #line hidden
         }
         
@@ -137,44 +137,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table529 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table588 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "1"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-06-25T11:21:00Z"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-06-25T11:21:00Z"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some text"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "EmployerName",
                             "Emp Smith"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Pete Street"});
-                table529.AddRow(new string[] {
+                table588.AddRow(new string[] {
                             "EmployerPostcode",
                             "PE12 3ST"});
 #line 15
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table529, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table588, "Given ");
 #line hidden
 #line 28
  testRunner.When("I get a Employment Progression by ID V3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -182,44 +182,44 @@ this.FeatureBackground();
 #line 29
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table530 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table589 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "1"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-06-25T11:21:00Z"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-06-25T11:21:00Z"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some text"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "EmployerName",
                             "Emp Smith"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Pete Street"});
-                table530.AddRow(new string[] {
+                table589.AddRow(new string[] {
                             "EmployerPostcode",
                             "PE12 3ST"});
 #line 30
- testRunner.And("the response body should contain:", ((string)(null)), table530, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table589, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -257,44 +257,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table531 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table590 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "1"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-06-25T11:21:00Z"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-06-25T11:21:00Z"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some text"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "EmployerName",
                             "Emp Smith"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Pete Street"});
-                table531.AddRow(new string[] {
+                table590.AddRow(new string[] {
                             "EmployerPostcode",
                             "PE12 3ST"});
 #line 46
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table531, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table590, "Given ");
 #line hidden
 #line 59
  testRunner.When("I get all Employment Progression records for a customer V3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -338,44 +338,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table532 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table591 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table532.AddRow(new string[] {
+                table591.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table532.AddRow(new string[] {
+                table591.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "1"});
-                table532.AddRow(new string[] {
+                table591.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table532.AddRow(new string[] {
+                table591.AddRow(new string[] {
                             "DateEmploymentStarted",
                             "2019-06-25T11:21:00Z"});
-                table532.AddRow(new string[] {
+                table591.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table532.AddRow(new string[] {
+                table591.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table532.AddRow(new string[] {
+                table591.AddRow(new string[] {
                             "LastEmploymentProvidersUKPRN",
                             "12345678"});
 #line 78
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table532, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table591, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table533 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table592 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table533.AddRow(new string[] {
+                table592.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table533.AddRow(new string[] {
+                table592.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
 #line 87
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table533, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table592, "And ");
 #line hidden
 #line 91
  testRunner.When("I get a Employment Progression by ID V3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

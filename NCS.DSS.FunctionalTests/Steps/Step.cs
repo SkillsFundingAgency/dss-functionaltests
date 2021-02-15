@@ -81,7 +81,6 @@ namespace NCS.DSS.FunctionalTests.Steps
             
         }
 
-
         [Given(@"I want to send (.*) with value (.*) in the following request")]
         public void GivenIAddAPropertyToScenarioContext(string propName, string propValue)
         {
