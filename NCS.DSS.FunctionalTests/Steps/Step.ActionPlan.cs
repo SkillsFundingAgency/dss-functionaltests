@@ -18,6 +18,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var actionPlan = table.CreateInstance<ActionPlan>();
             await PostActionPlan(actionPlan, customerId, interactionId, "");
             _scenarioContext["ActionPlanId"] = await _assertionHelper.GetKeyFromResponse("ActionPlanId", _response);
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-actionplans", "id", _scenarioContext["ActionPlanId"] as string);
+            }
         }
 
         [When(@"I get an ActionPlan by ID")]
@@ -51,6 +55,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             actionPlan.SessionId = sessionId;
             await PostActionPlan(actionPlan, customerId, interactionId, "v2");
             _scenarioContext["ActionPlanId"] = await _assertionHelper.GetKeyFromResponse("ActionPlanId", _response);
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-actionplans", "id", _scenarioContext["ActionPlanId"] as string);
+            }
         }
 
         [When(@"I patch the following ActionPlan V2:")]
@@ -61,6 +69,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
             await PatchActionPlan(actionPlan, customerId, interactionId, actionPlanId, "v2");
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-actionplans", "id", _scenarioContext["ActionPlanId"] as string);
+            }
         }
 
         [When(@"I get an ActionPlan by ID V2")]
@@ -103,6 +115,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             actionPlan.SessionId = sessionId;
             await PostActionPlan(actionPlan, customerId, interactionId, "v3");
             _scenarioContext["ActionPlanId"] = await _assertionHelper.GetKeyFromResponse("ActionPlanId", _response);
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-actionplans", "id", _scenarioContext["ActionPlanId"] as string);
+            }
         }
         #endregion
 

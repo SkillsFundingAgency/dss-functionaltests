@@ -48,15 +48,6 @@ Scenario:Get All Learning Progression records where 1 exists
 	When I get all Learning Progression records for a customer V3
 	Then there should be a 200 response
 	And the response should contain 1 document(s)
-	#Then the response body should incorporate a document with the following details:
-	#	| Field                          | Value                |
-	#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-	#	| CurrentLearningStatus          | 1                    |
-	#	| LearningHours                  | 1                    |
-	#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-	#	| CurrentQualificationLevel      | 2                    |
-	#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-	#	| LastLearningProvidersUKPRN     | 12345678             |
 	Then the response body should contain:
 		| Field                          | Value                |
 		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |

@@ -16,6 +16,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             await PostInteraction(interaction, customerId, "");
             _scenarioContext["InteractionId"] = await _assertionHelper.GetKeyFromResponse("InteractionId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-interactions", "id", _scenarioContext["InteractionId"] as string);
         }
 
         [Given(@"I post an Interaction with the following details:")]

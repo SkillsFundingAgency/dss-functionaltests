@@ -18,6 +18,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             await PostAddress(address, customerId, "");
             _scenarioContext["AddressId"] = await _assertionHelper.GetKeyFromResponse("AddressId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-addresses", "id", _scenarioContext["AddressId"] as string);
         }
 
         [When(@"I get an Address by ID")]
@@ -37,6 +40,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             await PostAddress(address, customerId, "v2");
             _scenarioContext["AddressId"] = await _assertionHelper.GetKeyFromResponse("AddressId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-addresses", "id", _scenarioContext["AddressId"] as string);
         }
 
         [When(@"I get an Address by ID V2")]

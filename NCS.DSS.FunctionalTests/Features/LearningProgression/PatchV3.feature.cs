@@ -77,29 +77,29 @@ namespace NCS.DSS.FunctionalTests.Features.LearningProgression
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table791 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table849 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table791.AddRow(new string[] {
+            table849.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table791.AddRow(new string[] {
+            table849.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table791, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table849, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table792 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table850 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table792.AddRow(new string[] {
+            table850.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table792.AddRow(new string[] {
+            table850.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table792, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table850, "And ");
 #line hidden
         }
         
@@ -137,92 +137,92 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table793 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table851 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table793.AddRow(new string[] {
+                table851.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table793.AddRow(new string[] {
+                table851.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table793.AddRow(new string[] {
+                table851.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table793.AddRow(new string[] {
+                table851.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table793.AddRow(new string[] {
+                table851.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table793.AddRow(new string[] {
+                table851.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table793.AddRow(new string[] {
+                table851.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 15
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table793, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table851, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table794 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table852 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table794.AddRow(new string[] {
+                table852.AddRow(new string[] {
                             "LastModifiedDate",
                             "2019-07-25T11:21:00Z"});
 #line 24
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table794, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table852, "When ");
 #line hidden
 #line 34
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table795 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table853 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table795.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table795.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table795.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table795.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table795.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table795.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table795.AddRow(new string[] {
+                table853.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 35
- testRunner.And("the response body should contain:", ((string)(null)), table795, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table853, "And ");
 #line hidden
 #line 45
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -273,65 +273,65 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table796 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table854 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table796.AddRow(new string[] {
+                table854.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table796.AddRow(new string[] {
+                table854.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table796.AddRow(new string[] {
+                table854.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table796.AddRow(new string[] {
+                table854.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table796.AddRow(new string[] {
+                table854.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table796.AddRow(new string[] {
+                table854.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 54
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table796, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table854, "Given ");
 #line hidden
 #line 62
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table797 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table855 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 63
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table797, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table855, "When ");
 #line hidden
 #line 65
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table798 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table856 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table798.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table798.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table798.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table798.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table798.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table798.AddRow(new string[] {
+                table856.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 67
- testRunner.And("the response body should contain:", ((string)(null)), table798, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table856, "And ");
 #line hidden
 #line 76
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -385,41 +385,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table799 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table857 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table799.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table799.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table799.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table799.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table799.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table799.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table799.AddRow(new string[] {
+                table857.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 88
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table799, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table857, "Given ");
 #line hidden
 #line 97
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table800 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table858 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 98
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table800, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table858, "When ");
 #line hidden
 #line 100
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -477,41 +477,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table801 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table859 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table801.AddRow(new string[] {
+                table859.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table801.AddRow(new string[] {
+                table859.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table801.AddRow(new string[] {
+                table859.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table801.AddRow(new string[] {
+                table859.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table801.AddRow(new string[] {
+                table859.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table801.AddRow(new string[] {
+                table859.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table801.AddRow(new string[] {
+                table859.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 114
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table801, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table859, "Given ");
 #line hidden
 #line 123
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table802 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table860 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 124
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table802, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table860, "When ");
 #line hidden
 #line 126
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -566,74 +566,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table803 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table861 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table803.AddRow(new string[] {
+                table861.AddRow(new string[] {
                             "DateProgressionRecorded",
                             ""});
 #line 138
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table803, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table861, "Given ");
 #line hidden
 #line 148
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table804 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table862 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 149
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table804, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table862, "When ");
 #line hidden
 #line 151
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table805 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table863 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table805.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table805.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table805.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table805.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table805.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table805.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table805.AddRow(new string[] {
+                table863.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
 #line 153
- testRunner.And("the response body should contain:", ((string)(null)), table805, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table863, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -683,41 +683,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table806 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table864 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table806.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table806.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table806.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table806.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table806.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table806.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table806.AddRow(new string[] {
+                table864.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 172
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table806, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table864, "Given ");
 #line hidden
 #line 181
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table807 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table865 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 182
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table807, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table865, "When ");
 #line hidden
 #line 184
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -725,29 +725,29 @@ this.FeatureBackground();
 #line 185
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table808 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table866 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table808.AddRow(new string[] {
+                table866.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table808.AddRow(new string[] {
+                table866.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table808.AddRow(new string[] {
+                table866.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table808.AddRow(new string[] {
+                table866.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table808.AddRow(new string[] {
+                table866.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table808.AddRow(new string[] {
+                table866.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 186
- testRunner.And("the response body should contain:", ((string)(null)), table808, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table866, "And ");
 #line hidden
 #line 195
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -801,41 +801,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table809 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table867 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table809.AddRow(new string[] {
+                table867.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table809.AddRow(new string[] {
+                table867.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table809.AddRow(new string[] {
+                table867.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table809.AddRow(new string[] {
+                table867.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table809.AddRow(new string[] {
+                table867.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table809.AddRow(new string[] {
+                table867.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table809.AddRow(new string[] {
+                table867.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 209
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table809, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table867, "Given ");
 #line hidden
 #line 218
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table810 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table868 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 219
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table810, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table868, "When ");
 #line hidden
 #line 221
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -890,71 +890,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table811 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table869 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table811.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table811.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table811.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table811.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table811.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table811.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table811.AddRow(new string[] {
+                table869.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 235
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table811, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table869, "Given ");
 #line hidden
 #line 244
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table812 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table870 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 245
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table812, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table870, "When ");
 #line hidden
 #line 247
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table813 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table871 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table813.AddRow(new string[] {
+                table871.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table813.AddRow(new string[] {
+                table871.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table813.AddRow(new string[] {
+                table871.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table813.AddRow(new string[] {
+                table871.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table813.AddRow(new string[] {
+                table871.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table813.AddRow(new string[] {
+                table871.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table813.AddRow(new string[] {
+                table871.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 248
- testRunner.And("the response body should contain:", ((string)(null)), table813, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table871, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1005,35 +1005,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table814 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table872 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table814.AddRow(new string[] {
+                table872.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table814.AddRow(new string[] {
+                table872.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table814.AddRow(new string[] {
+                table872.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table814.AddRow(new string[] {
+                table872.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table814.AddRow(new string[] {
+                table872.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "99"});
 #line 264
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table814, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table872, "Given ");
 #line hidden
 #line 271
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table815 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table873 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 272
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table815, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table873, "When ");
 #line hidden
 #line 274
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1041,23 +1041,23 @@ this.FeatureBackground();
 #line 275
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table816 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table874 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table816.AddRow(new string[] {
+                table874.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table816.AddRow(new string[] {
+                table874.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table816.AddRow(new string[] {
+                table874.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table816.AddRow(new string[] {
+                table874.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 276
- testRunner.And("the response body should contain:", ((string)(null)), table816, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table874, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1099,44 +1099,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table817 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table875 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table817.AddRow(new string[] {
+                table875.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table817.AddRow(new string[] {
+                table875.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table817.AddRow(new string[] {
+                table875.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-24T11:21:00Z"});
-                table817.AddRow(new string[] {
+                table875.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table817.AddRow(new string[] {
+                table875.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-07-23T11:21:00Z"});
-                table817.AddRow(new string[] {
+                table875.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "99"});
 #line 313
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table817, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table875, "Given ");
 #line hidden
 #line 321
  testRunner.Given("I want to send <Field> with value <Value> in the following request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table818 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table876 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table818.AddRow(new string[] {
+                table876.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table818.AddRow(new string[] {
+                table876.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-07-23T11:21:00Z"});
 #line 322
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table818, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table876, "When ");
 #line hidden
 #line 326
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1186,38 +1186,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table819 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table877 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table819.AddRow(new string[] {
+                table877.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table819.AddRow(new string[] {
+                table877.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table819.AddRow(new string[] {
+                table877.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-24T11:21:00Z"});
-                table819.AddRow(new string[] {
+                table877.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table819.AddRow(new string[] {
+                table877.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-07-23T11:21:00Z"});
-                table819.AddRow(new string[] {
+                table877.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "99"});
 #line 332
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table819, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table877, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table820 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table878 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table820.AddRow(new string[] {
+                table878.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
 #line 340
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table820, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table878, "When ");
 #line hidden
 #line 343
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1269,38 +1269,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table821 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table879 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table821.AddRow(new string[] {
+                table879.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table821.AddRow(new string[] {
+                table879.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table821.AddRow(new string[] {
+                table879.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-24T11:21:00Z"});
-                table821.AddRow(new string[] {
+                table879.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table821.AddRow(new string[] {
+                table879.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "99"});
 #line 349
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table821, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table879, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table822 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table880 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table822.AddRow(new string[] {
+                table880.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table822.AddRow(new string[] {
+                table880.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-07-23T11:21:00Z"});
 #line 356
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table822, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table880, "When ");
 #line hidden
 #line 360
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1352,35 +1352,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table823 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table881 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table823.AddRow(new string[] {
+                table881.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table823.AddRow(new string[] {
+                table881.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table823.AddRow(new string[] {
+                table881.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-24T11:21:00Z"});
-                table823.AddRow(new string[] {
+                table881.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table823.AddRow(new string[] {
+                table881.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "99"});
 #line 366
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table823, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table881, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table824 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table882 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table824.AddRow(new string[] {
+                table882.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
 #line 373
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table824, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table882, "When ");
 #line hidden
 #line 376
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1436,71 +1436,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table825 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table883 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table825.AddRow(new string[] {
+                table883.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table825.AddRow(new string[] {
+                table883.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table825.AddRow(new string[] {
+                table883.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-24T11:21:00Z"});
-                table825.AddRow(new string[] {
+                table883.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table825.AddRow(new string[] {
+                table883.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "99"});
 #line 383
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table825, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table883, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table826 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table884 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table826.AddRow(new string[] {
+                table884.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table826.AddRow(new string[] {
+                table884.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-07-24T11:21:00Z"});
-                table826.AddRow(new string[] {
+                table884.AddRow(new string[] {
                             "LearningHours",
                             "2"});
 #line 390
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table826, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table884, "When ");
 #line hidden
 #line 395
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table827 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table885 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table827.AddRow(new string[] {
+                table885.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table827.AddRow(new string[] {
+                table885.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table827.AddRow(new string[] {
+                table885.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-24T11:21:00Z"});
-                table827.AddRow(new string[] {
+                table885.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table827.AddRow(new string[] {
+                table885.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table827.AddRow(new string[] {
+                table885.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-07-24T11:21:00Z"});
-                table827.AddRow(new string[] {
+                table885.AddRow(new string[] {
                             "LearningHours",
                             "2"});
 #line 396
- testRunner.And("the response body should contain:", ((string)(null)), table827, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table885, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1549,41 +1549,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table828 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table886 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table828.AddRow(new string[] {
+                table886.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table828.AddRow(new string[] {
+                table886.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table828.AddRow(new string[] {
+                table886.AddRow(new string[] {
                             "LearningHours",
                             "99"});
-                table828.AddRow(new string[] {
+                table886.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table828.AddRow(new string[] {
+                table886.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table828.AddRow(new string[] {
+                table886.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table828.AddRow(new string[] {
+                table886.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 411
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table828, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table886, "Given ");
 #line hidden
 #line 420
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table829 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table887 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 421
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table829, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table887, "When ");
 #line hidden
 #line 423
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1591,26 +1591,26 @@ this.FeatureBackground();
 #line 424
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table830 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table888 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table830.AddRow(new string[] {
+                table888.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table830.AddRow(new string[] {
+                table888.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table830.AddRow(new string[] {
+                table888.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table830.AddRow(new string[] {
+                table888.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table830.AddRow(new string[] {
+                table888.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 425
- testRunner.And("the response body should contain:", ((string)(null)), table830, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table888, "And ");
 #line hidden
 #line 433
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1664,41 +1664,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table831 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table889 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table831.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table831.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table831.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table831.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table831.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table831.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table831.AddRow(new string[] {
+                table889.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 446
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table831, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table889, "Given ");
 #line hidden
 #line 455
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table832 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table890 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 456
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table832, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table890, "When ");
 #line hidden
 #line 458
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1753,71 +1753,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table833 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table891 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table833.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table833.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table833.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table833.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table833.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table833.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table833.AddRow(new string[] {
+                table891.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 472
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table833, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table891, "Given ");
 #line hidden
 #line 481
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table834 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table892 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 482
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table834, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table892, "When ");
 #line hidden
 #line 484
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table835 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table893 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table835.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table835.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table835.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table835.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table835.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table835.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table835.AddRow(new string[] {
+                table893.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 485
- testRunner.And("the response body should contain:", ((string)(null)), table835, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table893, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1865,41 +1865,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table836 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table894 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table836.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table836.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table836.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table836.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table836.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table836.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table836.AddRow(new string[] {
+                table894.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 504
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table836, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table894, "Given ");
 #line hidden
 #line 513
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table837 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table895 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 514
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table837, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table895, "When ");
 #line hidden
 #line 516
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1907,29 +1907,29 @@ this.FeatureBackground();
 #line 517
  testRunner.And(string.Format("the response body should have {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table838 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table896 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table838.AddRow(new string[] {
+                table896.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table838.AddRow(new string[] {
+                table896.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table838.AddRow(new string[] {
+                table896.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table838.AddRow(new string[] {
+                table896.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table838.AddRow(new string[] {
+                table896.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table838.AddRow(new string[] {
+                table896.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 518
- testRunner.And("the response body should contain:", ((string)(null)), table838, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table896, "And ");
 #line hidden
 #line 527
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1983,41 +1983,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table839 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table897 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table839.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table839.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table839.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table839.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table839.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table839.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table839.AddRow(new string[] {
+                table897.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 539
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table839, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table897, "Given ");
 #line hidden
 #line 548
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table840 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table898 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 549
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table840, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table898, "When ");
 #line hidden
 #line 551
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2075,41 +2075,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table841 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table899 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table841.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table841.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table841.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table841.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table841.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table841.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table841.AddRow(new string[] {
+                table899.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 565
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table841, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table899, "Given ");
 #line hidden
 #line 574
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table842 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table900 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 575
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table842, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table900, "When ");
 #line hidden
 #line 577
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2173,41 +2173,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table843 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table901 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table843.AddRow(new string[] {
+                table901.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table901.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table843.AddRow(new string[] {
+                table901.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table843.AddRow(new string[] {
+                table901.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table901.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table843.AddRow(new string[] {
+                table901.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table901.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 592
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table843, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table901, "Given ");
 #line hidden
 #line 601
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table844 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table902 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 602
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table844, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table902, "When ");
 #line hidden
 #line 604
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2215,26 +2215,26 @@ this.FeatureBackground();
 #line 605
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table845 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table903 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table845.AddRow(new string[] {
+                table903.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table845.AddRow(new string[] {
+                table903.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table845.AddRow(new string[] {
+                table903.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table845.AddRow(new string[] {
+                table903.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table845.AddRow(new string[] {
+                table903.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 606
- testRunner.And("the response body should contain:", ((string)(null)), table845, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table903, "And ");
 #line hidden
 #line 614
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2287,41 +2287,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table846 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table904 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table846.AddRow(new string[] {
+                table904.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table846.AddRow(new string[] {
+                table904.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table846.AddRow(new string[] {
+                table904.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table846.AddRow(new string[] {
+                table904.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table846.AddRow(new string[] {
+                table904.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table846.AddRow(new string[] {
+                table904.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table846.AddRow(new string[] {
+                table904.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 633
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table846, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table904, "Given ");
 #line hidden
 #line 642
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table847 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table905 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 643
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table847, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table905, "When ");
 #line hidden
 #line 645
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2381,35 +2381,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table848 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table906 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table848.AddRow(new string[] {
+                table906.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table848.AddRow(new string[] {
+                table906.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
-                table848.AddRow(new string[] {
+                table906.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-07-23T11:21:00Z"});
-                table848.AddRow(new string[] {
+                table906.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "99"});
-                table848.AddRow(new string[] {
+                table906.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "99"});
 #line 658
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table848, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table906, "Given ");
 #line hidden
 #line 665
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table849 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table907 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 666
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table849, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table907, "When ");
 #line hidden
 #line 668
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2467,41 +2467,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table850 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table908 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table850.AddRow(new string[] {
+                table908.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table850.AddRow(new string[] {
+                table908.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table850.AddRow(new string[] {
+                table908.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table850.AddRow(new string[] {
+                table908.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table850.AddRow(new string[] {
+                table908.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table850.AddRow(new string[] {
+                table908.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table850.AddRow(new string[] {
+                table908.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 682
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table850, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table908, "Given ");
 #line hidden
 #line 691
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table851 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table909 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 692
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table851, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table909, "When ");
 #line hidden
 #line 694
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2509,29 +2509,29 @@ this.FeatureBackground();
 #line 695
  testRunner.And(string.Format("the response body should have {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table852 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table910 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table852.AddRow(new string[] {
+                table910.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table852.AddRow(new string[] {
+                table910.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table852.AddRow(new string[] {
+                table910.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table852.AddRow(new string[] {
+                table910.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table852.AddRow(new string[] {
+                table910.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table852.AddRow(new string[] {
+                table910.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 696
- testRunner.And("the response body should contain:", ((string)(null)), table852, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table910, "And ");
 #line hidden
 #line 705
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2585,41 +2585,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table853 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table911 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table853.AddRow(new string[] {
+                table911.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table853.AddRow(new string[] {
+                table911.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table853.AddRow(new string[] {
+                table911.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table853.AddRow(new string[] {
+                table911.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table853.AddRow(new string[] {
+                table911.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table853.AddRow(new string[] {
+                table911.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table853.AddRow(new string[] {
+                table911.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 717
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table853, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table911, "Given ");
 #line hidden
 #line 726
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table854 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table912 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 727
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table854, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table912, "When ");
 #line hidden
 #line 729
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2677,41 +2677,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table855 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table913 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table855.AddRow(new string[] {
+                table913.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table855.AddRow(new string[] {
+                table913.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table855.AddRow(new string[] {
+                table913.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table855.AddRow(new string[] {
+                table913.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table855.AddRow(new string[] {
+                table913.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table855.AddRow(new string[] {
+                table913.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table855.AddRow(new string[] {
+                table913.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 743
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table855, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table913, "Given ");
 #line hidden
 #line 752
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table856 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table914 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 753
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table856, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table914, "When ");
 #line hidden
 #line 755
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2770,41 +2770,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table857 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table915 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table857.AddRow(new string[] {
+                table915.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table857.AddRow(new string[] {
+                table915.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table857.AddRow(new string[] {
+                table915.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table857.AddRow(new string[] {
+                table915.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table857.AddRow(new string[] {
+                table915.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table857.AddRow(new string[] {
+                table915.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table857.AddRow(new string[] {
+                table915.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 770
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table857, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table915, "Given ");
 #line hidden
 #line 779
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table858 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table916 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 780
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table858, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table916, "When ");
 #line hidden
 #line 782
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2812,26 +2812,26 @@ this.FeatureBackground();
 #line 783
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table859 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table917 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table859.AddRow(new string[] {
+                table917.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table859.AddRow(new string[] {
+                table917.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table859.AddRow(new string[] {
+                table917.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table859.AddRow(new string[] {
+                table917.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table859.AddRow(new string[] {
+                table917.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
 #line 784
- testRunner.And("the response body should contain:", ((string)(null)), table859, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table917, "And ");
 #line hidden
 #line 792
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2882,41 +2882,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table860 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table918 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table860.AddRow(new string[] {
+                table918.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table860.AddRow(new string[] {
+                table918.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table860.AddRow(new string[] {
+                table918.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table860.AddRow(new string[] {
+                table918.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table860.AddRow(new string[] {
+                table918.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table860.AddRow(new string[] {
+                table918.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table860.AddRow(new string[] {
+                table918.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 805
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table860, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table918, "Given ");
 #line hidden
 #line 814
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table861 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table919 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 815
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table861, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table919, "When ");
 #line hidden
 #line 817
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2964,32 +2964,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table862 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table920 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table862.AddRow(new string[] {
+                table920.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table862.AddRow(new string[] {
+                table920.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table862.AddRow(new string[] {
+                table920.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table862.AddRow(new string[] {
+                table920.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table862.AddRow(new string[] {
+                table920.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table862.AddRow(new string[] {
+                table920.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table862.AddRow(new string[] {
+                table920.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 830
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table862, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table920, "Given ");
 #line hidden
 #line 839
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2997,41 +2997,41 @@ this.FeatureBackground();
 #line 840
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table863 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table921 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 841
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table863, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table921, "When ");
 #line hidden
 #line 843
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table864 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table922 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table864.AddRow(new string[] {
+                table922.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table864.AddRow(new string[] {
+                table922.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table864.AddRow(new string[] {
+                table922.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table864.AddRow(new string[] {
+                table922.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table864.AddRow(new string[] {
+                table922.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table864.AddRow(new string[] {
+                table922.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table864.AddRow(new string[] {
+                table922.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 844
- testRunner.Then("the response body should contain:", ((string)(null)), table864, "Then ");
+ testRunner.Then("the response body should contain:", ((string)(null)), table922, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -3079,41 +3079,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table865 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table923 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table865.AddRow(new string[] {
+                table923.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table865.AddRow(new string[] {
+                table923.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table865.AddRow(new string[] {
+                table923.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table865.AddRow(new string[] {
+                table923.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table865.AddRow(new string[] {
+                table923.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table865.AddRow(new string[] {
+                table923.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table865.AddRow(new string[] {
+                table923.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 863
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table865, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table923, "Given ");
 #line hidden
 #line 872
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table866 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table924 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 873
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table866, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table924, "When ");
 #line hidden
 #line 875
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3121,32 +3121,32 @@ this.FeatureBackground();
 #line 876
  testRunner.And(string.Format("the response body should have {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table867 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table925 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table867.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table867.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table867.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table867.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table867.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table867.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table867.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 877
- testRunner.And("the response body should contain:", ((string)(null)), table867, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table925, "And ");
 #line hidden
 #line 887
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3200,41 +3200,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table868 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table926 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table868.AddRow(new string[] {
+                table926.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table868.AddRow(new string[] {
+                table926.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table868.AddRow(new string[] {
+                table926.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table868.AddRow(new string[] {
+                table926.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table868.AddRow(new string[] {
+                table926.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table868.AddRow(new string[] {
+                table926.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table868.AddRow(new string[] {
+                table926.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 899
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table868, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table926, "Given ");
 #line hidden
 #line 908
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To <Value>", field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table869 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table927 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 909
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table869, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table927, "When ");
 #line hidden
 #line 911
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3281,41 +3281,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table870 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table928 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table870.AddRow(new string[] {
+                table928.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-25T11:21:00Z"});
-                table870.AddRow(new string[] {
+                table928.AddRow(new string[] {
                             "CurrentLearningStatus",
                             "1"});
-                table870.AddRow(new string[] {
+                table928.AddRow(new string[] {
                             "LearningHours",
                             "1"});
-                table870.AddRow(new string[] {
+                table928.AddRow(new string[] {
                             "DateLearningStarted",
                             "2019-06-25T11:21:00Z"});
-                table870.AddRow(new string[] {
+                table928.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "2"});
-                table870.AddRow(new string[] {
+                table928.AddRow(new string[] {
                             "DateQualificationLevelAchieved",
                             "2019-07-25T11:21:00Z"});
-                table870.AddRow(new string[] {
+                table928.AddRow(new string[] {
                             "LastLearningProvidersUKPRN",
                             "12345678"});
 #line 928
- testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table870, "Given ");
+ testRunner.Given("I post a Learning Progression record with the following details V3:", ((string)(null)), table928, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table871 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table929 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table871.AddRow(new string[] {
+                table929.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "1"});
 #line 938
- testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table871, "When ");
+ testRunner.When("I patch the following LearningProgression V3:", ((string)(null)), table929, "When ");
 #line hidden
 #line 941
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3323,14 +3323,14 @@ this.FeatureBackground();
 #line 942
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table872 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table930 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table872.AddRow(new string[] {
+                table930.AddRow(new string[] {
                             "CurrentQualificationLevel",
                             "1"});
 #line 944
- testRunner.And("the response body should contain:", ((string)(null)), table872, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table930, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

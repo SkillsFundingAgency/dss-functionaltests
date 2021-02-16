@@ -20,7 +20,11 @@ namespace NCS.DSS.FunctionalTests.Steps
 
             await PostAction(action, customerId, interactionId, actionPlanId, "v2");
             if (_response.IsSuccessStatusCode)
+            {
                 _scenarioContext["ActionId"] = await _assertionHelper.GetKeyFromResponse("ActionId", _response);
+                DeleteRowFromSql("dss-actions", "id", _scenarioContext["ActionId"] as string);
+            }
+
         }
 
         [Given(@"I get an Action by ID V2")]

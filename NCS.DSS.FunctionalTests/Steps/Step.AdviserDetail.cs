@@ -15,6 +15,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var adviser = table.CreateInstance<Adviser>();
             await PostAdviserDetail(adviser, "");
             _scenarioContext["AdviserDetailId"] = await _assertionHelper.GetKeyFromResponse("AdviserDetailId", _response);
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-adviserdetails", "id", _scenarioContext["AdviserDetailId"] as string);
+            }
         }
 
         [When(@"I get an Adviser by ID")]
@@ -40,6 +44,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var adviser = table.CreateInstance<AdviserV2>();
             await PostAdviserDetail(adviser, "v2");
             _scenarioContext["AdviserDetailId"] = await _assertionHelper.GetKeyFromResponse("AdviserDetailId", _response);
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-adviserdetails", "id", _scenarioContext["AdviserDetailId"] as string);
+            }
         }
 
         [When(@"I get an Adviser by ID V2")]

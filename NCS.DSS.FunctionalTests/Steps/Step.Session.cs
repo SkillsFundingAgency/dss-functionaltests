@@ -19,6 +19,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var session = table.CreateInstance<Session>();
             await PostSession(session, customerId, interactionId, "");
             _scenarioContext["SessionId"] = await _assertionHelper.GetKeyFromResponse("SessionId", _response);
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-sessions", "id", _scenarioContext["SessionId"] as string);
+            }
         }
 
         //[Given(@"I post a customer with the given name '(.*)'")]

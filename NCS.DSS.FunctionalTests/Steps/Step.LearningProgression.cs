@@ -23,7 +23,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var learningProgression = table.CreateInstance<LearningProgression>();
             await PostLearningProgression(learningProgression, customerId, "v3");
             if (_response.IsSuccessStatusCode)
+            {
                 _scenarioContext["LearningProgressionId"] = await _assertionHelper.GetKeyFromResponse("LearningProgressionId", _response);
+                DeleteRowFromSql("dss-learningprogressions", "id", _scenarioContext["LearningProgressionId"] as string);
+            }
         }
 
         [When(@"I get a Learning Progression by ID V3")]

@@ -21,6 +21,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             await PostEmploymentProgression(ep, customerId, "v3");
             _scenarioContext["EmploymentProgressionId"] = await _assertionHelper.GetKeyFromResponse("EmploymentProgressionId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-employmentprogressions", "id", _scenarioContext["EmploymentProgressionId"] as string);
         }
 
         [Given(@"I patch the following EmploymentProgression V3:")]

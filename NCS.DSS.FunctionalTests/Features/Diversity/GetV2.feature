@@ -26,7 +26,7 @@
 #		| ConsentToCollectEthnicity                 | true                 |
 #		| Ethnicity                                 | 32                   |
 #		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	When I get a Diversity Details by ID
+#	When I get a Diversity Details by ID V2
 #	Then there should be a 200 response
 #		And the response body should contain:
 #		| Field                                     | Value                |

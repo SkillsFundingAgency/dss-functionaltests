@@ -1,98 +1,86 @@
-﻿#@postV2 @patchV2
-#Feature: DiversityV2_Patch
+﻿Feature: DiversityV2_Patch
+
+Background: Create Adviser
+	Given I post an adviser with the following details:
+		| Field                | Value          |
+		| AdviserName          | BillyAdviser   |
+		| AdviserContactNumber | 98798678967967 |
+	And I post a Customer with the following details:
+		| Field      | Value    |
+		| GivenName  | Bob      |
+		| FamilyName | Customer |
+
+@diversitydetails  @smoke
+Scenario:Patch Diversity with all values
+	When I post a DiversityDetail with the following details V2:
+		| Field                                     | Value                |
+		| ConsentToCollectLLDDHealth                | true                 |
+		| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		| PrimaryLearningDifficultyOrDisability     | 4                    |
+		| SecondaryLearningDifficultyOrDisability   | 5                    |
+		| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | true                 |
+		| Ethnicity                                 | 32                   |
+		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+	Then there should be a 201 response
+	Given I patch the following DiversityDetail V2:
+		| Field                                     | Value                |
+		| ConsentToCollectLLDDHealth                | true                 |
+		| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		| PrimaryLearningDifficultyOrDisability     | 4                    |
+		| SecondaryLearningDifficultyOrDisability   | 5                    |
+		| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | true                 |
+		| Ethnicity                                 | 32                   |
+		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+		| LastModifiedDate                          | 2018-08-25T11:21:00Z |
+	Then there should be a 200 response
+	And the response body should contain:
+		| Field                                     | Value                |
+		| ConsentToCollectLLDDHealth                | true                 |
+		| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		| PrimaryLearningDifficultyOrDisability     | 4                    |
+		| SecondaryLearningDifficultyOrDisability   | 5                    |
+		| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | true                 |
+		| Ethnicity                                 | 32                   |
+		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+		| LastModifiedDate                          | 2018-08-25T11:21:00Z |
+	#And the "diversitydetails" cosmos document should include CreatedBy
+	And the response body should not contain the "CreatedBy"
+
+#And there should be a record in the diversitydetails ChangeFeed table
+#And there should be a record in the diversitydetails-history ChangeFeed table
+############################################################################################################################
+##	ConsentToCollectLLDDHealth
+############################################################################################################################
+@diversitydetails
+Scenario Outline:Patch Diversity with valid values for ConsentToCollectLLDDHealth
+	When I post a DiversityDetail with the following details V2:
+		| Field                                     | Value                |
+		| ConsentToCollectLLDDHealth                | true                 |
+		| LearningDifficultyOrDisabilityDeclaration | 1                    |
+		| PrimaryLearningDifficultyOrDisability     | 4                    |
+		| SecondaryLearningDifficultyOrDisability   | 5                    |
+		| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
+		| ConsentToCollectEthnicity                 | true                 |
+		| Ethnicity                                 | 32                   |
+		| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
+	Given I want to send <Field> with value <Value> in the following request
+	Given I patch the following DiversityDetail V2:
+		| Field                      | Value |
+	Then there should be a 200 response
+	And the response body should have <Field> with value <Value>
+
+	Examples:
+		| Field                      | Value |
+		| ConsentToCollectLLDDHealth | True  |
+		| ConsentToCollectLLDDHealth | False |
 #
-#Background: Create Adviser
-#	Given I post an adviser with the following details:
-#		| Field						 | Value				|
-#		| AdviserName				 | BillyAdviser			|
-#		| AdviserContactNumber		 | 98798678967967		|
-#	And I post a Customer with the following details:
-#		| Field                      | Value                |
-#		| GivenName                  | Bob                  |
-#		| FamilyName                 | Customer             |
-#	#And I post a Diversity Details record with the following details:
-#	#	| Field                                     | Value                |
-#	#	| ConsentToCollectLLDDHealth                | true                 |
-#	#	| LearningDifficultyOrDisabilityDeclaration | 1                    |
-#	#	| PrimaryLearningDifficultyOrDisability     | 4                    |
-#	#	| SecondaryLearningDifficultyOrDisability   | 5                    |
-#	#	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
-#	#	| ConsentToCollectEthnicity                 | true                 |
-#	#	| Ethnicity                                 | 32                   |
-#	#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#
-#
-#@diversitydetails  @smoke
-#Scenario:Patch Diversity with all values
-#	Given I post a Diversity Details record with the following details:
-#	| Field                                     | Value                |
-#	| ConsentToCollectLLDDHealth                | true                 |
-#	| LearningDifficultyOrDisabilityDeclaration | 1                    |
-#	| PrimaryLearningDifficultyOrDisability     | 4                    |
-#	| SecondaryLearningDifficultyOrDisability   | 5                    |
-#	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
-#	| ConsentToCollectEthnicity                 | true                 |
-#	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	When I patch the following:
-#	| Field                                     | Value                |
-#	| ConsentToCollectLLDDHealth                 | true                 |
-#	| LearningDifficultyOrDisabilityDeclaration | 1                    |
-#	| PrimaryLearningDifficultyOrDisability     | 4                    |
-#	| SecondaryLearningDifficultyOrDisability   | 5                    |
-#	| DateAndTimeLLDDHealthConsentCollected      | 2018-06-25T11:21:00Z |
-#	| ConsentToCollectEthnicity                 | true               |
-#	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
-#	Then there should be a 200 response
-#	And the response body should contain:
-#	| Field                                     | Value                |
-#	| ConsentToCollectLLDDHealth                | true                 |
-#	| LearningDifficultyOrDisabilityDeclaration | 1                    |
-#	| PrimaryLearningDifficultyOrDisability     | 4                    |
-#	| SecondaryLearningDifficultyOrDisability   | 5                    |
-#	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
-#	| ConsentToCollectEthnicity                 | true                 |
-#	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	| LastModifiedDate                          | 2018-08-25T11:21:00Z |
-#	And the "diversitydetails" cosmos document should include CreatedBy
-#	And the response body should not contain the "CreatedBy"
-#	And there should be a record in the diversitydetails ChangeFeed table
-#	And there should be a record in the diversitydetails-history ChangeFeed table
-#
-#
-#############################################################################################################################
-###	ConsentToCollectLLDDHealth
-#############################################################################################################################
-#
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for ConsentToCollectLLDDHealth 
-#
-#	Given I post a Diversity Details record with the following details:
-#	| Field                                     | Value                |
-#	| ConsentToCollectLLDDHealth                | true                 |
-#	| LearningDifficultyOrDisabilityDeclaration | 1                    |
-#	| PrimaryLearningDifficultyOrDisability     | 4                    |
-#	| SecondaryLearningDifficultyOrDisability   | 5                    |
-#	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
-#	| ConsentToCollectEthnicity                 | true                 |
-#	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	When I patch the element <Field> with <Value>:
-#	Then there should be a 200 response
-#	And the response body should have <Field> with value <Value>
-#	
-#	Examples:
-#	| Field                     | Value |
-#	| ConsentToCollectLLDDHealth | True  |
-#	| ConsentToCollectLLDDHealth | False |		
-#	
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for ConsentToCollectLLDDHealth 
-#
-#	Given I post a Diversity Details record with the following details:
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for ConsentToCollectLLDDHealth
+#Given I want to send <Field> with value <Value> in the following request
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -104,16 +92,16 @@
 #	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
-#	
+#
 #	Examples:
 #	| Field                      | Value |
 #	| ConsentToCollectLLDDHealth | 1     |
-#	| ConsentToCollectLLDDHealth | car   |	
+#	| ConsentToCollectLLDDHealth | car   |
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with no value supplied for ConsentToCollectLLDDHealth 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with no value supplied for ConsentToCollectLLDDHealth
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -141,10 +129,10 @@
 #	| Field                      | Value |
 #	| ConsentToCollectLLDDHealth |       |
 #
-#@diversitydetails  
+#@diversitydetails
 #Scenario: Patch Diversity with ConsentToCollectLLDDHealth where no value exists for DateAndTimeLLDDHealthConsentCollected
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | false                |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -157,17 +145,17 @@
 #	When I patch the element ConsentToCollectLLDDHealth with true:
 #	Then there should be a 200 response
 #	And the date field DateAndTimeLLDDHealthConsentCollected should hold a recent value
-#	
+#
 #
 #############################################################################################################################
 ### LearningDifficultyOrDisabilityDeclaration
 #############################################################################################################################
 #
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for LearningDifficultyOrDisabilityDeclaration 
+#@diversitydetails
+#Scenario Outline:Patch Diversity with valid values for LearningDifficultyOrDisabilityDeclaration
 #
-#	
-#	Given I post a Diversity Details record with the following details:
+#
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -185,7 +173,7 @@
 #	| ConsentToCollectEthnicity  | true  |
 #	| Ethnicity                  | 32    |
 #	And the response body should have <Field> with value <Value>
-#	
+#
 #	Examples:
 #	| Field                                     | Value |
 #	| LearningDifficultyOrDisabilityDeclaration | 1     |
@@ -194,10 +182,10 @@
 #
 #
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for LearningDifficultyOrDisabilityDeclaration 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for LearningDifficultyOrDisabilityDeclaration
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -210,7 +198,7 @@
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
 #	And the error message should be "Please supply a valid Learning Difficulty Or Disability Declaration"
-#	
+#
 #	Examples:
 #	| Field                                     | Value |
 #	| LearningDifficultyOrDisabilityDeclaration | -1    |
@@ -222,10 +210,10 @@
 #	| LearningDifficultyOrDisabilityDeclaration | 99    |
 #	| LearningDifficultyOrDisabilityDeclaration | 100   |
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with no value supplied for LearningDifficultyOrDisabilityDeclaration 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with no value supplied for LearningDifficultyOrDisabilityDeclaration
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -247,19 +235,19 @@
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
 #	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	
+#
 #	Examples:
 #	| Field                                     | Value |
-#	| LearningDifficultyOrDisabilityDeclaration |       |  
+#	| LearningDifficultyOrDisabilityDeclaration |       |
 #
 #############################################################################################################################
 ### PrimaryLearningDifficultyOrDisability
 #############################################################################################################################
 #
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for PrimaryLearningDifficultyOrDisability 
+#@diversitydetails
+#Scenario Outline:Patch Diversity with valid values for PrimaryLearningDifficultyOrDisability
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -268,7 +256,7 @@
 #	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |	
+#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 200 response
 #	And the response body should contain:
@@ -277,7 +265,7 @@
 #	| ConsentToCollectEthnicity  | true  |
 #	| Ethnicity                  | 32    |
 #	And the response body should have <Field> with value <Value>
-#	
+#
 #	Examples:
 #	| Field                                 | Value |
 #	| PrimaryLearningDifficultyOrDisability | 4     |
@@ -304,10 +292,10 @@
 #
 #
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for PrimaryLearningDifficultyOrDisability 
-#	
-#	Given I post a Diversity Details record with the following details:
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for PrimaryLearningDifficultyOrDisability
+#
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -320,7 +308,7 @@
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
 #	And the error message should be "Please supply a valid Primary Learning Difficulty Or Disability"
-#	
+#
 #	Examples:
 #	| Field                                 | Value |
 #	| PrimaryLearningDifficultyOrDisability |-1     |
@@ -335,10 +323,10 @@
 #	| PrimaryLearningDifficultyOrDisability | 100     |
 ##	| PrimaryLearningDifficultyOrDisability | a     |
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with no value supplied for PrimaryLearningDifficultyOrDisability 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with no value supplied for PrimaryLearningDifficultyOrDisability
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -360,7 +348,7 @@
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
 #	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	
+#
 #	Examples:
 #	| Field                                 | Value |
 #	| PrimaryLearningDifficultyOrDisability |       |
@@ -369,10 +357,10 @@
 ### SecondaryLearningDifficultyOrDisability
 #############################################################################################################################
 #
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for SecondaryLearningDifficultyOrDisability 
+#@diversitydetails
+#Scenario Outline:Patch Diversity with valid values for SecondaryLearningDifficultyOrDisability
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -381,11 +369,11 @@
 #	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |	
+#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 200 response
 #	And the response body should have <Field> with value <Value>
-#	
+#
 #	Examples:
 #	| Field                                   | Value |
 #	| SecondaryLearningDifficultyOrDisability | 4     |
@@ -412,10 +400,10 @@
 #
 #
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for SecondaryLearningDifficultyOrDisability 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for SecondaryLearningDifficultyOrDisability
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -424,11 +412,11 @@
 #	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |	
+#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
 #	And the error message should be "Please supply a valid Secondary Learning Difficulty Or Disability"
-#	
+#
 #	Examples:
 #	| Field                                 | Value |
 #	| SecondaryLearningDifficultyOrDisability |-1     |
@@ -443,10 +431,10 @@
 #	| SecondaryLearningDifficultyOrDisability | 100     |
 ##	| PrimaryLearningDifficultyOrDisability | a     |
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with no value supplied for SecondaryLearningDifficultyOrDisability 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with no value supplied for SecondaryLearningDifficultyOrDisability
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -468,7 +456,7 @@
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
 #	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	
+#
 #	Examples:
 #	| Field                                   | Value |
 #	| SecondaryLearningDifficultyOrDisability |       |
@@ -477,10 +465,10 @@
 ### DateAndTimeLDDHealthConsentCollected			MANDATORY IF CONSENT GIVEN	Date < NOW
 #############################################################################################################################
 #
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for DateAndTimeLLDDHealthConsentCollected 
+#@diversitydetails
+#Scenario Outline:Patch Diversity with valid values for DateAndTimeLLDDHealthConsentCollected
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -495,7 +483,7 @@
 #	Then there should be a 200 response
 #	And the response body value for DateAndTimeLLDDHealthConsentCollected should match the last request
 #
-#	
+#
 #	Examples:
 #	| Field                                | Value                |
 #	| DateAndTimeLLDDHealthConsentCollected | now                  |
@@ -503,10 +491,10 @@
 #	| DateAndTimeLLDDHealthConsentCollected | 2018-08-25T11:21:00Z |
 #
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for DateAndTimeLDDHealthConsentCollected 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for DateAndTimeLDDHealthConsentCollected
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -520,7 +508,7 @@
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
 #	And the error message should be "Date And Time LLDD Health Consent Collected must be less the current date/time"
-#	
+#
 #	Examples:
 #	| Field                                | Value       |
 #	| DateAndTimeLLDDHealthConsentCollected | now +1Hour  |
@@ -534,10 +522,10 @@
 #############################################################################################################################
 #
 #
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for ConsentToCollectEthnicity 
+#@diversitydetails
+#Scenario Outline:Patch Diversity with valid values for ConsentToCollectEthnicity
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -546,21 +534,21 @@
 #	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |	
+#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 200 response
 #	And the response body should have <Field> with value <Value>
-#	
+#
 #	Examples:
 #	| Field                     | Value |
 #	| ConsentToCollectEthnicity | True  |
 #	| ConsentToCollectEthnicity | False |
-#	
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for ConsentToCollectEthnicity 
-#	
-#	Given I post a Diversity Details record with the following details:
+#
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for ConsentToCollectEthnicity
+#
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -573,16 +561,16 @@
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
 ##And the error message should be "PLACEHOLDER"
-#	
+#
 #	Examples:
 #	| Field                     | Value |
 #	| ConsentToCollectEthnicity | 1     |
 #	| ConsentToCollectEthnicity | abc   |
 #
-#@diversitydetails  
+#@diversitydetails
 #Scenario Outline: Patch Diversity with no value supplied for ConsentToCollectEthnicity
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -604,15 +592,15 @@
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
 #	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	
+#
 #	Examples:
 #	| Field                     | Value |
 #	| ConsentToCollectEthnicity |       |
 #
-#@diversitydetails  
+#@diversitydetails
 #Scenario: Patch Diversity with ConsentToCollectEthnicity where no value exists for DateAndTimeEthnicityCollected
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value |
 #	| ConsentToCollectLLDDHealth                | false |
 #	| LearningDifficultyOrDisabilityDeclaration | 1     |
@@ -631,10 +619,10 @@
 #############################################################################################################################
 #
 #
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for Ethnicity 
+#@diversitydetails
+#Scenario Outline:Patch Diversity with valid values for Ethnicity
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -647,7 +635,7 @@
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 200 response
 #	And the response body should have <Field> with value <Value>
-#	
+#
 #	Examples:
 #	| Field     | Value |
 #	| Ethnicity | 31    |
@@ -670,10 +658,10 @@
 #	| Ethnicity | 98    |
 #	| Ethnicity | 99    |
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for Ethnicity 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for Ethnicity
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -682,11 +670,11 @@
 #	| DateAndTimeLLDDHealthConsentCollected     | 2018-06-25T11:21:00Z |
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
-#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |	
+#	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
 #	And the error message should be "Please supply a valid Ethnicity"
-#	
+#
 #	Examples:
 #	| Field     | Value |
 #	| Ethnicity | 0     |
@@ -697,10 +685,10 @@
 #	| Ethnicity | 97    |
 #	| Ethnicity | 100   |
 #
-#@diversitydetails  
+#@diversitydetails
 #Scenario Outline: Patch Diversity with no value supplied for Ethnicity
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -722,7 +710,7 @@
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
 #	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	
+#
 #	Examples:
 #	| Field                     | Value |
 #	| ConsentToCollectEthnicity |       |
@@ -731,10 +719,10 @@
 ### DateAndTimeEthnicityCollected	MANDATORY if Consent is Given   :  <= Now
 #############################################################################################################################
 #
-#@diversitydetails  
-#Scenario Outline:Patch Diversity with valid values for DateAndTimeEthnicityCollected 
+#@diversitydetails
+#Scenario Outline:Patch Diversity with valid values for DateAndTimeEthnicityCollected
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -748,7 +736,7 @@
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 200 response
 #	#And the response body should have <Field> with value <Value>
-#	
+#
 #	Examples:
 #	| Field                         | Value                |
 #	| DateAndTimeEthnicityCollected | now                  |
@@ -758,10 +746,10 @@
 #
 #
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with invalid values for DateAndTimeEthnicityCollected 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with invalid values for DateAndTimeEthnicityCollected
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -775,16 +763,16 @@
 #	When I patch the element <Field> with <Value>:
 #	Then there should be a 422 response
 #	And the error message should be "Date And Time Ethnicity Collected must be less the current date/time"
-#	
+#
 #	Examples:
 #	| Field                         | Value       |
 #	| DateAndTimeEthnicityCollected | now +1Hour  |
 #	| DateAndTimeEthnicityCollected | today +1Day |
 #
-#@diversitydetails  
-#Scenario Outline: Patch Diversity with no value supplied for DateAndTimeEthnicityCollected 
+#@diversitydetails
+#Scenario Outline: Patch Diversity with no value supplied for DateAndTimeEthnicityCollected
 #
-#	Given I post a Diversity Details record with the following details:
+#	When I post a DiversityDetail with the following details V2:
 #	| Field                                     | Value                |
 #	| ConsentToCollectLLDDHealth                | true                 |
 #	| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -806,12 +794,12 @@
 #	| ConsentToCollectEthnicity                 | true                 |
 #	| Ethnicity                                 | 32                   |
 #	| DateAndTimeEthnicityCollected             | 2018-06-25T11:22:00Z |
-#	
+#
 #	Examples:
 #	| Field                         | Value |
 #	| DateAndTimeEthnicityCollected |       |
 #
-##@diversitydetails  
+##@diversitydetails
 ##Scenario: Patch Diversity with no value supplied for DateAndTimeEthnicityCollected with consent to collect Ethnicity data given
 ##
 ##	When I patch the following:
@@ -840,7 +828,7 @@
 #############################################################################################################################
 #
 #Scenario: Patch diversity for a terminated customer
-#		#Given I post a Diversity Details record with the following details:
+#		#Given I post a DiversityDetail with the following details V2:
 #		#| Field                                     | Value                |
 #		#| ConsentToCollectLLDDHealth                | true                 |
 #		#| LearningDifficultyOrDisabilityDeclaration | 1                    |
@@ -853,7 +841,7 @@
 #		#And I patch "Customers" with the following details:
 #		# | Field                | Value                |
 #		# | DateOfTermination    | 2018-07-20T21:45:00Z |
-#		# | ReasonForTermination | 1        
+#		# | ReasonForTermination | 1
 #		# When |
 #		#When I patch DiversityDetail with the following details:
 #		#| Field                                     | Value                |

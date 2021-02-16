@@ -1,7 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -10,7 +8,6 @@ namespace NCS.DSS.FunctionalTests.Steps
 {
     public partial class Step
     {
-
         [Given(@"I post a webchat with the following details:")]
         public async Task GivenIPostAWebchatWithTheFollowingDetails(Table table)
         {
@@ -19,6 +16,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             await PostWebChat(webchat, customerId, interactionId, "");
             _scenarioContext["WebChatId"] = await _assertionHelper.GetKeyFromResponse("WebChatId", _response);
+            if (_response.IsSuccessStatusCode)
+            {
+                DeleteRowFromSql("dss-webchats", "id", _scenarioContext["WebChatId"] as string);
+            }
         }
 
         [When(@"I get a WebChat by ID")]

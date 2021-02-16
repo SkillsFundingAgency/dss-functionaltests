@@ -83,6 +83,15 @@ namespace NCS.DSS.FunctionalTests
         public string DIGITALIDENTITY_PATCH_BYDIGITALIDENTITYID_URL => BaseUrl + "digitalidentities/api/identity/{0}";
         public string DIGITALIDENTITY_DELETE_BYCUSTOMERID_URL => BaseUrl + "digitalidentities/api/customer/{0}";
 
+
+        public string OUTCOMES_POST_URL => BaseUrl + "outcomes/api/Customers/{0}/Interactions/{1}/actionplans/{2}/Outcomes/";
+        public string OUTCOMES_GET_URL => BaseUrl + "outcomes/api/Customers/{0}/Interactions/{1}/actionplans/{2}/Outcomes/{3}";
+        public string OUTCOMES_PATCH_URL => BaseUrl + "outcomes/api/Customers/{0}/Interactions/{1}/actionplans/{2}/Outcomes/{3}";
+
+        public string DIVERSITYDETAIL_POST_URL => BaseUrl + "diversitydetails/api/Customers/{0}/DiversityDetails";
+        public string DIVERSITYDETAIL_GET_URL => BaseUrl + "diversitydetails/api/Customers/{0}/DiversityDetails";
+        public string DIVERSITYDETAIL_PATCH_URL => BaseUrl + "diversitydetails/api/Customers/{0}/DiversityDetails/{1}";
+
     }
 }
 
