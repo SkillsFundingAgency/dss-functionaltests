@@ -11,6 +11,8 @@
     <PackageReference Include="Polly" Version="7.2.1" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.6.23" />
     <PackageReference Include="SpecFlow.NUnit.Runners" Version="3.6.23" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
   <PropertyGroup>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
@@ -22,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="C:\Users\kev\.nuget\packages\specflow.nunit\3.6.23\build\\..\lib\netstandard2.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="appsettings.json">

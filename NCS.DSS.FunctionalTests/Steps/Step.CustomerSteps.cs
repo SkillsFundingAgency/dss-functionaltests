@@ -17,6 +17,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customer = table.CreateInstance<Customer>();
             await PostCustomer(customer, "");
             _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-customers", "id", _scenarioContext["CustomerId"] as string);
         }
 
         [Given(@"I post a customer with the given name '(.*)'")]
@@ -27,6 +30,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             customer.FamilyName = "Smith";
             await PostCustomer(customer, "");
             _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-customers", "id", _scenarioContext["CustomerId"] as string);
         }
 
         [When(@"I get a Customer by ID")]
@@ -53,6 +59,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             await PostCustomer(customer, "v2");
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-customers", "id", _scenarioContext["CustomerId"] as string);
         }
 
         [When(@"I get a Customer by ID V2")]
@@ -62,7 +71,6 @@ namespace NCS.DSS.FunctionalTests.Steps
             await GetByCustomerId(customerId, "v2");
         }
 
-
         [Given(@"I post a customer with the given name '(.*)' V2")]
         public async Task GivenIPostACustomerWithTheGivenNameV2(string givenName)
         {
@@ -71,6 +79,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             customer.FamilyName = "Smith";
             await PostCustomer(customer, "v2");
             _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-customers", "id", _scenarioContext["CustomerId"] as string);
         }
 
         [When(@"I patch the following Customer V2:")]
@@ -90,6 +101,9 @@ namespace NCS.DSS.FunctionalTests.Steps
             await PostCustomer(customer, "v3");
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-customers", "id", _scenarioContext["CustomerId"] as string);
         }
 
         [Given(@"I post a customer with the given name '(.*)' V3")]
@@ -102,6 +116,10 @@ namespace NCS.DSS.FunctionalTests.Steps
             await PostCustomer(customer, "v3");
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
+
+
+            if (_response.IsSuccessStatusCode)
+                DeleteRowFromSql("dss-customers", "id", _scenarioContext["CustomerId"] as string);
         }
 
         [When(@"I get a Customer by ID V3")]

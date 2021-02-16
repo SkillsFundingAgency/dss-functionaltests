@@ -59,7 +59,6 @@ namespace NCS.DSS.FunctionalTests.UnitTests
         }
         #endregion
 
-
         #region GetValueByKey
         [Test]
         public void GetValueByKey_NonExistentProperty_ReturnsNull()

@@ -27,7 +27,7 @@ namespace NCS.DSS.FunctionSteps.Core
             return await CallApiRetry(HttpMethod.Patch, bytes, url, 3, 1, touchpoint, version, apiKey, true);
         }
 
-        public async Task<HttpResponseMessage> Delete<T>(T request, string url, string touchpoint, string version, string apiKey)
+        public async Task<HttpResponseMessage> Delete(string url, string touchpoint, string version, string apiKey)
         {
             return await CallApiRetry(HttpMethod.Delete, null, url, 3, 1, touchpoint, version, apiKey, true);
         }
@@ -49,7 +49,7 @@ namespace NCS.DSS.FunctionSteps.Core
                 request.Content = (httpVerb == HttpMethod.Post || httpVerb == HttpMethod.Patch || httpVerb == HttpMethod.Put) ? new ByteArrayContent(body) : null;
                 var response = await _client.SendAsync(request);
                 return response;
-            } catch (Exception e)
+            } catch (Exception)
             {
                 Console.WriteLine("Calling api error");
                 return null;

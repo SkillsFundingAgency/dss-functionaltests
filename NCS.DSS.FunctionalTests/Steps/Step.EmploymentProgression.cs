@@ -1,7 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -83,7 +81,3 @@ namespace NCS.DSS.FunctionalTests.Steps
         #endregion
     }
 }
-
-//public string EMPLOYMENTPROGRESSION_GETBY_CUSTOMERID_URL => BaseUrl + "employmentprogressions/api/customers/{0}/employmentprogressions";
-
-
