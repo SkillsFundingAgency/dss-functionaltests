@@ -72,6 +72,10 @@ namespace NCS.DSS.FunctionalTests
         public string LEARNINGPROGRESSION_PATCH_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/{1}";
         public string LEARNINGPROGRESSION_GETALL_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/";
 
+        public string TRANSFER_POST_URL => BaseUrl + "transfers/api/Customers/{0}/Interactions/{1}/Transfers/";
+        public string LOCAL_TRANSFER_POST_URL = "http://localhost:7071/api/Customers/{0}/Interactions/{1}/Transfers/";
+        public string TRANSFER_GET_URL => BaseUrl + "transfers/api/Customers/{0}/Interactions/{1}/Transfers/{2}";
+        public string TRANSFER_PATCH_URL => BaseUrl + "transfers/api/Customers/{0}/Interactions/{1}/Transfers/{2}";
 
 
     }
