@@ -17,31 +17,15 @@ namespace NCS.DSS.FunctionSteps.Core
             {
                 expectedVals.Add(row[0], row[1]);
             }
-            var expectingResultObject = ToSerializedObject(expectedVals);
+            var expectingResultObject = JsonHelper.ToSerializedObject(expectedVals);
             var body = await httpResponse?.Content?.ReadAsStringAsync();
             return JsonHelper.JsonContains(body, expectingResultObject);
         }
 
-        public string ToSerializedObject(IDictionary<string, object> source)
+        public async Task<string> ResponseAsJson(HttpResponseMessage httpResponse)
         {
-            var x = new ExpandoObject() as IDictionary<string, object>;
-
-            foreach (var i in source)
-            {
-                x.Add(i.Key, i.Value);
-            }
-            return JsonConvert.SerializeObject(x);
-        }
-
-        public dynamic ToObject(IDictionary<string, object> source)
-        {
-            var x = new ExpandoObject() as IDictionary<string, object>;
-
-            foreach (var i in source)
-            {
-                x.Add(i.Key, i.Value);
-            }
-            return x;
+            var body = await httpResponse?.Content?.ReadAsStringAsync();
+            return JsonHelper.AsJson(body);
         }
 
         public async Task<int> DocumentCount(HttpResponseMessage httpResponse)

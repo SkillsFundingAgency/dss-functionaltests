@@ -221,6 +221,10 @@ this.FeatureBackground();
 #line 43
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 44
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -292,6 +296,10 @@ this.FeatureBackground();
 #line hidden
 #line 61
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 62
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -368,6 +376,10 @@ this.FeatureBackground();
 #line hidden
 #line 78
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 79
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -600,6 +612,10 @@ this.FeatureBackground();
 #line hidden
 #line 148
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 149
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -911,6 +927,10 @@ this.FeatureBackground();
 #line 243
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 244
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -1000,6 +1020,10 @@ this.FeatureBackground();
 #line hidden
 #line 273
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 274
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1249,6 +1273,10 @@ this.FeatureBackground();
 #line 333
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 334
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -1340,6 +1368,10 @@ this.FeatureBackground();
 #line hidden
 #line 362
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 363
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1592,6 +1624,10 @@ this.FeatureBackground();
 #line 430
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 431
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -1750,6 +1786,10 @@ this.FeatureBackground();
 #line hidden
 #line 474
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 475
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1999,6 +2039,10 @@ this.FeatureBackground();
 #line 546
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 547
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -2023,7 +2067,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Field", field);
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with valid values for EmploymentHours", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 552
+#line 551
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2046,7 +2090,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 553
+#line 552
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table848 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2061,10 +2105,10 @@ this.FeatureBackground();
                 table848.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 554
+#line 553
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table848, "Given ");
 #line hidden
-#line 559
+#line 558
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table849 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2076,14 +2120,18 @@ this.FeatureBackground();
                 table849.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-#line 560
+#line 559
  testRunner.And("the response body should contain:", ((string)(null)), table849, "And ");
 #line hidden
-#line 564
+#line 563
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 566
+#line 565
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 566
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2110,7 +2158,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Field", field);
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with invalid values for EmploymentHours", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 578
+#line 577
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2133,7 +2181,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 579
+#line 578
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table850 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2148,16 +2196,16 @@ this.FeatureBackground();
                 table850.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-#line 580
+#line 579
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table850, "Given ");
 #line hidden
-#line 585
+#line 584
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 586
+#line 585
  testRunner.And("the error message should be \"EmploymentHours must be a valid employment hours\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 587
+#line 586
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -2187,7 +2235,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for EmploymentHours and CurrentEmployme" +
                     "ntStatus in 1, 4, 5, 8, 9", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 598
+#line 597
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2210,7 +2258,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 599
+#line 598
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table851 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2231,18 +2279,18 @@ this.FeatureBackground();
                 table851.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
-#line 600
+#line 599
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table851, "Given ");
 #line hidden
-#line 607
+#line 606
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 608
+#line 607
  testRunner.And("the error message should be \"EmploymentHours must have a value when CurrentEmploy" +
                         "mentStatus is Apprenticeship, Employed, EmployedAndVoluntaryWork, RetiredAndVolu" +
                         "ntaryWork or SelfEmployed.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 609
+#line 608
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -2276,7 +2324,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for EmploymentHours and CurrentEmployme" +
                     "ntStatus not in 1, 4, 5, 8, 9", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 620
+#line 619
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2299,7 +2347,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 621
+#line 620
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table852 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2317,10 +2365,10 @@ this.FeatureBackground();
                 table852.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 622
+#line 621
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table852, "Given ");
 #line hidden
-#line 628
+#line 627
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table853 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2335,14 +2383,18 @@ this.FeatureBackground();
                 table853.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 629
+#line 628
  testRunner.And("the response body should contain:", ((string)(null)), table853, "And ");
 #line hidden
-#line 634
+#line 633
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 636
+#line 635
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 636
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2367,7 +2419,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Field", field);
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with valid values for DateOfEmployment", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 653
+#line 652
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2390,7 +2442,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 654
+#line 653
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table854 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2405,10 +2457,10 @@ this.FeatureBackground();
                 table854.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 655
+#line 654
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table854, "Given ");
 #line hidden
-#line 660
+#line 659
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table855 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2420,11 +2472,15 @@ this.FeatureBackground();
                 table855.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-#line 661
+#line 660
  testRunner.And("the response body should contain:", ((string)(null)), table855, "And ");
 #line hidden
-#line 667
+#line 666
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 667
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2450,7 +2506,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Value", value);
             argumentsOfScenario.Add("ErrorMessage", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with invalid values for DateOfEmployment", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 678
+#line 677
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2473,7 +2529,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 679
+#line 678
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table856 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2488,16 +2544,16 @@ this.FeatureBackground();
                 table856.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-#line 680
+#line 679
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table856, "Given ");
 #line hidden
-#line 685
+#line 684
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 686
+#line 685
  testRunner.And(string.Format("the response body should include {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 687
+#line 686
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -2531,7 +2587,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for DateOfEmployment and CurrentEmploym" +
                     "entStatus not in 1, 4, 5, 8, 9", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 696
+#line 695
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2554,7 +2610,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 697
+#line 696
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table857 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2572,10 +2628,10 @@ this.FeatureBackground();
                 table857.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 698
+#line 697
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table857, "Given ");
 #line hidden
-#line 704
+#line 703
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table858 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2590,14 +2646,18 @@ this.FeatureBackground();
                 table858.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 705
+#line 704
  testRunner.And("the response body should contain:", ((string)(null)), table858, "And ");
 #line hidden
-#line 710
+#line 709
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 712
+#line 711
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 712
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2626,7 +2686,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with no value for DateOfEmployment and CurrentEmploym" +
                     "entStatus in 1, 4, 5, 8, 9", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 729
+#line 728
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2649,7 +2709,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 730
+#line 729
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table859 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2667,18 +2727,18 @@ this.FeatureBackground();
                 table859.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 731
+#line 730
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table859, "Given ");
 #line hidden
-#line 737
+#line 736
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 738
+#line 737
  testRunner.And("the error message should be \"DateOfEmployment must have a value when CurrentEmplo" +
                         "ymentStatus is Apprenticeship, Employed, EmployedAndVoluntaryWork, RetiredAndVol" +
                         "untaryWork or SelfEmployed.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 739
+#line 738
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -2705,7 +2765,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Field", field);
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with valid values for DateOfLastEmployment", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 750
+#line 749
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2728,7 +2788,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 751
+#line 750
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table860 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2743,10 +2803,10 @@ this.FeatureBackground();
                 table860.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 752
+#line 751
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table860, "Given ");
 #line hidden
-#line 757
+#line 756
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table861 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2758,11 +2818,15 @@ this.FeatureBackground();
                 table861.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-#line 758
+#line 757
  testRunner.And("the response body should contain:", ((string)(null)), table861, "And ");
 #line hidden
-#line 764
+#line 763
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 764
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2791,7 +2855,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Value", value);
             argumentsOfScenario.Add("ErrorMessage", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with invalid values for DateOfLastEmployment", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 776
+#line 775
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2814,7 +2878,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 777
+#line 776
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table862 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2829,13 +2893,13 @@ this.FeatureBackground();
                 table862.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 778
+#line 777
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table862, "Given ");
 #line hidden
-#line 783
+#line 782
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 784
+#line 783
  testRunner.And(string.Format("the response body should include {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -2867,7 +2931,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Field", field);
             argumentsOfScenario.Add("Value", value);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with valid values for LengthOfUnemployment", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 796
+#line 795
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2890,7 +2954,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 797
+#line 796
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table863 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2905,10 +2969,10 @@ this.FeatureBackground();
                 table863.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-#line 798
+#line 797
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table863, "Given ");
 #line hidden
-#line 803
+#line 802
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table864 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2920,14 +2984,18 @@ this.FeatureBackground();
                 table864.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-#line 804
+#line 803
  testRunner.And("the response body should contain:", ((string)(null)), table864, "And ");
 #line hidden
-#line 808
+#line 807
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 810
+#line 809
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 810
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2955,7 +3023,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("Value", value);
             argumentsOfScenario.Add("ErrorMessage", errorMessage);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Employment progression with invalid values for LengthOfUnemployment", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 827
+#line 826
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -2978,7 +3046,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 828
+#line 827
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table865 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3002,16 +3070,16 @@ this.FeatureBackground();
                 table865.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
-#line 829
+#line 828
  testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table865, "Given ");
 #line hidden
-#line 837
+#line 836
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 838
+#line 837
  testRunner.And(string.Format("the response body should include {0}", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 839
+#line 838
  testRunner.And("the number of errors returned should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

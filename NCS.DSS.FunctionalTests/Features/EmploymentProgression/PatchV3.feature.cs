@@ -390,6 +390,10 @@ this.FeatureBackground();
 #line 99
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 100
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -689,6 +693,10 @@ this.FeatureBackground();
                             "2018-06-19T09:01:00Z"});
 #line 179
  testRunner.And("the response body should contain:", ((string)(null)), table719, "And ");
+#line hidden
+#line 187
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1080,6 +1088,10 @@ this.FeatureBackground();
 #line 302
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 303
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -1182,6 +1194,10 @@ this.FeatureBackground();
 #line hidden
 #line 342
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 343
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1463,6 +1479,10 @@ this.FeatureBackground();
 #line 419
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 420
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -1665,6 +1685,10 @@ this.FeatureBackground();
 #line hidden
 #line 478
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 479
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1963,6 +1987,10 @@ this.FeatureBackground();
 #line hidden
 #line 561
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 562
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2267,6 +2295,10 @@ this.FeatureBackground();
 #line hidden
 #line 646
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 647
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2579,6 +2611,10 @@ this.FeatureBackground();
 #line 734
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 738
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -2886,6 +2922,10 @@ this.FeatureBackground();
 #line 832
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 833
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -3071,6 +3111,10 @@ this.FeatureBackground();
 #line 886
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 887
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -3170,6 +3214,10 @@ this.FeatureBackground();
 #line hidden
 #line 919
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 920
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -3345,6 +3393,10 @@ this.FeatureBackground();
 #line 967
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 968
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -3447,6 +3499,10 @@ this.FeatureBackground();
 #line hidden
 #line 1000
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 1001
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -3629,6 +3685,10 @@ this.FeatureBackground();
 #line 1051
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 1052
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -3736,6 +3796,10 @@ this.FeatureBackground();
 #line hidden
 #line 1083
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 1084
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -3926,6 +3990,10 @@ this.FeatureBackground();
 #line 1143
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 1144
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -4059,6 +4127,10 @@ this.FeatureBackground();
                             "1"});
 #line 1211
  testRunner.And("the response body should contain:", ((string)(null)), table809, "And ");
+#line hidden
+#line 1224
+ testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
+                        "rogressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

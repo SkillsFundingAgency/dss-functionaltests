@@ -188,6 +188,9 @@ this.FeatureBackground();
 #line 26
  testRunner.And("the response body should contain:", ((string)(null)), table1091, "And ");
 #line hidden
+#line 32
+ testRunner.And("there should be a record in the dss-sessions table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

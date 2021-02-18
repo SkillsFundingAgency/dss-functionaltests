@@ -43,9 +43,9 @@ Scenario:Patch Learning Progression with  all values
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-#And there should be a record in the learningprogressions ChangeFeed table
-#And there should be a record in the learningprogressions-history ChangeFeed table
 ###########################################################################################
 ##	DateProgressionRecorded
 ###########################################################################################
@@ -74,9 +74,9 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value                |
 		| DateProgressionRecorded | Today                |
@@ -193,9 +193,9 @@ Scenario Outline: Patch Learning Progression with CurrentLearningStatus
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field                 | Value |
 		| CurrentLearningStatus | 1     |
@@ -431,9 +431,9 @@ Scenario Outline: Patch Learning Progression with LearningHours
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field         | Value |
 		| LearningHours | 1     |
@@ -525,9 +525,9 @@ Scenario Outline: Patch Learning Progression with DateLearningStarted
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field               | Value                |
 		| DateLearningStarted | 2018-06-25T11:21:00Z |
@@ -612,9 +612,9 @@ Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field                     | Value |
 		| CurrentQualificationLevel | 0     |
@@ -703,9 +703,9 @@ Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 		| LastLearningProvidersUKPRN | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field                          | Value                |
 		| DateQualificationLevelAchieved | 2018-06-25T11:21:00Z |
@@ -790,9 +790,9 @@ Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field                      | Value    |
 		| LastLearningProvidersUKPRN | 10000000 |
@@ -885,9 +885,9 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field            | Value                |
 		| LastModifiedDate | 2019-06-19T09:01:00Z |

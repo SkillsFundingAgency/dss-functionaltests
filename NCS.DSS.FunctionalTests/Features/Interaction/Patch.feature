@@ -26,9 +26,9 @@ Scenario: Patch Date
 		| DateandTimeOfInteraction | 2018-06-26T11:21:00Z |
 		| Channel                  | 2                    |
 		| InteractionType          | 2                    |
-	#And there should be a record in the interactions ChangeFeed table
-	#And there should be a record in the interactions-history ChangeFeed table
+	And there should be a record in the dss-interactions table with InteractionId
 
+#And there should be a record in the interactions-history ChangeFeed table
 @interactions
 Scenario: Patch channel
 	Given I post an Interaction with the following details:
@@ -45,9 +45,9 @@ Scenario: Patch channel
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z |
 		| Channel                  | 1                    |
 		| InteractionType          | 2                    |
-	#And there should be a record in the interactions ChangeFeed table
-	#And there should be a record in the interactions-history ChangeFeed table
+	And there should be a record in the dss-interactions table with InteractionId
 
+#And there should be a record in the interactions-history ChangeFeed table
 @interactions
 Scenario: Patch InteractionType
 	Given I post an Interaction with the following details:
@@ -64,5 +64,5 @@ Scenario: Patch InteractionType
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z |
 		| Channel                  | 2                    |
 		| InteractionType          | 1                    |
-	#And there should be a record in the interactions ChangeFeed table
-	#And there should be a record in the interactions-history ChangeFeed table
+	And there should be a record in the dss-interactions table with InteractionId
+#And there should be a record in the interactions-history ChangeFeed table

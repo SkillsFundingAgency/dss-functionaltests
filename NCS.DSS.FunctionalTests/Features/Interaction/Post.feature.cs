@@ -176,6 +176,9 @@ this.FeatureBackground();
 #line 22
  testRunner.And("the response body should contain:", ((string)(null)), table884, "And ");
 #line hidden
+#line 29
+ testRunner.And("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

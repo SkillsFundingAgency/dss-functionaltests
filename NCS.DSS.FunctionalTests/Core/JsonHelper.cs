@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
+using System.Dynamic;
 
 namespace NCS.DSS.FunctionalTests.Core
 {
@@ -19,20 +21,20 @@ namespace NCS.DSS.FunctionalTests.Core
                     {
                         throw new Exception($"expceted property: {sourceProp.Name}  - {sourceProp.Value} but not present");
                     }
-                    if (target.Value.Type != JTokenType.Array)
+                    if (target?.Value?.Type != JTokenType.Array)
                     {
-                        if (!JToken.DeepEquals(target.Value.ToString().ToLower(), sourceProp.Value.ToString().ToLower()))
+                        if (!JToken.DeepEquals(target.Value?.ToString()?.ToLower(), sourceProp?.Value?.ToString()?.ToLower()))
                         {
-                            throw new Exception($"{sourceProp.Name} value is {target.Value}, expected {sourceProp.Value} but got { target.Value}");
+                            throw new Exception($"{sourceProp?.Name} value is {target?.Value}, expected {sourceProp?.Value} but got { target?.Value}");
                         }
                     }
                     else
                     {
-                        var sourceArray = JArray.Parse(target.Value.ToString());
-                        var targetArray = JArray.Parse(sourceProp.Value.ToString());
+                        var sourceArray = JArray.Parse(target?.Value?.ToString());
+                        var targetArray = JArray.Parse(sourceProp?.Value?.ToString());
                         if (!JToken.DeepEquals(sourceArray, targetArray))
                         {
-                            throw new Exception($"{sourceProp.Name} value is {sourceArray.ToString()}, expected {targetArray.ToString()} but got { target.Value}");
+                            throw new Exception($"{sourceProp?.Name} value is {sourceArray?.ToString()}, expected {targetArray?.ToString()} but got { target?.Value}");
                         }
                     }
                 }
@@ -127,6 +129,54 @@ namespace NCS.DSS.FunctionalTests.Core
             return null;
         }
 
+        public static string AsJson(string content)
+        {
+            try
+            {
+                JObject json = JObject.Parse(content);
+
+                return json.ToString();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public static string ToSerializedObject(IDictionary<string, object> source)
+        {
+            var x = new ExpandoObject() as IDictionary<string, object>;
+
+            foreach (var i in source)
+            {
+                x.Add(i.Key, i.Value);
+            }
+            return JsonConvert.SerializeObject(x);
+        }
+
+        public static string ToSerializedObjectArray(List<object> source)
+        {
+            DFC.JSON.Standard.JsonHelper helper = new DFC.JSON.Standard.JsonHelper();
+            return JsonConvert.SerializeObject(source);
+        }
+
+        public static dynamic ToObject(IDictionary<string, object> source)
+        {
+            var x = new ExpandoObject() as IDictionary<string, object>;
+
+            foreach (var i in source)
+            {
+                x.Add(i.Key, i.Value);
+            }
+            return x;
+        }
+
+        public static string RenameProperty(string json, string propertyName, string newPropertyName)
+        {
+            DFC.JSON.Standard.JsonHelper helper = new DFC.JSON.Standard.JsonHelper();
+            var obj = JObject.Parse(json);
+            return helper.SerializeObjectAndRenameIdProperty(obj, propertyName, newPropertyName);
+        }
     }
 }
 

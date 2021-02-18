@@ -97,8 +97,8 @@ Scenario Outline: Patch Employment progression with valid values for DateProgres
 		| LengthOfUnemployment    | 1                    |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value                |
@@ -182,10 +182,10 @@ Scenario Outline: Patch Employment progression with valid values for CurrentEmpl
 		| EmploymentHours         | 1                    |
 		| EconomicShockStatus     | 1                    |
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	#And the response body should not contain the "CreatedBy"
-	#And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value |
@@ -300,8 +300,8 @@ Scenario Outline: Patch Employment progression with CurrentEmploymentStatus not 
 		| DateOfEmployment        |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value |
@@ -340,8 +340,8 @@ Scenario Outline: Patch Employment progression with valid values for EconomicSho
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field               | Value |
@@ -417,8 +417,8 @@ Scenario: Patch Employment progression field EconomicShockStatus to value Govern
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field               | Value |
@@ -476,8 +476,8 @@ Scenario Outline: Patch Employment progression with valid values for EconomicSho
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field             | Value                                              |
@@ -559,8 +559,8 @@ Scenario Outline: Patch Employment progression with valid values for EmployerNam
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field        | Value                                                                                                                                                                                                    |
@@ -644,8 +644,8 @@ Scenario Outline: Patch Employment progression with valid values for EmployerAdd
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -732,11 +732,11 @@ Scenario Outline: Patch Employment progression with valid values for EmployerPos
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-
 	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And the captured table data should include key "Longitude" with value "-1.50728"
 	#And the captured table data should include key "Latitude" with value "52.92878"
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+
 	#And the captured table data should include key "Longitude" with value "-1.50728"
 	#And the captured table data should include key "Latitude" with value "52.92878"
 	Examples:
@@ -830,8 +830,8 @@ Scenario Outline: Patch Employment progression with valid values for EmploymentH
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field           | Value |
@@ -884,8 +884,8 @@ Scenario Outline: : Patch Employment progression with no value for EmploymentHou
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field           | Value |
@@ -917,8 +917,8 @@ Scenario Outline: Patch Employment progression with valid values for DateOfEmplo
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field            | Value                |
@@ -965,8 +965,8 @@ Scenario Outline: Patch Employment progression with no value for DateOfEmploymen
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field            | Value |
@@ -998,8 +998,8 @@ Scenario Outline: Patch Employment progression with valid values for DateOfLastE
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                | Value                |
@@ -1049,8 +1049,8 @@ Scenario Outline: Post Employment progression with no value for DateOfLastEmploy
 		| DateOfLastEmployment    |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                | Value |
@@ -1081,8 +1081,8 @@ Scenario Outline: Patch Employment progression with valid values for LengthOfUne
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                | Value |
@@ -1141,8 +1141,8 @@ Scenario Outline: : Patch Employment progression with no value for LengthOfUnemp
 		| LengthOfUnemployment    |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                | Value |
@@ -1221,8 +1221,8 @@ Scenario Outline: Patch Employment Progression with value for LastModifiedTouchp
 		| DateOfEmployment        | 2019-01-23T00:00:00Z |
 		| DateOfLastEmployment    | 2019-01-23T00:00:00Z |
 		| LengthOfUnemployment    | 1                    |
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                    | Value    |

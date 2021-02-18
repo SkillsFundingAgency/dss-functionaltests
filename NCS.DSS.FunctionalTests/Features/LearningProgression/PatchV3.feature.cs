@@ -227,6 +227,10 @@ this.FeatureBackground();
 #line 45
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 46
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -335,6 +339,10 @@ this.FeatureBackground();
 #line hidden
 #line 76
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 77
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -751,6 +759,10 @@ this.FeatureBackground();
 #line hidden
 #line 195
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 196
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1615,6 +1627,10 @@ this.FeatureBackground();
 #line 433
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 434
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -1934,6 +1950,10 @@ this.FeatureBackground();
 #line 527
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 528
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -2239,6 +2259,10 @@ this.FeatureBackground();
 #line 614
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 615
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -2535,6 +2559,10 @@ this.FeatureBackground();
 #line hidden
 #line 705
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 706
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2835,6 +2863,10 @@ this.FeatureBackground();
 #line hidden
 #line 792
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 793
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -3150,6 +3182,10 @@ this.FeatureBackground();
 #line hidden
 #line 887
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 888
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

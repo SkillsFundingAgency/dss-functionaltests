@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 [assembly: Parallelizable(ParallelScope.Fixtures)]
-[assembly: LevelOfParallelism(5)]
+[assembly: LevelOfParallelism(1)]
 
 namespace NCS.DSS.FunctionalTests
 {
@@ -69,7 +69,8 @@ namespace NCS.DSS.FunctionalTests
 
         public string LEARNINGPROGRESSION_POST_URL => BaseUrl + "learningprogressions/api/customers/{0}/LearningProgressions";
         public string LEARNINGPROGRESSION_GET_URL => BaseUrl + "learningprogressions/api/customers/{0}/LearningProgressions/{1}";
-        public string LEARNINGPROGRESSION_PATCH_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/{1}";
+        //public string LEARNINGPROGRESSION_PATCH_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/{1}";
+        public string LEARNINGPROGRESSION_PATCH_URL => "http://localhost:7071/api/customers/{0}/learningprogressions/{1}";
         public string LEARNINGPROGRESSION_GETALL_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/";
 
         public string TRANSFER_POST_URL => BaseUrl + "transfers/api/Customers/{0}/Interactions/{1}/Transfers/";

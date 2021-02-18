@@ -197,6 +197,9 @@ this.FeatureBackground();
 #line 37
  testRunner.And("the response body should not contain the \"Latitude\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 38
+ testRunner.And("there should be a record in the dss-sessions table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -212,7 +215,7 @@ this.FeatureBackground();
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Session", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
+#line 43
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -244,7 +247,7 @@ this.FeatureBackground();
                 table1099.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 43
+#line 44
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1099, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table1100 = new TechTalk.SpecFlow.Table(new string[] {
@@ -256,7 +259,7 @@ this.FeatureBackground();
                 table1100.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 47
+#line 48
  testRunner.And("I post a Customer with the following details:", ((string)(null)), table1100, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1101 = new TechTalk.SpecFlow.Table(new string[] {
@@ -274,7 +277,7 @@ this.FeatureBackground();
                 table1101.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 51
+#line 52
  testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1101, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1102 = new TechTalk.SpecFlow.Table(new string[] {
@@ -286,14 +289,17 @@ this.FeatureBackground();
                 table1102.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1 2NN"});
-#line 57
+#line 58
  testRunner.Given("I post a session with the following details V2:", ((string)(null)), table1102, "Given ");
 #line hidden
-#line 61
+#line 62
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 65
+#line 66
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 67
+ testRunner.And("there should be a record in the dss-sessions table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -310,7 +316,7 @@ this.FeatureBackground();
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
                     " session", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 74
+#line 75
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -342,10 +348,10 @@ this.FeatureBackground();
                 table1103.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1 2NN"});
-#line 75
+#line 76
  testRunner.Given("I post a session with the following details V2:", ((string)(null)), table1103, "Given ");
 #line hidden
-#line 79
+#line 80
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -361,7 +367,7 @@ this.FeatureBackground();
                     "sessions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 82
+#line 83
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -393,10 +399,10 @@ this.FeatureBackground();
                 table1104.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1"});
-#line 83
+#line 84
  testRunner.Given("I post a session with the following details V2:", ((string)(null)), table1104, "Given ");
 #line hidden
-#line 87
+#line 88
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

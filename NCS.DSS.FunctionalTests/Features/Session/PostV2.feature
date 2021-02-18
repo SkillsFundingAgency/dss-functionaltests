@@ -35,6 +35,7 @@ Scenario: Create a Session for with venue postcode that reports wrong location w
 	And the response body should not contain the "CreatedBy"
 	And the response body should not contain the "Longitude"
 	And the response body should not contain the "Latitude"
+	And there should be a record in the dss-sessions table with SessionId
 
 #And there should be a record in the sessions ChangeFeed table
 #And there should be a record in the sessions-history ChangeFeed table
@@ -63,8 +64,8 @@ Scenario: Change feed for Post Session
 	#And the "sessions" cosmos document should include "Longitude" with value "-1.00181"
 	#And the "sessions" cosmos document should include "Latitude" with value "52.12814"
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-sessions table with SessionId
 
-#And there should be a record in the sessions ChangeFeed table
 #And the captured table data should include key "Longitude" with value "-1.00181"
 #And the captured table data should include key "Latitude" with value "52.12814"
 #And there should be a record in the sessions-history ChangeFeed table

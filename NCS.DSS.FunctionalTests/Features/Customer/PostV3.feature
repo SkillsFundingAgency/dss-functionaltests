@@ -183,7 +183,7 @@ Scenario: Post Customer with only Mandatory fields
 		| ReasonForTermination       |          |
 		| IntroducedBy               | 99       |
 		| IntroducedByAdditionalInfo |          |
-		| PriorityGroups             | [1,3]      |
+		| PriorityGroups             | [1,3]    |
 
 @customers
 Scenario: Change Feed for Post Customer
@@ -195,6 +195,7 @@ Scenario: Change Feed for Post Customer
 	Then there should be a 201 response
 	#And the "customers" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	#And there should be a record in the dss-customers table with CustomerId
 
 #And there should be a record in the customers ChangeFeed table
 #And there should be a record in the customers-history ChangeFeed table

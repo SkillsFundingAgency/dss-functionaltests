@@ -33,8 +33,8 @@ Scenario: Patch DateandTimeOfSession
 		| VenuePostCode        | NN1 2NN              |
 		| SessionAttended      | true                 |
 
-#And there should be a record in the sessions ChangeFeed table
-#And there should be a record in the sessions-history ChangeFeed table
+	And there should be a record in the dss-sessions table with SessionId
+	#And there should be 2 records in the dss-sessions-history table with SessionId
 @sessions
 Scenario: Patch VenuePostCode
 	Given I post a session with the following details:

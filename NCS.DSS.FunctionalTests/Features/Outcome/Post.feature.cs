@@ -218,6 +218,12 @@ this.FeatureBackground();
 #line 37
  testRunner.And("the response body should contain:", ((string)(null)), table1042, "And ");
 #line hidden
+#line 42
+ testRunner.And("there should be a record in the dss-outcomes table with OutcomeId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 43
+ testRunner.And("there should be 1 records in the dss-outcomes-history table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -386,6 +392,12 @@ this.FeatureBackground();
 #line 69
  testRunner.And("the response body should contain:", ((string)(null)), table1046, "And ");
 #line hidden
+#line 73
+ testRunner.And("there should be a record in the dss-outcomes table with OutcomeId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 74
+ testRunner.And("there should be 1 records in the dss-outcomes-history table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -448,6 +460,12 @@ this.FeatureBackground();
                             "2018-07-20T21:45:00Z"});
 #line 83
  testRunner.And("the response body should contain:", ((string)(null)), table1048, "And ");
+#line hidden
+#line 87
+ testRunner.And("there should be a record in the dss-outcomes table with OutcomeId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 88
+ testRunner.And("there should be 1 records in the dss-outcomes-history table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

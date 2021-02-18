@@ -197,6 +197,14 @@ this.FeatureBackground();
 #line 35
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 36
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+ testRunner.And("there should be 1 records in the dss-learningprogressions-history table with Lear" +
+                        "ningProgressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -288,6 +296,14 @@ this.FeatureBackground();
 #line hidden
 #line 57
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 58
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 59
+ testRunner.And("there should be 1 records in the dss-learningprogressions-history table with Lear" +
+                        "ningProgressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -389,6 +405,14 @@ this.FeatureBackground();
 #line hidden
 #line 86
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 87
+ testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
+                        "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 88
+ testRunner.And("there should be 1 records in the dss-learningprogressions-history table with Lear" +
+                        "ningProgressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

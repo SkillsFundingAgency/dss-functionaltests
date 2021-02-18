@@ -33,9 +33,9 @@ Scenario:Post learning progression with all values
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	And there should be 1 records in the dss-learningprogressions-history table with LearningProgressionId
 
-#And there should be a record in the learningprogressions ChangeFeed table
-#And there should be a record in the learningprogressions-history ChangeFeed table
 @learningprogressions
 Scenario:Post learning progression with all mandatory values
 	Given I post a Learning Progression record with the following details V3:
@@ -55,9 +55,9 @@ Scenario:Post learning progression with all mandatory values
 		| LastLearningProvidersUKPRN     |                      |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	And there should be 1 records in the dss-learningprogressions-history table with LearningProgressionId
 
-	#And there should be a record in the learningprogressions ChangeFeed table
-	#And there should be a record in the learningprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value                |
 		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
@@ -84,13 +84,13 @@ Scenario:Post learning progression supplying LastModifiedDate
 		| LastModifiedDate               | 2019-06-19T09:01:00Z |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	And there should be 1 records in the dss-learningprogressions-history table with LearningProgressionId
 
 	Examples:
 		| Field               | Value |
 		| DateLearningStarted | Today |
 
-#And there should be a record in the learningprogressions ChangeFeed table
-#And there should be a record in the learningprogressions-history ChangeFeed table
 @learningprogressions
 Scenario Outline: Post learning progression with valid values for DateProgressionRecorded
 	Given I want to send <Field> with value Translate Date To <Value>
@@ -305,9 +305,9 @@ Scenario Outline:Post learning progression with invalid values for  CurrentQuali
 Scenario Outline: Post learning progression with invalid dates
 	Given I want to send <Field> with value <Value> in the following request
 	Given I post a Learning Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| CurrentLearningStatus   | 99                   |
+		| Field                     | Value                |
+		| DateProgressionRecorded   | 2018-06-19T09:01:00Z |
+		| CurrentLearningStatus     | 99                   |
 		| CurrentQualificationLevel | 99                   |
 	Then there should be a 422 response
 	And the response body should include <ErrorMessage>

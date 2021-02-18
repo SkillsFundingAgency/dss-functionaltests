@@ -41,8 +41,8 @@ Scenario:Post employment progression with all values
 		| LengthOfUnemployment    | 1                    |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-#And there should be a record in the employmentprogressions ChangeFeed table
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 @employmentprogressions
 Scenario:Post employment progression with mandatory values
@@ -59,8 +59,8 @@ Scenario:Post employment progression with mandatory values
 		| EconomicShockStatus     | 1                    |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-#And there should be a record in the employmentprogressions ChangeFeed table
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for DateProgressionRecorded
@@ -76,8 +76,8 @@ Scenario Outline: Post Employment progression with valid values for DateProgress
 	#And the response body value for DateProgressionRecorded should match the last request
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value                |
@@ -146,8 +146,8 @@ Scenario Outline: Post Employment progression with valid values for CurrentEmplo
 		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value |
@@ -241,8 +241,8 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field               | Value |
@@ -271,8 +271,8 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field             | Value                                              |
@@ -331,8 +331,8 @@ Scenario Outline: Post Employment progression with no value for EconomicShockCod
 		| EconomicShockCode       | Some Text            |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field               | Value |
@@ -360,8 +360,8 @@ Scenario Outline: Post Employment progression with valid values for EmployerName
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field        | Value                                                                                                                                                                                                    |
@@ -428,8 +428,8 @@ Scenario Outline: Post Employment progression with valid values for EmployerAddr
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -472,8 +472,8 @@ Scenario: Post Employment progression with no value for EmployerAddress
 		| EmployerAddress         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-#And there should be a record in the employmentprogressions ChangeFeed table
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 #############################################################################################################
 #	EmployerPostcode	string(10)
@@ -544,10 +544,9 @@ Scenario: Post Employment progression with no value for EmployerPostcode
 		| EmployerPostcode        |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-#And there should be a record in the employmentprogressions ChangeFeed table
 #And there should be a record in the employmentprogressions-history ChangeFeed table
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for EmploymentHours
 	Given I want to send <Field> with value <Value> in the following request
@@ -564,8 +563,8 @@ Scenario Outline: Post Employment progression with valid values for EmploymentHo
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field           | Value |
@@ -634,8 +633,8 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value |
@@ -665,8 +664,8 @@ Scenario Outline: Post Employment progression with valid values for DateOfEmploy
 	#And the response body value for DateOfLastEmployment should match the last request
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field            | Value                |
@@ -710,8 +709,8 @@ Scenario Outline: Post Employment progression with no value for DateOfEmployment
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                   | Value |
@@ -762,8 +761,8 @@ Scenario Outline: Post Employment progression with valid values for DateOfLastEm
 	#And the response body value for DateOfLastEmployment should match the last request
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                | Value                |
@@ -808,8 +807,8 @@ Scenario Outline: Post Employment progression with valid values for LengthOfUnem
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
 		| Field                | Value |

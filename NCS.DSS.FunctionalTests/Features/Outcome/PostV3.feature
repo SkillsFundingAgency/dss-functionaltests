@@ -41,9 +41,9 @@ Scenario: Create an outcome with minimum valid values
 		| Field       | Value |
 		| OutcomeType | 3     |
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-outcomes table with OutcomeId
+	And there should be 1 records in the dss-outcomes-history table with SessionId
 
-#And there should be a record in the outcomes ChangeFeed table
-#And there should be a record in the outcomes-history ChangeFeed table
 @outcomes	@subcontractorId
 Scenario: Create an outcome with all valid values
 	Given I post an outcome with the following details V3:
@@ -62,9 +62,9 @@ Scenario: Create an outcome with all valid values
 		| IsPriorityCustomer   | true                 |
 	#And the response body should contain the SubContractorId
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-outcomes table with OutcomeId
+	And there should be 1 records in the dss-outcomes-history table with SessionId
 
-#And there should be a record in the outcomes ChangeFeed table
-#And there should be a record in the outcomes-history ChangeFeed table
 @outcomes
 Scenario: Create an outcome with invalid OutcomeType
 	Given I post an outcome with the following details V3:

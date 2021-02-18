@@ -1,12 +1,18 @@
-﻿using NCS.DSS.FunctionalTests.Hooks;
+﻿using NCS.DSS.FunctionalTests.Core;
+using NCS.DSS.FunctionalTests.Hooks;
 using NCS.DSS.FunctionSteps.Core;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Dynamic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace NCS.DSS.FunctionalTests.Steps
 {
@@ -19,14 +25,22 @@ namespace NCS.DSS.FunctionalTests.Steps
         private readonly EnvironmentSettings _settings;
         private readonly HttpHelper _httpHelper;
         private readonly HttpResponseHelper _assertionHelper;
+        private readonly SqlHelper _sqlHelper;
 
-        public Step(ScenarioContext scenarioContext, FeatureContext featureContext, HttpHelper httphelper, EnvironmentSettings settings, HttpResponseHelper assertHelper)
+        public Step(
+            ScenarioContext scenarioContext,
+            FeatureContext featureContext,
+            HttpHelper httphelper,
+            EnvironmentSettings settings,
+            HttpResponseHelper assertHelper,
+            SqlHelper sqlhelper)
         {
             _scenarioContext = scenarioContext;
             _featureContext = featureContext;
             _settings = settings;
             _httpHelper = httphelper;
             _assertionHelper = assertHelper;
+            _sqlHelper = sqlhelper;
         }
 
         [Then(@"there should be a (.*) response")]
@@ -75,12 +89,6 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var count = await _assertionHelper.DocumentCount(_response);
             Assert.AreEqual(p0, count);
-        }
-
-        [Then(@"the response body should incorporate a document with the following details:")]
-        public void ThenTheResponseBodyShouldIncorporateADocumentWithTheFollowingDetails(Table table)
-        {
-            
         }
 
         [Given(@"I want to send (.*) with value (.*) in the following request")]
@@ -152,5 +160,47 @@ namespace NCS.DSS.FunctionalTests.Steps
             else
                 _featureContext.Add("CleanupData", new CleanupData());
         }
+
+        [Then(@"there should be a record in the (.*) table with (.*)")]
+        public async Task RecordShouldExistInSqlWithDetails(string table, string contextField)
+        {
+            var sqlTable = new List<object>();
+
+            if (_scenarioContext.ContainsKey(contextField))
+            {
+                var val = _scenarioContext[contextField] as string;
+                var dataTable = await _sqlHelper.Query(table, val);
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    var sqlRowTable = new ExpandoObject() as IDictionary<string, object>;
+                    foreach (DataColumn column in dataTable.Columns)
+                    {
+                        sqlRowTable.Add(column.ColumnName, row[column].ToString());
+                    }
+                    sqlTable.Add(sqlRowTable);
+                }
+
+                var contentString = await _assertionHelper.ResponseAsJson(_response);
+                contentString = JsonHelper.RenameProperty(contentString, contextField, "id");
+                var sqlJson = JsonHelper.ToSerializedObjectArray(sqlTable);
+
+                var result = JsonHelper.JsonContains(sqlJson, contentString);
+                Assert.True(result);
+            }
+        }
+
+        [Then(@"there should be (.*) records in the (.*) table with (.*)")]
+        public async Task RecordCountShouldBe(int recordCount, string table, string contextField)
+        {
+            var count = 0;
+            if (_scenarioContext.ContainsKey(contextField))
+            {
+                var val = _scenarioContext[contextField] as string;
+                count = await _sqlHelper.RecordCount(table, val, recordCount);
+            }
+            Assert.That(count, Is.EqualTo(recordCount));
+        }
+
     }
 }

@@ -39,9 +39,9 @@ Scenario: Create an outcome with all valid values
 		| OutcomeType          | 3                    |
 		| OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	And there should be a record in the dss-outcomes table with OutcomeId
+	And there should be 1 records in the dss-outcomes-history table with SessionId
 
-#And there should be a record in the outcomes ChangeFeed table
-#And there should be a record in the outcomes-history ChangeFeed table
 @outcomes
 Scenario: Create an outcome with missing OutcomeType
 	Given I post an outcome with the following details:
@@ -70,9 +70,9 @@ Scenario: Create an outcome with missing OutcomeClaimedDate
 		| Field                | Value                |
 		| OutcomeType          | 2                    |
 		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	And there should be a record in the dss-outcomes table with OutcomeId
+	And there should be 1 records in the dss-outcomes-history table with SessionId
 
-#And there should be a record in the outcomes ChangeFeed table
-#And there should be a record in the outcomes-history ChangeFeed table
 @outcomes
 Scenario: Create an outcome with missing OutcomeEffectiveDate
 	Given I post an outcome with the following details:
@@ -84,5 +84,5 @@ Scenario: Create an outcome with missing OutcomeEffectiveDate
 		| Field              | Value                |
 		| OutcomeType        | 2                    |
 		| OutcomeClaimedDate | 2018-07-20T21:45:00Z |
-#And there should be a record in the outcomes ChangeFeed table
-#And there should be a record in the outcomes-history ChangeFeed table
+	And there should be a record in the dss-outcomes table with OutcomeId
+	And there should be 1 records in the dss-outcomes-history table with SessionId

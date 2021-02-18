@@ -179,6 +179,9 @@ this.FeatureBackground();
 #line 24
  testRunner.And("the response body should contain:", ((string)(null)), table874, "And ");
 #line hidden
+#line 29
+ testRunner.And("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -257,6 +260,9 @@ this.FeatureBackground();
 #line 43
  testRunner.And("the response body should contain:", ((string)(null)), table877, "And ");
 #line hidden
+#line 48
+ testRunner.And("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -334,6 +340,9 @@ this.FeatureBackground();
                             "1"});
 #line 62
  testRunner.And("the response body should contain:", ((string)(null)), table880, "And ");
+#line hidden
+#line 67
+ testRunner.And("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
