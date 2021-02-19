@@ -13,9 +13,9 @@ Scenario: Create Valid Adviser
 		| AdviserName          | BillyAdviser   |
 		| AdviserEmailAddress  | billy@bill.com |
 		| AdviserContactNumber | 98798678967967 |
-	#And the "adviserdetails" cosmos document should include CreatedBy
-	#And the response body should not contain the "CreatedBy"
 
+#And the "adviserdetails" cosmos document should include CreatedBy
+#And the response body should not contain the "CreatedBy"
 @adviserdetails @subcontractorId
 Scenario: Create Valid Adviser with SubcontractorId
 	Given I post an adviser with the following details V2:
@@ -40,7 +40,7 @@ Scenario: Change feed for Post Adviser
 		| AdviserName         | BillyAdviser   |
 		| AdviserEmailAddress | billy@bill.com |
 	Then there should be a 201 response
-	#And there should be a record in the adviserDetails ChangeFeed table
+	And there should be a record in the dss-adviserdetails table with AdviserDetailId
 	#And there should be a record in the adviserDetails-history ChangeFeed table
 	#And the "adviserdetails" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"

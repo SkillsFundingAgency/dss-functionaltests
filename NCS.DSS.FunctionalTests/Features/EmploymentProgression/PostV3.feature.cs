@@ -1881,6 +1881,10 @@ this.FeatureBackground();
 #line 498
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 500
+ testRunner.And("there should be a record in the dss-employmentprogressions table Ignoring \'\' with" +
+                        " EmploymentProgressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

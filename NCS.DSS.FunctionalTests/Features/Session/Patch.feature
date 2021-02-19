@@ -5,11 +5,13 @@ Background: Create Adviser and Customer and Interaction
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
+	Then there should be a 201 response
+	Given I post a Customer with the following details:
 		| Field      | Value    |
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
-	And I post an Interaction with the following details:
+	Then there should be a 201 response
+	Given I post an Interaction with the following details:
 		| Field                    | Value                |
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z |
 		| Channel                  | 2                    |
@@ -23,6 +25,7 @@ Scenario: Patch DateandTimeOfSession
 		| DateandTimeOfSession | 2018-06-21T14:45:00Z |
 		| VenuePostCode        | NN1 2NN              |
 		| SessionAttended      | true                 |
+	Then there should be a 201 response
 	When I patch the following Session:
 		| Field                | Value                |
 		| DateandTimeOfSession | 2018-06-22T14:45:00Z |
@@ -32,9 +35,9 @@ Scenario: Patch DateandTimeOfSession
 		| DateandTimeOfSession | 2018-06-22T14:45:00Z |
 		| VenuePostCode        | NN1 2NN              |
 		| SessionAttended      | true                 |
-
 	And there should be a record in the dss-sessions table with SessionId
-	#And there should be 2 records in the dss-sessions-history table with SessionId
+
+#And there should be 2 records in the dss-sessions-history table with SessionId
 @sessions
 Scenario: Patch VenuePostCode
 	Given I post a session with the following details:
@@ -42,6 +45,7 @@ Scenario: Patch VenuePostCode
 		| DateandTimeOfSession | 2018-06-21T14:45:00Z |
 		| VenuePostCode        | NN1 2NN              |
 		| SessionAttended      | true                 |
+	Then there should be a 201 response
 	When I patch the following Session:
 		| Field         | Value   |
 		| VenuePostCode | NN1 2NQ |
@@ -59,6 +63,7 @@ Scenario: Patch SessionAttended
 		| DateandTimeOfSession | 2018-06-21T14:45:00Z |
 		| VenuePostCode        | NN1 2NN              |
 		| SessionAttended      | true                 |
+	Then there should be a 201 response
 	When I patch the following Session:
 		| Field           | Value |
 		| SessionAttended | false |

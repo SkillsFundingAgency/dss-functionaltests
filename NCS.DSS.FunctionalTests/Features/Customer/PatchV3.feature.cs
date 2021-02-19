@@ -341,6 +341,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 63
  testRunner.And("the response body should contain:", ((string)(null)), table458, "And ");
 #line hidden
+#line 77
+ testRunner.And("there should be a record in the dss-customers table Ignoring \'PriorityGroups\' wit" +
+                        "h CustomerId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

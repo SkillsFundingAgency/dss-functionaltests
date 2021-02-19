@@ -548,6 +548,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 126
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 127
+ testRunner.And("there should be a record in the dss-digitalidentities table Ignoring \'\' with Iden" +
+                        "tityId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
                 TechTalk.SpecFlow.Table table563 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -560,7 +564,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table563.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
-#line 127
+#line 128
  testRunner.And("the response body should contain:", ((string)(null)), table563, "And ");
 #line hidden
             }
@@ -580,7 +584,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch a Digital Identity By Digital IdentityId for a customer that does not have " +
                     "a digital identity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 134
+#line 135
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -609,7 +613,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table564.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 135
+#line 136
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table564, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table565 = new TechTalk.SpecFlow.Table(new string[] {
@@ -630,10 +634,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table565.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
-#line 139
+#line 140
  testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table565, "Given ");
 #line hidden
-#line 146
+#line 147
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table566 = new TechTalk.SpecFlow.Table(new string[] {
@@ -654,7 +658,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table566.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
-#line 147
+#line 148
  testRunner.And("the response body should contain:", ((string)(null)), table566, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table567 = new TechTalk.SpecFlow.Table(new string[] {
@@ -669,10 +673,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table567.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
-#line 154
+#line 155
  testRunner.Given("I patch the following digitalIdentity By DigitalIdentityId V2:", ((string)(null)), table567, "Given ");
 #line hidden
-#line 159
+#line 160
  testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

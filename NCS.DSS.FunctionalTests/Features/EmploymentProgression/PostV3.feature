@@ -497,7 +497,7 @@ Scenario Outline: Post Employment progression with valid values for EmployerPost
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 
-	#And there should be a record in the employmentprogressions ChangeFeed table
+	And there should be a record in the dss-employmentprogressions table Ignoring '' with EmploymentProgressionId
 	#And the captured table data should include key "Longitude" with value "-1.50728"
 	#And the captured table data should include key "Latitude" with value "52.92878"
 	#And there should be a record in the employmentprogressions-history ChangeFeed table

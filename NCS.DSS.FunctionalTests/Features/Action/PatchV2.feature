@@ -55,8 +55,8 @@ Scenario: Patch DateActionAimsToBeCompletedBy
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 	And the response body should not contain the "CreatedBy"
+	And there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
 
-#And there should be a record in the actions ChangeFeed table
 #And there should be a record in the actions-history ChangeFeed table
 #@actions
 #Scenario: Patch ActionSummary

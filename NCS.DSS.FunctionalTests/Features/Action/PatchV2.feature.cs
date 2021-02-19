@@ -266,6 +266,10 @@ this.FeatureBackground();
 #line 57
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 58
+ testRunner.And("there should be a record in the dss-actions table Ignoring \'SignpostedToCategory," +
+                        "LastModifiedDate\' with ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

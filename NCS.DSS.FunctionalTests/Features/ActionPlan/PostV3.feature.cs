@@ -230,6 +230,9 @@ this.FeatureBackground();
 #line 47
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 49
+ testRunner.And("there should be a record in the dss-actionplans table with ActionPlanId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

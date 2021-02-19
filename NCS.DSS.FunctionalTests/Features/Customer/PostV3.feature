@@ -195,9 +195,8 @@ Scenario: Change Feed for Post Customer
 	Then there should be a 201 response
 	#And the "customers" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	#And there should be a record in the dss-customers table with CustomerId
+	And there should be a record in the dss-customers table Ignoring 'PriorityGroups' with CustomerId
 
-#And there should be a record in the customers ChangeFeed table
 #And there should be a record in the customers-history ChangeFeed table
 @customers
 Scenario: Post Invalid DateOfRegistration

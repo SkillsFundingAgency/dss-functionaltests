@@ -89,6 +89,9 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
 #line 4
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1105, "Given ");
 #line hidden
+#line 8
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table1106 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
@@ -104,8 +107,11 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
             table1106.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 8
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1106, "And ");
+#line 9
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1106, "Given ");
+#line hidden
+#line 15
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1107 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -125,8 +131,8 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
             table1107.AddRow(new string[] {
                         "RequestedCallbackTime",
                         "2018-06-22T16:52:10Z"});
-#line 14
- testRunner.And("I post a Transfer with the following details:", ((string)(null)), table1107, "And ");
+#line 16
+ testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table1107, "Given ");
 #line hidden
         }
         
@@ -141,8 +147,8 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get a Transfer by ID", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
- this.ScenarioInitialize(scenarioInfo);
+#line 25
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -164,10 +170,10 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 24
+#line 26
  testRunner.When("I get a Transfer by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 27
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1108 = new TechTalk.SpecFlow.Table(new string[] {
@@ -188,7 +194,7 @@ this.FeatureBackground();
                 table1108.AddRow(new string[] {
                             "RequestedCallbackTime",
                             "2018-06-22T16:52:10Z"});
-#line 26
+#line 28
  testRunner.And("the response body should contain:", ((string)(null)), table1108, "And ");
 #line hidden
             }

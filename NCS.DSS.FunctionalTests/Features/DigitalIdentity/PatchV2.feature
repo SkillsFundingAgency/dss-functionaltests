@@ -124,6 +124,7 @@ Scenario: Patch a valid Digital Identity By Digital IdentityId
 		| IdentityStoreId | aaf18eff-bf70-4e04-82ba-a056258f0db8 |
 		| LegacyIdentity  | "test"                               |
 	Then there should be a 200 response
+	And there should be a record in the dss-digitalidentities table Ignoring '' with IdentityId
 	And the response body should contain:
 		| Field           | Value                                |
 		| id_token        | 1234567910                           |

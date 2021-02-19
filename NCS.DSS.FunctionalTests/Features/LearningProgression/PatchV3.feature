@@ -886,7 +886,7 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
+	
 
 	Examples:
 		| Field            | Value                |

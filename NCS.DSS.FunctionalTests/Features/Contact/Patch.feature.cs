@@ -176,6 +176,9 @@ this.FeatureBackground();
 #line 22
  testRunner.And("the response body should contain:", ((string)(null)), table323, "And ");
 #line hidden
+#line 28
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -326,6 +329,9 @@ this.FeatureBackground();
 #line 57
  testRunner.And("the response body should contain:", ((string)(null)), table328, "And ");
 #line hidden
+#line 63
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -409,6 +415,9 @@ this.FeatureBackground();
                             "07564656766"});
 #line 78
  testRunner.And("the response body should contain:", ((string)(null)), table331, "And ");
+#line hidden
+#line 84
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -494,6 +503,9 @@ this.FeatureBackground();
 #line 99
  testRunner.And("the response body should contain:", ((string)(null)), table334, "And ");
 #line hidden
+#line 105
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -571,6 +583,9 @@ this.FeatureBackground();
                             "07564656766"});
 #line 118
  testRunner.And("the response body should contain:", ((string)(null)), table336, "And ");
+#line hidden
+#line 124
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -724,6 +739,9 @@ this.FeatureBackground();
                             "07564656766"});
 #line 153
  testRunner.And("the response body should contain:", ((string)(null)), table341, "And ");
+#line hidden
+#line 159
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

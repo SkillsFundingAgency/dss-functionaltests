@@ -329,6 +329,9 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
 #line 63
   testRunner.And("the response body should contain:", ((string)(null)), table417, "And ");
 #line hidden
+#line 76
+ testRunner.And("there should be a record in the dss-customers table with CustomerId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

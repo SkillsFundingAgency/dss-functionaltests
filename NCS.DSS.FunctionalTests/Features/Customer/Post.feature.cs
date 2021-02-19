@@ -519,7 +519,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Customer with only Mandatory fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 117
+#line 115
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -548,10 +548,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table500.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 118
+#line 116
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table500, "Given ");
 #line hidden
-#line 122
+#line 120
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table501 = new TechTalk.SpecFlow.Table(new string[] {
@@ -593,7 +593,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table501.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             ""});
-#line 123
+#line 121
  testRunner.And("the response body should contain:", ((string)(null)), table501, "And ");
 #line hidden
             }
@@ -609,7 +609,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Invalid DateOfRegistration", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 139
+#line 137
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -668,13 +668,13 @@ this.ScenarioInitialize(scenarioInfo);
                 table502.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 140
+#line 138
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table502, "Given ");
 #line hidden
-#line 154
+#line 152
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 155
+#line 153
  testRunner.And("the error message should be \"Family Name is a required field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

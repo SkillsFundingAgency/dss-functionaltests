@@ -256,6 +256,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 42
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 43
+ testRunner.And("there should be a record in the dss-adviserdetails table with AdviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 46
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

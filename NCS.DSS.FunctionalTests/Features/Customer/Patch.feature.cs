@@ -84,8 +84,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfRegistration", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
- this.ScenarioInitialize(scenarioInfo);
+#line 4
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -143,8 +143,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table371.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 6
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table371, "Given ");
+#line 5
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table371, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table372 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -152,11 +152,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table372.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-28T16:11:00Z"});
-#line 20
-  testRunner.When("I patch the following Customer:", ((string)(null)), table372, "When ");
+#line 19
+ testRunner.When("I patch the following Customer:", ((string)(null)), table372, "When ");
 #line hidden
-#line 23
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table373 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -194,8 +194,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table373.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 24
-  testRunner.And("the response body should contain:", ((string)(null)), table373, "And ");
+#line 23
+ testRunner.And("the response body should contain:", ((string)(null)), table373, "And ");
+#line hidden
+#line 36
+ testRunner.And("there should be a record in the dss-customers table with CustomerId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -210,8 +213,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Title", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
- this.ScenarioInitialize(scenarioInfo);
+#line 40
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -269,8 +272,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table374.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 43
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table374, "Given ");
+#line 41
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table374, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table375 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -278,11 +281,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table375.AddRow(new string[] {
                             "Title",
                             "2"});
-#line 57
-  testRunner.When("I patch the following Customer:", ((string)(null)), table375, "When ");
+#line 55
+ testRunner.When("I patch the following Customer:", ((string)(null)), table375, "When ");
 #line hidden
-#line 60
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 58
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table376 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -320,8 +323,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table376.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 61
-  testRunner.And("the response body should contain:", ((string)(null)), table376, "And ");
+#line 59
+ testRunner.And("the response body should contain:", ((string)(null)), table376, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -336,8 +339,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch GivenName", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 76
- this.ScenarioInitialize(scenarioInfo);
+#line 74
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -395,8 +398,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table377.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 77
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table377, "Given ");
+#line 75
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table377, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table378 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -404,11 +407,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table378.AddRow(new string[] {
                             "GivenName",
                             "Bill"});
-#line 91
-  testRunner.When("I patch the following Customer:", ((string)(null)), table378, "When ");
+#line 89
+ testRunner.When("I patch the following Customer:", ((string)(null)), table378, "When ");
 #line hidden
-#line 94
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 92
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table379 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -446,8 +449,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table379.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 95
-  testRunner.And("the response body should contain:", ((string)(null)), table379, "And ");
+#line 93
+ testRunner.And("the response body should contain:", ((string)(null)), table379, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -462,8 +465,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch FamilyName", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 110
- this.ScenarioInitialize(scenarioInfo);
+#line 108
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -521,8 +524,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table380.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 111
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table380, "Given ");
+#line 109
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table380, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table381 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -530,11 +533,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table381.AddRow(new string[] {
                             "FamilyName",
                             "Update"});
-#line 125
-  testRunner.When("I patch the following Customer:", ((string)(null)), table381, "When ");
+#line 123
+ testRunner.When("I patch the following Customer:", ((string)(null)), table381, "When ");
 #line hidden
-#line 128
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 126
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table382 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -572,8 +575,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table382.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 129
-  testRunner.And("the response body should contain:", ((string)(null)), table382, "And ");
+#line 127
+ testRunner.And("the response body should contain:", ((string)(null)), table382, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -588,8 +591,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateofBirth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 144
- this.ScenarioInitialize(scenarioInfo);
+#line 142
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -647,8 +650,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table383.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 145
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table383, "Given ");
+#line 143
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table383, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table384 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -656,11 +659,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table384.AddRow(new string[] {
                             "DateOfBirth",
                             "2005-07-27T13:45:00Z"});
-#line 159
-  testRunner.When("I patch the following Customer:", ((string)(null)), table384, "When ");
+#line 157
+ testRunner.When("I patch the following Customer:", ((string)(null)), table384, "When ");
 #line hidden
-#line 162
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 160
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table385 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -698,8 +701,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table385.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 163
-  testRunner.And("the response body should contain:", ((string)(null)), table385, "And ");
+#line 161
+ testRunner.And("the response body should contain:", ((string)(null)), table385, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -714,8 +717,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Gender", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 178
- this.ScenarioInitialize(scenarioInfo);
+#line 176
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -773,8 +776,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table386.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 179
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table386, "Given ");
+#line 177
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table386, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table387 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -782,11 +785,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table387.AddRow(new string[] {
                             "Gender",
                             "2"});
-#line 193
-  testRunner.When("I patch the following Customer:", ((string)(null)), table387, "When ");
+#line 191
+ testRunner.When("I patch the following Customer:", ((string)(null)), table387, "When ");
 #line hidden
-#line 196
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 194
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table388 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -824,8 +827,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table388.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 197
-  testRunner.And("the response body should contain:", ((string)(null)), table388, "And ");
+#line 195
+ testRunner.And("the response body should contain:", ((string)(null)), table388, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -840,8 +843,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch UniqueLearnerNumber", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 212
-  this.ScenarioInitialize(scenarioInfo);
+#line 210
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -899,8 +902,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table389.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 213
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table389, "Given ");
+#line 211
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table389, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table390 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -908,11 +911,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table390.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543211"});
-#line 227
-  testRunner.When("I patch the following Customer:", ((string)(null)), table390, "When ");
+#line 225
+ testRunner.When("I patch the following Customer:", ((string)(null)), table390, "When ");
 #line hidden
-#line 230
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 228
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table391 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -950,8 +953,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table391.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 231
-  testRunner.And("the response body should contain:", ((string)(null)), table391, "And ");
+#line 229
+ testRunner.And("the response body should contain:", ((string)(null)), table391, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -966,8 +969,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInUserResearch", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 246
-  this.ScenarioInitialize(scenarioInfo);
+#line 244
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -1025,8 +1028,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table392.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 247
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table392, "Given ");
+#line 245
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table392, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table393 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1034,11 +1037,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table393.AddRow(new string[] {
                             "OptInUserResearch",
                             "false"});
-#line 261
-  testRunner.When("I patch the following Customer:", ((string)(null)), table393, "When ");
+#line 259
+ testRunner.When("I patch the following Customer:", ((string)(null)), table393, "When ");
 #line hidden
-#line 264
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 262
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table394 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1076,8 +1079,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table394.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 265
-  testRunner.And("the response body should contain:", ((string)(null)), table394, "And ");
+#line 263
+ testRunner.And("the response body should contain:", ((string)(null)), table394, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1092,8 +1095,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInMarketResearch", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 280
-  this.ScenarioInitialize(scenarioInfo);
+#line 278
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -1151,8 +1154,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table395.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 281
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table395, "Given ");
+#line 279
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table395, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table396 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1160,11 +1163,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table396.AddRow(new string[] {
                             "OptInMarketResearch",
                             "true"});
-#line 295
-  testRunner.When("I patch the following Customer:", ((string)(null)), table396, "When ");
+#line 293
+ testRunner.When("I patch the following Customer:", ((string)(null)), table396, "When ");
 #line hidden
-#line 298
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 296
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table397 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1202,8 +1205,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table397.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 299
-  testRunner.And("the response body should contain:", ((string)(null)), table397, "And ");
+#line 297
+ testRunner.And("the response body should contain:", ((string)(null)), table397, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1218,8 +1221,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfTermination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 314
- this.ScenarioInitialize(scenarioInfo);
+#line 312
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -1277,8 +1280,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table398.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 315
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table398, "Given ");
+#line 313
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table398, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table399 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1286,11 +1289,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table399.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-08-27T14:45:00Z"});
-#line 329
-  testRunner.When("I patch the following Customer:", ((string)(null)), table399, "When ");
+#line 327
+ testRunner.When("I patch the following Customer:", ((string)(null)), table399, "When ");
 #line hidden
-#line 332
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 330
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table400 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1328,8 +1331,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table400.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 333
-  testRunner.And("the response body should contain:", ((string)(null)), table400, "And ");
+#line 331
+ testRunner.And("the response body should contain:", ((string)(null)), table400, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1344,8 +1347,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ReasonForTermination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 348
- this.ScenarioInitialize(scenarioInfo);
+#line 346
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -1403,8 +1406,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table401.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 349
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table401, "Given ");
+#line 347
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table401, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table402 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1412,11 +1415,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table402.AddRow(new string[] {
                             "ReasonForTermination",
                             "2"});
-#line 363
-  testRunner.When("I patch the following Customer:", ((string)(null)), table402, "When ");
+#line 361
+ testRunner.When("I patch the following Customer:", ((string)(null)), table402, "When ");
 #line hidden
-#line 366
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 364
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table403 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1454,8 +1457,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table403.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 367
-  testRunner.And("the response body should contain:", ((string)(null)), table403, "And ");
+#line 365
+ testRunner.And("the response body should contain:", ((string)(null)), table403, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1470,8 +1473,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedBy", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 382
- this.ScenarioInitialize(scenarioInfo);
+#line 380
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -1529,8 +1532,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table404.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 383
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table404, "Given ");
+#line 381
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table404, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table405 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1538,11 +1541,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table405.AddRow(new string[] {
                             "IntroducedBy",
                             "2"});
-#line 397
-  testRunner.When("I patch the following Customer:", ((string)(null)), table405, "When ");
+#line 395
+ testRunner.When("I patch the following Customer:", ((string)(null)), table405, "When ");
 #line hidden
-#line 400
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 398
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table406 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1580,8 +1583,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table406.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-#line 401
-  testRunner.And("the response body should contain:", ((string)(null)), table406, "And ");
+#line 399
+ testRunner.And("the response body should contain:", ((string)(null)), table406, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1596,8 +1599,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedByAdditionalInfo", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 416
- this.ScenarioInitialize(scenarioInfo);
+#line 414
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -1655,8 +1658,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table407.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 417
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table407, "Given ");
+#line 415
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table407, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table408 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1664,11 +1667,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table408.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "updated info"});
-#line 431
-  testRunner.When("I patch the following Customer:", ((string)(null)), table408, "When ");
+#line 429
+ testRunner.When("I patch the following Customer:", ((string)(null)), table408, "When ");
 #line hidden
-#line 434
-  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 432
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table409 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1706,8 +1709,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table409.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "updated info"});
-#line 435
-  testRunner.And("the response body should contain:", ((string)(null)), table409, "And ");
+#line 433
+ testRunner.And("the response body should contain:", ((string)(null)), table409, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1722,8 +1725,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch With Existing DateOfTermination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 451
-  this.ScenarioInitialize(scenarioInfo);
+#line 448
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -1787,8 +1790,8 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table410.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-#line 452
-  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table410, "Given ");
+#line 449
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table410, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table411 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -1796,11 +1799,11 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
                 table411.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "updated info"});
-#line 468
-  testRunner.When("I patch the following Customer:", ((string)(null)), table411, "When ");
+#line 465
+ testRunner.When("I patch the following Customer:", ((string)(null)), table411, "When ");
 #line hidden
-#line 471
-  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 468
+ testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

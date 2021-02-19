@@ -34,7 +34,7 @@ Scenario:Post learning progression with all values
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the dss-learningprogressions table with LearningProgressionId
-	And there should be 1 records in the dss-learningprogressions-history table with LearningProgressionId
+
 
 @learningprogressions
 Scenario:Post learning progression with all mandatory values
@@ -56,7 +56,7 @@ Scenario:Post learning progression with all mandatory values
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the dss-learningprogressions table with LearningProgressionId
-	And there should be 1 records in the dss-learningprogressions-history table with LearningProgressionId
+
 
 	Examples:
 		| Field                   | Value                |
@@ -85,7 +85,7 @@ Scenario:Post learning progression supplying LastModifiedDate
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the dss-learningprogressions table with LearningProgressionId
-	And there should be 1 records in the dss-learningprogressions-history table with LearningProgressionId
+
 
 	Examples:
 		| Field               | Value |

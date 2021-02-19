@@ -111,8 +111,6 @@ Scenario: Post Valid Customer with maximum field lengths
 		| IntroducedByAdditionalInfo | AbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghijAbcdefghij |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z                                                                                 |
 
-##
-##
 @customers
 Scenario: Post Customer with only Mandatory fields
 	Given I post a Customer with the following details:

@@ -137,6 +137,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And("the response body should contain:", ((string)(null)), table308, "And ");
 #line hidden
+#line 16
+ testRunner.And("there should be a record in the dss-adviserdetails table with AdviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

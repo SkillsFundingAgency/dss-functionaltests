@@ -215,6 +215,9 @@ this.FeatureBackground();
 #line 41
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 42
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -343,6 +346,9 @@ this.FeatureBackground();
 #line 78
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 79
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -432,6 +438,9 @@ this.FeatureBackground();
                             ""});
 #line 89
  testRunner.And("the response body should contain:", ((string)(null)), table259, "And ");
+#line hidden
+#line 102
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -558,6 +567,9 @@ this.FeatureBackground();
 #line 121
  testRunner.And("the response body should contain:", ((string)(null)), table261, "And ");
 #line hidden
+#line 134
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -620,6 +632,9 @@ this.FeatureBackground();
 #line hidden
 #line 147
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 148
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -696,6 +711,9 @@ this.FeatureBackground();
 #line 162
  testRunner.And("the response body should contain:", ((string)(null)), table266, "And ");
 #line hidden
+#line 166
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -771,6 +789,9 @@ this.FeatureBackground();
 #line 180
  testRunner.And("the response body should contain:", ((string)(null)), table269, "And ");
 #line hidden
+#line 184
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -841,6 +862,9 @@ this.FeatureBackground();
                             "53.25289"});
 #line 194
  testRunner.And("the response body should contain:", ((string)(null)), table271, "And ");
+#line hidden
+#line 200
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -922,6 +946,9 @@ this.FeatureBackground();
                             ""});
 #line 214
  testRunner.And("the response body should contain:", ((string)(null)), table274, "And ");
+#line hidden
+#line 220
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

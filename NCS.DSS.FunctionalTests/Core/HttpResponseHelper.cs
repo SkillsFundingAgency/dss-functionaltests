@@ -19,7 +19,7 @@ namespace NCS.DSS.FunctionSteps.Core
             }
             var expectingResultObject = JsonHelper.ToSerializedObject(expectedVals);
             var body = await httpResponse?.Content?.ReadAsStringAsync();
-            return JsonHelper.JsonContains(body, expectingResultObject);
+            return JsonHelper.JsonContains(body, expectingResultObject, null);
         }
 
         public async Task<string> ResponseAsJson(HttpResponseMessage httpResponse)
@@ -37,7 +37,7 @@ namespace NCS.DSS.FunctionSteps.Core
         public async Task<string> GetKeyFromResponse(string key, HttpResponseMessage response)
         {
             var content = await response?.Content?.ReadAsStringAsync();
-            return JsonHelper.GetValueByKey(content,  key);
+            return JsonHelper.GetValueByKey(content, key);
 
         }
     }

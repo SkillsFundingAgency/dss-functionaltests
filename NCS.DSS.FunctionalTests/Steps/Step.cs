@@ -1,4 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Core;
+using NCS.DSS.FunctionalTests.Extensions;
 using NCS.DSS.FunctionalTests.Hooks;
 using NCS.DSS.FunctionSteps.Core;
 using Newtonsoft.Json.Linq;
@@ -134,7 +135,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var table = new Table("Field", "Value");
             table.AddRow(field, value);
-            var result  = await _assertionHelper.ResponseShouldContain(_response, table);
+            var result = await _assertionHelper.ResponseShouldContain(_response, table);
             Assert.True(result);
         }
 
@@ -168,24 +169,20 @@ namespace NCS.DSS.FunctionalTests.Steps
 
             if (_scenarioContext.ContainsKey(contextField))
             {
-                var val = _scenarioContext[contextField] as string;
-                var dataTable = await _sqlHelper.Query(table, val);
+                var result = await SqlRecordMatchesResponseJson(contextField, table, null);
+                Assert.True(result);
+            }
+        }
 
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    var sqlRowTable = new ExpandoObject() as IDictionary<string, object>;
-                    foreach (DataColumn column in dataTable.Columns)
-                    {
-                        sqlRowTable.Add(column.ColumnName, row[column].ToString());
-                    }
-                    sqlTable.Add(sqlRowTable);
-                }
+        [Then(@"there should be a record in the (.*) table Ignoring '(.*)' with (.*)")]
+        public async Task RecordShouldExistInSqlWithDetailsIgnoringFields(string table, string fieldsToIgnore, string contextField)
+        {
+            var sqlTable = new List<object>();
+            var fieldsToIgnoreArray = fieldsToIgnore?.Split(",")?.ToList();
 
-                var contentString = await _assertionHelper.ResponseAsJson(_response);
-                contentString = JsonHelper.RenameProperty(contentString, contextField, "id");
-                var sqlJson = JsonHelper.ToSerializedObjectArray(sqlTable);
-
-                var result = JsonHelper.JsonContains(sqlJson, contentString);
+            if (_scenarioContext.ContainsKey(contextField))
+            {
+                var result = await SqlRecordMatchesResponseJson(contextField, table, fieldsToIgnoreArray);
                 Assert.True(result);
             }
         }
@@ -202,5 +199,18 @@ namespace NCS.DSS.FunctionalTests.Steps
             Assert.That(count, Is.EqualTo(recordCount));
         }
 
+        #region private scenario helpers
+        private async Task<bool> SqlRecordMatchesResponseJson(string contextField, string table, List<string> fieldsToIgnoreArray)
+        {
+            var val = _scenarioContext[contextField] as string;
+            var dataTable = await _sqlHelper.Query(table, val, 5, 5);
+            var sqlTable = dataTable.AsListOfObjects();
+            var contentString = await _assertionHelper.ResponseAsJson(_response);
+            contentString = JsonHelper.RenameProperty(contentString, contextField, "id");
+            var sqlJson = JsonHelper.ToSerializedObjectArray(sqlTable);
+            var sqlRecordMatchesResponseResult = JsonHelper.JsonContains(sqlJson, contentString, fieldsToIgnoreArray);
+            return sqlRecordMatchesResponseResult;
+        }
+        #endregion
     }
 }

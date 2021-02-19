@@ -49,7 +49,7 @@ Scenario:Patch Diversity with all values
 	#And the "diversitydetails" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 
-#And there should be a record in the diversitydetails ChangeFeed table
+		And there should be a record in the dss-diversitydetails table with DiversityId
 #And there should be a record in the diversitydetails-history ChangeFeed table
 ############################################################################################################################
 ##	ConsentToCollectLLDDHealth

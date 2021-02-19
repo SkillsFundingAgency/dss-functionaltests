@@ -71,7 +71,8 @@ Scenario: Post Valid Action with only mandatory Fields
 		| PersonResponsible             | 1                    |
 	#And the "actions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	#And there should be a record in the dss-actions table with ActionId
+	And there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
+
 #And there should be a record in the actions-history ChangeFeed table
 @actions  @V2
 Scenario: Change feed for Post Action

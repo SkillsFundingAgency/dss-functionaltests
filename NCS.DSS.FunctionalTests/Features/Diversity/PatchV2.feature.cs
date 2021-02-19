@@ -242,6 +242,9 @@ this.FeatureBackground();
 #line 50
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 52
+  testRunner.And("there should be a record in the dss-diversitydetails table with DiversityId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

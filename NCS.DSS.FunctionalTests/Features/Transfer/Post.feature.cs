@@ -84,8 +84,8 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Transfer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
- this.ScenarioInitialize(scenarioInfo);
+#line 5
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -113,8 +113,11 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                 table1116.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 8
+#line 6
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1116, "Given ");
+#line hidden
+#line 10
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1117 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -131,8 +134,11 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                 table1117.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 12
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1117, "And ");
+#line 11
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1117, "Given ");
+#line hidden
+#line 17
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1118 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -172,6 +178,9 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                             "Some context text"});
 #line 26
  testRunner.And("the response body should contain:", ((string)(null)), table1119, "And ");
+#line hidden
+#line 31
+ testRunner.And("there should be a record in the dss-transfers table with TransferId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

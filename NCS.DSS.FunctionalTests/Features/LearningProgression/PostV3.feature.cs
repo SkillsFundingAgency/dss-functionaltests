@@ -201,10 +201,6 @@ this.FeatureBackground();
  testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
                         "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
- testRunner.And("there should be 1 records in the dss-learningprogressions-history table with Lear" +
-                        "ningProgressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -300,10 +296,6 @@ this.FeatureBackground();
 #line 58
  testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
                         "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 59
- testRunner.And("there should be 1 records in the dss-learningprogressions-history table with Lear" +
-                        "ningProgressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -409,10 +401,6 @@ this.FeatureBackground();
 #line 87
  testRunner.And("there should be a record in the dss-learningprogressions table with LearningProgr" +
                         "essionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 88
- testRunner.And("there should be 1 records in the dss-learningprogressions-history table with Lear" +
-                        "ningProgressionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

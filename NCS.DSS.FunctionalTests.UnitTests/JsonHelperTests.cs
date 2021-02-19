@@ -136,7 +136,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var json = @"{ ActionId: 1, Name: ""Testing"" }";
 
             // Act
-            var value = JsonHelper.JsonContains(null, json);
+            var value = JsonHelper.JsonContains(null, json, null);
 
             //Assert
             Assert.False(value);
@@ -149,7 +149,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var json = @"{ ActionId: 1, Name: ""Testing"" }";
 
             // Act
-            var value = JsonHelper.JsonContains(json, null);
+            var value = JsonHelper.JsonContains(json, null, null);
 
             //Assert
             Assert.False(value);
@@ -162,7 +162,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var json = @"{ ActionId: 1, Name: ""Testing"" }";
 
             // Act
-            var value = JsonHelper.JsonContains(null, null);
+            var value = JsonHelper.JsonContains(null, null, null);
 
             //Assert
             Assert.False(value);
@@ -177,7 +177,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var sourceJson = @"{ ActionId: 1}";
 
             // Act
-            var value = JsonHelper.JsonContains(InvalidTargetJson, sourceJson);
+            var value = JsonHelper.JsonContains(InvalidTargetJson, sourceJson, null);
 
             //Assert
             Assert.False(value);
@@ -191,7 +191,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var InvalidSourceJson = @"{ ActionId: }";
 
             // Act
-            var value = JsonHelper.JsonContains(targetJson, InvalidSourceJson);
+            var value = JsonHelper.JsonContains(targetJson, InvalidSourceJson, null);
 
             //Assert
             Assert.False(value);
@@ -205,7 +205,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var sourceJson = @"{ Customer: ""SomeTest"", Age: 300, Height: 200}";
 
             // Act
-            var value = JsonHelper.JsonContains(targetJson, sourceJson);
+            var value = JsonHelper.JsonContains(targetJson, sourceJson, null);
 
             //Assert
             Assert.True(value);
@@ -219,7 +219,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var sourceJson = @"{ Customer: ""SOMeTesT"", Age: 300, Height: 200}";
 
             // Act
-            var value = JsonHelper.JsonContains(targetJson, sourceJson);
+            var value = JsonHelper.JsonContains(targetJson, sourceJson, null);
 
             //Assert
             Assert.True(value);
@@ -233,7 +233,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var sourceJson = @"{ Customer: ""SOMeTesT"", Age: 300, Height: 200}";
 
             // Act
-            var value = JsonHelper.JsonContains(targetJson, sourceJson);
+            var value = JsonHelper.JsonContains(targetJson, sourceJson, null);
 
             //Assert
             Assert.True(value);
@@ -247,7 +247,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var sourceJson = @"{ Customer: ""some invalid customer text"", Age: 300, Height: 200}";
 
             // Act
-            var value = JsonHelper.JsonContains(targetJson, sourceJson);
+            var value = JsonHelper.JsonContains(targetJson, sourceJson, null);
 
             //Assert
             Assert.False(value);
@@ -264,7 +264,7 @@ namespace NCS.DSS.FunctionalTests.UnitTests
             var sourceJson = @"{ Customer: ""SOMeTesT""}";
 
             // Act
-            var value = JsonHelper.JsonContains(targetJson, sourceJson);
+            var value = JsonHelper.JsonContains(targetJson, sourceJson, null);
 
             //Assert
             Assert.True(value);

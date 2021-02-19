@@ -790,6 +790,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 186
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 188
+ testRunner.And("there should be a record in the dss-customers table with CustomerId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

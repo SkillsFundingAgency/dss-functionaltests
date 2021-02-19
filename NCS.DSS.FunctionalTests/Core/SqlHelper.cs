@@ -29,12 +29,6 @@ namespace NCS.DSS.FunctionalTests.Core
             return dataTable;
         }
 
-
-        //private async Task Execute(string sql)
-        //{
-
-        //}
-
         public async Task<DataTable> Query(string table, string id, int retries = 3, int waitTime = 5)
         {
             var sql = $"SELECT * FROM [dbo].[{table}] where id = '{id}'";

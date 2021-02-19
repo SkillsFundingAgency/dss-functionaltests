@@ -170,6 +170,9 @@ this.FeatureBackground();
 #line 19
  testRunner.And("the response body should contain:", ((string)(null)), table344, "And ");
 #line hidden
+#line 26
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -238,6 +241,9 @@ this.FeatureBackground();
                             "2018-08-20T11:46:02.4482612Z"});
 #line 37
  testRunner.And("the response body should contain:", ((string)(null)), table346, "And ");
+#line hidden
+#line 42
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -319,6 +325,9 @@ this.FeatureBackground();
                             "2018-08-20T11:46:02.4482612Z"});
 #line 55
  testRunner.And("the response body should contain:", ((string)(null)), table348, "And ");
+#line hidden
+#line 62
+ testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

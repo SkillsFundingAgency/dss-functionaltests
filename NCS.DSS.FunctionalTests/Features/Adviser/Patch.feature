@@ -16,9 +16,9 @@ Scenario: Patch Name
 		| AdviserName          | Billy Jones    |
 		| AdviserEmailAddress  | billy@bill.com |
 		| AdviserContactNumber | 98798678967967 |
-	#And there should be a record in the adviserDetails ChangeFeed table
-	#And there should be a record in the adviserDetails-history ChangeFeed table
+	And there should be a record in the dss-adviserdetails table with AdviserDetailId
 
+#And there should be a record in the adviserDetails-history ChangeFeed table
 @adviserdetails
 Scenario: Patch email address
 	Given I post an adviser with the following details:

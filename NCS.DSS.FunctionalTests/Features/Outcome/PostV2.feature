@@ -42,7 +42,7 @@ Scenario: Create an outcome with minimum valid values
 		| OutcomeType | 3     |
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the dss-outcomes table with OutcomeId
-	And there should be 1 records in the dss-outcomes-history table with SessionId
+
 
 @outcomes	@subcontractorId
 Scenario: Create an outcome with all valid values
@@ -63,7 +63,7 @@ Scenario: Create an outcome with all valid values
 	And the response body should contain the SubContractorId
 	And the response body should not contain the "CreatedBy"
 	And there should be a record in the dss-outcomes table with OutcomeId
-	And there should be 1 records in the dss-outcomes-history table with SessionId
+
 
 @outcomes
 Scenario: Create an outcome with invalid OutcomeType

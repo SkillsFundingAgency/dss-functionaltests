@@ -37,9 +37,9 @@ Scenario:Post valid address
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 		| LastModifiedDate    | 2018-09-19T09:01:00Z |
-	#And there should be a record in the addresses ChangeFeed table
-	#And there should be a record in the addresses-history ChangeFeed table
+	And there should be a record in the dss-addresses table with AddressId
 
+#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with only mandatory Fields
 	Given I post an Address with the following details:
@@ -50,16 +50,16 @@ Scenario: Post Address with only mandatory Fields
 	And the response body should contain:
 		| Field               | Value  |
 		| Address1            | 1      |
-		| Address2            |    |
-		| Address3            |    |
-		| Address4            |    |
-		| Address5            |    |
+		| Address2            |        |
+		| Address3            |        |
+		| Address4            |        |
+		| Address5            |        |
 		| PostCode            | NW11WN |
-		| AlternativePostCode |    |
-		| Longitude           |    |
-		| Latitude            |    |
-		| EffectiveFrom       |    |
-		| EffectiveTo         |    |
+		| AlternativePostCode |        |
+		| Longitude           |        |
+		| Latitude            |        |
+		| EffectiveFrom       |        |
+		| EffectiveTo         |        |
 
 @addresses
 Scenario: Post Address with maximum Field lengths

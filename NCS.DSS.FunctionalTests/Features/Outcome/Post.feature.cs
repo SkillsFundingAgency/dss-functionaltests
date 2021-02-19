@@ -221,9 +221,6 @@ this.FeatureBackground();
 #line 42
  testRunner.And("there should be a record in the dss-outcomes table with OutcomeId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 43
- testRunner.And("there should be 1 records in the dss-outcomes-history table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -237,7 +234,7 @@ this.FeatureBackground();
                     "outcomes"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 46
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -269,10 +266,10 @@ this.FeatureBackground();
                 table1043.AddRow(new string[] {
                             "OutcomeEffectiveDate",
                             "2018-07-20T21:45:00Z"});
-#line 47
+#line 46
  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table1043, "Given ");
 #line hidden
-#line 51
+#line 50
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -288,7 +285,7 @@ this.FeatureBackground();
                     "outcomes"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with invalid OutcomeType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 54
+#line 53
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -323,10 +320,10 @@ this.FeatureBackground();
                 table1044.AddRow(new string[] {
                             "OutcomeEffectiveDate",
                             "2018-07-20T21:45:00Z"});
-#line 55
+#line 54
  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table1044, "Given ");
 #line hidden
-#line 60
+#line 59
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -342,7 +339,7 @@ this.FeatureBackground();
                     "outcomes"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeClaimedDate", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 63
+#line 62
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -374,10 +371,10 @@ this.FeatureBackground();
                 table1045.AddRow(new string[] {
                             "OutcomeEffectiveDate",
                             "2018-07-20T21:45:00Z"});
-#line 64
+#line 63
  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table1045, "Given ");
 #line hidden
-#line 68
+#line 67
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1046 = new TechTalk.SpecFlow.Table(new string[] {
@@ -389,14 +386,11 @@ this.FeatureBackground();
                 table1046.AddRow(new string[] {
                             "OutcomeEffectiveDate",
                             "2018-07-20T21:45:00Z"});
-#line 69
+#line 68
  testRunner.And("the response body should contain:", ((string)(null)), table1046, "And ");
 #line hidden
-#line 73
+#line 72
  testRunner.And("there should be a record in the dss-outcomes table with OutcomeId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 74
- testRunner.And("there should be 1 records in the dss-outcomes-history table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -411,7 +405,7 @@ this.FeatureBackground();
                     "outcomes"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create an outcome with missing OutcomeEffectiveDate", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 77
+#line 75
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -443,10 +437,10 @@ this.FeatureBackground();
                 table1047.AddRow(new string[] {
                             "OutcomeClaimedDate",
                             "2018-07-20T21:45:00Z"});
-#line 78
+#line 76
  testRunner.Given("I post an outcome with the following details:", ((string)(null)), table1047, "Given ");
 #line hidden
-#line 82
+#line 80
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1048 = new TechTalk.SpecFlow.Table(new string[] {
@@ -458,14 +452,11 @@ this.FeatureBackground();
                 table1048.AddRow(new string[] {
                             "OutcomeClaimedDate",
                             "2018-07-20T21:45:00Z"});
-#line 83
+#line 81
  testRunner.And("the response body should contain:", ((string)(null)), table1048, "And ");
 #line hidden
-#line 87
+#line 85
  testRunner.And("there should be a record in the dss-outcomes table with OutcomeId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 88
- testRunner.And("there should be 1 records in the dss-outcomes-history table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -8,7 +8,7 @@ namespace NCS.DSS.FunctionalTests.Core
 {
     public static class JsonHelper
     {
-        private static bool DoesContain(JToken targetDoc, JObject sourceDoc)
+        private static bool DoesContain(JToken targetDoc, JObject sourceDoc, List<string> fieldsToIgnore)
         {
             if (sourceDoc != null || targetDoc != null)
             {
@@ -16,6 +16,9 @@ namespace NCS.DSS.FunctionalTests.Core
                 var targetObj = JsonConvert.DeserializeObject<JObject>(targetJson);
                 foreach (var sourceProp in sourceDoc.Properties())
                 {
+                    if (fieldsToIgnore != null && fieldsToIgnore.Contains(sourceProp.Name))
+                        continue;
+
                     JProperty target = targetObj.Property(sourceProp.Name);
                     if (target == null)
                     {
@@ -50,7 +53,7 @@ namespace NCS.DSS.FunctionalTests.Core
         /// <param name="targetDoc">Json target document that may contain sourceDoc</param>
         /// <param name="sourceDoc">Json document</param>
         /// <returns></returns>
-        public static bool JsonContains(string targetDoc, string sourceDoc)
+        public static bool JsonContains(string targetDoc, string sourceDoc, List<string> fieldsToIgnore)
         {
             if (!string.IsNullOrEmpty(targetDoc) && !string.IsNullOrEmpty(sourceDoc))
             {
@@ -63,14 +66,14 @@ namespace NCS.DSS.FunctionalTests.Core
                     {
                         foreach (var item in targetObj.Children())
                         {
-                            var contains = DoesContain(item, sourceOject);
+                            var contains = DoesContain(item, sourceOject, fieldsToIgnore);
                             if (contains)
                                 return contains;
                         }
                     }
                     else
                     {
-                        return DoesContain(targetObj, sourceOject);
+                        return DoesContain(targetObj, sourceOject, fieldsToIgnore);
                     }
                 }
                 catch (Exception)

@@ -40,7 +40,6 @@ Scenario: Create an outcome with all valid values
 		| OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 	And there should be a record in the dss-outcomes table with OutcomeId
-	And there should be 1 records in the dss-outcomes-history table with SessionId
 
 @outcomes
 Scenario: Create an outcome with missing OutcomeType
@@ -71,7 +70,6 @@ Scenario: Create an outcome with missing OutcomeClaimedDate
 		| OutcomeType          | 2                    |
 		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
 	And there should be a record in the dss-outcomes table with OutcomeId
-	And there should be 1 records in the dss-outcomes-history table with SessionId
 
 @outcomes
 Scenario: Create an outcome with missing OutcomeEffectiveDate
@@ -85,4 +83,3 @@ Scenario: Create an outcome with missing OutcomeEffectiveDate
 		| OutcomeType        | 2                    |
 		| OutcomeClaimedDate | 2018-07-20T21:45:00Z |
 	And there should be a record in the dss-outcomes table with OutcomeId
-	And there should be 1 records in the dss-outcomes-history table with SessionId

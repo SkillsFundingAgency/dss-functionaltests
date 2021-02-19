@@ -89,6 +89,9 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
 #line 4
  testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1109, "Given ");
 #line hidden
+#line 8
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table1110 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
@@ -104,8 +107,11 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
             table1110.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 8
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1110, "And ");
+#line 9
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1110, "Given ");
+#line hidden
+#line 15
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1111 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -125,8 +131,11 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
             table1111.AddRow(new string[] {
                         "RequestedCallbackTime",
                         "2018-06-22T16:52:10Z"});
-#line 14
- testRunner.And("I post a Transfer with the following details:", ((string)(null)), table1111, "And ");
+#line 16
+ testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table1111, "Given ");
+#line hidden
+#line 23
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
         }
         
@@ -141,7 +150,7 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Minimum", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 23
+#line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -173,10 +182,10 @@ this.FeatureBackground();
                 table1112.AddRow(new string[] {
                             "Context",
                             "Some context min"});
-#line 24
+#line 27
  testRunner.Given("I patch a Transfer with the following details:", ((string)(null)), table1112, "Given ");
 #line hidden
-#line 28
+#line 31
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1113 = new TechTalk.SpecFlow.Table(new string[] {
@@ -188,7 +197,7 @@ this.FeatureBackground();
                 table1113.AddRow(new string[] {
                             "Context",
                             "Some context min"});
-#line 29
+#line 32
  testRunner.And("the response body should contain:", ((string)(null)), table1113, "And ");
 #line hidden
             }
@@ -204,7 +213,7 @@ this.FeatureBackground();
                     "transfers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch All", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 35
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -257,10 +266,10 @@ this.FeatureBackground();
                 table1114.AddRow(new string[] {
                             "LastModifiedTouchpointId",
                             "9000000001"});
-#line 36
+#line 39
  testRunner.Given("I patch a Transfer with the following details:", ((string)(null)), table1114, "Given ");
 #line hidden
-#line 47
+#line 50
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1115 = new TechTalk.SpecFlow.Table(new string[] {
@@ -293,7 +302,7 @@ this.FeatureBackground();
                 table1115.AddRow(new string[] {
                             "LastModifiedTouchpointId",
                             "9000000001"});
-#line 48
+#line 51
  testRunner.And("the response body should contain:", ((string)(null)), table1115, "And ");
 #line hidden
             }

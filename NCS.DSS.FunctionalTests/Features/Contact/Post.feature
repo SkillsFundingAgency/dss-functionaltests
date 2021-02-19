@@ -23,8 +23,8 @@ Scenario:Post valid contact
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	And there should be a record in the dss-contacts table with ContactId
 
-#And there should be a record in the contacts ChangeFeed table
 #And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
 Scenario: Post Valid ContactDetail one contact method
@@ -39,8 +39,8 @@ Scenario: Post Valid ContactDetail one contact method
 		| PreferredContactMethod | 2                            |
 		| MobileNumber           | 07676 123456                 |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	And there should be a record in the dss-contacts table with ContactId
 
-#And there should be a record in the contacts ChangeFeed table
 #And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
 Scenario: Post Valid ContactDetail with ten digit phone numbers
@@ -59,8 +59,8 @@ Scenario: Post Valid ContactDetail with ten digit phone numbers
 		| HomeNumber             | 0125 455294                  |
 		| AlternativeNumber      | 01254 57611                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	And there should be a record in the dss-contacts table with ContactId
 
-#And there should be a record in the contacts ChangeFeed table
 #And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
 Scenario: Post ContactDetail Mandatory PreferredContactMethod Field missing
@@ -196,9 +196,9 @@ Scenario: Post ContactDetail where one already exists
 		| Field                  | Value |
 		| PreferredContactMethod | 1     |
 	And I post a Contact with the following details with unique email address:
-		| Field                  | Value                        |
-		| PreferredContactMethod | 2                           |
-		| MobileNumber           | 07676 123456                 |
+		| Field                  | Value        |
+		| PreferredContactMethod | 2            |
+		| MobileNumber           | 07676 123456 |
 	Then there should be a 409 response
 
 @contactdetails

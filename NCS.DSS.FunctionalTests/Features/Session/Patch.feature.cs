@@ -89,6 +89,9 @@ namespace NCS.DSS.FunctionalTests.Features.Session
 #line 4
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1075, "Given ");
 #line hidden
+#line 8
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table1076 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
@@ -98,8 +101,11 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table1076.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table1076, "And ");
+#line 9
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1076, "Given ");
+#line hidden
+#line 13
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1077 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -116,8 +122,8 @@ namespace NCS.DSS.FunctionalTests.Features.Session
             table1077.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 12
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1077, "And ");
+#line 14
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1077, "Given ");
 #line hidden
         }
         
@@ -132,7 +138,7 @@ namespace NCS.DSS.FunctionalTests.Features.Session
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateandTimeOfSession", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 20
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -167,8 +173,11 @@ this.FeatureBackground();
                 table1078.AddRow(new string[] {
                             "SessionAttended",
                             "true"});
-#line 21
+#line 23
  testRunner.Given("I post a session with the following details:", ((string)(null)), table1078, "Given ");
+#line hidden
+#line 28
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1079 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -176,10 +185,10 @@ this.FeatureBackground();
                 table1079.AddRow(new string[] {
                             "DateandTimeOfSession",
                             "2018-06-22T14:45:00Z"});
-#line 26
+#line 29
  testRunner.When("I patch the following Session:", ((string)(null)), table1079, "When ");
 #line hidden
-#line 29
+#line 32
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1080 = new TechTalk.SpecFlow.Table(new string[] {
@@ -194,10 +203,10 @@ this.FeatureBackground();
                 table1080.AddRow(new string[] {
                             "SessionAttended",
                             "true"});
-#line 30
+#line 33
  testRunner.And("the response body should contain:", ((string)(null)), table1080, "And ");
 #line hidden
-#line 36
+#line 38
  testRunner.And("there should be a record in the dss-sessions table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -213,7 +222,7 @@ this.FeatureBackground();
                     "sessions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch VenuePostCode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 39
+#line 42
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -248,8 +257,11 @@ this.FeatureBackground();
                 table1081.AddRow(new string[] {
                             "SessionAttended",
                             "true"});
-#line 40
+#line 43
  testRunner.Given("I post a session with the following details:", ((string)(null)), table1081, "Given ");
+#line hidden
+#line 48
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1082 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -257,10 +269,10 @@ this.FeatureBackground();
                 table1082.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1 2NQ"});
-#line 45
+#line 49
  testRunner.When("I patch the following Session:", ((string)(null)), table1082, "When ");
 #line hidden
-#line 48
+#line 52
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1083 = new TechTalk.SpecFlow.Table(new string[] {
@@ -275,7 +287,7 @@ this.FeatureBackground();
                 table1083.AddRow(new string[] {
                             "SessionAttended",
                             "true"});
-#line 49
+#line 53
  testRunner.And("the response body should contain:", ((string)(null)), table1083, "And ");
 #line hidden
             }
@@ -291,7 +303,7 @@ this.FeatureBackground();
                     "sessions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch SessionAttended", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 56
+#line 60
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -326,8 +338,11 @@ this.FeatureBackground();
                 table1084.AddRow(new string[] {
                             "SessionAttended",
                             "true"});
-#line 57
+#line 61
  testRunner.Given("I post a session with the following details:", ((string)(null)), table1084, "Given ");
+#line hidden
+#line 66
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1085 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -335,10 +350,10 @@ this.FeatureBackground();
                 table1085.AddRow(new string[] {
                             "SessionAttended",
                             "false"});
-#line 62
+#line 67
  testRunner.When("I patch the following Session:", ((string)(null)), table1085, "When ");
 #line hidden
-#line 65
+#line 70
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1086 = new TechTalk.SpecFlow.Table(new string[] {
@@ -353,7 +368,7 @@ this.FeatureBackground();
                 table1086.AddRow(new string[] {
                             "SessionAttended",
                             "false"});
-#line 66
+#line 71
  testRunner.And("the response body should contain:", ((string)(null)), table1086, "And ");
 #line hidden
             }

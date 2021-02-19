@@ -46,7 +46,7 @@ Scenario: Post Valid ActionPlan with all fields
 	#And the response body should contain the SessionId
 	And the response body should not contain the "CreatedBy"
 
-#And there should be a record in the ActionPlans ChangeFeed table
+	And there should be a record in the dss-actionplans table with ActionPlanId
 #And there should be a record in the ActionPlans-history ChangeFeed table
 @actionplans	@subcontractorId
 Scenario: Post Valid ActionPlan with all fields and SubContractorId

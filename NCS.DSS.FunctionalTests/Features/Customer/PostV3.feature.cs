@@ -820,6 +820,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 197
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 198
+ testRunner.And("there should be a record in the dss-customers table Ignoring \'PriorityGroups\' wit" +
+                        "h CustomerId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -833,7 +837,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Invalid DateOfRegistration", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 203
+#line 202
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -895,13 +899,13 @@ this.ScenarioInitialize(scenarioInfo);
                 table526.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 204
+#line 203
  testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table526, "Given ");
 #line hidden
-#line 219
+#line 218
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 220
+#line 219
  testRunner.And("the error message should be \"Family Name is a required field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -926,7 +930,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("GivenName", givenName);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Given names with spaces", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 223
+#line 222
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -946,10 +950,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 224
+#line 223
  testRunner.Given(string.Format("I post a customer with the given name \'{0}\' V3", givenName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 225
+#line 224
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -976,7 +980,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("FamilyName", familyName);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Family names with spaces", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 235
+#line 234
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -996,10 +1000,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 236
+#line 235
  testRunner.Given(string.Format("I post a customer with the given name \'{0}\' V3", familyName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 237
+#line 236
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

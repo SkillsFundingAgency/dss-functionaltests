@@ -35,9 +35,8 @@ Scenario:Post valid DigitalIdentity
 		| LegacyIdentity   | 07676 123456                         |
 		| id_token         | 08654 123456                         |
 		| LastModifiedDate | 2018-08-20T11:46:02.4482612+00:00    |
+	And there should be a record in the dss-digitalidentities table with IdentityId
 
-#
-##And there should be a record in the digitalidentities ChangeFeed table
 ##And there should be a record in the digitalidentities-history ChangeFeed table
 @digitalidentity
 Scenario: Post invalid DigitalIdentity with non existent customerId

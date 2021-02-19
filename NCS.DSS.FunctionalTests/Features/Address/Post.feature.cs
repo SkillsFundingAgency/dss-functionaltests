@@ -212,6 +212,9 @@ this.FeatureBackground();
 #line 26
  testRunner.And("the response body should contain:", ((string)(null)), table240, "And ");
 #line hidden
+#line 40
+ testRunner.And("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

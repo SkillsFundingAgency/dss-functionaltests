@@ -74,8 +74,8 @@ Scenario: Patch Title
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| PriorityGroups             | [1,3]                |
+	And there should be a record in the dss-customers table Ignoring 'PriorityGroups' with CustomerId
 
-#   And there should be a record in the customers ChangeFeed table
 #And there should be a record in the customers-history ChangeFeed table
 @customers
 Scenario: Patch GivenName

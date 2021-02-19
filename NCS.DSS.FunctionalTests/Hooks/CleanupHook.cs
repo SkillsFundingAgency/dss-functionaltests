@@ -23,21 +23,31 @@ namespace NCS.DSS.FunctionalTests.Hooks
 
                     }
 
-                    // Remove sql rows
+                    // Remove sql rows from both history tables
                     using (var sqlConnection = new SqlConnection(settings.sqlConnectionString))
                     {
                         await sqlConnection.OpenAsync();
                         foreach (var sqlRow in cleanupData.Database)
                         {
-                            var command = new SqlCommand($"DELETE FROM [dbo].[{sqlRow.Item1}] where {sqlRow.Item2} = '{sqlRow.Item3.ToString()}'", sqlConnection);
-                            var result = await command.ExecuteNonQueryAsync();
+                            var deleteRecordCommand = new SqlCommand($"DELETE FROM [dbo].[{sqlRow.Item1}] where {sqlRow.Item2} = '{sqlRow.Item3.ToString()}'", sqlConnection);
+                            await deleteRecordCommand.ExecuteNonQueryAsync();
+
+                            var deleteHistoryCommand = new SqlCommand($"DELETE FROM [dbo].[{sqlRow.Item1}-history] where {sqlRow.Item2} = '{sqlRow.Item3.ToString()}'", sqlConnection);
+                            await deleteHistoryCommand.ExecuteNonQueryAsync();
                         }
                         await sqlConnection.CloseAsync();
                     }
                 }
             }
         }
+
+        [AfterScenario]
+        public static async Task AfterEachScenario(EnvironmentSettings settings)
+        {
+            //Investigate putting an artificial delay between each scenario, because cos
+        }
     }
+
 
     public class CleanupData
     {
