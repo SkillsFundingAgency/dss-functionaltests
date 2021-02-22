@@ -24,10 +24,6 @@
     <Folder Include="Features\Search\" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="appsettings.json" />
-    <None Remove="C:\Users\kev\.nuget\packages\specflow.nunit\3.6.23\build\\..\lib\netstandard2.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
