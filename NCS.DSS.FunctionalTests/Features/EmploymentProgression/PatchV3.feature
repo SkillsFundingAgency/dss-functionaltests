@@ -54,7 +54,8 @@ Scenario:Patch Employment Progression with  all values
 		| LengthOfUnemployment    | 2                    |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table Ignoring '' with EmploymentProgressionId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-employmentprogressions table Ignoring '' with EmploymentProgressionId
 
 #And the captured table data should include key "Longitude" with value "-1.50728"
 #And the captured table data should include key "Latitude" with value "52.92878"
@@ -97,7 +98,8 @@ Scenario Outline: Patch Employment progression with valid values for DateProgres
 		| LengthOfUnemployment    | 1                    |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -184,7 +186,8 @@ Scenario Outline: Patch Employment progression with valid values for CurrentEmpl
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	#And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -300,6 +303,7 @@ Scenario Outline: Patch Employment progression with CurrentEmploymentStatus not 
 		| DateOfEmployment        |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
@@ -340,6 +344,7 @@ Scenario Outline: Patch Employment progression with valid values for EconomicSho
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
@@ -417,6 +422,7 @@ Scenario: Patch Employment progression field EconomicShockStatus to value Govern
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
@@ -476,6 +482,7 @@ Scenario Outline: Patch Employment progression with valid values for EconomicSho
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table

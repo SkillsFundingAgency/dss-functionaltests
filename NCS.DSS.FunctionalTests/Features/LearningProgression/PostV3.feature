@@ -33,7 +33,8 @@ Scenario:Post learning progression with all values
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 
 
 @learningprogressions
