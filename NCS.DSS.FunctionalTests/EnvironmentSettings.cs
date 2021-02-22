@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 [assembly: Parallelizable(ParallelScope.Fixtures)]
-[assembly: LevelOfParallelism(1)]
+[assembly: LevelOfParallelism(2)]
 
 namespace NCS.DSS.FunctionalTests
 {
