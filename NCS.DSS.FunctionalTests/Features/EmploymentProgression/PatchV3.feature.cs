@@ -77,29 +77,29 @@ namespace NCS.DSS.FunctionalTests.Features.EmploymentProgression
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table704 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table717 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table704.AddRow(new string[] {
+            table717.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table704.AddRow(new string[] {
+            table717.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table704, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table717, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table705 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table718 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table705.AddRow(new string[] {
+            table718.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table705.AddRow(new string[] {
+            table718.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table705, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table718, "And ");
 #line hidden
         }
         
@@ -137,122 +137,122 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table706 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table719 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2019-08-20T00:00:00Z"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "8"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "EconomicShockStatus",
                             "2"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "EmployerName",
                             "One Ltd"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Peat Street"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "EmployerPostcode",
                             "P01 9UX"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-01-23T00:00:00Z"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-01-23T00:00:00Z"});
-                table706.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
 #line 15
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table706, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table719, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table707 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table720 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2019-08-21T00:00:00Z"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "1"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text2"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "EmployerName",
                             "One Ltd2"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "EmployerAddress",
                             "124 Peat Street"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "EmployerPostcode",
                             "DE22 4DE"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "EmploymentHours",
                             "2"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-01-24T00:00:00Z"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-01-25T00:00:00Z"});
-                table707.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "2"});
 #line 28
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table707, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table720, "Given ");
 #line hidden
 #line 41
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table708 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table721 = new TechTalk.SpecFlow.Table(new string[] {
                             "DateProgressionRecorded",
                             "2019-08-21T00:00:00Z"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "1"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text2"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "EmployerName",
                             "One Ltd2"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "EmployerAddress",
                             "124 Peat Street"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "EmployerPostcode",
                             "DE22 4DE"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "EmploymentHours",
                             "2"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-01-24T00:00:00Z"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-01-25T00:00:00Z"});
-                table708.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "2"});
 #line 43
- testRunner.And("the response body should contain:", ((string)(null)), table708, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table721, "And ");
 #line hidden
 #line 56
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -307,89 +307,89 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table709 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table722 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "8"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "EconomicShockStatus",
                             "2"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "EmployerName",
                             "One Ltd"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Peat Street"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "EmployerPostcode",
                             "P01 9UX"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-01-23T00:00:00Z"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-01-23T00:00:00Z"});
-                table709.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
 #line 69
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table709, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table722, "Given ");
 #line hidden
 #line 81
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table710 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table723 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 82
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table710, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table723, "Given ");
 #line hidden
 #line 84
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table711 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table724 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "8"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "EconomicShockStatus",
                             "2"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "EmployerName",
                             "One Ltd"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Peat Street"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "EmployerPostcode",
                             "P01 9UX"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-01-23T00:00:00Z"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-01-23T00:00:00Z"});
-                table711.AddRow(new string[] {
+                table724.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
 #line 86
- testRunner.And("the response body should contain:", ((string)(null)), table711, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table724, "And ");
 #line hidden
 #line 99
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -450,38 +450,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table712 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table725 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table712.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table712.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table712.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table712.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
-                table712.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table712.AddRow(new string[] {
+                table725.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 111
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table712, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table725, "Given ");
 #line hidden
 #line 119
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table713 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table726 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 120
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table713, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table726, "Given ");
 #line hidden
 #line 122
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -533,59 +533,59 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table714 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table727 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table714.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table714.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table714.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table714.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table714.AddRow(new string[] {
+                table727.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 138
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table714, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table727, "Given ");
 #line hidden
 #line 145
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table715 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table728 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 146
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table715, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table728, "Given ");
 #line hidden
 #line 148
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table716 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table729 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table716.AddRow(new string[] {
+                table729.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table716.AddRow(new string[] {
+                table729.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table716.AddRow(new string[] {
+                table729.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table716.AddRow(new string[] {
+                table729.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table716.AddRow(new string[] {
+                table729.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 150
- testRunner.And("the response body should contain:", ((string)(null)), table716, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table729, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -644,35 +644,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table717 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table730 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table717.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table717.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table717.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table717.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table717.AddRow(new string[] {
+                table730.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 167
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table717, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table730, "Given ");
 #line hidden
 #line 174
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table718 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table731 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 175
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table718, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table731, "Given ");
 #line hidden
 #line 177
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -680,23 +680,23 @@ this.FeatureBackground();
 #line 178
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table719 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table732 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table719.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table719.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table719.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table719.AddRow(new string[] {
+                table732.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 179
- testRunner.And("the response body should contain:", ((string)(null)), table719, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table732, "And ");
 #line hidden
 #line 187
  testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +
@@ -751,35 +751,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table720 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table733 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table720.AddRow(new string[] {
+                table733.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table720.AddRow(new string[] {
+                table733.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table720.AddRow(new string[] {
+                table733.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table720.AddRow(new string[] {
+                table733.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table720.AddRow(new string[] {
+                table733.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 209
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table720, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table733, "Given ");
 #line hidden
 #line 216
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table721 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table734 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 217
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table721, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table734, "Given ");
 #line hidden
 #line 219
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -831,59 +831,59 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table722 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table735 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table722.AddRow(new string[] {
+                table735.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table722.AddRow(new string[] {
+                table735.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table722.AddRow(new string[] {
+                table735.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table722.AddRow(new string[] {
+                table735.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table722.AddRow(new string[] {
+                table735.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 232
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table722, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table735, "Given ");
 #line hidden
 #line 239
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table723 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table736 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 240
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table723, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table736, "Given ");
 #line hidden
 #line 242
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table724 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table737 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table724.AddRow(new string[] {
+                table737.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table724.AddRow(new string[] {
+                table737.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table724.AddRow(new string[] {
+                table737.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table724.AddRow(new string[] {
+                table737.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table724.AddRow(new string[] {
+                table737.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 244
- testRunner.And("the response body should contain:", ((string)(null)), table724, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table737, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -935,35 +935,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table725 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table738 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table725.AddRow(new string[] {
+                table738.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table725.AddRow(new string[] {
+                table738.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table725.AddRow(new string[] {
+                table738.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
-                table725.AddRow(new string[] {
+                table738.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table725.AddRow(new string[] {
+                table738.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
 #line 258
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table725, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table738, "Given ");
 #line hidden
 #line 265
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table726 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table739 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 266
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table726, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table739, "Given ");
 #line hidden
 #line 268
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1035,35 +1035,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table727 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table740 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table727.AddRow(new string[] {
+                table740.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table727.AddRow(new string[] {
+                table740.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table727.AddRow(new string[] {
+                table740.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
-                table727.AddRow(new string[] {
+                table740.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table727.AddRow(new string[] {
+                table740.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
 #line 283
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table727, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table740, "Given ");
 #line hidden
 #line 290
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table728 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table741 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 291
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table728, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table741, "Given ");
 #line hidden
 #line 293
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1071,23 +1071,23 @@ this.FeatureBackground();
 #line 294
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table729 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table742 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table729.AddRow(new string[] {
+                table742.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table729.AddRow(new string[] {
+                table742.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
-                table729.AddRow(new string[] {
+                table742.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table729.AddRow(new string[] {
+                table742.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
 #line 295
- testRunner.And("the response body should contain:", ((string)(null)), table729, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table742, "And ");
 #line hidden
 #line 302
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1142,38 +1142,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table730 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table743 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table730.AddRow(new string[] {
+                table743.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table730.AddRow(new string[] {
+                table743.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table730.AddRow(new string[] {
+                table743.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table730.AddRow(new string[] {
+                table743.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table730.AddRow(new string[] {
+                table743.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text"});
-                table730.AddRow(new string[] {
+                table743.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 323
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table730, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table743, "Given ");
 #line hidden
 #line 331
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table731 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table744 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 332
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table731, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table744, "Given ");
 #line hidden
 #line 334
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1181,20 +1181,20 @@ this.FeatureBackground();
 #line 335
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table732 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table745 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table732.AddRow(new string[] {
+                table745.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table732.AddRow(new string[] {
+                table745.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table732.AddRow(new string[] {
+                table745.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 336
- testRunner.And("the response body should contain:", ((string)(null)), table732, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table745, "And ");
 #line hidden
 #line 342
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1251,38 +1251,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table733 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table746 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table733.AddRow(new string[] {
+                table746.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table733.AddRow(new string[] {
+                table746.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table733.AddRow(new string[] {
+                table746.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table733.AddRow(new string[] {
+                table746.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
-                table733.AddRow(new string[] {
+                table746.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table733.AddRow(new string[] {
+                table746.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 354
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table733, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table746, "Given ");
 #line hidden
 #line 362
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table734 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table747 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 363
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table734, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table747, "Given ");
 #line hidden
 #line 365
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1340,35 +1340,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table735 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table748 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table735.AddRow(new string[] {
+                table748.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table735.AddRow(new string[] {
+                table748.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table735.AddRow(new string[] {
+                table748.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table735.AddRow(new string[] {
+                table748.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table735.AddRow(new string[] {
+                table748.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 379
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table735, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table748, "Given ");
 #line hidden
 #line 386
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table736 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table749 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 387
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table736, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table749, "Given ");
 #line hidden
 #line 389
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1423,62 +1423,62 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table737 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table750 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table737.AddRow(new string[] {
+                table750.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table737.AddRow(new string[] {
+                table750.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table737.AddRow(new string[] {
+                table750.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table737.AddRow(new string[] {
+                table750.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table737.AddRow(new string[] {
+                table750.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some text"});
-                table737.AddRow(new string[] {
+                table750.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 398
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table737, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table750, "Given ");
 #line hidden
 #line 406
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table738 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table751 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 407
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table738, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table751, "Given ");
 #line hidden
 #line 409
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table739 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table752 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table739.AddRow(new string[] {
+                table752.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table739.AddRow(new string[] {
+                table752.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table739.AddRow(new string[] {
+                table752.AddRow(new string[] {
                             "EconomicShockStatus",
                             "2"});
-                table739.AddRow(new string[] {
+                table752.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some text"});
-                table739.AddRow(new string[] {
+                table752.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 411
- testRunner.And("the response body should contain:", ((string)(null)), table739, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table752, "And ");
 #line hidden
 #line 419
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1531,59 +1531,59 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table740 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table753 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table740.AddRow(new string[] {
+                table753.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table740.AddRow(new string[] {
+                table753.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table740.AddRow(new string[] {
+                table753.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table740.AddRow(new string[] {
+                table753.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table740.AddRow(new string[] {
+                table753.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 429
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table740, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table753, "Given ");
 #line hidden
 #line 436
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table741 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table754 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 437
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table741, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table754, "Given ");
 #line hidden
 #line 439
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table742 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table755 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table742.AddRow(new string[] {
+                table755.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table742.AddRow(new string[] {
+                table755.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table742.AddRow(new string[] {
+                table755.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table742.AddRow(new string[] {
+                table755.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table742.AddRow(new string[] {
+                table755.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 441
- testRunner.And("the response body should contain:", ((string)(null)), table742, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table755, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1630,35 +1630,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table743 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table756 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table743.AddRow(new string[] {
+                table756.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table743.AddRow(new string[] {
+                table756.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table743.AddRow(new string[] {
+                table756.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table743.AddRow(new string[] {
+                table756.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table743.AddRow(new string[] {
+                table756.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 458
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table743, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table756, "Given ");
 #line hidden
 #line 465
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table744 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table757 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 466
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table744, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table757, "Given ");
 #line hidden
 #line 468
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1666,26 +1666,26 @@ this.FeatureBackground();
 #line 469
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table745 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table758 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table745.AddRow(new string[] {
+                table758.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table745.AddRow(new string[] {
+                table758.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table745.AddRow(new string[] {
+                table758.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table745.AddRow(new string[] {
+                table758.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table745.AddRow(new string[] {
+                table758.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 470
- testRunner.And("the response body should contain:", ((string)(null)), table745, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table758, "And ");
 #line hidden
 #line 478
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1738,38 +1738,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table746 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table759 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table746.AddRow(new string[] {
+                table759.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table746.AddRow(new string[] {
+                table759.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table746.AddRow(new string[] {
+                table759.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table746.AddRow(new string[] {
+                table759.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
-                table746.AddRow(new string[] {
+                table759.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table746.AddRow(new string[] {
+                table759.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 489
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table746, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table759, "Given ");
 #line hidden
 #line 497
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table747 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table760 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 498
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table747, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table760, "Given ");
 #line hidden
 #line 500
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1825,65 +1825,65 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table748 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table761 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table748.AddRow(new string[] {
+                table761.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table748.AddRow(new string[] {
+                table761.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table748.AddRow(new string[] {
+                table761.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table748.AddRow(new string[] {
+                table761.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table748.AddRow(new string[] {
+                table761.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table748.AddRow(new string[] {
+                table761.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 510
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table748, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table761, "Given ");
 #line hidden
 #line 518
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table749 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table762 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 519
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table749, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table762, "Given ");
 #line hidden
 #line 521
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table750 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table763 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table750.AddRow(new string[] {
+                table763.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table750.AddRow(new string[] {
+                table763.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table750.AddRow(new string[] {
+                table763.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table750.AddRow(new string[] {
+                table763.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table750.AddRow(new string[] {
+                table763.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table750.AddRow(new string[] {
+                table763.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 523
- testRunner.And("the response body should contain:", ((string)(null)), table750, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table763, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1932,35 +1932,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table751 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table764 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table751.AddRow(new string[] {
+                table764.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table751.AddRow(new string[] {
+                table764.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table751.AddRow(new string[] {
+                table764.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table751.AddRow(new string[] {
+                table764.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table751.AddRow(new string[] {
+                table764.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 541
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table751, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table764, "Given ");
 #line hidden
 #line 548
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table752 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table765 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 549
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table752, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table765, "Given ");
 #line hidden
 #line 551
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1968,26 +1968,26 @@ this.FeatureBackground();
 #line 552
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table753 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table766 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table753.AddRow(new string[] {
+                table766.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table753.AddRow(new string[] {
+                table766.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table753.AddRow(new string[] {
+                table766.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table753.AddRow(new string[] {
+                table766.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table753.AddRow(new string[] {
+                table766.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 553
- testRunner.And("the response body should contain:", ((string)(null)), table753, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table766, "And ");
 #line hidden
 #line 561
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2042,38 +2042,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table754 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table767 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table754.AddRow(new string[] {
+                table767.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table754.AddRow(new string[] {
+                table767.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table754.AddRow(new string[] {
+                table767.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table754.AddRow(new string[] {
+                table767.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
-                table754.AddRow(new string[] {
+                table767.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table754.AddRow(new string[] {
+                table767.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 572
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table754, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table767, "Given ");
 #line hidden
 #line 580
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table755 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table768 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 581
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table755, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table768, "Given ");
 #line hidden
 #line 583
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2129,71 +2129,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table756 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table769 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table756.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table756.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table756.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table756.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "EmployerName",
                             "Some text"});
-                table756.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table756.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table756.AddRow(new string[] {
+                table769.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 593
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table756, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table769, "Given ");
 #line hidden
 #line 602
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table757 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table770 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 603
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table757, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table770, "Given ");
 #line hidden
 #line 605
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table758 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table771 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table758.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table758.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table758.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table758.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "EmployerName",
                             "Some text"});
-                table758.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table758.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table758.AddRow(new string[] {
+                table771.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 607
- testRunner.And("the response body should contain:", ((string)(null)), table758, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table771, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2240,35 +2240,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table759 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table772 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table759.AddRow(new string[] {
+                table772.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table759.AddRow(new string[] {
+                table772.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table759.AddRow(new string[] {
+                table772.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table759.AddRow(new string[] {
+                table772.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table759.AddRow(new string[] {
+                table772.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 626
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table759, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table772, "Given ");
 #line hidden
 #line 633
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table760 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table773 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 634
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table760, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table773, "Given ");
 #line hidden
 #line 636
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2276,26 +2276,26 @@ this.FeatureBackground();
 #line 637
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table761 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table774 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table761.AddRow(new string[] {
+                table774.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table761.AddRow(new string[] {
+                table774.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table761.AddRow(new string[] {
+                table774.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table761.AddRow(new string[] {
+                table774.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table761.AddRow(new string[] {
+                table774.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 638
- testRunner.And("the response body should contain:", ((string)(null)), table761, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table774, "And ");
 #line hidden
 #line 646
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2348,38 +2348,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table762 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table775 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table762.AddRow(new string[] {
+                table775.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table762.AddRow(new string[] {
+                table775.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table762.AddRow(new string[] {
+                table775.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table762.AddRow(new string[] {
+                table775.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
-                table762.AddRow(new string[] {
+                table775.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table762.AddRow(new string[] {
+                table775.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 657
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table762, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table775, "Given ");
 #line hidden
 #line 665
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table763 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table776 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 666
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table763, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table776, "Given ");
 #line hidden
 #line 668
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2435,77 +2435,77 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table764 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table777 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "EmployerName",
                             "Some text"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "EmployerAddress",
                             "Some more text"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table764.AddRow(new string[] {
+                table777.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 678
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table764, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table777, "Given ");
 #line hidden
 #line 688
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table765 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table778 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 689
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table765, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table778, "Given ");
 #line hidden
 #line 691
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table766 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table779 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "EmployerName",
                             "Some text"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "EmployerAddress",
                             "Some more text"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table766.AddRow(new string[] {
+                table779.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 693
- testRunner.And("the response body should contain:", ((string)(null)), table766, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table779, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2552,38 +2552,38 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table767 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table780 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table767.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table767.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table767.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table767.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table767.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table767.AddRow(new string[] {
+                table780.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 713
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table767, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table780, "Given ");
 #line hidden
 #line 721
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table768 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table781 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 722
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table768, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table781, "Given ");
 #line hidden
 #line 724
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2591,26 +2591,26 @@ this.FeatureBackground();
 #line 725
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table769 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table782 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table769.AddRow(new string[] {
+                table782.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table769.AddRow(new string[] {
+                table782.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table769.AddRow(new string[] {
+                table782.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table769.AddRow(new string[] {
+                table782.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table769.AddRow(new string[] {
+                table782.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 726
- testRunner.And("the response body should contain:", ((string)(null)), table769, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table782, "And ");
 #line hidden
 #line 734
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2664,35 +2664,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table770 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table783 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table770.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table770.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table770.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table770.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table770.AddRow(new string[] {
+                table783.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 748
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table770, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table783, "Given ");
 #line hidden
 #line 755
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table771 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table784 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 756
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table771, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table784, "Given ");
 #line hidden
 #line 758
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2744,83 +2744,83 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table772 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table785 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "EmployerName",
                             "Some text"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "EmployerAddress",
                             "Some more text"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "EmployerPostcode",
                             "De22 2ab"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table772.AddRow(new string[] {
+                table785.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 767
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table772, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table785, "Given ");
 #line hidden
 #line 778
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table773 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table786 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 779
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table773, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table786, "Given ");
 #line hidden
 #line 781
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table774 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table787 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "EmployerName",
                             "Some text"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "EmployerAddress",
                             "Some more text"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "EmployerPostcode",
                             "De22 2ab"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "EconomicShockCode",
                             "some text"});
-                table774.AddRow(new string[] {
+                table787.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 783
- testRunner.And("the response body should contain:", ((string)(null)), table774, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table787, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -2869,35 +2869,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table775 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table788 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table775.AddRow(new string[] {
+                table788.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table775.AddRow(new string[] {
+                table788.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table775.AddRow(new string[] {
+                table788.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table775.AddRow(new string[] {
+                table788.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table775.AddRow(new string[] {
+                table788.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 812
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table775, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table788, "Given ");
 #line hidden
 #line 819
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table776 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table789 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 820
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table776, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table789, "Given ");
 #line hidden
 #line 822
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2905,23 +2905,23 @@ this.FeatureBackground();
 #line 823
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table777 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table790 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table777.AddRow(new string[] {
+                table790.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table777.AddRow(new string[] {
+                table790.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table777.AddRow(new string[] {
+                table790.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table777.AddRow(new string[] {
+                table790.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 824
- testRunner.And("the response body should contain:", ((string)(null)), table777, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table790, "And ");
 #line hidden
 #line 831
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2978,32 +2978,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table778 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table791 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table778.AddRow(new string[] {
+                table791.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table778.AddRow(new string[] {
+                table791.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table778.AddRow(new string[] {
+                table791.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table778.AddRow(new string[] {
+                table791.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 844
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table778, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table791, "Given ");
 #line hidden
 #line 850
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table779 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table792 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 851
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table779, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table792, "Given ");
 #line hidden
 #line 853
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3055,35 +3055,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table780 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table793 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table780.AddRow(new string[] {
+                table793.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table780.AddRow(new string[] {
+                table793.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table780.AddRow(new string[] {
+                table793.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table780.AddRow(new string[] {
+                table793.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table780.AddRow(new string[] {
+                table793.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 865
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table780, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table793, "Given ");
 #line hidden
 #line 872
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table781 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table794 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 873
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table781, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table794, "Given ");
 #line hidden
 #line 875
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3091,26 +3091,26 @@ this.FeatureBackground();
 #line 876
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table782 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table795 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table782.AddRow(new string[] {
+                table795.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table782.AddRow(new string[] {
+                table795.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table782.AddRow(new string[] {
+                table795.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table782.AddRow(new string[] {
+                table795.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
-                table782.AddRow(new string[] {
+                table795.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
 #line 877
- testRunner.And("the response body should contain:", ((string)(null)), table782, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table795, "And ");
 #line hidden
 #line 885
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3165,56 +3165,56 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table783 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table796 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table783.AddRow(new string[] {
+                table796.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table783.AddRow(new string[] {
+                table796.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table783.AddRow(new string[] {
+                table796.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table783.AddRow(new string[] {
+                table796.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table783.AddRow(new string[] {
+                table796.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 899
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table783, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table796, "Given ");
 #line hidden
 #line 906
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table784 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table797 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 907
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table784, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table797, "Given ");
 #line hidden
 #line 909
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table785 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table798 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table785.AddRow(new string[] {
+                table798.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table785.AddRow(new string[] {
+                table798.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table785.AddRow(new string[] {
+                table798.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table785.AddRow(new string[] {
+                table798.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
 #line 911
- testRunner.And("the response body should contain:", ((string)(null)), table785, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table798, "And ");
 #line hidden
 #line 918
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3269,29 +3269,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table786 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table799 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table786.AddRow(new string[] {
+                table799.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table786.AddRow(new string[] {
+                table799.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table786.AddRow(new string[] {
+                table799.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
 #line 930
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table786, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table799, "Given ");
 #line hidden
 #line 935
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table787 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table800 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 936
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table787, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table800, "Given ");
 #line hidden
 #line 938
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3343,56 +3343,56 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table788 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table801 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table788.AddRow(new string[] {
+                table801.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table788.AddRow(new string[] {
+                table801.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table788.AddRow(new string[] {
+                table801.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table788.AddRow(new string[] {
+                table801.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
 #line 948
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table788, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table801, "Given ");
 #line hidden
 #line 954
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table789 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table802 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 955
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table789, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table802, "Given ");
 #line hidden
 #line 957
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table790 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table803 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table790.AddRow(new string[] {
+                table803.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table790.AddRow(new string[] {
+                table803.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table790.AddRow(new string[] {
+                table803.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table790.AddRow(new string[] {
+                table803.AddRow(new string[] {
                             "DateOfEmployment",
                             ""});
-                table790.AddRow(new string[] {
+                table803.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
 #line 958
- testRunner.And("the response body should contain:", ((string)(null)), table790, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table803, "And ");
 #line hidden
 #line 966
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3447,59 +3447,59 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table791 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table804 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table791.AddRow(new string[] {
+                table804.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table791.AddRow(new string[] {
+                table804.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table791.AddRow(new string[] {
+                table804.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table791.AddRow(new string[] {
+                table804.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table791.AddRow(new string[] {
+                table804.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 979
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table791, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table804, "Given ");
 #line hidden
 #line 986
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table792 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table805 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 987
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table792, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table805, "Given ");
 #line hidden
 #line 989
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table793 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table806 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table793.AddRow(new string[] {
+                table806.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table793.AddRow(new string[] {
+                table806.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table793.AddRow(new string[] {
+                table806.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table793.AddRow(new string[] {
+                table806.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
-                table793.AddRow(new string[] {
+                table806.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
 #line 991
- testRunner.And("the response body should contain:", ((string)(null)), table793, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table806, "And ");
 #line hidden
 #line 999
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3555,29 +3555,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table794 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table807 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table794.AddRow(new string[] {
+                table807.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table794.AddRow(new string[] {
+                table807.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table794.AddRow(new string[] {
+                table807.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
 #line 1011
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table794, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table807, "Given ");
 #line hidden
 #line 1016
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table795 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table808 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 1017
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table795, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table808, "Given ");
 #line hidden
 #line 1019
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3629,62 +3629,62 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table796 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table809 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table796.AddRow(new string[] {
+                table809.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table796.AddRow(new string[] {
+                table809.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table796.AddRow(new string[] {
+                table809.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table796.AddRow(new string[] {
+                table809.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table796.AddRow(new string[] {
+                table809.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 1030
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table796, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table809, "Given ");
 #line hidden
 #line 1037
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table797 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table810 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 1038
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table797, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table810, "Given ");
 #line hidden
 #line 1040
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table798 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table811 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table798.AddRow(new string[] {
+                table811.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table798.AddRow(new string[] {
+                table811.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table798.AddRow(new string[] {
+                table811.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table798.AddRow(new string[] {
+                table811.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
-                table798.AddRow(new string[] {
+                table811.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
-                table798.AddRow(new string[] {
+                table811.AddRow(new string[] {
                             "DateOfLastEmployment",
                             ""});
 #line 1041
- testRunner.And("the response body should contain:", ((string)(null)), table798, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table811, "And ");
 #line hidden
 #line 1050
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3744,35 +3744,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table799 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table812 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table799.AddRow(new string[] {
+                table812.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table799.AddRow(new string[] {
+                table812.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table799.AddRow(new string[] {
+                table812.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table799.AddRow(new string[] {
+                table812.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table799.AddRow(new string[] {
+                table812.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 1063
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table799, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table812, "Given ");
 #line hidden
 #line 1070
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table800 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table813 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 1071
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table800, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table813, "Given ");
 #line hidden
 #line 1073
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3780,23 +3780,23 @@ this.FeatureBackground();
 #line 1074
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table801 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table814 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table801.AddRow(new string[] {
+                table814.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table801.AddRow(new string[] {
+                table814.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table801.AddRow(new string[] {
+                table814.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table801.AddRow(new string[] {
+                table814.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 1075
- testRunner.And("the response body should contain:", ((string)(null)), table801, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table814, "And ");
 #line hidden
 #line 1082
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3854,32 +3854,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table802 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table815 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table802.AddRow(new string[] {
+                table815.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table802.AddRow(new string[] {
+                table815.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table802.AddRow(new string[] {
+                table815.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table802.AddRow(new string[] {
+                table815.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 1099
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table802, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table815, "Given ");
 #line hidden
 #line 1105
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table803 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table816 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 1106
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table803, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table816, "Given ");
 #line hidden
 #line 1108
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3931,35 +3931,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table804 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table817 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table804.AddRow(new string[] {
+                table817.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table804.AddRow(new string[] {
+                table817.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table804.AddRow(new string[] {
+                table817.AddRow(new string[] {
                             "EmployerPostcode",
                             "ng1 1gn"});
-                table804.AddRow(new string[] {
+                table817.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table804.AddRow(new string[] {
+                table817.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
 #line 1121
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table804, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table817, "Given ");
 #line hidden
 #line 1128
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table805 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table818 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 1129
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table805, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table818, "Given ");
 #line hidden
 #line 1131
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3967,29 +3967,29 @@ this.FeatureBackground();
 #line 1132
  testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table806 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table819 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table806.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2018-06-19T09:01:00Z"});
-                table806.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "99"});
-                table806.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "EconomicShockStatus",
                             "1"});
-                table806.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "DateOfEmployment",
                             "2018-06-19T09:01:00Z"});
-                table806.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "EmploymentHours",
                             ""});
-                table806.AddRow(new string[] {
+                table819.AddRow(new string[] {
                             "LengthOfUnemployment",
                             ""});
 #line 1133
- testRunner.And("the response body should contain:", ((string)(null)), table806, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table819, "And ");
 #line hidden
 #line 1142
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -4042,95 +4042,95 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table807 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table820 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2019-08-20T00:00:00Z"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "8"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "EconomicShockStatus",
                             "2"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "EmployerName",
                             "One Ltd"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Peat Street"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "EmployerPostcode",
                             "P01 9UX"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-01-23T00:00:00Z"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-01-23T00:00:00Z"});
-                table807.AddRow(new string[] {
+                table820.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
 #line 1192
- testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table807, "Given ");
+ testRunner.Given("I post a Employment Progression record with the following details V3:", ((string)(null)), table820, "Given ");
 #line hidden
 #line 1205
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table808 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table821 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
 #line 1206
- testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table808, "Given ");
+ testRunner.Given("I patch the following EmploymentProgression V3:", ((string)(null)), table821, "Given ");
 #line hidden
 #line 1208
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table809 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table822 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "DateProgressionRecorded",
                             "2019-08-20T00:00:00Z"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "CurrentEmploymentStatus",
                             "8"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "EconomicShockStatus",
                             "2"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "EconomicShockCode",
                             "Some Text"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "EmployerName",
                             "One Ltd"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "EmployerAddress",
                             "123 Peat Street"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "EmployerPostcode",
                             "P01 9UX"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "EmploymentHours",
                             "1"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "DateOfEmployment",
                             "2019-01-23T00:00:00Z"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "DateOfLastEmployment",
                             "2019-01-23T00:00:00Z"});
-                table809.AddRow(new string[] {
+                table822.AddRow(new string[] {
                             "LengthOfUnemployment",
                             "1"});
 #line 1210
- testRunner.And("the response body should contain:", ((string)(null)), table809, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table822, "And ");
 #line hidden
 #line 1223
  testRunner.And("there should be a record in the dss-employmentprogressions table with EmploymentP" +

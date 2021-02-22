@@ -77,35 +77,35 @@ namespace NCS.DSS.FunctionalTests.Features.Webchat
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table1124 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1137 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1124.AddRow(new string[] {
+            table1137.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table1124.AddRow(new string[] {
+            table1137.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 4
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1124, "Given ");
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table1137, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table1125 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1138 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1125.AddRow(new string[] {
+            table1138.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-25T11:21:00Z"});
-            table1125.AddRow(new string[] {
+            table1138.AddRow(new string[] {
                         "Channel",
                         "2"});
-            table1125.AddRow(new string[] {
+            table1138.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-            table1125.AddRow(new string[] {
+            table1138.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
 #line 8
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1125, "And ");
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1138, "And ");
 #line hidden
         }
         
@@ -143,71 +143,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1126 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1139 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1126.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1126.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1126.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1126.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1126.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1126.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1126.AddRow(new string[] {
+                table1139.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 17
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1126, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1139, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1127 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1140 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1127.AddRow(new string[] {
+                table1140.AddRow(new string[] {
                             "DigitalReference",
                             "abc12345"});
 #line 26
- testRunner.When("I patch the following:", ((string)(null)), table1127, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1140, "When ");
 #line hidden
 #line 29
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1128 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1141 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1128.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "DigitalReference",
                             "abc12345"});
-                table1128.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1128.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1128.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1128.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1128.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1128.AddRow(new string[] {
+                table1141.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 30
- testRunner.And("the response body should contain:", ((string)(null)), table1128, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1141, "And ");
 #line hidden
 #line 40
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -248,68 +248,68 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1129 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1142 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1129.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1129.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1129.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1129.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1129.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1129.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1129.AddRow(new string[] {
+                table1142.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 46
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1129, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1142, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1130 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1143 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1130.AddRow(new string[] {
+                table1143.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:00:00Z"});
 #line 55
- testRunner.When("I patch the following:", ((string)(null)), table1130, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1143, "When ");
 #line hidden
 #line 58
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1131 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1144 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1131.AddRow(new string[] {
+                table1144.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1131.AddRow(new string[] {
+                table1144.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:00:00Z"});
-                table1131.AddRow(new string[] {
+                table1144.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1131.AddRow(new string[] {
+                table1144.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1131.AddRow(new string[] {
+                table1144.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1131.AddRow(new string[] {
+                table1144.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 59
- testRunner.And("the response body should contain:", ((string)(null)), table1131, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1144, "And ");
 #line hidden
 #line 69
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -350,68 +350,68 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1132 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1145 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1132.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1132.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1132.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1132.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1132.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1132.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1132.AddRow(new string[] {
+                table1145.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 75
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1132, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1145, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1133 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1146 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1133.AddRow(new string[] {
+                table1146.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T14:45:00Z"});
 #line 84
- testRunner.When("I patch the following:", ((string)(null)), table1133, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1146, "When ");
 #line hidden
 #line 87
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1134 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1147 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1134.AddRow(new string[] {
+                table1147.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1134.AddRow(new string[] {
+                table1147.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1134.AddRow(new string[] {
+                table1147.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T14:45:00Z"});
-                table1134.AddRow(new string[] {
+                table1147.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1134.AddRow(new string[] {
+                table1147.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1134.AddRow(new string[] {
+                table1147.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 88
- testRunner.And("the response body should contain:", ((string)(null)), table1134, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1147, "And ");
 #line hidden
 #line 98
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -454,71 +454,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1135 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1148 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1135.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1135.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1135.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1135.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1135.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1135.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1135.AddRow(new string[] {
+                table1148.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 103
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1135, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1148, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1136 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1149 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1136.AddRow(new string[] {
+                table1149.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:01"});
 #line 112
- testRunner.When("I patch the following:", ((string)(null)), table1136, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1149, "When ");
 #line hidden
 #line 115
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1137 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1150 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1137.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1137.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1137.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1137.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:01"});
-                table1137.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1137.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1137.AddRow(new string[] {
+                table1150.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 116
- testRunner.And("the response body should contain:", ((string)(null)), table1137, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1150, "And ");
 #line hidden
 #line 126
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -559,74 +559,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1138 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1151 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1138.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1138.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1138.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1138.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1138.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1138.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1138.AddRow(new string[] {
+                table1151.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 131
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1138, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1151, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1139 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1152 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1139.AddRow(new string[] {
+                table1152.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-21T11:45:00Z"});
 #line 140
- testRunner.When("I patch the following:", ((string)(null)), table1139, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1152, "When ");
 #line hidden
 #line 143
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1140 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1153 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
-                table1140.AddRow(new string[] {
+                table1153.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-21T11:45:00Z"});
 #line 144
- testRunner.And("the response body should contain:", ((string)(null)), table1140, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1153, "And ");
 #line hidden
 #line 155
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -667,74 +667,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1141 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1154 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1141.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1141.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1141.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1141.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1141.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1141.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1141.AddRow(new string[] {
+                table1154.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 160
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1141, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1154, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1142 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1155 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1142.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T14:45:00Z"});
-                table1142.AddRow(new string[] {
+                table1155.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-21T11:45:00Z"});
 #line 169
- testRunner.When("I patch the following:", ((string)(null)), table1142, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1155, "When ");
 #line hidden
 #line 173
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1143 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1156 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1143.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1143.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1143.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T14:45:00Z"});
-                table1143.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1143.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1143.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
-                table1143.AddRow(new string[] {
+                table1156.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-21T11:45:00Z"});
 #line 174
- testRunner.And("the response body should contain:", ((string)(null)), table1143, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1156, "And ");
 #line hidden
 #line 185
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -775,71 +775,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1144 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1157 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1144.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1144.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1144.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1144.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1144.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1144.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1144.AddRow(new string[] {
+                table1157.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 190
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1144, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1157, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1145 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1158 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1145.AddRow(new string[] {
+                table1158.AddRow(new string[] {
                             "WebChatNarrative",
                             "updated text"});
 #line 199
- testRunner.When("I patch the following:", ((string)(null)), table1145, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1158, "When ");
 #line hidden
 #line 202
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1146 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1159 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1146.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1146.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1146.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1146.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1146.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "WebChatNarrative",
                             "updated text"});
-                table1146.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1146.AddRow(new string[] {
+                table1159.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 203
- testRunner.And("the response body should contain:", ((string)(null)), table1146, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1159, "And ");
 #line hidden
 #line 213
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -880,71 +880,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1147 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1160 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1147.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1147.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1147.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1147.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1147.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1147.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1147.AddRow(new string[] {
+                table1160.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 218
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1147, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1160, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1148 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1161 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1148.AddRow(new string[] {
+                table1161.AddRow(new string[] {
                             "SentToCustomer",
                             "false"});
 #line 227
- testRunner.When("I patch the following:", ((string)(null)), table1148, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1161, "When ");
 #line hidden
 #line 230
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1149 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1162 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1149.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1149.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1149.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1149.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1149.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1149.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "SentToCustomer",
                             "false"});
-                table1149.AddRow(new string[] {
+                table1162.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 231
- testRunner.And("the response body should contain:", ((string)(null)), table1149, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1162, "And ");
 #line hidden
 #line 241
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -985,71 +985,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1150 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1163 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1150.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1150.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1150.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1150.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1150.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1150.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1150.AddRow(new string[] {
+                table1163.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 246
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1150, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table1163, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1151 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1164 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1151.AddRow(new string[] {
+                table1164.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-21T13:45:00Z"});
 #line 255
- testRunner.When("I patch the following:", ((string)(null)), table1151, "When ");
+ testRunner.When("I patch the following:", ((string)(null)), table1164, "When ");
 #line hidden
 #line 258
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1152 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1165 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1152.AddRow(new string[] {
+                table1165.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table1152.AddRow(new string[] {
+                table1165.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table1152.AddRow(new string[] {
+                table1165.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table1152.AddRow(new string[] {
+                table1165.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table1152.AddRow(new string[] {
+                table1165.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table1152.AddRow(new string[] {
+                table1165.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table1152.AddRow(new string[] {
+                table1165.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-21T13:45:00Z"});
 #line 259
- testRunner.And("the response body should contain:", ((string)(null)), table1152, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1165, "And ");
 #line hidden
 #line 269
  testRunner.And("there should be a record in the dss-webchats table with WebchatId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

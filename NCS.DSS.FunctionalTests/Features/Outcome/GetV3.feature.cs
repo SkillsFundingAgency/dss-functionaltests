@@ -77,89 +77,89 @@ namespace NCS.DSS.FunctionalTests.Features.Outcome
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table1029 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1042 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1029.AddRow(new string[] {
+            table1042.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table1029.AddRow(new string[] {
+            table1042.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1029, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1042, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table1030 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1043 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1030.AddRow(new string[] {
+            table1043.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table1030.AddRow(new string[] {
+            table1043.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table1030, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table1043, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table1031 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1044 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1031.AddRow(new string[] {
+            table1044.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-25T11:21:00Z"});
-            table1031.AddRow(new string[] {
+            table1044.AddRow(new string[] {
                         "Channel",
                         "2"});
-            table1031.AddRow(new string[] {
+            table1044.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-            table1031.AddRow(new string[] {
+            table1044.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
 #line 12
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1031, "And ");
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1044, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table1032 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1045 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1032.AddRow(new string[] {
+            table1045.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "2018-06-21T14:45:00Z"});
-            table1032.AddRow(new string[] {
+            table1045.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
 #line 18
- testRunner.And("I post a session with the following details:", ((string)(null)), table1032, "And ");
+ testRunner.And("I post a session with the following details:", ((string)(null)), table1045, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table1033 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1046 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table1033.AddRow(new string[] {
+            table1046.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
 #line 22
- testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table1033, "And ");
+ testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table1046, "And ");
 #line hidden
         }
         
@@ -197,44 +197,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1034 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1047 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1034.AddRow(new string[] {
+                table1047.AddRow(new string[] {
                             "OutcomeType",
                             "3"});
-                table1034.AddRow(new string[] {
+                table1047.AddRow(new string[] {
                             "OutcomeClaimedDate",
                             "2018-07-20T21:45:00Z"});
-                table1034.AddRow(new string[] {
+                table1047.AddRow(new string[] {
                             "OutcomeEffectiveDate",
                             "2018-07-20T21:45:00Z"});
-                table1034.AddRow(new string[] {
+                table1047.AddRow(new string[] {
                             "IsPriorityCustomer",
                             "true"});
 #line 35
- testRunner.Given("I post an outcome with the following details V3:", ((string)(null)), table1034, "Given ");
+ testRunner.Given("I post an outcome with the following details V3:", ((string)(null)), table1047, "Given ");
 #line hidden
 #line 41
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1035 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1048 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1035.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "OutcomeType",
                             "3"});
-                table1035.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "OutcomeClaimedDate",
                             "2018-07-20T21:45:00Z"});
-                table1035.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "OutcomeEffectiveDate",
                             "2018-07-20T21:45:00Z"});
-                table1035.AddRow(new string[] {
+                table1048.AddRow(new string[] {
                             "IsPriorityCustomer",
                             "true"});
 #line 43
- testRunner.And("the response body should contain:", ((string)(null)), table1035, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1048, "And ");
 #line hidden
 #line 50
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -245,23 +245,23 @@ this.FeatureBackground();
 #line 52
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1036 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1049 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1036.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "OutcomeType",
                             "3"});
-                table1036.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "OutcomeClaimedDate",
                             "2018-07-20T21:45:00Z"});
-                table1036.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "OutcomeEffectiveDate",
                             "2018-07-20T21:45:00Z"});
-                table1036.AddRow(new string[] {
+                table1049.AddRow(new string[] {
                             "IsPriorityCustomer",
                             "true"});
 #line 53
- testRunner.And("the response body should contain:", ((string)(null)), table1036, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1049, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

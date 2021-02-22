@@ -1,7 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -72,6 +70,15 @@ namespace NCS.DSS.FunctionalTests.Steps
             di.CustomerId = customerId;
             await PatchDigitalIdentitByDigitalIdentityId(di, digitalIdentityId, "v2");
         }
+
+        [Given(@"I Delete a Digital Identity V2")]
+        public async Task GivenIDeleteADigitalIdentity()
+        {
+            var customerId = Guid.Empty;
+            if (_scenarioContext.ContainsKey("CustomerId"))
+                customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            await DeleteDigitalIdentityDetail(customerId, "v2");
+        }
         #endregion
 
         #region private methods for post/patch/get
@@ -104,7 +111,6 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             _response = await _httpHelper.Delete(string.Format(_settings.DIGITALIDENTITY_DELETE_BYCUSTOMERID_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
         }
-
         #endregion
     }
 }

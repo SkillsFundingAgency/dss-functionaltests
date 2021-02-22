@@ -6,14 +6,10 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Dynamic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
 
 namespace NCS.DSS.FunctionalTests.Steps
 {
@@ -197,6 +193,13 @@ namespace NCS.DSS.FunctionalTests.Steps
                 count = await _sqlHelper.RecordCount(table, val, recordCount);
             }
             Assert.That(count, Is.EqualTo(recordCount));
+        }
+
+        [Given("I wait for (.*) Seconds")]
+        public async Task IWaitForSeconds(int seconds)
+        {
+            var milliSeconds = seconds * 1000;
+            await Task.Delay(milliSeconds);
         }
 
         #region private scenario helpers
