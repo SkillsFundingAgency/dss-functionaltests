@@ -566,7 +566,8 @@ Scenario Outline: Patch Employment progression with valid values for EmployerNam
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -651,7 +652,8 @@ Scenario Outline: Patch Employment progression with valid values for EmployerAdd
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -741,7 +743,8 @@ Scenario Outline: Patch Employment progression with valid values for EmployerPos
 	And the response body should not contain the "CreatedBy"
 	#And the captured table data should include key "Longitude" with value "-1.50728"
 	#And the captured table data should include key "Latitude" with value "52.92878"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And the captured table data should include key "Longitude" with value "-1.50728"
 	#And the captured table data should include key "Latitude" with value "52.92878"
@@ -923,7 +926,8 @@ Scenario Outline: Patch Employment progression with valid values for DateOfEmplo
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
