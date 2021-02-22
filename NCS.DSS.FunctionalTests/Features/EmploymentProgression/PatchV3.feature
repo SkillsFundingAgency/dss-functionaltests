@@ -839,7 +839,8 @@ Scenario Outline: Patch Employment progression with valid values for EmploymentH
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -893,7 +894,8 @@ Scenario Outline: : Patch Employment progression with no value for EmploymentHou
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -975,7 +977,8 @@ Scenario Outline: Patch Employment progression with no value for DateOfEmploymen
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -1008,7 +1011,8 @@ Scenario Outline: Patch Employment progression with valid values for DateOfLastE
 		| EmploymentHours         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -1059,7 +1063,8 @@ Scenario Outline: Post Employment progression with no value for DateOfLastEmploy
 		| DateOfLastEmployment    |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -1091,7 +1096,8 @@ Scenario Outline: Patch Employment progression with valid values for LengthOfUne
 		| DateOfEmployment        | 2018-06-19T09:01:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -1151,7 +1157,8 @@ Scenario Outline: : Patch Employment progression with no value for LengthOfUnemp
 		| LengthOfUnemployment    |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -1231,7 +1238,8 @@ Scenario Outline: Patch Employment Progression with value for LastModifiedTouchp
 		| DateOfEmployment        | 2019-01-23T00:00:00Z |
 		| DateOfLastEmployment    | 2019-01-23T00:00:00Z |
 		| LengthOfUnemployment    | 1                    |
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 20 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
