@@ -71,7 +71,8 @@ Scenario: Post Valid Action with only mandatory Fields
 		| PersonResponsible             | 1                    |
 	#And the "actions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
 
 #And there should be a record in the actions-history ChangeFeed table
 @actions  @V2
@@ -87,8 +88,9 @@ Scenario: Change feed for Post Action
 		| PersonResponsible             | 1                    |
 	#		| LastModifiedDate              | 2018-07-30T09:00:00Z |
 	Then there should be a 201 response
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
 
-#And there should be a record in the actions ChangeFeed table
 #And there should be a record in the actions-history ChangeFeed table
 @actions @V2
 Scenario: Post Action with invalid interactionId

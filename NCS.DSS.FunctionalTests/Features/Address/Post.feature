@@ -37,7 +37,8 @@ Scenario:Post valid address
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 		| LastModifiedDate    | 2018-09-19T09:01:00Z |
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses

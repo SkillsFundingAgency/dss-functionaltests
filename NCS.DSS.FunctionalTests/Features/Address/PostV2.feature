@@ -39,7 +39,8 @@ Scenario:Post valid address
 		| LastModifiedDate    | 2018-09-19T09:01:00Z |
 	#And the "addresses" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses @subcontractorId
@@ -76,7 +77,8 @@ Scenario:Post valid address with Subcontractor Id
 	#And the response body should contain the SubContractorId
 	#   And the "addresses" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses
@@ -99,7 +101,8 @@ Scenario: Post Address with only mandatory Fields
 		| Latitude            |        |
 		| EffectiveFrom       |        |
 		| EffectiveTo         |        |
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses
@@ -131,7 +134,8 @@ Scenario: Post Address with maximum Field lengths
 		| EffectiveFrom       | 2018-06-19T09:01:00Z                                                                                 |
 		| EffectiveTo         | 2018-06-21T13:12:00Z                                                                                 |
 		| LastModifiedDate    | 2018-09-19T09:01:00Z                                                                                 |
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 10 Seconds|
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses
@@ -145,7 +149,8 @@ Scenario: Post Address
 		| Address1 | 1      |
 		| PostCode | NW11WN |
 	Then there should be a 201 response
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses
@@ -163,7 +168,8 @@ Scenario: Post Address with geocoding where postcode has no space
 		| field    | value  |
 		| Address1 | 1      |
 		| PostCode | nn12tx |
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses
@@ -181,7 +187,8 @@ Scenario: Post Address with geocoding where postcode has space
 		| field    | value   |
 		| Address1 | 1       |
 		| PostCode | nn1 2tx |
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses
@@ -197,7 +204,8 @@ Scenario: Post Address with postcode that maps incorrectly without the CountrySe
 		| PostCode  | S41 8SE  |
 		| Longitude | -1.43018 |
 		| Latitude  | 53.25289 |
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses
@@ -217,7 +225,8 @@ Scenario: Post Address with geocoding where postcode cannot be geocoded
 		| PostCode  | ze11 1ef |
 		| Longitude |          |
 		| Latitude  |          |
-	And there should be a record in the dss-addresses table with AddressId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses

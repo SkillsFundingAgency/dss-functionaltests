@@ -33,6 +33,7 @@ Scenario: Patch DateOfRegistration
 		| OptInMarketResearch        | false                |
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-customers table with CustomerId
 
 #And there should be a record in the customers-history ChangeFeed table

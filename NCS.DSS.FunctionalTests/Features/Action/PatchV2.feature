@@ -55,7 +55,7 @@ Scenario: Patch DateActionAimsToBeCompletedBy
 		| ActionStatus                  | 1                    |
 		| PersonResponsible             | 1                    |
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 20 Seconds
+	Given I wait for 10 Seconds
 	Then there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
 
 #And there should be a record in the actions-history ChangeFeed table

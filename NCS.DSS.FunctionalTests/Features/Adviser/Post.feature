@@ -13,7 +13,8 @@ Scenario: Create Valid Adviser
 		| AdviserName          | BillyAdviser   |
 		| AdviserEmailAddress  | billy@bill.com |
 		| AdviserContactNumber | 98798678967967 |
-	And there should be a record in the dss-adviserdetails table with AdviserDetailId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-adviserdetails table with AdviserDetailId
 
 #And there should be a record in the adviserDetails-history ChangeFeed table
 @adviserdetails

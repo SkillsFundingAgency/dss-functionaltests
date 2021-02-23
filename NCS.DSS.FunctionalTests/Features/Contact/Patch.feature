@@ -60,6 +60,7 @@ Scenario: Patch MobileNumber
 		| MobileNumber           | 07676 654321 |
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 07564656766  |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
@@ -81,6 +82,7 @@ Scenario: Patch HomeNumber
 		| MobileNumber           | 07676 123456 |
 		| HomeNumber             | 08654 654321 |
 		| AlternativeNumber      | 07564656766  |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
@@ -102,6 +104,7 @@ Scenario: Patch AlternativeNumber
 		| MobileNumber           | 07676 123456 |
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 08654 123458 |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
@@ -121,6 +124,7 @@ Scenario: Patch EmailAddress
 		| MobileNumber           | 07676 123456 |
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 07564656766  |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
@@ -156,5 +160,6 @@ Scenario: Patch new PreferredContactMethod - MobileNumber
 		| MobileNumber           | 07676 123456 |
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 07564656766  |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 #And there should be a record in the contacts-history ChangeFeed table

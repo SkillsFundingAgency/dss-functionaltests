@@ -23,6 +23,7 @@ Scenario:Post valid contact
 		| HomeNumber             | 08654 123456                 |
 		| AlternativeNumber      | 07564656766                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
@@ -39,6 +40,7 @@ Scenario: Post Valid ContactDetail one contact method
 		| PreferredContactMethod | 2                            |
 		| MobileNumber           | 07676 123456                 |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
@@ -59,6 +61,7 @@ Scenario: Post Valid ContactDetail with ten digit phone numbers
 		| HomeNumber             | 0125 455294                  |
 		| AlternativeNumber      | 01254 57611                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
@@ -70,6 +73,7 @@ Scenario: Post ContactDetail Mandatory PreferredContactMethod Field missing
 		| HomeNumber        | 08654 123456                 |
 		| AlternativeNumber | 07564656766                  |
 		| LastModifiedDate  | 2018-08-20T11:46:02.4482612Z |
+	Given I wait for 5 Seconds
 	Then there should be a 422 response
 
 #And the error message should be "The PreferredContactMethod Field is required."

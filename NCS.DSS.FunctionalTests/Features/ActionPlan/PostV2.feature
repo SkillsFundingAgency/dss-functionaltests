@@ -109,9 +109,9 @@ Scenario: Post Valid ActionPlan with only mandatory fields and SubcontractorId
 		| ActionPlanDeliveryMethod       |                      |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               |                      |
-	#And the response body should contain the SessionId
-	#And the response body should contain the SubContractorId
 
+#And the response body should contain the SessionId
+#And the response body should contain the SubContractorId
 @actionplans
 Scenario: Changed feed for Post ActionPlan
 	Given I post an adviser with the following details:
@@ -143,6 +143,7 @@ Scenario: Changed feed for Post ActionPlan
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 	Then there should be a 201 response
+	Given I wait for 10 Seconds
 
 #And there should be a record in the ActionPlans ChangeFeed table
 #And there should be a record in the ActionPlans-history ChangeFeed table

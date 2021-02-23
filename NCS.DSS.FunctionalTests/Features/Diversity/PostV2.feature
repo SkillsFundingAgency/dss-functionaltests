@@ -37,7 +37,8 @@ Scenario: Post Diversity with all values
 		| LastModifiedDate                          | 2018-08-25T11:21:00Z |
 	#And the "diversitydetails" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-diversitydetails table with DiversityId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-diversitydetails table with DiversityId
 
 #And there should be a record in the diversitydetails-history ChangeFeed table
 @diversitydetails

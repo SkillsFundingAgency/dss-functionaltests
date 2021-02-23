@@ -35,7 +35,8 @@ Scenario: Patch DateandTimeOfSession
 		| DateandTimeOfSession | 2018-06-22T14:45:00Z |
 		| VenuePostCode        | NN1 2NN              |
 		| SessionAttended      | true                 |
-	And there should be a record in the dss-sessions table with SessionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-sessions table with SessionId
 
 #And there should be 2 records in the dss-sessions-history table with SessionId
 @sessions

@@ -33,7 +33,8 @@ Scenario: Create a webchat with all valid values
 		| WebChatNarrative           | some text here       |
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -59,7 +60,8 @@ Scenario: Create a webchat supplying lastmodifieddate
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 		| LastModifiedDate           | 2018-07-19T12:45:00Z |
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -75,5 +77,6 @@ Scenario: Create a webchat with only mandatory values
 		| WebChatStartDateandTime | 2018-07-20T13:20:00Z |
 		| WebChatEndDateandTime   | 2018-07-20T13:45:00Z |
 		| WebChatNarrative        | some text here       |
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 #And there should be a record in the WebChats-history ChangeFeed table

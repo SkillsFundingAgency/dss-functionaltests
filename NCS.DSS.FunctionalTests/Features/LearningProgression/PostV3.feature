@@ -33,9 +33,8 @@ Scenario:Post learning progression with all values
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-
 
 @learningprogressions
 Scenario:Post learning progression with all mandatory values
@@ -56,8 +55,8 @@ Scenario:Post learning progression with all mandatory values
 		| LastLearningProvidersUKPRN     |                      |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-learningprogressions table with LearningProgressionId
-
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 
 	Examples:
 		| Field                   | Value                |
@@ -85,8 +84,8 @@ Scenario:Post learning progression supplying LastModifiedDate
 		| LastModifiedDate               | 2019-06-19T09:01:00Z |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-learningprogressions table with LearningProgressionId
-
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 
 	Examples:
 		| Field               | Value |

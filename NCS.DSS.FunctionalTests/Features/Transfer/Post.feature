@@ -28,5 +28,6 @@ Scenario: Post Transfer
 		| OriginatingTouchpointId | 9000000001        |
 		| TargetTouchpointId      | 9111111111        |
 		| Context                 | Some context text |
-	And there should be a record in the dss-transfers table with TransferId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-transfers table with TransferId
 #And there should be a record in the transfers-history ChangeFeed table

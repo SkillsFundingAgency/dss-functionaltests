@@ -25,7 +25,7 @@ Scenario: Post Valid Interaction with all Fields
 		| Channel                  | 2                    |
 		| InteractionType          | 2                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z |
-
+				Given I wait for 5 Seconds
 	And there should be a record in the dss-interactions table with InteractionId
 #And there should be a record in the interactions-history ChangeFeed table
 @interactions

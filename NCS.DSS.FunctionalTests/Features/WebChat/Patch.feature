@@ -36,8 +36,9 @@ Scenario: Patch DigitalReference
 		| WebChatNarrative           | some text here       |
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
+	Given I wait for 5 Seconds
 	#		And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -66,7 +67,8 @@ Scenario: Patch WebChatStartDateandTime
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 	#		And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -95,7 +97,8 @@ Scenario: Patch WebChatEndDateandTime
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 	#And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats @Ignore
@@ -123,7 +126,8 @@ Scenario: Patch WebChatDuration
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 	#And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -152,7 +156,8 @@ Scenario: Patch LastModifiedDate
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 		| LastModifiedDate           | 2018-08-21T11:45:00Z |
 	#		And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -182,7 +187,8 @@ Scenario: Patch LastModifiedDate and WebChatEndDateandTime
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 		| LastModifiedDate           | 2018-08-21T11:45:00Z |
 	#		And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -210,7 +216,8 @@ Scenario: Patch WebChatNarrative
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 	#	    And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -238,7 +245,8 @@ Scenario: Patch SentToCustomer
 		| SentToCustomer             | false                |
 		| DateandTimeSentToCustomers | 2018-07-20T13:45:00Z |
 	#		And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 
 #And there should be a record in the WebChats-history ChangeFeed table
 @webchats
@@ -266,7 +274,8 @@ Scenario: Patch DateandTimeSentToCustomers
 		| SentToCustomer             | true                 |
 		| DateandTimeSentToCustomers | 2018-07-21T13:45:00Z |
 	#		And the last updated time should be later than the request time
-	And there should be a record in the dss-webchats table with WebchatId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-webchats table with WebchatId
 #And there should be a record in the WebChats-history ChangeFeed table
 #@webchats
 #	Scenario: Patch webchat with a different touchpoint

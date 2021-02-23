@@ -43,7 +43,7 @@ Scenario:Patch Learning Progression with  all values
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -75,7 +75,7 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -195,7 +195,7 @@ Scenario Outline: Patch Learning Progression with CurrentLearningStatus
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -434,7 +434,7 @@ Scenario Outline: Patch Learning Progression with LearningHours
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -529,7 +529,7 @@ Scenario Outline: Patch Learning Progression with DateLearningStarted
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -617,7 +617,7 @@ Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -709,7 +709,7 @@ Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 		| LastLearningProvidersUKPRN | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -797,7 +797,7 @@ Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
@@ -893,8 +893,8 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
-	And there should be a record in the dss-learningprogressions table with LearningProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
 	
 
 	Examples:

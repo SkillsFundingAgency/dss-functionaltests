@@ -43,6 +43,7 @@ Scenario: Post Valid ActionPlan with all fields
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
+	Given I wait for 10 Seconds
 
 #And there should be a record in the ActionPlans ChangeFeed table
 #And there should be a record in the ActionPlans-history ChangeFeed table

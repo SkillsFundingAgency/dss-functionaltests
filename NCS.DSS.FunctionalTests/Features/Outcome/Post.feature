@@ -39,7 +39,8 @@ Scenario: Create an outcome with all valid values
 		| OutcomeType          | 3                    |
 		| OutcomeClaimedDate   | 2018-07-20T21:45:00Z |
 		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
-	And there should be a record in the dss-outcomes table with OutcomeId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-outcomes table with OutcomeId
 
 @outcomes
 Scenario: Create an outcome with missing OutcomeType
@@ -69,6 +70,7 @@ Scenario: Create an outcome with missing OutcomeClaimedDate
 		| Field                | Value                |
 		| OutcomeType          | 2                    |
 		| OutcomeEffectiveDate | 2018-07-20T21:45:00Z |
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-outcomes table with OutcomeId
 
 @outcomes

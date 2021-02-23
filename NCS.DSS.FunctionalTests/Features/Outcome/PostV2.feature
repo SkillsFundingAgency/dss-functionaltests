@@ -41,8 +41,8 @@ Scenario: Create an outcome with minimum valid values
 		| Field       | Value |
 		| OutcomeType | 3     |
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-outcomes table with OutcomeId
-
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-outcomes table with OutcomeId
 
 @outcomes	@subcontractorId
 Scenario: Create an outcome with all valid values
@@ -62,8 +62,8 @@ Scenario: Create an outcome with all valid values
 		| ClaimedPriorityGroup | 5                    |
 	And the response body should contain the SubContractorId
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-outcomes table with OutcomeId
-
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-outcomes table with OutcomeId
 
 @outcomes
 Scenario: Create an outcome with invalid OutcomeType

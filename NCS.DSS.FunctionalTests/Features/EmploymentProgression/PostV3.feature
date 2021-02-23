@@ -41,7 +41,8 @@ Scenario:Post employment progression with all values
 		| LengthOfUnemployment    | 1                    |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 10 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 @employmentprogressions
@@ -59,7 +60,8 @@ Scenario:Post employment progression with mandatory values
 		| EconomicShockStatus     | 1                    |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 @employmentprogressions
@@ -76,7 +78,8 @@ Scenario Outline: Post Employment progression with valid values for DateProgress
 	#And the response body value for DateProgressionRecorded should match the last request
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -146,7 +149,8 @@ Scenario Outline: Post Employment progression with valid values for CurrentEmplo
 		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -241,7 +245,8 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -271,7 +276,8 @@ Scenario Outline: Post Employment progression with valid values for EconomicShoc
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -331,7 +337,8 @@ Scenario Outline: Post Employment progression with no value for EconomicShockCod
 		| EconomicShockCode       | Some Text            |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -360,7 +367,8 @@ Scenario Outline: Post Employment progression with valid values for EmployerName
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -428,7 +436,8 @@ Scenario Outline: Post Employment progression with valid values for EmployerAddr
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -472,7 +481,8 @@ Scenario: Post Employment progression with no value for EmployerAddress
 		| EmployerAddress         |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 #############################################################################################################
@@ -496,8 +506,9 @@ Scenario Outline: Post Employment progression with valid values for EmployerPost
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table Ignoring '' with EmploymentProgressionId
 
-	And there should be a record in the dss-employmentprogressions table Ignoring '' with EmploymentProgressionId
 	#And the captured table data should include key "Longitude" with value "-1.50728"
 	#And the captured table data should include key "Latitude" with value "52.92878"
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
@@ -544,7 +555,8 @@ Scenario: Post Employment progression with no value for EmployerPostcode
 		| EmployerPostcode        |                      |
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 @employmentprogressions
@@ -563,7 +575,8 @@ Scenario Outline: Post Employment progression with valid values for EmploymentHo
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -633,6 +646,7 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
@@ -664,7 +678,8 @@ Scenario Outline: Post Employment progression with valid values for DateOfEmploy
 	#And the response body value for DateOfLastEmployment should match the last request
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -709,7 +724,8 @@ Scenario Outline: Post Employment progression with no value for DateOfEmployment
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -761,7 +777,8 @@ Scenario Outline: Post Employment progression with valid values for DateOfLastEm
 	#And the response body value for DateOfLastEmployment should match the last request
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -807,7 +824,8 @@ Scenario Outline: Post Employment progression with valid values for LengthOfUnem
 	And the response body should have <Field> with value <Value>
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:

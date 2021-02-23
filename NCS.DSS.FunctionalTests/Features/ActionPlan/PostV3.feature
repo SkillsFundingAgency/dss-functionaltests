@@ -45,8 +45,9 @@ Scenario: Post Valid ActionPlan with all fields
 		| CurrentSituation               | looking for work     |
 	#And the response body should contain the SessionId
 	And the response body should not contain the "CreatedBy"
-
+	Given I wait for 10 Seconds
 	And there should be a record in the dss-actionplans table with ActionPlanId
+
 #And there should be a record in the ActionPlans-history ChangeFeed table
 @actionplans	@subcontractorId
 Scenario: Post Valid ActionPlan with all fields and SubContractorId
@@ -121,6 +122,7 @@ Scenario: Changed feed for Post ActionPlan
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 	Then there should be a 201 response
+	Given I wait for 10 Seconds
 
 #And there should be a record in the ActionPlans ChangeFeed table
 #And there should be a record in the ActionPlans-history ChangeFeed table

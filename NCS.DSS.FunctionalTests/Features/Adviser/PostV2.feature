@@ -40,7 +40,8 @@ Scenario: Change feed for Post Adviser
 		| AdviserName         | BillyAdviser   |
 		| AdviserEmailAddress | billy@bill.com |
 	Then there should be a 201 response
-	And there should be a record in the dss-adviserdetails table with AdviserDetailId
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-adviserdetails table with AdviserDetailId
 	#And there should be a record in the adviserDetails-history ChangeFeed table
 	#And the "adviserdetails" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
