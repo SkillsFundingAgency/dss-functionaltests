@@ -23,6 +23,15 @@ namespace NCS.DSS.FunctionalTests.Steps
                 DeleteRowFromSql("dss-addresses", "id", _scenarioContext["AddressId"] as string);
         }
 
+        [When(@"I patch the following Address:")]
+        public async Task WhenPatchTheFollowingAddress(Table table)
+        {
+            var address = table.CreateInstance<Address>();
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var addressId = Guid.Parse(_scenarioContext["AddressId"] as string);
+            await PatchAddress(address, customerId, addressId, "");
+        }
+
         [When(@"I get an Address by ID")]
         public async Task WhenIGetAAddressByID()
         {
@@ -43,6 +52,15 @@ namespace NCS.DSS.FunctionalTests.Steps
 
             if (_response.IsSuccessStatusCode)
                 DeleteRowFromSql("dss-addresses", "id", _scenarioContext["AddressId"] as string);
+        }
+
+        [When(@"I patch the following Address V2:")]
+        public async Task WhenPatchTheFollowingAddressV2(Table table)
+        {
+            var address = table.CreateInstance<AddressV2>();
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var addressId = Guid.Parse(_scenarioContext["AddressId"] as string);
+            await PatchAddress(address, customerId, addressId, "v2");
         }
 
         [When(@"I get an Address by ID V2")]

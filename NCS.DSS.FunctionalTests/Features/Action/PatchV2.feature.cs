@@ -267,7 +267,7 @@ this.FeatureBackground();
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 58
- testRunner.Given("I wait for 20 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 59
  testRunner.Then("there should be a record in the dss-actions table Ignoring \'SignpostedToCategory," +

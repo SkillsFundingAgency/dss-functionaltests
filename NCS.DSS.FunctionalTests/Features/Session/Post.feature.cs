@@ -77,47 +77,47 @@ namespace NCS.DSS.FunctionalTests.Features.Session
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table1100 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1178 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1100.AddRow(new string[] {
+            table1178.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table1100.AddRow(new string[] {
+            table1178.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1100, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1178, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table1101 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1179 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1101.AddRow(new string[] {
+            table1179.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table1101.AddRow(new string[] {
+            table1179.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table1101, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table1179, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table1102 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1180 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table1102.AddRow(new string[] {
+            table1180.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-25T11:21:00Z"});
-            table1102.AddRow(new string[] {
+            table1180.AddRow(new string[] {
                         "Channel",
                         "2"});
-            table1102.AddRow(new string[] {
+            table1180.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-            table1102.AddRow(new string[] {
+            table1180.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
 #line 12
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1102, "And ");
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table1180, "And ");
 #line hidden
         }
         
@@ -155,41 +155,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1103 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1181 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1103.AddRow(new string[] {
+                table1181.AddRow(new string[] {
                             "DateandTimeOfSession",
                             "2018-06-21T14:45:00Z"});
-                table1103.AddRow(new string[] {
+                table1181.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1 2NN"});
 #line 21
- testRunner.Given("I post a session with the following details:", ((string)(null)), table1103, "Given ");
+ testRunner.Given("I post a session with the following details:", ((string)(null)), table1181, "Given ");
 #line hidden
 #line 25
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table1104 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1182 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1104.AddRow(new string[] {
+                table1182.AddRow(new string[] {
                             "DateandTimeOfSession",
                             "2018-06-21T14:45:00Z"});
-                table1104.AddRow(new string[] {
+                table1182.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1 2NN"});
-                table1104.AddRow(new string[] {
+                table1182.AddRow(new string[] {
                             "SessionAttended",
                             ""});
-                table1104.AddRow(new string[] {
+                table1182.AddRow(new string[] {
                             "ReasonForNonAttendance",
                             "99"});
 #line 26
- testRunner.And("the response body should contain:", ((string)(null)), table1104, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1182, "And ");
 #line hidden
 #line 32
- testRunner.And("there should be a record in the dss-sessions table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 33
+ testRunner.Then("there should be a record in the dss-sessions table with SessionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -206,7 +209,7 @@ this.FeatureBackground();
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for date and time of" +
                     " session", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 36
+#line 37
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -229,19 +232,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1105 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1183 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1105.AddRow(new string[] {
+                table1183.AddRow(new string[] {
                             "DateandTimeOfSession",
                             "21-065-2012"});
-                table1105.AddRow(new string[] {
+                table1183.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1 2NN"});
-#line 37
- testRunner.Given("I post a session with the following details:", ((string)(null)), table1105, "Given ");
+#line 38
+ testRunner.Given("I post a session with the following details:", ((string)(null)), table1183, "Given ");
 #line hidden
-#line 41
+#line 42
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -257,7 +260,7 @@ this.FeatureBackground();
                     "sessions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a Session for existing customer with incorrect format for venue post code", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 44
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -280,19 +283,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table1106 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1184 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table1106.AddRow(new string[] {
+                table1184.AddRow(new string[] {
                             "DateandTimeOfSession",
                             "21-06-2018"});
-                table1106.AddRow(new string[] {
+                table1184.AddRow(new string[] {
                             "VenuePostCode",
                             "NN1"});
-#line 45
- testRunner.Given("I post a session with the following details:", ((string)(null)), table1106, "Given ");
+#line 46
+ testRunner.Given("I post a session with the following details:", ((string)(null)), table1184, "Given ");
 #line hidden
-#line 49
+#line 50
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

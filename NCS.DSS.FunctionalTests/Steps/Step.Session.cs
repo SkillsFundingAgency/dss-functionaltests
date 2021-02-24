@@ -25,22 +25,14 @@ namespace NCS.DSS.FunctionalTests.Steps
             }
         }
 
-        //[Given(@"I post a customer with the given name '(.*)'")]
-        //public async Task GivenIPostACustomerWithTheGivenName(string givenName)
-        //{
-        //    var customer = new Customer();
-        //    customer.GivenName = givenName;
-        //    customer.FamilyName = "Smith";
-        //    await PostCustomer(customer, "");
-        //    _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
-        //}
-
-        //[When(@"I get a Customer by ID")]
-        //public async Task WhenIGetACustomerByID()
-        //{
-        //    var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-        //    await GetByCustomerId(customerId, "");
-        //}
+        [When(@"I get a Session by ID")]
+        public async Task WhenIGetASessionById()
+        {
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
+            var sessionId = Guid.Parse(_scenarioContext["SessionId"] as string);
+            await GetBySessionId(customerId, interactionId, sessionId, "");
+        }
 
         [When(@"I patch the following Session:")]
         public async Task WhenPatchTheFollowingSession(Table table)
@@ -54,6 +46,15 @@ namespace NCS.DSS.FunctionalTests.Steps
         #endregion
 
         #region v2
+        [When(@"I get a Session by ID V2")]
+        public async Task WhenIGetASessionByIdV2()
+        {
+            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
+            var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
+            var sessionId = Guid.Parse(_scenarioContext["SessionId"] as string);
+            await GetBySessionId(customerId, interactionId, sessionId, "v2");
+        }
+        
         [Given(@"I post a session with the following details V2:")]
         public async Task GivenIPostASessionWithTheFollowingDetailsV2(Table table)
         {

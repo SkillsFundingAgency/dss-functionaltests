@@ -230,6 +230,9 @@ this.FeatureBackground();
 #line 36
  testRunner.And("the response body should contain:", ((string)(null)), table128, "And ");
 #line hidden
+#line 46
+ testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -243,7 +246,7 @@ this.FeatureBackground();
                     "actionplans"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid ActionPlan with only mandatory fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 50
+#line 51
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -278,10 +281,10 @@ this.FeatureBackground();
                 table129.AddRow(new string[] {
                             "PriorityCustomer",
                             "1"});
-#line 51
+#line 52
  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table129, "Given ");
 #line hidden
-#line 56
+#line 57
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
@@ -302,7 +305,7 @@ this.FeatureBackground();
                 table130.AddRow(new string[] {
                             "CurrentSituation",
                             ""});
-#line 57
+#line 58
  testRunner.And("the response body should contain:", ((string)(null)), table130, "And ");
 #line hidden
             }
@@ -318,7 +321,7 @@ this.FeatureBackground();
                     "actionplans"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with missing DateActionPlanCreated", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 66
+#line 67
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -365,10 +368,10 @@ this.FeatureBackground();
                 table131.AddRow(new string[] {
                             "CurrentSituation",
                             "looking for work"});
-#line 67
+#line 68
  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table131, "Given ");
 #line hidden
-#line 76
+#line 77
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -384,7 +387,7 @@ this.FeatureBackground();
                     "actionplans"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post ActionPlan with invalid DateActionPlanCreated", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 79
+#line 80
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -434,10 +437,10 @@ this.FeatureBackground();
                 table132.AddRow(new string[] {
                             "CurrentSituation",
                             "looking for work"});
-#line 80
+#line 81
  testRunner.Given("I post an ActionPlan with the following details:", ((string)(null)), table132, "Given ");
 #line hidden
-#line 90
+#line 91
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -104,59 +104,59 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table453 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table521 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "Title",
                             "1"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table453.AddRow(new string[] {
+                table521.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
 #line 5
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table453, "Given ");
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table521, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table454 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table522 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table454.AddRow(new string[] {
+                table522.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-28T16:11:00Z"});
 #line 20
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table454, "When ");
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table522, "When ");
 #line hidden
 #line 23
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -164,47 +164,47 @@ this.ScenarioInitialize(scenarioInfo);
 #line 24
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table455 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table523 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-28T16:11:00Z"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "Title",
                             "1"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table455.AddRow(new string[] {
+                table523.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
 #line 25
- testRunner.And("the response body should contain:", ((string)(null)), table455, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table523, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -239,59 +239,59 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table456 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table524 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "Title",
                             "1"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table456.AddRow(new string[] {
+                table524.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
 #line 42
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table456, "Given ");
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table524, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table457 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table525 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table457.AddRow(new string[] {
+                table525.AddRow(new string[] {
                             "Title",
                             "2"});
 #line 57
- testRunner.When("I patch the following Customer With a different touchpoint V3:", ((string)(null)), table457, "When ");
+ testRunner.When("I patch the following Customer With a different touchpoint V3:", ((string)(null)), table525, "When ");
 #line hidden
 #line 60
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -299,51 +299,54 @@ this.ScenarioInitialize(scenarioInfo);
 #line 61
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table458 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table526 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "Title",
                             "2"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table458.AddRow(new string[] {
+                table526.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
 #line 63
- testRunner.And("the response body should contain:", ((string)(null)), table458, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table526, "And ");
 #line hidden
 #line 77
- testRunner.And("there should be a record in the dss-customers table Ignoring \'PriorityGroups\' wit" +
-                        "h CustomerId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 78
+ testRunner.Then("there should be a record in the dss-customers table Ignoring \'PriorityGroups\' wit" +
+                        "h CustomerId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -358,7 +361,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch GivenName", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 81
+#line 82
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -378,104 +381,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table459 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table527 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "Title",
                             "1"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table459.AddRow(new string[] {
+                table527.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 82
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table459, "Given ");
+#line 83
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table527, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table460 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table528 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table460.AddRow(new string[] {
+                table528.AddRow(new string[] {
                             "GivenName",
                             "Bill"});
-#line 97
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table460, "When ");
+#line 98
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table528, "When ");
 #line hidden
-#line 100
+#line 101
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table461 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table529 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "Title",
                             "1"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "GivenName",
                             "Bill"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table461.AddRow(new string[] {
+                table529.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 101
- testRunner.And("the response body should contain:", ((string)(null)), table461, "And ");
+#line 102
+ testRunner.And("the response body should contain:", ((string)(null)), table529, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -490,7 +493,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch FamilyName", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 117
+#line 118
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -510,104 +513,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table462 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table530 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "Title",
                             "1"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table462.AddRow(new string[] {
+                table530.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 118
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table462, "Given ");
+#line 119
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table530, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table463 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table531 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table463.AddRow(new string[] {
+                table531.AddRow(new string[] {
                             "FamilyName",
                             "Update"});
-#line 133
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table463, "When ");
+#line 134
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table531, "When ");
 #line hidden
-#line 136
+#line 137
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table464 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table532 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "Title",
                             "1"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "FamilyName",
                             "Update"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table464.AddRow(new string[] {
+                table532.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 137
- testRunner.And("the response body should contain:", ((string)(null)), table464, "And ");
+#line 138
+ testRunner.And("the response body should contain:", ((string)(null)), table532, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -622,7 +625,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateofBirth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 153
+#line 154
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -642,104 +645,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table465 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table533 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "Title",
                             "1"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table465.AddRow(new string[] {
+                table533.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 154
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table465, "Given ");
+#line 155
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table533, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table466 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table534 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table466.AddRow(new string[] {
+                table534.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-27T13:45:00Z"});
-#line 169
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table466, "When ");
+#line 170
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table534, "When ");
 #line hidden
-#line 172
+#line 173
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table467 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table535 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "Title",
                             "1"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-27T13:45:00Z"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table467.AddRow(new string[] {
+                table535.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 173
- testRunner.And("the response body should contain:", ((string)(null)), table467, "And ");
+#line 174
+ testRunner.And("the response body should contain:", ((string)(null)), table535, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -754,7 +757,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Gender", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 189
+#line 190
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -774,104 +777,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table468 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table536 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "Title",
                             "1"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table468.AddRow(new string[] {
+                table536.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 190
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table468, "Given ");
+#line 191
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table536, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table469 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table537 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table469.AddRow(new string[] {
+                table537.AddRow(new string[] {
                             "Gender",
                             "2"});
-#line 205
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table469, "When ");
+#line 206
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table537, "When ");
 #line hidden
-#line 208
+#line 209
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table470 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table538 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "Title",
                             "1"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "Gender",
                             "2"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table470.AddRow(new string[] {
+                table538.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 209
- testRunner.And("the response body should contain:", ((string)(null)), table470, "And ");
+#line 210
+ testRunner.And("the response body should contain:", ((string)(null)), table538, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -886,7 +889,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch UniqueLearnerNumber", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 225
+#line 226
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -906,104 +909,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table471 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table539 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "Title",
                             "1"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table471.AddRow(new string[] {
+                table539.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 226
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table471, "Given ");
+#line 227
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table539, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table472 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table540 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table472.AddRow(new string[] {
+                table540.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543211"});
-#line 241
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table472, "When ");
+#line 242
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table540, "When ");
 #line hidden
-#line 244
+#line 245
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table473 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table541 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "Title",
                             "1"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543211"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table473.AddRow(new string[] {
+                table541.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 245
- testRunner.And("the response body should contain:", ((string)(null)), table473, "And ");
+#line 246
+ testRunner.And("the response body should contain:", ((string)(null)), table541, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1018,7 +1021,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInUserResearch", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 261
+#line 262
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1038,104 +1041,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table474 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table542 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "Title",
                             "1"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table474.AddRow(new string[] {
+                table542.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 262
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table474, "Given ");
+#line 263
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table542, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table475 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table543 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table475.AddRow(new string[] {
+                table543.AddRow(new string[] {
                             "OptInUserResearch",
                             "false"});
-#line 277
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table475, "When ");
+#line 278
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table543, "When ");
 #line hidden
-#line 280
+#line 281
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table476 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table544 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "Title",
                             "1"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "OptInUserResearch",
                             "false"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table476.AddRow(new string[] {
+                table544.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 281
- testRunner.And("the response body should contain:", ((string)(null)), table476, "And ");
+#line 282
+ testRunner.And("the response body should contain:", ((string)(null)), table544, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1150,7 +1153,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch OptInMarketResearch", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 297
+#line 298
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1170,104 +1173,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table477 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table545 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "Title",
                             "1"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table477.AddRow(new string[] {
+                table545.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 298
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table477, "Given ");
+#line 299
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table545, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table478 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table546 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table478.AddRow(new string[] {
+                table546.AddRow(new string[] {
                             "OptInMarketResearch",
                             "true"});
-#line 313
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table478, "When ");
+#line 314
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table546, "When ");
 #line hidden
-#line 316
+#line 317
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table479 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table547 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "Title",
                             "1"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "OptInMarketResearch",
                             "true"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table479.AddRow(new string[] {
+                table547.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 317
- testRunner.And("the response body should contain:", ((string)(null)), table479, "And ");
+#line 318
+ testRunner.And("the response body should contain:", ((string)(null)), table547, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1282,7 +1285,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateOfTermination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 333
+#line 334
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1302,104 +1305,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table480 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table548 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "Title",
                             "1"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table480.AddRow(new string[] {
+                table548.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 334
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table480, "Given ");
+#line 335
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table548, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table481 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table549 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table481.AddRow(new string[] {
+                table549.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-08-27T14:45:00Z"});
-#line 349
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table481, "When ");
+#line 350
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table549, "When ");
 #line hidden
-#line 352
+#line 353
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table482 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table550 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "Title",
                             "1"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table482.AddRow(new string[] {
+                table550.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 353
- testRunner.And("the response body should contain:", ((string)(null)), table482, "And ");
+#line 354
+ testRunner.And("the response body should contain:", ((string)(null)), table550, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1414,7 +1417,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch ReasonForTermination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 369
+#line 370
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1434,113 +1437,113 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table483 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table551 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "Title",
                             "1"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table483.AddRow(new string[] {
+                table551.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 370
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table483, "Given ");
+#line 371
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table551, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table484 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table552 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table484.AddRow(new string[] {
+                table552.AddRow(new string[] {
                             "ReasonForTermination",
                             "2"});
-                table484.AddRow(new string[] {
+                table552.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-07-27T16:11:00Z"});
-#line 385
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table484, "When ");
+#line 386
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table552, "When ");
 #line hidden
-#line 389
+#line 390
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table485 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table553 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "Title",
                             "1"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "ReasonForTermination",
                             "2"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-07-27T16:11:00Z"});
-                table485.AddRow(new string[] {
+                table553.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 390
- testRunner.And("the response body should contain:", ((string)(null)), table485, "And ");
+#line 391
+ testRunner.And("the response body should contain:", ((string)(null)), table553, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1555,7 +1558,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedBy", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 408
+#line 409
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1575,104 +1578,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table486 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table554 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "Title",
                             "1"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table486.AddRow(new string[] {
+                table554.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 409
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table486, "Given ");
+#line 410
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table554, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table487 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table555 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table487.AddRow(new string[] {
+                table555.AddRow(new string[] {
                             "IntroducedBy",
                             "2"});
-#line 424
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table487, "When ");
+#line 425
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table555, "When ");
 #line hidden
-#line 427
+#line 428
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table488 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table556 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "Title",
                             "1"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "IntroducedBy",
                             "2"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table488.AddRow(new string[] {
+                table556.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 428
- testRunner.And("the response body should contain:", ((string)(null)), table488, "And ");
+#line 429
+ testRunner.And("the response body should contain:", ((string)(null)), table556, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1687,7 +1690,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch IntroducedByAdditionalInfo", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 444
+#line 445
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1707,104 +1710,104 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table489 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table557 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "Title",
                             "1"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table489.AddRow(new string[] {
+                table557.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 445
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table489, "Given ");
+#line 446
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table557, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table490 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table558 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table490.AddRow(new string[] {
+                table558.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "updated info"});
-#line 460
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table490, "When ");
+#line 461
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table558, "When ");
 #line hidden
-#line 463
+#line 464
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table491 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table559 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "Title",
                             "1"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "updated info"});
-                table491.AddRow(new string[] {
+                table559.AddRow(new string[] {
                             "PriorityGroups",
                             "[1,3]"});
-#line 464
- testRunner.And("the response body should contain:", ((string)(null)), table491, "And ");
+#line 465
+ testRunner.And("the response body should contain:", ((string)(null)), table559, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1819,7 +1822,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "customers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch With Existing DateOfTermination", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 480
+#line 481
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1839,67 +1842,67 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table492 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table560 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "Title",
                             "1"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-07-27T14:45:00Z"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "ReasonForTermination",
                             "1"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
-                table492.AddRow(new string[] {
+                table560.AddRow(new string[] {
                             "PriorityGroups",
                             "1,3"});
-#line 481
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table492, "Given ");
+#line 482
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table560, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table493 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table561 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table493.AddRow(new string[] {
+                table561.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "updated info"});
-#line 498
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table493, "When ");
+#line 499
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table561, "When ");
 #line hidden
-#line 501
+#line 502
  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

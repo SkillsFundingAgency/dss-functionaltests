@@ -104,38 +104,38 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table310 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table378 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table310.AddRow(new string[] {
+                table378.AddRow(new string[] {
                             "AdviserName",
                             "BillyAdviser"});
-                table310.AddRow(new string[] {
+                table378.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
-                table310.AddRow(new string[] {
+                table378.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
 #line 5
- testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table310, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table378, "Given ");
 #line hidden
 #line 10
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table311 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table379 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table311.AddRow(new string[] {
+                table379.AddRow(new string[] {
                             "AdviserName",
                             "BillyAdviser"});
-                table311.AddRow(new string[] {
+                table379.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
-                table311.AddRow(new string[] {
+                table379.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
 #line 11
- testRunner.And("the response body should contain:", ((string)(null)), table311, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table379, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -172,38 +172,38 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table312 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table380 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table312.AddRow(new string[] {
+                table380.AddRow(new string[] {
                             "AdviserName",
                             "BillyAdviser"});
-                table312.AddRow(new string[] {
+                table380.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
-                table312.AddRow(new string[] {
+                table380.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
 #line 21
- testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table312, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table380, "Given ");
 #line hidden
 #line 26
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table313 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table381 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table313.AddRow(new string[] {
+                table381.AddRow(new string[] {
                             "AdviserName",
                             "BillyAdviser"});
-                table313.AddRow(new string[] {
+                table381.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
-                table313.AddRow(new string[] {
+                table381.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
 #line 27
- testRunner.And("the response body should contain:", ((string)(null)), table313, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table381, "And ");
 #line hidden
 #line 34
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -241,25 +241,28 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table314 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table382 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table314.AddRow(new string[] {
+                table382.AddRow(new string[] {
                             "AdviserName",
                             "BillyAdviser"});
-                table314.AddRow(new string[] {
+                table382.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
 #line 38
- testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table314, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table382, "Given ");
 #line hidden
 #line 42
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 43
- testRunner.And("there should be a record in the dss-adviserdetails table with AdviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 46
+#line 44
+ testRunner.Then("there should be a record in the dss-adviserdetails table with AdviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 47
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -275,7 +278,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "adviserdetails"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 49
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -295,19 +298,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table315 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table383 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table315.AddRow(new string[] {
+                table383.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
-                table315.AddRow(new string[] {
+                table383.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 50
- testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table315, "Given ");
+#line 51
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table383, "Given ");
 #line hidden
-#line 54
+#line 55
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

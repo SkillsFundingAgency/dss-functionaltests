@@ -77,20 +77,20 @@ namespace NCS.DSS.FunctionalTests.Features.Adviser
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table283 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table351 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table283.AddRow(new string[] {
+            table351.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table283.AddRow(new string[] {
+            table351.AddRow(new string[] {
                         "AdviserEmailAddress",
                         "billy@bill.com"});
-            table283.AddRow(new string[] {
+            table351.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table283, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table351, "Given ");
 #line hidden
         }
         
@@ -134,20 +134,20 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table284 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table352 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table284.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "AdviserName",
                             "BillyAdviser"});
-                table284.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
-                table284.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
 #line 14
- testRunner.And("the response body should contain:", ((string)(null)), table284, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table352, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
