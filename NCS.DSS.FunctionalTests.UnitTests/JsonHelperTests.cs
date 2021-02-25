@@ -159,7 +159,6 @@ namespace NCS.DSS.FunctionalTests.UnitTests
         public void JsonContains_TargetAndSourceJsonNull_ReturnsFalse()
         {
             // Arrange
-            var json = @"{ ActionId: 1, Name: ""Testing"" }";
 
             // Act
             var value = JsonHelper.JsonContains(null, null, null);

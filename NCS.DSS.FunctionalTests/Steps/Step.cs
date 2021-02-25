@@ -23,6 +23,9 @@ namespace NCS.DSS.FunctionalTests.Steps
         private readonly HttpHelper _httpHelper;
         private readonly HttpResponseHelper _assertionHelper;
         private readonly SqlHelper _sqlHelper;
+        private readonly CosmosHelper _cosmosHelper;
+
+        private string _cosmosDocument;
 
         public Step(
             ScenarioContext scenarioContext,
@@ -30,7 +33,8 @@ namespace NCS.DSS.FunctionalTests.Steps
             HttpHelper httphelper,
             EnvironmentSettings settings,
             HttpResponseHelper assertHelper,
-            SqlHelper sqlhelper)
+            SqlHelper sqlhelper,
+            CosmosHelper cosmosHelper)
         {
             _scenarioContext = scenarioContext;
             _featureContext = featureContext;
@@ -38,6 +42,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             _httpHelper = httphelper;
             _assertionHelper = assertHelper;
             _sqlHelper = sqlhelper;
+            _cosmosHelper = cosmosHelper;
         }
 
         [Then(@"there should be a (.*) response")]
@@ -92,6 +97,12 @@ namespace NCS.DSS.FunctionalTests.Steps
         public void GivenIAddAPropertyToScenarioContext(string propName, string propValue)
         {
             _scenarioContext.Add(propName, propValue);
+        }
+
+        [Given(@"I fetch a (.*) cosmos document from (.*) database using key (.*)")]
+        public void GivenIFetchACosmosDocumentFrom(string collectionName, string databaseName, string id)
+        {
+            _cosmosDocument = _cosmosHelper.RetrieveDocument(databaseName, collectionName, id);
         }
 
         /// <summary>
