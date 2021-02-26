@@ -40,12 +40,6 @@ namespace NCS.DSS.FunctionalTests.Hooks
                 }
             }
         }
-
-        [AfterScenario]
-        public static async Task AfterEachScenario(EnvironmentSettings settings)
-        {
-            //Investigate putting an artificial delay between each scenario, because cos
-        }
     }
 
 

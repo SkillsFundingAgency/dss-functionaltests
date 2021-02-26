@@ -92,6 +92,9 @@ namespace NCS.DSS.FunctionalTests
         public string DIVERSITYDETAIL_GET_URL => BaseUrl + "diversitydetails/api/Customers/{0}/DiversityDetails";
         public string DIVERSITYDETAIL_PATCH_URL => BaseUrl + "diversitydetails/api/Customers/{0}/DiversityDetails/{1}";
 
+        public string GOAL_POST_URL => BaseUrl + "goals/api/Customers/{0}/Interactions/{1}/actionplans/{2}/Goals";
+        public string GOAL_GET_URL => BaseUrl + "goals/api/Customers/{0}/Interactions/{1}/actionplans/{2}/Goals/{3}";
+        public string GOAL_PATCH_URL => BaseUrl + "goals/api/Customers/{0}/Interactions/{1}/actionplans/{2}/Goals/{3}";
     }
 }
 

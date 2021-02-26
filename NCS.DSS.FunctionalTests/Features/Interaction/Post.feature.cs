@@ -77,29 +77,29 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table962 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1036 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table962.AddRow(new string[] {
+            table1036.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table962.AddRow(new string[] {
+            table1036.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table962, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table1036, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table963 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1037 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table963.AddRow(new string[] {
+            table1037.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table963.AddRow(new string[] {
+            table1037.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table963, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table1037, "And ");
 #line hidden
         }
         
@@ -137,44 +137,44 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table964 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1038 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table964.AddRow(new string[] {
+                table1038.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table964.AddRow(new string[] {
+                table1038.AddRow(new string[] {
                             "Channel",
                             "2"});
-                table964.AddRow(new string[] {
+                table1038.AddRow(new string[] {
                             "InteractionType",
                             "2"});
-                table964.AddRow(new string[] {
+                table1038.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 15
- testRunner.Given("I post a Valid Interaction with the following details:", ((string)(null)), table964, "Given ");
+ testRunner.Given("I post a Valid Interaction with the following details:", ((string)(null)), table1038, "Given ");
 #line hidden
 #line 21
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table965 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1039 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table965.AddRow(new string[] {
+                table1039.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table965.AddRow(new string[] {
+                table1039.AddRow(new string[] {
                             "Channel",
                             "2"});
-                table965.AddRow(new string[] {
+                table1039.AddRow(new string[] {
                             "InteractionType",
                             "2"});
-                table965.AddRow(new string[] {
+                table1039.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 22
- testRunner.And("the response body should contain:", ((string)(null)), table965, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table1039, "And ");
 #line hidden
 #line 28
     testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -218,23 +218,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table966 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1040 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table966.AddRow(new string[] {
+                table1040.AddRow(new string[] {
                             "AdviserDetailsID",
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table966.AddRow(new string[] {
+                table1040.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table966.AddRow(new string[] {
+                table1040.AddRow(new string[] {
                             "InteractionType",
                             "2"});
-                table966.AddRow(new string[] {
+                table1040.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 33
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table966, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1040, "Given ");
 #line hidden
 #line 39
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -275,23 +275,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table967 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1041 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table967.AddRow(new string[] {
+                table1041.AddRow(new string[] {
                             "AdviserDetailsID",
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table967.AddRow(new string[] {
+                table1041.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table967.AddRow(new string[] {
+                table1041.AddRow(new string[] {
                             "Channel",
                             "2"});
-                table967.AddRow(new string[] {
+                table1041.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 43
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table967, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1041, "Given ");
 #line hidden
 #line 49
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -332,26 +332,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table968 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1042 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table968.AddRow(new string[] {
+                table1042.AddRow(new string[] {
                             "AdviserDetailsID",
                             "6eed4005-4364-4bcb-affb-170ee"});
-                table968.AddRow(new string[] {
+                table1042.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table968.AddRow(new string[] {
+                table1042.AddRow(new string[] {
                             "Channel",
                             "2"});
-                table968.AddRow(new string[] {
+                table1042.AddRow(new string[] {
                             "InteractionType",
                             "2"});
-                table968.AddRow(new string[] {
+                table1042.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 53
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table968, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1042, "Given ");
 #line hidden
 #line 60
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -392,26 +392,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table969 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1043 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table969.AddRow(new string[] {
+                table1043.AddRow(new string[] {
                             "AdviserDetailsID",
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table969.AddRow(new string[] {
+                table1043.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2033-06-25T11:21:00Z"});
-                table969.AddRow(new string[] {
+                table1043.AddRow(new string[] {
                             "Channel",
                             "2"});
-                table969.AddRow(new string[] {
+                table1043.AddRow(new string[] {
                             "InteractionType",
                             "2"});
-                table969.AddRow(new string[] {
+                table1043.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 64
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table969, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1043, "Given ");
 #line hidden
 #line 71
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -452,26 +452,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table970 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1044 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table970.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "AdviserDetailsID",
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table970.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table970.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "Channel",
                             "11"});
-                table970.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "InteractionType",
                             "2"});
-                table970.AddRow(new string[] {
+                table1044.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 75
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table970, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1044, "Given ");
 #line hidden
 #line 82
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -512,26 +512,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table971 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1045 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table971.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "AdviserDetailsID",
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table971.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table971.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "Channel",
                             "1"});
-                table971.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "InteractionType",
                             "55"});
-                table971.AddRow(new string[] {
+                table1045.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 86
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table971, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1045, "Given ");
 #line hidden
 #line 93
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -572,26 +572,26 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table972 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1046 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table972.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "AdviserDetailsID",
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table972.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table972.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "Channel",
                             "1"});
-                table972.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "InteractionType",
                             "55"});
-                table972.AddRow(new string[] {
+                table1046.AddRow(new string[] {
                             "LastModifiedDate",
                             "2033-06-22T16:52:10Z"});
 #line 97
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table972, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table1046, "Given ");
 #line hidden
 #line 104
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
