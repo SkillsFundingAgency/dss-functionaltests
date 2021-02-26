@@ -631,7 +631,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="appsettings.json" />
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="appsettings.local.json" />
     <None Include="bin\Debug\nunit_random_seed.tmp" />
     <None Include="Features\ActionPlan\Get.feature">
