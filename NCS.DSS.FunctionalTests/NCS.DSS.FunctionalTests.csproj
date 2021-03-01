@@ -634,7 +634,6 @@
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="appsettings.local.json" />
     <None Include="bin\Debug\nunit_random_seed.tmp" />
     <None Include="Features\ActionPlan\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
