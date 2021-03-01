@@ -1,9 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using System.Collections;
+﻿using Microsoft.Extensions.Configuration;
 using System.IO;
-using System.Linq;
-using Microsoft.Extensions.Configuration;
 
 namespace FunctionalTests
 {
@@ -16,47 +12,12 @@ namespace FunctionalTests
             AppName = appName;
         }
 
-        public bool IsRunningInTfsPipeline { get; } = GetIsRunningInTfsPipeline();
-
         public IConfiguration BuildConfiguration()
         {
-
-            var configurationBuilder = new ConfigurationBuilder()
-               .SetBasePath(Directory.GetCurrentDirectory());
-
-            Console.WriteLine("------------- Configuring Runtime Params--------------");
-            if (IsRunningInTfsPipeline)
-            {
-                Console.WriteLine("Pipeline run detected - Loading tokenised app settings");
-                configurationBuilder
-                    .AddJsonFile("appsettings.json", false, true);
-            }
-            else
-            {
-                var homePath = (Environment.OSVersion.Platform == PlatformID.Unix ||
-                                Environment.OSVersion.Platform == PlatformID.MacOSX)
-                                ? Environment.GetEnvironmentVariable("HOME") : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
-
-                var customAppSettingsPath =
-                    Environment.ExpandEnvironmentVariables(homePath + $@"\ncsapi\appsettings.local.json");
-                Console.WriteLine("Loading local app settings: " + customAppSettingsPath);
-
-                configurationBuilder
-                    .AddJsonFile(customAppSettingsPath, false, true);             
-            }
-
-            Console.WriteLine("-----------------------------------------------------");
-
-
+            var configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            configurationBuilder.AddJsonFile("appsettings.local.json", optional: true, reloadOnChange: true);
             return configurationBuilder.Build();
-
         }
-
-        private static bool GetIsRunningInTfsPipeline() => Environment.GetEnvironmentVariables()
-            .Cast<DictionaryEntry>()
-            .Any(x => (string.Equals(x.Key?.ToString(), "SYSTEM_HOSTTYPE", StringComparison.OrdinalIgnoreCase) ||
-                       string.Equals(x.Key?.ToString(), "SYSTEM", StringComparison.OrdinalIgnoreCase)) &&
-                      string.Equals(x.Value?.ToString(), "release", StringComparison.OrdinalIgnoreCase));
-
     }
 }

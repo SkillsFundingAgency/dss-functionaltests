@@ -631,8 +631,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="appsettings.json" />
-    <None Include="appsettings.local.json" />
+    <EmbeddedResource Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="bin\Debug\nunit_random_seed.tmp" />
     <None Include="Features\ActionPlan\Get.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
