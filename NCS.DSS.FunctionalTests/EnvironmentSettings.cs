@@ -67,6 +67,10 @@ namespace NCS.DSS.FunctionalTests
         public string SESSION_GET_URL => BaseUrl + "sessions/api/Customers/{0}/interactions/{1}/sessions/{2}";
         public string SESSION_PATCH_URL => BaseUrl + "sessions/api/Customers/{0}/interactions/{1}/sessions/{2}";
 
+        public string SUBSCRIPTION_POST_URL => BaseUrl + "subscriptions/api/Customers/{0}/Subscriptions/";
+        public string SUBSCRIPTION_GET_URL => BaseUrl + "subscriptions/api/Customers/{0}/Subscriptions/";
+        public string SUBSCRIPTION_PATCH_URL => BaseUrl + "subscriptions/api/Customers/{0}/Subscriptions/{1}";
+
         public string LEARNINGPROGRESSION_POST_URL => BaseUrl + "learningprogressions/api/customers/{0}/LearningProgressions";
         public string LEARNINGPROGRESSION_GET_URL => BaseUrl + "learningprogressions/api/customers/{0}/LearningProgressions/{1}";
         public string LEARNINGPROGRESSION_PATCH_URL => BaseUrl + "learningprogressions/api/customers/{0}/learningprogressions/{1}";
