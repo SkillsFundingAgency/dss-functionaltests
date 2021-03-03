@@ -77,76 +77,76 @@ namespace NCS.DSS.FunctionalTests.Features.Subscription
         {
 #line 5
 #line hidden
-            TechTalk.SpecFlow.Table table942 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table949 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table942.AddRow(new string[] {
+            table949.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table942.AddRow(new string[] {
+            table949.AddRow(new string[] {
                         "AdviserContactNumber",
                         "9879867896796"});
 #line 6
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table942, "Given ");
+ testRunner.Given("I post an adviser with the following details:", ((string)(null)), table949, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table943 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table950 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table943.AddRow(new string[] {
+            table950.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table943.AddRow(new string[] {
+            table950.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
 #line 10
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table943, "And ");
+ testRunner.And("I post a Customer with the following details:", ((string)(null)), table950, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table944 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table951 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table944.AddRow(new string[] {
+            table951.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-25T11:21:00Z"});
-            table944.AddRow(new string[] {
+            table951.AddRow(new string[] {
                         "Channel",
                         "2"});
-            table944.AddRow(new string[] {
+            table951.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-            table944.AddRow(new string[] {
+            table951.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
 #line 14
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table944, "And ");
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table951, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table945 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table952 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table945.AddRow(new string[] {
+            table952.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "2018-06-21T14:45:00Z"});
-            table945.AddRow(new string[] {
+            table952.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-            table945.AddRow(new string[] {
+            table952.AddRow(new string[] {
                         "SessionAttended",
                         "true"});
 #line 20
- testRunner.And("I post a session with the following details:", ((string)(null)), table945, "And ");
+ testRunner.And("I post a session with the following details:", ((string)(null)), table952, "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Subscribe to a customer")]
+        [NUnit.Framework.DescriptionAttribute("Create a subscription with all valid values")]
         [NUnit.Framework.CategoryAttribute("subscriptions")]
         [NUnit.Framework.CategoryAttribute("smoke")]
-        public virtual void SubscribeToACustomer()
+        public virtual void CreateASubscriptionWithAllValidValues()
         {
             string[] tagsOfScenario = new string[] {
                     "subscriptions",
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subscribe to a customer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a subscription with all valid values", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -170,32 +170,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table946 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table953 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table946.AddRow(new string[] {
-                            "TouchpointId",
-                            "9000000001"});
-                table946.AddRow(new string[] {
+                table953.AddRow(new string[] {
+                            "TouchPointId",
+                            "9111111111"});
+                table953.AddRow(new string[] {
                             "Subscribe",
                             "true"});
 #line 28
- testRunner.Given("I post a new subscription request:", ((string)(null)), table946, "Given ");
+ testRunner.Given("I post a subscription with the following details:", ((string)(null)), table953, "Given ");
 #line hidden
 #line 32
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table947 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table954 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table947.AddRow(new string[] {
-                            "TouchpointId",
-                            "9000000001"});
-                table947.AddRow(new string[] {
+                table954.AddRow(new string[] {
+                            "TouchPointId",
+                            "9111111111"});
+                table954.AddRow(new string[] {
                             "Subscribe",
                             "true"});
 #line 33
- testRunner.And("the response body should contain:", ((string)(null)), table947, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table954, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

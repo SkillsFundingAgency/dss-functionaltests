@@ -2,7 +2,7 @@
 #	A touchpoint may subscribe to an existing customer.
 #	Any updates or new resources to that customer will result in a notification to the subscribing touchpoint
 #
-Background:
+Background: Prepare test
 	Given I post an adviser with the following details:
 		| Field						 | Value			  |
 		| AdviserName				 | BillyAdviser		  |
@@ -18,21 +18,21 @@ Background:
 		| InteractionType          | 2                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z |
 	And I post a session with the following details:
-	    | field                    | value                          |
-		| DateandTimeOfSession     | 2018-06-21T14:45:00Z           |
+	    | field                    | value                           |
+		| DateandTimeOfSession     | 2018-06-21T14:45:00Z            |
 		| VenuePostCode            | NN1 2NN                         |
 		| SessionAttended          | true                            |
 
 @subscriptions @smoke
-Scenario: Subscribe to a customer
-	Given I post a new subscription request:
+Scenario: Create a subscription with all valid values
+	Given I post a subscription with the following details:
 		| Field        | Value      |
-		| TouchpointId | 9000000001 |
+		| TouchPointId | 9111111111 |
 		| Subscribe    | true       |
 	Then there should be a 201 response
 	And the response body should contain:
-		| Field      | Value |
-		| TouchpointId | 9000000001 |
+		| Field        | Value      |
+		| TouchPointId | 9111111111 |
 		| Subscribe    | true       |
 	#And the response body should contain:
 	#	| Subscribe  | true  |
@@ -43,3 +43,4 @@ Scenario: Subscribe to a customer
 	#	| Address1             | 1                    |
 	#	| PostCode             | NW11WN               |
 	#Then a new notification should be received for "Address"
+
