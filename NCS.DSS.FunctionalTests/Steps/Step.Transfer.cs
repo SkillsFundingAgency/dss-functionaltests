@@ -47,17 +47,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private helper methods for get/post/patch/delete
         private async Task PatchTransfer<T>(T transfer, Guid customerId, Guid interactionId, Guid transferId, string version)
         {
-            _response = await _httpHelper.Patch(transfer, string.Format(_settings.TRANSFER_PATCH_URL, customerId, interactionId, transferId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(transfer, string.Format(_settings.TRANSFER_PATCH_URL, customerId, interactionId, transferId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetByTransferId(Guid transferId, Guid customerId, Guid interactionId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.TRANSFER_GET_URL, customerId, interactionId, transferId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.TRANSFER_GET_URL, customerId, interactionId, transferId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostTransfer<T>(T transfer, Guid customerId, Guid interactionId, string version)
         {
-            _response = await _httpHelper.Post(transfer, string.Format(_settings.TRANSFER_POST_URL, customerId, interactionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(transfer, string.Format(_settings.TRANSFER_POST_URL, customerId, interactionId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

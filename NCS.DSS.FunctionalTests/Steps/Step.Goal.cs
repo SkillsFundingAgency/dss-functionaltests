@@ -94,17 +94,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private get/set/post
         private async Task PatchGoal<T>(T goal, Guid customerId, Guid interactionId, Guid actionPlanId, Guid goalId, string version)
         {
-            _response = await _httpHelper.Patch(goal, string.Format(_settings.GOAL_PATCH_URL, customerId, interactionId, actionPlanId, goalId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(goal, string.Format(_settings.GOAL_PATCH_URL, customerId, interactionId, actionPlanId, goalId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetByGoalId(Guid customerId, Guid interactionId, Guid actionPlanId, Guid goalId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.GOAL_GET_URL, customerId, interactionId, actionPlanId, goalId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.GOAL_GET_URL, customerId, interactionId, actionPlanId, goalId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostGoal<T>(T goal, Guid customerId, Guid interactionId, Guid actionPlanId, string version)
         {
-            _response = await _httpHelper.Post(goal, string.Format(_settings.GOAL_POST_URL, customerId, interactionId, actionPlanId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(goal, string.Format(_settings.GOAL_POST_URL, customerId, interactionId, actionPlanId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

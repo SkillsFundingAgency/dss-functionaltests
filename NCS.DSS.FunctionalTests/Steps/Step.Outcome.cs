@@ -173,17 +173,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private methods for post/patch/get
         private async Task GetOutcome(Guid customerId, Guid interactionId, Guid actionPlan, Guid outcomeId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.OUTCOMES_GET_URL, customerId, interactionId, actionPlan, outcomeId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.OUTCOMES_GET_URL, customerId, interactionId, actionPlan, outcomeId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PatchOutcome<T>(T digitalIdentity, Guid customerId, Guid interactionId, Guid actionPlanId, Guid outcomeId, string version)
         {
-            _response = await _httpHelper.Patch(digitalIdentity, string.Format(_settings.OUTCOMES_PATCH_URL, customerId, interactionId, actionPlanId, outcomeId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(digitalIdentity, string.Format(_settings.OUTCOMES_PATCH_URL, customerId, interactionId, actionPlanId, outcomeId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostOutcome<T>(T digitalIdentity, Guid customerId, Guid interactionId, Guid actionPlanId, string version)
         {
-            _response = await _httpHelper.Post(digitalIdentity, string.Format(_settings.OUTCOMES_POST_URL, customerId, interactionId, actionPlanId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(digitalIdentity, string.Format(_settings.OUTCOMES_POST_URL, customerId, interactionId, actionPlanId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

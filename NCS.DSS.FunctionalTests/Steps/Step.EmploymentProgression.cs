@@ -63,23 +63,23 @@ namespace NCS.DSS.FunctionalTests.Steps
 
         private async Task PatchEmploymentProgression<T>(T employmentProgression, Guid customerId,Guid employmentProgressionId, string version)
         {
-            _response = await _httpHelper.Patch(employmentProgression, string.Format(_settings.EMPLOYMENTPROGRESSION_PATCH_URL, customerId,employmentProgressionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(employmentProgression, string.Format(_settings.EMPLOYMENTPROGRESSION_PATCH_URL, customerId,employmentProgressionId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetAllEmploymentProgressionsByCustomerId(Guid customerId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.EMPLOYMENTPROGRESSION_GETBY_CUSTOMERID_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.EMPLOYMENTPROGRESSION_GETBY_CUSTOMERID_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetEmploymentProgressionById(Guid customerId, Guid employmentProgression, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.EMPLOYMENTPROGRESSION_GETBY_CUSTOMERID_AND_EMPLOYMENTPROGRESSIONID_URL, customerId, employmentProgression), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.EMPLOYMENTPROGRESSION_GETBY_CUSTOMERID_AND_EMPLOYMENTPROGRESSIONID_URL, customerId, employmentProgression), _touchPointId, version, _settings.SubscriptionKey);
         }
 
 
         private async Task PostEmploymentProgression<T>(T employmentProgression, Guid customerId, string version)
         {
-            _response = await _httpHelper.Post(employmentProgression, string.Format(_settings.EMPLOYMENTPROGRESSION_POST_URL,customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(employmentProgression, string.Format(_settings.EMPLOYMENTPROGRESSION_POST_URL,customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

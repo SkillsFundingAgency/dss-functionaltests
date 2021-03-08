@@ -104,6 +104,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+<<<<<<< HEAD
                 TechTalk.SpecFlow.Table table1281 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -160,10 +161,63 @@ this.ScenarioInitialize(scenarioInfo);
                             "2018-06-22T16:52:10Z"});
 #line 18
  testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table1283, "Given ");
+=======
+                TechTalk.SpecFlow.Table table966 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table966.AddRow(new string[] {
+                            "GivenName",
+                            "Bob"});
+                table966.AddRow(new string[] {
+                            "FamilyName",
+                            "Customer"});
+#line 8
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table966, "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table967 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table967.AddRow(new string[] {
+                            "DateandTimeOfInteraction",
+                            "2018-06-25T11:21:00Z"});
+                table967.AddRow(new string[] {
+                            "Channel",
+                            "2"});
+                table967.AddRow(new string[] {
+                            "InteractionType",
+                            "2"});
+                table967.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-06-22T16:52:10Z"});
+#line 12
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table967, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table968 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table968.AddRow(new string[] {
+                            "OriginatingTouchpointId",
+                            "9000000001"});
+                table968.AddRow(new string[] {
+                            "TargetTouchpointId",
+                            "9111111111"});
+                table968.AddRow(new string[] {
+                            "Context",
+                            "Some context text"});
+                table968.AddRow(new string[] {
+                            "DateandTimeOfTransfer",
+                            "2018-06-22T16:52:10Z"});
+                table968.AddRow(new string[] {
+                            "RequestedCallbackTime",
+                            "2018-06-22T16:52:10Z"});
+#line 18
+ testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table968, "Given ");
+>>>>>>> 0d5ef14a32a65a0dfe9133a21ebd6ca005dfa97e
 #line hidden
 #line 25
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+<<<<<<< HEAD
                 TechTalk.SpecFlow.Table table1284 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -184,6 +238,22 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 32
  testRunner.Then("there should be a record in the dss-transfers table with TransferId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+=======
+                TechTalk.SpecFlow.Table table969 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table969.AddRow(new string[] {
+                            "OriginatingTouchpointId",
+                            "9000000001"});
+                table969.AddRow(new string[] {
+                            "TargetTouchpointId",
+                            "9111111111"});
+                table969.AddRow(new string[] {
+                            "Context",
+                            "Some context text"});
+#line 26
+ testRunner.And("the response body should contain:", ((string)(null)), table969, "And ");
+>>>>>>> 0d5ef14a32a65a0dfe9133a21ebd6ca005dfa97e
 #line hidden
             }
             this.ScenarioCleanup();

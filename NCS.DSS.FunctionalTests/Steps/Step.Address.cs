@@ -75,17 +75,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private helpers for post/patch/get
         private async Task PatchAddress<T>(T address, Guid customerId, Guid addressId, string version)
         {
-            _response = await _httpHelper.Patch(address, string.Format(_settings.ADDRESS_PATCH_URL, customerId, addressId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(address, string.Format(_settings.ADDRESS_PATCH_URL, customerId, addressId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetAddressById(Guid customerId, Guid addressId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.ADDRESS_GET_URL, customerId, addressId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.ADDRESS_GET_URL, customerId, addressId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostAddress<T>(T address, Guid customerId, string version)
         {
-            _response = await _httpHelper.Post(address, string.Format(_settings.ADDRESS_POST_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(address, string.Format(_settings.ADDRESS_POST_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

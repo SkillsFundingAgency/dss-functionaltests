@@ -72,12 +72,12 @@ namespace NCS.DSS.FunctionalTests.Steps
         }
         private async Task GetContactByCustomerIdAndContactId(Guid customerId, Guid contactId)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.CONTACT_GETBY_CUSTOMERID_AND_CONTACTID_URL, customerId, contactId), _settings.TestEndpoint01, "", _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.CONTACT_GETBY_CUSTOMERID_AND_CONTACTID_URL, customerId, contactId), _touchPointId, "", _settings.SubscriptionKey);
         }
 
         private async Task PatchContact(Contact contact, Guid customerId, Guid contactId)
         {
-            _response = await _httpHelper.Patch(contact, string.Format(_settings.CONTACT_PATCH_URL, customerId, contactId), _settings.TestEndpoint01, "", _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(contact, string.Format(_settings.CONTACT_PATCH_URL, customerId, contactId), _touchPointId, "", _settings.SubscriptionKey);
         }
         #endregion;
     }

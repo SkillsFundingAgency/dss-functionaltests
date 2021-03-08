@@ -52,17 +52,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private helper methods for get/post/patch/delete
         private async Task PatchAction<T>(T action, Guid customerId, Guid interactionId, Guid actionPlanId, Guid actionId, string version)
         {
-            _response = await _httpHelper.Patch(action, string.Format(_settings.ACTION_PATCH_URL, customerId, interactionId, actionPlanId, actionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(action, string.Format(_settings.ACTION_PATCH_URL, customerId, interactionId, actionPlanId, actionId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetByActionId(Guid actionId, Guid customerId, Guid interactionId, Guid actionPlanId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.ACTION_GET_URL, customerId, interactionId, actionPlanId, actionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.ACTION_GET_URL, customerId, interactionId, actionPlanId, actionId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostAction<T>(T action, Guid customerId, Guid interactionId, Guid actionPlanId, string version)
         {
-            _response = await _httpHelper.Post(action, string.Format(_settings.ACTION_POST_URL, customerId, interactionId, actionPlanId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(action, string.Format(_settings.ACTION_POST_URL, customerId, interactionId, actionPlanId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

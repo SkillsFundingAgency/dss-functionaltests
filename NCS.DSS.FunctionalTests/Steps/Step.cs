@@ -24,8 +24,8 @@ namespace NCS.DSS.FunctionalTests.Steps
         private readonly HttpResponseHelper _assertionHelper;
         private readonly SqlHelper _sqlHelper;
         private readonly CosmosHelper _cosmosHelper;
-
         private string _cosmosDocument;
+        private string _touchPointId;
 
         public Step(
             ScenarioContext scenarioContext,
@@ -43,6 +43,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             _assertionHelper = assertHelper;
             _sqlHelper = sqlhelper;
             _cosmosHelper = cosmosHelper;
+            _touchPointId = _settings.TestEndpoint01;
         }
 
         [Then(@"there should be a (.*) response")]
@@ -102,7 +103,11 @@ namespace NCS.DSS.FunctionalTests.Steps
         [Given(@"I fetch a (.*) cosmos document from (.*) database using key (.*)")]
         public void GivenIFetchACosmosDocumentFrom(string collectionName, string databaseName, string id)
         {
-            _cosmosDocument = _cosmosHelper.RetrieveDocument(databaseName, collectionName, id);
+            if (_scenarioContext.ContainsKey(id))
+            {
+                var val = _scenarioContext[id] as string;
+                _cosmosDocument = _cosmosHelper.RetrieveDocument(databaseName, collectionName, val);
+            }
         }
 
         /// <summary>
@@ -114,6 +119,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         public void GivenIAddAPropertyToScenarioContextTransformDate(string propName, string propValue)
         {
             _scenarioContext.Add(propName, propValue);
+        }
+
+        /// <summary>
+        /// prop value is generated using DateTransformation.cs
+        /// </summary>
+        /// <param name="propName"></param>
+        /// <param name="propValue"></param>
+        [Given(@"I want to set the scenario touchPointId header to (.*)")]
+        public void GivenISetTheTouchpointIdTo(string newTouchPointId)
+        {
+            _touchPointId = newTouchPointId;
         }
 
         [Then(@"the date field (.*) should hold a recent value")]

@@ -150,17 +150,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private helper methods for get/post/patch/delete
         private async Task PatchCustomer<T>(T customer, Guid customerId, string version)
         {
-            _response = await _httpHelper.Patch(customer, string.Format(_settings.CUSTOMER_PATCH_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(customer, string.Format(_settings.CUSTOMER_PATCH_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetByCustomerId(Guid customerId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.CUSTOMER_GET_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.CUSTOMER_GET_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostCustomer<T>(T customer, string version)
         {
-            _response = await _httpHelper.Post(customer, _settings.CUSTOMER_POST_URL, _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(customer, _settings.CUSTOMER_POST_URL, _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
 

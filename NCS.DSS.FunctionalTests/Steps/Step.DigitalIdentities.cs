@@ -84,32 +84,32 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private methods for post/patch/get
         private async Task GetDigitalIdentityByCustomerId(Guid customerId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.DIGITALIDENTITY_GET__BYCUSTOMERID_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.DIGITALIDENTITY_GET__BYCUSTOMERID_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetDigitalIdentityByDigitalIdentityId(Guid digitalIdentityId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.DIGITALIDENTITY_GET_BYDIGITALIDENTITYID_URL, digitalIdentityId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.DIGITALIDENTITY_GET_BYDIGITALIDENTITYID_URL, digitalIdentityId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PatchDigitalIdentitByCustomerId<T>(T digitalIdentity, Guid customerId, string version)
         {
-            _response = await _httpHelper.Patch(digitalIdentity, string.Format(_settings.DIGITALIDENTITY_PATCH_BYCUSTOMERID_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(digitalIdentity, string.Format(_settings.DIGITALIDENTITY_PATCH_BYCUSTOMERID_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PatchDigitalIdentitByDigitalIdentityId<T>(T digitalIdentity, Guid digitalIdentityId, string version)
         {
-            _response = await _httpHelper.Patch(digitalIdentity, string.Format(_settings.DIGITALIDENTITY_PATCH_BYDIGITALIDENTITYID_URL, digitalIdentityId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(digitalIdentity, string.Format(_settings.DIGITALIDENTITY_PATCH_BYDIGITALIDENTITYID_URL, digitalIdentityId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostDigitalIdentityDetail<T>(T digitalIdentity, string version)
         {
-            _response = await _httpHelper.Post(digitalIdentity, _settings.DIGITALIDENTITY_POST_URL, _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(digitalIdentity, _settings.DIGITALIDENTITY_POST_URL, _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task DeleteDigitalIdentityDetail(Guid customerId, string version)
         {
-            _response = await _httpHelper.Delete(string.Format(_settings.DIGITALIDENTITY_DELETE_BYCUSTOMERID_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Delete(string.Format(_settings.DIGITALIDENTITY_DELETE_BYCUSTOMERID_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

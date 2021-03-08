@@ -64,22 +64,22 @@ namespace NCS.DSS.FunctionalTests.Steps
 
         private async Task GetAllLearningProgressionById(Guid customerId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.LEARNINGPROGRESSION_GETALL_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.LEARNINGPROGRESSION_GETALL_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PatchLearningProgression<T>(T learningProgression, Guid customerId, Guid learningProgressionId, string version)
         {
-            _response = await _httpHelper.Patch(learningProgression, string.Format(_settings.LEARNINGPROGRESSION_PATCH_URL, customerId, learningProgressionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(learningProgression, string.Format(_settings.LEARNINGPROGRESSION_PATCH_URL, customerId, learningProgressionId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetLearningProgressionById(Guid customerId, Guid learningProgressionId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.LEARNINGPROGRESSION_GET_URL, customerId, learningProgressionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.LEARNINGPROGRESSION_GET_URL, customerId, learningProgressionId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostLearningProgression<T>(T learningProgression, Guid customerId, string version)
         {
-            _response = await _httpHelper.Post(learningProgression, string.Format(_settings.LEARNINGPROGRESSION_POST_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(learningProgression, string.Format(_settings.LEARNINGPROGRESSION_POST_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

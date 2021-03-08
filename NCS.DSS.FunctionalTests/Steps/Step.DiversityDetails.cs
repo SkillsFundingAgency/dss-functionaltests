@@ -54,17 +54,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private helper methods for get/post/patch/delete
         private async Task PatchDiversityDetail<T>(T diversityDetail, Guid customerId, Guid diversityDetailId, string version)
         {
-            _response = await _httpHelper.Patch(diversityDetail, string.Format(_settings.DIVERSITYDETAIL_PATCH_URL, customerId, diversityDetailId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(diversityDetail, string.Format(_settings.DIVERSITYDETAIL_PATCH_URL, customerId, diversityDetailId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task GetDiversityDetails(Guid customerId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.DIVERSITYDETAIL_GET_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.DIVERSITYDETAIL_GET_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostDiversityDetail<T>(T diversityDetail, Guid customerId, string version)
         {
-            _response = await _httpHelper.Post(diversityDetail, string.Format(_settings.DIVERSITYDETAIL_POST_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(diversityDetail, string.Format(_settings.DIVERSITYDETAIL_POST_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }

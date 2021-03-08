@@ -59,17 +59,17 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private methods for patch/post/get
         private async Task PatchInteraction<T>(T interaction, Guid customerId, Guid interactionId, string version)
         {
-            _response = await _httpHelper.Patch(interaction, string.Format(_settings.INTERACTION_PATCH_URL, customerId, interactionId), _settings.TestEndpoint01, "", _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(interaction, string.Format(_settings.INTERACTION_PATCH_URL, customerId, interactionId), _touchPointId, "", _settings.SubscriptionKey);
         }
 
         private async Task GetByInteractionId(Guid customerId, Guid interactionId, string version)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.INTERACTION_GETBY_CUSTOMERID_AND_INTERACTION_URL, customerId, interactionId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.INTERACTION_GETBY_CUSTOMERID_AND_INTERACTION_URL, customerId, interactionId), _touchPointId, version, _settings.SubscriptionKey);
         }
 
         private async Task PostInteraction<T>(T interaction, Guid customerId, string version)
         {
-            _response = await _httpHelper.Post(interaction, string.Format(_settings.INTERACTION_POST_URL, customerId), _settings.TestEndpoint01, version, _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(interaction, string.Format(_settings.INTERACTION_POST_URL, customerId), _touchPointId, version, _settings.SubscriptionKey);
         }
         #endregion
     }
