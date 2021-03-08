@@ -81,7 +81,7 @@ Scenario:Post valid address with Subcontractor Id
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
-	Given I fetch a actions cosmos document from addresses database using key AddressId
+	Given I fetch a addresses cosmos document from addresses database using key AddressId
 	Then the cosmos document should have property CreatedBy with value 9111111111
 
 @addresses

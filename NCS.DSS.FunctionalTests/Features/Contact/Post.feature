@@ -24,9 +24,8 @@ Scenario:Post valid contact
 		| AlternativeNumber      | 07564656766                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
+	Then there should be a record in the dss-contacts table with ContactId
 
-#And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
 Scenario: Post Valid ContactDetail one contact method
 	Given I post a Contact with the following details with unique email address:
@@ -41,9 +40,8 @@ Scenario: Post Valid ContactDetail one contact method
 		| MobileNumber           | 07676 123456                 |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
+	Then there should be a record in the dss-contacts table with ContactId
 
-#And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
 Scenario: Post Valid ContactDetail with ten digit phone numbers
 	Given I post a Contact with the following details with unique email address:
@@ -62,9 +60,8 @@ Scenario: Post Valid ContactDetail with ten digit phone numbers
 		| AlternativeNumber      | 01254 57611                  |
 		| LastModifiedDate       | 2018-08-20T11:46:02.4482612Z |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
+	Then there should be a record in the dss-contacts table with ContactId
 
-#And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
 Scenario: Post ContactDetail Mandatory PreferredContactMethod Field missing
 	Given I post a Contact with the following details with unique email address:

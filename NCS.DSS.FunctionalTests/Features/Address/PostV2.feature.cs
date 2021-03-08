@@ -225,7 +225,7 @@ this.FeatureBackground();
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 44
- testRunner.Given("I fetch a actions cosmos document from addresses database using key AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I fetch a addresses cosmos document from addresses database using key AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 45
  testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -368,7 +368,7 @@ this.FeatureBackground();
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 84
- testRunner.Given("I fetch a actions cosmos document from addresses database using key AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I fetch a addresses cosmos document from addresses database using key AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 85
  testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
