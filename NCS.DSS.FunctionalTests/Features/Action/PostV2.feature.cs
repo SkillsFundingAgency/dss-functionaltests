@@ -279,6 +279,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
+#line 55
+ testRunner.Given("I want to set the scenario touchPointId header to 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
                 TechTalk.SpecFlow.Table table218 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -300,10 +303,10 @@ this.FeatureBackground();
                 table218.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 55
+#line 56
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table218, "Given ");
 #line hidden
-#line 63
+#line 64
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table219 = new TechTalk.SpecFlow.Table(new string[] {
@@ -327,7 +330,7 @@ this.FeatureBackground();
                 table219.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 64
+#line 65
  testRunner.And("the response body should contain:", ((string)(null)), table219, "And ");
 #line hidden
 #line 73
@@ -339,6 +342,12 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("there should be a record in the dss-actions table Ignoring \'SignpostedToCategory," +
                         "LastModifiedDate\' with ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 76
+ testRunner.Given("I fetch a actions cosmos document from actions database using key ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 77
+ testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -355,7 +364,7 @@ this.FeatureBackground();
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Action", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 79
+#line 80
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -402,16 +411,16 @@ this.FeatureBackground();
                 table220.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 80
+#line 81
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table220, "Given ");
 #line hidden
-#line 90
+#line 91
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 91
+#line 92
  testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 92
+#line 93
  testRunner.Then("there should be a record in the dss-actions table Ignoring \'SignpostedToCategory," +
                         "LastModifiedDate\' with ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

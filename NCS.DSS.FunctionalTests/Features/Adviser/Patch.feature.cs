@@ -165,7 +165,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "adviserdetails"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch email address", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -197,7 +197,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table360.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 25
+#line 24
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table360, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table361 = new TechTalk.SpecFlow.Table(new string[] {
@@ -206,10 +206,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table361.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "tom@bill.com"});
-#line 30
+#line 29
  testRunner.When("I patch the following Adviser:", ((string)(null)), table361, "When ");
 #line hidden
-#line 33
+#line 32
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table362 = new TechTalk.SpecFlow.Table(new string[] {
@@ -224,7 +224,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table362.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 34
+#line 33
  testRunner.And("the response body should contain:", ((string)(null)), table362, "And ");
 #line hidden
             }
@@ -240,7 +240,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "adviserdetails"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch AdviserContactNumber", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 41
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -272,7 +272,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table363.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 42
+#line 41
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table363, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table364 = new TechTalk.SpecFlow.Table(new string[] {
@@ -281,10 +281,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table364.AddRow(new string[] {
                             "AdviserContactNumber",
                             "77647647476743"});
-#line 47
+#line 46
  testRunner.When("I patch the following Adviser:", ((string)(null)), table364, "When ");
 #line hidden
-#line 50
+#line 49
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table365 = new TechTalk.SpecFlow.Table(new string[] {
@@ -299,7 +299,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table365.AddRow(new string[] {
                             "AdviserContactNumber",
                             "77647647476743"});
-#line 51
+#line 50
  testRunner.And("the response body should contain:", ((string)(null)), table365, "And ");
 #line hidden
             }

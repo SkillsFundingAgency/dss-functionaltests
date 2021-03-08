@@ -67,6 +67,23 @@ namespace NCS.DSS.FunctionalTests.Steps
             StringAssert.Contains(p0, content);
         }
 
+        [Then(@"the cosmos document should include property (.*)")]
+        public void ThenTheCosmosDocumentShouldContain(string property)
+        {
+            var content = _cosmosDocument;
+            StringAssert.Contains(property, content);
+        }
+
+        [Then(@"the cosmos document should have property (.*) with value (.*)")]
+        public void ThenTheCosmosDocumentShouldContainWithValue(string property, string value)
+        {
+            var content = _cosmosDocument;
+            var table = new Table("Field", "Value");
+            table.AddRow(property, value);
+            var json = JsonHelper.TableToJson(table);
+            JsonHelper.JsonContains(content, json, null);
+        }
+
         [Then(@"the response body should contain:")]
         public async Task ThenMyBindingShouldHaveTheFollowingObjects(Table table)
         {
@@ -171,25 +188,10 @@ namespace NCS.DSS.FunctionalTests.Steps
         //    Assert.True(result);
         //}
 
-        private void DeleteRowFromSql(string table, string primaryKey, string id)
-        {
-            if (_featureContext.ContainsKey("CleanupData"))
-            {
-                var cleanupData = _featureContext["CleanupData"] as CleanupData;
-                if (cleanupData != null)
-                {
-                    cleanupData.Database.Add(new Tuple<string, string, string>(table, primaryKey, id));
-                }
-            }
-            else
-                _featureContext.Add("CleanupData", new CleanupData());
-        }
 
         [Then(@"there should be a record in the (.*) table with (.*)")]
         public async Task RecordShouldExistInSqlWithDetails(string table, string contextField)
         {
-            var sqlTable = new List<object>();
-
             if (_scenarioContext.ContainsKey(contextField))
             {
                 var result = await SqlRecordMatchesResponseJson(contextField, table, null);
@@ -200,7 +202,6 @@ namespace NCS.DSS.FunctionalTests.Steps
         [Then(@"there should be a record in the (.*) table Ignoring '(.*)' with (.*)")]
         public async Task RecordShouldExistInSqlWithDetailsIgnoringFields(string table, string fieldsToIgnore, string contextField)
         {
-            var sqlTable = new List<object>();
             var fieldsToIgnoreArray = fieldsToIgnore?.Split(",")?.ToList();
 
             if (_scenarioContext.ContainsKey(contextField))
@@ -240,6 +241,20 @@ namespace NCS.DSS.FunctionalTests.Steps
             var sqlJson = JsonHelper.ToSerializedObjectArray(sqlTable);
             var sqlRecordMatchesResponseResult = JsonHelper.JsonContains(sqlJson, contentString, fieldsToIgnoreArray);
             return sqlRecordMatchesResponseResult;
+        }
+
+        private void DeleteRowFromSql(string table, string primaryKey, string id)
+        {
+            if (_featureContext.ContainsKey("CleanupData"))
+            {
+                var cleanupData = _featureContext["CleanupData"] as CleanupData;
+                if (cleanupData != null)
+                {
+                    cleanupData.Database.Add(new Tuple<string, string, string>(table, primaryKey, id));
+                }
+            }
+            else
+                _featureContext.Add("CleanupData", new CleanupData());
         }
         #endregion
     }

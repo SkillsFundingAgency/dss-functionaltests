@@ -16,7 +16,6 @@ Scenario: Create Valid Adviser
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-adviserdetails table with AdviserDetailId
 
-#And there should be a record in the adviserDetails-history ChangeFeed table
 @adviserdetails
 Scenario: Missing AdviserName
 	Given I post an adviser with the following details:

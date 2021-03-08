@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using TechTalk.SpecFlow;
 
 namespace NCS.DSS.FunctionalTests.Core
 {
@@ -155,6 +156,17 @@ namespace NCS.DSS.FunctionalTests.Core
                 x.Add(i.Key, i.Value);
             }
             return JsonConvert.SerializeObject(x);
+        }
+
+        public static string TableToJson(Table table)
+        {
+            var expectedVals = new Dictionary<string, object>();
+            foreach (var row in table.Rows)
+            {
+                expectedVals.Add(row[0], row[1]);
+            }
+            var json = ToSerializedObject(expectedVals);
+            return json;
         }
 
         public static string ToSerializedObjectArray(List<object> source)

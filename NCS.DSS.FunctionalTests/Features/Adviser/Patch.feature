@@ -19,7 +19,6 @@ Scenario: Patch Name
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-adviserdetails table with AdviserDetailId
 
-#And there should be a record in the adviserDetails-history ChangeFeed table
 @adviserdetails
 Scenario: Patch email address
 	Given I post an adviser with the following details:

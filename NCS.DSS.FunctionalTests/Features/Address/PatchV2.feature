@@ -21,7 +21,6 @@ Scenario: Patch Address1 (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field    | Value |
 		| Address1 | 2     |
@@ -39,9 +38,9 @@ Scenario: Patch Address1 (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch Address2 (V2)
 	Given I post an Address with the following details V2:
@@ -57,7 +56,6 @@ Scenario: Patch Address2 (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field    | Value   |
 		| Address2 | Changed |
@@ -75,9 +73,9 @@ Scenario: Patch Address2 (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch Address3 (V2)
 	Given I post an Address with the following details V2:
@@ -93,7 +91,6 @@ Scenario: Patch Address3 (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field    | Value   |
 		| Address3 | Changed |
@@ -112,8 +109,6 @@ Scenario: Patch Address3 (V2)
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch Address4 (V2)
 	Given I post an Address with the following details V2:
@@ -129,7 +124,6 @@ Scenario: Patch Address4 (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field    | Value   |
 		| Address4 | Changed |
@@ -148,8 +142,6 @@ Scenario: Patch Address4 (V2)
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch Address5 (V2)
 	Given I post an Address with the following details V2:
@@ -165,7 +157,6 @@ Scenario: Patch Address5 (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field    | Value   |
 		| Address5 | Changed |
@@ -184,8 +175,6 @@ Scenario: Patch Address5 (V2)
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch PostCode (V2)
 	Given I post an Address with the following details V2:
@@ -201,7 +190,6 @@ Scenario: Patch PostCode (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field    | Value  |
 		| PostCode | B168FN |
@@ -220,8 +208,6 @@ Scenario: Patch PostCode (V2)
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch AlternativePostCode (V2)
 	Given I post an Address with the following details V2:
@@ -237,7 +223,6 @@ Scenario: Patch AlternativePostCode (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field               | Value  |
 		| AlternativePostCode | NW22WW |
@@ -256,8 +241,6 @@ Scenario: Patch AlternativePostCode (V2)
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch Longitude (V2)
 	Given I post an Address with the following details V2:
@@ -273,7 +256,6 @@ Scenario: Patch Longitude (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field     | Value     |
 		| Longitude | -98.50813 |
@@ -292,8 +274,6 @@ Scenario: Patch Longitude (V2)
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch Latitude (V2)
 	Given I post an Address with the following details V2:
@@ -309,7 +289,6 @@ Scenario: Patch Latitude (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field    | Value    |
 		| Latitude | 52.40122 |
@@ -328,8 +307,6 @@ Scenario: Patch Latitude (V2)
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch EffectiveFrom (V2)
 	Given I post an Address with the following details V2:
@@ -345,7 +322,6 @@ Scenario: Patch EffectiveFrom (V2)
 		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
 	When I patch the following Address V2:
 		| Field         | Value                |
 		| EffectiveFrom | 2018-06-19T09:02:00Z |
@@ -364,8 +340,6 @@ Scenario: Patch EffectiveFrom (V2)
 		| EffectiveFrom       | 2018-06-19T09:02:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Patch EffectiveTo (V2)
 	Given I post an Address with the following details V2:
@@ -401,43 +375,3 @@ Scenario: Patch EffectiveTo (V2)
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table
-#@addresses
-#Scenario: Patch received from a different touchpoint to createdBy (V2)
-#	Given I post an Address with the following details V2:
-#		| Field               | Value                |
-#		| Address1            | 1                    |
-#		| Address2            | The Street           |
-#		| Address3            | The Town             |
-#		| Address4            | The Area             |
-#		| Address5            | The County           |
-#		| PostCode            | NW11WN               |
-#		| AlternativePostCode | NW22WN               |
-#		| Longitude           | -98.50812            |
-#		| Latitude            | 52.40121             |
-#		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-#		| EffectiveTo         | 2018-06-21T13:12:00Z |
-#	#		| LastModifiedDate     | 2018-09-19T09:01:00Z |
-#	#When I patch the following:
-#	When I patch the following via a different touchpoint
-#		| Field       | Value                |
-#		| EffectiveTo | 2018-06-21T13:13:00Z |
-#	Then there should be a 200 response
-#	And the response body should not contain the "CreatedBy"
-#	#And the response body should have different LastUpdatedBy
-#	And the response body should contain:
-#		| Field               | Value                |
-#		| Address1            | 1                    |
-#		| Address2            | The Street           |
-#		| Address3            | The Town             |
-#		| Address4            | The Area             |
-#		| Address5            | The County           |
-#		| PostCode            | NW11WN               |
-#		| AlternativePostCode | NW22WN               |
-#		| Longitude           | -98.50812            |
-#		| Latitude            | 52.40121             |
-#		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-#		| EffectiveTo         | 2018-06-21T13:13:00Z |
-#And there should be a record in the addresses ChangeFeed table
-#And there should be a record in the addresses-history ChangeFeed table

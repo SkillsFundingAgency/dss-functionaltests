@@ -156,7 +156,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "adviserdetails"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -185,10 +185,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table377.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 22
+#line 21
  testRunner.Given("I post an adviser with the following details:", ((string)(null)), table377, "Given ");
 #line hidden
-#line 26
+#line 25
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

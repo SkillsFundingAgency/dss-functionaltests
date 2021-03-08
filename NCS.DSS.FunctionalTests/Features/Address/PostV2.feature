@@ -8,6 +8,7 @@ Background: Post Customer
 
 @addresses @smoke
 Scenario:Post valid address
+	Given I want to set the scenario touchPointId header to 9111111111
 	Given I post an Address with the following details V2:
 		| Field               | Value                |
 		| Address1            | 1                    |
@@ -37,14 +38,16 @@ Scenario:Post valid address
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 		| LastModifiedDate    | 2018-09-19T09:01:00Z |
-	#And the "addresses" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
+	Given I fetch a addresses cosmos document from addresses database using key AddressId
+	Then the cosmos document should have property CreatedBy with value 9111111111
 
 #And there should be a record in the addresses-history ChangeFeed table
 @addresses @subcontractorId
 Scenario:Post valid address with Subcontractor Id
+	Given I want to set the scenario touchPointId header to 9111111111
 	Given I post an Address with the following details V2:
 		| Field               | Value                |
 		| Address1            | 1                    |
@@ -75,12 +78,12 @@ Scenario:Post valid address with Subcontractor Id
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 		| LastModifiedDate    | 2018-09-19T09:01:00Z |
 	#And the response body should contain the SubContractorId
-	#   And the "addresses" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
+	Given I fetch a actions cosmos document from addresses database using key AddressId
+	Then the cosmos document should have property CreatedBy with value 9111111111
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with only mandatory Fields
 	Given I post an Address with the following details V2:
@@ -104,7 +107,6 @@ Scenario: Post Address with only mandatory Fields
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with maximum Field lengths
 	Given I post an Address with the following details V2:
@@ -137,7 +139,6 @@ Scenario: Post Address with maximum Field lengths
 	Given I wait for 10 Seconds|
 	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address
 	Given I post a Customer with the following details:
@@ -152,7 +153,6 @@ Scenario: Post Address
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with geocoding where postcode has no space
 	Given I post a Customer with the following details:
@@ -171,7 +171,6 @@ Scenario: Post Address with geocoding where postcode has no space
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with geocoding where postcode has space
 	Given I post a Customer with the following details:
@@ -190,7 +189,6 @@ Scenario: Post Address with geocoding where postcode has space
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with postcode that maps incorrectly without the CountrySet parameter in the geocoding request
 	Given I post an Address with the following details V2:
@@ -207,7 +205,6 @@ Scenario: Post Address with postcode that maps incorrectly without the CountrySe
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with geocoding where postcode cannot be geocoded
 	Given I post a Customer with the following details:
@@ -228,7 +225,6 @@ Scenario: Post Address with geocoding where postcode cannot be geocoded
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
-#And there should be a record in the addresses-history ChangeFeed table
 @addresses
 Scenario: Post Address with Address1 Field missing
 	Given I post an Address with the following details V2:

@@ -52,6 +52,7 @@ Scenario: Post Valid Action
 
 @actions @V2
 Scenario: Post Valid Action with only mandatory Fields
+	Given I want to set the scenario touchPointId header to 9111111111
 	Given I post an Action with the following details V2:
 		| Field                         | Value                |
 		| DateActionAgreed              | 2018-07-30T09:00:00Z |
@@ -69,12 +70,12 @@ Scenario: Post Valid Action with only mandatory Fields
 		| SignpostedTo                  | Some Details         |
 		| ActionType                    | 1                    |
 		| PersonResponsible             | 1                    |
-	#And the "actions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 10 Seconds
 	Then there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
+	Given I fetch a actions cosmos document from actions database using key ActionId
+	Then the cosmos document should have property CreatedBy with value 9111111111
 
-#And there should be a record in the actions-history ChangeFeed table
 @actions  @V2
 Scenario: Change feed for Post Action
 	Given I post an Action with the following details V2:
@@ -91,7 +92,6 @@ Scenario: Change feed for Post Action
 	Given I wait for 10 Seconds
 	Then there should be a record in the dss-actions table Ignoring 'SignpostedToCategory,LastModifiedDate' with ActionId
 
-#And there should be a record in the actions-history ChangeFeed table
 @actions @V2
 Scenario: Post Action with invalid interactionId
 	Given I post an Action with the following details V2:

@@ -44,6 +44,8 @@ Scenario: Patch Valid CustomerCharterShownToCustomer
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| CurrentSituation               | looking for work     |
 	And the response body should not contain the "CreatedBy"
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-actionplans table with ActionPlanId
 
 #And there should be a record in the ActionPlans ChangeFeed table
 #And there should be a record in the ActionPlans-history ChangeFeed table
@@ -130,7 +132,7 @@ Scenario: Patch Valid DateActionPlanSentToCustomer
 
 @actionplans
 Scenario: Patch Valid DateActionPlanAcknowledged
-	Given I post an ActionPlan with the following details:
+	Given I post an ActionPlan with the following details V3:
 		| Field                          | Value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
 		| CustomerCharterShownToCustomer | true                 |
@@ -156,7 +158,7 @@ Scenario: Patch Valid DateActionPlanAcknowledged
 
 @actionplans
 Scenario: Patch Valid ActionPlanDeliveryMethod
-	Given I post an ActionPlan with the following details:
+	Given I post an ActionPlan with the following details V3:
 		| Field                          | Value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
 		| CustomerCharterShownToCustomer | true                 |
@@ -167,8 +169,8 @@ Scenario: Patch Valid ActionPlanDeliveryMethod
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 	When I patch the following ActionPlan V3:
-		| Field                      | Value                |
-		| DateActionPlanAcknowledged | 2018-07-30T09:00:00Z |
+		| Field                    | Value |
+		| ActionPlanDeliveryMethod | 2     |
 	Then there should be a 200 response
 	And the response body should contain:
 		| Field                          | Value                |
@@ -176,7 +178,7 @@ Scenario: Patch Valid ActionPlanDeliveryMethod
 		| CustomerCharterShownToCustomer | true                 |
 		| DateAndTimeCharterShown        | 2018-07-30T09:00:00Z |
 		| DateActionPlanSentToCustomer   | 2018-07-30T09:00:00Z |
-		| ActionPlanDeliveryMethod       | 1                    |
+		| ActionPlanDeliveryMethod       | 2                    |
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| CurrentSituation               | looking for work     |
 

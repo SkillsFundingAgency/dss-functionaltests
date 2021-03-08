@@ -22,6 +22,7 @@ Background: Post
 
 @actionplans @smoke
 Scenario: Post Valid ActionPlan with all fields
+	Given I want to set the scenario touchPointId header to 9111111111
 	Given I post an ActionPlan with the following details V3:
 		| field                          | value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
@@ -33,7 +34,6 @@ Scenario: Post Valid ActionPlan with all fields
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 	Then there should be a 201 response
-	#And the "actionplans" cosmos document should include CreatedBy
 	And the response body should contain:
 		| field                          | value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
@@ -45,12 +45,14 @@ Scenario: Post Valid ActionPlan with all fields
 		| CurrentSituation               | looking for work     |
 	#And the response body should contain the SessionId
 	And the response body should not contain the "CreatedBy"
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
 	And there should be a record in the dss-actionplans table with ActionPlanId
+	Given I fetch a actions cosmos document from actions database using key ActionId
+	Then the cosmos document should have property CreatedBy with value 9111111111
 
-#And there should be a record in the ActionPlans-history ChangeFeed table
 @actionplans	@subcontractorId
 Scenario: Post Valid ActionPlan with all fields and SubContractorId
+	Given I want to set the scenario touchPointId header to 9111111111
 	Given I post an ActionPlan with the following details V3:
 		| field                          | value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
@@ -62,7 +64,6 @@ Scenario: Post Valid ActionPlan with all fields and SubContractorId
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 	Then there should be a 201 response
-	#And the "actionplans" cosmos document should include CreatedBy
 	And the response body should contain:
 		| field                          | value                |
 		| DateActionPlanCreated          | 2018-07-30T09:00:00Z |
@@ -73,6 +74,8 @@ Scenario: Post Valid ActionPlan with all fields and SubContractorId
 		| DateActionPlanAcknowledged     | 2018-07-30T09:00:00Z |
 		| CurrentSituation               | looking for work     |
 	And the response body should not contain the "CreatedBy"
+	Given I fetch a actions cosmos document from actions database using key ActionId
+	Then the cosmos document should have property CreatedBy with value 9111111111
 
 #And the response body should contain the SessionId
 #And the response body should contain the SubContractorId
@@ -122,10 +125,9 @@ Scenario: Changed feed for Post ActionPlan
 		| PriorityCustomer               | 1                    |
 		| CurrentSituation               | looking for work     |
 	Then there should be a 201 response
-	Given I wait for 10 Seconds
+	Given I wait for 5 Seconds
+	Then there should be a record in the dss-actionplans table with ActionPlanId
 
-#And there should be a record in the ActionPlans ChangeFeed table
-#And there should be a record in the ActionPlans-history ChangeFeed table
 @actionplans
 Scenario: Post ActionPlan with missing DateActionPlanCreated
 	Given I post an ActionPlan with the following details V3:

@@ -137,6 +137,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.And("the response body should contain:", ((string)(null)), table379, "And ");
 #line hidden
+#line 16
+ testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+ testRunner.Given("I fetch a adviserdetails cosmos document from adviserdetails database using key A" +
+                        "dviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 18
+ testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -152,7 +162,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "subcontractorId"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Valid Adviser with SubcontractorId", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 20
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -172,6 +182,9 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 22
+ testRunner.Given("I want to set the scenario touchPointId header to 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
                 TechTalk.SpecFlow.Table table380 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -184,10 +197,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table380.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 21
+#line 23
  testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table380, "Given ");
 #line hidden
-#line 26
+#line 28
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table381 = new TechTalk.SpecFlow.Table(new string[] {
@@ -202,11 +215,18 @@ this.ScenarioInitialize(scenarioInfo);
                 table381.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 27
+#line 29
  testRunner.And("the response body should contain:", ((string)(null)), table381, "And ");
 #line hidden
-#line 34
+#line 35
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
+ testRunner.Given("I fetch a adviserdetails cosmos document from adviserdetails database using key A" +
+                        "dviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 37
+ testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -221,7 +241,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "adviserdetails"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Adviser", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 37
+#line 40
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -241,6 +261,9 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 41
+ testRunner.Given("I want to set the scenario touchPointId header to 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
                 TechTalk.SpecFlow.Table table382 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -250,20 +273,27 @@ this.ScenarioInitialize(scenarioInfo);
                 table382.AddRow(new string[] {
                             "AdviserEmailAddress",
                             "billy@bill.com"});
-#line 38
+#line 42
  testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table382, "Given ");
 #line hidden
-#line 42
+#line 46
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 43
+#line 47
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 44
+#line 48
  testRunner.Then("there should be a record in the dss-adviserdetails table with AdviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 47
+#line 49
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 50
+ testRunner.Given("I fetch a adviserdetails cosmos document from adviserdetails database using key A" +
+                        "dviserDetailId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 51
+ testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -278,7 +308,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "adviserdetails"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Missing AdviserName", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 50
+#line 54
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -307,10 +337,10 @@ this.ScenarioInitialize(scenarioInfo);
                 table383.AddRow(new string[] {
                             "AdviserContactNumber",
                             "98798678967967"});
-#line 51
+#line 55
  testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table383, "Given ");
 #line hidden
-#line 55
+#line 59
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
