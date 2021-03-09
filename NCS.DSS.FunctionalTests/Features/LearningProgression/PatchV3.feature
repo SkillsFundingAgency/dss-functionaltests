@@ -45,8 +45,8 @@ Scenario:Patch Learning Progression with  all values
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
+#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 ###########################################################################################
 ##	DateProgressionRecorded
 ###########################################################################################
@@ -64,7 +64,6 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 	When I patch the following LearningProgression V3:
 		| Field                   | Value                |
 	Then there should be a 200 response
-	#And the response body should have <Field> with value Translate Date <Value>
 	And the response body should contain:
 		| Field                          | Value                |
 		| CurrentLearningStatus          | 1                    |
@@ -77,7 +76,6 @@ Scenario Outline: Patch Learning Progression with valid values for DateProgressi
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
 	Examples:
 		| Field                   | Value                |
@@ -146,7 +144,6 @@ Scenario Outline: Patch Learning Progression with empty DateProgressionRecorded
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-		| DateProgressionRecorded        |                      |
 	Given I want to send <Field> with value <Value> in the following request
 	When I patch the following LearningProgression V3:
 		| Field                   | Value                |
@@ -197,7 +194,6 @@ Scenario Outline: Patch Learning Progression with CurrentLearningStatus
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
 	Examples:
 		| Field                 | Value |
@@ -436,7 +432,6 @@ Scenario Outline: Patch Learning Progression with LearningHours
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
 	Examples:
 		| Field         | Value |
@@ -531,7 +526,6 @@ Scenario Outline: Patch Learning Progression with DateLearningStarted
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
 	Examples:
 		| Field               | Value                |
@@ -594,6 +588,7 @@ Scenario Outline: Patch Learning Progression with future value for DateLearningS
 ###########################################################################################
 @learningprogressions
 Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
+	Given I want to set the scenario touchPointId header to 9111111111
 	Given I post a Learning Progression record with the following details V3:
 		| Field                          | Value                |
 		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -615,11 +610,11 @@ Scenario Outline: Patch Learning Progression with CurrentQualificationLevel
 		| DateLearningStarted            | 2019-06-25T11:21:00Z |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-	#And the "learningprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
+	Given I fetch a actions cosmos document from actions database using key ActionId
+	Then the cosmos document should have property CreatedBy with value 9111111111
 
 	Examples:
 		| Field                     | Value |
@@ -698,7 +693,6 @@ Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 	When I patch the following LearningProgression V3:
 		| Field                 | Value                |
 	Then there should be a 200 response
-	And the response body should have <Field> with value Translate Date To <Value>
 	And the response body should contain:
 		| Field                      | Value                |
 		| DateProgressionRecorded    | 2018-06-25T11:21:00Z |
@@ -711,7 +705,6 @@ Scenario Outline: Patch Learning Progression with DateQualificationLevelAchieved
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
 	Examples:
 		| Field                          | Value                |
@@ -799,7 +792,6 @@ Scenario Outline: Patch Learning Progression with LastLearningProvidersUKPRN
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	#And there should be 2 records in the dss-learningprogressions-history table with LearningProgressionId
 
 	Examples:
 		| Field                      | Value    |
@@ -881,7 +873,6 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 	When I patch the following LearningProgression V3:
 		| Field                 | Value                |
 	Then there should be a 200 response
-	And the response body should have <Field> with value Translate Date To <Value>
 	And the response body should contain:
 		| Field                          | Value                |
 		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
@@ -892,16 +883,14 @@ Scenario Outline: Patch Learning Progression with LastModifiedDate
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
 	#And the "learningprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
+	Given I wait for 10 Seconds
 	Then there should be a record in the dss-learningprogressions table with LearningProgressionId
-	
 
 	Examples:
 		| Field            | Value                |
 		| LastModifiedDate | 2019-06-19T09:01:00Z |
-		| LastModifiedDate | Now                  |
-		| LastModifiedDate | Now + 1              |
+		| LastModifiedDate | now                  |
+		| LastModifiedDate | now + 1Hour          |
 
 @learningprogressions
 Scenario Outline: Patch Learning Progression with invalid value for LastModifiedDate
@@ -953,85 +942,3 @@ Scenario: Patch to Learning Progression received from another touchpoint
 	And the response body should contain:
 		| Field                     | Value |
 		| CurrentQualificationLevel | 1     |
-#And there should be a record in the learningprogressions ChangeFeed table
-#And there should be a record in the learningprogressions-history ChangeFeed table
-#@learningprogressions
-#Scenario Outline: Patch Learning Progression with value for LastModifiedTouchpointID
-#	Given I post a Learning Progression record with the following details V3:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	Given I want to send <Field> with value <Value> in the following request
-#	When I patch the following LearningProgression V3:
-#		| Field                     | Value |
-#	Then there should be a 200 response
-#	And the response body should have LastModifiedTouchpointId with value 9000000001
-#	And the response body should contain:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#
-#	#And there should be a record in the learningprogressions ChangeFeed table
-#	#And there should be a record in the learningprogressions-history ChangeFeed table
-#	Examples:
-#		| Field                    | Value    |
-#		| LastModifiedTouchpointID | 99999999 |
-#
-#@learningprogressions
-#Scenario Outline: Patch Learning Progression with value for CreatedBy
-#
-#	Given I post a Learning Progression record with the following details:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	When I patch the element <Field> with <Value>:
-#	Then there should be a 200 response
-#	And the response body should contain:
-#	| Field                          | Value                |
-#	| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#	| CurrentLearningStatus          | 1                    |
-#	| LearningHours                  | 1                    |
-#	| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#	| CurrentQualificationLevel      | 2                    |
-#	| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#	| LastLearningProvidersUKPRN     | 12345678             |
-#	And the "learningprogressions" cosmos document should have "CreatedBy" with value "9000000001"
-#
-#	Examples:
-#	| Field     | Value    |
-#	| CreatedBy | 99999999 |
-#
-#@learningprogressions
-#Scenario Outline: Patch unknown Learning Progression record
-#
-#	Given I post a Learning Progression record with the following details:
-#		| Field                          | Value                |
-#		| DateProgressionRecorded        | 2018-06-25T11:21:00Z |
-#		| CurrentLearningStatus          | 1                    |
-#		| LearningHours                  | 1                    |
-#		| DateLearningStarted            | 2019-06-25T11:21:00Z |
-#		| CurrentQualificationLevel      | 2                    |
-#		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
-#		| LastLearningProvidersUKPRN     | 12345678             |
-#	When I patch an unknown resource with the element <Field> with <Value>:
-#	Then there should be a 204 response
-#
-#	Examples:
-#	| Field         | Value | ErrorMessage |
-#	| LearningHours | 1     | PlaceHolder  |
-#

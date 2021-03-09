@@ -2894,8 +2894,8 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "2018-13-19T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "2018-05-00T09:01:00Z", "Could not convert string to DateTime", null)]
         [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "2018-05-32T09:01:00Z", "Could not convert string to DateTime", null)]
-        [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "Today +1D", "Could not convert string to DateTime", null)]
-        [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "Now +1H", "Could not convert string to DateTime", null)]
+        [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "Today +1D", "DateOfLastEmployment must be less than or equal to now.", null)]
+        [NUnit.Framework.TestCaseAttribute("DateOfLastEmployment", "Now +1H", "DateOfLastEmployment must be less than or equal to now.", null)]
         public virtual void PostEmploymentProgressionWithInvalidValuesForDateOfLastEmployment(string field, string value, string errorMessage, string[] exampleTags)
         {
             string[] @__tags = new string[] {

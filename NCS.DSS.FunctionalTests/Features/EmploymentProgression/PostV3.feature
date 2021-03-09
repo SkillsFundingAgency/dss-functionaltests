@@ -805,8 +805,8 @@ Scenario Outline: Post Employment progression with invalid values for DateOfLast
 		| DateOfLastEmployment | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
 		| DateOfLastEmployment | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
 		| DateOfLastEmployment | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
-		| DateOfLastEmployment | Today +1D            | Could not convert string to DateTime |
-		| DateOfLastEmployment | Now +1H              | Could not convert string to DateTime |
+		| DateOfLastEmployment | Today +1D            | DateOfLastEmployment must be less than or equal to now. |
+		| DateOfLastEmployment | Now +1H              | DateOfLastEmployment must be less than or equal to now. |
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with valid values for LengthOfUnemployment

@@ -225,6 +225,20 @@ namespace NCS.DSS.FunctionalTests.UnitTests
         }
 
         [Test]
+        public void JsonContains_TargetArrayContainsJsonDocumentCaseSensitiveProperty_ReturnsFalse()
+        {
+            // Arrange
+            string targetJson = @"[{ CuSTOmer: ""SomeTest"", Age: 300, Height: 200},{ Customer: ""Bob the Builder"", Age: 1, Height: 100},{ Customer: ""Spiderman"", Age: 25, Height: 150}]";
+            var sourceJson = @"{ Customer: ""SomeTest"", Age: 300, Height: 200}";
+
+            // Act
+            var value = JsonHelper.JsonContains(targetJson, sourceJson, null);
+
+            //Assert
+            Assert.False(value);
+        }
+
+        [Test]
         public void JsonContains_TargetJsonDocumentContainsDocument_ReturnsTrue()
         {
             // Arrange
