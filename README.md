@@ -39,6 +39,8 @@ framework (4.61), all Specflow features being migrated across into a new format 
 To configure the tests to be run locally, edit the appsettings.local.json file to include the sql connection string
 and the cosmos shared key and tests can be either ran from Visual Studio or the Command Prompt.
 
+To run these functional tests locally; create appsettings.local.json file locally with the required application settings. This file is in the .gitignore file and will not be checked into source control. 
+
 - **dotnet test**
 or
 - **donet test --filter "TestCategory=customers" -v detailed**   //e.g. actions, customers,actionplans etc
