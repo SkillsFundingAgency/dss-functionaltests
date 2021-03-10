@@ -14,7 +14,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interaction = table.CreateInstance<Interaction>();
             interaction.AdviserDetailsId = _scenarioContext["AdviserDetailId"] as string;
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PostInteraction(interaction, customerId, "");
+            await PostInteraction(interaction, customerId, Constants.API_VERSION_1);
             _scenarioContext["InteractionId"] = await _assertionHelper.GetKeyFromResponse("InteractionId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -26,7 +26,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var interaction = table.CreateInstance<Interaction>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PostInteraction(interaction, customerId, "");
+            await PostInteraction(interaction, customerId, Constants.API_VERSION_1);
             _scenarioContext["InteractionId"] = await _assertionHelper.GetKeyFromResponse("InteractionId", _response);
         }
 
@@ -35,7 +35,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
-            await GetByInteractionId(customerId, interactionId, "");
+            await GetByInteractionId(customerId, interactionId, Constants.API_VERSION_1);
         }
 
         [When(@"I patch the following Valid Interaction:")]
@@ -44,7 +44,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var interaction = table.CreateInstance<Interaction>();
-            await PatchInteraction(interaction, customerId, interactionId, "");
+            await PatchInteraction(interaction, customerId, interactionId, Constants.API_VERSION_1);
         }
 
         [When(@"I patch the following Interaction:")]
@@ -53,7 +53,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var interaction = table.CreateInstance<Interaction>();
-            await PatchInteraction(interaction, customerId, interactionId, "");
+            await PatchInteraction(interaction, customerId, interactionId, Constants.API_VERSION_1);
         }
 
         #region private methods for patch/post/get

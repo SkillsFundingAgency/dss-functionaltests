@@ -16,7 +16,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
             var goalId = Guid.Parse(_scenarioContext["GoalId"] as string);
-            await GetByGoalId(customerId, interactionId, actionPlanId, goalId, "");
+            await GetByGoalId(customerId, interactionId, actionPlanId, goalId, Constants.API_VERSION_1);
         }
 
         [Given(@"I post a goal with the following details:")]
@@ -27,7 +27,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
 
-            await PostGoal(goal, customerId, interactionId, actionPlanId, "");
+            await PostGoal(goal, customerId, interactionId, actionPlanId, Constants.API_VERSION_1);
 
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["GoalId"] = await _assertionHelper.GetKeyFromResponse("GoalId", _response);
@@ -45,7 +45,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
             var goalId = Guid.Parse(_scenarioContext["GoalId"] as string);
-            await PatchGoal(goal, customerId, interactionId, actionPlanId, goalId, "");
+            await PatchGoal(goal, customerId, interactionId, actionPlanId, goalId, Constants.API_VERSION_1);
         }
         #endregion
 
@@ -57,7 +57,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
             var goalId = Guid.Parse(_scenarioContext["GoalId"] as string);
-            await GetByGoalId(customerId, interactionId, actionPlanId, goalId, "v2");
+            await GetByGoalId(customerId, interactionId, actionPlanId, goalId, Constants.API_VERSION_2);
         }
 
         [Given(@"I post a goal with the following details V2:")]
@@ -69,7 +69,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
             goal.CustomerId = _scenarioContext["CustomerId"] as string;
             goal.ActionPlanId = _scenarioContext["ActionPlanId"] as string;
-            await PostGoal(goal, customerId, interactionId, actionPlanId, "v2");
+            await PostGoal(goal, customerId, interactionId, actionPlanId, Constants.API_VERSION_2);
 
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["GoalId"] = await _assertionHelper.GetKeyFromResponse("GoalId", _response);
@@ -87,7 +87,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
             var goalId = Guid.Parse(_scenarioContext["GoalId"] as string);
-            await PatchGoal(goal, customerId,interactionId, actionPlanId, goalId, "v2");
+            await PatchGoal(goal, customerId,interactionId, actionPlanId, goalId, Constants.API_VERSION_2);
         }
         #endregion
 

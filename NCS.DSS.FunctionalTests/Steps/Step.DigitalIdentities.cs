@@ -17,7 +17,7 @@ namespace NCS.DSS.FunctionalTests.Steps
                 customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var di = table.CreateInstance<DigitalIdentity>();
             di.CustomerId = customerId;
-            await PostDigitalIdentityDetail(di, "v2");
+            await PostDigitalIdentityDetail(di, Constants.API_VERSION_2);
             
             if (_response.IsSuccessStatusCode)
             {
@@ -32,7 +32,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             Guid customerId = Guid.Empty;
             if (_scenarioContext.ContainsKey("CustomerId"))
                 customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await GetDigitalIdentityByCustomerId(customerId, "v2");
+            await GetDigitalIdentityByCustomerId(customerId, Constants.API_VERSION_2);
         }
 
         [Given(@"I get a DigitalIdentity by DigitalIdentityID V2")]
@@ -41,7 +41,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             Guid digitalIdentityId = Guid.Empty;
             if (_scenarioContext.ContainsKey("IdentityID"))
                 digitalIdentityId = Guid.Parse(_scenarioContext["IdentityID"] as string);
-            await GetDigitalIdentityByDigitalIdentityId(digitalIdentityId, "v2");
+            await GetDigitalIdentityByDigitalIdentityId(digitalIdentityId, Constants.API_VERSION_2);
         }
 
         [Given(@"I patch the following digitalIdentity By CustomerId V2:")]
@@ -52,7 +52,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             if (_scenarioContext.ContainsKey("CustomerId"))
                 customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             di.CustomerId = customerId;
-            await PatchDigitalIdentitByCustomerId(di, customerId, "v2");
+            await PatchDigitalIdentitByCustomerId(di, customerId, Constants.API_VERSION_2);
         }
 
         [Given(@"I patch the following digitalIdentity By DigitalIdentityId V2:")]
@@ -68,7 +68,7 @@ namespace NCS.DSS.FunctionalTests.Steps
                 customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             di.IdentityID = digitalIdentityId;
             di.CustomerId = customerId;
-            await PatchDigitalIdentitByDigitalIdentityId(di, digitalIdentityId, "v2");
+            await PatchDigitalIdentitByDigitalIdentityId(di, digitalIdentityId, Constants.API_VERSION_2);
         }
 
         [Given(@"I Delete a Digital Identity V2")]
@@ -77,7 +77,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Empty;
             if (_scenarioContext.ContainsKey("CustomerId"))
                 customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await DeleteDigitalIdentityDetail(customerId, "v2");
+            await DeleteDigitalIdentityDetail(customerId, Constants.API_VERSION_2);
         }
         #endregion
 

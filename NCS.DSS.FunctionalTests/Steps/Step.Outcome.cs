@@ -31,7 +31,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             outcome.CustomerId = customerId.ToString();
             outcome.ActionPlanId = actionPlanId.ToString();
 
-            await PostOutcome(outcome, customerId, interactionId, actionPlanId, "");
+            await PostOutcome(outcome, customerId, interactionId, actionPlanId, Constants.API_VERSION_1);
             _scenarioContext["OutcomeId"] = await _assertionHelper.GetKeyFromResponse("OutcomeId", _response);
         }
 
@@ -55,7 +55,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             if (_scenarioContext.ContainsKey("OutcomeId"))
                 outcomeId = Guid.Parse(_scenarioContext["OutcomeId"] as string);
 
-            await GetOutcome(customerId, interactionId, actionPlanId, outcomeId, "");
+            await GetOutcome(customerId, interactionId, actionPlanId, outcomeId, Constants.API_VERSION_1);
         }
         #endregion
 
@@ -86,7 +86,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             outcome.CustomerId = customerId.ToString();
             outcome.ActionPlanId = actionPlanId.ToString();
             outcome.SessionId = sessionId.ToString();
-            await PostOutcome(outcome, customerId, interactionId, actionPlanId, "v2");
+            await PostOutcome(outcome, customerId, interactionId, actionPlanId, Constants.API_VERSION_2);
             _scenarioContext["OutcomeId"] = await _assertionHelper.GetKeyFromResponse("OutcomeId", _response);
         }
 
@@ -110,7 +110,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             if (_scenarioContext.ContainsKey("OutcomeId"))
                 outcomeId = Guid.Parse(_scenarioContext["OutcomeId"] as string);
 
-            await GetOutcome(customerId, interactionId, actionPlanId, outcomeId, "v2");
+            await GetOutcome(customerId, interactionId, actionPlanId, outcomeId, Constants.API_VERSION_2);
         }
         #endregion
 
@@ -142,7 +142,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             outcome.CustomerId = customerId.ToString();
             outcome.ActionPlanId = actionPlanId.ToString();
             outcome.SessionId = sessionId.ToString();
-            await PostOutcome(outcome, customerId, interactionId, actionPlanId, "v3");
+            await PostOutcome(outcome, customerId, interactionId, actionPlanId, Constants.API_VERSION_3);
             _scenarioContext["OutcomeId"] = await _assertionHelper.GetKeyFromResponse("OutcomeId", _response);
         }
 
@@ -166,7 +166,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             if (_scenarioContext.ContainsKey("OutcomeId"))
                 outcomeId = Guid.Parse(_scenarioContext["OutcomeId"] as string);
 
-            await GetOutcome(customerId, interactionId, actionPlanId, outcomeId, "v3");
+            await GetOutcome(customerId, interactionId, actionPlanId, outcomeId, Constants.API_VERSION_3);
         }
         #endregion
 

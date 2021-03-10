@@ -1,7 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -21,7 +19,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             }
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var learningProgression = table.CreateInstance<LearningProgression>();
-            await PostLearningProgression(learningProgression, customerId, "v3");
+            await PostLearningProgression(learningProgression, customerId, Constants.API_VERSION_3);
             if (_response.IsSuccessStatusCode)
             {
                 _scenarioContext["LearningProgressionId"] = await _assertionHelper.GetKeyFromResponse("LearningProgressionId", _response);
@@ -34,15 +32,14 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var learningProgressionId = Guid.Parse(_scenarioContext["LearningProgressionId"] as string);
-            await GetLearningProgressionById(customerId, learningProgressionId, "v3");
+            await GetLearningProgressionById(customerId, learningProgressionId, Constants.API_VERSION_3);
         }
 
         [When(@"I get all Learning Progression records for a customer V3")]
         public async Task WhenIGetAllEmploymentProgressionByCustomerID()
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            var learningProgressionId = Guid.Parse(_scenarioContext["LearningProgressionId"] as string);
-            await GetAllLearningProgressionById(customerId, "v3");
+            await GetAllLearningProgressionById(customerId, Constants.API_VERSION_3);
         }
 
         [When(@"I patch the following LearningProgression V3:")]
@@ -56,7 +53,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var learningProgression = table.CreateInstance<LearningProgression>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var learningProgressionId = Guid.Parse(_scenarioContext["LearningProgressionId"] as string);
-            await PatchLearningProgression(learningProgression, customerId, learningProgressionId, "v3");
+            await PatchLearningProgression(learningProgression, customerId, learningProgressionId, Constants.API_VERSION_3);
         }
         #endregion
 

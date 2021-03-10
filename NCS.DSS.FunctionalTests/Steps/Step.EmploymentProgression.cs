@@ -19,7 +19,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             }
             var ep = table.CreateInstance<EmploymentProgressionV3>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PostEmploymentProgression(ep, customerId, "v3");
+            await PostEmploymentProgression(ep, customerId, Constants.API_VERSION_3);
             _scenarioContext["EmploymentProgressionId"] = await _assertionHelper.GetKeyFromResponse("EmploymentProgressionId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -37,14 +37,14 @@ namespace NCS.DSS.FunctionalTests.Steps
             var ep = table.CreateInstance<EmploymentProgressionV3>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var employmentProgressionId = Guid.Parse(_scenarioContext["EmploymentProgressionId"] as string);
-            await PatchEmploymentProgression(ep, customerId, employmentProgressionId,"v3");
+            await PatchEmploymentProgression(ep, customerId, employmentProgressionId, Constants.API_VERSION_3);
         }
 
         [When(@"I get all Employment Progression records for a customer V3")]
         public async Task GivenIGetAllEmploymentProgressionForCustomerV3()
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await GetAllEmploymentProgressionsByCustomerId(customerId, "v3");
+            await GetAllEmploymentProgressionsByCustomerId(customerId, Constants.API_VERSION_3);
         }
 
         [When(@"I get a Employment Progression by ID V3")]
@@ -53,7 +53,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
 
             Guid.TryParse(_scenarioContext["EmploymentProgressionId"] as string, out Guid employmentProgressionId);
-            await GetEmploymentProgressionById(customerId, employmentProgressionId, "v3");
+            await GetEmploymentProgressionById(customerId, employmentProgressionId, Constants.API_VERSION_3);
         }
         #endregion
 

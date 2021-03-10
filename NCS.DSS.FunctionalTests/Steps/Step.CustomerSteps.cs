@@ -15,7 +15,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task GivenIPostACustomerWithTheFollowingDetails(Table table)
         {
             var customer = table.CreateInstance<Customer>();
-            await PostCustomer(customer, "");
+            await PostCustomer(customer, Constants.API_VERSION_1);
             _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -28,7 +28,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customer = new Customer();
             customer.GivenName = givenName;
             customer.FamilyName = "Smith";
-            await PostCustomer(customer, "");
+            await PostCustomer(customer, Constants.API_VERSION_1);
             _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -39,7 +39,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task WhenIGetACustomerByID()
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await GetByCustomerId(customerId, "");
+            await GetByCustomerId(customerId, Constants.API_VERSION_1);
         }
 
         [When(@"I patch the following Customer:")]
@@ -47,7 +47,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customer = table.CreateInstance<CustomerV2>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PatchCustomer(customer, customerId, "");
+            await PatchCustomer(customer, customerId, Constants.API_VERSION_1);
         }
         #endregion
 
@@ -56,7 +56,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task GivenIPostACustomerWithTheFollowingDetailsV2(Table table)
         {
             var customer = table.CreateInstance<CustomerV2>();
-            await PostCustomer(customer, "v2");
+            await PostCustomer(customer, Constants.API_VERSION_2);
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
 
@@ -68,7 +68,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task WhenIGetACustomerByIDV2()
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await GetByCustomerId(customerId, "v2");
+            await GetByCustomerId(customerId, Constants.API_VERSION_2);
         }
 
         [Given(@"I post a customer with the given name '(.*)' V2")]
@@ -77,7 +77,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customer = new CustomerV2();
             customer.GivenName = givenName;
             customer.FamilyName = "Smith";
-            await PostCustomer(customer, "v2");
+            await PostCustomer(customer, Constants.API_VERSION_2);
             _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -89,7 +89,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customer = table.CreateInstance<CustomerV2>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PatchCustomer(customer, customerId, "v2");
+            await PatchCustomer(customer, customerId, Constants.API_VERSION_2);
         }
         #endregion
 
@@ -98,7 +98,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task GivenIPostACustomerWithTheFollowingDetailsV3(Table table)
         {
             var customer = table.CreateInstance<CustomerV3>();
-            await PostCustomer(customer, "v3");
+            await PostCustomer(customer, Constants.API_VERSION_3);
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
 
@@ -113,7 +113,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             customer.GivenName = givenName;
             customer.FamilyName = "Smith";
             customer.PriorityGroups = new List<int> { 1, 3 };
-            await PostCustomer(customer, "v3");
+            await PostCustomer(customer, Constants.API_VERSION_3);
             if (_response.IsSuccessStatusCode)
                 _scenarioContext["CustomerId"] = await _assertionHelper.GetKeyFromResponse("CustomerId", _response);
 
@@ -126,7 +126,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task WhenIGetACustomerByIDV3()
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await GetByCustomerId(customerId, "v3");
+            await GetByCustomerId(customerId, Constants.API_VERSION_3);
         }
 
         [When(@"I patch the following Customer V3:")]
@@ -134,7 +134,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customer = table.CreateInstance<CustomerV3>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PatchCustomer(customer, customerId, "v3");
+            await PatchCustomer(customer, customerId, Constants.API_VERSION_3);
         }
 
         [When(@"I patch the following Customer With a different touchpoint V3:")]
@@ -142,7 +142,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customer = table.CreateInstance<CustomerV3>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PatchCustomer(customer, customerId, "v3");
+            await PatchCustomer(customer, customerId, Constants.API_VERSION_3);
 
         }
         #endregion

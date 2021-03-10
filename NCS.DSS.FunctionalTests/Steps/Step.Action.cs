@@ -1,6 +1,4 @@
-﻿
-using NCS.DSS.FunctionalTests.Models;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -18,7 +16,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
 
-            await PostAction(action, customerId, interactionId, actionPlanId, "v2");
+            await PostAction(action, customerId, interactionId, actionPlanId, Constants.API_VERSION_2);
             if (_response.IsSuccessStatusCode)
             {
                 _scenarioContext["ActionId"] = await _assertionHelper.GetKeyFromResponse("ActionId", _response);
@@ -34,7 +32,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await GetByActionId(actionId, customerId, interactionId, actionPlanId, "v2");
+            await GetByActionId(actionId, customerId, interactionId, actionPlanId, Constants.API_VERSION_2);
         }
 
         [Given(@"I patch the following Action V2:")]
@@ -45,7 +43,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await PatchAction(action, customerId, interactionId, actionPlanId, actionId, "v2");
+            await PatchAction(action, customerId, interactionId, actionPlanId, actionId, Constants.API_VERSION_2);
         }
         #endregion
 

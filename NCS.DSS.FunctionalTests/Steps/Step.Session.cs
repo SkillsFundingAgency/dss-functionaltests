@@ -1,7 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -17,7 +15,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var session = table.CreateInstance<Session>();
-            await PostSession(session, customerId, interactionId, "");
+            await PostSession(session, customerId, interactionId, Constants.API_VERSION_1);
             _scenarioContext["SessionId"] = await _assertionHelper.GetKeyFromResponse("SessionId", _response);
             if (_response.IsSuccessStatusCode)
             {
@@ -31,7 +29,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var sessionId = Guid.Parse(_scenarioContext["SessionId"] as string);
-            await GetBySessionId(customerId, interactionId, sessionId, "");
+            await GetBySessionId(customerId, interactionId, sessionId, Constants.API_VERSION_1);
         }
 
         [When(@"I patch the following Session:")]
@@ -41,7 +39,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var sessionId = Guid.Parse(_scenarioContext["SessionId"] as string);
-            await PatchSession(session, customerId, interactionId, sessionId, "");
+            await PatchSession(session, customerId, interactionId, sessionId, Constants.API_VERSION_1);
         }
         #endregion
 
@@ -52,7 +50,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var sessionId = Guid.Parse(_scenarioContext["SessionId"] as string);
-            await GetBySessionId(customerId, interactionId, sessionId, "v2");
+            await GetBySessionId(customerId, interactionId, sessionId, Constants.API_VERSION_2);
         }
         
         [Given(@"I post a session with the following details V2:")]
@@ -61,7 +59,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var session = table.CreateInstance<Session>();
-            await PostSession(session, customerId, interactionId, "v2");
+            await PostSession(session, customerId, interactionId, Constants.API_VERSION_2);
             _scenarioContext["SessionId"] = await _assertionHelper.GetKeyFromResponse("SessionId", _response);
         }
         #endregion

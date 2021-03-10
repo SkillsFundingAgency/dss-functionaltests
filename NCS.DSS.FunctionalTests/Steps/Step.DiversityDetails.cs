@@ -23,7 +23,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             }
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var dd = table.CreateInstance<Diversity>();
-            await PostDiversityDetail(dd, customerId, "v2");
+            await PostDiversityDetail(dd, customerId, Constants.API_VERSION_2);
             _scenarioContext["DiversityId"] = await _assertionHelper.GetKeyFromResponse("DiversityId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -42,10 +42,8 @@ namespace NCS.DSS.FunctionalTests.Steps
             var diversityDetailId = Guid.Parse(_scenarioContext["DiversityId"] as string);
             var dd = table.CreateInstance<Diversity>();
 
-            await PatchDiversityDetail(dd, customerId, diversityDetailId, "v2");
+            await PatchDiversityDetail(dd, customerId, diversityDetailId, Constants.API_VERSION_2);
         }
-
-        //I get a Diversity Details by ID V2
         #endregion
 
         #region V3

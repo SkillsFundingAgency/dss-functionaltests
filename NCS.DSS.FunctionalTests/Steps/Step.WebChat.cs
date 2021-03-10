@@ -14,7 +14,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var webchat = table.CreateInstance<WebChat>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
-            await PostWebChat(webchat, customerId, interactionId, "");
+            await PostWebChat(webchat, customerId, interactionId, Constants.API_VERSION_1);
             _scenarioContext["WebChatId"] = await _assertionHelper.GetKeyFromResponse("WebChatId", _response);
             if (_response.IsSuccessStatusCode)
             {
@@ -28,7 +28,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var webchatId = Guid.Parse(_scenarioContext["WebChatId"] as string);
-            await GetByWebChatId(webchatId, customerId, interactionId, "");
+            await GetByWebChatId(webchatId, customerId, interactionId, Constants.API_VERSION_1);
         }
 
         [When(@"I patch the following:")]
@@ -38,7 +38,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var webchatId = Guid.Parse(_scenarioContext["WebChatId"] as string);
-            await PatchWebChat(webchat, customerId, interactionId, webchatId, "");
+            await PatchWebChat(webchat, customerId, interactionId, webchatId, Constants.API_VERSION_1);
         }
 
         #region private helper methods for get/post/patch/delete

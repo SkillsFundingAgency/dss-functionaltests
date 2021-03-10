@@ -18,7 +18,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             transfer.CustomerId = customerId.ToString();
             transfer.InteractionId = interactionId.ToString();
-            await PostTransfer(transfer, customerId, interactionId, "");
+            await PostTransfer(transfer, customerId, interactionId, Constants.API_VERSION_1);
             _scenarioContext["TransferId"] = await _assertionHelper.GetKeyFromResponse("TransferId", _response);
         }
 
@@ -28,7 +28,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var transferId = Guid.Parse(_scenarioContext["TransferId"] as string);
-            await GetByTransferId(transferId, customerId, interactionId, "");
+            await GetByTransferId(transferId, customerId, interactionId, Constants.API_VERSION_1);
         }
 
         [Given(@"I patch a Transfer with the following details:")]
@@ -41,7 +41,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             transfer.TransferId = transferId.ToString();
             transfer.CustomerId = customerId.ToString();
             transfer.InteractionId = interactionId.ToString();
-            await PatchTransfer(transfer, customerId, interactionId, transferId, "");
+            await PatchTransfer(transfer, customerId, interactionId, transferId, Constants.API_VERSION_1);
         }
 
         #region private helper methods for get/post/patch/delete

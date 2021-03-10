@@ -1,7 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -15,7 +13,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var subscription = table.CreateInstance<Subscription>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PostSubscription(subscription, customerId, "");
+            await PostSubscription(subscription, customerId, Constants.API_VERSION_1);
             _scenarioContext["SubscriptionId"] = await _assertionHelper.GetKeyFromResponse("SubscriptionId", _response);
         }
 
@@ -24,7 +22,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var subscriptionId = Guid.Parse(_scenarioContext["SubscriptionId"] as string);
-            await GetSubscription(subscriptionId, customerId, "");
+            await GetSubscription(subscriptionId, customerId, Constants.API_VERSION_1);
         }
 
         [Given(@"I patch a subscription with the following details:")]
@@ -33,7 +31,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var subscription = table.CreateInstance<Subscription>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var subscriptionId = Guid.Parse(_scenarioContext["SubscriptionId"] as string);
-            await PatchSubscription(subscription, customerId, subscriptionId, "");
+            await PatchSubscription(subscription, customerId, subscriptionId, Constants.API_VERSION_1);
         }
 
         #region private helper methods for get/post/patch/delete

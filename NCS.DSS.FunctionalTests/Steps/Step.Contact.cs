@@ -62,22 +62,22 @@ namespace NCS.DSS.FunctionalTests.Steps
         #region private methods for posting/patching/get
         private async Task PostContact(Contact contact, Guid CustomerId)
         {
-            _response = await _httpHelper.Post(contact, string.Format(_settings.CONTACT_POST_URL, CustomerId), _settings.TestEndpoint01, "", _settings.SubscriptionKey);
+            _response = await _httpHelper.Post(contact, string.Format(_settings.CONTACT_POST_URL, CustomerId), _touchPointId, Constants.API_VERSION_1, _settings.SubscriptionKey);
             _scenarioContext["ContactId"] = await _assertionHelper.GetKeyFromResponse("ContactId", _response);
         }
 
         private async Task GetContactByCustomerId(Guid customerId)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.CONTACT_GETBY_CUSTOMERID_URL, customerId), _settings.TestEndpoint01, "", _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.CONTACT_GETBY_CUSTOMERID_URL, customerId), _touchPointId, Constants.API_VERSION_1, _settings.SubscriptionKey);
         }
         private async Task GetContactByCustomerIdAndContactId(Guid customerId, Guid contactId)
         {
-            _response = await _httpHelper.Get(string.Format(_settings.CONTACT_GETBY_CUSTOMERID_AND_CONTACTID_URL, customerId, contactId), _touchPointId, "", _settings.SubscriptionKey);
+            _response = await _httpHelper.Get(string.Format(_settings.CONTACT_GETBY_CUSTOMERID_AND_CONTACTID_URL, customerId, contactId), _touchPointId, Constants.API_VERSION_1, _settings.SubscriptionKey);
         }
 
         private async Task PatchContact(Contact contact, Guid customerId, Guid contactId)
         {
-            _response = await _httpHelper.Patch(contact, string.Format(_settings.CONTACT_PATCH_URL, customerId, contactId), _touchPointId, "", _settings.SubscriptionKey);
+            _response = await _httpHelper.Patch(contact, string.Format(_settings.CONTACT_PATCH_URL, customerId, contactId), _touchPointId, Constants.API_VERSION_1, _settings.SubscriptionKey);
         }
         #endregion;
     }

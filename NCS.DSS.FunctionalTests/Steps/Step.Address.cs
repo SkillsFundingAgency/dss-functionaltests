@@ -1,7 +1,5 @@
 ﻿using NCS.DSS.FunctionalTests.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -16,7 +14,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var address = table.CreateInstance<Address>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PostAddress(address, customerId, "");
+            await PostAddress(address, customerId, Constants.API_VERSION_1);
             _scenarioContext["AddressId"] = await _assertionHelper.GetKeyFromResponse("AddressId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -29,7 +27,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var address = table.CreateInstance<Address>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var addressId = Guid.Parse(_scenarioContext["AddressId"] as string);
-            await PatchAddress(address, customerId, addressId, "");
+            await PatchAddress(address, customerId, addressId, Constants.API_VERSION_1);
         }
 
         [When(@"I get an Address by ID")]
@@ -37,7 +35,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var addressId = Guid.Parse(_scenarioContext["AddressId"] as string);
-            await GetAddressById(customerId,addressId, "");
+            await GetAddressById(customerId,addressId, Constants.API_VERSION_1);
         }
         #endregion
 
@@ -47,7 +45,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var address = table.CreateInstance<AddressV2>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            await PostAddress(address, customerId, "v2");
+            await PostAddress(address, customerId, Constants.API_VERSION_2);
             _scenarioContext["AddressId"] = await _assertionHelper.GetKeyFromResponse("AddressId", _response);
 
             if (_response.IsSuccessStatusCode)
@@ -60,7 +58,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var address = table.CreateInstance<AddressV2>();
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var addressId = Guid.Parse(_scenarioContext["AddressId"] as string);
-            await PatchAddress(address, customerId, addressId, "v2");
+            await PatchAddress(address, customerId, addressId, Constants.API_VERSION_2);
         }
 
         [When(@"I get an Address by ID V2")]
@@ -68,7 +66,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var addressId = Guid.Parse(_scenarioContext["AddressId"] as string);
-            await GetAddressById(customerId, addressId, "v2");
+            await GetAddressById(customerId, addressId, Constants.API_VERSION_2);
         }
         #endregion
 

@@ -16,7 +16,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlan = table.CreateInstance<ActionPlan>();
-            await PostActionPlan(actionPlan, customerId, interactionId, "");
+            await PostActionPlan(actionPlan, customerId, interactionId, Constants.API_VERSION_1);
             _scenarioContext["ActionPlanId"] = await _assertionHelper.GetKeyFromResponse("ActionPlanId", _response);
             if (_response.IsSuccessStatusCode)
             {
@@ -30,7 +30,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await GetByActionPlanId(customerId, interactionId, actionPlanId, "");
+            await GetByActionPlanId(customerId, interactionId, actionPlanId, Constants.API_VERSION_1);
         }
 
         [When(@"I patch the following ActionPlan:")]
@@ -40,7 +40,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await PatchActionPlan(actionPlan, customerId, interactionId, actionPlanId, "");
+            await PatchActionPlan(actionPlan, customerId, interactionId, actionPlanId, Constants.API_VERSION_1);
         }
         #endregion
 
@@ -53,7 +53,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var sessionId = _scenarioContext["SessionId"] as string;
             var actionPlan = table.CreateInstance<ActionPlanV2>();
             actionPlan.SessionId = sessionId;
-            await PostActionPlan(actionPlan, customerId, interactionId, "v2");
+            await PostActionPlan(actionPlan, customerId, interactionId, Constants.API_VERSION_2);
             _scenarioContext["ActionPlanId"] = await _assertionHelper.GetKeyFromResponse("ActionPlanId", _response);
             if (_response.IsSuccessStatusCode)
             {
@@ -68,7 +68,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await PatchActionPlan(actionPlan, customerId, interactionId, actionPlanId, "v2");
+            await PatchActionPlan(actionPlan, customerId, interactionId, actionPlanId, Constants.API_VERSION_2);
             if (_response.IsSuccessStatusCode)
             {
                 DeleteRowFromSql("dss-actionplans", "id", _scenarioContext["ActionPlanId"] as string);
@@ -81,7 +81,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await GetByActionPlanId(customerId, interactionId, actionPlanId, "v2");
+            await GetByActionPlanId(customerId, interactionId, actionPlanId, Constants.API_VERSION_2);
         }
         #endregion
 
@@ -92,7 +92,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await GetByActionPlanId(customerId, interactionId, actionPlanId, "v3");
+            await GetByActionPlanId(customerId, interactionId, actionPlanId, Constants.API_VERSION_3);
         }
 
         [When(@"I patch the following ActionPlan V3:")]
@@ -102,7 +102,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
             var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
             var actionPlanId = Guid.Parse(_scenarioContext["ActionPlanId"] as string);
-            await PatchActionPlan(actionPlan, customerId, interactionId, actionPlanId, "v3");
+            await PatchActionPlan(actionPlan, customerId, interactionId, actionPlanId, Constants.API_VERSION_3);
         }
 
         [Given(@"I post an ActionPlan with the following details V3:")]
@@ -113,7 +113,7 @@ namespace NCS.DSS.FunctionalTests.Steps
             var sessionId = _scenarioContext["SessionId"] as string;
             var actionPlan = table.CreateInstance<ActionPlanV3>();
             actionPlan.SessionId = sessionId;
-            await PostActionPlan(actionPlan, customerId, interactionId, "v3");
+            await PostActionPlan(actionPlan, customerId, interactionId, Constants.API_VERSION_3);
             _scenarioContext["ActionPlanId"] = await _assertionHelper.GetKeyFromResponse("ActionPlanId", _response);
             if (_response.IsSuccessStatusCode)
             {

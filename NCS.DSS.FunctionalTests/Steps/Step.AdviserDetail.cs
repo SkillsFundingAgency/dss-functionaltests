@@ -13,7 +13,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task GivenIPostAAdviserWithTheFollowingDetails(Table table)
         {
             var adviser = table.CreateInstance<Adviser>();
-            await PostAdviserDetail(adviser, "");
+            await PostAdviserDetail(adviser, Constants.API_VERSION_1);
             _scenarioContext["AdviserDetailId"] = await _assertionHelper.GetKeyFromResponse("AdviserDetailId", _response);
             if (_response.IsSuccessStatusCode)
             {
@@ -25,7 +25,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task WhenIGetAnAdviserByID()
         {
             var adviserDetailId = Guid.Parse(_scenarioContext["AdviserDetailId"] as string);
-            await GetAdviserDetailById(adviserDetailId, "");
+            await GetAdviserDetailById(adviserDetailId, Constants.API_VERSION_1);
         }
 
         [When(@"I patch the following Adviser:")]
@@ -33,7 +33,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var adviserDetailId = Guid.Parse(_scenarioContext["AdviserDetailId"] as string);
             var adviser = table.CreateInstance<Adviser>();
-            await PatchAdviserDetail(adviser, adviserDetailId, "");
+            await PatchAdviserDetail(adviser, adviserDetailId, Constants.API_VERSION_1);
         }
         #endregion
 
@@ -42,7 +42,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task GivenIPostAAdviserWithTheFollowingDetailsV2(Table table)
         {
             var adviser = table.CreateInstance<AdviserV2>();
-            await PostAdviserDetail(adviser, "v2");
+            await PostAdviserDetail(adviser, Constants.API_VERSION_2);
             _scenarioContext["AdviserDetailId"] = await _assertionHelper.GetKeyFromResponse("AdviserDetailId", _response);
             if (_response.IsSuccessStatusCode)
             {
@@ -54,7 +54,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         public async Task WhenIGetAnAdviserByIDV2()
         {
             var adviserDetailId = Guid.Parse(_scenarioContext["AdviserDetailId"] as string);
-            await GetAdviserDetailById(adviserDetailId, "v2");
+            await GetAdviserDetailById(adviserDetailId, Constants.API_VERSION_2);
         }
 
         [When(@"I patch the following Adviser V2:")]
@@ -62,7 +62,7 @@ namespace NCS.DSS.FunctionalTests.Steps
         {
             var adviserDetailId = Guid.Parse(_scenarioContext["AdviserDetailId"] as string);
             var adviser = table.CreateInstance<AdviserV2>();
-            await PatchAdviserDetail(adviser, adviserDetailId, "v2");
+            await PatchAdviserDetail(adviser, adviserDetailId, Constants.API_VERSION_2);
         }
         #endregion
 
