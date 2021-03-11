@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace FunctionalTests
+namespace NCS.DSS.FunctionalTests
 {
     public class EnvironmentSettingsConfigurationBuilder
     {
@@ -14,9 +14,10 @@ namespace FunctionalTests
 
         public IConfiguration BuildConfiguration()
         {
-            var configurationBuilder = new ConfigurationBuilder();
+            var configurationBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()); ;
             configurationBuilder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             configurationBuilder.AddJsonFile("appsettings.local.json", optional: true, reloadOnChange: true);
+            configurationBuilder.AddEnvironmentVariables();;
             return configurationBuilder.Build();
         }
     }

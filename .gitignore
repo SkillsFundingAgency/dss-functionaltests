@@ -1,9 +1,9 @@
+NCS.DSS.FunctionalTests/appsettings.local.json
+NCS.DSS.FunctionalTests/bin/
+NCS.DSS.FunctionalTests/obj/
+NCS.DSS.FunctionalTests/.vs/
 /.vs
-/FunctionalTests/.vs/FunctionalTests/v15
-*/obj/
-/packages
-*/bin/
-/NCS.DSS.FunctionalTests/Features/Customer/CreateData.feature
-/NCS.DSS.FunctionalTests/Features/Customer/CreateData.feature.cs
-/FunctionalTests.playlist
-/NCS.DSS.FunctionalTests/appsettings.local.json
+/packages/
+NCS.DSS.FunctionalTests.UnitTests/bin/
+NCS.DSS.FunctionalTests.UnitTests/obj/
+NCS.DSS.FunctionalTests.UnitTests/.vs/

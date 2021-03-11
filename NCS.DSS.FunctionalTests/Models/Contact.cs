@@ -10,7 +10,7 @@ namespace NCS.DSS.FunctionalTests.Models
     {
         public string ContactId { get; set; }
         public string CustomerId { get; set; }
-        public string PreferredContactMethod { get; set; }
+        public int? PreferredContactMethod { get; set; }
         public string MobileNumber { get; set; }
         public string HomeNumber { get; set; }
         public string AlternativeNumber { get; set; }

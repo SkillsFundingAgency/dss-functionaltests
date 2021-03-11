@@ -1,11 +1,8 @@
-﻿
-@postV3 @getV3
-
-Feature: GetV3
+﻿Feature: CustomerGetV3
 
 @customers @smoke	@subcontractorId
-	Scenario: Get Customer by ID
-	Given I post a Customer with the following details:
+Scenario: Get Customer by ID
+	Given I post a Customer with the following details V3:
 		| Field                      | Value                |
 		| DateOfRegistration         | 2018-07-27T16:11:00Z |
 		| Title                      | 1                    |
@@ -21,7 +18,8 @@ Feature: GetV3
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-	When I get a Customer by ID
+		| PriorityGroups             | 1,3                  |
+	When I get a Customer by ID V3
 	Then there should be a 200 response
 	And the response body should contain:
 		| Field                      | Value                |
@@ -39,64 +37,5 @@ Feature: GetV3
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
+		| PriorityGroups             | [1,3]                |
 	And the response body should contain the SubContractorId
-
-#	Scenario: Get Customer by FamilyName
-#		Given I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Bobbeee             |
-#	When I search for:
-#		| Field                      | Value               |
-#		| parameter1                 | FamilyName          |
-#		| parameter2                 | Bobbeee             |
-#		Then there should be a 200 response
-#	And all returned Customers should contain:
-#		| Field                      | Value               |
-#		| FamilyName                 | Bobbeee             |
-#
-#
-#	Scenario: Get Customers by FamilyName
-#	Given I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Bloggs              |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Phil                |
-#		| FamilyName                 | Banks               |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Bloggs              |
-#	When I search for:
-#		| Field                      | Value               |
-#		| parameter1                 | FamilyName          |
-#		| parameter2                 | Bloggs              |
-#	Then there should be a 200 response
-#	And all returned Customers should contain:
-#		| Field                      | Value               |
-#		| FamilyName                 | Bloggs              |
-#
-#
-#	Scenario: Get Customers by Partial FamilyName
-#	Given I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Newton              |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Phil                |
-#		| FamilyName                 | Newten              |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Newtoo              |
-#	When I search for:
-#		| Field                      | Value               |
-#		| parameter1                 | FamilyName          |
-#		| parameter2                 | New                 |
-#	Then there should be a 200 response
-#	And all returned Customers should contain:
-#		| Field                      | Value               |
-#		| FamilyName                 | New	               |

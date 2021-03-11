@@ -1,8 +1,4 @@
-﻿
-@postV1
-@getV1
-
-Feature: Get
+﻿Feature: CustomerGetV1
 
 @customers @smoke
 	Scenario: Get Customer by ID

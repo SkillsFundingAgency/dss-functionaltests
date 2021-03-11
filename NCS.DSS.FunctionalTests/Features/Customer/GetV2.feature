@@ -1,11 +1,8 @@
-﻿
-@postV2 @getV2
-
-Feature: GetV2
+﻿Feature: CustomerGetV2
 
 @customers @smoke	@subcontractorId
 	Scenario: Get Customer by ID
-	Given I post a Customer with the following details:
+	Given I post a Customer with the following details V2:
 		| Field                      | Value                |
 		| DateOfRegistration         | 2018-07-27T16:11:00Z |
 		| Title                      | 1                    |
@@ -21,7 +18,7 @@ Feature: GetV2
 		| IntroducedBy               | 1                    |
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
-	When I get a Customer by ID
+	When I get a Customer by ID V2
 	Then there should be a 200 response
 	And the response body should contain:
 		| Field                      | Value                |
@@ -40,63 +37,3 @@ Feature: GetV2
 		| IntroducedByAdditionalInfo | additional info      |
 		| LastModifiedDate           | 2018-06-21T14:45:00Z |
 	And the response body should contain the SubContractorId
-
-#	Scenario: Get Customer by FamilyName
-#		Given I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Bobbeee             |
-#	When I search for:
-#		| Field                      | Value               |
-#		| parameter1                 | FamilyName          |
-#		| parameter2                 | Bobbeee             |
-#		Then there should be a 200 response
-#	And all returned Customers should contain:
-#		| Field                      | Value               |
-#		| FamilyName                 | Bobbeee             |
-#
-#
-#	Scenario: Get Customers by FamilyName
-#	Given I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Bloggs              |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Phil                |
-#		| FamilyName                 | Banks               |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Bloggs              |
-#	When I search for:
-#		| Field                      | Value               |
-#		| parameter1                 | FamilyName          |
-#		| parameter2                 | Bloggs              |
-#	Then there should be a 200 response
-#	And all returned Customers should contain:
-#		| Field                      | Value               |
-#		| FamilyName                 | Bloggs              |
-#
-#
-#	Scenario: Get Customers by Partial FamilyName
-#	Given I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Newton              |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Phil                |
-#		| FamilyName                 | Newten              |
-#	And I post a Customer with the following details:
-#		| Field                      | Value               |
-#		| GivenName                  | Bob                 |
-#		| FamilyName                 | Newtoo              |
-#	When I search for:
-#		| Field                      | Value               |
-#		| parameter1                 | FamilyName          |
-#		| parameter2                 | New                 |
-#	Then there should be a 200 response
-#	And all returned Customers should contain:
-#		| Field                      | Value               |
-#		| FamilyName                 | New	               |
