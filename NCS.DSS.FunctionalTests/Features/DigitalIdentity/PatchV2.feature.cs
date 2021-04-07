@@ -104,134 +104,134 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table626 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table342 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table626.AddRow(new string[] {
+                table342.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table626.AddRow(new string[] {
+                table342.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
 #line 5
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table626, "Given ");
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table342, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table627 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table343 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table627.AddRow(new string[] {
+                table343.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table627.AddRow(new string[] {
+                table343.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table627.AddRow(new string[] {
+                table343.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table627.AddRow(new string[] {
+                table343.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table627.AddRow(new string[] {
+                table343.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 9
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table627, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table343, "Given ");
 #line hidden
 #line 16
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table628 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table344 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table628.AddRow(new string[] {
+                table344.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table628.AddRow(new string[] {
+                table344.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table628.AddRow(new string[] {
+                table344.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table628.AddRow(new string[] {
+                table344.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table628.AddRow(new string[] {
+                table344.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 17
- testRunner.And("the response body should contain:", ((string)(null)), table628, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table344, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table629 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table345 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table629.AddRow(new string[] {
+                table345.AddRow(new string[] {
                             "IdentityStoreId",
                             "6973bf77-35f6-4989-a8ca-f1528d9c10a5"});
-                table629.AddRow(new string[] {
+                table345.AddRow(new string[] {
                             "LegacyIdentity",
                             "07676 123456"});
-                table629.AddRow(new string[] {
+                table345.AddRow(new string[] {
                             "id_token",
                             "08654 123456"});
-                table629.AddRow(new string[] {
+                table345.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612+00:00"});
 #line 24
- testRunner.Given("I Post a digital identity with the following details V2:", ((string)(null)), table629, "Given ");
+ testRunner.Given("I Post a digital identity with the following details V2:", ((string)(null)), table345, "Given ");
 #line hidden
 #line 30
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table630 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table346 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table630.AddRow(new string[] {
+                table346.AddRow(new string[] {
                             "IdentityStoreId",
                             "6973bf77-35f6-4989-a8ca-f1528d9c10a5"});
-                table630.AddRow(new string[] {
+                table346.AddRow(new string[] {
                             "LegacyIdentity",
                             "07676 123456"});
-                table630.AddRow(new string[] {
+                table346.AddRow(new string[] {
                             "id_token",
                             "08654 123456"});
-                table630.AddRow(new string[] {
+                table346.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612+00:00"});
 #line 31
- testRunner.And("the response body should contain:", ((string)(null)), table630, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table346, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table631 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table347 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table631.AddRow(new string[] {
+                table347.AddRow(new string[] {
                             "id_token",
                             "1234567910"});
-                table631.AddRow(new string[] {
+                table347.AddRow(new string[] {
                             "IdentityStoreId",
                             "aaf18eff-bf70-4e04-82ba-a056258f0db8"});
-                table631.AddRow(new string[] {
+                table347.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
 #line 37
- testRunner.Given("I patch the following digitalIdentity By CustomerId V2:", ((string)(null)), table631, "Given ");
+ testRunner.Given("I patch the following digitalIdentity By CustomerId V2:", ((string)(null)), table347, "Given ");
 #line hidden
 #line 42
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table632 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table348 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table632.AddRow(new string[] {
+                table348.AddRow(new string[] {
                             "id_token",
                             "1234567910"});
-                table632.AddRow(new string[] {
+                table348.AddRow(new string[] {
                             "IdentityStoreId",
                             "aaf18eff-bf70-4e04-82ba-a056258f0db8"});
-                table632.AddRow(new string[] {
+                table348.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
 #line 43
- testRunner.And("the response body should contain:", ((string)(null)), table632, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table348, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -268,23 +268,23 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table633 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table349 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table633.AddRow(new string[] {
+                table349.AddRow(new string[] {
                             "id_token",
                             "1234567910"});
-                table633.AddRow(new string[] {
+                table349.AddRow(new string[] {
                             "IdentityStoreId",
                             "aaf18eff-bf70-4e04-82ba-a056258f0db8"});
-                table633.AddRow(new string[] {
+                table349.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
-                table633.AddRow(new string[] {
+                table349.AddRow(new string[] {
                             "CustomerId",
                             "e432d40a-28bc-4969-bda8-9c096c747b52"});
 #line 51
- testRunner.Given("I patch the following digitalIdentity By CustomerId V2:", ((string)(null)), table633, "Given ");
+ testRunner.Given("I patch the following digitalIdentity By CustomerId V2:", ((string)(null)), table349, "Given ");
 #line hidden
 #line 57
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -324,77 +324,77 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table634 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table350 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table634.AddRow(new string[] {
+                table350.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table634.AddRow(new string[] {
+                table350.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
 #line 61
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table634, "Given ");
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table350, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table635 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table351 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table635.AddRow(new string[] {
+                table351.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table635.AddRow(new string[] {
+                table351.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table635.AddRow(new string[] {
+                table351.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table635.AddRow(new string[] {
+                table351.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table635.AddRow(new string[] {
+                table351.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 65
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table635, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table351, "Given ");
 #line hidden
 #line 72
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table636 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table352 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table636.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table636.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table636.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table636.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table636.AddRow(new string[] {
+                table352.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 73
- testRunner.And("the response body should contain:", ((string)(null)), table636, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table352, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table637 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table353 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table637.AddRow(new string[] {
+                table353.AddRow(new string[] {
                             "id_token",
                             "1234567910"});
-                table637.AddRow(new string[] {
+                table353.AddRow(new string[] {
                             "IdentityStoreId",
                             "aaf18eff-bf70-4e04-82ba-a056258f0db8"});
-                table637.AddRow(new string[] {
+                table353.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
 #line 80
- testRunner.Given("I patch the following digitalIdentity By CustomerId V2:", ((string)(null)), table637, "Given ");
+ testRunner.Given("I patch the following digitalIdentity By CustomerId V2:", ((string)(null)), table353, "Given ");
 #line hidden
 #line 85
  testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -434,116 +434,116 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table638 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table354 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table638.AddRow(new string[] {
+                table354.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table638.AddRow(new string[] {
+                table354.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
 #line 89
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table638, "Given ");
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table354, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table639 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table355 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table639.AddRow(new string[] {
+                table355.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table639.AddRow(new string[] {
+                table355.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table639.AddRow(new string[] {
+                table355.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table639.AddRow(new string[] {
+                table355.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table639.AddRow(new string[] {
+                table355.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 93
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table639, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table355, "Given ");
 #line hidden
 #line 100
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table640 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table356 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table640.AddRow(new string[] {
+                table356.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table640.AddRow(new string[] {
+                table356.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table640.AddRow(new string[] {
+                table356.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table640.AddRow(new string[] {
+                table356.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table640.AddRow(new string[] {
+                table356.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 101
- testRunner.And("the response body should contain:", ((string)(null)), table640, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table356, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table641 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table357 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table641.AddRow(new string[] {
+                table357.AddRow(new string[] {
                             "IdentityStoreId",
                             "6973bf77-35f6-4989-a8ca-f1528d9c10a5"});
-                table641.AddRow(new string[] {
+                table357.AddRow(new string[] {
                             "LegacyIdentity",
                             "07676 123456"});
-                table641.AddRow(new string[] {
+                table357.AddRow(new string[] {
                             "id_token",
                             "08654 123456"});
-                table641.AddRow(new string[] {
+                table357.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612+00:00"});
 #line 108
- testRunner.Given("I Post a digital identity with the following details V2:", ((string)(null)), table641, "Given ");
+ testRunner.Given("I Post a digital identity with the following details V2:", ((string)(null)), table357, "Given ");
 #line hidden
 #line 114
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table642 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table358 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table642.AddRow(new string[] {
+                table358.AddRow(new string[] {
                             "IdentityStoreId",
                             "6973bf77-35f6-4989-a8ca-f1528d9c10a5"});
-                table642.AddRow(new string[] {
+                table358.AddRow(new string[] {
                             "LegacyIdentity",
                             "07676 123456"});
-                table642.AddRow(new string[] {
+                table358.AddRow(new string[] {
                             "id_token",
                             "08654 123456"});
-                table642.AddRow(new string[] {
+                table358.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612+00:00"});
 #line 115
- testRunner.And("the response body should contain:", ((string)(null)), table642, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table358, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table643 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table359 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table643.AddRow(new string[] {
+                table359.AddRow(new string[] {
                             "id_token",
                             "1234567910"});
-                table643.AddRow(new string[] {
+                table359.AddRow(new string[] {
                             "IdentityStoreId",
                             "aaf18eff-bf70-4e04-82ba-a056258f0db8"});
-                table643.AddRow(new string[] {
+                table359.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
 #line 121
- testRunner.Given("I patch the following digitalIdentity By DigitalIdentityId V2:", ((string)(null)), table643, "Given ");
+ testRunner.Given("I patch the following digitalIdentity By DigitalIdentityId V2:", ((string)(null)), table359, "Given ");
 #line hidden
 #line 126
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -552,20 +552,20 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("there should be a record in the dss-digitalidentities table Ignoring \'\' with Iden" +
                         "tityId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table644 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table360 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table644.AddRow(new string[] {
+                table360.AddRow(new string[] {
                             "id_token",
                             "1234567910"});
-                table644.AddRow(new string[] {
+                table360.AddRow(new string[] {
                             "IdentityStoreId",
                             "aaf18eff-bf70-4e04-82ba-a056258f0db8"});
-                table644.AddRow(new string[] {
+                table360.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
 #line 128
- testRunner.And("the response body should contain:", ((string)(null)), table644, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table360, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -604,77 +604,77 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table645 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table361 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table645.AddRow(new string[] {
+                table361.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table645.AddRow(new string[] {
+                table361.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
 #line 136
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table645, "Given ");
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table361, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table646 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table362 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table646.AddRow(new string[] {
+                table362.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table646.AddRow(new string[] {
+                table362.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table646.AddRow(new string[] {
+                table362.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table646.AddRow(new string[] {
+                table362.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table646.AddRow(new string[] {
+                table362.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 140
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table646, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table362, "Given ");
 #line hidden
 #line 147
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table647 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table363 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table647.AddRow(new string[] {
+                table363.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table647.AddRow(new string[] {
+                table363.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table647.AddRow(new string[] {
+                table363.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table647.AddRow(new string[] {
+                table363.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
-                table647.AddRow(new string[] {
+                table363.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-20T11:46:02.4482612Z"});
 #line 148
- testRunner.And("the response body should contain:", ((string)(null)), table647, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table363, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table648 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table364 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table648.AddRow(new string[] {
+                table364.AddRow(new string[] {
                             "id_token",
                             "1234567910"});
-                table648.AddRow(new string[] {
+                table364.AddRow(new string[] {
                             "IdentityStoreId",
                             "aaf18eff-bf70-4e04-82ba-a056258f0db8"});
-                table648.AddRow(new string[] {
+                table364.AddRow(new string[] {
                             "LegacyIdentity",
                             "\"test\""});
 #line 155
- testRunner.Given("I patch the following digitalIdentity By DigitalIdentityId V2:", ((string)(null)), table648, "Given ");
+ testRunner.Given("I patch the following digitalIdentity By DigitalIdentityId V2:", ((string)(null)), table364, "Given ");
 #line hidden
 #line 160
  testRunner.Then("there should be a 204 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
