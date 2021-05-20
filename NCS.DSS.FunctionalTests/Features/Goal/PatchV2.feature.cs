@@ -77,89 +77,92 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table975 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table669 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table975.AddRow(new string[] {
+            table669.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table975.AddRow(new string[] {
+            table669.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table975, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table669, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table976 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table670 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table976.AddRow(new string[] {
+            table670.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table976.AddRow(new string[] {
+            table670.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-#line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table976, "And ");
+            table670.AddRow(new string[] {
+                        "PriorityGroups",
+                        "1,3"});
+#line 9
+ testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table670, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table977 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table671 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table977.AddRow(new string[] {
+            table671.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-25T11:21:00Z"});
-            table977.AddRow(new string[] {
+            table671.AddRow(new string[] {
                         "Channel",
                         "2"});
-            table977.AddRow(new string[] {
+            table671.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-            table977.AddRow(new string[] {
+            table671.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 12
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table977, "And ");
+#line 14
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table671, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table978 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table672 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table978.AddRow(new string[] {
+            table672.AddRow(new string[] {
                         "DateandTimeOfSession",
                         "2018-06-21T14:45:00Z"});
-            table978.AddRow(new string[] {
+            table672.AddRow(new string[] {
                         "VenuePostCode",
                         "NN1 2NN"});
-#line 18
- testRunner.And("I post a session with the following details:", ((string)(null)), table978, "And ");
+#line 20
+ testRunner.And("I post a session with the following details V2:", ((string)(null)), table672, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table979 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table673 = new TechTalk.SpecFlow.Table(new string[] {
                         "field",
                         "value"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table979.AddRow(new string[] {
+            table673.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 22
- testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table979, "And ");
+#line 24
+ testRunner.And("I post an ActionPlan with the following details V3:", ((string)(null)), table673, "And ");
 #line hidden
         }
         
@@ -176,7 +179,7 @@ namespace NCS.DSS.FunctionalTests.Features.Goal
                     "subcontractorId"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalCaptured", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 34
+#line 36
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -199,59 +202,59 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table980 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table674 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table980.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "DateGoalCaptured",
                             "2018-06-21T14:45:00Z"});
-                table980.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "DateGoalShouldBeCompletedBy",
                             "2018-07-21T14:45:00Z"});
-                table980.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "GoalSummary",
                             "some goal text"});
-                table980.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "GoalType",
                             "1"});
-                table980.AddRow(new string[] {
+                table674.AddRow(new string[] {
                             "GoalStatus",
                             "1"});
-#line 35
- testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table980, "Given ");
+#line 37
+ testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table674, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table981 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table675 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table981.AddRow(new string[] {
+                table675.AddRow(new string[] {
                             "DateGoalCaptured",
                             "2018-06-22T14:45:00Z"});
-#line 42
- testRunner.When("I patch the following Goal V2:", ((string)(null)), table981, "When ");
+#line 44
+ testRunner.When("I patch the following Goal V2:", ((string)(null)), table675, "When ");
 #line hidden
-#line 45
+#line 47
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table982 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table676 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table982.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "DateGoalCaptured",
                             "2018-06-22T14:45:00Z"});
-                table982.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "DateGoalShouldBeCompletedBy",
                             "2018-07-21T14:45:00Z"});
-                table982.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "GoalSummary",
                             "some goal text"});
-                table982.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "GoalType",
                             "1"});
-                table982.AddRow(new string[] {
+                table676.AddRow(new string[] {
                             "GoalStatus",
                             "1"});
-#line 46
- testRunner.And("the response body should contain:", ((string)(null)), table982, "And ");
+#line 48
+ testRunner.And("the response body should contain:", ((string)(null)), table676, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -266,7 +269,7 @@ this.FeatureBackground();
                     "goals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch DateGoalAchieved", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 82
+#line 84
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -289,62 +292,62 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table983 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table677 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table983.AddRow(new string[] {
+                table677.AddRow(new string[] {
                             "DateGoalCaptured",
                             "2018-06-21T14:45:00Z"});
-                table983.AddRow(new string[] {
+                table677.AddRow(new string[] {
                             "DateGoalShouldBeCompletedBy",
                             "2018-07-21T14:45:00Z"});
-                table983.AddRow(new string[] {
+                table677.AddRow(new string[] {
                             "GoalSummary",
                             "some goal text"});
-                table983.AddRow(new string[] {
+                table677.AddRow(new string[] {
                             "GoalType",
                             "1"});
-                table983.AddRow(new string[] {
+                table677.AddRow(new string[] {
                             "GoalStatus",
                             "1"});
-#line 83
- testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table983, "Given ");
+#line 85
+ testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table677, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table984 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table678 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table984.AddRow(new string[] {
+                table678.AddRow(new string[] {
                             "DateGoalAchieved",
                             "2018-07-15T14:45:00Z"});
-#line 90
- testRunner.When("I patch the following Goal V2:", ((string)(null)), table984, "When ");
+#line 92
+ testRunner.When("I patch the following Goal V2:", ((string)(null)), table678, "When ");
 #line hidden
-#line 93
+#line 95
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table985 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table679 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table985.AddRow(new string[] {
+                table679.AddRow(new string[] {
                             "DateGoalCaptured",
                             "2018-06-21T14:45:00Z"});
-                table985.AddRow(new string[] {
+                table679.AddRow(new string[] {
                             "DateGoalShouldBeCompletedBy",
                             "2018-07-21T14:45:00Z"});
-                table985.AddRow(new string[] {
+                table679.AddRow(new string[] {
                             "DateGoalAchieved",
                             "2018-07-15T14:45:00Z"});
-                table985.AddRow(new string[] {
+                table679.AddRow(new string[] {
                             "GoalSummary",
                             "some goal text"});
-                table985.AddRow(new string[] {
+                table679.AddRow(new string[] {
                             "GoalType",
                             "1"});
-                table985.AddRow(new string[] {
+                table679.AddRow(new string[] {
                             "GoalStatus",
                             "1"});
-#line 94
- testRunner.And("the response body should contain:", ((string)(null)), table985, "And ");
+#line 96
+ testRunner.And("the response body should contain:", ((string)(null)), table679, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -359,7 +362,7 @@ this.FeatureBackground();
                     "goals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 104
+#line 106
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -382,37 +385,37 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table986 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table680 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table986.AddRow(new string[] {
+                table680.AddRow(new string[] {
                             "DateGoalCaptured",
                             "2018-06-21T14:45:00Z"});
-                table986.AddRow(new string[] {
+                table680.AddRow(new string[] {
                             "DateGoalShouldBeCompletedBy",
                             "2018-07-21T14:45:00Z"});
-                table986.AddRow(new string[] {
+                table680.AddRow(new string[] {
                             "GoalSummary",
                             "some goal text"});
-                table986.AddRow(new string[] {
+                table680.AddRow(new string[] {
                             "GoalType",
                             "1"});
-                table986.AddRow(new string[] {
+                table680.AddRow(new string[] {
                             "GoalStatus",
                             "1"});
-#line 105
- testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table986, "Given ");
+#line 107
+ testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table680, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table987 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table681 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table987.AddRow(new string[] {
+                table681.AddRow(new string[] {
                             "GoalType",
                             "4"});
-#line 112
- testRunner.When("I patch the following Goal V2:", ((string)(null)), table987, "When ");
+#line 114
+ testRunner.When("I patch the following Goal V2:", ((string)(null)), table681, "When ");
 #line hidden
-#line 115
+#line 117
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -428,7 +431,7 @@ this.FeatureBackground();
                     "goals"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch with invalid GoalStatus", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 118
+#line 120
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -451,37 +454,37 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table988 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table682 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table988.AddRow(new string[] {
+                table682.AddRow(new string[] {
                             "DateGoalCaptured",
                             "2018-06-21T14:45:00Z"});
-                table988.AddRow(new string[] {
+                table682.AddRow(new string[] {
                             "DateGoalShouldBeCompletedBy",
                             "2018-07-21T14:45:00Z"});
-                table988.AddRow(new string[] {
+                table682.AddRow(new string[] {
                             "GoalSummary",
                             "some goal text"});
-                table988.AddRow(new string[] {
+                table682.AddRow(new string[] {
                             "GoalType",
                             "1"});
-                table988.AddRow(new string[] {
+                table682.AddRow(new string[] {
                             "GoalStatus",
                             "1"});
-#line 119
- testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table988, "Given ");
+#line 121
+ testRunner.Given("I post a goal with the following details V2:", ((string)(null)), table682, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table989 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table683 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table989.AddRow(new string[] {
+                table683.AddRow(new string[] {
                             "GoalStatus",
                             "4"});
-#line 126
- testRunner.When("I patch the following Goal V2:", ((string)(null)), table989, "When ");
+#line 128
+ testRunner.When("I patch the following Goal V2:", ((string)(null)), table683, "When ");
 #line hidden
-#line 129
+#line 131
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

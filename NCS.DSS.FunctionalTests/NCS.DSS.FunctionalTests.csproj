@@ -3,6 +3,68 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Features\ActionPlan\Get.feature.cs" />
+    <Compile Remove="Features\ActionPlan\GetV2.feature.cs" />
+    <Compile Remove="Features\ActionPlan\Patch.feature.cs" />
+    <Compile Remove="Features\ActionPlan\PatchV2.feature.cs" />
+    <Compile Remove="Features\ActionPlan\Post.feature.cs" />
+    <Compile Remove="Features\ActionPlan\PostV2.feature.cs" />
+    <Compile Remove="Features\Address\Get.feature.cs" />
+    <Compile Remove="Features\Address\Patch.feature.cs" />
+    <Compile Remove="Features\Address\Post.feature.cs" />
+    <Compile Remove="Features\Adviser\Get.feature.cs" />
+    <Compile Remove="Features\Adviser\Patch.feature.cs" />
+    <Compile Remove="Features\Adviser\Post.feature.cs" />
+    <Compile Remove="Features\Customer\Get.feature.cs" />
+    <Compile Remove="Features\Customer\GetV2.feature.cs" />
+    <Compile Remove="Features\Customer\Patch.feature.cs" />
+    <Compile Remove="Features\Customer\PatchV2.feature.cs" />
+    <Compile Remove="Features\Customer\Post.feature.cs" />
+    <Compile Remove="Features\Customer\PostV2.feature.cs" />
+    <Compile Remove="Features\Goal\Get.feature.cs" />
+    <Compile Remove="Features\Goal\Patch.feature.cs" />
+    <Compile Remove="Features\Goal\Post.feature.cs" />
+    <Compile Remove="Features\Outcome\Get.feature.cs" />
+    <Compile Remove="Features\Outcome\GetV2.feature.cs" />
+    <Compile Remove="Features\Outcome\Patch.feature.cs" />
+    <Compile Remove="Features\Outcome\Post.feature.cs" />
+    <Compile Remove="Features\Outcome\PostV2.feature.cs" />
+    <Compile Remove="Features\Session\Get.feature.cs" />
+    <Compile Remove="Features\Session\Patch.feature.cs" />
+    <Compile Remove="Features\Session\Post.feature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <SpecFlowFeatureFiles Remove="Features\ActionPlan\Get.feature" />
+    <SpecFlowFeatureFiles Remove="Features\ActionPlan\GetV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\ActionPlan\Patch.feature" />
+    <SpecFlowFeatureFiles Remove="Features\ActionPlan\PatchV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\ActionPlan\Post.feature" />
+    <SpecFlowFeatureFiles Remove="Features\ActionPlan\PostV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Address\Get.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Address\Patch.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Address\Post.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Adviser\Get.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Adviser\Patch.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Adviser\Post.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Customer\Get.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Customer\GetV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Customer\Patch.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Customer\PatchV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Customer\Post.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Customer\PostV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Goal\Get.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Goal\Patch.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Goal\Post.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Outcome\Get.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Outcome\GetV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Outcome\Patch.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Outcome\Post.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Outcome\PostV2.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Session\Get.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Session\Patch.feature" />
+    <SpecFlowFeatureFiles Remove="Features\Session\Post.feature" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="DFC.JSON.Standard" Version="0.1.4" />
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.16.0" />
     <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.13.1" />

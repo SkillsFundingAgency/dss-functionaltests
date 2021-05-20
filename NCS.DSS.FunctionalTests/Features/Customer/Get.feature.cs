@@ -104,53 +104,53 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table433 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table256 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "Title",
                             "1"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-07-27T14:45:00Z"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "ReasonForTermination",
                             "1"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table433.AddRow(new string[] {
+                table256.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
 #line 5
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table433, "Given ");
+ testRunner.Given("I post a Customer with the following details:", ((string)(null)), table256, "Given ");
 #line hidden
 #line 21
  testRunner.When("I get a Customer by ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -158,53 +158,53 @@ namespace NCS.DSS.FunctionalTests.Features.Customer
 #line 22
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table434 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table257 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "DateOfRegistration",
                             "2018-07-27T16:11:00Z"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "Title",
                             "1"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "GivenName",
                             "Bob"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "DateofBirth",
                             "2005-07-26T13:45:00Z"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "Gender",
                             "1"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "UniqueLearnerNumber",
                             "9876543210"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "OptInUserResearch",
                             "true"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "OptInMarketResearch",
                             "false"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-07-27T14:45:00Z"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "ReasonForTermination",
                             "1"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "IntroducedBy",
                             "1"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "IntroducedByAdditionalInfo",
                             "additional info"});
-                table434.AddRow(new string[] {
+                table257.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-21T14:45:00Z"});
 #line 23
- testRunner.And("the response body should contain:", ((string)(null)), table434, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table257, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
