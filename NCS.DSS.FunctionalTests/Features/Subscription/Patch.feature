@@ -1,10 +1,11 @@
 ﻿Feature: SubscriptionPatch
 
 Background: Prepare test
-	Given I post a Customer with the following details:
-		| Field                      | Value              |
-		| GivenName                  | Bobby              |
-		| FamilyName                 | SubPatch           |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bobby    |
+		| FamilyName     | SubPatch |
+		| PriorityGroups | 1,3      |
 	And I post a subscription with the following details:
 		| Field        | Value      |
 		| TouchpointId | 9111111111 |

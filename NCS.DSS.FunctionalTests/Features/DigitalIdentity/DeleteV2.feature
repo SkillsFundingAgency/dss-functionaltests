@@ -2,10 +2,11 @@
 
 @digitalidentity @smoke
 Scenario: Delete valid DigitalIdentity Deletes the customers Digital Identity after cosmos TTL
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Then there should be a 201 response
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
@@ -41,13 +42,13 @@ Scenario: Delete valid DigitalIdentity Deletes the customers Digital Identity af
 	And I get a DigitalIdentity by CustomerID V2
 	Then there should be a 204 response
 
-
 @digitalidentity @smoke
 Scenario: Delete Digital Identity & Do not wait for TTL still retrieves Digital Identity
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Then there should be a 201 response
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
@@ -82,13 +83,13 @@ Scenario: Delete Digital Identity & Do not wait for TTL still retrieves Digital 
 	Given I get a DigitalIdentity by CustomerID V2
 	Then there should be a 200 response
 
-
 @digitalidentity @smoke
 Scenario: Delete Digital identity for customer that does not have a digital identity
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |

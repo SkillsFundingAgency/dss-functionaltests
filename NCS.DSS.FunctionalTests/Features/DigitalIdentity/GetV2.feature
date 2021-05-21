@@ -2,10 +2,11 @@
 
 @digitalidentity @smoke
 Scenario: Post valid DigitalIdentity and Get By CustomerId
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
@@ -44,10 +45,11 @@ Scenario: Post valid DigitalIdentity and Get By CustomerId
 		| LastModifiedDate | 2018-08-20T11:46:02.4482612+00:00    |
 
 Scenario: Get Digital Identity for Customer that Does not have a Digital Identity Returns Error
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
@@ -67,10 +69,11 @@ Scenario: Get Digital Identity for Customer that Does not have a Digital Identit
 	Then there should be a 204 response
 
 Scenario: Get Digital Identity By DigitalIdentityId for Customer that Does not have a Digital Identity Returns Error
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
@@ -90,10 +93,11 @@ Scenario: Get Digital Identity By DigitalIdentityId for Customer that Does not h
 	Then there should be a 204 response
 
 Scenario: Post valid DigitalIdentity and Get By DigitalIdentityId
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |

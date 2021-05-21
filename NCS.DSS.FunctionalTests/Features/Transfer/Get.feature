@@ -1,10 +1,11 @@
 ﻿Feature: Get
 
 Background: Prepare test
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Then there should be a 201 response
 	Given I post an Interaction with the following details:
 		| Field                    | Value                |

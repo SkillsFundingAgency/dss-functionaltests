@@ -2,10 +2,11 @@
 
 @digitalidentity @smoke
 Scenario: Patch a valid Digital Identity
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
@@ -58,10 +59,11 @@ Scenario: Patch Digital Identity for Customer that does not exist
 
 @digitalidentity @smoke
 Scenario: Patch a Digital Identity for a customer that does not have a digital identity
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
@@ -86,10 +88,11 @@ Scenario: Patch a Digital Identity for a customer that does not have a digital i
 
 @digitalidentity @smoke
 Scenario: Patch a valid Digital Identity By Digital IdentityId
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |
@@ -133,10 +136,11 @@ Scenario: Patch a valid Digital Identity By Digital IdentityId
 
 @digitalidentity @smoke
 Scenario: Patch a Digital Identity By Digital IdentityId for a customer that does not have a digital identity
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |

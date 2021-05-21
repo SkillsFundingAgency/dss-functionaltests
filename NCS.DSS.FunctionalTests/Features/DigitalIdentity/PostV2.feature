@@ -2,10 +2,11 @@
 
 @digitalidentity
 Scenario:Post valid DigitalIdentity
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Then there should be a 201 response
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
@@ -51,10 +52,11 @@ Scenario: Post invalid DigitalIdentity with non existent customerId
 
 @digitalidentity
 Scenario:Post Valid Digital identity Digital identity Already Exists for Customer
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Then there should be a 201 response
 	Given I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
@@ -88,10 +90,11 @@ Scenario:Post Valid Digital identity Digital identity Already Exists for Custome
 	And the response body should include already exists.
 
 Scenario:Post Invalid Digital identity without a contact
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I Post a digital identity with the following details V2:
 		| Field            | Value                                |
 		| IdentityStoreId  | 6973bf77-35f6-4989-a8ca-f1528d9c10a5 |
