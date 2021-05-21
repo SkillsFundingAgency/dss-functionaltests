@@ -8,41 +8,6 @@ namespace NCS.DSS.FunctionalTests.Steps
 {
     public partial class Step
     {
-        #region v1
-        [Given(@"I post a session with the following details:")]
-        public async Task GivenIPostASessionWithTheFollowingDetails(Table table)
-        {
-            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
-            var session = table.CreateInstance<Session>();
-            await PostSession(session, customerId, interactionId, Constants.API_VERSION_1);
-            _scenarioContext["SessionId"] = await _assertionHelper.GetKeyFromResponse("SessionId", _response);
-            if (_response.IsSuccessStatusCode)
-            {
-                DeleteRowFromSql("dss-sessions", "id", _scenarioContext["SessionId"] as string);
-            }
-        }
-
-        [When(@"I get a Session by ID")]
-        public async Task WhenIGetASessionById()
-        {
-            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
-            var sessionId = Guid.Parse(_scenarioContext["SessionId"] as string);
-            await GetBySessionId(customerId, interactionId, sessionId, Constants.API_VERSION_1);
-        }
-
-        [When(@"I patch the following Session:")]
-        public async Task WhenPatchTheFollowingSession(Table table)
-        {
-            var session = table.CreateInstance<Session>();
-            var customerId = Guid.Parse(_scenarioContext["CustomerId"] as string);
-            var interactionId = Guid.Parse(_scenarioContext["InteractionId"] as string);
-            var sessionId = Guid.Parse(_scenarioContext["SessionId"] as string);
-            await PatchSession(session, customerId, interactionId, sessionId, Constants.API_VERSION_1);
-        }
-        #endregion
-
         #region v2
         [When(@"I get a Session by ID V2")]
         public async Task WhenIGetASessionByIdV2()

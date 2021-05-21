@@ -1,14 +1,15 @@
 ﻿Feature: LearningProgression_Post
 
 Background: Create Adviser
-	Given I post an adviser with the following details:
+	Given I post an adviser with the following details V2:
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	And I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 
 @learningprogressions  @smoke
 Scenario:Post learning progression with all values
