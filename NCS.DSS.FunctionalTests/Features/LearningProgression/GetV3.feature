@@ -1,14 +1,15 @@
 ﻿Feature: LearningProgression_Get
 
 Background: Create Adviser
-	Given I post an adviser with the following details:
+	Given I post an adviser with the following details V2:
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	And I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 
 @learningprogressions  @Smoke
 Scenario:Get Learning Progression by ID
@@ -69,10 +70,11 @@ Scenario:Get Learning Progression by invalid ID
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-	And I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	And I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	When I get a Learning Progression by ID V3
 	Then there should be a 204 response
 
@@ -87,9 +89,10 @@ Scenario:Get All Learning Progression records where none exist
 		| CurrentQualificationLevel      | 2                    |
 		| DateQualificationLevelAchieved | 2019-07-25T11:21:00Z |
 		| LastLearningProvidersUKPRN     | 12345678             |
-	And I post a Customer with the following details:
+	And I post a Customer with the following details V3:
 		| Field      | Value    |
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
+		| PriorityGroups | 1,3  |
 	When I get all Learning Progression records for a customer V3
 	Then there should be a 204 response

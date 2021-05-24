@@ -1,14 +1,15 @@
 ﻿Feature: SessionPostV2
 
 Background: Create Adviser and Customer and Interaction
-	Given I post an adviser with the following details:
+	Given I post an adviser with the following details V2:
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
+	And I post a Customer with the following details V3:
 		| Field      | Value    |
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
+		| PriorityGroups | 1,3      |
 	And I post an Interaction with the following details:
 		| Field                    | Value                |
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z |
@@ -16,12 +17,12 @@ Background: Create Adviser and Customer and Interaction
 		| InteractionType          | 2                    |
 		| LastModifiedDate         | 2018-06-22T16:52:10Z |
 
-@sessions
+@sessions  @Ignore
 Scenario: Create a Session for with venue postcode that reports wrong location when Country paraneters is not passed to geocoding
-	Given I post a session with the following details:
+	Given I post a session with the following details V2:
 		| Field                | Value                |
 		| DateandTimeOfSession | 2018-06-21T14:45:00Z |
-		| VenuePostCode        | S41 8SE              |
+		| VenuePostCode        | S46 8SE              |
 	Then there should be a 201 response
 	#And the "sessions" cosmos document should include CreatedBy
 	#And the "sessions" cosmos document should include "Longitude" with value "-1.43018"
@@ -29,7 +30,7 @@ Scenario: Create a Session for with venue postcode that reports wrong location w
 	And the response body should contain:
 		| Field                  | Value                |
 		| DateandTimeOfSession   | 2018-06-21T14:45:00Z |
-		| VenuePostCode          | S41 8SE              |
+		| VenuePostCode          | S46 8SE              |
 		| SessionAttended        |                      |
 		| ReasonForNonAttendance | 99                   |
 	And the response body should not contain the "CreatedBy"
@@ -42,14 +43,15 @@ Scenario: Create a Session for with venue postcode that reports wrong location w
 #And there should be a record in the sessions-history ChangeFeed table
 @sessions @smoke
 Scenario: Change feed for Post Session
-	Given I post an adviser with the following details:
+	Given I post an adviser with the following details V2:
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	And I post a Customer with the following details V3:
+		| Field      | Value		|
+		| GivenName  | Bob			|
+		| FamilyName | Customer		|
+		| PriorityGroups | 1,3      |
 	And I post an Interaction with the following details:
 		| Field                    | Value                |
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z |
@@ -86,5 +88,5 @@ Scenario: Create a Session for existing customer with incorrect format for venue
 	Given I post a session with the following details V2:
 		| Field                | Value      |
 		| DateandTimeOfSession | 21-06-2018 |
-		| VenuePostCode        | NN1        |
+		| VenuePostCode        | NN76N N1     |
 	Then there should be a 422 response

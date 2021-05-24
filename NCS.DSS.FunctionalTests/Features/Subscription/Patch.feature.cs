@@ -77,32 +77,32 @@ namespace NCS.DSS.FunctionalTests.Features.Subscription
         {
 #line 3
 #line hidden
+            TechTalk.SpecFlow.Table table896 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table896.AddRow(new string[] {
+                        "GivenName",
+                        "Bobby"});
+            table896.AddRow(new string[] {
+                        "FamilyName",
+                        "SubPatch"});
+            table896.AddRow(new string[] {
+                        "PriorityGroups",
+                        "1,3"});
+#line 4
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table896, "Given ");
+#line hidden
             TechTalk.SpecFlow.Table table897 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table897.AddRow(new string[] {
-                        "GivenName",
-                        "Bobby"});
-            table897.AddRow(new string[] {
-                        "FamilyName",
-                        "SubPatch"});
-            table897.AddRow(new string[] {
-                        "PriorityGroups",
-                        "1,3"});
-#line 4
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table897, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table898 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table898.AddRow(new string[] {
                         "TouchpointId",
                         "9111111111"});
-            table898.AddRow(new string[] {
+            table897.AddRow(new string[] {
                         "Subscribe",
                         "true"});
 #line 9
- testRunner.And("I post a subscription with the following details:", ((string)(null)), table898, "And ");
+ testRunner.And("I post a subscription with the following details:", ((string)(null)), table897, "And ");
 #line hidden
         }
         
@@ -140,6 +140,21 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
+                TechTalk.SpecFlow.Table table898 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table898.AddRow(new string[] {
+                            "TouchPointId",
+                            "9111111111"});
+                table898.AddRow(new string[] {
+                            "Subscribe",
+                            "false"});
+#line 16
+ testRunner.Given("I patch a subscription with the following details:", ((string)(null)), table898, "Given ");
+#line hidden
+#line 20
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
                 TechTalk.SpecFlow.Table table899 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -149,23 +164,8 @@ this.FeatureBackground();
                 table899.AddRow(new string[] {
                             "Subscribe",
                             "false"});
-#line 16
- testRunner.Given("I patch a subscription with the following details:", ((string)(null)), table899, "Given ");
-#line hidden
-#line 20
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table900 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table900.AddRow(new string[] {
-                            "TouchPointId",
-                            "9111111111"});
-                table900.AddRow(new string[] {
-                            "Subscribe",
-                            "false"});
 #line 21
- testRunner.And("the response body should contain:", ((string)(null)), table900, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table899, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
