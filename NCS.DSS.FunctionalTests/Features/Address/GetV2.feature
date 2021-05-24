@@ -2,10 +2,11 @@
 
 @addresses @smoke @subcontractorId
 Scenario: Get Address by ID
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	And I post an Address with the following details V2:
 		| Field               | Value                |
 		| Address1            | 1                    |
@@ -36,7 +37,7 @@ Scenario: Get Address by ID
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 		| LastModifiedDate    | 2018-09-19T09:01:00Z |
-	#And the response body should contain the SubContractorId
+#And the response body should contain the SubContractorId
 #Scenario:Get All Address records where 2 exist
 #	Given I post a Customer with the following details:
 #		| Field                | Value                |

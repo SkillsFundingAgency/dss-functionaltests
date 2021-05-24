@@ -106,65 +106,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table121.AddRow(new string[] {
-                            "GivenName",
-                            "Bob"});
-                table121.AddRow(new string[] {
-                            "FamilyName",
-                            "Customer"});
-#line 5
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table121, "Given ");
-#line hidden
                 TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
                 table122.AddRow(new string[] {
-                            "Address1",
-                            "1"});
+                            "GivenName",
+                            "Bob"});
                 table122.AddRow(new string[] {
-                            "Address2",
-                            "The Street"});
+                            "FamilyName",
+                            "Customer"});
                 table122.AddRow(new string[] {
-                            "Address3",
-                            "The Town"});
-                table122.AddRow(new string[] {
-                            "Address4",
-                            "The Area"});
-                table122.AddRow(new string[] {
-                            "Address5",
-                            "The County"});
-                table122.AddRow(new string[] {
-                            "PostCode",
-                            "NW11WN"});
-                table122.AddRow(new string[] {
-                            "AlternativePostCode",
-                            "NW22WN"});
-                table122.AddRow(new string[] {
-                            "Longitude",
-                            "-98.50812"});
-                table122.AddRow(new string[] {
-                            "Latitude",
-                            "52.40121"});
-                table122.AddRow(new string[] {
-                            "EffectiveFrom",
-                            "2018-06-19T09:01:00Z"});
-                table122.AddRow(new string[] {
-                            "EffectiveTo",
-                            "2018-06-21T13:12:00Z"});
-                table122.AddRow(new string[] {
-                            "LastModifiedDate",
-                            "2018-09-19T09:01:00Z"});
-#line 9
- testRunner.And("I post an Address with the following details V2:", ((string)(null)), table122, "And ");
-#line hidden
-#line 23
- testRunner.When("I get an Address by ID V2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 24
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                            "PriorityGroups",
+                            "1,3"});
+#line 5
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table122, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -205,8 +160,56 @@ this.ScenarioInitialize(scenarioInfo);
                 table123.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
+#line 10
+ testRunner.And("I post an Address with the following details V2:", ((string)(null)), table123, "And ");
+#line hidden
+#line 24
+ testRunner.When("I get an Address by ID V2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 25
- testRunner.And("the response body should contain:", ((string)(null)), table123, "And ");
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table124.AddRow(new string[] {
+                            "Address1",
+                            "1"});
+                table124.AddRow(new string[] {
+                            "Address2",
+                            "The Street"});
+                table124.AddRow(new string[] {
+                            "Address3",
+                            "The Town"});
+                table124.AddRow(new string[] {
+                            "Address4",
+                            "The Area"});
+                table124.AddRow(new string[] {
+                            "Address5",
+                            "The County"});
+                table124.AddRow(new string[] {
+                            "PostCode",
+                            "NW11WN"});
+                table124.AddRow(new string[] {
+                            "AlternativePostCode",
+                            "NW22WN"});
+                table124.AddRow(new string[] {
+                            "Longitude",
+                            "-98.50812"});
+                table124.AddRow(new string[] {
+                            "Latitude",
+                            "52.40121"});
+                table124.AddRow(new string[] {
+                            "EffectiveFrom",
+                            "2018-06-19T09:01:00Z"});
+                table124.AddRow(new string[] {
+                            "EffectiveTo",
+                            "2018-06-21T13:12:00Z"});
+                table124.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-09-19T09:01:00Z"});
+#line 26
+ testRunner.And("the response body should contain:", ((string)(null)), table124, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
