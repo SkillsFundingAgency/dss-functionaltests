@@ -1,10 +1,11 @@
 ﻿Feature: ContactGetV1
 
 Background: Setup
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	And I post a Contact with the following details with unique email address:
 		| Field                  | Value                        |
 		| PreferredContactMethod | 1                            |

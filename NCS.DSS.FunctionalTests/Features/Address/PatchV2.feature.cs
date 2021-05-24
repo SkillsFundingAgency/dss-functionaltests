@@ -86,8 +86,11 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table125.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
+            table125.AddRow(new string[] {
+                        "PriorityGroups",
+                        "1,3"});
 #line 4
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table125, "Given ");
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table125, "Given ");
 #line hidden
         }
         
@@ -104,7 +107,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                     "subcontractorId"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address1 (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -163,7 +166,7 @@ this.FeatureBackground();
                 table126.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 11
+#line 12
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table126, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
@@ -172,10 +175,10 @@ this.FeatureBackground();
                 table127.AddRow(new string[] {
                             "Address1",
                             "2"});
-#line 24
+#line 25
  testRunner.When("I patch the following Address V2:", ((string)(null)), table127, "When ");
 #line hidden
-#line 27
+#line 28
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
@@ -214,13 +217,13 @@ this.FeatureBackground();
                 table128.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 28
+#line 29
  testRunner.And("the response body should contain:", ((string)(null)), table128, "And ");
 #line hidden
-#line 41
+#line 42
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 42
+#line 43
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -236,7 +239,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address2 (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 45
+#line 46
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -295,7 +298,7 @@ this.FeatureBackground();
                 table129.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 46
+#line 47
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table129, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
@@ -304,10 +307,10 @@ this.FeatureBackground();
                 table130.AddRow(new string[] {
                             "Address2",
                             "Changed"});
-#line 59
+#line 60
  testRunner.When("I patch the following Address V2:", ((string)(null)), table130, "When ");
 #line hidden
-#line 62
+#line 63
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
@@ -346,13 +349,13 @@ this.FeatureBackground();
                 table131.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 63
+#line 64
  testRunner.And("the response body should contain:", ((string)(null)), table131, "And ");
 #line hidden
-#line 76
+#line 77
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 77
+#line 78
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -368,7 +371,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address3 (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 80
+#line 81
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -427,7 +430,7 @@ this.FeatureBackground();
                 table132.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 81
+#line 82
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table132, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
@@ -436,10 +439,10 @@ this.FeatureBackground();
                 table133.AddRow(new string[] {
                             "Address3",
                             "Changed"});
-#line 94
+#line 95
  testRunner.When("I patch the following Address V2:", ((string)(null)), table133, "When ");
 #line hidden
-#line 97
+#line 98
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
@@ -478,7 +481,7 @@ this.FeatureBackground();
                 table134.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 98
+#line 99
  testRunner.And("the response body should contain:", ((string)(null)), table134, "And ");
 #line hidden
             }
@@ -494,7 +497,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address4 (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 113
+#line 114
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -553,7 +556,7 @@ this.FeatureBackground();
                 table135.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 114
+#line 115
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table135, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table136 = new TechTalk.SpecFlow.Table(new string[] {
@@ -562,10 +565,10 @@ this.FeatureBackground();
                 table136.AddRow(new string[] {
                             "Address4",
                             "Changed"});
-#line 127
+#line 128
  testRunner.When("I patch the following Address V2:", ((string)(null)), table136, "When ");
 #line hidden
-#line 130
+#line 131
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table137 = new TechTalk.SpecFlow.Table(new string[] {
@@ -604,7 +607,7 @@ this.FeatureBackground();
                 table137.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 131
+#line 132
  testRunner.And("the response body should contain:", ((string)(null)), table137, "And ");
 #line hidden
             }
@@ -620,7 +623,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Address5 (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 146
+#line 147
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -679,7 +682,7 @@ this.FeatureBackground();
                 table138.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 147
+#line 148
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table138, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
@@ -688,10 +691,10 @@ this.FeatureBackground();
                 table139.AddRow(new string[] {
                             "Address5",
                             "Changed"});
-#line 160
+#line 161
  testRunner.When("I patch the following Address V2:", ((string)(null)), table139, "When ");
 #line hidden
-#line 163
+#line 164
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table140 = new TechTalk.SpecFlow.Table(new string[] {
@@ -730,7 +733,7 @@ this.FeatureBackground();
                 table140.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 164
+#line 165
  testRunner.And("the response body should contain:", ((string)(null)), table140, "And ");
 #line hidden
             }
@@ -746,7 +749,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch PostCode (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 179
+#line 180
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -805,7 +808,7 @@ this.FeatureBackground();
                 table141.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 180
+#line 181
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table141, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
@@ -814,10 +817,10 @@ this.FeatureBackground();
                 table142.AddRow(new string[] {
                             "PostCode",
                             "B168FN"});
-#line 193
+#line 194
  testRunner.When("I patch the following Address V2:", ((string)(null)), table142, "When ");
 #line hidden
-#line 196
+#line 197
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
@@ -856,7 +859,7 @@ this.FeatureBackground();
                 table143.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 197
+#line 198
  testRunner.And("the response body should contain:", ((string)(null)), table143, "And ");
 #line hidden
             }
@@ -872,7 +875,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch AlternativePostCode (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 212
+#line 213
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -931,7 +934,7 @@ this.FeatureBackground();
                 table144.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 213
+#line 214
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table144, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
@@ -940,10 +943,10 @@ this.FeatureBackground();
                 table145.AddRow(new string[] {
                             "AlternativePostCode",
                             "NW22WW"});
-#line 226
+#line 227
  testRunner.When("I patch the following Address V2:", ((string)(null)), table145, "When ");
 #line hidden
-#line 229
+#line 230
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
@@ -982,7 +985,7 @@ this.FeatureBackground();
                 table146.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 230
+#line 231
  testRunner.And("the response body should contain:", ((string)(null)), table146, "And ");
 #line hidden
             }
@@ -998,7 +1001,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Longitude (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 245
+#line 246
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1057,7 +1060,7 @@ this.FeatureBackground();
                 table147.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 246
+#line 247
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table147, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table148 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1066,10 +1069,10 @@ this.FeatureBackground();
                 table148.AddRow(new string[] {
                             "Longitude",
                             "-98.50813"});
-#line 259
+#line 260
  testRunner.When("I patch the following Address V2:", ((string)(null)), table148, "When ");
 #line hidden
-#line 262
+#line 263
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table149 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1108,7 +1111,7 @@ this.FeatureBackground();
                 table149.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 263
+#line 264
  testRunner.And("the response body should contain:", ((string)(null)), table149, "And ");
 #line hidden
             }
@@ -1124,7 +1127,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Latitude (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 278
+#line 279
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1183,7 +1186,7 @@ this.FeatureBackground();
                 table150.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 279
+#line 280
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table150, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1192,10 +1195,10 @@ this.FeatureBackground();
                 table151.AddRow(new string[] {
                             "Latitude",
                             "52.40122"});
-#line 292
+#line 293
  testRunner.When("I patch the following Address V2:", ((string)(null)), table151, "When ");
 #line hidden
-#line 295
+#line 296
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table152 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1234,7 +1237,7 @@ this.FeatureBackground();
                 table152.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 296
+#line 297
  testRunner.And("the response body should contain:", ((string)(null)), table152, "And ");
 #line hidden
             }
@@ -1250,7 +1253,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveFrom (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 311
+#line 312
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1309,7 +1312,7 @@ this.FeatureBackground();
                 table153.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 312
+#line 313
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table153, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1318,10 +1321,10 @@ this.FeatureBackground();
                 table154.AddRow(new string[] {
                             "EffectiveFrom",
                             "2018-06-19T09:02:00Z"});
-#line 325
+#line 326
  testRunner.When("I patch the following Address V2:", ((string)(null)), table154, "When ");
 #line hidden
-#line 328
+#line 329
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table155 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1360,7 +1363,7 @@ this.FeatureBackground();
                 table155.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 329
+#line 330
  testRunner.And("the response body should contain:", ((string)(null)), table155, "And ");
 #line hidden
             }
@@ -1376,7 +1379,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch EffectiveTo (V2)", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 344
+#line 345
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1435,7 +1438,7 @@ this.FeatureBackground();
                 table156.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:12:00Z"});
-#line 345
+#line 346
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table156, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table157 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1444,10 +1447,10 @@ this.FeatureBackground();
                 table157.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:13:00Z"});
-#line 358
+#line 359
  testRunner.When("I patch the following Address V2:", ((string)(null)), table157, "When ");
 #line hidden
-#line 361
+#line 362
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1486,16 +1489,16 @@ this.FeatureBackground();
                 table158.AddRow(new string[] {
                             "EffectiveTo",
                             "2018-06-21T13:13:00Z"});
-#line 362
+#line 363
  testRunner.And("the response body should contain:", ((string)(null)), table158, "And ");
 #line hidden
-#line 375
+#line 376
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 376
+#line 377
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 377
+#line 378
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

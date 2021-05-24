@@ -1,10 +1,11 @@
 ﻿Feature: ContactPatchV1
 
 Background: Post Customer
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 
 @contactdetails @smoke
 Scenario: Patch PreferredContactMethod
@@ -61,7 +62,7 @@ Scenario: Patch MobileNumber
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 07564656766  |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
+	Then there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
@@ -83,7 +84,7 @@ Scenario: Patch HomeNumber
 		| HomeNumber             | 08654 654321 |
 		| AlternativeNumber      | 07564656766  |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
+	Then there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
@@ -105,7 +106,7 @@ Scenario: Patch AlternativeNumber
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 08654 123458 |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
+	Then there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
@@ -125,7 +126,7 @@ Scenario: Patch EmailAddress
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 07564656766  |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
+	Then there should be a record in the dss-contacts table with ContactId
 
 #And there should be a record in the contacts-history ChangeFeed table
 @contactdetails
@@ -161,5 +162,4 @@ Scenario: Patch new PreferredContactMethod - MobileNumber
 		| HomeNumber             | 08654 123456 |
 		| AlternativeNumber      | 07564656766  |
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-contacts table with ContactId
-#And there should be a record in the contacts-history ChangeFeed table
+	Then there should be a record in the dss-contacts table with ContactId

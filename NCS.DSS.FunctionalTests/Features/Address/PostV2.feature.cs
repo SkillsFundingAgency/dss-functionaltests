@@ -86,8 +86,11 @@ namespace NCS.DSS.FunctionalTests.Features.Address
             table159.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
+            table159.AddRow(new string[] {
+                        "PriorityGroups",
+                        "1,3"});
 #line 4
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table159, "Given ");
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table159, "Given ");
 #line hidden
         }
         
@@ -102,7 +105,7 @@ namespace NCS.DSS.FunctionalTests.Features.Address
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post valid address", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -125,7 +128,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 11
+#line 12
  testRunner.Given("I want to set the scenario touchPointId header to 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table160 = new TechTalk.SpecFlow.Table(new string[] {
@@ -167,10 +170,10 @@ this.FeatureBackground();
                 table160.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 12
+#line 13
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table160, "Given ");
 #line hidden
-#line 26
+#line 27
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table161 = new TechTalk.SpecFlow.Table(new string[] {
@@ -212,22 +215,22 @@ this.FeatureBackground();
                 table161.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 27
+#line 28
  testRunner.And("the response body should contain:", ((string)(null)), table161, "And ");
 #line hidden
-#line 41
+#line 42
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 43
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 43
+#line 44
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 44
+#line 45
  testRunner.Given("I fetch a addresses cosmos document from addresses database using key AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 45
+#line 46
  testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -245,7 +248,7 @@ this.FeatureBackground();
                     "subcontractorId"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post valid address with Subcontractor Id", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 49
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -268,7 +271,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 50
+#line 51
  testRunner.Given("I want to set the scenario touchPointId header to 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table162 = new TechTalk.SpecFlow.Table(new string[] {
@@ -310,10 +313,10 @@ this.FeatureBackground();
                 table162.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 51
+#line 52
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table162, "Given ");
 #line hidden
-#line 65
+#line 66
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table163 = new TechTalk.SpecFlow.Table(new string[] {
@@ -355,22 +358,22 @@ this.FeatureBackground();
                 table163.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 66
+#line 67
  testRunner.And("the response body should contain:", ((string)(null)), table163, "And ");
 #line hidden
-#line 81
+#line 82
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 82
+#line 83
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 83
+#line 84
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 84
+#line 85
  testRunner.Given("I fetch a addresses cosmos document from addresses database using key AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 85
+#line 86
  testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -386,7 +389,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with only mandatory Fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 88
+#line 89
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -418,10 +421,10 @@ this.FeatureBackground();
                 table164.AddRow(new string[] {
                             "PostCode",
                             "NW11WN"});
-#line 89
+#line 90
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table164, "Given ");
 #line hidden
-#line 93
+#line 94
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table165 = new TechTalk.SpecFlow.Table(new string[] {
@@ -460,13 +463,13 @@ this.FeatureBackground();
                 table165.AddRow(new string[] {
                             "EffectiveTo",
                             ""});
-#line 94
+#line 95
  testRunner.And("the response body should contain:", ((string)(null)), table165, "And ");
 #line hidden
-#line 107
+#line 108
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 108
+#line 109
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -482,7 +485,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with maximum Field lengths", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 111
+#line 112
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -545,10 +548,10 @@ this.FeatureBackground();
                 table166.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 112
+#line 113
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table166, "Given ");
 #line hidden
-#line 125
+#line 126
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table167 = new TechTalk.SpecFlow.Table(new string[] {
@@ -591,13 +594,13 @@ this.FeatureBackground();
                 table167.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 126
+#line 127
  testRunner.And("the response body should contain:", ((string)(null)), table167, "And ");
 #line hidden
-#line 139
- testRunner.Given("I wait for 10 Seconds|", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 140
+ testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 141
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -613,7 +616,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 143
+#line 144
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -645,8 +648,11 @@ this.FeatureBackground();
                 table168.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 144
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table168, "Given ");
+                table168.AddRow(new string[] {
+                            "PriorityGroups",
+                            "1,3"});
+#line 145
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table168, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table169 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -657,16 +663,16 @@ this.FeatureBackground();
                 table169.AddRow(new string[] {
                             "PostCode",
                             "NW11WN"});
-#line 148
+#line 150
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table169, "Given ");
 #line hidden
-#line 152
+#line 154
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 153
+#line 155
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 154
+#line 156
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -682,7 +688,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with geocoding where postcode has no space", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 157
+#line 159
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -714,8 +720,11 @@ this.FeatureBackground();
                 table170.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 158
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table170, "Given ");
+                table170.AddRow(new string[] {
+                            "PriorityGroups",
+                            "1,3"});
+#line 160
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table170, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table171 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -726,10 +735,10 @@ this.FeatureBackground();
                 table171.AddRow(new string[] {
                             "PostCode",
                             "nn12tx"});
-#line 162
+#line 165
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table171, "Given ");
 #line hidden
-#line 166
+#line 169
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table172 = new TechTalk.SpecFlow.Table(new string[] {
@@ -741,13 +750,13 @@ this.FeatureBackground();
                 table172.AddRow(new string[] {
                             "PostCode",
                             "nn12tx"});
-#line 167
+#line 170
  testRunner.And("the response body should contain:", ((string)(null)), table172, "And ");
 #line hidden
-#line 171
+#line 174
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 172
+#line 175
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -763,7 +772,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with geocoding where postcode has space", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 175
+#line 178
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -795,8 +804,11 @@ this.FeatureBackground();
                 table173.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 176
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table173, "Given ");
+                table173.AddRow(new string[] {
+                            "PriorityGroups",
+                            "1,3"});
+#line 179
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table173, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table174 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -807,10 +819,10 @@ this.FeatureBackground();
                 table174.AddRow(new string[] {
                             "PostCode",
                             "nn1 2tx"});
-#line 180
+#line 184
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table174, "Given ");
 #line hidden
-#line 184
+#line 188
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table175 = new TechTalk.SpecFlow.Table(new string[] {
@@ -822,13 +834,13 @@ this.FeatureBackground();
                 table175.AddRow(new string[] {
                             "PostCode",
                             "nn1 2tx"});
-#line 185
+#line 189
  testRunner.And("the response body should contain:", ((string)(null)), table175, "And ");
 #line hidden
-#line 189
+#line 193
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 190
+#line 194
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -846,7 +858,7 @@ this.FeatureBackground();
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with postcode that maps incorrectly without the CountrySet parameter" +
                     " in the geocoding request", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 193
+#line 197
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -878,10 +890,10 @@ this.FeatureBackground();
                 table176.AddRow(new string[] {
                             "PostCode",
                             "S41 8SE"});
-#line 194
+#line 198
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table176, "Given ");
 #line hidden
-#line 198
+#line 202
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table177 = new TechTalk.SpecFlow.Table(new string[] {
@@ -899,13 +911,13 @@ this.FeatureBackground();
                 table177.AddRow(new string[] {
                             "Latitude",
                             "53.25289"});
-#line 199
+#line 203
  testRunner.And("the response body should contain:", ((string)(null)), table177, "And ");
 #line hidden
-#line 205
+#line 209
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 206
+#line 210
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -921,7 +933,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with geocoding where postcode cannot be geocoded", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 209
+#line 213
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -953,8 +965,11 @@ this.FeatureBackground();
                 table178.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
-#line 210
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table178, "Given ");
+                table178.AddRow(new string[] {
+                            "PriorityGroups",
+                            "1,3"});
+#line 214
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table178, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table179 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -965,10 +980,10 @@ this.FeatureBackground();
                 table179.AddRow(new string[] {
                             "PostCode",
                             "ze11 1ef"});
-#line 214
+#line 219
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table179, "Given ");
 #line hidden
-#line 218
+#line 223
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table180 = new TechTalk.SpecFlow.Table(new string[] {
@@ -986,13 +1001,13 @@ this.FeatureBackground();
                 table180.AddRow(new string[] {
                             "Latitude",
                             ""});
-#line 219
+#line 224
  testRunner.And("the response body should contain:", ((string)(null)), table180, "And ");
 #line hidden
-#line 225
+#line 230
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 226
+#line 231
  testRunner.Then("there should be a record in the dss-addresses table with AddressId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1008,7 +1023,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with Address1 Field missing", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 229
+#line 234
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1067,10 +1082,10 @@ this.FeatureBackground();
                 table181.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 230
+#line 235
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table181, "Given ");
 #line hidden
-#line 243
+#line 248
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1086,7 +1101,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with Address1 Field over character limit", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 246
+#line 251
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1149,10 +1164,10 @@ this.FeatureBackground();
                 table182.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 247
+#line 252
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table182, "Given ");
 #line hidden
-#line 261
+#line 266
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1168,7 +1183,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Address1", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 264
+#line 269
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1230,10 +1245,10 @@ this.FeatureBackground();
                 table183.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 265
+#line 270
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table183, "Given ");
 #line hidden
-#line 279
+#line 284
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1249,7 +1264,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with PostCode Field missing", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 282
+#line 287
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1308,10 +1323,10 @@ this.FeatureBackground();
                 table184.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 283
+#line 288
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table184, "Given ");
 #line hidden
-#line 296
+#line 301
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1327,7 +1342,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid PostCode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 299
+#line 304
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1389,10 +1404,10 @@ this.FeatureBackground();
                 table185.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 300
+#line 305
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table185, "Given ");
 #line hidden
-#line 314
+#line 319
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1408,7 +1423,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Longitude", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 317
+#line 322
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1470,10 +1485,10 @@ this.FeatureBackground();
                 table186.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 318
+#line 323
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table186, "Given ");
 #line hidden
-#line 332
+#line 337
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1489,7 +1504,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Address with invalid Latitude", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 335
+#line 340
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1551,10 +1566,10 @@ this.FeatureBackground();
                 table187.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 336
+#line 341
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table187, "Given ");
 #line hidden
-#line 350
+#line 355
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1570,7 +1585,7 @@ this.FeatureBackground();
                     "addresses"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Address with invalid EffectiveFrom date", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 353
+#line 358
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1632,10 +1647,10 @@ this.FeatureBackground();
                 table188.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 354
+#line 359
  testRunner.Given("I post an Address with the following details V2:", ((string)(null)), table188, "Given ");
 #line hidden
-#line 368
+#line 373
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

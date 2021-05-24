@@ -81,70 +81,85 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                         "Field",
                         "Value"});
             table101.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
+                        "AdviserName",
+                        "BillyAdviser"});
             table101.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-#line 7
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table101, "And ");
+                        "AdviserContactNumber",
+                        "98798678967967"});
+#line 4
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table101, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table102.AddRow(new string[] {
-                        "DateandTimeOfInteraction",
-                        "2018-06-25T11:21:00Z"});
+                        "GivenName",
+                        "Bob"});
             table102.AddRow(new string[] {
-                        "Channel",
-                        "2"});
+                        "FamilyName",
+                        "Customer"});
             table102.AddRow(new string[] {
-                        "InteractionType",
-                        "2"});
-#line 11
- testRunner.And("I post an Interaction with the following details:", ((string)(null)), table102, "And ");
+                        "PriorityGroups",
+                        "1,3"});
+#line 8
+ testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table102, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table103.AddRow(new string[] {
-                        "DateandTimeOfSession",
-                        "2018-06-21T14:45:00Z"});
+                        "DateandTimeOfInteraction",
+                        "2018-06-25T11:21:00Z"});
             table103.AddRow(new string[] {
-                        "VenuePostCode",
-                        "NN1 2NN"});
-#line 16
- testRunner.And("I post a session with the following details:", ((string)(null)), table103, "And ");
+                        "Channel",
+                        "2"});
+            table103.AddRow(new string[] {
+                        "InteractionType",
+                        "2"});
+#line 13
+ testRunner.And("I post an Interaction with the following details:", ((string)(null)), table103, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table104.AddRow(new string[] {
+                        "DateandTimeOfSession",
+                        "2018-06-21T14:45:00Z"});
+            table104.AddRow(new string[] {
+                        "VenuePostCode",
+                        "NN1 2NN"});
+#line 18
+ testRunner.And("I post a session with the following details V2:", ((string)(null)), table104, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table105.AddRow(new string[] {
                         "DateActionPlanCreated",
                         "2018-07-30T09:00:00Z"});
-            table104.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "CustomerCharterShownToCustomer",
                         "true"});
-            table104.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "DateAndTimeCharterShown",
                         "2018-07-30T09:00:00Z"});
-            table104.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "DateActionPlanSentToCustomer",
                         "2018-07-30T09:00:00Z"});
-            table104.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "ActionPlanDeliveryMethod",
                         "1"});
-            table104.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "DateActionPlanAcknowledged",
                         "2018-07-30T09:00:00Z"});
-            table104.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "PriorityCustomer",
                         "1"});
-            table104.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "CurrentSituation",
                         "looking for work"});
-#line 20
- testRunner.And("I post an ActionPlan with the following details:", ((string)(null)), table104, "And ");
+#line 22
+ testRunner.And("I post an ActionPlan with the following details V3:", ((string)(null)), table105, "And ");
 #line hidden
         }
         
@@ -161,7 +176,7 @@ namespace NCS.DSS.FunctionalTests.Features.Action
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Action", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 32
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -183,36 +198,6 @@ this.ScenarioInitialize(scenarioInfo);
                 this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table105.AddRow(new string[] {
-                            "DateActionAgreed",
-                            "2018-07-30T09:00:00Z"});
-                table105.AddRow(new string[] {
-                            "DateActionAimsToBeCompletedBy",
-                            "2018-08-08T09:00:00Z"});
-                table105.AddRow(new string[] {
-                            "ActionSummary",
-                            "A Summary"});
-                table105.AddRow(new string[] {
-                            "SignpostedTo",
-                            "Some Details"});
-                table105.AddRow(new string[] {
-                            "ActionType",
-                            "1"});
-                table105.AddRow(new string[] {
-                            "ActionStatus",
-                            "1"});
-                table105.AddRow(new string[] {
-                            "PersonResponsible",
-                            "1"});
-#line 33
- testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table105, "Given ");
-#line hidden
-#line 42
- testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -238,8 +223,38 @@ this.FeatureBackground();
                 table106.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 43
- testRunner.And("the response body should contain:", ((string)(null)), table106, "And ");
+#line 35
+ testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table106, "Given ");
+#line hidden
+#line 44
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table107.AddRow(new string[] {
+                            "DateActionAgreed",
+                            "2018-07-30T09:00:00Z"});
+                table107.AddRow(new string[] {
+                            "DateActionAimsToBeCompletedBy",
+                            "2018-08-08T09:00:00Z"});
+                table107.AddRow(new string[] {
+                            "ActionSummary",
+                            "A Summary"});
+                table107.AddRow(new string[] {
+                            "SignpostedTo",
+                            "Some Details"});
+                table107.AddRow(new string[] {
+                            "ActionType",
+                            "1"});
+                table107.AddRow(new string[] {
+                            "ActionStatus",
+                            "1"});
+                table107.AddRow(new string[] {
+                            "PersonResponsible",
+                            "1"});
+#line 45
+ testRunner.And("the response body should contain:", ((string)(null)), table107, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -256,7 +271,7 @@ this.FeatureBackground();
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Action with only mandatory Fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 54
+#line 56
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -279,35 +294,8 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 55
+#line 57
  testRunner.Given("I want to set the scenario touchPointId header to 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table107.AddRow(new string[] {
-                            "DateActionAgreed",
-                            "2018-07-30T09:00:00Z"});
-                table107.AddRow(new string[] {
-                            "DateActionAimsToBeCompletedBy",
-                            "2018-08-08T09:00:00Z"});
-                table107.AddRow(new string[] {
-                            "ActionSummary",
-                            "A Summary"});
-                table107.AddRow(new string[] {
-                            "SignpostedTo",
-                            "Some Details"});
-                table107.AddRow(new string[] {
-                            "ActionType",
-                            "1"});
-                table107.AddRow(new string[] {
-                            "PersonResponsible",
-                            "1"});
-#line 56
- testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table107, "Given ");
-#line hidden
-#line 64
- testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -330,62 +318,11 @@ this.FeatureBackground();
                 table108.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 65
- testRunner.And("the response body should contain:", ((string)(null)), table108, "And ");
+#line 58
+ testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table108, "Given ");
 #line hidden
-#line 73
- testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 74
- testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 75
- testRunner.Then("there should be a record in the dss-actions table Ignoring \'SignpostedToCategory," +
-                        "LastModifiedDate\' with ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 76
- testRunner.Given("I fetch a actions cosmos document from actions database using key ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 77
- testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Change feed for Post Action")]
-        [NUnit.Framework.CategoryAttribute("actions")]
-        [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void ChangeFeedForPostAction()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "actions",
-                    "V2"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Action", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 80
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
+#line 66
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -406,40 +343,43 @@ this.FeatureBackground();
                             "ActionType",
                             "1"});
                 table109.AddRow(new string[] {
-                            "ActionStatus",
-                            "1"});
-                table109.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 81
- testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table109, "Given ");
+#line 67
+ testRunner.And("the response body should contain:", ((string)(null)), table109, "And ");
 #line hidden
-#line 91
- testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 75
+ testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 92
+#line 76
  testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 93
+#line 77
  testRunner.Then("there should be a record in the dss-actions table Ignoring \'SignpostedToCategory," +
                         "LastModifiedDate\' with ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 78
+ testRunner.Given("I fetch a actions cosmos document from actions database using key ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 79
+ testRunner.Then("the cosmos document should have property CreatedBy with value 9111111111", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with invalid interactionId")]
+        [NUnit.Framework.DescriptionAttribute("Change feed for Post Action")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithInvalidInteractionId()
+        public virtual void ChangeFeedForPostAction()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with invalid interactionId", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 96
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change feed for Post Action", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 82
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -466,11 +406,11 @@ this.FeatureBackground();
                             "Field",
                             "Value"});
                 table110.AddRow(new string[] {
+                            "DateActionAgreed",
+                            "2018-07-30T09:00:00Z"});
+                table110.AddRow(new string[] {
                             "DateActionAimsToBeCompletedBy",
                             "2018-08-08T09:00:00Z"});
-                table110.AddRow(new string[] {
-                            "DateActionActuallyCompleted",
-                            "2018-08-06T09:00:00Z"});
                 table110.AddRow(new string[] {
                             "ActionSummary",
                             "A Summary"});
@@ -486,28 +426,35 @@ this.FeatureBackground();
                 table110.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 97
+#line 83
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table110, "Given ");
 #line hidden
-#line 106
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 93
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 94
+ testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 95
+ testRunner.Then("there should be a record in the dss-actions table Ignoring \'SignpostedToCategory," +
+                        "LastModifiedDate\' with ActionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAgreed")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with invalid interactionId")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithMissingDateActionAgreed()
+        public virtual void PostActionWithInvalidInteractionId()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAgreed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 109
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with invalid interactionId", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 98
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -554,10 +501,10 @@ this.FeatureBackground();
                 table111.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 110
+#line 99
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table111, "Given ");
 #line hidden
-#line 119
+#line 108
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -565,17 +512,17 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAimsToBeCompletedBy")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAgreed")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithMissingDateActionAimsToBeCompletedBy()
+        public virtual void PostActionWithMissingDateActionAgreed()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAimsToBeCompletedBy", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 122
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAgreed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 111
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -602,8 +549,8 @@ this.FeatureBackground();
                             "Field",
                             "Value"});
                 table112.AddRow(new string[] {
-                            "DateActionAgreed",
-                            "2018-07-30T09:00:00Z"});
+                            "DateActionAimsToBeCompletedBy",
+                            "2018-08-08T09:00:00Z"});
                 table112.AddRow(new string[] {
                             "DateActionActuallyCompleted",
                             "2018-08-06T09:00:00Z"});
@@ -622,10 +569,10 @@ this.FeatureBackground();
                 table112.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 123
+#line 112
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table112, "Given ");
 #line hidden
-#line 132
+#line 121
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -633,17 +580,17 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionActuallyCompleted")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionAimsToBeCompletedBy")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithMissingDateActionActuallyCompleted()
+        public virtual void PostActionWithMissingDateActionAimsToBeCompletedBy()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionActuallyCompleted", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 135
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionAimsToBeCompletedBy", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 124
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -673,8 +620,8 @@ this.FeatureBackground();
                             "DateActionAgreed",
                             "2018-07-30T09:00:00Z"});
                 table113.AddRow(new string[] {
-                            "DateActionAimsToBeCompletedBy",
-                            "2018-08-08T09:00:00Z"});
+                            "DateActionActuallyCompleted",
+                            "2018-08-06T09:00:00Z"});
                 table113.AddRow(new string[] {
                             "ActionSummary",
                             "A Summary"});
@@ -690,58 +637,28 @@ this.FeatureBackground();
                 table113.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-#line 136
+#line 125
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table113, "Given ");
 #line hidden
-#line 145
- testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table114.AddRow(new string[] {
-                            "DateActionAgreed",
-                            "2018-07-30T09:00:00Z"});
-                table114.AddRow(new string[] {
-                            "DateActionAimsToBeCompletedBy",
-                            "2018-08-08T09:00:00Z"});
-                table114.AddRow(new string[] {
-                            "DateActionActuallyCompleted",
-                            ""});
-                table114.AddRow(new string[] {
-                            "ActionSummary",
-                            "A Summary"});
-                table114.AddRow(new string[] {
-                            "SignpostedTo",
-                            "Some Details"});
-                table114.AddRow(new string[] {
-                            "ActionType",
-                            "1"});
-                table114.AddRow(new string[] {
-                            "ActionStatus",
-                            "1"});
-                table114.AddRow(new string[] {
-                            "PersonResponsible",
-                            "1"});
-#line 146
- testRunner.And("the response body should contain:", ((string)(null)), table114, "And ");
+#line 134
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionSummary")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing DateActionActuallyCompleted")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithMissingActionSummary()
+        public virtual void PostActionWithMissingDateActionActuallyCompleted()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionSummary", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 158
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing DateActionActuallyCompleted", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 137
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -764,6 +681,36 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
+                TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table114.AddRow(new string[] {
+                            "DateActionAgreed",
+                            "2018-07-30T09:00:00Z"});
+                table114.AddRow(new string[] {
+                            "DateActionAimsToBeCompletedBy",
+                            "2018-08-08T09:00:00Z"});
+                table114.AddRow(new string[] {
+                            "ActionSummary",
+                            "A Summary"});
+                table114.AddRow(new string[] {
+                            "SignpostedTo",
+                            "Some Details"});
+                table114.AddRow(new string[] {
+                            "ActionType",
+                            "1"});
+                table114.AddRow(new string[] {
+                            "ActionStatus",
+                            "1"});
+                table114.AddRow(new string[] {
+                            "PersonResponsible",
+                            "1"});
+#line 138
+ testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table114, "Given ");
+#line hidden
+#line 147
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
                 TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
@@ -775,7 +722,10 @@ this.FeatureBackground();
                             "2018-08-08T09:00:00Z"});
                 table115.AddRow(new string[] {
                             "DateActionActuallyCompleted",
-                            "2018-08-06T09:00:00Z"});
+                            ""});
+                table115.AddRow(new string[] {
+                            "ActionSummary",
+                            "A Summary"});
                 table115.AddRow(new string[] {
                             "SignpostedTo",
                             "Some Details"});
@@ -788,31 +738,25 @@ this.FeatureBackground();
                 table115.AddRow(new string[] {
                             "PersonResponsible",
                             "1"});
-                table115.AddRow(new string[] {
-                            "LastModifiedDate",
-                            "2018-07-30T09:00:00Z"});
-#line 159
- testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table115, "Given ");
-#line hidden
-#line 169
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 148
+ testRunner.And("the response body should contain:", ((string)(null)), table115, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionType")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionSummary")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithMissingActionType()
+        public virtual void PostActionWithMissingActionSummary()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 172
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionSummary", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 160
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -848,11 +792,11 @@ this.FeatureBackground();
                             "DateActionActuallyCompleted",
                             "2018-08-06T09:00:00Z"});
                 table116.AddRow(new string[] {
-                            "ActionSummary",
-                            "A Summary"});
-                table116.AddRow(new string[] {
                             "SignpostedTo",
                             "Some Details"});
+                table116.AddRow(new string[] {
+                            "ActionType",
+                            "1"});
                 table116.AddRow(new string[] {
                             "ActionStatus",
                             "1"});
@@ -862,10 +806,10 @@ this.FeatureBackground();
                 table116.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-07-30T09:00:00Z"});
-#line 173
+#line 161
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table116, "Given ");
 #line hidden
-#line 183
+#line 171
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -873,17 +817,17 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with missing PersonResponsible")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing ActionType")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithMissingPersonResponsible()
+        public virtual void PostActionWithMissingActionType()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing PersonResponsible", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 186
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing ActionType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 174
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -925,18 +869,18 @@ this.FeatureBackground();
                             "SignpostedTo",
                             "Some Details"});
                 table117.AddRow(new string[] {
-                            "ActionType",
+                            "ActionStatus",
                             "1"});
                 table117.AddRow(new string[] {
-                            "ActionStatus",
+                            "PersonResponsible",
                             "1"});
                 table117.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-07-30T09:00:00Z"});
-#line 187
+#line 175
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table117, "Given ");
 #line hidden
-#line 197
+#line 185
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -944,17 +888,17 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with DateActionAgreed later than datetime.now")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with missing PersonResponsible")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithDateActionAgreedLaterThanDatetime_Now()
+        public virtual void PostActionWithMissingPersonResponsible()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with DateActionAgreed later than datetime.now", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 200
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with missing PersonResponsible", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 188
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -982,10 +926,13 @@ this.FeatureBackground();
                             "Value"});
                 table118.AddRow(new string[] {
                             "DateActionAgreed",
-                            "2028-07-30T09:00:00Z"});
+                            "2018-07-30T09:00:00Z"});
                 table118.AddRow(new string[] {
                             "DateActionAimsToBeCompletedBy",
                             "2018-08-08T09:00:00Z"});
+                table118.AddRow(new string[] {
+                            "DateActionActuallyCompleted",
+                            "2018-08-06T09:00:00Z"});
                 table118.AddRow(new string[] {
                             "ActionSummary",
                             "A Summary"});
@@ -999,15 +946,12 @@ this.FeatureBackground();
                             "ActionStatus",
                             "1"});
                 table118.AddRow(new string[] {
-                            "PersonResponsible",
-                            "1"});
-                table118.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-07-30T09:00:00Z"});
-#line 201
+#line 189
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table118, "Given ");
 #line hidden
-#line 211
+#line 199
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1015,17 +959,17 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with DateActionAimsToBeCompletedBy earlier than DateActionAgreed")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with DateActionAgreed later than datetime.now")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithDateActionAimsToBeCompletedByEarlierThanDateActionAgreed()
+        public virtual void PostActionWithDateActionAgreedLaterThanDatetime_Now()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with DateActionAimsToBeCompletedBy earlier than DateActionAgreed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 214
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with DateActionAgreed later than datetime.now", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 202
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1053,10 +997,10 @@ this.FeatureBackground();
                             "Value"});
                 table119.AddRow(new string[] {
                             "DateActionAgreed",
-                            "2018-07-30T09:00:00Z"});
+                            "2028-07-30T09:00:00Z"});
                 table119.AddRow(new string[] {
                             "DateActionAimsToBeCompletedBy",
-                            "2018-06-08T09:00:00Z"});
+                            "2018-08-08T09:00:00Z"});
                 table119.AddRow(new string[] {
                             "ActionSummary",
                             "A Summary"});
@@ -1075,10 +1019,10 @@ this.FeatureBackground();
                 table119.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-07-30T09:00:00Z"});
-#line 215
+#line 203
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table119, "Given ");
 #line hidden
-#line 225
+#line 213
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1086,17 +1030,17 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Action with DateActionActuallyCompleted earlier than DateActionAgreed")]
+        [NUnit.Framework.DescriptionAttribute("Post Action with DateActionAimsToBeCompletedBy earlier than DateActionAgreed")]
         [NUnit.Framework.CategoryAttribute("actions")]
         [NUnit.Framework.CategoryAttribute("V2")]
-        public virtual void PostActionWithDateActionActuallyCompletedEarlierThanDateActionAgreed()
+        public virtual void PostActionWithDateActionAimsToBeCompletedByEarlierThanDateActionAgreed()
         {
             string[] tagsOfScenario = new string[] {
                     "actions",
                     "V2"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with DateActionActuallyCompleted earlier than DateActionAgreed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 228
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with DateActionAimsToBeCompletedBy earlier than DateActionAgreed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 216
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1127,9 +1071,6 @@ this.FeatureBackground();
                             "2018-07-30T09:00:00Z"});
                 table120.AddRow(new string[] {
                             "DateActionAimsToBeCompletedBy",
-                            "2018-07-08T09:00:00Z"});
-                table120.AddRow(new string[] {
-                            "DateActionActuallyCompleted",
                             "2018-06-08T09:00:00Z"});
                 table120.AddRow(new string[] {
                             "ActionSummary",
@@ -1149,10 +1090,84 @@ this.FeatureBackground();
                 table120.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-07-30T09:00:00Z"});
-#line 229
+#line 217
  testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table120, "Given ");
 #line hidden
-#line 240
+#line 227
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Action with DateActionActuallyCompleted earlier than DateActionAgreed")]
+        [NUnit.Framework.CategoryAttribute("actions")]
+        [NUnit.Framework.CategoryAttribute("V2")]
+        public virtual void PostActionWithDateActionActuallyCompletedEarlierThanDateActionAgreed()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "actions",
+                    "V2"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Action with DateActionActuallyCompleted earlier than DateActionAgreed", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 230
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table121.AddRow(new string[] {
+                            "DateActionAgreed",
+                            "2018-07-30T09:00:00Z"});
+                table121.AddRow(new string[] {
+                            "DateActionAimsToBeCompletedBy",
+                            "2018-07-08T09:00:00Z"});
+                table121.AddRow(new string[] {
+                            "DateActionActuallyCompleted",
+                            "2018-06-08T09:00:00Z"});
+                table121.AddRow(new string[] {
+                            "ActionSummary",
+                            "A Summary"});
+                table121.AddRow(new string[] {
+                            "SignpostedTo",
+                            "Some Details"});
+                table121.AddRow(new string[] {
+                            "ActionType",
+                            "1"});
+                table121.AddRow(new string[] {
+                            "ActionStatus",
+                            "1"});
+                table121.AddRow(new string[] {
+                            "PersonResponsible",
+                            "1"});
+                table121.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-07-30T09:00:00Z"});
+#line 231
+ testRunner.Given("I post an Action with the following details V2:", ((string)(null)), table121, "Given ");
+#line hidden
+#line 242
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -115,8 +115,11 @@ this.ScenarioInitialize(scenarioInfo);
                 table122.AddRow(new string[] {
                             "FamilyName",
                             "Customer"});
+                table122.AddRow(new string[] {
+                            "PriorityGroups",
+                            "1,3"});
 #line 5
- testRunner.Given("I post a Customer with the following details:", ((string)(null)), table122, "Given ");
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table122, "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -157,13 +160,13 @@ this.ScenarioInitialize(scenarioInfo);
                 table123.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 9
+#line 10
  testRunner.And("I post an Address with the following details V2:", ((string)(null)), table123, "And ");
 #line hidden
-#line 23
+#line 24
  testRunner.When("I get an Address by ID V2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 25
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
@@ -205,7 +208,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table124.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-09-19T09:01:00Z"});
-#line 25
+#line 26
  testRunner.And("the response body should contain:", ((string)(null)), table124, "And ");
 #line hidden
             }
