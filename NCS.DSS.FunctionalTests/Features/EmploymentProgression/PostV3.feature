@@ -1,14 +1,15 @@
 ﻿Feature: EmploymentProgressionPostV3
 
 Background: Create Adviser
-	Given I post an adviser with the following details:
+	Given I post an adviser with the following details V2:
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	And I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 
 @employmentprogressions  @smoke
 Scenario:Post employment progression with all values
@@ -647,7 +648,7 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 	#And the "employmentprogressions" cosmos document should include CreatedBy
 	And the response body should not contain the "CreatedBy"
 	Given I wait for 5 Seconds
-	And there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
+	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
 	#And there should be a record in the employmentprogressions-history ChangeFeed table
 	Examples:
@@ -800,11 +801,11 @@ Scenario Outline: Post Employment progression with invalid values for DateOfLast
 	And the response body should include <ErrorMessage>
 
 	Examples:
-		| Field                | Value                | ErrorMessage                         |
-		| DateOfLastEmployment | 2018-00-19T09:01:00Z | Could not convert string to DateTime |
-		| DateOfLastEmployment | 2018-13-19T09:01:00Z | Could not convert string to DateTime |
-		| DateOfLastEmployment | 2018-05-00T09:01:00Z | Could not convert string to DateTime |
-		| DateOfLastEmployment | 2018-05-32T09:01:00Z | Could not convert string to DateTime |
+		| Field                | Value                | ErrorMessage                                            |
+		| DateOfLastEmployment | 2018-00-19T09:01:00Z | Could not convert string to DateTime                    |
+		| DateOfLastEmployment | 2018-13-19T09:01:00Z | Could not convert string to DateTime                    |
+		| DateOfLastEmployment | 2018-05-00T09:01:00Z | Could not convert string to DateTime                    |
+		| DateOfLastEmployment | 2018-05-32T09:01:00Z | Could not convert string to DateTime                    |
 		| DateOfLastEmployment | Today +1D            | DateOfLastEmployment must be less than or equal to now. |
 		| DateOfLastEmployment | Now +1H              | DateOfLastEmployment must be less than or equal to now. |
 
