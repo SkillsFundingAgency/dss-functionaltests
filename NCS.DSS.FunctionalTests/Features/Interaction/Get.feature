@@ -1,14 +1,15 @@
 ﻿Feature: InteractionGet
 
 Background: Setup
-	Given I post an adviser with the following details:
+	Given I post an adviser with the following details V2:
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
+	And I post a Customer with the following details V3:
 		| Field      | Value    |
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
+		| PriorityGroups | 1,3  |
 	And I post a Valid Interaction with the following details:
 		| Field                    | Value                |
 		| DateandTimeOfInteraction | 2018-06-25T11:21:00Z |
