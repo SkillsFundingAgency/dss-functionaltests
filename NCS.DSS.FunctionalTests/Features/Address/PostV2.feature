@@ -1,10 +1,11 @@
 ﻿Feature: AddressPostV2
 
 Background: Post Customer
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 
 @addresses @smoke
 Scenario:Post valid address
@@ -136,15 +137,16 @@ Scenario: Post Address with maximum Field lengths
 		| EffectiveFrom       | 2018-06-19T09:01:00Z                                                                                 |
 		| EffectiveTo         | 2018-06-21T13:12:00Z                                                                                 |
 		| LastModifiedDate    | 2018-09-19T09:01:00Z                                                                                 |
-	Given I wait for 10 Seconds|
+	Given I wait for 10 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
 @addresses
 Scenario: Post Address
-	Given I post a Customer with the following details:
-		| field      | value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| field          | value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post an Address with the following details V2:
 		| Field    | Value  |
 		| Address1 | 1      |
@@ -155,10 +157,11 @@ Scenario: Post Address
 
 @addresses
 Scenario: Post Address with geocoding where postcode has no space
-	Given I post a Customer with the following details:
-		| field      | value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| field          | value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post an Address with the following details V2:
 		| Field    | Value  |
 		| Address1 | 1      |
@@ -173,10 +176,11 @@ Scenario: Post Address with geocoding where postcode has no space
 
 @addresses
 Scenario: Post Address with geocoding where postcode has space
-	Given I post a Customer with the following details:
-		| field      | value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| field          | value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post an Address with the following details V2:
 		| Field    | Value   |
 		| Address1 | 1       |
@@ -207,10 +211,11 @@ Scenario: Post Address with postcode that maps incorrectly without the CountrySe
 
 @addresses
 Scenario: Post Address with geocoding where postcode cannot be geocoded
-	Given I post a Customer with the following details:
-		| field      | value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| field          | value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 	Given I post an Address with the following details V2:
 		| Field    | Value    |
 		| Address1 | 1        |

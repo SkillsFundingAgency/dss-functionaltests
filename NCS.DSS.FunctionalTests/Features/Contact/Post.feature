@@ -1,10 +1,11 @@
 ﻿Feature: ContactPostV1
 
 Background: Post Customer
-	Given I post a Customer with the following details:
-		| Field      | Value    |
-		| GivenName  | Bob      |
-		| FamilyName | Customer |
+	Given I post a Customer with the following details V3:
+		| Field          | Value    |
+		| GivenName      | Bob      |
+		| FamilyName     | Customer |
+		| PriorityGroups | 1,3      |
 
 @contactdetails @smoke
 Scenario:Post valid contact
