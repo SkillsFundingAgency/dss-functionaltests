@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace NCS.DSS.FunctionalTests.Features.WebChat
+namespace NCS.DSS.FunctionalTests.Features.Webchat
 {
     using TechTalk.SpecFlow;
     using System;
@@ -35,7 +35,7 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/WebChat", "Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Webchat", "Get", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,71 +77,71 @@ namespace NCS.DSS.FunctionalTests.Features.WebChat
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table921 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value"});
-            table921.AddRow(new string[] {
-                        "GivenName",
-                        "Bob"});
-            table921.AddRow(new string[] {
-                        "FamilyName",
-                        "Customer"});
-            table921.AddRow(new string[] {
-                        "PriorityGroups",
-                        "1,3"});
-#line 4
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table921, "Given ");
-#line hidden
-#line 9
- testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
             TechTalk.SpecFlow.Table table922 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table922.AddRow(new string[] {
-                        "DateandTimeOfInteraction",
-                        "2018-06-25T11:21:00Z"});
+                        "GivenName",
+                        "Bob"});
             table922.AddRow(new string[] {
-                        "Channel",
-                        "2"});
+                        "FamilyName",
+                        "Customer"});
             table922.AddRow(new string[] {
-                        "InteractionType",
-                        "2"});
-            table922.AddRow(new string[] {
-                        "LastModifiedDate",
-                        "2018-06-22T16:52:10Z"});
-#line 10
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table922, "Given ");
+                        "PriorityGroups",
+                        "1,3"});
+#line 4
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table922, "Given ");
 #line hidden
-#line 16
+#line 9
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table923 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
             table923.AddRow(new string[] {
+                        "DateandTimeOfInteraction",
+                        "2018-06-25T11:21:00Z"});
+            table923.AddRow(new string[] {
+                        "Channel",
+                        "2"});
+            table923.AddRow(new string[] {
+                        "InteractionType",
+                        "2"});
+            table923.AddRow(new string[] {
+                        "LastModifiedDate",
+                        "2018-06-22T16:52:10Z"});
+#line 10
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table923, "Given ");
+#line hidden
+#line 16
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table924 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value"});
+            table924.AddRow(new string[] {
                         "DigitalReference",
                         "abc1234"});
-            table923.AddRow(new string[] {
+            table924.AddRow(new string[] {
                         "WebChatStartDateandTime",
                         "2018-07-20T13:20:00Z"});
-            table923.AddRow(new string[] {
+            table924.AddRow(new string[] {
                         "WebChatEndDateandTime",
                         "2018-07-20T13:45:00Z"});
-            table923.AddRow(new string[] {
+            table924.AddRow(new string[] {
                         "WebChatDuration",
                         "00:25:00"});
-            table923.AddRow(new string[] {
+            table924.AddRow(new string[] {
                         "WebChatNarrative",
                         "some text here"});
-            table923.AddRow(new string[] {
+            table924.AddRow(new string[] {
                         "SentToCustomer",
                         "true"});
-            table923.AddRow(new string[] {
+            table924.AddRow(new string[] {
                         "DateandTimeSentToCustomers",
                         "2018-07-20T13:45:00Z"});
 #line 17
- testRunner.Given("I post a webchat with the following details:", ((string)(null)), table923, "Given ");
+ testRunner.Given("I post a webchat with the following details:", ((string)(null)), table924, "Given ");
 #line hidden
 #line 26
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -188,32 +188,32 @@ this.FeatureBackground();
 #line 31
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table924 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table925 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table924.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "DigitalReference",
                             "abc1234"});
-                table924.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "WebChatStartDateandTime",
                             "2018-07-20T13:20:00Z"});
-                table924.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "WebChatEndDateandTime",
                             "2018-07-20T13:45:00Z"});
-                table924.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "WebChatDuration",
                             "00:25:00"});
-                table924.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "WebChatNarrative",
                             "some text here"});
-                table924.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "SentToCustomer",
                             "true"});
-                table924.AddRow(new string[] {
+                table925.AddRow(new string[] {
                             "DateandTimeSentToCustomers",
                             "2018-07-20T13:45:00Z"});
 #line 32
- testRunner.And("the response body should contain:", ((string)(null)), table924, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table925, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
