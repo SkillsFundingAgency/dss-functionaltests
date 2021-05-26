@@ -87,7 +87,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table700, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table700, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table701 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -98,8 +98,11 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table701.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
+            table701.AddRow(new string[] {
+                        "PriorityGroups",
+                        "1,3"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table701, "And ");
+ testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table701, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table702 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -116,7 +119,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
             table702.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
-#line 12
+#line 13
  testRunner.And("I post a Valid Interaction with the following details:", ((string)(null)), table702, "And ");
 #line hidden
         }
@@ -132,7 +135,7 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Interaction by CustomerId And InteractionID", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 20
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -155,10 +158,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-#line 21
+#line 22
  testRunner.When("I get an Interaction by Customer ID And InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 23
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table703 = new TechTalk.SpecFlow.Table(new string[] {
@@ -176,7 +179,7 @@ this.FeatureBackground();
                 table703.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 23
+#line 24
  testRunner.And("the response body should contain:", ((string)(null)), table703, "And ");
 #line hidden
             }

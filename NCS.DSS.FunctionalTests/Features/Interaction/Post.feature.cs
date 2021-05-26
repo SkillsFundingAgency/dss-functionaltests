@@ -77,29 +77,32 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table715 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table713 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table715.AddRow(new string[] {
+            table713.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table715.AddRow(new string[] {
+            table713.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details:", ((string)(null)), table715, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table713, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table716 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table714 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table716.AddRow(new string[] {
+            table714.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table716.AddRow(new string[] {
+            table714.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
+            table714.AddRow(new string[] {
+                        "PriorityGroups",
+                        "1,3"});
 #line 8
- testRunner.And("I post a Customer with the following details:", ((string)(null)), table716, "And ");
+ testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table714, "And ");
 #line hidden
         }
         
@@ -114,7 +117,88 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
                     "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Valid Interaction with all Fields", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 14
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table715 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table715.AddRow(new string[] {
+                            "DateandTimeOfInteraction",
+                            "2018-06-25T11:21:00Z"});
+                table715.AddRow(new string[] {
+                            "Channel",
+                            "2"});
+                table715.AddRow(new string[] {
+                            "InteractionType",
+                            "2"});
+                table715.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-06-22T16:52:10Z"});
+#line 16
+ testRunner.Given("I post a Valid Interaction with the following details:", ((string)(null)), table715, "Given ");
+#line hidden
+#line 22
+ testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table716 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table716.AddRow(new string[] {
+                            "DateandTimeOfInteraction",
+                            "2018-06-25T11:21:00Z"});
+                table716.AddRow(new string[] {
+                            "Channel",
+                            "2"});
+                table716.AddRow(new string[] {
+                            "InteractionType",
+                            "2"});
+                table716.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-06-22T16:52:10Z"});
+#line 23
+ testRunner.And("the response body should contain:", ((string)(null)), table716, "And ");
+#line hidden
+#line 29
+    testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 30
+ testRunner.And("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Interaction with missing Channel")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
+        public virtual void PostInteractionWithMissingChannel()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "interactions"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing Channel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 33
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -141,61 +225,94 @@ this.FeatureBackground();
                             "Field",
                             "Value"});
                 table717.AddRow(new string[] {
+                            "AdviserDetailsID",
+                            "6eed4005-4364-4bcb-affb-170ee402d1aa"});
+                table717.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table717.AddRow(new string[] {
-                            "Channel",
-                            "2"});
                 table717.AddRow(new string[] {
                             "InteractionType",
                             "2"});
                 table717.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 15
- testRunner.Given("I post a Valid Interaction with the following details:", ((string)(null)), table717, "Given ");
+#line 34
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table717, "Given ");
 #line hidden
-#line 21
- testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table718 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table718.AddRow(new string[] {
-                            "DateandTimeOfInteraction",
-                            "2018-06-25T11:21:00Z"});
-                table718.AddRow(new string[] {
-                            "Channel",
-                            "2"});
-                table718.AddRow(new string[] {
-                            "InteractionType",
-                            "2"});
-                table718.AddRow(new string[] {
-                            "LastModifiedDate",
-                            "2018-06-22T16:52:10Z"});
-#line 22
- testRunner.And("the response body should contain:", ((string)(null)), table718, "And ");
-#line hidden
-#line 28
-    testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 29
- testRunner.And("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Interaction with missing Channel")]
+        [NUnit.Framework.DescriptionAttribute("Post Interaction with missing InteractionType")]
         [NUnit.Framework.CategoryAttribute("interactions")]
-        public virtual void PostInteractionWithMissingChannel()
+        public virtual void PostInteractionWithMissingInteractionType()
         {
             string[] tagsOfScenario = new string[] {
                     "interactions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing Channel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 32
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing InteractionType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 43
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table718 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table718.AddRow(new string[] {
+                            "AdviserDetailsID",
+                            "6eed4005-4364-4bcb-affb-170ee402d1aa"});
+                table718.AddRow(new string[] {
+                            "DateandTimeOfInteraction",
+                            "2018-06-25T11:21:00Z"});
+                table718.AddRow(new string[] {
+                            "Channel",
+                            "2"});
+                table718.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-06-22T16:52:10Z"});
+#line 44
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table718, "Given ");
+#line hidden
+#line 50
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid AdviserDetailsID")]
+        [NUnit.Framework.CategoryAttribute("interactions")]
+        public virtual void PostInteractionWithInvalidAdviserDetailsID()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "interactions"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid AdviserDetailsID", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 53
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -223,20 +340,23 @@ this.FeatureBackground();
                             "Value"});
                 table719.AddRow(new string[] {
                             "AdviserDetailsID",
-                            "6eed4005-4364-4bcb-affb-170ee402d1aa"});
+                            "6eed4005-4364-4bcb-affb-170ee"});
                 table719.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
+                table719.AddRow(new string[] {
+                            "Channel",
+                            "2"});
                 table719.AddRow(new string[] {
                             "InteractionType",
                             "2"});
                 table719.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 33
+#line 54
  testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table719, "Given ");
 #line hidden
-#line 39
+#line 61
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -244,15 +364,15 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Interaction with missing InteractionType")]
+        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid DateandTimeOfInteraction")]
         [NUnit.Framework.CategoryAttribute("interactions")]
-        public virtual void PostInteractionWithMissingInteractionType()
+        public virtual void PostInteractionWithInvalidDateandTimeOfInteraction()
         {
             string[] tagsOfScenario = new string[] {
                     "interactions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with missing InteractionType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid DateandTimeOfInteraction", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 64
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -283,17 +403,20 @@ this.FeatureBackground();
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
                 table720.AddRow(new string[] {
                             "DateandTimeOfInteraction",
-                            "2018-06-25T11:21:00Z"});
+                            "2033-06-25T11:21:00Z"});
                 table720.AddRow(new string[] {
                             "Channel",
                             "2"});
                 table720.AddRow(new string[] {
+                            "InteractionType",
+                            "2"});
+                table720.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 43
+#line 65
  testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table720, "Given ");
 #line hidden
-#line 49
+#line 72
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -301,15 +424,15 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid AdviserDetailsID")]
+        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid Channel")]
         [NUnit.Framework.CategoryAttribute("interactions")]
-        public virtual void PostInteractionWithInvalidAdviserDetailsID()
+        public virtual void PostInteractionWithInvalidChannel()
         {
             string[] tagsOfScenario = new string[] {
                     "interactions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid AdviserDetailsID", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 52
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid Channel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 75
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -337,23 +460,23 @@ this.FeatureBackground();
                             "Value"});
                 table721.AddRow(new string[] {
                             "AdviserDetailsID",
-                            "6eed4005-4364-4bcb-affb-170ee"});
+                            "6eed4005-4364-4bcb-affb-170ee402d1aa"});
                 table721.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
                 table721.AddRow(new string[] {
                             "Channel",
-                            "2"});
+                            "11"});
                 table721.AddRow(new string[] {
                             "InteractionType",
                             "2"});
                 table721.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 53
+#line 76
  testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table721, "Given ");
 #line hidden
-#line 60
+#line 83
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -361,15 +484,15 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid DateandTimeOfInteraction")]
+        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid InteractionType")]
         [NUnit.Framework.CategoryAttribute("interactions")]
-        public virtual void PostInteractionWithInvalidDateandTimeOfInteraction()
+        public virtual void PostInteractionWithInvalidInteractionType()
         {
             string[] tagsOfScenario = new string[] {
                     "interactions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid DateandTimeOfInteraction", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 63
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid InteractionType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 86
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -400,20 +523,20 @@ this.FeatureBackground();
                             "6eed4005-4364-4bcb-affb-170ee402d1aa"});
                 table722.AddRow(new string[] {
                             "DateandTimeOfInteraction",
-                            "2033-06-25T11:21:00Z"});
+                            "2018-06-25T11:21:00Z"});
                 table722.AddRow(new string[] {
                             "Channel",
-                            "2"});
+                            "1"});
                 table722.AddRow(new string[] {
                             "InteractionType",
-                            "2"});
+                            "55"});
                 table722.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
-#line 64
+#line 87
  testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table722, "Given ");
 #line hidden
-#line 71
+#line 94
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -421,15 +544,15 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid Channel")]
+        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid LastModifiedDate")]
         [NUnit.Framework.CategoryAttribute("interactions")]
-        public virtual void PostInteractionWithInvalidChannel()
+        public virtual void PostInteractionWithInvalidLastModifiedDate()
         {
             string[] tagsOfScenario = new string[] {
                     "interactions"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid Channel", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 74
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid LastModifiedDate", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 97
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -463,137 +586,17 @@ this.FeatureBackground();
                             "2018-06-25T11:21:00Z"});
                 table723.AddRow(new string[] {
                             "Channel",
-                            "11"});
+                            "1"});
                 table723.AddRow(new string[] {
                             "InteractionType",
-                            "2"});
+                            "55"});
                 table723.AddRow(new string[] {
-                            "LastModifiedDate",
-                            "2018-06-22T16:52:10Z"});
-#line 75
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table723, "Given ");
-#line hidden
-#line 82
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid InteractionType")]
-        [NUnit.Framework.CategoryAttribute("interactions")]
-        public virtual void PostInteractionWithInvalidInteractionType()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "interactions"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid InteractionType", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 85
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table724 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table724.AddRow(new string[] {
-                            "AdviserDetailsID",
-                            "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table724.AddRow(new string[] {
-                            "DateandTimeOfInteraction",
-                            "2018-06-25T11:21:00Z"});
-                table724.AddRow(new string[] {
-                            "Channel",
-                            "1"});
-                table724.AddRow(new string[] {
-                            "InteractionType",
-                            "55"});
-                table724.AddRow(new string[] {
-                            "LastModifiedDate",
-                            "2018-06-22T16:52:10Z"});
-#line 86
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table724, "Given ");
-#line hidden
-#line 93
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Post Interaction with invalid LastModifiedDate")]
-        [NUnit.Framework.CategoryAttribute("interactions")]
-        public virtual void PostInteractionWithInvalidLastModifiedDate()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "interactions"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Post Interaction with invalid LastModifiedDate", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 96
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table725 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table725.AddRow(new string[] {
-                            "AdviserDetailsID",
-                            "6eed4005-4364-4bcb-affb-170ee402d1aa"});
-                table725.AddRow(new string[] {
-                            "DateandTimeOfInteraction",
-                            "2018-06-25T11:21:00Z"});
-                table725.AddRow(new string[] {
-                            "Channel",
-                            "1"});
-                table725.AddRow(new string[] {
-                            "InteractionType",
-                            "55"});
-                table725.AddRow(new string[] {
                             "LastModifiedDate",
                             "2033-06-22T16:52:10Z"});
-#line 97
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table725, "Given ");
+#line 98
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table723, "Given ");
 #line hidden
-#line 104
+#line 105
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
