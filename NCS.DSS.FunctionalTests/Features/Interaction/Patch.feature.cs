@@ -182,12 +182,6 @@ this.FeatureBackground();
 #line 25
  testRunner.And("the response body should contain:", ((string)(null)), table708, "And ");
 #line hidden
-#line 30
- testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 31
- testRunner.Then("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -251,12 +245,6 @@ this.FeatureBackground();
 #line 40
  testRunner.And("the response body should contain:", ((string)(null)), table710, "And ");
 #line hidden
-#line 45
- testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 46
- testRunner.Then("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -319,12 +307,6 @@ this.FeatureBackground();
                             "1"});
 #line 55
  testRunner.And("the response body should contain:", ((string)(null)), table712, "And ");
-#line hidden
-#line 60
- testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 61
- testRunner.Then("there should be a record in the dss-interactions table with InteractionId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
