@@ -1,14 +1,15 @@
 ﻿Feature: DiversityV2_Patch
 
 Background: Create Adviser
-	Given I post an adviser with the following details:
+	Given I post an adviser with the following details V2:
 		| Field                | Value          |
 		| AdviserName          | BillyAdviser   |
 		| AdviserContactNumber | 98798678967967 |
-	And I post a Customer with the following details:
+	And I post a Customer with the following details V3:
 		| Field      | Value    |
 		| GivenName  | Bob      |
 		| FamilyName | Customer |
+		| PriorityGroups | 1,3  |
 
 @diversitydetails  @smoke
 Scenario:Patch Diversity with all values
