@@ -816,7 +816,7 @@ this.FeatureBackground();
                             "Value"});
                 table142.AddRow(new string[] {
                             "PostCode",
-                            "B168FN"});
+                            "NW22WW"});
 #line 194
  testRunner.When("I patch the following Address V2:", ((string)(null)), table142, "When ");
 #line hidden
@@ -843,16 +843,16 @@ this.FeatureBackground();
                             "The County"});
                 table143.AddRow(new string[] {
                             "PostCode",
-                            "B168FN"});
+                            "NW22WW"});
                 table143.AddRow(new string[] {
                             "AlternativePostCode",
                             "NW22WN"});
                 table143.AddRow(new string[] {
                             "Longitude",
-                            "-1.91864"});
+                            "-98.50812"});
                 table143.AddRow(new string[] {
                             "Latitude",
-                            "52.47667"});
+                            "52.40121"});
                 table143.AddRow(new string[] {
                             "EffectiveFrom",
                             "2018-06-19T09:01:00Z"});
