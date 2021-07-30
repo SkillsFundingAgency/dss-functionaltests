@@ -193,7 +193,7 @@ Scenario: Patch PostCode (V2)
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 	When I patch the following Address V2:
 		| Field    | Value  |
-		| PostCode | B168FN |
+		| PostCode | NW22WW |
 	Then there should be a 200 response
 	And the response body should contain:
 		| Field               | Value                |
@@ -202,10 +202,10 @@ Scenario: Patch PostCode (V2)
 		| Address3            | The Town             |
 		| Address4            | The Area             |
 		| Address5            | The County           |
-		| PostCode            | B168FN               |
+		| PostCode            | NW22WW               |
 		| AlternativePostCode | NW22WN               |
-		| Longitude           | -1.91864             |
-		| Latitude            | 52.47667             |
+		| Longitude           | -98.50812            |
+		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
