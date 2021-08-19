@@ -34,6 +34,9 @@
     <Compile Remove="Features\Session\Post.feature.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="appsettings.local.json" />
+  </ItemGroup>
+  <ItemGroup>
     <SpecFlowFeatureFiles Remove="Features\ActionPlan\Get.feature" />
     <SpecFlowFeatureFiles Remove="Features\ActionPlan\GetV2.feature" />
     <SpecFlowFeatureFiles Remove="Features\ActionPlan\Patch.feature" />
@@ -97,6 +100,9 @@
     <Folder Include="Features\Search\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="appsettings.local.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
