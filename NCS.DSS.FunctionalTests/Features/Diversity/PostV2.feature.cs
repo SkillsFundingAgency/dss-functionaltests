@@ -77,32 +77,32 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table403 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table391 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table403.AddRow(new string[] {
+            table391.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table403.AddRow(new string[] {
+            table391.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table403, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table391, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table404 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table392 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table404.AddRow(new string[] {
+            table392.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table404.AddRow(new string[] {
+            table392.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-            table404.AddRow(new string[] {
+            table392.AddRow(new string[] {
                         "PriorityGroups",
                         "1,3"});
 #line 8
- testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table404, "And ");
+ testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table392, "And ");
 #line hidden
         }
         
@@ -140,74 +140,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table405 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table393 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "4"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             "5"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "Ethnicity",
                             "32"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
-                table405.AddRow(new string[] {
+                table393.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-25T11:21:00Z"});
 #line 16
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table405, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table393, "When ");
 #line hidden
 #line 27
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table406 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table394 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "4"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             "5"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "Ethnicity",
                             "32"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
-                table406.AddRow(new string[] {
+                table394.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-25T11:21:00Z"});
 #line 28
- testRunner.And("the response body should contain:", ((string)(null)), table406, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table394, "And ");
 #line hidden
 #line 40
  testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -266,20 +266,20 @@ this.FeatureBackground();
 #line 49
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table407 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table395 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table407.AddRow(new string[] {
+                table395.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table407.AddRow(new string[] {
+                table395.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "false"});
-                table407.AddRow(new string[] {
+                table395.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
 #line 50
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table407, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table395, "When ");
 #line hidden
 #line 55
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -320,23 +320,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table408 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table396 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table408.AddRow(new string[] {
+                table396.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table408.AddRow(new string[] {
+                table396.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "false"});
-                table408.AddRow(new string[] {
+                table396.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
-                table408.AddRow(new string[] {
+                table396.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             ""});
 #line 64
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table408, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table396, "When ");
 #line hidden
 #line 70
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -398,20 +398,20 @@ this.FeatureBackground();
 #line 78
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table409 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table397 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table409.AddRow(new string[] {
+                table397.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table409.AddRow(new string[] {
+                table397.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "false"});
-                table409.AddRow(new string[] {
+                table397.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
 #line 79
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table409, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table397, "When ");
 #line hidden
 #line 84
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -476,20 +476,20 @@ this.FeatureBackground();
 #line 104
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table410 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table398 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table410.AddRow(new string[] {
+                table398.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table410.AddRow(new string[] {
+                table398.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "false"});
-                table410.AddRow(new string[] {
+                table398.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
 #line 105
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table410, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table398, "When ");
 #line hidden
 #line 110
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -554,20 +554,20 @@ this.FeatureBackground();
 #line 131
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table411 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table399 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table411.AddRow(new string[] {
+                table399.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table411.AddRow(new string[] {
+                table399.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "false"});
-                table411.AddRow(new string[] {
+                table399.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
 #line 132
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table411, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table399, "When ");
 #line hidden
 #line 137
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -614,71 +614,71 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table412 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table400 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             ""});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "5"});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             ""});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "Ethnicity",
                             "32"});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
-                table412.AddRow(new string[] {
+                table400.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-25T11:21:00Z"});
 #line 155
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table412, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table400, "When ");
 #line hidden
 #line 166
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table413 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table401 = new TechTalk.SpecFlow.Table(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "9"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "5"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             "99"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "Ethnicity",
                             "32"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
-                table413.AddRow(new string[] {
+                table401.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-08-25T11:21:00Z"});
 #line 167
- testRunner.And("the response body should contain:", ((string)(null)), table413, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table401, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -728,20 +728,20 @@ this.FeatureBackground();
 #line 183
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table414 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table402 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table414.AddRow(new string[] {
+                table402.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table414.AddRow(new string[] {
+                table402.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "false"});
-                table414.AddRow(new string[] {
+                table402.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
 #line 184
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table414, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table402, "When ");
 #line hidden
 #line 189
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -798,20 +798,20 @@ this.FeatureBackground();
 #line 205
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table415 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table403 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table415.AddRow(new string[] {
+                table403.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "9"});
-                table415.AddRow(new string[] {
+                table403.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "false"});
-                table415.AddRow(new string[] {
+                table403.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
 #line 206
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table415, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table403, "When ");
 #line hidden
 #line 211
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -852,35 +852,35 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table416 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table404 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "false"});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             ""});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "5"});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             ""});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             ""});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             ""});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "Ethnicity",
                             "32"});
-                table416.AddRow(new string[] {
+                table404.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
 #line 221
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table416, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table404, "When ");
 #line hidden
 #line 231
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -941,17 +941,17 @@ this.FeatureBackground();
 #line 239
  testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table417 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table405 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table417.AddRow(new string[] {
+                table405.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table417.AddRow(new string[] {
+                table405.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
 #line 240
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table417, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table405, "When ");
 #line hidden
 #line 244
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1007,23 +1007,23 @@ this.FeatureBackground();
 #line 263
  testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table418 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table406 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table418.AddRow(new string[] {
+                table406.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table418.AddRow(new string[] {
+                table406.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "false"});
-                table418.AddRow(new string[] {
+                table406.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table418.AddRow(new string[] {
+                table406.AddRow(new string[] {
                             "Ethnicity",
                             "99"});
 #line 264
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table418, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table406, "When ");
 #line hidden
 #line 270
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1068,65 +1068,65 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table419 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table407 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "4"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             "5"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "EthnicityID",
                             "32"});
-                table419.AddRow(new string[] {
+                table407.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
 #line 291
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table419, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table407, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table420 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table408 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "4"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             "5"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "EthnicityID",
                             "32"});
-                table420.AddRow(new string[] {
+                table408.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
 #line 301
- testRunner.And("I post a DiversityDetail with the following details V2:", ((string)(null)), table420, "And ");
+ testRunner.And("I post a DiversityDetail with the following details V2:", ((string)(null)), table408, "And ");
 #line hidden
 #line 311
  testRunner.Then("there should be a 409 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1165,47 +1165,47 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table421 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table409 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table421.AddRow(new string[] {
+                table409.AddRow(new string[] {
                             "DateOfTermination",
                             "2018-07-20T21:45:00Z"});
-                table421.AddRow(new string[] {
+                table409.AddRow(new string[] {
                             "ReasonForTermination",
                             "1"});
 #line 315
- testRunner.When("I patch the following Customer V3:", ((string)(null)), table421, "When ");
+ testRunner.When("I patch the following Customer V3:", ((string)(null)), table409, "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table422 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table410 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "4"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             "5"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "EthnicityID",
                             "32"});
-                table422.AddRow(new string[] {
+                table410.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
 #line 319
- testRunner.And("I post a DiversityDetail with the following details V2:", ((string)(null)), table422, "And ");
+ testRunner.And("I post a DiversityDetail with the following details V2:", ((string)(null)), table410, "And ");
 #line hidden
 #line 329
  testRunner.Then("there should be a 403 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

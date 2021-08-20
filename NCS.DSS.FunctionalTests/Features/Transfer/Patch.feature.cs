@@ -77,65 +77,65 @@ namespace NCS.DSS.FunctionalTests.Features.Transfer
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table837 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table716 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table837.AddRow(new string[] {
+            table716.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table837.AddRow(new string[] {
+            table716.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-            table837.AddRow(new string[] {
+            table716.AddRow(new string[] {
                         "PriorityGroups",
                         "1,3"});
 #line 4
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table837, "Given ");
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table716, "Given ");
 #line hidden
 #line 9
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table838 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table717 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table838.AddRow(new string[] {
+            table717.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-25T11:21:00Z"});
-            table838.AddRow(new string[] {
+            table717.AddRow(new string[] {
                         "Channel",
                         "2"});
-            table838.AddRow(new string[] {
+            table717.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-            table838.AddRow(new string[] {
+            table717.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
 #line 10
- testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table838, "Given ");
+ testRunner.Given("I post an Interaction with the following details:", ((string)(null)), table717, "Given ");
 #line hidden
 #line 16
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table839 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table718 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table839.AddRow(new string[] {
+            table718.AddRow(new string[] {
                         "OriginatingTouchpointId",
                         "9000000001"});
-            table839.AddRow(new string[] {
+            table718.AddRow(new string[] {
                         "TargetTouchpointId",
                         "9111111111"});
-            table839.AddRow(new string[] {
+            table718.AddRow(new string[] {
                         "Context",
                         "Some context text"});
-            table839.AddRow(new string[] {
+            table718.AddRow(new string[] {
                         "DateandTimeOfTransfer",
                         "2018-06-22T16:52:10Z"});
-            table839.AddRow(new string[] {
+            table718.AddRow(new string[] {
                         "RequestedCallbackTime",
                         "2018-06-22T16:52:10Z"});
 #line 17
- testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table839, "Given ");
+ testRunner.Given("I post a Transfer with the following details:", ((string)(null)), table718, "Given ");
 #line hidden
 #line 24
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -176,32 +176,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table840 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table719 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table840.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "TargetTouchpointId",
                             "9000000001"});
-                table840.AddRow(new string[] {
+                table719.AddRow(new string[] {
                             "Context",
                             "Some context min"});
 #line 28
- testRunner.Given("I patch a Transfer with the following details:", ((string)(null)), table840, "Given ");
+ testRunner.Given("I patch a Transfer with the following details:", ((string)(null)), table719, "Given ");
 #line hidden
 #line 32
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table841 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table720 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table841.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "OriginatingTouchpointId",
                             "9000000001"});
-                table841.AddRow(new string[] {
+                table720.AddRow(new string[] {
                             "Context",
                             "Some context min"});
 #line 33
- testRunner.And("the response body should contain:", ((string)(null)), table841, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table720, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -239,74 +239,74 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table842 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table721 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "OriginatingTouchpointId",
                             "9000000001"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "TargetTouchpointId",
                             "9222222222"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "Context",
                             "Some context min"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "DateandTimeOfTransfer",
                             "2018-06-25T11:21:00Z"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "DateandTimeofTransferAccepted",
                             "2018-06-25T11:21:00Z"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "RequestedCallbackTime",
                             "2018-06-25T11:21:00Z"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "ActualCallbackTime",
                             "2018-06-25T11:21:00Z"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-25T11:21:00Z"});
-                table842.AddRow(new string[] {
+                table721.AddRow(new string[] {
                             "LastModifiedTouchpointId",
                             "9000000001"});
 #line 40
- testRunner.Given("I patch a Transfer with the following details:", ((string)(null)), table842, "Given ");
+ testRunner.Given("I patch a Transfer with the following details:", ((string)(null)), table721, "Given ");
 #line hidden
 #line 51
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table843 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table722 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "OriginatingTouchpointId",
                             "9000000001"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "TargetTouchpointId",
                             "9222222222"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "Context",
                             "Some context min"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "DateandTimeOfTransfer",
                             "2018-06-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "DateandTimeofTransferAccepted",
                             "2018-06-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "RequestedCallbackTime",
                             "2018-06-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "ActualCallbackTime",
                             "2018-06-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-25T11:21:00Z"});
-                table843.AddRow(new string[] {
+                table722.AddRow(new string[] {
                             "LastModifiedTouchpointId",
                             "9000000001"});
 #line 52
- testRunner.And("the response body should contain:", ((string)(null)), table843, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table722, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

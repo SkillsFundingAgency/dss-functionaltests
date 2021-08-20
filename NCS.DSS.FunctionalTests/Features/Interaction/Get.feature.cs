@@ -77,50 +77,50 @@ namespace NCS.DSS.FunctionalTests.Features.Interaction
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table628 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table507 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table628.AddRow(new string[] {
+            table507.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table628.AddRow(new string[] {
+            table507.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table628, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table507, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table629 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table508 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table629.AddRow(new string[] {
+            table508.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table629.AddRow(new string[] {
+            table508.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-            table629.AddRow(new string[] {
+            table508.AddRow(new string[] {
                         "PriorityGroups",
                         "1,3"});
 #line 8
- testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table629, "And ");
+ testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table508, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table630 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table509 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table630.AddRow(new string[] {
+            table509.AddRow(new string[] {
                         "DateandTimeOfInteraction",
                         "2018-06-25T11:21:00Z"});
-            table630.AddRow(new string[] {
+            table509.AddRow(new string[] {
                         "Channel",
                         "2"});
-            table630.AddRow(new string[] {
+            table509.AddRow(new string[] {
                         "InteractionType",
                         "2"});
-            table630.AddRow(new string[] {
+            table509.AddRow(new string[] {
                         "LastModifiedDate",
                         "2018-06-22T16:52:10Z"});
 #line 13
- testRunner.And("I post a Valid Interaction with the following details:", ((string)(null)), table630, "And ");
+ testRunner.And("I post a Valid Interaction with the following details:", ((string)(null)), table509, "And ");
 #line hidden
         }
         
@@ -164,23 +164,23 @@ this.FeatureBackground();
 #line 23
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table631 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table510 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table631.AddRow(new string[] {
+                table510.AddRow(new string[] {
                             "DateandTimeOfInteraction",
                             "2018-06-25T11:21:00Z"});
-                table631.AddRow(new string[] {
+                table510.AddRow(new string[] {
                             "Channel",
                             "2"});
-                table631.AddRow(new string[] {
+                table510.AddRow(new string[] {
                             "InteractionType",
                             "2"});
-                table631.AddRow(new string[] {
+                table510.AddRow(new string[] {
                             "LastModifiedDate",
                             "2018-06-22T16:52:10Z"});
 #line 24
- testRunner.And("the response body should contain:", ((string)(null)), table631, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table510, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

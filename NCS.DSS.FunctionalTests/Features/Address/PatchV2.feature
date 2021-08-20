@@ -25,14 +25,18 @@ Scenario: Patch Address1 (V2)
 	When I patch the following Address V2:
 		| Field    | Value |
 		| Address1 | 2     |
+		| Address2 | Changed2 |
+		| Address3 | Changed3 |
+		| Address4 | Changed4 |
+		| Address5 | Changed5 |
 	Then there should be a 200 response
 	And the response body should contain:
 		| Field               | Value                |
 		| Address1            | 2                    |
-		| Address2            | The Street           |
-		| Address3            | The Town             |
-		| Address4            | The Area             |
-		| Address5            | The County           |
+		| Address2		      | Changed2 |
+		| Address3			  | Changed3 |
+		| Address4			  | Changed4 |
+		| Address5			  | Changed5 |
 		| PostCode            | NW11WN               |
 		| AlternativePostCode | NW22WN               |
 		| Longitude           | -98.50812            |
@@ -42,139 +46,7 @@ Scenario: Patch Address1 (V2)
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-addresses table with AddressId
 
-@addresses
-Scenario: Patch Address2 (V2)
-	Given I post an Address with the following details V2:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | The Street           |
-		| Address3            | The Town             |
-		| Address4            | The Area             |
-		| Address5            | The County           |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	When I patch the following Address V2:
-		| Field    | Value   |
-		| Address2 | Changed |
-	Then there should be a 200 response
-	And the response body should contain:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | Changed              |
-		| Address3            | The Town             |
-		| Address4            | The Area             |
-		| Address5            | The County           |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-addresses table with AddressId
 
-@addresses
-Scenario: Patch Address3 (V2)
-	Given I post an Address with the following details V2:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | The Street           |
-		| Address3            | The Town             |
-		| Address4            | The Area             |
-		| Address5            | The County           |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	When I patch the following Address V2:
-		| Field    | Value   |
-		| Address3 | Changed |
-	Then there should be a 200 response
-	And the response body should contain:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | The Street           |
-		| Address3            | Changed              |
-		| Address4            | The Area             |
-		| Address5            | The County           |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
-
-@addresses
-Scenario: Patch Address4 (V2)
-	Given I post an Address with the following details V2:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | The Street           |
-		| Address3            | The Town             |
-		| Address4            | The Area             |
-		| Address5            | The County           |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	When I patch the following Address V2:
-		| Field    | Value   |
-		| Address4 | Changed |
-	Then there should be a 200 response
-	And the response body should contain:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | The Street           |
-		| Address3            | The Town             |
-		| Address4            | Changed              |
-		| Address5            | The County           |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
-
-@addresses
-Scenario: Patch Address5 (V2)
-	Given I post an Address with the following details V2:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | The Street           |
-		| Address3            | The Town             |
-		| Address4            | The Area             |
-		| Address5            | The County           |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
-	When I patch the following Address V2:
-		| Field    | Value   |
-		| Address5 | Changed |
-	Then there should be a 200 response
-	And the response body should contain:
-		| Field               | Value                |
-		| Address1            | 1                    |
-		| Address2            | The Street           |
-		| Address3            | The Town             |
-		| Address4            | The Area             |
-		| Address5            | Changed              |
-		| PostCode            | NW11WN               |
-		| AlternativePostCode | NW22WN               |
-		| Longitude           | -98.50812            |
-		| Latitude            | 52.40121             |
-		| EffectiveFrom       | 2018-06-19T09:01:00Z |
-		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
 @addresses
 Scenario: Patch PostCode (V2)
@@ -193,7 +65,7 @@ Scenario: Patch PostCode (V2)
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 	When I patch the following Address V2:
 		| Field    | Value  |
-		| PostCode | B168FN |
+		| PostCode | NW22WW |
 	Then there should be a 200 response
 	And the response body should contain:
 		| Field               | Value                |
@@ -202,10 +74,10 @@ Scenario: Patch PostCode (V2)
 		| Address3            | The Town             |
 		| Address4            | The Area             |
 		| Address5            | The County           |
-		| PostCode            | B168FN               |
+		| PostCode            | NW22WW               |
 		| AlternativePostCode | NW22WN               |
-		| Longitude           | -1.91864             |
-		| Latitude            | 52.47667             |
+		| Longitude           | -98.50812            |
+		| Latitude            | 52.40121             |
 		| EffectiveFrom       | 2018-06-19T09:01:00Z |
 		| EffectiveTo         | 2018-06-21T13:12:00Z |
 
