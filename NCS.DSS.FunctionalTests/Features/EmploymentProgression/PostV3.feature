@@ -64,31 +64,6 @@ Scenario:Post employment progression with mandatory values
 	Given I wait for 5 Seconds
 	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
 
-#And there should be a record in the employmentprogressions-history ChangeFeed table
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for DateProgressionRecorded
-	Given I want to send <Field> with value Translate Date To <Value>
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value |
-		| CurrentEmploymentStatus | 99    |
-		| EconomicShockStatus     | 1     |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value |
-		| CurrentEmploymentStatus | 99    |
-	#And the response body value for DateProgressionRecorded should match the last request
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| DateProgressionRecorded | Today                |
-		| DateProgressionRecorded | Now -1H              |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for DateProgressionRecorded
 	Given I want to send <Field> with value <Value> in the following request
@@ -122,55 +97,10 @@ Scenario Outline: Post Employment progression with future value for DateProgress
 		| DateProgressionRecorded | Today +1D | DateProgressionRecorded must be less than or equal to now |
 		| DateProgressionRecorded | Now +1H   | DateProgressionRecorded must be less than or equal to now |
 
-#@employmentprogressions
-#Scenario: Post Employment progression with no value for DateProgressionRecorded
-#	Given I post a Employment Progression record with the following details V3:
-#		| Field                   | Value |
-#		| DateProgressionRecorded |       |
-#		| CurrentEmploymentStatus | 99    |
-#		| EconomicShockStatus     | 1     |
-#	Then there should be a 201 response
-#	And the date field DateProgressionRecorded should hold a recent value
-#
+
 ###########################################################################################################################################
 ##	CurrentEmploymentStatus	enum	Y		A valid EmploymentStatus reference data item	See DSS Reference Data Resource for values  ##
 ###########################################################################################################################################
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for CurrentEmploymentStatus
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field                   | Value |
-		| CurrentEmploymentStatus | 1     |
-		| CurrentEmploymentStatus | 2     |
-		| CurrentEmploymentStatus | 3     |
-		| CurrentEmploymentStatus | 4     |
-		| CurrentEmploymentStatus | 5     |
-		| CurrentEmploymentStatus | 6     |
-		| CurrentEmploymentStatus | 7     |
-		| CurrentEmploymentStatus | 8     |
-		| CurrentEmploymentStatus | 9     |
-		| CurrentEmploymentStatus | 10    |
-		| CurrentEmploymentStatus | 11    |
-		| CurrentEmploymentStatus | 12    |
-		| CurrentEmploymentStatus | 13    |
-		| CurrentEmploymentStatus | 99    |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for CurrentEmploymentStatus
 	Given I want to send <Field> with value <Value> in the following request
@@ -226,66 +156,9 @@ Scenario Outline: Post Employment progression with invalid values for EconomicSh
 		| EconomicShockStatus | 4     |
 		| EconomicShockStatus | 99    |
 
-#@employmentprogressions
-#Scenario: Post Employment progression with no value for EconomicShockStatus
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for EconomicShockStatus
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EconomicShockCode       | Some Text            |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field               | Value |
-		| EconomicShockStatus | 1     |
-		| EconomicShockStatus | 2     |
-		| EconomicShockStatus | 3     |
-
 ############################################################################################################################
 #	EconomicShockCode	string(50)				Mandatory if EconomicShockStatus = 2 - Government defined economic shock  ##
 ############################################################################################################################
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for EconomicShockCode
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field             | Value                                              |
-		| EconomicShockCode | Some Text                                          |
-		| EconomicShockCode | 12345678901234567890123456789012345678901234567890 |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EconomicShockCode
 	Given I want to send <Field> with value <Value> in the following request
@@ -318,65 +191,9 @@ Scenario: Post Employment progression with no value for EconomicShockCode where 
 	And the error message should be "EconomicShockCode must have a value when Government Defined Economic Shock."
 	And the number of errors returned should be 1
 
-@employmentprogressions
-Scenario Outline: Post Employment progression with no value for EconomicShockCode where EconomicShockStatus is not 2 - Government defined economic shock
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockCode       | Some Text            |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockCode       | Some Text            |
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field               | Value |
-		| EconomicShockStatus | 1     |
-		| EconomicShockStatus | 3     |
-
 #############################################################################################################################################
 ##	EmployerName	string(200)																											   ##
 #############################################################################################################################################
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for EmployerName
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field        | Value                                                                                                                                                                                                    |
-		| EmployerName | Some Value                                                                                                                                                                                               |
-		| EmployerName | 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EmployerName
 	Given I want to send <Field> with value <Value> in the following request
@@ -395,57 +212,11 @@ Scenario Outline: Post Employment progression with invalid values for EmployerNa
 		| Field        | Value                                                                                                                                                                                                     |
 		| EmployerName | 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901 |
 
-@employmentprogressions
-Scenario: Post Employment progression with no value for EmployerName
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-		| EmployerName            |                      |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmployerName            |                      |
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-
 #And there should be a record in the employmentprogressions ChangeFeed table
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 ############################################################################################################################
 ##	EmployerAddress	string(500)																							  ##
 ############################################################################################################################
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for EmployerAddress
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-		| EmployerAddress | Some Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-		| EmployerAddress | 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EmployerAddress
 	Given I want to send <Field> with value <Value> in the following request
@@ -464,62 +235,10 @@ Scenario Outline: Post Employment progression with invalid values for EmployerAd
 		| Field           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 		| EmployerAddress | 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901 |
 
-@employmentprogressions
-Scenario: Post Employment progression with no value for EmployerAddress
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-		| EmployerAddress         |                      |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmployerAddress         |                      |
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
 #And there should be a record in the employmentprogressions-history ChangeFeed table
 #############################################################################################################
 #	EmployerPostcode	string(10)
 #############################################################################################################
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for EmployerPostcode
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table Ignoring '' with EmploymentProgressionId
-
-	#And the captured table data should include key "Longitude" with value "-1.50728"
-	#And the captured table data should include key "Latitude" with value "52.92878"
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	#And the captured table data should include key "Longitude" with value "-1.50728"
-	#And the captured table data should include key "Latitude" with value "52.92878"
-	Examples:
-		| Field            | Value    |
-		| EmployerPostcode | DE22 4DE |
-		| EmployerPostcode | DE224DE  |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EmployerPostcode
 	Given I want to send <Field> with value <Value> in the following request
@@ -538,55 +257,7 @@ Scenario Outline: Post Employment progression with invalid values for EmployerPo
 		| Field            | Value     |
 		| EmployerPostcode | DE22 4def |
 
-@employmentprogressions
-Scenario: Post Employment progression with no value for EmployerPostcode
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmploymentHours         | 1                    |
-		| DateOfEmployment        | 2018-06-19T09:01:00Z |
-		| EconomicShockStatus     | 1                    |
-		| EmployerPostcode        |                      |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EmployerPostcode        |                      |
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
 #And there should be a record in the employmentprogressions-history ChangeFeed table
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for EmploymentHours
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field           | Value |
-		| EmploymentHours | 1     |
-		| EmploymentHours | 2     |
-		| EmploymentHours | 98    |
-		| EmploymentHours | 99    |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for EmploymentHours
 	Given I want to send <Field> with value <Value> in the following request
@@ -630,66 +301,6 @@ Scenario Outline: Post Employment progression with no value for EmploymentHours 
 		| CurrentEmploymentStatus | 9     |
 
 @employmentprogressions
-Scenario Outline: Post Employment progression with no value for EmploymentHours and CurrentEmploymentStatus not in 1, 4, 5, 8, 9
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| EmploymentHours         |                      |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| EmploymentHours         |                      |
-		| EconomicShockStatus     | 1                    |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field                   | Value |
-		| CurrentEmploymentStatus | 2     |
-		| CurrentEmploymentStatus | 3     |
-		| CurrentEmploymentStatus | 6     |
-		| CurrentEmploymentStatus | 7     |
-		| CurrentEmploymentStatus | 10    |
-		| CurrentEmploymentStatus | 11    |
-		| CurrentEmploymentStatus | 12    |
-		| CurrentEmploymentStatus | 13    |
-		| CurrentEmploymentStatus | 99    |
-
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for DateOfEmployment
-	Given I want to send <Field> with value Translate Date To <Value>
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	#And the response body value for DateOfLastEmployment should match the last request
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field            | Value                |
-		| DateOfEmployment | Today                |
-		| DateOfEmployment | Now                  |
-		| DateOfEmployment | 2019-08-20T00:00:00Z |
-
-@employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for DateOfEmployment
 	Given I want to send <Field> with value Translate Date To <Value>
 	Given I post a Employment Progression record with the following details V3:
@@ -706,40 +317,6 @@ Scenario Outline: Post Employment progression with invalid values for DateOfEmpl
 		| DateOfEmployment | Today +1D  | DateOfEmployment must be less than or equal to now |
 		| DateOfEmployment | Now +1H    | DateOfEmployment must be less than or equal to now |
 		| DateOfEmployment | 2019-13-01 | Could not convert string to DateTime               |
-
-@employmentprogressions
-Scenario Outline: Post Employment progression with no value for DateOfEmployment and CurrentEmploymentStatus not in 1, 4, 5, 8, 9
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| DateOfEmployment        |                      |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2018-06-19T09:01:00Z |
-		| DateOfEmployment        |                      |
-		| EconomicShockStatus     | 1                    |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field                   | Value |
-		| CurrentEmploymentStatus | 2     |
-		| CurrentEmploymentStatus | 3     |
-		| CurrentEmploymentStatus | 6     |
-		| CurrentEmploymentStatus | 7     |
-		| CurrentEmploymentStatus | 10    |
-		| CurrentEmploymentStatus | 11    |
-		| CurrentEmploymentStatus | 12    |
-		| CurrentEmploymentStatus | 13    |
-		| CurrentEmploymentStatus | 99    |
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with no value for DateOfEmployment and CurrentEmploymentStatus in 1, 4, 5, 8, 9
@@ -761,34 +338,6 @@ Scenario Outline: Post Employment progression with no value for DateOfEmployment
 		| CurrentEmploymentStatus | 5     |
 		| CurrentEmploymentStatus | 8     |
 		| CurrentEmploymentStatus | 9     |
-
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for DateOfLastEmployment
-	Given I want to send <Field> with value Translate Date To <Value>
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	#And the response body value for DateOfLastEmployment should match the last request
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field                | Value                |
-		| DateOfLastEmployment | Today                |
-		| DateOfLastEmployment | Now                  |
-		| DateOfLastEmployment | 2019-08-20T00:00:00Z |
-		| DateOfLastEmployment |                      |
-
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for DateOfLastEmployment
 	Given I want to send <Field> with value Translate Date To <Value>
@@ -808,38 +357,6 @@ Scenario Outline: Post Employment progression with invalid values for DateOfLast
 		| DateOfLastEmployment | 2018-05-32T09:01:00Z | Could not convert string to DateTime                    |
 		| DateOfLastEmployment | Today +1D            | DateOfLastEmployment must be less than or equal to now. |
 		| DateOfLastEmployment | Now +1H              | DateOfLastEmployment must be less than or equal to now. |
-
-@employmentprogressions
-Scenario Outline: Post Employment progression with valid values for LengthOfUnemployment
-	Given I want to send <Field> with value <Value> in the following request
-	Given I post a Employment Progression record with the following details V3:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-		| EconomicShockStatus     | 1                    |
-	Then there should be a 201 response
-	And the response body should contain:
-		| Field                   | Value                |
-		| DateProgressionRecorded | 2019-08-20T00:00:00Z |
-		| CurrentEmploymentStatus | 99                   |
-	And the response body should have <Field> with value <Value>
-	#And the "employmentprogressions" cosmos document should include CreatedBy
-	And the response body should not contain the "CreatedBy"
-	Given I wait for 5 Seconds
-	Then there should be a record in the dss-employmentprogressions table with EmploymentProgressionId
-
-	#And there should be a record in the employmentprogressions-history ChangeFeed table
-	Examples:
-		| Field                | Value |
-		| LengthOfUnemployment | 1     |
-		| LengthOfUnemployment | 2     |
-		| LengthOfUnemployment | 3     |
-		| LengthOfUnemployment | 4     |
-		| LengthOfUnemployment | 5     |
-		| LengthOfUnemployment | 6     |
-		| LengthOfUnemployment | 98    |
-		| LengthOfUnemployment | 99    |
-		| LengthOfUnemployment |       |
 
 @employmentprogressions
 Scenario Outline: Post Employment progression with invalid values for LengthOfUnemployment

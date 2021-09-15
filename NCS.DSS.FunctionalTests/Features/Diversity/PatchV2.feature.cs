@@ -77,32 +77,32 @@ namespace NCS.DSS.FunctionalTests.Features.Diversity
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table384 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table372 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table384.AddRow(new string[] {
+            table372.AddRow(new string[] {
                         "AdviserName",
                         "BillyAdviser"});
-            table384.AddRow(new string[] {
+            table372.AddRow(new string[] {
                         "AdviserContactNumber",
                         "98798678967967"});
 #line 4
- testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table384, "Given ");
+ testRunner.Given("I post an adviser with the following details V2:", ((string)(null)), table372, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table385 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table373 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table385.AddRow(new string[] {
+            table373.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table385.AddRow(new string[] {
+            table373.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-            table385.AddRow(new string[] {
+            table373.AddRow(new string[] {
                         "PriorityGroups",
                         "1,3"});
 #line 8
- testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table385, "And ");
+ testRunner.And("I post a Customer with the following details V3:", ((string)(null)), table373, "And ");
 #line hidden
         }
         
@@ -140,38 +140,641 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table386 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table374 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "ConsentToCollectLLDDHealth",
                             "true"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "LearningDifficultyOrDisabilityDeclaration",
                             "1"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "PrimaryLearningDifficultyOrDisability",
                             "4"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "SecondaryLearningDifficultyOrDisability",
                             "5"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "DateAndTimeLLDDHealthConsentCollected",
                             "2018-06-25T11:21:00Z"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "ConsentToCollectEthnicity",
                             "true"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "Ethnicity",
                             "32"});
-                table386.AddRow(new string[] {
+                table374.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
 #line 16
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table386, "When ");
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table374, "When ");
 #line hidden
 #line 26
  testRunner.Then("there should be a 201 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table375 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table375.AddRow(new string[] {
+                            "ConsentToCollectLLDDHealth",
+                            "true"});
+                table375.AddRow(new string[] {
+                            "LearningDifficultyOrDisabilityDeclaration",
+                            "1"});
+                table375.AddRow(new string[] {
+                            "PrimaryLearningDifficultyOrDisability",
+                            "4"});
+                table375.AddRow(new string[] {
+                            "SecondaryLearningDifficultyOrDisability",
+                            "5"});
+                table375.AddRow(new string[] {
+                            "DateAndTimeLLDDHealthConsentCollected",
+                            "2018-06-25T11:21:00Z"});
+                table375.AddRow(new string[] {
+                            "ConsentToCollectEthnicity",
+                            "true"});
+                table375.AddRow(new string[] {
+                            "Ethnicity",
+                            "32"});
+                table375.AddRow(new string[] {
+                            "DateAndTimeEthnicityCollected",
+                            "2018-06-25T11:22:00Z"});
+                table375.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-08-25T11:21:00Z"});
+#line 27
+ testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table375, "Given ");
+#line hidden
+#line 38
+ testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table376 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table376.AddRow(new string[] {
+                            "ConsentToCollectLLDDHealth",
+                            "true"});
+                table376.AddRow(new string[] {
+                            "LearningDifficultyOrDisabilityDeclaration",
+                            "1"});
+                table376.AddRow(new string[] {
+                            "PrimaryLearningDifficultyOrDisability",
+                            "4"});
+                table376.AddRow(new string[] {
+                            "SecondaryLearningDifficultyOrDisability",
+                            "5"});
+                table376.AddRow(new string[] {
+                            "DateAndTimeLLDDHealthConsentCollected",
+                            "2018-06-25T11:21:00Z"});
+                table376.AddRow(new string[] {
+                            "ConsentToCollectEthnicity",
+                            "true"});
+                table376.AddRow(new string[] {
+                            "Ethnicity",
+                            "32"});
+                table376.AddRow(new string[] {
+                            "DateAndTimeEthnicityCollected",
+                            "2018-06-25T11:22:00Z"});
+                table376.AddRow(new string[] {
+                            "LastModifiedDate",
+                            "2018-08-25T11:21:00Z"});
+#line 39
+ testRunner.And("the response body should contain:", ((string)(null)), table376, "And ");
+#line hidden
+#line 51
+ testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 52
+ testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 53
+ testRunner.Then("there should be a record in the dss-diversitydetails table with DiversityId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for ConsentToCollectLLDDHealth")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
+        [NUnit.Framework.TestCaseAttribute("ConsentToCollectLLDDHealth", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("ConsentToCollectLLDDHealth", "car", null)]
+        public virtual void PatchDiversityWithInvalidValuesForConsentToCollectLLDDHealth(string field, string value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "diversitydetails"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Field", field);
+            argumentsOfScenario.Add("Value", value);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for ConsentToCollectLLDDHealth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 62
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table377 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table377.AddRow(new string[] {
+                            "ConsentToCollectLLDDHealth",
+                            "true"});
+                table377.AddRow(new string[] {
+                            "LearningDifficultyOrDisabilityDeclaration",
+                            "1"});
+                table377.AddRow(new string[] {
+                            "PrimaryLearningDifficultyOrDisability",
+                            "4"});
+                table377.AddRow(new string[] {
+                            "SecondaryLearningDifficultyOrDisability",
+                            "5"});
+                table377.AddRow(new string[] {
+                            "DateAndTimeLLDDHealthConsentCollected",
+                            "2018-06-25T11:21:00Z"});
+                table377.AddRow(new string[] {
+                            "ConsentToCollectEthnicity",
+                            "true"});
+                table377.AddRow(new string[] {
+                            "Ethnicity",
+                            "32"});
+                table377.AddRow(new string[] {
+                            "DateAndTimeEthnicityCollected",
+                            "2018-06-25T11:22:00Z"});
+#line 63
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table377, "When ");
+#line hidden
+#line 73
+ testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table378 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+#line 74
+ testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table378, "Given ");
+#line hidden
+#line 76
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for LearningDifficultyOrDisabilityDeclaration" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "-1", null)]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "0", null)]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "3", null)]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "8", null)]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "10", null)]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "98", null)]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "99", null)]
+        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "100", null)]
+        public virtual void PatchDiversityWithInvalidValuesForLearningDifficultyOrDisabilityDeclaration(string field, string value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "diversitydetails"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Field", field);
+            argumentsOfScenario.Add("Value", value);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for LearningDifficultyOrDisabilityDeclaration" +
+                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 90
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table379 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table379.AddRow(new string[] {
+                            "ConsentToCollectLLDDHealth",
+                            "true"});
+                table379.AddRow(new string[] {
+                            "LearningDifficultyOrDisabilityDeclaration",
+                            "1"});
+                table379.AddRow(new string[] {
+                            "PrimaryLearningDifficultyOrDisability",
+                            "4"});
+                table379.AddRow(new string[] {
+                            "SecondaryLearningDifficultyOrDisability",
+                            "5"});
+                table379.AddRow(new string[] {
+                            "DateAndTimeLLDDHealthConsentCollected",
+                            "2018-06-25T11:21:00Z"});
+                table379.AddRow(new string[] {
+                            "ConsentToCollectEthnicity",
+                            "true"});
+                table379.AddRow(new string[] {
+                            "Ethnicity",
+                            "32"});
+                table379.AddRow(new string[] {
+                            "DateAndTimeEthnicityCollected",
+                            "2018-06-25T11:22:00Z"});
+#line 91
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table379, "When ");
+#line hidden
+#line 101
+ testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table380 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+#line 102
+ testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table380, "Given ");
+#line hidden
+#line 104
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 105
+ testRunner.And("the error message should be \"Please supply a valid Learning Difficulty Or Disabil" +
+                        "ity Declaration\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for PrimaryLearningDifficultyOrDisability")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "-1", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "2", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "3", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "18", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "20", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "20", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "90", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "92", null)]
+        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "100", null)]
+        public virtual void PatchDiversityWithInvalidValuesForPrimaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "diversitydetails"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Field", field);
+            argumentsOfScenario.Add("Value", value);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for PrimaryLearningDifficultyOrDisability", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 123
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table381 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table381.AddRow(new string[] {
+                            "ConsentToCollectLLDDHealth",
+                            "true"});
+                table381.AddRow(new string[] {
+                            "LearningDifficultyOrDisabilityDeclaration",
+                            "1"});
+                table381.AddRow(new string[] {
+                            "PrimaryLearningDifficultyOrDisability",
+                            "4"});
+                table381.AddRow(new string[] {
+                            "SecondaryLearningDifficultyOrDisability",
+                            "5"});
+                table381.AddRow(new string[] {
+                            "DateAndTimeLLDDHealthConsentCollected",
+                            "2018-06-25T11:21:00Z"});
+                table381.AddRow(new string[] {
+                            "ConsentToCollectEthnicity",
+                            "true"});
+                table381.AddRow(new string[] {
+                            "Ethnicity",
+                            "32"});
+                table381.AddRow(new string[] {
+                            "DateAndTimeEthnicityCollected",
+                            "2018-06-25T11:22:00Z"});
+#line 124
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table381, "When ");
+#line hidden
+#line 134
+ testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table382 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+#line 135
+ testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table382, "Given ");
+#line hidden
+#line 137
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 138
+ testRunner.And("the error message should be \"Please supply a valid Primary Learning Difficulty Or" +
+                        " Disability\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for SecondaryLearningDifficultyOrDisability")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "-1", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "2", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "3", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "18", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "20", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "20", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "90", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "92", null)]
+        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "100", null)]
+        public virtual void PatchDiversityWithInvalidValuesForSecondaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "diversitydetails"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Field", field);
+            argumentsOfScenario.Add("Value", value);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for SecondaryLearningDifficultyOrDisability", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 158
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table383 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table383.AddRow(new string[] {
+                            "ConsentToCollectLLDDHealth",
+                            "true"});
+                table383.AddRow(new string[] {
+                            "LearningDifficultyOrDisabilityDeclaration",
+                            "1"});
+                table383.AddRow(new string[] {
+                            "PrimaryLearningDifficultyOrDisability",
+                            "4"});
+                table383.AddRow(new string[] {
+                            "SecondaryLearningDifficultyOrDisability",
+                            "5"});
+                table383.AddRow(new string[] {
+                            "DateAndTimeLLDDHealthConsentCollected",
+                            "2018-06-25T11:21:00Z"});
+                table383.AddRow(new string[] {
+                            "ConsentToCollectEthnicity",
+                            "true"});
+                table383.AddRow(new string[] {
+                            "Ethnicity",
+                            "32"});
+                table383.AddRow(new string[] {
+                            "DateAndTimeEthnicityCollected",
+                            "2018-06-25T11:22:00Z"});
+#line 159
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table383, "When ");
+#line hidden
+#line 169
+ testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table384 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+#line 170
+ testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table384, "Given ");
+#line hidden
+#line 172
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 173
+ testRunner.And("the error message should be \"Please supply a valid Secondary Learning Difficulty " +
+                        "Or Disability\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for DateAndTimeLDDHealthConsentCollected")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
+        [NUnit.Framework.TestCaseAttribute("DateAndTimeLLDDHealthConsentCollected", "now +1Hour", null)]
+        [NUnit.Framework.TestCaseAttribute("DateAndTimeLLDDHealthConsentCollected", "today +1Day", null)]
+        public virtual void PatchDiversityWithInvalidValuesForDateAndTimeLDDHealthConsentCollected(string field, string value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "diversitydetails"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Field", field);
+            argumentsOfScenario.Add("Value", value);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for DateAndTimeLDDHealthConsentCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 193
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table385 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+                table385.AddRow(new string[] {
+                            "ConsentToCollectLLDDHealth",
+                            "true"});
+                table385.AddRow(new string[] {
+                            "LearningDifficultyOrDisabilityDeclaration",
+                            "1"});
+                table385.AddRow(new string[] {
+                            "PrimaryLearningDifficultyOrDisability",
+                            "4"});
+                table385.AddRow(new string[] {
+                            "SecondaryLearningDifficultyOrDisability",
+                            "5"});
+                table385.AddRow(new string[] {
+                            "DateAndTimeLLDDHealthConsentCollected",
+                            "2018-06-25T11:21:00Z"});
+                table385.AddRow(new string[] {
+                            "ConsentToCollectEthnicity",
+                            "true"});
+                table385.AddRow(new string[] {
+                            "Ethnicity",
+                            "32"});
+                table385.AddRow(new string[] {
+                            "DateAndTimeEthnicityCollected",
+                            "2018-06-25T11:22:00Z"});
+#line 194
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table385, "When ");
+#line hidden
+#line 204
+ testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table386 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Field",
+                            "Value"});
+#line 205
+ testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table386, "Given ");
+#line hidden
+#line 207
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 208
+ testRunner.And("the error message should be \"Date And Time LLDD Health Consent Collected must be " +
+                        "less the current date/time\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for Ethnicity")]
+        [NUnit.Framework.CategoryAttribute("diversitydetails")]
+        [NUnit.Framework.TestCaseAttribute("Ethnicity", "0", null)]
+        [NUnit.Framework.TestCaseAttribute("Ethnicity", "30", null)]
+        [NUnit.Framework.TestCaseAttribute("Ethnicity", "48", null)]
+        [NUnit.Framework.TestCaseAttribute("Ethnicity", "50", null)]
+        [NUnit.Framework.TestCaseAttribute("Ethnicity", "90", null)]
+        [NUnit.Framework.TestCaseAttribute("Ethnicity", "97", null)]
+        [NUnit.Framework.TestCaseAttribute("Ethnicity", "100", null)]
+        public virtual void PatchDiversityWithInvalidValuesForEthnicity(string field, string value, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "diversitydetails"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Field", field);
+            argumentsOfScenario.Add("Value", value);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for Ethnicity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 222
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table387 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -200,67 +803,34 @@ this.FeatureBackground();
                 table387.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
-                table387.AddRow(new string[] {
-                            "LastModifiedDate",
-                            "2018-08-25T11:21:00Z"});
-#line 27
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table387, "Given ");
+#line 223
+ testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table387, "When ");
 #line hidden
-#line 38
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 233
+ testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table388 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table388.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table388.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table388.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table388.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table388.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table388.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table388.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table388.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-                table388.AddRow(new string[] {
-                            "LastModifiedDate",
-                            "2018-08-25T11:21:00Z"});
-#line 39
- testRunner.And("the response body should contain:", ((string)(null)), table388, "And ");
+#line 234
+ testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table388, "Given ");
 #line hidden
-#line 51
- testRunner.And("the response body should not contain the \"CreatedBy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 236
+ testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 52
- testRunner.Given("I wait for 10 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 53
- testRunner.Then("there should be a record in the dss-diversitydetails table with DiversityId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 237
+ testRunner.And("the error message should be \"Please supply a valid Ethnicity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for ConsentToCollectLLDDHealth")]
+        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for DateAndTimeEthnicityCollected")]
         [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectLLDDHealth", "True", null)]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectLLDDHealth", "False", null)]
-        public virtual void PatchDiversityWithValidValuesForConsentToCollectLLDDHealth(string field, string value, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "now +1Hour", null)]
+        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "today +1Day", null)]
+        public virtual void PatchDiversityWithInvalidValuesForDateAndTimeEthnicityCollected(string field, string value, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "diversitydetails"};
@@ -272,8 +842,8 @@ this.FeatureBackground();
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("Field", field);
             argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for ConsentToCollectLLDDHealth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 60
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for DateAndTimeEthnicityCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 255
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -323,2290 +893,24 @@ this.FeatureBackground();
                 table389.AddRow(new string[] {
                             "DateAndTimeEthnicityCollected",
                             "2018-06-25T11:22:00Z"});
-#line 61
+#line 256
  testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table389, "When ");
 #line hidden
-#line 71
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 266
+ testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table390 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-#line 72
+#line 267
  testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table390, "Given ");
 #line hidden
-#line 74
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 75
- testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for ConsentToCollectLLDDHealth")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectLLDDHealth", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectLLDDHealth", "car", null)]
-        public virtual void PatchDiversityWithInvalidValuesForConsentToCollectLLDDHealth(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for ConsentToCollectLLDDHealth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 83
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table391 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table391.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table391.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table391.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table391.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table391.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table391.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table391.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table391.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 84
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table391, "When ");
-#line hidden
-#line 94
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table392 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 95
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table392, "Given ");
-#line hidden
-#line 97
+#line 269
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for LearningDifficultyOrDisabilityDeclaration")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "9", null)]
-        public virtual void PatchDiversityWithValidValuesForLearningDifficultyOrDisabilityDeclaration(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for LearningDifficultyOrDisabilityDeclaration", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 127
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table393 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table393.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table393.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table393.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table393.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table393.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table393.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table393.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table393.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 128
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table393, "When ");
-#line hidden
-#line 138
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table394 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 139
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table394, "Given ");
-#line hidden
-#line 141
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table395 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table395.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table395.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table395.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-#line 142
- testRunner.And("the response body should contain:", ((string)(null)), table395, "And ");
-#line hidden
-#line 147
- testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for LearningDifficultyOrDisabilityDeclaration" +
-            "")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "-1", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "0", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "3", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "8", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "10", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "98", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "99", null)]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "100", null)]
-        public virtual void PatchDiversityWithInvalidValuesForLearningDifficultyOrDisabilityDeclaration(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for LearningDifficultyOrDisabilityDeclaration" +
-                    "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 156
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table396 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table396.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table396.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table396.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table396.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table396.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table396.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table396.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table396.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 157
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table396, "When ");
-#line hidden
-#line 167
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table397 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 168
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table397, "Given ");
-#line hidden
-#line 170
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 171
- testRunner.And("the error message should be \"Please supply a valid Learning Difficulty Or Disabil" +
-                        "ity Declaration\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with no value supplied for LearningDifficultyOrDisabilityDeclarat" +
-            "ion")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("LearningDifficultyOrDisabilityDeclaration", "", null)]
-        public virtual void PatchDiversityWithNoValueSuppliedForLearningDifficultyOrDisabilityDeclaration(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with no value supplied for LearningDifficultyOrDisabilityDeclarat" +
-                    "ion", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 185
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table398 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table398.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table398.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table398.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table398.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table398.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table398.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table398.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table398.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 186
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table398, "When ");
-#line hidden
-#line 196
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table399 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 197
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table399, "Given ");
-#line hidden
-#line 199
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table400 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table400.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table400.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table400.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table400.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table400.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table400.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table400.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table400.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 200
- testRunner.And("the response body should contain:", ((string)(null)), table400, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for PrimaryLearningDifficultyOrDisability")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "4", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "5", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "6", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "7", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "8", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "9", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "10", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "11", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "12", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "13", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "14", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "15", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "16", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "17", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "93", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "94", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "95", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "96", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "97", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "98", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "99", null)]
-        public virtual void PatchDiversityWithValidValuesForPrimaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for PrimaryLearningDifficultyOrDisability", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 219
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table401 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table401.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table401.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table401.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table401.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table401.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table401.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table401.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table401.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 220
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table401, "When ");
-#line hidden
-#line 230
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table402 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 231
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table402, "Given ");
-#line hidden
-#line 233
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table403 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table403.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table403.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table403.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-#line 234
- testRunner.And("the response body should contain:", ((string)(null)), table403, "And ");
-#line hidden
-#line 239
- testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for PrimaryLearningDifficultyOrDisability")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "-1", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "3", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "18", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "20", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "20", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "90", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "92", null)]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "100", null)]
-        public virtual void PatchDiversityWithInvalidValuesForPrimaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for PrimaryLearningDifficultyOrDisability", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 266
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table404 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table404.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table404.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table404.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table404.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table404.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table404.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table404.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table404.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 267
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table404, "When ");
-#line hidden
-#line 277
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table405 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 278
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table405, "Given ");
-#line hidden
-#line 280
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 281
- testRunner.And("the error message should be \"Please supply a valid Primary Learning Difficulty Or" +
-                        " Disability\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with no value supplied for PrimaryLearningDifficultyOrDisability")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("PrimaryLearningDifficultyOrDisability", "", null)]
-        public virtual void PatchDiversityWithNoValueSuppliedForPrimaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with no value supplied for PrimaryLearningDifficultyOrDisability", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 298
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table406 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table406.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table406.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table406.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table406.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table406.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table406.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table406.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table406.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 299
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table406, "When ");
-#line hidden
-#line 309
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table407 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 310
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table407, "Given ");
-#line hidden
-#line 312
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table408 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table408.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table408.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table408.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table408.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table408.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table408.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table408.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table408.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 313
- testRunner.And("the response body should contain:", ((string)(null)), table408, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for SecondaryLearningDifficultyOrDisability")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "4", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "5", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "6", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "7", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "8", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "9", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "10", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "11", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "12", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "13", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "14", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "15", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "16", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "17", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "93", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "94", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "95", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "96", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "97", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "98", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "99", null)]
-        public virtual void PatchDiversityWithValidValuesForSecondaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for SecondaryLearningDifficultyOrDisability", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 332
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table409 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table409.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table409.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table409.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table409.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table409.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table409.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table409.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table409.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 333
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table409, "When ");
-#line hidden
-#line 343
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table410 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 344
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table410, "Given ");
-#line hidden
-#line 346
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 347
- testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for SecondaryLearningDifficultyOrDisability")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "-1", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "2", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "3", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "18", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "20", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "20", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "90", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "92", null)]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "100", null)]
-        public virtual void PatchDiversityWithInvalidValuesForSecondaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for SecondaryLearningDifficultyOrDisability", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 374
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table411 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table411.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table411.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table411.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table411.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table411.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table411.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table411.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table411.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 375
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table411, "When ");
-#line hidden
-#line 385
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table412 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 386
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table412, "Given ");
-#line hidden
-#line 388
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 389
- testRunner.And("the error message should be \"Please supply a valid Secondary Learning Difficulty " +
-                        "Or Disability\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with no value supplied for SecondaryLearningDifficultyOrDisabilit" +
-            "y")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("SecondaryLearningDifficultyOrDisability", "", null)]
-        public virtual void PatchDiversityWithNoValueSuppliedForSecondaryLearningDifficultyOrDisability(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with no value supplied for SecondaryLearningDifficultyOrDisabilit" +
-                    "y", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 406
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table413 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table413.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table413.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table413.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table413.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table413.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table413.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table413.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table413.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 407
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table413, "When ");
-#line hidden
-#line 417
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table414 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 418
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table414, "Given ");
-#line hidden
-#line 420
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table415 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table415.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table415.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table415.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table415.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table415.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table415.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table415.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table415.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 421
- testRunner.And("the response body should contain:", ((string)(null)), table415, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for DateAndTimeLLDDHealthConsentCollected")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeLLDDHealthConsentCollected", "now", null)]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeLLDDHealthConsentCollected", "today", null)]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeLLDDHealthConsentCollected", "2018-08-25T11:21:00Z", null)]
-        public virtual void PatchDiversityWithValidValuesForDateAndTimeLLDDHealthConsentCollected(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for DateAndTimeLLDDHealthConsentCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 440
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table416 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table416.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table416.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table416.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table416.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table416.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table416.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table416.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table416.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 441
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table416, "When ");
-#line hidden
-#line 451
- testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table417 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 452
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table417, "Given ");
-#line hidden
-#line 454
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for DateAndTimeLDDHealthConsentCollected")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeLLDDHealthConsentCollected", "now +1Hour", null)]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeLLDDHealthConsentCollected", "today +1Day", null)]
-        public virtual void PatchDiversityWithInvalidValuesForDateAndTimeLDDHealthConsentCollected(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for DateAndTimeLDDHealthConsentCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 464
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table418 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table418.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table418.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table418.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table418.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table418.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table418.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table418.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table418.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 465
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table418, "When ");
-#line hidden
-#line 475
- testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table419 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 476
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table419, "Given ");
-#line hidden
-#line 478
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 479
- testRunner.And("the error message should be \"Date And Time LLDD Health Consent Collected must be " +
-                        "less the current date/time\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for ConsentToCollectEthnicity")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectEthnicity", "True", null)]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectEthnicity", "False", null)]
-        public virtual void PatchDiversityWithValidValuesForConsentToCollectEthnicity(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for ConsentToCollectEthnicity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 490
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table420 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table420.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table420.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table420.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table420.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table420.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table420.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table420.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table420.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 491
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table420, "When ");
-#line hidden
-#line 501
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table421 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 502
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table421, "Given ");
-#line hidden
-#line 504
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 505
- testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for ConsentToCollectEthnicity")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectEthnicity", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectEthnicity", "abc", null)]
-        public virtual void PatchDiversityWithInvalidValuesForConsentToCollectEthnicity(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for ConsentToCollectEthnicity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 513
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table422 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table422.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table422.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table422.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table422.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table422.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table422.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table422.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table422.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 514
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table422, "When ");
-#line hidden
-#line 524
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table423 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 525
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table423, "Given ");
-#line hidden
-#line 527
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with no value supplied for ConsentToCollectEthnicity")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectEthnicity", "", null)]
-        public virtual void PatchDiversityWithNoValueSuppliedForConsentToCollectEthnicity(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with no value supplied for ConsentToCollectEthnicity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 535
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table424 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table424.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table424.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table424.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table424.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table424.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table424.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table424.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table424.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 536
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table424, "When ");
-#line hidden
-#line 546
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table425 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 547
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table425, "Given ");
-#line hidden
-#line 549
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table426 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table426.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table426.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table426.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table426.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table426.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table426.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table426.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table426.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 550
- testRunner.And("the response body should contain:", ((string)(null)), table426, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with ConsentToCollectEthnicity where no value exists for DateAndT" +
-            "imeEthnicityCollected")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        public virtual void PatchDiversityWithConsentToCollectEthnicityWhereNoValueExistsForDateAndTimeEthnicityCollected()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "diversitydetails"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with ConsentToCollectEthnicity where no value exists for DateAndT" +
-                    "imeEthnicityCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 566
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table427 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table427.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "false"});
-                table427.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table427.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table427.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table427.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            ""});
-                table427.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "false"});
-                table427.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table427.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            ""});
-#line 567
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table427, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table428 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table428.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-#line 577
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table428, "Given ");
-#line hidden
-#line 580
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table429 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table429.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "false"});
-                table429.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table429.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table429.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table429.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            ""});
-                table429.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table429.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-#line 581
- testRunner.And("the response body should contain:", ((string)(null)), table429, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for Ethnicity")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "31", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "32", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "33", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "34", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "35", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "36", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "37", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "38", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "39", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "40", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "41", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "42", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "43", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "44", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "45", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "46", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "47", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "98", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "99", null)]
-        public virtual void PatchDiversityWithValidValuesForEthnicity(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for Ethnicity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 597
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table430 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table430.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table430.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table430.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table430.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table430.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table430.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table430.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table430.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 598
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table430, "When ");
-#line hidden
-#line 608
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table431 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 609
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table431, "Given ");
-#line hidden
-#line 611
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 612
- testRunner.And(string.Format("the response body should have {0} with value {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for Ethnicity")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "0", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "30", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "48", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "50", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "90", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "97", null)]
-        [NUnit.Framework.TestCaseAttribute("Ethnicity", "100", null)]
-        public virtual void PatchDiversityWithInvalidValuesForEthnicity(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for Ethnicity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 637
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table432 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table432.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table432.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table432.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table432.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table432.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table432.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table432.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table432.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 638
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table432, "When ");
-#line hidden
-#line 648
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table433 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 649
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table433, "Given ");
-#line hidden
-#line 651
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 652
- testRunner.And("the error message should be \"Please supply a valid Ethnicity\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with no value supplied for Ethnicity")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("ConsentToCollectEthnicity", "", null)]
-        public virtual void PatchDiversityWithNoValueSuppliedForEthnicity(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with no value supplied for Ethnicity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 665
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table434 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table434.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table434.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table434.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table434.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table434.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table434.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table434.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table434.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 666
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table434, "When ");
-#line hidden
-#line 676
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table435 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 677
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table435, "Given ");
-#line hidden
-#line 679
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table436 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table436.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table436.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table436.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table436.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table436.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table436.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table436.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table436.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 680
- testRunner.And("the response body should contain:", ((string)(null)), table436, "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with valid values for DateAndTimeEthnicityCollected")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "now", null)]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "today", null)]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "2018-08-25T11:21:00Z", null)]
-        public virtual void PatchDiversityWithValidValuesForDateAndTimeEthnicityCollected(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with valid values for DateAndTimeEthnicityCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 699
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table437 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table437.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table437.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table437.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table437.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table437.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table437.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table437.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table437.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 700
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table437, "When ");
-#line hidden
-#line 710
- testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table438 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 711
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table438, "Given ");
-#line hidden
-#line 713
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with invalid values for DateAndTimeEthnicityCollected")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "now +1Hour", null)]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "today +1Day", null)]
-        public virtual void PatchDiversityWithInvalidValuesForDateAndTimeEthnicityCollected(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with invalid values for DateAndTimeEthnicityCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 723
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table439 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table439.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table439.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table439.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table439.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table439.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table439.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table439.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table439.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 724
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table439, "When ");
-#line hidden
-#line 734
- testRunner.Given(string.Format("I want to send {0} with value Translate Date To {1}", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table440 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 735
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table440, "Given ");
-#line hidden
-#line 737
- testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 738
+#line 270
  testRunner.And("the error message should be \"Date And Time Ethnicity Collected must be less the c" +
                         "urrent date/time\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Patch Diversity with no value supplied for DateAndTimeEthnicityCollected")]
-        [NUnit.Framework.CategoryAttribute("diversitydetails")]
-        [NUnit.Framework.TestCaseAttribute("DateAndTimeEthnicityCollected", "", null)]
-        public virtual void PatchDiversityWithNoValueSuppliedForDateAndTimeEthnicityCollected(string field, string value, string[] exampleTags)
-        {
-            string[] @__tags = new string[] {
-                    "diversitydetails"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Field", field);
-            argumentsOfScenario.Add("Value", value);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Patch Diversity with no value supplied for DateAndTimeEthnicityCollected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 746
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table441 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table441.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table441.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table441.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table441.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table441.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table441.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table441.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table441.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 747
- testRunner.When("I post a DiversityDetail with the following details V2:", ((string)(null)), table441, "When ");
-#line hidden
-#line 757
- testRunner.Given(string.Format("I want to send {0} with value {1} in the following request", field, value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-                TechTalk.SpecFlow.Table table442 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-#line 758
- testRunner.Given("I patch the following DiversityDetail V2:", ((string)(null)), table442, "Given ");
-#line hidden
-#line 760
- testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-                TechTalk.SpecFlow.Table table443 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Field",
-                            "Value"});
-                table443.AddRow(new string[] {
-                            "ConsentToCollectLLDDHealth",
-                            "true"});
-                table443.AddRow(new string[] {
-                            "LearningDifficultyOrDisabilityDeclaration",
-                            "1"});
-                table443.AddRow(new string[] {
-                            "PrimaryLearningDifficultyOrDisability",
-                            "4"});
-                table443.AddRow(new string[] {
-                            "SecondaryLearningDifficultyOrDisability",
-                            "5"});
-                table443.AddRow(new string[] {
-                            "DateAndTimeLLDDHealthConsentCollected",
-                            "2018-06-25T11:21:00Z"});
-                table443.AddRow(new string[] {
-                            "ConsentToCollectEthnicity",
-                            "true"});
-                table443.AddRow(new string[] {
-                            "Ethnicity",
-                            "32"});
-                table443.AddRow(new string[] {
-                            "DateAndTimeEthnicityCollected",
-                            "2018-06-25T11:22:00Z"});
-#line 761
- testRunner.And("the response body should contain:", ((string)(null)), table443, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

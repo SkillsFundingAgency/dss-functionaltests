@@ -77,20 +77,20 @@ namespace NCS.DSS.FunctionalTests.Features.Contact
         {
 #line 3
 #line hidden
-            TechTalk.SpecFlow.Table table212 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table200 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value"});
-            table212.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "GivenName",
                         "Bob"});
-            table212.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "FamilyName",
                         "Customer"});
-            table212.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "PriorityGroups",
                         "1,3"});
 #line 4
- testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table212, "Given ");
+ testRunner.Given("I post a Customer with the following details V3:", ((string)(null)), table200, "Given ");
 #line hidden
         }
         
@@ -128,56 +128,56 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table213 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table201 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table213.AddRow(new string[] {
+                table201.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table213.AddRow(new string[] {
+                table201.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table213.AddRow(new string[] {
+                table201.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table213.AddRow(new string[] {
+                table201.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 12
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table213, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table201, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table214 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table202 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table214.AddRow(new string[] {
+                table202.AddRow(new string[] {
                             "PreferredContactMethod",
                             "2"});
-                table214.AddRow(new string[] {
+                table202.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
 #line 18
- testRunner.When("I patch the following Contact:", ((string)(null)), table214, "When ");
+ testRunner.When("I patch the following Contact:", ((string)(null)), table202, "When ");
 #line hidden
 #line 22
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table215 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table203 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table215.AddRow(new string[] {
+                table203.AddRow(new string[] {
                             "PreferredContactMethod",
                             "2"});
-                table215.AddRow(new string[] {
+                table203.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table215.AddRow(new string[] {
+                table203.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table215.AddRow(new string[] {
+                table203.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 23
- testRunner.And("the response body should contain:", ((string)(null)), table215, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table203, "And ");
 #line hidden
 #line 29
  testRunner.And("there should be a record in the dss-contacts table with ContactId", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -218,32 +218,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table216 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table204 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table216.AddRow(new string[] {
+                table204.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table216.AddRow(new string[] {
+                table204.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table216.AddRow(new string[] {
+                table204.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table216.AddRow(new string[] {
+                table204.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 34
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table216, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table204, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table217 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table205 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table217.AddRow(new string[] {
+                table205.AddRow(new string[] {
                             "PreferredContactMethod",
                             "6"});
 #line 40
- testRunner.When("I patch the following Contact:", ((string)(null)), table217, "When ");
+ testRunner.When("I patch the following Contact:", ((string)(null)), table205, "When ");
 #line hidden
 #line 43
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -284,53 +284,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table218 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table206 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table218.AddRow(new string[] {
+                table206.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table218.AddRow(new string[] {
+                table206.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table218.AddRow(new string[] {
+                table206.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table218.AddRow(new string[] {
+                table206.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 48
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table218, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table206, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table219 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table207 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table219.AddRow(new string[] {
+                table207.AddRow(new string[] {
                             "MobileNumber",
                             "07676 654321"});
 #line 54
- testRunner.When("I patch the following Contact:", ((string)(null)), table219, "When ");
+ testRunner.When("I patch the following Contact:", ((string)(null)), table207, "When ");
 #line hidden
 #line 57
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table220 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table208 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table220.AddRow(new string[] {
+                table208.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table220.AddRow(new string[] {
+                table208.AddRow(new string[] {
                             "MobileNumber",
                             "07676 654321"});
-                table220.AddRow(new string[] {
+                table208.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table220.AddRow(new string[] {
+                table208.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 58
- testRunner.And("the response body should contain:", ((string)(null)), table220, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table208, "And ");
 #line hidden
 #line 64
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -374,53 +374,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table221 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table209 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table221.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table221.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table221.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table221.AddRow(new string[] {
+                table209.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 70
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table221, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table209, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table222 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table210 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table222.AddRow(new string[] {
+                table210.AddRow(new string[] {
                             "HomeNumber",
                             "08654 654321"});
 #line 76
- testRunner.When("I patch the following Contact:", ((string)(null)), table222, "When ");
+ testRunner.When("I patch the following Contact:", ((string)(null)), table210, "When ");
 #line hidden
 #line 79
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table223 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table211 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table223.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table223.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table223.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "HomeNumber",
                             "08654 654321"});
-                table223.AddRow(new string[] {
+                table211.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 80
- testRunner.And("the response body should contain:", ((string)(null)), table223, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table211, "And ");
 #line hidden
 #line 86
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -464,53 +464,53 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table224 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table212 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table224.AddRow(new string[] {
+                table212.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table224.AddRow(new string[] {
+                table212.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table224.AddRow(new string[] {
+                table212.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table224.AddRow(new string[] {
+                table212.AddRow(new string[] {
                             "AlternativeNumber",
                             "08654 123457"});
 #line 92
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table224, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table212, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table225 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table213 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table225.AddRow(new string[] {
+                table213.AddRow(new string[] {
                             "AlternativeNumber",
                             "08654 123458"});
 #line 98
- testRunner.When("I patch the following Contact:", ((string)(null)), table225, "When ");
+ testRunner.When("I patch the following Contact:", ((string)(null)), table213, "When ");
 #line hidden
 #line 101
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table226 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table214 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table226.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table226.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table226.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table226.AddRow(new string[] {
+                table214.AddRow(new string[] {
                             "AlternativeNumber",
                             "08654 123458"});
 #line 102
- testRunner.And("the response body should contain:", ((string)(null)), table226, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table214, "And ");
 #line hidden
 #line 108
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -554,23 +554,23 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table227 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table215 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table227.AddRow(new string[] {
+                table215.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table227.AddRow(new string[] {
+                table215.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table227.AddRow(new string[] {
+                table215.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table227.AddRow(new string[] {
+                table215.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 114
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table227, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table215, "Given ");
 #line hidden
 #line 120
  testRunner.When("I patch the following Contact With RandomEmailAddress:", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -578,23 +578,23 @@ this.FeatureBackground();
 #line 121
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table228 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table216 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table228.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table228.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table228.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table228.AddRow(new string[] {
+                table216.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 122
- testRunner.And("the response body should contain:", ((string)(null)), table228, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table216, "And ");
 #line hidden
 #line 128
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -638,32 +638,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table229 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table217 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table229.AddRow(new string[] {
+                table217.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table229.AddRow(new string[] {
+                table217.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table229.AddRow(new string[] {
+                table217.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table229.AddRow(new string[] {
+                table217.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 134
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table229, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table217, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table230 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table218 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table230.AddRow(new string[] {
+                table218.AddRow(new string[] {
                             "EmailAddress",
                             "customeratcustomer.com"});
 #line 140
- testRunner.When("I patch the following Contact:", ((string)(null)), table230, "When ");
+ testRunner.When("I patch the following Contact:", ((string)(null)), table218, "When ");
 #line hidden
 #line 143
  testRunner.Then("there should be a 422 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -704,56 +704,56 @@ this.ScenarioInitialize(scenarioInfo);
 #line 3
 this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table231 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table219 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table231.AddRow(new string[] {
+                table219.AddRow(new string[] {
                             "PreferredContactMethod",
                             "1"});
-                table231.AddRow(new string[] {
+                table219.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table231.AddRow(new string[] {
+                table219.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table231.AddRow(new string[] {
+                table219.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 147
- testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table231, "Given ");
+ testRunner.Given("I post a Contact with the following details with unique email address:", ((string)(null)), table219, "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table232 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table220 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table232.AddRow(new string[] {
+                table220.AddRow(new string[] {
                             "PreferredContactMethod",
                             "2"});
-                table232.AddRow(new string[] {
+                table220.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
 #line 153
- testRunner.When("I patch the following Contact:", ((string)(null)), table232, "When ");
+ testRunner.When("I patch the following Contact:", ((string)(null)), table220, "When ");
 #line hidden
 #line 157
  testRunner.Then("there should be a 200 response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table233 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table221 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table233.AddRow(new string[] {
+                table221.AddRow(new string[] {
                             "PreferredContactMethod",
                             "2"});
-                table233.AddRow(new string[] {
+                table221.AddRow(new string[] {
                             "MobileNumber",
                             "07676 123456"});
-                table233.AddRow(new string[] {
+                table221.AddRow(new string[] {
                             "HomeNumber",
                             "08654 123456"});
-                table233.AddRow(new string[] {
+                table221.AddRow(new string[] {
                             "AlternativeNumber",
                             "07564656766"});
 #line 158
- testRunner.And("the response body should contain:", ((string)(null)), table233, "And ");
+ testRunner.And("the response body should contain:", ((string)(null)), table221, "And ");
 #line hidden
 #line 164
  testRunner.Given("I wait for 5 Seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
