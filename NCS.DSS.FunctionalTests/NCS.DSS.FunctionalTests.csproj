@@ -100,9 +100,6 @@
     <Folder Include="Features\Search\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="appsettings.local.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
